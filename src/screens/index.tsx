@@ -28,25 +28,25 @@ const Section = styled.div`
 `
 
 export const Screens = () => {
+  function updateSection(i:any, anim?:any) {
+    gsap.to(window, {
+      scrollTo: { y: i * innerHeight, autoKill: true },
+      duration: 1,
+    })
+
+    if (anim) {
+      anim.restart()
+    }
+  }
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
     gsap.registerPlugin(ScrollToPlugin)
 
     if (typeof window !== 'undefined') {
-      function updateSection(i, anim) {
-        gsap.to(window, {
-          scrollTo: { y: i * innerHeight, autoKill: false },
-          duration: 1,
-        })
-
-        if (anim) {
-          anim.restart()
-        }
-      }
-
       const instances = []
 
-      gsap.utils.toArray('.section').forEach((panel, i) => {
+      gsap.utils.toArray('.section').forEach((panel: any, i) => {
         instances.push(
           ScrollTrigger.create({
             trigger: panel,

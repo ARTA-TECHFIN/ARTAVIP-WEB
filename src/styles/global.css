@@ -1,0 +1,55 @@
+/* Don't create too much css in this folder. css should put inside component or use tailwind */
+body {
+  background:#2f2f2f;
+
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Vera Humana 95';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/Verah___.ttf') format('truetype'),
+    url('/fonts/Verahb__.ttf') format('truetype'),
+    url('/fonts/Verahbi_.ttf') format('truetype'),
+    url('/fonts/Verahi__.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/HelveticaNeueUltraLight.otf') format('opentype');
+  src: url('/fonts/HelveticaNeueUltraLight.ttf') format('truetype');
+}
+
+@layer base {
+  body {
+    @apply font-Verah;
+    font-size: 1.2vw;
+  }
+}
+@layer components {
+  .animation {
+    animation: slidein 0.3s linear forwards;
+  }
+  .list {
+    @apply mt-7  flex h-[158px] w-[158px] items-center justify-center rounded-[50%] border border-white bg-transparent p-5 text-center font-Verah;
+  }
+  .activeList {
+    @apply flex h-[220px] w-[220px] items-center justify-center rounded-[50%] border border-white bg-transparent p-5 text-center font-Verah;
+  }
+  .innerShadow {
+    box-shadow: inset 0 0 14px 6px #8b653c;
+  }
+
+  @keyframes slidein {
+    from {
+      top: -100%;
+    }
+    to {
+      top: 0;
+    }
+  }
+}

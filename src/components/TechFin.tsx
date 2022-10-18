@@ -6,7 +6,49 @@ const TechFin = () => {
   const TechRef = useRef(null)
   gsap.registerPlugin(ScrollTrigger)
 
+  let r = 0
+  let active = false
+
+  const figureRadius = (w: number, h: number) => {
+    return Math.sqrt(Math.pow(w, 2) + Math.pow(h, 2)) / 2
+  }
+
+  const mask = () => {
+    const widthHeight = document.querySelector('#goAway').getBBox()
+    console.log(widthHeight)
+    r = figureRadius(widthHeight.width, widthHeight.height)
+    if (!active) {
+      gsap.set('#cover', { attr: { cx: 50, r: r } })
+    }
+  }
+
   useEffect(() => {
+    mask()
+
+    gsap.fromTo(
+      '#cover',
+      {
+        attr: {
+          r: () => {
+            return 50
+          },
+        },
+      },
+      {
+        attr: {
+          r: () => {
+            return r
+          },
+        },
+        ease: 'slow(0.7, 0.7, false)',
+        scrollTrigger: {
+          id: `techAnime`,
+          trigger: '#techAnime',
+          start: 'top center+=200',
+          toggleActions: 'play none none reverse',
+        },
+      }
+    )
     gsap.fromTo(
       '#techAnime',
       {
@@ -18,11 +60,37 @@ const TechFin = () => {
         duration: 1,
         autoAlpha: 1,
         xPercent: 0,
-        ease: 'ease',
+        ease: 'slow(0.7, 0.7, false)',
+
         scrollTrigger: {
           id: `techAnime`,
           trigger: '#techAnime',
-          start: 'top center+=100',
+          start: 'top center+=500',
+          toggleActions: 'play none none reverse',
+        },
+      }
+    )
+    gsap.fromTo(
+      '.circle',
+      {
+        autoAlpha: 0,
+        width: window.outerWidth / 2.3,
+        height: window.outerWidth / 2.3,
+        xPercent: 15,
+      },
+      {
+        delay: 0.5,
+        duration: 2,
+        autoAlpha: 0.25,
+        width: window.outerWidth / 2.3,
+        height: window.outerWidth / 2.3,
+        xPercent: 15,
+        ease: 'slow(0.7, 0.7, false)',
+
+        scrollTrigger: {
+          id: `circleAnim`,
+          trigger: '#techAnime',
+          start: 'center center+=200',
           toggleActions: 'play none none reverse',
         },
       }
@@ -30,15 +98,15 @@ const TechFin = () => {
   }, [])
 
   return (
-    <div className=" h-screen w-full bg-[#211106] overflow-hidden box-border relative">
+    <div className="h-screen w-full bg-[#211106] overflow-hidden box-border relative">
       <div className="flex h-full max-w-main-contain flex-col items-center justify-center px-6 py-8 md:flex-row md:px-24 2xl:mx-auto">
-        <div className="h-full w-full z-1">
+        <div className="relative h-full w-full z-2">
           <div
             id="techAnime"
             ref={TechRef}
             className="mr-auto flex h-full w-full flex-col items-start justify-center gap-[24px] text-left md:items-end md:text-right"
           >
-            <h1 className="font-Verah text-[48px] text-white md:text-[68px]">
+            <h1 className="font-Verah text-[48px] text-white md:text-[68px] text-left">
               What is TechFin
             </h1>
             <p className="max-w-full pb-5 text-left font-Neue text-base text-white md:max-w-[700px] md:text-right">
@@ -76,19 +144,52 @@ const TechFin = () => {
               <span className="invisible relative">Explore more</span>
             </a>
           </div>
+          <div className="absolute circle border-2 border-white rounded-full z-2  top-0 right-9 translate-y-14 "></div>
         </div>
-        <video
-          id="video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          crossOrigin="anonymous"
-          className="absolute max-w-[100vw] z-0 opacity-30"
-        >
-          <source src="/videos/landing_whatis.mp4" typeof="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <div className="video-container absolute h-screen w-full">
+          <svg id="demo" className="absolute h-full w-full z-1">
+            <defs>
+              <mask id="theMask">
+                <rect
+                  x="0"
+                  y="0"
+                  r="200"
+                  width="100%"
+                  height="100%"
+                  fill="#fff"
+                />
+                <circle id="cover" r="200" fill="black" cx="50%" cy="50%" />
+              </mask>
+              <linearGradient id="myGradient" gradientTransform="rotate(90)">
+                <stop offset="5%" stopColor="#241307" />
+                <stop offset="95%" stopColor="#432712" />
+              </linearGradient>
+            </defs>
+
+            <g mask="url(#theMask)">
+              <rect
+                id="goAway"
+                x="0"
+                y="0"
+                width="100%"
+                height="100%"
+                fill="url('#myGradient')"
+              />
+            </g>
+          </svg>
+          <video
+            id="video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            crossOrigin="anonymous"
+            className=" absolute top-0 left-0 h-200vh z-0 opacity-50 mix-blend-plus-lighter"
+          >
+            <source src="/videos/landing_whatis.mp4" typeof="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </div>
   )

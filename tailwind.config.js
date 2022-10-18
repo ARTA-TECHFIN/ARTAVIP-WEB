@@ -10,6 +10,7 @@ module.exports = {
       zIndex: {
         '0': '0',
         '1': '1',
+        '2': '2',
       },
       spacing: {
         'main-contain': mainWidth,

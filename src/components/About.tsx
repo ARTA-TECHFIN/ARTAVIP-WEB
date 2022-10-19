@@ -3,22 +3,22 @@ import React from 'react'
 const About: React.FC = () => {
   return (
     <div className="relative z-2 flex h-screen w-full flex-col bg-about-gradient md:flex-row">
-      <div className="relative h-[50%] w-full overflow-hidden md:h-full md:max-w-[calc(500%+220px)]">
+      <div className="absolute  w-full overflow-hidden md:h-full z-0">
         <video
           autoPlay
           muted
           loop
           playsInline
           crossOrigin="anonymous"
-          className="absolute h-full w-full translate-y-[-45%] translate-x-[100px] scale-[200%]  object-cover md:translate-y-0  md:scale-[140%]"
+          className="absolute min-w-full min-h-full	w-auto h-auto overflow-hidden top-50 top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%]"
         >
           {/* md:translate-x-[-20%] */}
           <source src="/videos/landing_about.mov" typeof="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="h-[50%] w-full sm:min-w-[400px] md:h-full md:max-w-[calc(50%-220px)]">
-        <div className="mr-auto flex h-full w-full max-w-full flex-col items-start justify-center gap-[24px] p-6 text-left md:max-w-[500px] md:items-end md:text-right">
+      <div className="w-full  z-1">
+        <div className="mr-auto flex h-full w-full max-w-full flex-col items-start justify-center gap-[24px] p-6 text-left md:max-w-[500px]  md:items-end md:text-right">
           <h1 className="font-Verah text-[48px] font-normal text-white md:text-[68px]">
             About ARTA
           </h1>

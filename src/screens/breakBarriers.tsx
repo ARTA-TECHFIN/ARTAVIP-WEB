@@ -21,7 +21,7 @@ export const BreakBarriers = () => {
       <div className=" flex max-w-main-contain items-start justify-center px-6  xl:mx-auto movable-elements-wrapper">
         <div className="absolute  top-[20%] left-0 sm:top-[35%] xl:left-[10%] xl:mx-auto 2xl:left-[15%] ">
           <h1
-            className="z-[200] font-Verah text-[36px] leading-[40px] text-white sm:text-[5em] sm:leading-[1.02em] movable"
+            className="z-[200] font-Verah text-[36px] leading-[40px] text-white sm:text-[5em] sm:leading-[1.02em] movable text-left"
             id="animation"
           >
             BREAK

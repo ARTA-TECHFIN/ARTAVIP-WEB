@@ -252,7 +252,7 @@ const TechFin = () => {
             loop
             playsInline
             crossOrigin="anonymous"
-            className=" absolute top-0 left-0 h-200vh z-0 opacity-50 mix-blend-plus-lighter"
+            className=" absolute top-0 left-0 h-100vh z-0 opacity-50 mix-blend-plus-lighter"
           >
             <source src="/videos/landing_whatis.mp4" typeof="video/mp4" />
             Your browser does not support the video tag.

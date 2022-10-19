@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const About: React.FC = () => {
   return (
@@ -17,8 +18,19 @@ const About: React.FC = () => {
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="w-full  z-1">
-        <div className="mr-auto flex h-full w-full max-w-full flex-col items-start justify-center gap-[24px] p-6 text-left md:max-w-[500px]  md:items-end md:text-right">
+      <div className="w-full flex z-1 justify-center max-w-main-contain m-auto items-center">
+        <div className="md:max-w-[500px] p-6 flex-col w-1/2">
+          <div className="relative h-full cursor-pointer opacity-100 transition hover:opacity-100 m-auto">
+            <Image
+              src="/images/Group.png"
+              alt="Logo"
+              className="object-contain"
+              width={236}
+              height={96}
+            />
+          </div>
+        </div>
+        <div className="ml-auto text-right h-full w-1/2 flex-col items-end justify-center gap-[24px] p-6  ">
           <h1 className="font-Verah text-[48px] font-normal text-white md:text-[68px]">
             About ARTA
           </h1>

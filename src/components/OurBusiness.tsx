@@ -5,31 +5,36 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 const OurBusiness = () => {
   const businessRef = useRef(null)
   gsap.registerPlugin(ScrollTrigger)
+  useEffect(() => {
+    gsap.fromTo(
+      '#BusinessAnime',
+      {
+        autoAlpha: 0,
+        xPercent: -15,
+      },
+      {
+        delay: 1,
+        duration: 1,
+        autoAlpha: 1,
+        xPercent: 0,
+        ease: 'slow(0.7, 0.7, false)',
 
-  // useEffect(() => {
-  //   gsap.to('#BusinessAnime', { opacity: 0, duration: 0 }),
-  //     gsap.to('#BusinessAnime', {
-  //       opacity: 1,
-  //       x: 70,
-  //       duration: 2,
-  //       ease: 'power0',
-  //       delay: 0.5,
-  //       scrollTrigger: {
-  //         trigger: '#BusinessAnime',
-  //         toggleActions: 'restart pause resume reverse',
-  //         markers: false,
-  //         start: 'top top',
-  //       },
-  //     })
-  // }, [])
-
+        scrollTrigger: {
+          id: `BusinessAnime`,
+          trigger: '#BusinessAnime',
+          start: 'top center+=500',
+          toggleActions: 'play none none reverse',
+        },
+      }
+    )
+  }, [])
   return (
-    <div className=" h-screen  bg-[#663718]">
+    <div className="relative h-screen screen-start z-2 ">
       <div className="flex h-full w-full max-w-main-contain flex-col items-center px-6 py-8 md:flex-row md:px-24 xl:mx-auto">
         <div
-          id="#BusinessAnime"
+          id="BusinessAnime"
           ref={businessRef}
-          className="flex h-full flex-col items-start justify-center justify-items-center gap-[24px] text-white"
+          className="flex h-full flex-col items-start justify-center justify-items-center gap-[24px] text-white opacity-0"
         >
           <h1 className="font-verah text-[48px] text-white md:text-[68px]">
             Our Businesses

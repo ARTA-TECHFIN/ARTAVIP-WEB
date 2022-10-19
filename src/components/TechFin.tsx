@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 const TechFin = () => {
   const TechRef = useRef(null)
   gsap.registerPlugin(ScrollTrigger)
+  const businessRef = useRef(null)
 
   let r = 0
   let active = false
@@ -76,7 +77,7 @@ const TechFin = () => {
         autoAlpha: 0,
         width: window.outerWidth / 2.3,
         height: window.outerWidth / 2.3,
-        xPercent: 15,
+        xPercent: -18,
       },
       {
         delay: 0.5,
@@ -84,7 +85,7 @@ const TechFin = () => {
         autoAlpha: 0.25,
         width: window.outerWidth / 2.3,
         height: window.outerWidth / 2.3,
-        xPercent: 15,
+        xPercent: -18,
         ease: 'slow(0.7, 0.7, false)',
 
         scrollTrigger: {
@@ -95,10 +96,77 @@ const TechFin = () => {
         },
       }
     )
+    gsap.fromTo(
+      '.circle',
+      {
+        autoAlpha: 0,
+        width: window.outerWidth / 2.3,
+        height: window.outerWidth / 2.3,
+        xPercent: -18,
+        yPercent: 0,
+      },
+      {
+        duration: 1,
+        autoAlpha: 0.25,
+        width: window.outerWidth / 1.5,
+        height: window.outerWidth / 1.5,
+        xPercent: -80,
+        yPercent: -20,
+        ease: 'slow(0.7, 0.7, false)',
+
+        scrollTrigger: {
+          id: `circleAnim`,
+          trigger: '.screen-start',
+          start: 'center center+=200',
+          toggleActions: 'play none none reverse',
+        },
+      }
+    )
+    gsap.fromTo(
+      '#cover',
+      {
+        attr: {
+          r: () => {
+            return r
+          },
+        },
+      },
+      {
+        attr: {
+          r: () => {
+            return r * 2
+          },
+        },
+        ease: 'slow(0.7, 0.7, false)',
+        scrollTrigger: {
+          id: `techAnime`,
+          trigger: '.screen-start',
+          start: 'top center+=200',
+          toggleActions: 'play none none reverse',
+        },
+      }
+    )
+    gsap.fromTo(
+      '#video',
+      {
+        filter: 'hue-rotate(0deg)',
+      },
+      {
+        filter: 'hue-rotate(180deg)',
+
+        ease: 'slow(0.7, 0.7, false)',
+        scrollTrigger: {
+          id: `techAnime`,
+          trigger: '.screen-start',
+          start: 'top center+=200',
+          toggleActions: 'play none none reverse',
+        },
+      }
+    )
   }, [])
 
   return (
-    <div className="h-screen w-full bg-[#211106] overflow-hidden box-border relative">
+    <div className="h-screen w-full  overflow-hidden box-border relative">
       <div className="flex h-full max-w-main-contain flex-col items-center justify-center px-6 py-8 md:flex-row md:px-24 2xl:mx-auto">
         <div className="relative h-full w-full z-2">
           <div
@@ -144,9 +212,9 @@ const TechFin = () => {
               <span className="invisible relative">Explore more</span>
             </a>
           </div>
-          <div className="absolute circle border-2 border-white rounded-full z-2  top-0 right-9 translate-y-14 "></div>
+          <div className="fixed circle border-2 border-white rounded-full z-2  top-0 right-14 translate-y-14 "></div>
         </div>
-        <div className="video-container absolute h-screen w-full">
+        <div className="video-container fixed h-screen w-full top-0 right-0 translate-y-0 z-0">
           <svg id="demo" className="absolute h-full w-full z-1">
             <defs>
               <mask id="theMask">

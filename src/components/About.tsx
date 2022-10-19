@@ -2,7 +2,7 @@ import React from 'react'
 
 const About: React.FC = () => {
   return (
-    <div className="flex h-screen w-full flex-col bg-about-gradient md:flex-row">
+    <div className="relative z-2 flex h-screen w-full flex-col bg-about-gradient md:flex-row">
       <div className="relative h-[50%] w-full overflow-hidden md:h-full md:max-w-[calc(500%+220px)]">
         <video
           autoPlay

@@ -28,7 +28,7 @@ const Section = styled.div`
 `
 
 export const Screens = () => {
-  function updateSection(i:any, anim?:any) {
+  function updateSection(i: any, anim?: any) {
     gsap.to(window, {
       scrollTo: { y: i * innerHeight, autoKill: true },
       duration: 1,
@@ -70,7 +70,7 @@ export const Screens = () => {
   return (
     <>
       <SectionContainer className="slider-container">
-        <Section className="section ">
+        <Section className="section">
           <BreakBarriers />
         </Section>
         <Section className="section ">

@@ -22,7 +22,7 @@ const Home: NextPage = () => {
       <main>
         <Screens />
       </main>
-      <footer className="h-full w-full bg-[#402414]">
+      <footer className="relative z-2 h-full w-full bg-[#402414]">
         <Footer />
       </footer>
     </>

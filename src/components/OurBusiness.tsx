@@ -6,6 +6,7 @@ const OurBusiness = () => {
   const businessRef = useRef(null)
   gsap.registerPlugin(ScrollTrigger)
   useEffect(() => {
+    ScrollTrigger.refresh()
     gsap.fromTo(
       '#BusinessAnime',
       {

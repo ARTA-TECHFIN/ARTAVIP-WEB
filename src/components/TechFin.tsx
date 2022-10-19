@@ -14,16 +14,17 @@ const TechFin = () => {
     return Math.sqrt(Math.pow(w, 2) + Math.pow(h, 2)) / 2
   }
 
-  const mask = () => {
-    const widthHeight = document.querySelector('#goAway').getBBox()
-    console.log(widthHeight)
-    r = figureRadius(widthHeight.width, widthHeight.height)
-    if (!active) {
-      gsap.set('#cover', { attr: { cx: 50, r: r } })
-    }
-  }
-
   useEffect(() => {
+    ScrollTrigger.refresh()
+
+    const mask = () => {
+      const widthHeight = document.querySelector('#goAway').getBBox()
+      console.log(widthHeight)
+      r = figureRadius(widthHeight.width, widthHeight.height)
+      if (!active) {
+        gsap.set('#cover', { attr: { cx: 50, r: r } })
+      }
+    }
     mask()
 
     gsap.fromTo(

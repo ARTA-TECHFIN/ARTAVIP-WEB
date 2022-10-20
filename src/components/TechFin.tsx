@@ -19,7 +19,6 @@ const TechFin = () => {
 
     const mask = () => {
       const widthHeight = document.querySelector('#goAway').getBBox()
-      console.log(widthHeight)
       r = figureRadius(widthHeight.width, widthHeight.height)
       if (!active) {
         gsap.set('#cover', { attr: { cx: 50, r: r } })
@@ -31,22 +30,18 @@ const TechFin = () => {
       '#cover',
       {
         attr: {
-          r: () => {
-            return 50
-          },
+          r: 50,
         },
       },
       {
         attr: {
-          r: () => {
-            return r
-          },
+          r: r,
         },
-        ease: 'slow(0.7, 0.7, false)',
+        ease: 'ease',
         scrollTrigger: {
           id: `techAnime`,
           trigger: '#techAnime',
-          start: 'top center+=200',
+          start: '10vh 60%',
           toggleActions: 'play none none reverse',
         },
       }
@@ -81,18 +76,16 @@ const TechFin = () => {
         xPercent: -18,
       },
       {
-        delay: 0.5,
-        duration: 2,
+        duration: 1,
         autoAlpha: 0.25,
         width: window.outerWidth / 2.3,
         height: window.outerWidth / 2.3,
         xPercent: -18,
-        ease: 'slow(0.7, 0.7, false)',
-
+        ease: 'ease',
         scrollTrigger: {
           id: `circleAnim`,
           trigger: '#techAnime',
-          start: 'center center+=200',
+          start: 'top +50 center',
           toggleActions: 'play none none reverse',
         },
       }
@@ -118,7 +111,7 @@ const TechFin = () => {
         scrollTrigger: {
           id: `circleAnim`,
           trigger: '.screen-start',
-          start: 'center center+=200',
+          start: '0px 100%',
           toggleActions: 'play none none reverse',
         },
       }

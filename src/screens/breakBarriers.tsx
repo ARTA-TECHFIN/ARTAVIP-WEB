@@ -3,7 +3,7 @@ import React from 'react'
 export const BreakBarriers = () => {
   return (
     <section
-      className=" relative flex w-full flex-col bg-arta-russet-100  z-2"
+      className=" relative flex w-full flex-col bg-arta-russet-100 z-3"
       id="initial"
     >
       <video

@@ -42,6 +42,7 @@ export const Screens = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
     gsap.registerPlugin(ScrollToPlugin)
+    ScrollTrigger.refresh()
 
     if (typeof window !== 'undefined') {
       const instances = []

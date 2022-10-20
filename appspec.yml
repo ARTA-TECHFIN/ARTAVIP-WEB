@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /srv/www/corp_site/code_deploy
+hooks:
+  ApplicationStop:
+    - location: scripts/stop.sh
+      timeout: 300
+      runas: deploy
+  AfterInstall:
+    - location: scripts/deploy.sh
+      timeout: 300
+      runas: deploy
+  ApplicationStart:
+    - location: scripts/start.sh
+      timeout: 300
+      runas: deploy
+  AfterAllowTraffic:
+    - location: scripts/after_allow_traffic.sh
+      timeout: 300
+      runas: deploy

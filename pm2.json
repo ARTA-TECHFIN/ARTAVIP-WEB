@@ -1,0 +1,7 @@
+{
+  "name": "corp_site",
+  "script": "yarn start",
+  "env": {
+    "PORT": "3001"
+  }
+}

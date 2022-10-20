@@ -18,6 +18,7 @@ const TechFin = () => {
     ScrollTrigger.refresh()
 
     const mask = () => {
+      // @ts-ignore
       const widthHeight = document.querySelector('#goAway').getBBox()
       r = figureRadius(widthHeight.width, widthHeight.height)
       if (!active) {

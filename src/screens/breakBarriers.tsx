@@ -1,18 +1,17 @@
-import React, {useEffect, useRef} from 'react'
+import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 
 export const BreakBarriers = () => {
-  const sec1TtlRef = useRef(null);
-  const sec1VideoRef = useRef(null);
+  const sec1TtlRef = useRef(null)
+  const sec1VideoRef = useRef(null)
 
-  var request:any = null;
-  var request2:any = null;
-	var mouse = { x: 0, y: 0 };
-	var cx:number, cy:number;
+  var request: any = null
+  var mouse = { x: 0, y: 0 }
+  var cx: number, cy: number
 
   useEffect(() => {
-    cx = window?.innerWidth / 50;
-    cy = window?.innerHeight / 50;
+    cx = window?.innerWidth / 50
+    cy = window?.innerHeight / 50
 
     gsap.fromTo(
       sec1TtlRef.current,
@@ -27,37 +26,43 @@ export const BreakBarriers = () => {
     )
   }, [])
 
-  const section1HandleMouseMove = (event:any) => {
-    mouse.x = event.pageX;
-		mouse.y = event.pageY;
-		cancelAnimationFrame(request);
-		request = requestAnimationFrame(updateSec1TextPos);
-    // request2 = requestAnimationFrame(updateSec1Video);
+  const section1HandleMouseMove = (event: any) => {
+    mouse.x = event.pageX
+    mouse.y = event.pageY
+    cancelAnimationFrame(request)
+    request = requestAnimationFrame(updateSec1TextPos)
   }
 
   function updateSec1TextPos() {
-		var dx = mouse.x - cx;
-		var dy = mouse.y - cy;
+    var dx = mouse.x - cx
+    var dy = mouse.y - cy
 
-		var tiltx = (dy / cy)*0.7;
-		var tilty = - (dx / cx)*0.7;
-		gsap.to(sec1TtlRef.current, {duration: 1, transform:'translate(' + tilty + 'px, ' + tiltx + 'px)', ease: "Power2.easeOut" });
-	}
+    var tiltx = (dy / cy) * 0.7
+    var tilty = -(dx / cx) * 0.7
+    gsap.to(sec1TtlRef.current, {
+      duration: 1,
+      transform: 'translate(' + tilty + 'px, ' + tiltx + 'px)',
+      ease: 'Power2.easeOut',
+    })
+  }
 
   function updateSec1Video() {
-		var dx = mouse.x - cx;
-		var dy = mouse.y - cy;
+    var dx = mouse.x - cx
+    var dy = mouse.y - cy
 
-		var tiltx = - (dy / cy)*0.5;
-		var tilty = (dx / cx)*0.5;
-		gsap.to(sec1VideoRef.current, {duration: 1, transform:'translate(' + tilty + 'px, ' + tiltx + 'px)', ease: "Power2.easeOut" });
-	}
+    var tiltx = -(dy / cy) * 0.5
+    var tilty = (dx / cx) * 0.5
+    gsap.to(sec1VideoRef.current, {
+      duration: 1,
+      transform: 'translate(' + tilty + 'px, ' + tiltx + 'px)',
+      ease: 'Power2.easeOut',
+    })
+  }
 
   return (
     <section
-      className=" relative flex w-full flex-col bg-arta-russet-100 z-3"
-      id="initial"
-      onMouseMove={(ev)=> section1HandleMouseMove(ev)}
+      className=" relative flex w-full flex-col bg-arta-russet-100 z-3 tigger-01"
+      onMouseMove={(ev) => section1HandleMouseMove(ev)}
     >
       <video
         ref={sec1VideoRef}

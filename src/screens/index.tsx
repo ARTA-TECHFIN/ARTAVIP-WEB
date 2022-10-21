@@ -5,9 +5,9 @@ import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import styled from 'styled-components'
 import About from '../components/About'
-import OurBusiness from '../components/OurBusiness'
 import { BreakBarriers } from './breakBarriers'
 import TechFin from '../components/TechFin'
+import { updateSection } from '../helpers/updateSection'
 
 const SectionContainer = styled.div`
   width: 100%;
@@ -28,59 +28,37 @@ const Section = styled.div`
 `
 
 export const Screens = () => {
-  function updateSection(i: any, anim?: any) {
-    gsap.to(window, {
-      scrollTo: { y: i * innerHeight, autoKill: true },
-      duration: 1,
-    })
-
-    if (anim) {
-      anim.restart()
-    }
-  }
-
+  const [newSection, setNewSection] = React.useState(false)
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
     gsap.registerPlugin(ScrollToPlugin)
     ScrollTrigger.refresh()
 
     if (typeof window !== 'undefined') {
-      const instances = []
+      const sections = document.querySelectorAll('.fixing')
 
-      gsap.utils.toArray('.section').forEach((panel: any, i) => {
-        instances.push(
-          ScrollTrigger.create({
-            trigger: panel,
-            onEnter: () => updateSection(i),
-          })
-        )
-
-        instances.push(
-          ScrollTrigger.create({
-            trigger: panel,
-            start: 'bottom bottom',
-            onEnterBack: () => updateSection(i),
-          })
-        )
+      sections.forEach((section, i) => {
+        ScrollTrigger.create({
+          trigger: section,
+          start: 'top bottom-=1',
+          end: 'bottom top+=1',
+          onEnter: () => updateSection(section, i),
+          onEnterBack: () => updateSection(section),
+        })
       })
-
-      const panel = gsap.utils.toArray('.panel')
     }
   }, [])
 
   return (
     <>
       <SectionContainer className="slider-container">
-        <Section className="section">
+        <Section className="fixing section home">
           <BreakBarriers />
         </Section>
-        <Section className="section ">
-          <TechFin />
+        <Section className="fixing section double">
+          <TechFin newSection={newSection} setNewSection={setNewSection} />
         </Section>
-        <Section className="section ">
-          <OurBusiness />
-        </Section>
-        <Section className="section ">
+        <Section className="fixing section lastone">
           <About />
         </Section>
       </SectionContainer>

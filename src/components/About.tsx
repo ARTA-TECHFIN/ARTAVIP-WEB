@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const About: React.FC = () => {
   return (
-    <div className="relative z-2 flex h-screen w-full flex-col bg-about-gradient md:flex-row">
+    <div className="relative z-3 flex h-screen w-full flex-col bg-about-gradient md:flex-row">
       <div className="absolute  w-full overflow-hidden md:h-full z-0">
         <video
           autoPlay

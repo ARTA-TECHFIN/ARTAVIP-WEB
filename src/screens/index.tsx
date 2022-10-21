@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+// TODO: Remove styled-components
 import styled from 'styled-components'
 import About from '../components/About'
 import { BreakBarriers } from './breakBarriers'

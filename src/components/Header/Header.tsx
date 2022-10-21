@@ -12,6 +12,7 @@ type pageInfoItemT = {
   title: string
   paragraph: string
   buttonText: string
+  href: string
   pages: string[]
 }
 
@@ -19,9 +20,9 @@ const pageInfoList: pageInfoItemT[] = [
   {
     pageName: 'About Us',
     title: 'About Us',
-    paragraph:
-      'ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.',
+    paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
     buttonText: 'About Us home',
+    href: '/about',
     pages: [
       'Vision and Mission',
       'Culture and Values',
@@ -32,9 +33,9 @@ const pageInfoList: pageInfoItemT[] = [
   {
     pageName: 'Our Businesses',
     title: 'Our Businesses',
-    paragraph:
-      'ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.',
+    paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
     buttonText: 'Our Businesses home',
+    href: '/businesses',
     pages: [
       'Asset Management',
       'Investment Banking',
@@ -46,9 +47,9 @@ const pageInfoList: pageInfoItemT[] = [
   {
     pageName: 'Investor Relations',
     title: 'Investor Relations',
-    paragraph:
-      'ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.',
+    paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
     buttonText: 'Investor Relations',
+    href: '/investor-relations',
     pages: [
       'Announcements and notices',
       'Financial Reports',
@@ -59,17 +60,17 @@ const pageInfoList: pageInfoItemT[] = [
   {
     pageName: 'Media Centre',
     title: 'Media Centre',
-    paragraph:
-      'ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.',
+    paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
     buttonText: 'Media Centre home',
+    href: '/media-centre',
     pages: ['ARTA Blog', 'Press Release', 'Media Enquiry'],
   },
   {
     pageName: 'Contact Us',
     title: 'Contact Us',
-    paragraph:
-      'ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.',
+    paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
     buttonText: 'Contact Us home',
+    href: '/contact',
     pages: ['Work with ARTA', 'Job Openings', 'Our Office'],
   },
 ]
@@ -160,34 +161,33 @@ const Header: React.FC = () => {
                       {selectedTab.paragraph}
                     </p>
 
-                    <a
-                      href="#_"
-                      className="group relative inline-flex w-[260px] items-center justify-center overflow-hidden rounded-full border-2  border-white p-4 px-6 py-3 font-medium text-white shadow-md transition duration-300 ease-out"
-                    >
-                      <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-4 bg-[#f1eded45] text-white font-Neue text-[16px] leading-[24px] duration-300 group-hover:translate-x-0">
-                        <svg
-                          className="h-6 w-6"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                          ></path>
-                        </svg>
-                        <span>{selectedTab.buttonText}</span>
-                      </span>
-                      <span className="ease absolute flex h-full w-full transform items-center justify-center font-Neue text-[16px] leading-[24px] text-white transition-all duration-300 group-hover:translate-x-full">
-                        {selectedTab.buttonText}
-                      </span>
-                      <span className="invisible relative">
-                        {selectedTab.buttonText}
-                      </span>
-                    </a>
+                    <Link href={selectedTab.href} passHref>
+                      <a className="group relative inline-flex w-[260px] items-center justify-center overflow-hidden rounded-full border-2  border-white p-4 px-6 py-3 font-medium text-white shadow-md transition duration-300 ease-out">
+                        <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-4 bg-[#f1eded45] text-white font-Neue text-[16px] leading-[24px] duration-300 group-hover:translate-x-0">
+                          <svg
+                            className="h-6 w-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M14 5l7 7m0 0l-7 7m7-7H3"
+                            ></path>
+                          </svg>
+                          <span>{selectedTab.buttonText}</span>
+                        </span>
+                        <span className="ease absolute flex h-full w-full transform items-center justify-center font-Neue text-[16px] leading-[24px] text-white transition-all duration-300 group-hover:translate-x-full">
+                          {selectedTab.buttonText}
+                        </span>
+                        <span className="invisible relative">
+                          {selectedTab.buttonText}
+                        </span>
+                      </a>
+                    </Link>
                   </div>
                   <div className="flex flex-col">
                     {selectedTab.pages.map((item, index) => (

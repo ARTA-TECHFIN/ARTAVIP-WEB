@@ -2,22 +2,25 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 const mainWidth = '1440px'
+const mainWidth2 = '1240px'
 
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       zIndex: {
-        '0': '0',
-        '1': '1',
-        '2': '2',
-        '3': '3',
+        0: '0',
+        1: '1',
+        2: '2',
+        3: '3',
       },
       spacing: {
         'main-contain': mainWidth,
+        'main-contain-2': mainWidth2,
       },
       maxWidth: {
         'main-contain': mainWidth,
+        'main-contain-2': mainWidth2,
       },
       fontFamily: {
         Verah: ['"Vera Humana 95"', ...defaultTheme.fontFamily.sans],

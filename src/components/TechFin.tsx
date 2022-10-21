@@ -3,7 +3,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { updateSection, scrolling } from '../helpers/updateSection'
 
-const TechFin = ({ newSection, setNewSection }) => {
+const TechFin = ({ newSection, setNewSection }: any) => {
   console.log('new section', newSection)
 
   const TechRef = useRef(null)
@@ -147,8 +147,10 @@ const TechFin = ({ newSection, setNewSection }) => {
     if (!newSection) {
       const techFinAnim = () => {
         const mask = () => {
-          // @ts-ignore
-          const widthHeight = document.querySelector('#goAway').getBBox()
+          const elementGoAway = document.querySelector('#goAway')
+          if (!elementGoAway) return
+
+          const widthHeight = (elementGoAway as any).getBBox()
           r = figureRadius(widthHeight.width, widthHeight.height)
           if (!active) {
             gsap.set('#cover', { attr: { cx: 50, r: r } })

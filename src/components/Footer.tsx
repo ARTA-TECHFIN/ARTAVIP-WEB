@@ -5,7 +5,7 @@ import FacebookIcon from '@mui/icons-material/Facebook'
 
 const Footer = () => {
   return (
-    <div className="flex max-w-main-contain py-6 px-6 text-[#F4F1E1] md:px-20 md:py-12 xl:mx-auto">
+    <div className="flex max-w-main-contain py-6 px-6 text-arta-eggshell-100 md:px-20 md:py-12 xl:mx-auto">
       <div className="flex w-full flex-col space-y-9">
         <div className="flex flex-col justify-between lg:flex-row lg:space-x-9">
           <div className="order-2 flex flex-col space-y-5 text-[16px] md:flex-row md:space-x-5 md:space-y-0 lg:order-1">
@@ -22,9 +22,7 @@ const Footer = () => {
               </a>
             </div>
             <div className="flex flex-col items-start space-y-4">
-              <h6 className="font-Verah text-[16px] leading-[24px]">
-                Contact us
-              </h6>
+              <h6 className="font-Verah text-[16px] leading-[24px]">Contact us</h6>
               <ul className="list-none font-Neue text-[12px] leading-[20px]">
                 <li>
                   <a href="tel:+852 3513 8279">
@@ -62,48 +60,20 @@ const Footer = () => {
             <div className="flex flex-col items-start space-y-4">
               <h6 className=" text-[16px] leading-[24px]">Social media</h6>
               <div className="flex space-x-2">
-                <a
-                  href="#"
-                  className="rounded-[2px] bg-[#878095] p-1 hover:bg-white"
-                >
-                  <img
-                    src="/images/linkedin.png"
-                    alt="linkedin"
-                    className="h-5 w-5"
-                  />
+                <a href="#" className="rounded-[2px] bg-[#878095] p-1 hover:bg-white">
+                  <img src="/images/linkedin.png" alt="linkedin" className="h-5 w-5" />
                 </a>
-                <a
-                  href="#"
-                  className="rounded-[2px] bg-[#878095] p-1 hover:bg-white"
-                >
+                <a href="#" className="rounded-[2px] bg-[#878095] p-1 hover:bg-white">
                   {' '}
-                  <img
-                    src="/images/twitter.png"
-                    alt="twitter"
-                    className="h-5 w-5"
-                  />
+                  <img src="/images/twitter.png" alt="twitter" className="h-5 w-5" />
                 </a>
-                <a
-                  href="#"
-                  className="rounded-[2px] bg-[#878095] p-1 hover:bg-white"
-                >
+                <a href="#" className="rounded-[2px] bg-[#878095] p-1 hover:bg-white">
                   {' '}
-                  <img
-                    src="/images/facebook.png"
-                    alt="facebook"
-                    className="h-5 w-5"
-                  />
+                  <img src="/images/facebook.png" alt="facebook" className="h-5 w-5" />
                 </a>
-                <a
-                  href="#"
-                  className="rounded-[2px] bg-[#878095] p-1 hover:bg-white"
-                >
+                <a href="#" className="rounded-[2px] bg-[#878095] p-1 hover:bg-white">
                   {' '}
-                  <img
-                    src="/images/wechat.png"
-                    alt="wechat"
-                    className="h-5 w-5"
-                  />
+                  <img src="/images/wechat.png" alt="wechat" className="h-5 w-5" />
                 </a>
               </div>
             </div>

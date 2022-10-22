@@ -20,6 +20,8 @@ import { useState } from 'react'
 import { IconArrowRight } from 'src/components/Icon'
 import { Hr } from 'src/components/Hr'
 
+import { gsap } from 'gsap'
+
 const t = {
   heroBanner: {
     title: 'About Us',
@@ -88,7 +90,10 @@ const t = {
 const SectionHeroBanner = () => {
   return (
     <div className="relative aspect-video h-auto w-full">
-      <Image src={banner} alt="" className="h-full w-full" layout="fill" objectFit="cover" />
+      <div className="absolute h-full w-full overflow-hidden">
+        <Image src={banner} alt="" layout="fill" objectFit="cover" />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white" />
       <div className="absolute inset-0 flex flex-col items-center justify-center pt-20">
         <div className="arta-container">
           <div className="w-1/2">
@@ -121,7 +126,12 @@ const SectionMission = () => {
 }
 
 const SectionCulture = () => {
-  const [selectedIndex, setSelectedIndex] = useState(0)
+  const [selectedIndex, _setSelectedIndex] = useState(0)
+  const setSelectedIndex = (index: number) => {
+    _setSelectedIndex(index)
+    gsap.fromTo('.fade-in', { opacity: 0 }, { opacity: 1, duration: 0.4, delay: 0.2 })
+  }
+
   return (
     <div className="relative">
       <div className="absolute h-full w-full overflow-hidden">
@@ -152,7 +162,9 @@ const SectionCulture = () => {
                     <span className={textClass.title}>{value.title}</span>
                   </button>
                   <span
-                    className={`${textClass.body_regular} mt-4` + (isSelected ? '' : ' hidden')}
+                    className={
+                      `fade-in ${textClass.body_regular} mt-4` + (isSelected ? '' : ' hidden')
+                    }
                   >
                     {value.description}
                   </span>
@@ -274,7 +286,7 @@ const AboutPage: NextPage = () => {
   return (
     <>
       <Seo />
-      <Header />
+      <Header textColor="brown" />
       <main className="flex flex-col bg-arta-sunray-100 text-arta-sand-100">
         <SectionHeroBanner />
         <SectionMission />

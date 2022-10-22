@@ -1,7 +1,6 @@
 /* Don't create too much css in this folder. css should put inside component or use tailwind */
 body {
-  background:#2f2f2f;
-
+  background: #2f2f2f;
 }
 @tailwind base;
 @tailwind components;
@@ -11,11 +10,10 @@ body {
   font-family: 'Vera Humana 95';
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/Verah___.ttf') format('truetype'),
-    url('/fonts/Verahb__.ttf') format('truetype'),
-    url('/fonts/Verahbi_.ttf') format('truetype'),
-    url('/fonts/Verahi__.ttf') format('truetype');
+  src: url('/fonts/Verah___.ttf') format('truetype'), url('/fonts/Verahb__.ttf') format('truetype'),
+    url('/fonts/Verahbi_.ttf') format('truetype'), url('/fonts/Verahi__.ttf') format('truetype');
 }
+
 @font-face {
   font-family: 'Helvetica Neue';
   font-style: normal;
@@ -30,7 +28,19 @@ body {
     font-size: 1.2vw;
   }
 }
+
+/** 
+  Docs for why layer https://tailwindcss.com/docs/adding-custom-styles#using-css-and-layer
+  In short, layer is a way to organize your css. So that you can override it easily
+*/
 @layer components {
+  .arta-container-px {
+    @apply px-6 md:px-24;
+  }
+  .arta-container {
+    @apply arta-container-px w-full max-w-main-contain;
+  }
+
   .animation {
     animation: slidein 0.3s linear forwards;
   }

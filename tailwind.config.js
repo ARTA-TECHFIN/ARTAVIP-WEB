@@ -2,7 +2,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 const mainWidth = '1440px'
-const mainWidth2 = '1240px'
 
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
@@ -16,11 +15,9 @@ module.exports = {
       },
       spacing: {
         'main-contain': mainWidth,
-        'main-contain-2': mainWidth2,
       },
       maxWidth: {
         'main-contain': mainWidth,
-        'main-contain-2': mainWidth2,
       },
       fontFamily: {
         Verah: ['"Vera Humana 95"', ...defaultTheme.fontFamily.sans],
@@ -29,6 +26,10 @@ module.exports = {
       colors: {
         'arta-sunray-100': '#E5C183',
         'arta-russet-100': '#2E1605',
+        'arta-sand-100': '#593725',
+        'arta-eggshell-100': '#F4F1E1',
+        'arta-snow-100': '#FFFFFF',
+        'arta-bistre-100': '#402414',
       },
       backgroundColor: ['active'],
       backgroundImage: (theme) => ({

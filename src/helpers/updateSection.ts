@@ -1,7 +1,7 @@
 import { gsap } from 'gsap'
 
 export const scrolling = {
-  enabled: true,
+  enabled: false,
   events: 'scroll,wheel,touchmove,pointermove'.split(','),
   prevent: (e: Event) => e.preventDefault(),
   disable() {
@@ -28,14 +28,13 @@ export const scrolling = {
 
 
 
-export function updateSection(
+export function updateSectionScroll(
   section: Element,
-  i?: number | undefined
 ) {
   if (scrolling.enabled) {
     scrolling.disable();
     const classy = section.classList.contains('double');
-    console.log(section.classList)
+
     gsap.to(window, {
       scrollTo: { y: section, autoKill: false },
       onComplete: !classy ? scrolling.enable : scrolling.disable,

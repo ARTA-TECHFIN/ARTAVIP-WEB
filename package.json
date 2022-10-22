@@ -11,6 +11,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.28",
     "@heroicons/react": "^1.0.6",
     "@mui/icons-material": "^5.10.6",
     "@types/styled-components": "^5.1.26",

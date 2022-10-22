@@ -1,68 +1,79 @@
 import React, { useEffect } from 'react'
+import ReactDOM from 'react-dom';
+import ReactFullpage from '@fullpage/react-fullpage';
 import { gsap } from 'gsap'
 
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-// TODO: Remove styled-components
-import styled from 'styled-components'
 import About from '../components/About'
 import { BreakBarriers } from './breakBarriers'
 import TechFin from '../components/TechFin'
-import { updateSection } from '../helpers/updateSection'
-
-const SectionContainer = styled.div`
-  width: 100%;
-  height: 400%;
-  display: flex;
-  flex-wrap: wrap;
-`
-
-const Section = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  box-sizing: border-box;
-`
+import { updateSectionScroll } from '../helpers/updateSection'
 
 export const Screens = () => {
-  const [newSection, setNewSection] = React.useState(false)
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger)
-    gsap.registerPlugin(ScrollToPlugin)
-    ScrollTrigger.refresh()
-
-    if (typeof window !== 'undefined') {
-      const sections = document.querySelectorAll('.fixing')
-
-      sections.forEach((section, i) => {
-        ScrollTrigger.create({
-          trigger: section,
-          start: 'top bottom-=1',
-          end: 'bottom top+=1',
-          onEnter: () => updateSection(section, i),
-          onEnterBack: () => updateSection(section),
-        })
-      })
+  const sectionList = [
+    {
+      id: 1,
+      name: 'break-barriers',
+    },
+    {
+      id: 2,
+      name: 'techfin',
+    },
+    {
+      id: 4,
+      name: 'our-business',
+    },
+    {
+      id: 5,
+      name: 'about'
     }
-  }, [])
+  ]
+
+  const slideLeaveEvent = (origin:any, destination:any, direction:any) => {
+    console.log(destination.index)
+    if (destination.index == 1) {
+      console.log("fire")
+    }
+  }
 
   return (
-    <>
-      <SectionContainer className="slider-container">
-        <Section className="fixing section home">
-          <BreakBarriers />
-        </Section>
-        <Section className="fixing section double">
-          <TechFin newSection={newSection} setNewSection={setNewSection} />
-        </Section>
-        <Section className="fixing section lastone">
-          <About />
-        </Section>
-      </SectionContainer>
-    </>
+    // <>
+    //   <div className="w-full flex flex-wrap">
+    //     <section className="fixing section home w-full h-full flex justify-center items-center text-center relative box-border">
+    //       <BreakBarriers />
+    //     </section>
+    //     <section className="fixing section double w-full h-full flex justify-center items-center text-center relative box-border">
+    //       <TechFin newSection={newSection} setNewSection={setNewSection} />
+    //     </section>
+    //     <section className="fixing section lastone w-full h-full flex justify-center items-center text-center relative box-border">
+    //       <About />
+    //     </section>
+    //   </div>
+    // </>
+    <ReactFullpage
+      //fullpage options
+      licenseKey="KEO76-3R4A7-1FJ48-SVJ58-YVOFN"
+      scrollingSpeed = {1000} /* Options here */
+      onLeave={slideLeaveEvent}
+
+      render={({ state, fullpageApi }) => {
+        return (
+          <>
+            <ReactFullpage.Wrapper>
+              <section className="section fixing section home w-full h-full flex justify-center items-center text-center relative box-border">
+                <BreakBarriers />
+              </section>
+              <section className="section section double w-full h-full flex justify-center items-center text-center relative box-border">
+                <TechFin />
+              </section>
+              <section className="section section double w-full h-full flex justify-center items-center text-center relative box-border">
+                <About />
+              </section>
+            </ReactFullpage.Wrapper>
+          </>
+        );
+      }}
+    />
   )
 }

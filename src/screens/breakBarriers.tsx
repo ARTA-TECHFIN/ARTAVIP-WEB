@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { gsap } from 'gsap'
 
 export const BreakBarriers = () => {
   const sec1TtlRef = useRef(null)
   const sec1VideoRef = useRef(null)
+  const [windowDimension, setWindowDemension] = useState<{x: number, y: number}>({x:0,y:0})
 
   var request: any = null
   var mouse = { x: 0, y: 0 }
@@ -12,6 +13,7 @@ export const BreakBarriers = () => {
   useEffect(() => {
     cx = window?.innerWidth / 50
     cy = window?.innerHeight / 50
+    setWindowDemension({x:cx, y:cy})
 
     gsap.fromTo(
       sec1TtlRef.current,
@@ -19,7 +21,7 @@ export const BreakBarriers = () => {
       {
         opacity: 1,
         x: 50,
-        duration: 3,
+        duration: 2,
         ease: 'power0',
         delay: 1,
       }
@@ -34,11 +36,12 @@ export const BreakBarriers = () => {
   }
 
   function updateSec1TextPos() {
-    var dx = mouse.x - cx
-    var dy = mouse.y - cy
+    var dx = mouse.x - windowDimension.x
+    var dy = mouse.y - windowDimension.y
 
-    var tiltx = (dy / cy) * 0.7
-    var tilty = -(dx / cx) * 0.7
+    var tiltx = (dy / windowDimension.y) * 0.7
+    var tilty = -(dx / windowDimension.x) * 0.7
+
     gsap.to(sec1TtlRef.current, {
       duration: 1,
       transform: 'translate(' + tilty + 'px, ' + tiltx + 'px)',
@@ -65,6 +68,7 @@ export const BreakBarriers = () => {
       onMouseMove={(ev) => section1HandleMouseMove(ev)}
     >
       <video
+        data-keepplaying
         ref={sec1VideoRef}
         autoPlay
         muted

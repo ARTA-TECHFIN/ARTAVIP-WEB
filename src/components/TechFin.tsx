@@ -339,7 +339,7 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
           <h1 className="text-left font-verah text-[3.4em] tracking-[0.06em]">
             Our Businesses
           </h1>
-          <p className="max-w-full pb-5 text-left font-Neue text-[1em] max-w-[30em]">
+          <p className="pb-5 text-left font-Neue text-[1em] max-w-[30em]">
             ARTA TechFin is determined to create the fairest, most transparent,
             and open markets in the world. We carry this out every day by
             providing clients with a variety of financial services.

@@ -31,6 +31,8 @@ export const Screens = () => {
       licenseKey="KEO76-3R4A7-1FJ48-SVJ58-YVOFN"
       scrollingSpeed = {800}
       onLeave={slideLeaveEvent}
+      keyboardScrolling={true}
+      sectionsColor={['#543317', '#000000', '#653711']}
       render={({ state, fullpageApi }) => {
         if (disableScroll) fullpageApi.setAllowScrolling(false)
 

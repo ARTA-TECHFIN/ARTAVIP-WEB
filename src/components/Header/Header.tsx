@@ -87,7 +87,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown' }> = (props) => {
   return (
     <div className="fixed z-10 w-full">
       <ClickAwayListener onClickAway={() => setActiveTabIndex(DEFAULT_TAB_INDEX)}>
-        <header className="w-full py-[4em] px-[4em] xl:mx-auto">
+        <header className="w-full py-[2.8em] px-[4em] xl:mx-auto">
           <div className="flex w-full justify-between space-x-6">
             <div className="hidden items-center justify-center space-x-8 lg:flex">
               {pageInfoList.map((page, index) => {

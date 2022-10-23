@@ -1,10 +1,9 @@
 import React from 'react'
-import Image from 'next/image'
 
 const About: React.FC = () => {
   return (
-    <div className="relative z-3 flex h-screen w-full flex-col bg-about-gradient md:flex-row">
-      <div className="absolute  w-full overflow-hidden md:h-full z-0">
+    <div className="relative z-3 h-screen w-screen flex">
+      <div className="video-container absolute h-full w-full top-0 left-0">
         <video
           data-keepplaying
           autoPlay
@@ -12,30 +11,19 @@ const About: React.FC = () => {
           loop
           playsInline
           crossOrigin="anonymous"
-          className="absolute min-w-full min-h-full	w-auto h-auto overflow-hidden top-50 top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%]"
+          className="absolute object-cover w-full h-full"
         >
           {/* md:translate-x-[-20%] */}
           <source src="/videos/landing_about.mov" typeof="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="w-full flex z-1 justify-center max-w-main-contain m-auto items-center">
-        <div className="md:max-w-[500px] p-6 flex-col w-1/2">
-          <div className="relative h-full cursor-pointer opacity-100 transition hover:opacity-100 m-auto">
-            <Image
-              src="/images/Group.png"
-              alt="Logo"
-              className="object-contain"
-              width={236}
-              height={96}
-            />
-          </div>
-        </div>
+      <div className="absolute right-[3em] top-1/2 transform -translate-y-1/2 flex z-1 justify-end self-center w-[50em]">
         <div className="ml-auto text-right h-full w-1/2 flex-col items-end justify-center gap-[24px] p-6  ">
-          <h1 className="font-Verah text-[48px] font-normal text-white md:text-[68px]">
+          <h1 className="font-Verah text-[3.4em] text-white text-right tracking-[0.06em]">
             About ARTA
           </h1>
-          <p className="font-Neue text-white">
+          <p className="font-Neue text-[1em] text-white max-w-[30em] mb-[1.5em]">
             ARTA TechFin aims to build the next generation of financial
             services, using technology to transform the traditional financial
             industry and expand into new services, products and experiences.
@@ -62,7 +50,7 @@ const About: React.FC = () => {
               </svg>
               <span> Show more</span>
             </span>
-            <span className="ease absolute flex h-full w-full transform items-center justify-center font-Neue text-[16px] leading-[24px] text-white transition-all duration-300 group-hover:translate-x-full">
+            <span className="ease absolute flex h-full w-full transform items-center justify-center font-Neue text-[1em] text-white transition-all duration-300 group-hover:translate-x-full">
               Show more
             </span>
             <span className="invisible relative">Show more</span>

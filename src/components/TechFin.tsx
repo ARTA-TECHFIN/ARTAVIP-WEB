@@ -39,7 +39,45 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
           }
         }
       },
-      1600
+      2200
+    )
+  }
+
+  const fromSec1ToSec0 = () => {
+    gsap.to(
+      circleRef.current,
+      {
+        duration: 1.5,
+        autoAlpha: 0.0,
+        width: "38em",
+        height: "38em",
+        left: "42%",
+        xPercent: -2,
+        yPercent: -50,
+        ease: 'slow(0.7, 0.7, false)',
+      }
+    )
+
+    gsap.to(
+      '#sec1MaskCircle',
+      {
+        xPercent: 5,
+        duration: 1,
+        attr: {
+          r: "40em",
+        },
+        ease: 'power1.out',
+      }
+    )
+
+    gsap.to(
+      '#sec1Content',
+      {
+        autoAlpha: 0,
+        zIndex: 2,
+        duration: 1,
+        ease: 'ease',
+      }
     )
   }
 
@@ -47,7 +85,7 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
     gsap.to(
       circleRef.current,
       {
-        duration: 1.5,
+        duration: 1.4,
         autoAlpha: 0.25,
         width: "38em",
         height: "38em",
@@ -105,7 +143,7 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
     gsap.to(
       circleRef.current,
       {
-        duration: 1,
+        duration: 0.9,
         autoAlpha: 0.25,
         width: "65em",
         height: "65em",
@@ -183,7 +221,9 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
 
 
   useEffect(() => {
-    if(currentSectionId === 1) {
+    if(currentSectionId === 0) {
+      fromSec1ToSec0()
+    } else if(currentSectionId === 1) {
       fromSec0ToSec1()
     } else if (currentSectionId === 1.5) {
       fromSec1ToSec1_5()

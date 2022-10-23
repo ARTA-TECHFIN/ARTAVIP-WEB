@@ -69,10 +69,7 @@ const pageInfoList: pageInfoItemT[] = [
 const Header: React.FC<{ textColor?: 'white' | 'brown' }> = (props) => {
   const { textColor = 'white' } = props
   const textColorClass = textColor === 'white' ? 'text-arta-snow-100' : 'text-arta-russet-100'
-  const bgColorClass =
-    textColor === 'white'
-      ? 'bg-arta-russet-100 bg-opacity-90'
-      : 'bg-arta-snow-100 bg-opacity-[95%] '
+  const bgColorClass = textColor === 'white' ? 'bg-arta-russet-100/90' : 'bg-arta-snow-100/95'
   const borderColorClass = textColor === 'white' ? 'border-arta-snow-100' : 'border-arta-russet-100'
 
   // For mobile navbar

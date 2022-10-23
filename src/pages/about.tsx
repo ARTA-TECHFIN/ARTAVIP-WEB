@@ -108,9 +108,11 @@ const SectionHeroBanner = () => {
 
 const SectionMission = () => {
   return (
-    <div className="relative">
-      <Image src={mission_bg} alt="" className="h-full w-full" layout="responsive" />
-      <div className="arta-container absolute top-0 flex h-full flex-col items-center justify-center">
+    <div className="group/bg relative overflow-hidden">
+      <div className="easeInOutSine group-hover/bg:scale-100 absolute h-full w-full scale-105 overflow-hidden duration-300">
+        <Image src={mission_bg} alt="" layout="fill" objectFit="cover" />
+      </div>
+      <div className="arta-container relative flex flex-col items-center justify-center py-36">
         <h2 className={`${textClass.title_style2} mb-4 text-center text-arta-eggshell-100`}>
           {t.mission.title}
         </h2>
@@ -133,12 +135,12 @@ const SectionCulture = () => {
   }
 
   return (
-    <div className="relative">
-      <div className="absolute h-full w-full overflow-hidden">
+    <div className="group/bg relative overflow-hidden">
+      <div className="easeInOutSine group-hover/bg:scale-100 absolute h-full w-full scale-150 overflow-hidden duration-300">
         <Image src={culture_bg} alt="" layout="fill" objectFit="cover" />
       </div>
 
-      <div className="arta-container relative grid grid-cols-2 py-28">
+      <div className="arta-container relative grid grid-cols-2 py-36">
         <div className="flex flex-col justify-center">
           <h2 className={`${textClass.h2_style2} mb-2`}>{t.culture.title}</h2>
           <p className={textClass.body_regular}>{t.culture.subtitle1}</p>
@@ -150,10 +152,10 @@ const SectionCulture = () => {
             {t.culture.valueList.map((value, index) => {
               const isSelected = index === selectedIndex
               return (
-                <li key={index} className="group mb-8 flex flex-col overflow-hidden">
+                <li key={index} className="group/list mb-8 flex flex-col overflow-hidden">
                   <button
                     className={
-                      'flex items-start gap-3 overflow-hidden opacity-70 duration-300 ease-out group-hover:translate-x-0 group-hover:opacity-100' +
+                      'group-hover/list:translate-x-0 group-hover/list:opacity-100 flex items-start gap-3 overflow-hidden opacity-70 duration-300 ease-out' +
                       (isSelected ? ' translate-x-0 opacity-100' : ' -translate-x-7')
                     }
                     onClick={() => setSelectedIndex(index)}
@@ -180,11 +182,11 @@ const SectionCulture = () => {
 
 const SectionLeadership = () => {
   return (
-    <div className="relative">
-      <div className="absolute h-full w-full overflow-hidden">
+    <div className="group/bg relative overflow-hidden">
+      <div className="easeInOutSine group-hover/bg:scale-100 absolute h-full w-full scale-150 overflow-hidden duration-300">
         <Image src={leadership_bg} alt="" layout="fill" objectFit="cover" />
       </div>
-      <div className="arta-container relative py-28">
+      <div className="arta-container relative py-36">
         <h2 className={`${textClass.h2_style2} mb-2`}>{t.leadership.title}</h2>
         <ul className="flex w-full max-w-full flex-nowrap overflow-x-auto">
           {t.leadership.leaderList.map((leader, index) => (
@@ -209,7 +211,7 @@ const SectionTechFin = () => {
         <Image src={tech_fin_bg} alt="" layout="fill" objectFit="cover" />
       </div>
 
-      <div className="arta-container relative grid grid-cols-12 py-28">
+      <div className="arta-container relative grid grid-cols-12 py-36">
         <div className="col-span-4 flex items-center">
           <h2 className={textClass.h2_style2}>{t.techFin.title}</h2>
         </div>
@@ -226,7 +228,7 @@ const SectionTechFin = () => {
       </div>
 
       {/* SectionEcosystem */}
-      <div className="relative flex flex-col items-center overflow-hidden pb-28">
+      <div className="relative flex flex-col items-center overflow-hidden pb-36">
         <div className="mb-12 max-w-3xl text-center">
           <h3 className={textClass.h3_style2}>{t.ecosystem.title}</h3>
           <p className={textClass.body_regular}>{t.ecosystem.subtitle}</p>
@@ -252,12 +254,12 @@ const SectionTechFin = () => {
 
 const SectionTechFinVsFinTech = () => {
   return (
-    <div className="relative pb-28">
-      <div className="absolute h-full w-full overflow-hidden">
+    <div className="group/bg relative overflow-hidden pb-36">
+      <div className="easeInOutSine group-hover/bg:scale-100 absolute h-full w-full scale-105 overflow-hidden duration-300">
         <Image src={compare_bg} alt="" layout="fill" objectFit="cover" />
       </div>
 
-      <div className="arta-container relative grid grid-cols-12 pt-28">
+      <div className="arta-container relative grid grid-cols-12 pt-36">
         <div className="col-span-5 flex items-center justify-center">
           <div className="flex aspect-square w-full -translate-y-12 flex-col items-center justify-center rounded-full bg-arta-eggshell-100 p-12 text-center">
             <h3 className={textClass.h2_style2}>{t.techFinVsFinTech.techFinTitle}</h3>

@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app'
 import 'src/styles/global.css'
+import 'src/styles/typography.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />

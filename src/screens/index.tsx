@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import ReactDOM from 'react-dom';
-import ReactFullpage, { fullpageApi } from '@fullpage/react-fullpage';
-import { gsap } from 'gsap'
-
-import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import ReactFullpage from '@fullpage/react-fullpage';
 import About from '../components/About'
 import { BreakBarriers } from './breakBarriers'
 import TechFin from '../components/TechFin'
-import { updateSectionScroll, scrolling } from '../helpers/updateSection'
+import Footer from 'src/components/Footer';
 
 export const Screens = () => {
 
@@ -34,7 +29,7 @@ export const Screens = () => {
     <ReactFullpage
       //fullpage options
       licenseKey="KEO76-3R4A7-1FJ48-SVJ58-YVOFN"
-      scrollingSpeed = {1000} /* Options here */
+      scrollingSpeed = {800}
       onLeave={slideLeaveEvent}
       render={({ state, fullpageApi }) => {
         if (disableScroll) fullpageApi.setAllowScrolling(false)
@@ -60,6 +55,9 @@ export const Screens = () => {
               <section className="section section double w-full h-full flex justify-center items-center text-center relative box-border">
                 <About />
               </section>
+              <div className="section fp-auto-height" id="section3"> 
+                <Footer />
+              </div>
             </ReactFullpage.Wrapper>
           </>
         );

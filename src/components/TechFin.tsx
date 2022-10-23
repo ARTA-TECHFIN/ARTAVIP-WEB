@@ -9,8 +9,6 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
   const TechRef = useRef(null)
   const businessRef = useRef(null)
 
-  let r = 0
-
   const [lastFireTime, setLastFireTime] = useState<number>(Date.now())
   const circleRef = useRef(null)
   const throttle = (fn:any, delay:number) => {    
@@ -18,29 +16,6 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
       fn(); 
       setLastFireTime(Date.now())
     } 
-  }
-
-  const figureRadius = (w: number, h: number) => {
-    return Math.sqrt(Math.pow(w, 2) + Math.pow(h, 2)) / 2
-  }
-
-  const ourBusiness = () => {
-    
-    gsap.fromTo(
-      '#BusinessAnime',
-      {
-        autoAlpha: 0,
-        zIndex: 2,
-      },
-      {
-        delay: 0.8,
-        zIndex: 3,
-        autoAlpha: 1,
-        duration: 1,
-        ease: 'ease',
-        onComplete: scrolling.enable,
-      }
-    )
   }
 
   const wheel = (event: any) => {
@@ -68,126 +43,83 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
     )
   }
 
-
-  const backToBarriers = () => {
-    scrolling.enable()
-    const section = document.querySelectorAll('.home')[0]
-    updateSectionScroll(section)
-  }
-
-  const continueScroll = () => {
-    scrolling.enable()
-    const section = document.querySelectorAll('.lastone')[0]
-    updateSectionScroll(section)
-  }
-
-  const returnToFinTech = () => {
-    gsap.fromTo(
-      '#BusinessAnime',
+  const fromSec0ToSec1 = () => {
+    gsap.to(
+      circleRef.current,
       {
+        duration: 1.5,
+        autoAlpha: 0.25,
+        width: "38em",
+        height: "38em",
+        left: "48%",
+        xPercent: -2,
+        yPercent: -50,
+        ease: 'slow(0.7, 0.7, false)',
+      }
+    )
+  
+    gsap.to(
+      '#sec1MaskCircle',
+      {
+        xPercent: 5,
+        duration: 1.7,
+        attr: {
+          r: "45em",
+        },
+        ease: 'power1.out',
+      }
+    )
+
+    gsap.to(
+      '#sec1Content',
+      {
+        delay: 0.5,
         autoAlpha: 1,
         zIndex: 3,
-      },
+        duration: 1.3,
+        ease: 'ease',
+      }
+    )
+
+    gsap.to(
+      businessRef.current,
       {
         delay: 0,
         zIndex: 2,
         autoAlpha: 0,
         duration: 1,
         ease: 'ease',
-        onComplete: scrolling.enable,
       }
     )
-    window.setTimeout(() => {
-      document.querySelectorAll('#BusinessAnime')[0].classList.add('hidden')
-      document.querySelectorAll('#sec1Content')[0].classList.remove('hidden')
-    }, 1000)
-  }
 
-  let active = false
-
-  const mask = () => {
-    const elementGoAway = document.querySelector('#goAway')
-    if (!elementGoAway) return
-
-    const widthHeight = (elementGoAway as any).getBBox()
-    r = figureRadius(widthHeight.width, widthHeight.height)
-    if (!active) {
-      gsap.set('#sec1MaskCircle', { attr: { cx: 50, r: r } })
-    }
-  }
-
-
-  const fromSec0ToSec1 = () => {
-    gsap.fromTo(
-      circleRef.current,
+    gsap.to(
+      '#video',
       {
-        autoAlpha: 0,
-        width: window.outerWidth / 1.8,
-        height: window.outerWidth / 1.8,
-        xPercent: -59,
-        yPercent: -50,
-      },
-      {
-        delay: 0.5,
-        duration: 1.4,
-        autoAlpha: 0.25,
-        width: window.outerWidth / 1.6,
-        height: window.outerWidth / 1.6,
-        xPercent: -48,
-        yPercent: -50,
+        filter: 'hue-rotate(0deg)',
         ease: 'slow(0.7, 0.7, false)',
-      }
-    )
-    
-    const elementGoAway = document.querySelector('#goAway')
-    const widthHeight = (elementGoAway as any).getBBox()
-    r = figureRadius(widthHeight.width, widthHeight.height)
-    gsap.set('#sec1MaskCircle', { attr: { cx: 50, r: r } })
-
-    gsap.fromTo(
-      '#sec1MaskCircle',
-      {
-        xPercent: 0,
-        attr: {
-          r: 50,
-        },
-      },
-      {
-        xPercent: 5,
-        duration: 1.8,
-        attr: {
-          r: r,
-        },
-        ease: 'power1.out',
       }
     )
   }
 
   const fromSec1ToSec1_5 = () => {
-    console.log("fromSec1ToSec1_5")
     gsap.to(
       circleRef.current,
       {
         duration: 1,
         autoAlpha: 0.25,
-        width: window.outerWidth / 1.2,
-        height: window.outerWidth / 1.2,
-        xPercent: -150,
+        width: "65em",
+        height: "65em",
+        xPercent: -110,
         yPercent: -50,
         ease: 'slow(0.7, 0.7, false)',
       }
     )
 
-    const elementGoAway = document.querySelector('#goAway')
-    const widthHeight = (elementGoAway as any).getBBox()
-    r = figureRadius(widthHeight.width, widthHeight.height)
     gsap.to(
       '#sec1MaskCircle',
       {
         attr: {
-          r: () => {
-            return r * 2
-          },
+          r: "90em",
         },
         ease: 'slow(0.7, 0.7, false)',
       }
@@ -211,12 +143,8 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
       }
     )
 
-    gsap.fromTo(
-      '#BusinessAnime',
-      {
-        autoAlpha: 0,
-        zIndex: 2,
-      },
+    gsap.to(
+      businessRef.current,
       {
         delay: 0.8,
         zIndex: 3,
@@ -227,12 +155,40 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
     )
   }
 
+  const fromSec1_5ToSec2 = () => {
+    gsap.to(
+      businessRef.current,
+      {
+        delay: 0,
+        zIndex: 3,
+        autoAlpha: 0,
+        duration: 1,
+        ease: 'ease',
+      }
+    )
+
+    gsap.to(
+      circleRef.current,
+      {
+        duration: 1,
+        autoAlpha: 0,
+        width: "70em",
+        height: "70em",
+        xPercent: -115,
+        yPercent: -50,
+        ease: 'slow(0.7, 0.7, false)',
+      }
+    )
+  }
+
 
   useEffect(() => {
     if(currentSectionId === 1) {
       fromSec0ToSec1()
     } else if (currentSectionId === 1.5) {
       fromSec1ToSec1_5()
+    } else if (currentSectionId === 2) {
+      fromSec1_5ToSec2()
     }
   }, [currentSectionId])
 
@@ -267,7 +223,7 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
                 height="100%"
                 fill="#fff"
               />
-              <circle id="sec1MaskCircle" r="200" fill="black" cx="50%" cy="50%" />
+              <circle id="sec1MaskCircle" r="40em" fill="black" cx="0" cy="50%" />
             </mask>
             <linearGradient id="sec1MaskGradient" gradientTransform="rotate(90)">
               <stop offset="5%" stopColor="#241307" />
@@ -294,12 +250,12 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
           <div
             id="sec1Content"
             ref={TechRef}
-            className="mr-auto flex h-full w-full flex-col justify-center gap-[24px] text-left items-end text-right"
+            className="mr-auto flex h-full w-full flex-col justify-center gap-[24px] text-left items-end text-right opacity-0"
           >
-            <h1 className="font-Verah text-[3.4em] text-white text-left">
+            <h1 className="font-Verah text-[3.4em] text-white text-left tracking-[0.06em]">
               What is TechFin
             </h1>
-            <p className="max-w-full pb-5 text-left font-Neue text-[1em] text-white max-w-[30em] text-right">
+            <p className="pb-5 text-left font-Neue text-[1em] text-white max-w-[30em] text-right">
               ARTA TechFin believes that technology is the key to building a
               happier and more fulfilling future for all. As technology has
               continually transformed how we live and do business, it is
@@ -328,78 +284,83 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
                 </svg>
                 <span> Explore more</span>
               </span>
-              <span className="ease absolute flex h-full w-full transform items-center justify-center font-Neue text-[16px] leading-[24px] text-white transition-all duration-300 group-hover:translate-x-full">
+              <span className="ease absolute flex h-full w-full transform items-center justify-center font-Neue text-[1em] text-white transition-all duration-300 group-hover:translate-x-full">
                 Explore more
               </span>
               <span className="invisible relative">Explore more</span>
             </a>
           </div>
-          <div id="circle" ref={circleRef} className="absolute top-1/2 left-1/2 z-0 border-2 border-white rounded-full opacity-0 pointer-events-none"></div>
+          <div id="circle" ref={circleRef} className="absolute w-[38em] h-[38em] top-1/2 left-[41%] z-0 border-2 border-white rounded-full opacity-0 pointer-events-none transform -translate-y-[50%] -translate-x-[44%]"></div>
         </div>
         <div
-          id="BusinessAnime"
           ref={businessRef}
-          className="absolute flex h-full flex-col items-start justify-center justify-items-center gap-[24px] text-white opacity-0 z-2"
+          className="absolute left-[4em] top-1/2 transform -translate-y-1/2 text-white opacity-0 z-2"
         >
-          <h1 className="font-verah text-[48px] text-white md:text-[68px]">
+          <h1 className="text-left font-verah text-[3.4em] tracking-[0.06em]">
             Our Businesses
           </h1>
-          <p className="max-w-full pb-5 text-left font-Neue text-base text-white md:max-w-[600px]">
+          <p className="max-w-full pb-5 text-left font-Neue text-[1em] max-w-[30em]">
             ARTA TechFin is determined to create the fairest, most transparent,
             and open markets in the world. We carry this out every day by
             providing clients with a variety of financial services.
           </p>
-          <ul className="flex w-full list-none flex-col items-center justify-center gap-[24px] lg:flex-row lg:items-start">
-            <li className="activeList innerShadow">
-              <a href="#">Asset Management</a>
+          <ul className="flex w-full list-none flex-row gap-[1.2em]">
+            <li className="flex flex-col gap-4 relative">
+              <div className="innerShadow flex w-[12em] h-[12em] text-[1em] items-center justify-center rounded-full border border-white transition">
+                <a href="#">Asset Management</a>
+              </div>
+
+              <div className="absolute w-full bottom-0 left-1/2 transform translate-y-full -translate-x-1/2">
+                <p className="text-center font-Neue text-[0.7em] text-white w-full my-[1em] mx-auto">
+                  We develop innovative and transformative blockchain-enabled
+                  solutions for financial services processes and products.
+                </p>
+                <a
+                  href="#_"
+                  className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-white  py-[0.5em] px-[2em] font-Neue text-[0.7em] font-normal text-white shadow-md transition duration-300 ease-out sm:w-fit"
+                >
+                  <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-4 bg-[#f1eded45] font-Neue text-white duration-300 group-hover:translate-x-0">
+                    <svg
+                      className="h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      ></path>
+                    </svg>
+                    <span>Learn more</span>
+                  </span>
+                  <span className="ease absolute flex h-full w-full transform items-center justify-center font-Neue text-white transition-all duration-300 group-hover:translate-x-full">
+                    Learn more
+                  </span>
+                  <span className="invisible relative font-Neue">Learn more</span>
+                </a>
+              </div>
             </li>
-            <li className="list hidden lg:flex">
+            <li className="flex w-[11em] h-[11em] text-[0.8em] items-center self-center justify-center rounded-full border border-white transition">
               {' '}
               <a href="#">Investment Banking</a>
             </li>
-            <li className="list hidden lg:flex">
+            <li className="flex w-[11em] h-[11em] text-[0.8em] items-center self-center justify-center rounded-full border border-white transition">
               {' '}
               <a href="#">Insurance Brokerage</a>
             </li>
-            <li className="list hidden lg:flex">
+            <li className="flex w-[11em] h-[11em] text-[0.8em] items-center self-center justify-center rounded-full border border-white transition">
               {' '}
               <a href="#">Securities Brokerage</a>
             </li>
-            <li className="list hidden lg:flex">
+            <li className="flex w-[11em] h-[11em] text-[0.8em] items-center self-center justify-center rounded-full border border-white transition">
               {' '}
               <a href="#">Artazine</a>
             </li>
           </ul>
-          <p className="max-w-full pb-5 text-left font-Neue text-base text-white md:max-w-[220px]">
-            We develop innovative and transformative blockchain-enabled
-            solutions for financial services processes and products.
-          </p>
-          <a
-            href="#_"
-            className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-white  py-[8px] px-[32px] font-Neue text-base font-normal text-white shadow-md transition duration-300 ease-out sm:w-fit"
-          >
-            <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-4 bg-[#f1eded45] font-Neue text-white duration-300 group-hover:translate-x-0">
-              <svg
-                className="h-4 w-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-              <span> Learn more</span>
-            </span>
-            <span className="ease absolute flex h-full w-full transform items-center justify-center font-Neue text-[16px] leading-[24px] text-white transition-all duration-300 group-hover:translate-x-full">
-              Learn more
-            </span>
-            <span className="invisible relative font-Neue">Learn more</span>
-          </a>
+          
         </div>
         
       </div>

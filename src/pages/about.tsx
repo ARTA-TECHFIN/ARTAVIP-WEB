@@ -6,12 +6,12 @@ import Header from 'src/components/Header/Header'
 import Footer from 'src/components/Footer'
 import { Seo } from 'src/components/Seo'
 
-import banner from 'src/components/About/img/banner.png'
+import banner from 'src/components/About/img/banner.jpg'
 import mission_bg from 'src/components/About/img/mission_bg.png'
 import culture_bg from 'src/components/About/img/culture_bg.png'
 import leadership_bg from 'src/components/About/img/leadership_bg.png'
 import tech_fin_bg from 'src/components/About/img/tech_fin_bg.png'
-import compare_bg from 'src/components/About/img/compare_bg.png'
+import compare_bg from 'src/components/About/img/compare_bg.jpg'
 
 import leader_1 from 'src/components/About/img/leader_1.jpg'
 
@@ -287,7 +287,7 @@ const AboutPage: NextPage = () => {
     <>
       <Seo />
       <Header textColor="brown" />
-      <main className="flex flex-col bg-arta-sunray-100 text-arta-sand-100">
+      <main className="flex flex-col bg-[#D1C2AC] text-arta-sand-100">
         <SectionHeroBanner />
         <SectionMission />
         <SectionCulture />

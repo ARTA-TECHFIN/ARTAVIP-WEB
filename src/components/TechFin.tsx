@@ -53,7 +53,7 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
         height: "38em",
         left: "42%",
         xPercent: -2,
-        yPercent: -50,
+        yPercent: 0,
         ease: 'slow(0.7, 0.7, false)',
       }
     )
@@ -91,7 +91,7 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
         height: "38em",
         left: "48%",
         xPercent: -2,
-        yPercent: -50,
+        yPercent: 0,
         ease: 'slow(0.7, 0.7, false)',
       }
     )
@@ -148,7 +148,7 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
         width: "65em",
         height: "65em",
         xPercent: -110,
-        yPercent: -50,
+        yPercent: -20,
         ease: 'slow(0.7, 0.7, false)',
       }
     )
@@ -213,7 +213,7 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
         width: "70em",
         height: "70em",
         xPercent: -115,
-        yPercent: -50,
+        yPercent: 0,
         ease: 'slow(0.7, 0.7, false)',
       }
     )
@@ -359,7 +359,7 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
                   href="#_"
                   className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-white  py-[0.5em] px-[2em] font-Neue text-[0.7em] font-normal text-white shadow-md transition duration-300 ease-out sm:w-fit"
                 >
-                  <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-4 bg-[#f1eded45] font-Neue text-white duration-300 group-hover:translate-x-0">
+                  <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-2 bg-[#f1eded45] font-Neue text-white duration-300 group-hover:translate-x-0">
                     <svg
                       className="h-4 w-4"
                       fill="none"

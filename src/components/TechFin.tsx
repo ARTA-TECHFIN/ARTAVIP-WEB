@@ -110,9 +110,21 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
     throttle(
       () => {
         if (event.nativeEvent.wheelDelta > 0) { // Up
-          currentSectionId === 1 ? setTriggerSection(0) : setCurrentSectionById(1)
+          if (currentSectionId === 1) {
+            // From 1 to 0
+            setTriggerSection(0)
+          } else {
+            // From 1.5 to 1
+            setCurrentSectionById(1)
+          }
         } else { // Down
-          currentSectionId === 1 ? setCurrentSectionById(1.5) : setTriggerSection(3)
+          if (currentSectionId === 1) {
+            // From 1 to 1.5
+            setCurrentSectionById(1.5)
+          } else {
+            // From 1.5 to 2
+            setTriggerSection(3)
+          }
         }
       },
       1600

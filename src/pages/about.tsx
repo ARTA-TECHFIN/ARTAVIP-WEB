@@ -15,9 +15,11 @@ import compare_bg from 'src/components/About/img/compare_bg.jpg'
 
 import leader_1 from 'src/components/About/img/leader_1.jpg'
 
+import eco_icon1 from 'src/components/About/img/eco_icon1.png'
+
 import { textClass } from 'src/components/Text'
 import { useState } from 'react'
-import { IconArrowRight } from 'src/components/Icon'
+import { IconArrowLeft, IconArrowRight, IconListItemArrow } from 'src/components/Icon'
 import { Hr } from 'src/components/Hr'
 
 import { gsap } from 'gsap'
@@ -68,13 +70,13 @@ const t = {
   ecosystem: {
     title: 'Our Ecosystem',
     subtitle: `Supported by ARTA TechFin’s major shareholder, we work closely with our affiliates within the ecosystem, which comprises our clients, shareholders, business partners and investee companies, to build an inter-connected network that creates value for all.`,
+    // Must be 5
     itemList: [
-      // TODO: fix image
-      { title: 'Technology/Internet Companies', image: '???????' },
-      { title: 'Technology/Internet Companies', image: '???????' },
-      { title: 'Technology/Internet Companies', image: '???????' },
-      { title: 'Technology/Internet Companies', image: '???????' },
-      { title: 'Technology/Internet Companies', image: '???????' },
+      { title: '1 Technology/Internet Companies', image: eco_icon1 },
+      { title: '2 Technology/Internet Companies', image: eco_icon1 },
+      { title: '3 Technology/Internet Companies', image: eco_icon1 },
+      { title: '4 Technology/Internet Companies', image: eco_icon1 },
+      { title: '5 Technology/Internet Companies', image: eco_icon1 },
     ],
   },
   techFinVsFinTech: {
@@ -160,7 +162,7 @@ const SectionCulture = () => {
                     }
                     onClick={() => setSelectedIndex(index)}
                   >
-                    <IconArrowRight className="h-4 w-4 pt-[10px]" fill="#593725" />
+                    <IconListItemArrow className="h-4 w-4 pt-[10px]" fill="#593725" />
                     <span className={textClass.title}>{value.title}</span>
                   </button>
                   <span
@@ -205,6 +207,8 @@ const SectionLeadership = () => {
 }
 
 const SectionTechFin = () => {
+  const [selectedIndex, setSelectedIndex] = useState(2)
+
   return (
     <div className="relative flex flex-col">
       <div className="absolute h-full w-full overflow-hidden">
@@ -228,24 +232,59 @@ const SectionTechFin = () => {
       </div>
 
       {/* SectionEcosystem */}
-      <div className="relative flex flex-col items-center overflow-hidden pb-36">
+      <div className="relative flex flex-col items-center pb-36">
         <div className="mb-12 max-w-3xl text-center">
           <h3 className={textClass.h3_style2}>{t.ecosystem.title}</h3>
           <p className={textClass.body_regular}>{t.ecosystem.subtitle}</p>
         </div>
-        <div>
-          <div className="flex w-full max-w-full flex-nowrap overflow-auto">
-            {t.ecosystem.itemList.map((item, index) => (
+        <div className="relative h-96 w-full max-w-full overflow-hidden">
+          {t.ecosystem.itemList.map((item, index) => {
+            const isSelected = index === selectedIndex
+            const styledIndex = (index - selectedIndex + 7) % 5
+
+            return (
               <div
                 key={index}
-                className="mx-4 flex h-64 w-64 flex-col items-center justify-center rounded-full bg-arta-eggshell-100 shadow"
+                className={
+                  'absolute left-1/2 flex aspect-square flex-col items-center justify-center rounded-full shadow-2xl transition-all duration-300' +
+                  [
+                    ' top-[24%] h-[60%] translate-x-[-300%]',
+                    ' top-[10%] h-[70%] translate-x-[-164%]',
+                    ' top-0 h-[80%] translate-x-[-50%]',
+                    ' top-[10%] h-[70%] translate-x-[64%]',
+                    ' top-[24%] h-[60%] translate-x-[200%]',
+                  ][styledIndex] +
+                  (isSelected
+                    ? ' bg-arta-eggshell-100 text-arta-sand-100'
+                    : ' bg-arta-sand-100/70 text-arta-snow-100')
+                }
               >
+                <div className="relative mb-4 h-16 w-16">
+                  <Image src={item.image} alt="" layout="fill" objectFit="cover" />
+                </div>
                 <span className={`${textClass.body_regular} max-w-[60%] text-center`}>
                   {item.title}
                 </span>
               </div>
-            ))}
-          </div>
+            )
+          })}
+
+          <button
+            className="absolute bottom-4 left-1/2 translate-x-[-350%]"
+            onClick={() =>
+              setSelectedIndex((s) =>
+                !t.ecosystem.itemList[s - 1] ? t.ecosystem.itemList.length - 1 : s - 1
+              )
+            }
+          >
+            <IconArrowLeft fill="#593725" />
+          </button>
+          <button
+            className="absolute bottom-4 left-1/2 translate-x-[250%]"
+            onClick={() => setSelectedIndex((s) => (!t.ecosystem.itemList[s + 1] ? 0 : s + 1))}
+          >
+            <IconArrowRight fill="#593725" />
+          </button>
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@ import { ChevronDownIcon, ChevronUpIcon, XIcon } from '@heroicons/react/outline'
 import MobileNavbar from './MobileNavbar'
 import { gsap } from 'gsap'
 import ClickAwayListener from 'react-click-away-listener'
-import { IconArrowRight } from '../Icon'
+import { IconListItemArrow } from '../Icon'
 
 type pageInfoItemT = {
   pageName: string
@@ -179,7 +179,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown' }> = (props) => {
                         className="group relative -translate-x-4 cursor-pointer list-none py-2 px-2 text-[16px] leading-[24px] opacity-70 duration-300 ease-out hover:translate-x-0 hover:opacity-100"
                       >
                         <span className="flex items-start pl-5">
-                          <IconArrowRight
+                          <IconListItemArrow
                             fill={textColor === 'white' ? '#F4F1E1' : '#2E1605'}
                             className=" ease mr-2 mt-1 hidden h-4 w-4 -translate-x-full duration-300 group-hover:block group-hover:translate-x-0"
                           />

@@ -1,15 +1,24 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { updateSectionScroll, scrolling } from '../helpers/updateSection'
 
-const TechFin = () => {
+const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTriggerSection}: any) => {
   const TechRef = useRef(null)
   gsap.registerPlugin(ScrollTrigger)
   const businessRef = useRef(null)
 
   let r = 0
   let active = false
+
+  const [lastFireTime, setLastFireTime] = useState<number>(Date.now())
+
+  const throttle = (fn:any, delay:number) => {    
+    if((lastFireTime + delay - Date.now() ) < 0) {
+      fn(); 
+      setLastFireTime(Date.now())
+    } 
+  }
 
   const figureRadius = (w: number, h: number) => {
     return Math.sqrt(Math.pow(w, 2) + Math.pow(h, 2)) / 2
@@ -97,11 +106,26 @@ const TechFin = () => {
     )
   }
 
+  const wheel = (event: any) => {
+    throttle(
+      () => {
+        if (event.nativeEvent.wheelDelta > 0) { // Up
+          currentSectionId === 1 ? setTriggerSection(0) : setCurrentSectionById(1)
+        } else { // Down
+          currentSectionId === 1 ? setCurrentSectionById(1.5) : setTriggerSection(3)
+        }
+      },
+      1600
+    )
+  }
+
+
   const backToBarriers = () => {
     scrolling.enable()
     const section = document.querySelectorAll('.home')[0]
     updateSectionScroll(section)
   }
+
   const continueScroll = () => {
     scrolling.enable()
     const section = document.querySelectorAll('.lastone')[0]
@@ -191,7 +215,7 @@ const TechFin = () => {
 
 
   return (
-    <div className="h-screen w-[100vw]">
+    <div className="h-screen w-[100vw]" onWheel={(event) => wheel(event)}>
       <div className="video-container absolute h-full w-full top-0 left-0">
         {/* <svg id="demo" className="absolute h-full w-full z-1">
           <defs>

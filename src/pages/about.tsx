@@ -336,9 +336,7 @@ const AboutPage: NextPage = () => {
         <SectionTechFin />
         <SectionTechFinVsFinTech />
       </main>
-      <footer className="relative z-2 h-full w-full bg-[#402414]">
-        <Footer />
-      </footer>
+      <Footer textColor="brown" />
     </>
   )
 }

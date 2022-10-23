@@ -85,7 +85,7 @@ export const BreakBarriers = () => {
           <h1
             id="animation"
             ref={sec1TtlRef}
-            className="z-[200] font-Verah text-[36px] leading-[40px] text-white sm:text-[5em] sm:leading-[1.02em] movable text-left"
+            className="z-[200] font-Verah text-[5em] leading-[1.02em] text-white movable text-left"
           >
             BREAK
             <br />

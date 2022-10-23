@@ -87,7 +87,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown' }> = (props) => {
   return (
     <div className="fixed z-10 w-full">
       <ClickAwayListener onClickAway={() => setActiveTabIndex(DEFAULT_TAB_INDEX)}>
-        <header className="max-w-main-contain py-8 px-6 md:py-12 md:px-24 xl:mx-auto">
+        <header className="w-full py-[4em] px-[4em] xl:mx-auto">
           <div className="flex w-full justify-between space-x-6">
             <div className="hidden items-center justify-center space-x-8 lg:flex">
               {pageInfoList.map((page, index) => {
@@ -101,7 +101,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown' }> = (props) => {
                   >
                     <span
                       className={
-                        'z-[3] text-[1em] leading-[24px] decoration-arta-sunray-100 underline-offset-[20px] transition group-hover:underline' +
+                        'z-[3] text-[1.1em] leading-[24px] decoration-arta-sunray-100 underline-offset-[20px] transition group-hover:underline' +
                         (selected ? ' underline' : '')
                       }
                     >
@@ -121,7 +121,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown' }> = (props) => {
             <div className="z-[1] text-right">
               <Link href="/">
                 <div className="relative cursor-pointer opacity-100 transition hover:opacity-100">
-                  <img src="/images/arta-logo.svg" alt="Arta" className="object-contain" />
+                  <img src="/images/arta-logo.svg" alt="Arta" className="w-[7em]" />
                 </div>
               </Link>
             </div>

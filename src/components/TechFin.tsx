@@ -369,7 +369,7 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
             and open markets in the world. We carry this out every day by
             providing clients with a variety of financial services.
           </p>
-          <ul className="flex w-full list-none flex-row gap-[1.2em] min-h-[12em]">
+          <ul className="flex w-full list-none flex-row min-h-[12em]">
             {
               businesses.map((business:any, i:number) => (<BusinessCircle key={i} index={i} business={business} selectedBusiness={selectedBusiness} setSelectedBusiness={setSelectedBusiness} />))
             }
@@ -383,47 +383,43 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
 const BusinessCircle = ({index, business, selectedBusiness, setSelectedBusiness}:any) => {
   if (business) {
     return (
-      <li className="flex relative self-center" onMouseEnter={() => setSelectedBusiness(index)}>
-        <div className={cn(`${index === selectedBusiness? "innerShadow !w-[12em] !h-[12em]":""} w-[10em] h-[10em] text-[0.9em] flex text-[1em] items-center self-center justify-center rounded-full border border-white transition-all hover:w-[12em] hover:h-[12em]`)}>
+      <li className="flex relative self-center min-w-[11.8em] justify-center" onMouseEnter={() => setSelectedBusiness(index)}>
+        <div className={cn(`${index === selectedBusiness? "innerShadow !w-[11.8em] !h-[11.8em] !text-[1em] !opacity-100":""} w-[10em] h-[10em] text-[0.85em] flex items-center self-center justify-center rounded-full border border-white opacity-70 transition-all hover:opacity-100 hover:w-[12em] hover:h-[12em]`)}>
           <a href="#">{business.title}</a>
         </div>
 
-        {
-          index === selectedBusiness && (
-            <div className="absolute w-full bottom-0 left-1/2 transform translate-y-full -translate-x-1/2">
-              <p className="text-center font-Neue text-[0.7em] text-white w-full my-[1em] mx-auto">
-                We develop innovative and transformative blockchain-enabled
-                solutions for financial services processes and products.
-              </p>
-              <a
-                href="#_"
-                className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-white  py-[0.5em] px-[2em] font-Neue text-[0.7em] font-normal text-white shadow-md transition duration-300 ease-out sm:w-fit"
+        <div className={`absolute w-full bottom-0 left-1/2 transform translate-y-full -translate-x-1/2 opacity-0 transition-all duration-300 ${index === selectedBusiness && 'opacity-100'}`}>
+          <p className="text-center font-Neue text-[0.7em] text-white w-full my-[1em] mx-auto">
+            We develop innovative and transformative blockchain-enabled
+            solutions for financial services processes and products.
+          </p>
+          <a
+            href="#_"
+            className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-white  py-[0.5em] px-[2em] font-Neue text-[0.7em] font-normal text-white shadow-md transition duration-300 ease-out sm:w-fit"
+          >
+            <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-2 bg-[#f1eded45] font-Neue text-white duration-300 group-hover:translate-x-0">
+              <svg
+                className="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-2 bg-[#f1eded45] font-Neue text-white duration-300 group-hover:translate-x-0">
-                  <svg
-                    className="h-4 w-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                  <span>Learn more</span>
-                </span>
-                <span className="ease absolute flex h-full w-full transform items-center justify-center font-Neue text-white transition-all duration-300 group-hover:translate-x-full">
-                  Learn more
-                </span>
-                <span className="invisible relative font-Neue">Learn more</span>
-              </a>
-            </div>
-          )
-        }
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+              <span>Learn more</span>
+            </span>
+            <span className="ease absolute flex h-full w-full transform items-center justify-center font-Neue text-white transition-all duration-300 group-hover:translate-x-full">
+              Learn more
+            </span>
+            <span className="invisible relative font-Neue">Learn more</span>
+          </a>
+        </div>
       </li>
     )
   }

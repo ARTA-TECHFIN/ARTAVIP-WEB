@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { gsap } from 'gsap'
 
-export const BreakBarriers = () => {
+export const BreakBarriers = ({currentSectionId}: any) => {
   const sec1TtlRef = useRef(null)
   const sec1VideoRef = useRef(null)
+  const sec1Container = useRef(null)
   const [windowDimension, setWindowDemension] = useState<{x: number, y: number}>({x:0,y:0})
 
   var request: any = null
@@ -28,12 +29,36 @@ export const BreakBarriers = () => {
     )
   }, [])
 
+  useEffect(() => {
+    if (currentSectionId === 1) {
+      gsap.to(
+        sec1Container.current,
+        {
+          delay: 0.1,
+          duration: 0.5,
+          yPercent: 40,
+          autoAlpha: 0,
+          ease: "easeInOutCubic"
+        }
+      )
+    } else {
+      gsap.to(
+        sec1Container.current,
+        {
+          duration: 0.8,
+          yPercent: 0,
+          autoAlpha: 1,
+          ease: "ease"
+        }
+      )
+    }
+  }, [currentSectionId])
+
   const section1HandleMouseMove = (event: any) => {
     mouse.x = event.pageX
     mouse.y = event.pageY
     cancelAnimationFrame(request)
     request = requestAnimationFrame(updateSec1TextPos)
-    request = requestAnimationFrame(updateSec1Video)
   }
 
   function updateSec1TextPos() {
@@ -65,8 +90,9 @@ export const BreakBarriers = () => {
 
   return (
     <section
+      ref={sec1Container}
       id="break-barriers"
-      className=" relative flex w-full flex-col bg-arta-russet-100 z-3 tigger-01"
+      className=" relative flex w-screen h-screen overflow-hidden flex-col bg-arta-russet-100 z-3 tigger-01"
       onMouseMove={(ev) => section1HandleMouseMove(ev)}
     >
       <video
@@ -76,7 +102,7 @@ export const BreakBarriers = () => {
         muted
         playsInline
         crossOrigin="anonymous"
-        className="h-[100vh] w-full object-cover"
+        className="h-full w-full object-cover"
       >
         <source src="/videos/Comp 1_2.mp4" typeof="video/mp4" />
         Your browser does not support the video tag.

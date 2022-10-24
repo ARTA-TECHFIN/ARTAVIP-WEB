@@ -15,8 +15,10 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
   const [selectedBusiness, setSelectedBusiness] = useState(0)
 
   const [lastFireTime, setLastFireTime] = useState<number>(Date.now())
-  const throttle = (fn:any, delay:number) => {    
+  const throttle = (fn:any, delay:number) => {   
+    console.log("throttle") 
     if((lastFireTime + delay - Date.now() ) < 0) {
+      console.log("pass")
       fn(); 
       setLastFireTime(Date.now())
     } 
@@ -66,7 +68,7 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
           }
         }
       },
-      2100
+      1800
     )
   }
 
@@ -183,6 +185,7 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
     gsap.to(
       sec1MaskCircleRef.current,
       {
+        duration: 0.9,
         attr: {
           r: "90em",
         },
@@ -383,8 +386,8 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
 const BusinessCircle = ({index, business, selectedBusiness, setSelectedBusiness}:any) => {
   if (business) {
     return (
-      <li className="flex relative self-center min-w-[11.8em] justify-center" onMouseEnter={() => setSelectedBusiness(index)}>
-        <div className={cn(`${index === selectedBusiness? "innerShadow !w-[11.8em] !h-[11.8em] !text-[1em] !opacity-100":""} w-[10em] h-[10em] text-[0.85em] flex items-center self-center justify-center rounded-full border border-white opacity-70 transition-all hover:opacity-100 hover:w-[12em] hover:h-[12em]`)}>
+      <li className="flex relative self-center min-w-[11.7em] justify-center" onMouseEnter={() => setSelectedBusiness(index)}>
+        <div className={cn(`${index === selectedBusiness? "innerShadow !w-[11.7em] !h-[11.7em] !text-[1em] !opacity-100":""} w-[10em] h-[10em] text-[0.85em] flex items-center self-center justify-center rounded-full border border-white opacity-70 transition-all hover:opacity-100 hover:w-[12em] hover:h-[12em]`)}>
           <a href="#">{business.title}</a>
         </div>
 

@@ -15,8 +15,7 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
   const [selectedBusiness, setSelectedBusiness] = useState(0)
 
   const [lastFireTime, setLastFireTime] = useState<number>(Date.now())
-  const throttle = (fn:any, delay:number) => {   
-    console.log("throttle") 
+  const throttle = (fn:any, delay:number) => { 
     if((lastFireTime + delay - Date.now() ) < 0) {
       console.log("pass")
       fn(); 

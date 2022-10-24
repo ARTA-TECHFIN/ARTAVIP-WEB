@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import ReactFullpage from '@fullpage/react-fullpage';
-import About from '../components/About'
+import About from './about'
 import { BreakBarriers } from './breakBarriers'
-import TechFin from '../components/TechFin'
+import TechFin from './techFin'
 import Footer from 'src/components/Footer';
 
-export const Screens = () => {
+export const Slides = () => {
 
   const [disableScroll, setDisableScroll] = useState(false)
   const [currentSectionId, setCurrentSectionId] = useState<number>(0)

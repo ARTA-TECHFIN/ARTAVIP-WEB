@@ -1,6 +1,6 @@
 import React from 'react'
 
-const About: React.FC = () => {
+const about: React.FC = () => {
   return (
     <div className="relative z-3 h-screen w-screen flex">
       <div className="video-container absolute h-full w-full top-0 left-0">
@@ -61,4 +61,4 @@ const About: React.FC = () => {
   )
 }
 
-export default About
+export default about

@@ -3,7 +3,7 @@ import React from 'react'
 import Header from 'src/components/Header/Header'
 import Footer from 'src/components/Footer'
 
-import { Screens } from '../screens'
+import { Slides } from '../views/home'
 import { Seo } from 'src/components/Seo'
 
 const Home: NextPage = () => {
@@ -12,7 +12,7 @@ const Home: NextPage = () => {
       <Seo />
       <Header />
       <main>
-        <Screens />
+        <Slides />
       </main>
       <Footer />
     </>

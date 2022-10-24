@@ -33,6 +33,7 @@ export const BreakBarriers = () => {
     mouse.y = event.pageY
     cancelAnimationFrame(request)
     request = requestAnimationFrame(updateSec1TextPos)
+    request = requestAnimationFrame(updateSec1Video)
   }
 
   function updateSec1TextPos() {
@@ -50,11 +51,11 @@ export const BreakBarriers = () => {
   }
 
   function updateSec1Video() {
-    var dx = mouse.x - cx
-    var dy = mouse.y - cy
+    var dx = mouse.x - windowDimension.x
+    var dy = mouse.y - windowDimension.y
 
-    var tiltx = -(dy / cy) * 0.5
-    var tilty = (dx / cx) * 0.5
+    var tiltx = -(dy / windowDimension.y) * 0.5
+    var tilty = (dx / windowDimension.x) * 0.5
     gsap.to(sec1VideoRef.current, {
       duration: 1,
       transform: 'translate(' + tilty + 'px, ' + tiltx + 'px)',
@@ -64,6 +65,7 @@ export const BreakBarriers = () => {
 
   return (
     <section
+      id="break-barriers"
       className=" relative flex w-full flex-col bg-arta-russet-100 z-3 tigger-01"
       onMouseMove={(ev) => section1HandleMouseMove(ev)}
     >

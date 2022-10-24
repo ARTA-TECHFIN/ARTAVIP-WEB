@@ -1,22 +1,49 @@
 import React, { useRef, useEffect, useState, useLayoutEffect } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import { updateSectionScroll, scrolling } from '../helpers/updateSection'
+import cn from 'classnames'
 
-const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTriggerSection}: any) => {
+const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: any) => {
   gsap.registerPlugin(ScrollTrigger)
   
-  const TechRef = useRef(null)
+  const sec1ContentRef = useRef(null)
   const businessRef = useRef(null)
+  const circleRef = useRef(null)
+  const sec1MaskCircleRef = useRef(null)
+  const sec1VideoRed = useRef(null)
+
+  const [selectedBusiness, setSelectedBusiness] = useState(0)
 
   const [lastFireTime, setLastFireTime] = useState<number>(Date.now())
-  const circleRef = useRef(null)
   const throttle = (fn:any, delay:number) => {    
     if((lastFireTime + delay - Date.now() ) < 0) {
       fn(); 
       setLastFireTime(Date.now())
     } 
   }
+
+  const businesses = [
+    {
+      title: 'Asset Management',
+      description: 'We develop innovative and transformative blockchain-enabled solutions for financial services processes and products.'
+    },
+    {
+      title: 'Investment Banking',
+      description: 'We develop innovative and transformative blockchain-enabled solutions for financial services processes and products.'
+    },
+    {
+      title: 'Insurance Brokerage',
+      description: 'We develop innovative and transformative blockchain-enabled solutions for financial services processes and products.'
+    },
+    {
+      title: 'Securities Brokerage',
+      description: 'We develop innovative and transformative blockchain-enabled solutions for financial services processes and products.'
+    },
+    {
+      title: 'Artazine',
+      description: 'We develop innovative and transformative blockchain-enabled solutions for financial services processes and products.'
+    },
+  ]
 
   const wheel = (event: any) => {
     throttle(
@@ -39,7 +66,7 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
           }
         }
       },
-      2200
+      2100
     )
   }
 
@@ -59,7 +86,7 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
     )
 
     gsap.to(
-      '#sec1MaskCircle',
+      sec1MaskCircleRef.current,
       {
         xPercent: 5,
         duration: 1,
@@ -71,7 +98,7 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
     )
 
     gsap.to(
-      '#sec1Content',
+      sec1ContentRef.current,
       {
         autoAlpha: 0,
         zIndex: 2,
@@ -97,7 +124,7 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
     )
   
     gsap.to(
-      '#sec1MaskCircle',
+      sec1MaskCircleRef.current,
       {
         xPercent: 5,
         duration: 1.7,
@@ -109,7 +136,7 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
     )
 
     gsap.to(
-      '#sec1Content',
+      sec1ContentRef.current,
       {
         delay: 0.5,
         autoAlpha: 1,
@@ -131,7 +158,7 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
     )
 
     gsap.to(
-      '#video',
+      sec1VideoRed.current,
       {
         filter: 'hue-rotate(0deg)',
         ease: 'slow(0.7, 0.7, false)',
@@ -154,7 +181,7 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
     )
 
     gsap.to(
-      '#sec1MaskCircle',
+      sec1MaskCircleRef.current,
       {
         attr: {
           r: "90em",
@@ -164,7 +191,7 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
     )
 
     gsap.to(
-      '#video',
+      sec1VideoRed.current,
       {
         filter: 'hue-rotate(180deg)',
         ease: 'slow(0.7, 0.7, false)',
@@ -172,7 +199,7 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
     )
 
     gsap.to(
-      '#sec1Content',
+      sec1ContentRef.current,
       {
         autoAlpha: 0,
         zIndex: 2,
@@ -232,13 +259,11 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
     }
   }, [currentSectionId])
 
-
-
   return (
     <div className="h-screen w-[100vw] overflow-hidden" onWheel={(event) => wheel(event)}>
       <div className="video-container absolute h-full w-full top-0 left-0">
-        
         <video
+          ref={sec1VideoRed}
           data-keepplaying
           id="video"
           autoPlay
@@ -263,7 +288,7 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
                 height="100%"
                 fill="#fff"
               />
-              <circle id="sec1MaskCircle" r="40em" fill="black" cx="0" cy="50%" />
+              <circle ref={sec1MaskCircleRef} id="sec1MaskCircleRef" r="40em" fill="black" cx="0" cy="50%" />
             </mask>
             <linearGradient id="sec1MaskGradient" gradientTransform="rotate(90)">
               <stop offset="5%" stopColor="#241307" />
@@ -288,8 +313,8 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
         
         <div className="absolute right-[4em] top-1/2 transform -translate-y-1/2 z-3">
           <div
-            id="sec1Content"
-            ref={TechRef}
+            id="sec1ContentRef"
+            ref={sec1ContentRef}
             className="mr-auto flex h-full w-full flex-col justify-center gap-[24px] text-left items-end text-right opacity-0"
           >
             <h1 className="font-Verah text-[3.4em] text-white text-left tracking-[0.06em]">
@@ -344,68 +369,66 @@ const TechFin = ({isEntered, currentSectionId, setCurrentSectionById, setTrigger
             and open markets in the world. We carry this out every day by
             providing clients with a variety of financial services.
           </p>
-          <ul className="flex w-full list-none flex-row gap-[1.2em]">
-            <li className="flex flex-col gap-4 relative">
-              <div className="innerShadow flex w-[12em] h-[12em] text-[1em] items-center justify-center rounded-full border border-white transition">
-                <a href="#">Asset Management</a>
-              </div>
-
-              <div className="absolute w-full bottom-0 left-1/2 transform translate-y-full -translate-x-1/2">
-                <p className="text-center font-Neue text-[0.7em] text-white w-full my-[1em] mx-auto">
-                  We develop innovative and transformative blockchain-enabled
-                  solutions for financial services processes and products.
-                </p>
-                <a
-                  href="#_"
-                  className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-white  py-[0.5em] px-[2em] font-Neue text-[0.7em] font-normal text-white shadow-md transition duration-300 ease-out sm:w-fit"
-                >
-                  <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-2 bg-[#f1eded45] font-Neue text-white duration-300 group-hover:translate-x-0">
-                    <svg
-                      className="h-4 w-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      ></path>
-                    </svg>
-                    <span>Learn more</span>
-                  </span>
-                  <span className="ease absolute flex h-full w-full transform items-center justify-center font-Neue text-white transition-all duration-300 group-hover:translate-x-full">
-                    Learn more
-                  </span>
-                  <span className="invisible relative font-Neue">Learn more</span>
-                </a>
-              </div>
-            </li>
-            <li className="flex w-[11em] h-[11em] text-[0.8em] items-center self-center justify-center rounded-full border border-white transition">
-              {' '}
-              <a href="#">Investment Banking</a>
-            </li>
-            <li className="flex w-[11em] h-[11em] text-[0.8em] items-center self-center justify-center rounded-full border border-white transition">
-              {' '}
-              <a href="#">Insurance Brokerage</a>
-            </li>
-            <li className="flex w-[11em] h-[11em] text-[0.8em] items-center self-center justify-center rounded-full border border-white transition">
-              {' '}
-              <a href="#">Securities Brokerage</a>
-            </li>
-            <li className="flex w-[11em] h-[11em] text-[0.8em] items-center self-center justify-center rounded-full border border-white transition">
-              {' '}
-              <a href="#">Artazine</a>
-            </li>
+          <ul className="flex w-full list-none flex-row gap-[1.2em] min-h-[12em]">
+            {
+              businesses.map((business:any, i:number) => (<BusinessCircle key={i} index={i} business={business} selectedBusiness={selectedBusiness} setSelectedBusiness={setSelectedBusiness} />))
+            }
           </ul>
-          
         </div>
-        
       </div>
     </div>
   )
+}
+
+const BusinessCircle = ({index, business, selectedBusiness, setSelectedBusiness}:any) => {
+  if (business) {
+    return (
+      <li className="flex relative self-center" onMouseEnter={() => setSelectedBusiness(index)}>
+        <div className={cn(`${index === selectedBusiness? "innerShadow !w-[12em] !h-[12em]":""} w-[10em] h-[10em] text-[0.9em] flex text-[1em] items-center self-center justify-center rounded-full border border-white transition-all hover:w-[12em] hover:h-[12em]`)}>
+          <a href="#">{business.title}</a>
+        </div>
+
+        {
+          index === selectedBusiness && (
+            <div className="absolute w-full bottom-0 left-1/2 transform translate-y-full -translate-x-1/2">
+              <p className="text-center font-Neue text-[0.7em] text-white w-full my-[1em] mx-auto">
+                We develop innovative and transformative blockchain-enabled
+                solutions for financial services processes and products.
+              </p>
+              <a
+                href="#_"
+                className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-white  py-[0.5em] px-[2em] font-Neue text-[0.7em] font-normal text-white shadow-md transition duration-300 ease-out sm:w-fit"
+              >
+                <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-2 bg-[#f1eded45] font-Neue text-white duration-300 group-hover:translate-x-0">
+                  <svg
+                    className="h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
+                  <span>Learn more</span>
+                </span>
+                <span className="ease absolute flex h-full w-full transform items-center justify-center font-Neue text-white transition-all duration-300 group-hover:translate-x-full">
+                  Learn more
+                </span>
+                <span className="invisible relative font-Neue">Learn more</span>
+              </a>
+            </div>
+          )
+        }
+      </li>
+    )
+  }
+
+  return <></>
 }
 
 export default TechFin

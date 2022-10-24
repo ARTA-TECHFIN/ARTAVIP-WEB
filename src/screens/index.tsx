@@ -44,7 +44,6 @@ export const Screens = () => {
               </section>
               <section className="section section double w-full h-full flex justify-center items-center text-center relative box-border">
                 <TechFin
-                  isEntered={disableScroll}
                   currentSectionId={currentSectionId}
                   setCurrentSectionById={setCurrentSectionById}
                   setTriggerSection={async(id:number) => {

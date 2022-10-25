@@ -119,7 +119,7 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
         height: "38em",
         left: "48%",
         xPercent: -2,
-        yPercent: -50,
+        yPercent: 0,
         ease: 'slow(0.7, 0.7, false)',
       }
     )
@@ -176,7 +176,7 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
         width: "65em",
         height: "65em",
         xPercent: -110,
-        yPercent: -40,
+        yPercent: -20,
         ease: 'slow(0.7, 0.7, false)',
       }
     )
@@ -242,7 +242,7 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
         width: "70em",
         height: "70em",
         xPercent: -115,
-        yPercent: -50,
+        yPercent: 0,
         ease: 'slow(0.7, 0.7, false)',
       }
     )

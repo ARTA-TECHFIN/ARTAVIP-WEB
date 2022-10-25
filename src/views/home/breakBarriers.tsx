@@ -29,30 +29,30 @@ export const BreakBarriers = ({currentSectionId}: any) => {
     )
   }, [])
 
-  useEffect(() => {
-    if (currentSectionId === 1) {
-      gsap.to(
-        sec1Container.current,
-        {
-          delay: 0.1,
-          duration: 0.5,
-          yPercent: 40,
-          autoAlpha: 0,
-          ease: "easeInOutCubic"
-        }
-      )
-    } else {
-      gsap.to(
-        sec1Container.current,
-        {
-          duration: 0.8,
-          yPercent: 0,
-          autoAlpha: 1,
-          ease: "ease"
-        }
-      )
-    }
-  }, [currentSectionId])
+  // useEffect(() => {
+  //   if (currentSectionId === 1) {
+  //     gsap.to(
+  //       sec1Container.current,
+  //       {
+  //         delay: 0.1,
+  //         duration: 0.5,
+  //         yPercent: 40,
+  //         autoAlpha: 0,
+  //         ease: "easeInOutCubic"
+  //       }
+  //     )
+  //   } else {
+  //     gsap.to(
+  //       sec1Container.current,
+  //       {
+  //         duration: 0.8,
+  //         yPercent: 0,
+  //         autoAlpha: 1,
+  //         ease: "ease"
+  //       }
+  //     )
+  //   }
+  // }, [currentSectionId])
 
   const section1HandleMouseMove = (event: any) => {
     mouse.x = event.pageX

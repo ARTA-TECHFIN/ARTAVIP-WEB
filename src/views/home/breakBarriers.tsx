@@ -92,7 +92,7 @@ export const BreakBarriers = ({currentSectionId}: any) => {
     <section
       ref={sec1Container}
       id="break-barriers"
-      className=" relative flex w-screen h-screen overflow-hidden flex-col bg-arta-russet-100 z-3 tigger-01"
+      className=" relative flex w-screen h-screen overflow-hidden flex-col bg-arta-russet-100 will-change-transform z-3 tigger-01"
       onMouseMove={(ev) => section1HandleMouseMove(ev)}
     >
       <video
@@ -102,7 +102,7 @@ export const BreakBarriers = ({currentSectionId}: any) => {
         muted
         playsInline
         crossOrigin="anonymous"
-        className="h-full w-full object-cover"
+        className="h-full w-full object-cover will-change-transform"
       >
         <source src="/videos/Comp 1_2.mp4" typeof="video/mp4" />
         Your browser does not support the video tag.
@@ -113,7 +113,7 @@ export const BreakBarriers = ({currentSectionId}: any) => {
           <h1
             id="animation"
             ref={sec1TtlRef}
-            className="z-[200] font-Verah text-[5em] leading-[1.02em] text-white movable text-left"
+            className="z-[200] font-Verah text-[5em] leading-[1.02em] text-white movable text-left will-change-transform"
           >
             BREAK
             <br />

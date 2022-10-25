@@ -23,7 +23,7 @@ const Footer: FC<{ textColor?: 'white' | 'brown' }> = (props) => {
   const borderClass = textColor === 'white' ? 'border-[#878095]' : 'border-arta-sand-100/50'
 
   return (
-    <footer className={`relative z-2 h-full w-full ${bgClass} ${textClass}`}>
+    <footer className={`relative z-2 h-full w-full ${bgClass} ${textClass} will-change-transform`}>
       <div className="flex max-w-main-contain py-6 px-6 md:px-20 md:py-12 xl:mx-auto">
         <div className="flex w-full flex-col space-y-9">
           <div className="flex flex-col justify-between lg:flex-row lg:space-x-9">

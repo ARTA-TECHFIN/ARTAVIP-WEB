@@ -273,13 +273,13 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
           loop
           playsInline
           crossOrigin="anonymous"
-          className="absolute object-cover w-full h-full opacity-50"
+          className="absolute object-cover w-full h-full opacity-50 will-change-transform"
         >
           <source src="/videos/landing_whatis.mp4" typeof="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
-        <svg className="absolute h-full w-full z-1">
+        <svg className="absolute h-full w-full z-1 will-change-transform">
           <defs>
             <mask id="sec1Mask">
               <rect
@@ -357,7 +357,7 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
               <span className="invisible relative">Explore more</span>
             </a>
           </div>
-          <div id="circle" ref={circleRef} className="absolute w-[38em] h-[38em] top-1/2 left-[41%] z-0 border-2 border-white rounded-full opacity-0 pointer-events-none transform -translate-y-[50%] -translate-x-[44%]"></div>
+          <div id="circle" ref={circleRef} className="absolute w-[38em] h-[38em] top-1/2 left-[41%] z-0 border-2 border-white rounded-full opacity-0 pointer-events-none transform -translate-y-[50%] -translate-x-[44%] will-change-transform"></div>
         </div>
         <div
           ref={businessRef}
@@ -399,7 +399,7 @@ const BusinessCircle = ({index, business, selectedBusiness, setSelectedBusiness}
             href="#_"
             className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-white  py-[0.5em] px-[2em] font-Neue text-[0.7em] font-normal text-white shadow-md transition duration-300 ease-out sm:w-fit"
           >
-            <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-2 bg-[#f1eded45] font-Neue text-white duration-300 group-hover:translate-x-0">
+            <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-2 bg-[#f1eded45] will-change-transform font-Neue text-white duration-300 group-hover:translate-x-0">
               <svg
                 className="h-4 w-4"
                 fill="none"

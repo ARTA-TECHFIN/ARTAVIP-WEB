@@ -11,7 +11,7 @@ const about: React.FC = () => {
           loop
           playsInline
           crossOrigin="anonymous"
-          className="absolute object-cover w-full h-full"
+          className="absolute object-cover w-full h-full will-change-transform"
         >
           {/* md:translate-x-[-20%] */}
           <source src="/videos/landing_about.mov" typeof="video/mp4" />
@@ -20,7 +20,7 @@ const about: React.FC = () => {
       </div>
       <div className="absolute right-[3em] top-1/2 transform -translate-y-1/2 flex z-1 justify-end self-center w-[50em]">
         <div className="ml-auto text-right h-full w-1/2 flex-col items-end justify-center gap-[24px] p-6  ">
-          <h1 className="font-Verah text-[3.4em] text-white text-right tracking-[0.06em]">
+          <h1 className="font-Verah text-[3.4em] text-white text-right tracking-[0.06em] will-change-transform">
             About ARTA
           </h1>
           <p className="font-Neue text-[1em] text-white max-w-[30em] mb-[1.5em]">

@@ -7,6 +7,7 @@ import MobileNavbar from './MobileNavbar'
 import { gsap } from 'gsap'
 import ClickAwayListener from 'react-click-away-listener'
 import { IconListItemArrow } from '../Icon'
+import ArtaLogo from 'src/components/Svg/arta-logo';
 
 type pageInfoItemT = {
   pageName: string
@@ -121,7 +122,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown' }> = (props) => {
             <div className="z-[1] text-right">
               <Link href="/">
                 <div className="relative cursor-pointer opacity-100 transition hover:opacity-100">
-                  <img src="/images/arta-logo.svg" alt="Arta" className="w-[7em]" />
+                  <ArtaLogo className={textColorClass} />
                 </div>
               </Link>
             </div>

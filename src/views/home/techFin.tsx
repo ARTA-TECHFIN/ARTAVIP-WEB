@@ -397,7 +397,7 @@ const BusinessCircle = ({index, business, selectedBusiness, setSelectedBusiness}
   if (business) {
     return (
       <li className="flex relative self-center min-w-[11.7em] justify-center will-change-transform" onMouseEnter={() => setSelectedBusiness(index)}>
-        <div className={cn(`${index === selectedBusiness? "innerShadow !w-[11.7em] !h-[11.7em] text-[3em] !lg:text-[1em] !opacity-100":""} w-[10em] h-[10em] text-[0.85em] flex items-center self-center justify-center rounded-full border border-white opacity-70 transition-all hover:opacity-100 hover:w-[12em] hover:h-[12em] will-change-transform`)}>
+        <div className={cn(`${index === selectedBusiness? "innerShadow !w-[11.7em] !h-[11.7em] text-[3em] lg:!text-[1em] !opacity-100":""} w-[10em] h-[10em] text-[0.85em] flex items-center self-center justify-center rounded-full border border-white opacity-70 transition-all hover:opacity-100 hover:w-[12em] hover:h-[12em] will-change-transform`)}>
           <a href="#">{business.title}</a>
         </div>
 

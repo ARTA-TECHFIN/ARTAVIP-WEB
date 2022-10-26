@@ -324,16 +324,16 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
 
       <div className="flex h-full flex-col relative">
         
-        <div className="absolute right-[4em] top-1/2 transform -translate-y-1/2 z-3">
+        <div className="absolute right-[4em] top-2/3 lg:top-1/2 transform -translate-y-1/2 z-3">
           <div
             id="sec1ContentRef"
             ref={sec1ContentRef}
             className="mr-auto flex h-full w-full flex-col justify-center gap-[24px] text-left items-end text-right opacity-0"
           >
-            <h1 className="font-Verah text-[3.4em] text-white text-left tracking-[0.06em] will-change-transform">
+            <h1 className="font-Verah text-[6em] lg:text-[3.4em] text-white text-left tracking-[0.06em] will-change-transform">
               What is TechFin
             </h1>
-            <p className="pb-5 text-left font-Neue text-[1em] text-white max-w-[30em] text-right will-change-transform">
+            <p className="pb-5 pl-[2em] text-left font-Neue text-[3.6em] lg:text-[1em] text-white max-w-[30em] text-right will-change-transform">
               ARTA TechFin believes that technology is the key to building a
               happier and more fulfilling future for all. As technology has
               continually transformed how we live and do business, it is
@@ -372,12 +372,12 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
         </div>
         <div
           ref={businessRef}
-          className="absolute left-[4em] top-1/2 transform -translate-y-1/2 text-white opacity-0 z-2"
+          className="absolute left-[4em] top-[20em] lg:top-1/2 transform lg:-translate-y-1/2 text-white opacity-0 z-2"
         >
-          <h1 className="text-left font-verah text-[3.4em] tracking-[0.06em]">
+          <h1 className="text-left font-verah text-[6em] lg:text-[3.4em] tracking-[0.06em]">
             Our Businesses
           </h1>
-          <p className="pb-5 text-left font-Neue text-[1em] max-w-[30em]">
+          <p className="pb-5 text-left font-Neue text-[3.6em] lg:text-[1em] max-w-[30em]">
             ARTA TechFin is determined to create the fairest, most transparent,
             and open markets in the world. We carry this out every day by
             providing clients with a variety of financial services.
@@ -397,12 +397,12 @@ const BusinessCircle = ({index, business, selectedBusiness, setSelectedBusiness}
   if (business) {
     return (
       <li className="flex relative self-center min-w-[11.7em] justify-center will-change-transform" onMouseEnter={() => setSelectedBusiness(index)}>
-        <div className={cn(`${index === selectedBusiness? "innerShadow !w-[11.7em] !h-[11.7em] !text-[1em] !opacity-100":""} w-[10em] h-[10em] text-[0.85em] flex items-center self-center justify-center rounded-full border border-white opacity-70 transition-all hover:opacity-100 hover:w-[12em] hover:h-[12em] will-change-transform`)}>
+        <div className={cn(`${index === selectedBusiness? "innerShadow !w-[11.7em] !h-[11.7em] text-[3em] !lg:text-[1em] !opacity-100":""} w-[10em] h-[10em] text-[0.85em] flex items-center self-center justify-center rounded-full border border-white opacity-70 transition-all hover:opacity-100 hover:w-[12em] hover:h-[12em] will-change-transform`)}>
           <a href="#">{business.title}</a>
         </div>
 
         <div className={`absolute w-full bottom-0 left-1/2 transform translate-y-full -translate-x-1/2 opacity-0 transition-all duration-300 ${index === selectedBusiness && 'opacity-100'}`}>
-          <p className="text-center font-Neue text-[0.7em] text-white w-full my-[1em] mx-auto">
+          <p className="text-center font-Neue text-[3em] lg:text-[0.7em] text-white w-full my-[1em] mx-auto">
             We develop innovative and transformative blockchain-enabled
             solutions for financial services processes and products.
           </p>

@@ -62,17 +62,19 @@ export const BreakBarriers = ({currentSectionId}: any) => {
   }
 
   function updateSec1TextPos() {
-    var dx = mouse.x - windowDimension.x
-    var dy = mouse.y - windowDimension.y
+    if (cx*2 > 768) {
+      var dx = mouse.x - windowDimension.x
+      var dy = mouse.y - windowDimension.y
 
-    var tiltx = (dy / windowDimension.y) * 0.7
-    var tilty = -(dx / windowDimension.x) * 0.7
+      var tiltx = (dy / windowDimension.y) * 0.7
+      var tilty = -(dx / windowDimension.x) * 0.7
 
-    gsap.to(sec1TtlRef.current, {
-      duration: 1,
-      transform: 'translate(' + tilty + 'px, ' + tiltx + 'px)',
-      ease: 'Power2.easeOut',
-    })
+      gsap.to(sec1TtlRef.current, {
+        duration: 1,
+        transform: 'translate(' + tilty + 'px, ' + tiltx + 'px)',
+        ease: 'Power2.easeOut',
+      })
+    }
   }
 
   function updateSec1Video() {
@@ -110,11 +112,11 @@ export const BreakBarriers = ({currentSectionId}: any) => {
       </video>
       {/* top-[20%] left-0   sm:top-[40%] lg:left-[10%] xl:left-[20%] xl:mx-auto */}
       <div className=" flex max-w-main-contain items-start justify-center px-6  xl:mx-auto movable-elements-wrapper">
-        <div className="absolute  top-[20%] left-0 sm:top-[35%] xl:left-[10%] xl:mx-auto 2xl:left-[15%] ">
+        <div className="absolute top-[60%] left-[0] lg:top-[35%] lg:left-[10%]">
           <h1
             id="animation"
             ref={sec1TtlRef}
-            className="z-[200] font-Verah text-[5em] leading-[1.02em] text-white movable text-left will-change-transform"
+            className="z-[200] font-Verah text-[10em] lg:text-[5em] leading-[1.02em] text-white movable text-left will-change-transform"
           >
             BREAK
             <br />

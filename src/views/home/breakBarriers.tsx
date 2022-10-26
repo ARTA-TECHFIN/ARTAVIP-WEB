@@ -99,7 +99,6 @@ export const BreakBarriers = ({currentSectionId}: any) => {
         data-keepplaying
         ref={sec1VideoRef}
         autoPlay
-        autobuffer="true"
         muted
         playsInline
         preload="true"

@@ -49,7 +49,7 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
   let throttleDelay = 2000
 
   if (typeof window !== "undefined") {
-
+    // @ts-ignore:next-line
     const FF = !(window.mozInnerScreenX == null);
 
     if(FF) {

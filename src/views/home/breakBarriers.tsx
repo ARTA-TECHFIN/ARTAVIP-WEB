@@ -99,8 +99,10 @@ export const BreakBarriers = ({currentSectionId}: any) => {
         data-keepplaying
         ref={sec1VideoRef}
         autoPlay
+        autobuffer="true"
         muted
         playsInline
+        preload="true"
         crossOrigin="anonymous"
         className="h-full w-full object-cover will-change-transform"
       >

@@ -46,6 +46,21 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
     },
   ]
 
+  let throttleDelay = 2000
+
+  if (typeof window !== "undefined") {
+
+    const FF = !(window.mozInnerScreenX == null);
+
+    if(FF) {
+      if(navigator.platform.indexOf('Mac')>=0)
+      {
+        throttleDelay = 3100
+      }
+    }
+  }
+
+
   const wheel = (event: any) => {
     throttle(
       () => {
@@ -67,7 +82,7 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
           }
         }
       },
-      1800
+      throttleDelay
     )
   }
 
@@ -319,10 +334,10 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
             ref={sec1ContentRef}
             className="mr-auto flex h-full w-full flex-col justify-center gap-[24px] text-left items-end text-right opacity-0"
           >
-            <h1 className="font-Verah text-[3.4em] text-white text-left tracking-[0.06em]">
+            <h1 className="font-Verah text-[3.4em] text-white text-left tracking-[0.06em] will-change-transform">
               What is TechFin
             </h1>
-            <p className="pb-5 text-left font-Neue text-[1em] text-white max-w-[30em] text-right">
+            <p className="pb-5 text-left font-Neue text-[1em] text-white max-w-[30em] text-right will-change-transform">
               ARTA TechFin believes that technology is the key to building a
               happier and more fulfilling future for all. As technology has
               continually transformed how we live and do business, it is
@@ -332,9 +347,9 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
             </p>
             <a
               href="#_"
-              className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border  border-white py-[1em] px-[3em] font-Neue text-base font-normal text-white shadow-md transition duration-300 ease-out w-fit"
+              className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border  border-white py-[1em] px-[3em] font-Neue text-base font-normal text-white shadow-md transition duration-300 ease-out w-fit transitionfix"
             >
-              <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-4 bg-[#f1eded45] text-white duration-300 group-hover:translate-x-0">
+              <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-4 bg-[#f1eded45] text-white duration-300 group-hover:translate-x-0 will-change-transform">
                 <svg
                   className="h-4 w-4"
                   fill="none"
@@ -385,8 +400,8 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
 const BusinessCircle = ({index, business, selectedBusiness, setSelectedBusiness}:any) => {
   if (business) {
     return (
-      <li className="flex relative self-center min-w-[11.7em] justify-center" onMouseEnter={() => setSelectedBusiness(index)}>
-        <div className={cn(`${index === selectedBusiness? "innerShadow !w-[11.7em] !h-[11.7em] !text-[1em] !opacity-100":""} w-[10em] h-[10em] text-[0.85em] flex items-center self-center justify-center rounded-full border border-white opacity-70 transition-all hover:opacity-100 hover:w-[12em] hover:h-[12em]`)}>
+      <li className="flex relative self-center min-w-[11.7em] justify-center will-change-transform" onMouseEnter={() => setSelectedBusiness(index)}>
+        <div className={cn(`${index === selectedBusiness? "innerShadow !w-[11.7em] !h-[11.7em] !text-[1em] !opacity-100":""} w-[10em] h-[10em] text-[0.85em] flex items-center self-center justify-center rounded-full border border-white opacity-70 transition-all hover:opacity-100 hover:w-[12em] hover:h-[12em] will-change-transform`)}>
           <a href="#">{business.title}</a>
         </div>
 
@@ -397,7 +412,7 @@ const BusinessCircle = ({index, business, selectedBusiness, setSelectedBusiness}
           </p>
           <a
             href="#_"
-            className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-white  py-[0.5em] px-[2em] font-Neue text-[0.7em] font-normal text-white shadow-md transition duration-300 ease-out sm:w-fit"
+            className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-white  py-[0.5em] px-[2em] font-Neue text-[0.7em] font-normal text-white shadow-md transition duration-300 ease-out sm:w-fit transitionfix"
           >
             <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-2 bg-[#f1eded45] will-change-transform font-Neue text-white duration-300 group-hover:translate-x-0">
               <svg

@@ -4,9 +4,14 @@
 @tailwind utilities;
 
 @layer base {
+  html, body {
+    -webkit-overflow-scrolling: touch;
+  }
+
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
     background: #2f2f2f;
   }
 }
@@ -50,6 +55,14 @@
   }
 
   #fullpage {
-    will-change: transform;
+    @apply will-change-transform;
+  }
+
+  .transitionfix {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    @apply will-change-transform;
   }
 }

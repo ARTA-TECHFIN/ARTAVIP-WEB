@@ -2,7 +2,7 @@ import React from 'react'
 
 const about: React.FC = () => {
   return (
-    <div className="relative z-3 h-screen w-screen flex">
+    <div className="relative z-3 h-screen w-screen flex will-change-transform">
       <div className="video-container absolute h-full w-full top-0 left-0">
         <video
           data-keepplaying
@@ -31,7 +31,7 @@ const about: React.FC = () => {
 
           <a
             href="#_"
-            className="group relative inline-flex w-fit items-center justify-center overflow-hidden rounded-full border  border-white py-[8px] px-[32px] font-Neue text-base font-normal text-white shadow-md transition duration-300 ease-out"
+            className="group relative inline-flex w-fit items-center justify-center overflow-hidden rounded-full border  border-white py-[8px] px-[32px] font-Neue text-base font-normal text-white shadow-md transition duration-300 ease-out transitionfix"
           >
             <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-4 bg-[#f1eded45] text-white duration-300 group-hover:translate-x-0">
               <svg

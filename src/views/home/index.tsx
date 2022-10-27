@@ -21,7 +21,6 @@ export const Slides = () => {
   }
 
   const setCurrentSectionById = (id:number) => {
-    console.log(id)
     setCurrentSectionId(id)
   }
 
@@ -43,7 +42,7 @@ export const Slides = () => {
               <section className="section fixing section home w-full h-full flex justify-center items-center text-center relative box-border">
                 <BreakBarriers currentSectionId={currentSectionId} />
               </section>
-              <section className="section section double w-full h-full flex justify-center items-center text-center relative box-border will-change-transform">
+              <section className="section section double w-full h-full flex justify-center items-center relative box-border will-change-transform">
                 <TechFin
                   currentSectionId={currentSectionId}
                   setCurrentSectionById={setCurrentSectionById}

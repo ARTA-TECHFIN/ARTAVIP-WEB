@@ -6,6 +6,7 @@ import cn from 'classnames'
 const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: any) => {
   gsap.registerPlugin(ScrollTrigger)
   
+  const [windowWidth, setWindowWith] = useState<number>(0)
   const sec1ContentRef = useRef(null)
   const businessRef = useRef(null)
   const circleRef = useRef(null)
@@ -17,7 +18,6 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
   const [lastFireTime, setLastFireTime] = useState<number>(Date.now())
   const throttle = (fn:any, delay:number) => { 
     if((lastFireTime + delay - Date.now() ) < 0) {
-      console.log("pass")
       fn(); 
       setLastFireTime(Date.now())
     } 
@@ -87,13 +87,15 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
   }
 
   const fromSec1ToSec0 = () => {
+    const isMobile = windowWidth < 768
+
     gsap.to(
       circleRef.current,
       {
         duration: 1.5,
         autoAlpha: 0.0,
-        width: "38em",
-        height: "38em",
+        width: isMobile? "90em" : "38em",
+        height: isMobile? "90em" : "38em",
         left: "42%",
         xPercent: -2,
         ease: 'slow(0.7, 0.7, false)',
@@ -124,14 +126,16 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
   }
 
   const fromSec0ToSec1 = () => {
+    const isMobile = windowWidth < 768
+
     gsap.to(
       circleRef.current,
       {
         duration: 1.4,
         autoAlpha: 0.25,
-        width: "38em",
-        height: "38em",
-        left: "48%",
+        width: isMobile? "140em": "38em",
+        height: isMobile? "140em": "38em",
+        left: isMobile? "-9%" : "48%",
         xPercent: -2,
         ease: 'slow(0.7, 0.7, false)',
       }
@@ -143,7 +147,7 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
         xPercent: 5,
         duration: 1.7,
         attr: {
-          r: "45em",
+          r: isMobile? "90em" : "45em",
         },
         ease: 'power1.out',
       }
@@ -181,6 +185,7 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
   }
 
   const fromSec1ToSec1_5 = () => {
+    const isMobile = windowWidth < 768
     gsap.to(
       circleRef.current,
       {
@@ -198,7 +203,7 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
       {
         duration: 0.9,
         attr: {
-          r: "90em",
+          r: isMobile? "120em" : "90em",
         },
         ease: 'slow(0.7, 0.7, false)',
       }
@@ -261,6 +266,9 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
 
 
   useEffect(() => {
+    setWindowWith(window?.innerWidth || 0)
+    console.log(window?.innerWidth)
+
     if(currentSectionId === 0) {
       fromSec1ToSec0()
     } else if(currentSectionId === 1) {
@@ -324,16 +332,16 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
 
       <div className="flex h-full flex-col relative">
         
-        <div className="absolute right-[4em] top-2/3 lg:top-1/2 transform -translate-y-1/2 z-3">
+        <div className="absolute lg:right-[4em] bottom-[8em] lg:bottom-auto lg:top-1/2 transform lg:-translate-y-1/2 z-3">
           <div
             id="sec1ContentRef"
             ref={sec1ContentRef}
-            className="mr-auto flex h-full w-full flex-col justify-center gap-[24px] text-left items-end text-right opacity-0"
+            className="flex h-full w-full flex-col justify-center gap-[24px] lg:items-end lg:text-right px-[6em] lg:px-0 opacity-0"
           >
-            <h1 className="font-Verah text-[6em] lg:text-[3.4em] text-white text-left tracking-[0.06em] will-change-transform">
+            <h1 className="font-Verah text-[6em] lg:text-[3.4em] text-white tracking-[0.06em] will-change-transform">
               What is TechFin
             </h1>
-            <p className="pb-5 pl-[2em] text-left font-Neue text-[3.6em] lg:text-[1em] text-white max-w-[30em] text-right will-change-transform">
+            <p className="mb-[0.6em] text-left font-Neue text-[3.6em] lg:text-[1em] text-white max-w-[30em] lg:text-right will-change-transform">
               ARTA TechFin believes that technology is the key to building a
               happier and more fulfilling future for all. As technology has
               continually transformed how we live and do business, it is
@@ -343,7 +351,7 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
             </p>
             <a
               href="#_"
-              className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border  border-white py-[1em] px-[3em] font-Neue text-base font-normal text-white shadow-md transition duration-300 ease-out w-fit transitionfix"
+              className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border  border-white py-[0.5em] lg:px-[1em] px-[2em] lg:px-[3em] font-Neue text-[3.6em] lg:text-[1em] text-white transition duration-300 ease-out w-fit transitionfix"
             >
               <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-4 bg-[#f1eded45] text-white duration-300 group-hover:translate-x-0 will-change-transform">
                 <svg
@@ -368,11 +376,11 @@ const TechFin = ({currentSectionId, setCurrentSectionById, setTriggerSection}: a
               <span className="invisible relative">Explore more</span>
             </a>
           </div>
-          <div id="circle" ref={circleRef} className="absolute w-[38em] h-[38em] top-1/2 left-[41%] z-0 border-2 border-white rounded-full opacity-0 pointer-events-none transform -translate-y-[50%] -translate-x-[44%] will-change-transform"></div>
+          <div id="circle" ref={circleRef} className="absolute w-[38em] h-[38em] -top-[26em] lg:top-1/2 left-[38%] z-0 border-2 border-white rounded-full opacity-0 pointer-events-none transform lg:-translate-y-[50%] -translate-x-[44%] will-change-transform"></div>
         </div>
         <div
           ref={businessRef}
-          className="absolute left-[4em] top-[20em] lg:top-1/2 transform lg:-translate-y-1/2 text-white opacity-0 z-2"
+          className="absolute left-[6em] lg:left-[4em] bottom-[22em] lg:bottom-auto lg:top-[20em] lg:top-1/2 transform lg:-translate-y-1/2 text-white opacity-0 z-2"
         >
           <h1 className="text-left font-verah text-[6em] lg:text-[3.4em] tracking-[0.06em]">
             Our Businesses
@@ -402,15 +410,15 @@ const BusinessCircle = ({index, business, selectedBusiness, setSelectedBusiness}
         </div>
 
         <div className={`absolute w-full bottom-0 left-1/2 transform translate-y-full -translate-x-1/2 opacity-0 transition-all duration-300 ${index === selectedBusiness && 'opacity-100'}`}>
-          <p className="text-center font-Neue text-[3em] lg:text-[0.7em] text-white w-full my-[1em] mx-auto">
+          <p className="text-center font-Neue text-[3em] lg:text-[0.7em] text-white w-full mt-[1em] hidden lg:block">
             We develop innovative and transformative blockchain-enabled
             solutions for financial services processes and products.
           </p>
           <a
             href="#_"
-            className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-white  py-[0.5em] px-[2em] font-Neue text-[0.7em] font-normal text-white shadow-md transition duration-300 ease-out sm:w-fit transitionfix"
+            className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border  border-white py-[0.5em] lg:px-[1em] mt-[1em] px-[2em] lg:px-[3em] font-Neue text-[3.6em] lg:text-[1em] text-white transition duration-300 ease-out w-fit transitionfix"
           >
-            <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-2 bg-[#f1eded45] will-change-transform font-Neue text-white duration-300 group-hover:translate-x-0">
+            <span className="ease absolute inset-0 flex h-full w-full -translate-x-full self-center justify-center space-x-4 bg-[#f1eded45] text-white duration-300 group-hover:translate-x-0 will-change-transform">
               <svg
                 className="h-4 w-4"
                 fill="none"
@@ -425,12 +433,12 @@ const BusinessCircle = ({index, business, selectedBusiness, setSelectedBusiness}
                   d="M14 5l7 7m0 0l-7 7m7-7H3"
                 ></path>
               </svg>
-              <span>Learn more</span>
+              <span> Learn more</span>
             </span>
-            <span className="ease absolute flex h-full w-full transform items-center justify-center font-Neue text-white transition-all duration-300 group-hover:translate-x-full">
+            <span className="ease absolute flex h-full w-full transform items-center justify-center font-Neue text-[1em] text-white transition-all duration-300 group-hover:translate-x-full">
               Learn more
             </span>
-            <span className="invisible relative font-Neue">Learn more</span>
+            <span className="invisible relative">Learn more</span>
           </a>
         </div>
       </li>

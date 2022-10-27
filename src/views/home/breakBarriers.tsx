@@ -21,7 +21,7 @@ export const BreakBarriers = ({currentSectionId}: any) => {
       { opacity: 0 },
       {
         opacity: 1,
-        x: 50,
+        x: "0.5em",
         duration: 2,
         ease: 'power0',
         delay: 1,
@@ -112,7 +112,7 @@ export const BreakBarriers = ({currentSectionId}: any) => {
       </video>
       {/* top-[20%] left-0   sm:top-[40%] lg:left-[10%] xl:left-[20%] xl:mx-auto */}
       <div className=" flex max-w-main-contain items-start justify-center px-6  xl:mx-auto movable-elements-wrapper">
-        <div className="absolute top-[60%] left-[0] lg:top-[35%] lg:left-[10%]">
+        <div className="absolute bottom-[7em] left-[0] lg:bottom-[6em] lg:left-[5em]">
           <h1
             id="animation"
             ref={sec1TtlRef}

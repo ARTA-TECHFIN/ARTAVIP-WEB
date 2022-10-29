@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { IconArrowLeft, IconArrowRight } from 'src/components/Svg/Icon'
 import { Hr } from 'src/components/Hr'
 import { t } from './PageAbout'
+import { ModuleTextColList } from '../ModuleTextColList'
 
 export const SectionTechFin = () => {
   const [selectedIndex, setSelectedIndex] = useState(2)
@@ -15,21 +16,14 @@ export const SectionTechFin = () => {
         <Image src={tech_fin_bg} alt="" fill className="object-cover" />
       </div>
 
-      <div className="arta-container relative grid grid-cols-12 py-36">
-        <div className="col-span-4 flex items-center">
-          <h2 className={textClass.h2_style2}>{t.techFin.title}</h2>
-        </div>
-        <div className="col-span-8">
-          <h3 className={textClass.h3_style2}>{t.techFin.subtitle}</h3>
-          <Hr />
-          <h4 className={`${textClass.title} mb-2`}>{t.techFin.section1Title}</h4>
-          <p className={`${textClass.body_regular} max-w-[80%]`}>{t.techFin.section1Body}</p>
-          <Hr />
-          <h4 className={`${textClass.title} mb-2`}>{t.techFin.section2Title}</h4>
-          <p className={`${textClass.body_regular} max-w-[80%]`}>{t.techFin.section2Body}</p>
-          <Hr />
-        </div>
-      </div>
+      <ModuleTextColList
+        header={t.techFin.title}
+        title={t.techFin.subtitle}
+        list={[
+          { title: t.techFin.section1Title, body: t.techFin.section1Body },
+          { title: t.techFin.section2Title, body: t.techFin.section2Body },
+        ]}
+      />
 
       {/* SectionEcosystem */}
       <div className="relative flex flex-col items-center pb-36">

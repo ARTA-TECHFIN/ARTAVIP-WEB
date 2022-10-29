@@ -49,8 +49,8 @@ const pageInfoList: pageInfoItemT[] = [
       { title: 'Asset Management', link: links.businesses },
       { title: 'Investment Banking', link: links.businesses },
       { title: 'Insurance Brokerage', link: links.businesses },
-      { title: 'Securities Brokerage', link: links.businesses },
-      { title: 'Artazine', link: links.businesses },
+      { title: 'Securities Brokerage', link: links.businessesSecurities },
+      { title: 'Artazine', link: links.businessesWeb3 },
     ],
   },
   {

@@ -9,7 +9,7 @@ type listT = {
 
 type propsT = {
   header: string
-  title: string
+  title: string | null
   list: listT[]
   headerPosition?: 'left' | 'right'
 }
@@ -18,6 +18,7 @@ type propsT = {
 // TODO: animation
 // TODO: responsive
 // TODO: headerPosition
+// TODO: Title can be null or empty string, see Web3Media page
 const ModuleTextColList = ({ header, title, list }: propsT) => {
   return (
     <div className="arta-container relative grid grid-cols-12 py-36">

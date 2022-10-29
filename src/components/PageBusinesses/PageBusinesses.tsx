@@ -20,6 +20,7 @@ const cms = {
     bgImage: '',
   },
   section2: {
+    headerPosition: 'left' as const,
     header: 'What is Asset Management',
     title: 'Title',
     list: [
@@ -53,6 +54,7 @@ const PageBusinessesPage: NextPage = () => {
           bgImage={cms.section1.bgImage}
         />
         <ModuleTextColList
+          headerPosition={cms.section2.headerPosition}
           header={cms.section2.header}
           title={cms.section2.title}
           list={cms.section2.list}

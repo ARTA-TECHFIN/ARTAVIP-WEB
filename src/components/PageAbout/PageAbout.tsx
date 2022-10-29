@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next'
 
 import Header from 'src/components/Header/Header'
@@ -9,17 +8,18 @@ import leader_1 from './images/leader_1.jpg'
 
 import eco_icon1 from './images/eco_icon1.png'
 
-import { SectionHeroBanner } from './SectionHeroBanner'
 import { SectionMission } from './SectionMission'
 import { SectionCulture } from './SectionCulture'
 import { SectionLeadership } from './SectionLeadership'
 import { SectionTechFin } from './SectionTechFin'
 import { SectionTechFinVsFinTech } from './SectionTechFinVsFinTech'
+import { HeroBanner } from '../HeroBanner'
 
 export const t = {
   heroBanner: {
     title: 'About Us',
     subtitle: `Established in October 2021, ARTA TechFin Corporation Limited (“ARTA TechFin”) (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology (“Technology in Finance” or “TechFin”).`,
+    image: '/images/about/banner.jpg',
   },
   mission: {
     title: 'Vision & Mission',
@@ -87,7 +87,11 @@ const PageAbout: NextPage = () => {
       <Seo />
       <Header textColor="brown" />
       <main className="flex flex-col bg-[#D1C2AC] text-arta-sand-100">
-        <SectionHeroBanner />
+        <HeroBanner
+          title={t.heroBanner.title}
+          description={t.heroBanner.subtitle}
+          image={t.heroBanner.image}
+        />
         <SectionMission />
         <SectionCulture />
         <SectionLeadership />

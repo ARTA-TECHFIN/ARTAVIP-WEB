@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next'
-import Image from 'next/image'
+import Image from "next/legacy/image";
 
 import Header from 'src/components/Header/Header'
 import Footer from 'src/components/Footer'

@@ -110,7 +110,7 @@ const SectionHeroBanner = () => {
 
 const SectionMission = () => {
   return (
-    <div className="group/bg relative overflow-hidden">
+    <div className="group/bg relative overflow-hidden" id="mission">
       <div className="easeInOutSine absolute h-full w-full scale-105 overflow-hidden duration-300 group-hover/bg:scale-100">
         <Image src={mission_bg} alt="" fill className="object-cover" />
       </div>
@@ -137,7 +137,7 @@ const SectionCulture = () => {
   }
 
   return (
-    <div className="group/bg relative overflow-hidden">
+    <div className="group/bg relative overflow-hidden" id="culture">
       <div className="easeInOutSine absolute h-full w-full scale-150 overflow-hidden duration-300 group-hover/bg:scale-100">
         <Image src={culture_bg} alt="" fill className="object-cover" />
       </div>
@@ -184,7 +184,7 @@ const SectionCulture = () => {
 
 const SectionLeadership = () => {
   return (
-    <div className="group/bg relative overflow-hidden">
+    <div className="group/bg relative overflow-hidden" id="leadership">
       <div className="easeInOutSine absolute h-full w-full scale-150 overflow-hidden duration-300 group-hover/bg:scale-100">
         <Image src={leadership_bg} alt="" fill className="object-cover" />
       </div>
@@ -210,7 +210,7 @@ const SectionTechFin = () => {
   const [selectedIndex, setSelectedIndex] = useState(2)
 
   return (
-    <div className="relative flex flex-col">
+    <div className="relative flex flex-col" id="tech-fin">
       <div className="absolute h-full w-full overflow-hidden">
         <Image src={tech_fin_bg} alt="" fill className="object-cover" />
       </div>

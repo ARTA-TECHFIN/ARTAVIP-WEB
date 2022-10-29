@@ -8,6 +8,12 @@ import { gsap } from 'gsap'
 import ClickAwayListener from 'react-click-away-listener'
 import { IconListItemArrow } from '../Svg/Icon'
 import ArtaLogo from 'src/components/Svg/arta-logo'
+import { links } from 'src/domains/links'
+
+type menuItemT = {
+  title: string
+  link: string
+}
 
 type pageInfoItemT = {
   pageName: string
@@ -15,7 +21,7 @@ type pageInfoItemT = {
   paragraph: string
   buttonText: string
   href: string
-  pages: string[]
+  pages: menuItemT[]
 }
 
 const pageInfoList: pageInfoItemT[] = [
@@ -24,21 +30,26 @@ const pageInfoList: pageInfoItemT[] = [
     title: 'About Us',
     paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
     buttonText: 'About Us home',
-    href: '/about',
-    pages: ['Vision and Mission', 'Culture and Values', 'Leadership', 'What is TechFin'],
+    href: links.about,
+    pages: [
+      { title: 'Vision and Mission', link: links.aboutVision },
+      { title: 'Culture and Values', link: links.aboutCulture },
+      { title: 'Leadership', link: links.aboutLeadership },
+      { title: 'What is TechFin', link: links.aboutTechFin },
+    ],
   },
   {
     pageName: 'Our Businesses',
     title: 'Our Businesses',
     paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
     buttonText: 'Our Businesses home',
-    href: '/businesses',
+    href: links.businesses,
     pages: [
-      'Asset Management',
-      'Investment Banking',
-      'Insurance Brokerage',
-      'Securities Brokerage',
-      'Artazine',
+      { title: 'Asset Management', link: links.businesses },
+      { title: 'Investment Banking', link: links.businesses },
+      { title: 'Insurance Brokerage', link: links.businesses },
+      { title: 'Securities Brokerage', link: links.businesses },
+      { title: 'Artazine', link: links.businesses },
     ],
   },
   {
@@ -46,24 +57,37 @@ const pageInfoList: pageInfoItemT[] = [
     title: 'Investor Relations',
     paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
     buttonText: 'Investor Relations',
-    href: '/investor-relations',
-    pages: ['Announcements and notices', 'Financial Reports', 'Financial Calender', 'ESG'],
+    href: links.investor,
+    pages: [
+      { title: 'Announcements and notices', link: links.investor },
+      { title: 'Financial Reports', link: links.investor },
+      { title: 'Financial Calender', link: links.investor },
+      { title: 'ESG', link: links.investor },
+    ],
   },
   {
     pageName: 'Media Centre',
     title: 'Media Centre',
     paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
     buttonText: 'Media Centre home',
-    href: '/media-centre',
-    pages: ['ARTA Blog', 'Press Release', 'Media Enquiry'],
+    href: links.media,
+    pages: [
+      { title: 'ARTA Blog', link: links.media },
+      { title: 'Press Release', link: links.media },
+      { title: 'Media Enquiry', link: links.media },
+    ],
   },
   {
     pageName: 'Contact Us',
     title: 'Contact Us',
     paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
     buttonText: 'Contact Us home',
-    href: '/contact',
-    pages: ['Work with ARTA', 'Job Openings', 'Our Office'],
+    href: links.contact,
+    pages: [
+      { title: 'Work with ARTA', link: links.contact },
+      { title: 'Job Openings', link: links.contact },
+      { title: 'Our Office', link: links.contact },
+    ],
   },
 ]
 
@@ -178,13 +202,13 @@ const Header: React.FC<{ textColor?: 'white' | 'brown' }> = (props) => {
                         key={index}
                         className="group relative -translate-x-4 cursor-pointer list-none py-2 px-2 text-[16px] leading-[24px] opacity-70 duration-300 ease-out hover:translate-x-0 hover:opacity-100"
                       >
-                        <span className="flex items-start pl-5">
+                        <Link className="flex items-start pl-5" href={item.link}>
                           <IconListItemArrow
                             fill={textColor === 'white' ? '#F4F1E1' : '#2E1605'}
                             className=" ease mr-2 mt-1 hidden h-4 w-4 -translate-x-full duration-300 group-hover:block group-hover:translate-x-0"
                           />
-                          <span>{item}</span>
-                        </span>
+                          <span>{item.title}</span>
+                        </Link>
                       </li>
                     ))}
                   </div>

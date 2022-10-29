@@ -6,7 +6,10 @@ interface propsT {
     pageName: string
     paragraph: string
     buttonText: string
-    pages: string[]
+    pages: {
+      title: string
+      link: string
+    }[]
   }
 }
 
@@ -78,7 +81,7 @@ const MobileNavbar: FC<propsT> = ({ item }) => {
                         alt="arrow"
                         className=" ease hidden -translate-x-full pt-[10px] pr-2 duration-300 group-hover:block group-hover:translate-x-0"
                       />
-                      <span>{item}</span>
+                      <span>{item.title}</span>
                     </span>
                   </li>
                 </div>

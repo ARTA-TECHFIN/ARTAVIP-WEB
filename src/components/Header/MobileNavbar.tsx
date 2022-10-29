@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'
+import { ButtonAnimated } from '../ButtonAnimated'
 
 interface propsT {
   item: {
@@ -43,32 +44,14 @@ const MobileNavbar: FC<propsT> = ({ item }) => {
             } mt-5 flex transform flex-col items-start justify-start `}
           >
             <p className="mt-5 max-w-[500px] text-sm">{item.paragraph}</p>
-            <a
+            <ButtonAnimated
+              as="a"
               href="#_"
-              className="group relative my-6 inline-flex w-[260px] items-center justify-center overflow-hidden rounded-full border-2  border-white p-4 px-6 py-3 font-medium text-white shadow-md transition duration-300 ease-out"
+              className="my-6 w-[260px] border-2 border-white p-4 px-6 py-3 font-medium text-white shadow-md "
+              borderWidth={2}
             >
-              <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-4 bg-[#f1eded45] text-[16px] leading-[24px] text-white duration-300 group-hover:translate-x-0">
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  ></path>
-                </svg>
-                <span>{item.buttonText}</span>
-              </span>
-              <span className="ease absolute flex h-full w-full transform items-center justify-center text-[16px] leading-[24px] text-white transition-all duration-300 group-hover:translate-x-full">
-                {item.buttonText}
-              </span>
-              <span className="invisible relative">{item.buttonText}</span>
-            </a>
+              {item.buttonText}
+            </ButtonAnimated>
 
             <div className="flex flex-col justify-center space-y-5 pl-5">
               {item.pages.map((item, index) => (

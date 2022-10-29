@@ -10,6 +10,10 @@
 1. yarn
 2. yarn dev
 
+### Naming conversion
+
+1. For component file, always use Pascal case. Category to more specified, e.g. PageAbout instead of AboutPage, ButtonAnimated instead of AnimatedButton
+
 ### Styling
 
 Mainly use tailwind. For shared style, you may

@@ -4,7 +4,8 @@
 @tailwind utilities;
 
 @layer base {
-  html, body {
+  html,
+  body {
     -webkit-overflow-scrolling: touch;
   }
 
@@ -58,7 +59,7 @@
     @apply will-change-transform;
   }
 
-  .transitionfix {
+  .arta-transition-fix {
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -webkit-transform: translate3d(0, 0, 0);

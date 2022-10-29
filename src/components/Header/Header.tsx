@@ -9,6 +9,7 @@ import ClickAwayListener from 'react-click-away-listener'
 import { IconListItemArrow } from '../Svg/Icon'
 import ArtaLogo from 'src/components/Svg/arta-logo'
 import { links } from 'src/domains/links'
+import { ButtonAnimated } from '../ButtonAnimated'
 
 type menuItemT = {
   title: string
@@ -165,36 +166,14 @@ const Header: React.FC<{ textColor?: 'white' | 'brown' }> = (props) => {
                     <h6 className="font-Verah text-2xl">{selectedTab.title}</h6>
                     <p className="font-Neue text-[14px] leading-[20px]">{selectedTab.paragraph}</p>
 
-                    <Link
+                    <ButtonAnimated
                       href={selectedTab.href}
-                      className={`group relative inline-flex w-[260px] items-center justify-center overflow-hidden rounded-full border-2 ${borderColorClass} p-4 px-6 py-3 font-medium ${textColorClass} shadow-md transition duration-300 ease-out`}
+                      as="a"
+                      className={`w-[260px] p-4 px-6 py-3 font-medium shadow-md ${textColorClass} ${borderColorClass}`}
+                      borderWidth={2}
                     >
-                      <span
-                        className={`ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-4 bg-[#f1eded45] font-Neue text-[16px] leading-[24px] ${textColorClass} duration-300 group-hover:translate-x-0`}
-                      >
-                        <svg
-                          className="h-6 w-6"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                          ></path>
-                        </svg>
-                        <span>{selectedTab.buttonText}</span>
-                      </span>
-                      <span
-                        className={`ease absolute flex h-full w-full transform items-center justify-center font-Neue text-[16px] leading-[24px] ${textColorClass} transition-all duration-300 group-hover:translate-x-full`}
-                      >
-                        {selectedTab.buttonText}
-                      </span>
-                      <span className="invisible relative">{selectedTab.buttonText}</span>
-                    </Link>
+                      {selectedTab.buttonText}
+                    </ButtonAnimated>
                   </div>
                   <div className="flex flex-col">
                     {selectedTab.pages.map((item, index) => (

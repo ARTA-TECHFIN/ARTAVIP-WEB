@@ -1,30 +1,22 @@
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next'
-import Image from 'next/image'
 
 import Header from 'src/components/Header/Header'
 import Footer from 'src/components/Footer'
 import { Seo } from 'src/components/Seo'
 
-import banner from './images/banner.jpg'
-import mission_bg from './images/mission_bg.png'
-import culture_bg from './images/culture_bg.png'
-import leadership_bg from './images/leadership_bg.png'
-import tech_fin_bg from './images/tech_fin_bg.png'
-import compare_bg from './images/compare_bg.jpg'
-
 import leader_1 from './images/leader_1.jpg'
 
 import eco_icon1 from './images/eco_icon1.png'
 
-import { textClass } from 'src/components/Text'
-import { useState } from 'react'
-import { IconArrowLeft, IconArrowRight, IconListItemArrow } from 'src/components/Svg/Icon'
-import { Hr } from 'src/components/Hr'
+import { SectionHeroBanner } from './SectionHeroBanner'
+import { SectionMission } from './SectionMission'
+import { SectionCulture } from './SectionCulture'
+import { SectionLeadership } from './SectionLeadership'
+import { SectionTechFin } from './SectionTechFin'
+import { SectionTechFinVsFinTech } from './SectionTechFinVsFinTech'
 
-import { gsap } from 'gsap'
-
-const t = {
+export const t = {
   heroBanner: {
     title: 'About Us',
     subtitle: `Established in October 2021, ARTA TechFin Corporation Limited (“ARTA TechFin”) (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology (“Technology in Finance” or “TechFin”).`,
@@ -87,240 +79,6 @@ const t = {
     finTechTitle: 'FinTech',
     finTechBody: `FinTech is where the finance industry starts using technology to offer a better customer experience`,
   },
-}
-
-const SectionHeroBanner = () => {
-  return (
-    <div className="relative aspect-video h-auto w-full">
-      <div className="absolute h-full w-full overflow-hidden">
-        <Image src={banner} alt="" fill className="object-cover" />
-      </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white" />
-      <div className="absolute inset-0 flex flex-col items-center justify-center pt-20">
-        <div className="arta-container">
-          <div className="w-1/2">
-            <h1 className={textClass.h1_style2}>{t.heroBanner.title}</h1>
-            <p className={textClass.body_regular}>{t.heroBanner.subtitle}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-const SectionMission = () => {
-  return (
-    <div className="group/bg relative overflow-hidden" id="mission">
-      <div className="easeInOutSine absolute h-full w-full scale-105 overflow-hidden duration-300 group-hover/bg:scale-100">
-        <Image src={mission_bg} alt="" fill className="object-cover" />
-      </div>
-      <div className="arta-container relative flex flex-col items-center justify-center py-36">
-        <h2 className={`${textClass.title_style2} mb-4 text-center text-arta-eggshell-100`}>
-          {t.mission.title}
-        </h2>
-        <span className={`${textClass.h2_style2} -translate-x-24 text-arta-snow-100`}>
-          {t.mission.subtitle1}
-        </span>
-        <span className={`${textClass.h2_style2} translate-x-24 text-arta-snow-100`}>
-          {t.mission.subtitle2}
-        </span>
-      </div>
-    </div>
-  )
-}
-
-const SectionCulture = () => {
-  const [selectedIndex, _setSelectedIndex] = useState(0)
-  const setSelectedIndex = (index: number) => {
-    _setSelectedIndex(index)
-    gsap.fromTo('.fade-in', { opacity: 0 }, { opacity: 1, duration: 0.4, delay: 0.2 })
-  }
-
-  return (
-    <div className="group/bg relative overflow-hidden" id="culture">
-      <div className="easeInOutSine absolute h-full w-full scale-150 overflow-hidden duration-300 group-hover/bg:scale-100">
-        <Image src={culture_bg} alt="" fill className="object-cover" />
-      </div>
-
-      <div className="arta-container relative grid grid-cols-2 py-36">
-        <div className="flex flex-col justify-center">
-          <h2 className={`${textClass.h2_style2} mb-2`}>{t.culture.title}</h2>
-          <p className={textClass.body_regular}>{t.culture.subtitle1}</p>
-        </div>
-        <div className="pl-8">
-          <h3 className={textClass.h3_style2}>{t.culture.sectionTitle}</h3>
-          <Hr />
-          <ul>
-            {t.culture.valueList.map((value, index) => {
-              const isSelected = index === selectedIndex
-              return (
-                <li key={index} className="group/list mb-8 flex flex-col overflow-hidden">
-                  <button
-                    className={
-                      'flex items-start gap-3 overflow-hidden opacity-70 duration-300 ease-out group-hover/list:translate-x-0 group-hover/list:opacity-100' +
-                      (isSelected ? ' translate-x-0 opacity-100' : ' -translate-x-7')
-                    }
-                    onClick={() => setSelectedIndex(index)}
-                  >
-                    <IconListItemArrow className="h-4 w-4 pt-[10px]" fill="#593725" />
-                    <span className={textClass.title}>{value.title}</span>
-                  </button>
-                  <span
-                    className={
-                      `fade-in ${textClass.body_regular} mt-4` + (isSelected ? '' : ' hidden')
-                    }
-                  >
-                    {value.description}
-                  </span>
-                </li>
-              )
-            })}
-          </ul>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-const SectionLeadership = () => {
-  return (
-    <div className="group/bg relative overflow-hidden" id="leadership">
-      <div className="easeInOutSine absolute h-full w-full scale-150 overflow-hidden duration-300 group-hover/bg:scale-100">
-        <Image src={leadership_bg} alt="" fill className="object-cover" />
-      </div>
-      <div className="arta-container relative py-36">
-        <h2 className={`${textClass.h2_style2} mb-2`}>{t.leadership.title}</h2>
-        <ul className="flex w-full max-w-full flex-nowrap overflow-x-auto">
-          {t.leadership.leaderList.map((leader, index) => (
-            <li key={index} className="mr-8 flex w-[14rem] min-w-[14rem] flex-col last:mr-0">
-              <div className="relative mb-4 aspect-[3/4] h-auto w-full overflow-hidden">
-                <Image src={leader.image} alt="" fill className="object-cover" />
-              </div>
-              <span className={`${textClass.small_text} whitespace-pre`}>{leader.title}</span>
-              <span className={textClass.h6}>{leader.name}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  )
-}
-
-const SectionTechFin = () => {
-  const [selectedIndex, setSelectedIndex] = useState(2)
-
-  return (
-    <div className="relative flex flex-col" id="tech-fin">
-      <div className="absolute h-full w-full overflow-hidden">
-        <Image src={tech_fin_bg} alt="" fill className="object-cover" />
-      </div>
-
-      <div className="arta-container relative grid grid-cols-12 py-36">
-        <div className="col-span-4 flex items-center">
-          <h2 className={textClass.h2_style2}>{t.techFin.title}</h2>
-        </div>
-        <div className="col-span-8">
-          <h3 className={textClass.h3_style2}>{t.techFin.subtitle}</h3>
-          <Hr />
-          <h4 className={`${textClass.title} mb-2`}>{t.techFin.section1Title}</h4>
-          <p className={`${textClass.body_regular} max-w-[80%]`}>{t.techFin.section1Body}</p>
-          <Hr />
-          <h4 className={`${textClass.title} mb-2`}>{t.techFin.section2Title}</h4>
-          <p className={`${textClass.body_regular} max-w-[80%]`}>{t.techFin.section2Body}</p>
-          <Hr />
-        </div>
-      </div>
-
-      {/* SectionEcosystem */}
-      <div className="relative flex flex-col items-center pb-36">
-        <div className="mb-12 max-w-3xl text-center">
-          <h3 className={textClass.h3_style2}>{t.ecosystem.title}</h3>
-          <p className={textClass.body_regular}>{t.ecosystem.subtitle}</p>
-        </div>
-        <div className="relative h-96 w-full max-w-full overflow-hidden">
-          {t.ecosystem.itemList.map((item, index) => {
-            const isSelected = index === selectedIndex
-            const styledIndex = (index - selectedIndex + 7) % 5
-
-            return (
-              <div
-                key={index}
-                className={
-                  'absolute left-1/2 flex aspect-square flex-col items-center justify-center rounded-full shadow-2xl transition-all duration-300' +
-                  [
-                    ' top-[24%] h-[60%] translate-x-[-300%]',
-                    ' top-[10%] h-[70%] translate-x-[-164%]',
-                    ' top-0 h-[80%] translate-x-[-50%]',
-                    ' top-[10%] h-[70%] translate-x-[64%]',
-                    ' top-[24%] h-[60%] translate-x-[200%]',
-                  ][styledIndex] +
-                  (isSelected
-                    ? ' bg-arta-eggshell-100 text-arta-sand-100'
-                    : ' bg-arta-sand-100/70 text-arta-snow-100')
-                }
-              >
-                <div className="relative mb-4 h-16 w-16">
-                  <Image src={item.image} alt="" fill className="object-cover" />
-                </div>
-                <span className={`${textClass.body_regular} max-w-[60%] text-center`}>
-                  {item.title}
-                </span>
-              </div>
-            )
-          })}
-
-          <button
-            className="absolute bottom-4 left-1/2 translate-x-[-350%]"
-            onClick={() =>
-              setSelectedIndex((s) =>
-                !t.ecosystem.itemList[s - 1] ? t.ecosystem.itemList.length - 1 : s - 1
-              )
-            }
-          >
-            <IconArrowLeft fill="#593725" />
-          </button>
-          <button
-            className="absolute bottom-4 left-1/2 translate-x-[250%]"
-            onClick={() => setSelectedIndex((s) => (!t.ecosystem.itemList[s + 1] ? 0 : s + 1))}
-          >
-            <IconArrowRight fill="#593725" />
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-const SectionTechFinVsFinTech = () => {
-  return (
-    <div className="group/bg relative overflow-hidden pb-36">
-      <div className="easeInOutSine absolute h-full w-full scale-105 overflow-hidden duration-300 group-hover/bg:scale-100">
-        <Image src={compare_bg} alt="" fill className="object-cover" />
-      </div>
-
-      <div className="arta-container relative grid grid-cols-12 pt-36">
-        <div className="col-span-5 flex items-center justify-center">
-          <div className="flex aspect-square w-full -translate-y-12 flex-col items-center justify-center rounded-full bg-arta-eggshell-100 p-12 text-center">
-            <h3 className={textClass.h2_style2}>{t.techFinVsFinTech.techFinTitle}</h3>
-            <span className={textClass.body_regular}>{t.techFinVsFinTech.techFinBody}</span>
-          </div>
-        </div>
-        <div className="col-span-2 flex items-center justify-center">
-          <span className={textClass.h1_style2}>VS</span>
-        </div>
-        <div className="col-span-5">
-          <div>
-            <h2 className={`${textClass.h2_style2} mb-4`}>{t.techFinVsFinTech.title}</h2>
-            <span className={textClass.body_regular}>{t.techFinVsFinTech.subtitle}</span>
-          </div>
-          <div className="flex aspect-square w-full translate-y-12 flex-col items-center justify-center rounded-full bg-arta-eggshell-100 p-12 text-center">
-            <h3 className={textClass.h2_style2}>{t.techFinVsFinTech.finTechTitle}</h3>
-            <span className={textClass.body_regular}>{t.techFinVsFinTech.finTechBody}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
 }
 
 const PageAbout: NextPage = () => {

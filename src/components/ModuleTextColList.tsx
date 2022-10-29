@@ -11,11 +11,13 @@ type propsT = {
   header: string
   title: string
   list: listT[]
+  headerPosition?: 'left' | 'right'
 }
 
 // TODO: list body support html
 // TODO: animation
 // TODO: responsive
+// TODO: headerPosition
 const ModuleTextColList = ({ header, title, list }: propsT) => {
   return (
     <div className="arta-container relative grid grid-cols-12 py-36">

@@ -18,7 +18,7 @@ import { HeroBanner } from '../HeroBanner'
 export const t = {
   heroBanner: {
     title: 'About Us',
-    subtitle: `Established in October 2021, ARTA TechFin Corporation Limited (“ARTA TechFin”) (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology (“Technology in Finance” or “TechFin”).`,
+    description: `Established in October 2021, ARTA TechFin Corporation Limited (“ARTA TechFin”) (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology (“Technology in Finance” or “TechFin”).`,
     image: '/images/about/banner.jpg',
   },
   mission: {
@@ -86,10 +86,10 @@ const PageAbout: NextPage = () => {
     <>
       <Seo />
       <Header textColor="brown" />
-      <main className="flex flex-col bg-[#D1C2AC] text-arta-sand-100">
+      <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
           title={t.heroBanner.title}
-          description={t.heroBanner.subtitle}
+          description={t.heroBanner.description}
           image={t.heroBanner.image}
         />
         <SectionMission />

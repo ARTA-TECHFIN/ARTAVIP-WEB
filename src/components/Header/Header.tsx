@@ -6,7 +6,7 @@ import { ChevronDownIcon, ChevronUpIcon, XIcon } from '@heroicons/react/outline'
 import MobileNavbar from './MobileNavbar'
 import { gsap } from 'gsap'
 import ClickAwayListener from 'react-click-away-listener'
-import { IconListItemArrow } from '../Icon'
+import { IconListItemArrow } from '../Svg/Icon'
 import ArtaLogo from 'src/components/Svg/arta-logo'
 
 type pageInfoItemT = {

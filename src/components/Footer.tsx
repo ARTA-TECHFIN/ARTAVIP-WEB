@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { Hr } from './Hr'
-import { IconFacebook, IconLinkedIn, IconTwitter, IconWeChat } from './Icon'
+import { IconFacebook, IconLinkedIn, IconTwitter, IconWeChat } from './Svg/Icon'
 
 const t = {
   address: `Units 1-2, Level 9, \nK11 ATELIER King’s Road, \n728 King’s Road,Quarry Bay,\nHong Kong`,

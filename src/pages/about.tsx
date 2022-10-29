@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next'
-import Image from "next/legacy/image";
+import Image from 'next/image'
 
 import Header from 'src/components/Header/Header'
 import Footer from 'src/components/Footer'
@@ -93,7 +93,7 @@ const SectionHeroBanner = () => {
   return (
     <div className="relative aspect-video h-auto w-full">
       <div className="absolute h-full w-full overflow-hidden">
-        <Image src={banner} alt="" layout="fill" objectFit="cover" />
+        <Image src={banner} alt="" fill className="object-cover" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white" />
       <div className="absolute inset-0 flex flex-col items-center justify-center pt-20">
@@ -112,7 +112,7 @@ const SectionMission = () => {
   return (
     <div className="group/bg relative overflow-hidden">
       <div className="easeInOutSine absolute h-full w-full scale-105 overflow-hidden duration-300 group-hover/bg:scale-100">
-        <Image src={mission_bg} alt="" layout="fill" objectFit="cover" />
+        <Image src={mission_bg} alt="" fill className="object-cover" />
       </div>
       <div className="arta-container relative flex flex-col items-center justify-center py-36">
         <h2 className={`${textClass.title_style2} mb-4 text-center text-arta-eggshell-100`}>
@@ -139,7 +139,7 @@ const SectionCulture = () => {
   return (
     <div className="group/bg relative overflow-hidden">
       <div className="easeInOutSine absolute h-full w-full scale-150 overflow-hidden duration-300 group-hover/bg:scale-100">
-        <Image src={culture_bg} alt="" layout="fill" objectFit="cover" />
+        <Image src={culture_bg} alt="" fill className="object-cover" />
       </div>
 
       <div className="arta-container relative grid grid-cols-2 py-36">
@@ -186,7 +186,7 @@ const SectionLeadership = () => {
   return (
     <div className="group/bg relative overflow-hidden">
       <div className="easeInOutSine absolute h-full w-full scale-150 overflow-hidden duration-300 group-hover/bg:scale-100">
-        <Image src={leadership_bg} alt="" layout="fill" objectFit="cover" />
+        <Image src={leadership_bg} alt="" fill className="object-cover" />
       </div>
       <div className="arta-container relative py-36">
         <h2 className={`${textClass.h2_style2} mb-2`}>{t.leadership.title}</h2>
@@ -194,7 +194,7 @@ const SectionLeadership = () => {
           {t.leadership.leaderList.map((leader, index) => (
             <li key={index} className="mr-8 flex w-[14rem] min-w-[14rem] flex-col last:mr-0">
               <div className="relative mb-4 aspect-[3/4] h-auto w-full overflow-hidden">
-                <Image src={leader.image} alt="" layout="fill" objectFit="cover" />
+                <Image src={leader.image} alt="" fill className="object-cover" />
               </div>
               <span className={`${textClass.small_text} whitespace-pre`}>{leader.title}</span>
               <span className={textClass.h6}>{leader.name}</span>
@@ -212,7 +212,7 @@ const SectionTechFin = () => {
   return (
     <div className="relative flex flex-col">
       <div className="absolute h-full w-full overflow-hidden">
-        <Image src={tech_fin_bg} alt="" layout="fill" objectFit="cover" />
+        <Image src={tech_fin_bg} alt="" fill className="object-cover" />
       </div>
 
       <div className="arta-container relative grid grid-cols-12 py-36">
@@ -260,7 +260,7 @@ const SectionTechFin = () => {
                 }
               >
                 <div className="relative mb-4 h-16 w-16">
-                  <Image src={item.image} alt="" layout="fill" objectFit="cover" />
+                  <Image src={item.image} alt="" fill className="object-cover" />
                 </div>
                 <span className={`${textClass.body_regular} max-w-[60%] text-center`}>
                   {item.title}
@@ -295,7 +295,7 @@ const SectionTechFinVsFinTech = () => {
   return (
     <div className="group/bg relative overflow-hidden pb-36">
       <div className="easeInOutSine absolute h-full w-full scale-105 overflow-hidden duration-300 group-hover/bg:scale-100">
-        <Image src={compare_bg} alt="" layout="fill" objectFit="cover" />
+        <Image src={compare_bg} alt="" fill className="object-cover" />
       </div>
 
       <div className="arta-container relative grid grid-cols-12 pt-36">

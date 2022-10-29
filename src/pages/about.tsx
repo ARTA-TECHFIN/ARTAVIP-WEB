@@ -111,7 +111,7 @@ const SectionHeroBanner = () => {
 const SectionMission = () => {
   return (
     <div className="group/bg relative overflow-hidden">
-      <div className="easeInOutSine group-hover/bg:scale-100 absolute h-full w-full scale-105 overflow-hidden duration-300">
+      <div className="easeInOutSine absolute h-full w-full scale-105 overflow-hidden duration-300 group-hover/bg:scale-100">
         <Image src={mission_bg} alt="" layout="fill" objectFit="cover" />
       </div>
       <div className="arta-container relative flex flex-col items-center justify-center py-36">
@@ -138,7 +138,7 @@ const SectionCulture = () => {
 
   return (
     <div className="group/bg relative overflow-hidden">
-      <div className="easeInOutSine group-hover/bg:scale-100 absolute h-full w-full scale-150 overflow-hidden duration-300">
+      <div className="easeInOutSine absolute h-full w-full scale-150 overflow-hidden duration-300 group-hover/bg:scale-100">
         <Image src={culture_bg} alt="" layout="fill" objectFit="cover" />
       </div>
 
@@ -157,7 +157,7 @@ const SectionCulture = () => {
                 <li key={index} className="group/list mb-8 flex flex-col overflow-hidden">
                   <button
                     className={
-                      'group-hover/list:translate-x-0 group-hover/list:opacity-100 flex items-start gap-3 overflow-hidden opacity-70 duration-300 ease-out' +
+                      'flex items-start gap-3 overflow-hidden opacity-70 duration-300 ease-out group-hover/list:translate-x-0 group-hover/list:opacity-100' +
                       (isSelected ? ' translate-x-0 opacity-100' : ' -translate-x-7')
                     }
                     onClick={() => setSelectedIndex(index)}
@@ -185,7 +185,7 @@ const SectionCulture = () => {
 const SectionLeadership = () => {
   return (
     <div className="group/bg relative overflow-hidden">
-      <div className="easeInOutSine group-hover/bg:scale-100 absolute h-full w-full scale-150 overflow-hidden duration-300">
+      <div className="easeInOutSine absolute h-full w-full scale-150 overflow-hidden duration-300 group-hover/bg:scale-100">
         <Image src={leadership_bg} alt="" layout="fill" objectFit="cover" />
       </div>
       <div className="arta-container relative py-36">
@@ -294,7 +294,7 @@ const SectionTechFin = () => {
 const SectionTechFinVsFinTech = () => {
   return (
     <div className="group/bg relative overflow-hidden pb-36">
-      <div className="easeInOutSine group-hover/bg:scale-100 absolute h-full w-full scale-105 overflow-hidden duration-300">
+      <div className="easeInOutSine absolute h-full w-full scale-105 overflow-hidden duration-300 group-hover/bg:scale-100">
         <Image src={compare_bg} alt="" layout="fill" objectFit="cover" />
       </div>
 

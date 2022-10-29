@@ -7,7 +7,7 @@ import MobileNavbar from './MobileNavbar'
 import { gsap } from 'gsap'
 import ClickAwayListener from 'react-click-away-listener'
 import { IconListItemArrow } from '../Icon'
-import ArtaLogo from 'src/components/Svg/arta-logo';
+import ArtaLogo from 'src/components/Svg/arta-logo'
 
 type pageInfoItemT = {
   pageName: string
@@ -88,7 +88,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown' }> = (props) => {
   return (
     <div className="fixed z-10 w-full">
       <ClickAwayListener onClickAway={() => setActiveTabIndex(DEFAULT_TAB_INDEX)}>
-        <header className="w-full pt-[6em] lg:pt-[2.8em] px-[4em] xl:mx-auto">
+        <header className="w-full px-[4em] pt-[6em] lg:pt-[2.8em] xl:mx-auto">
           <div className="flex w-full justify-between lg:space-x-6">
             <div className="hidden items-center justify-center space-x-8 lg:flex">
               {pageInfoList.map((page, index) => {
@@ -141,36 +141,35 @@ const Header: React.FC<{ textColor?: 'white' | 'brown' }> = (props) => {
                     <h6 className="font-Verah text-2xl">{selectedTab.title}</h6>
                     <p className="font-Neue text-[14px] leading-[20px]">{selectedTab.paragraph}</p>
 
-                    <Link href={selectedTab.href} passHref>
-                      <a
-                        className={`group relative inline-flex w-[260px] items-center justify-center overflow-hidden rounded-full border-2 ${borderColorClass} p-4 px-6 py-3 font-medium ${textColorClass} shadow-md transition duration-300 ease-out`}
+                    <Link
+                      href={selectedTab.href}
+                      className={`group relative inline-flex w-[260px] items-center justify-center overflow-hidden rounded-full border-2 ${borderColorClass} p-4 px-6 py-3 font-medium ${textColorClass} shadow-md transition duration-300 ease-out`}
+                    >
+                      <span
+                        className={`ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-4 bg-[#f1eded45] font-Neue text-[16px] leading-[24px] ${textColorClass} duration-300 group-hover:translate-x-0`}
                       >
-                        <span
-                          className={`ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-4 bg-[#f1eded45] font-Neue text-[16px] leading-[24px] ${textColorClass} duration-300 group-hover:translate-x-0`}
+                        <svg
+                          className="h-6 w-6"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
-                            className="h-6 w-6"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M14 5l7 7m0 0l-7 7m7-7H3"
-                            ></path>
-                          </svg>
-                          <span>{selectedTab.buttonText}</span>
-                        </span>
-                        <span
-                          className={`ease absolute flex h-full w-full transform items-center justify-center font-Neue text-[16px] leading-[24px] ${textColorClass} transition-all duration-300 group-hover:translate-x-full`}
-                        >
-                          {selectedTab.buttonText}
-                        </span>
-                        <span className="invisible relative">{selectedTab.buttonText}</span>
-                      </a>
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                          ></path>
+                        </svg>
+                        <span>{selectedTab.buttonText}</span>
+                      </span>
+                      <span
+                        className={`ease absolute flex h-full w-full transform items-center justify-center font-Neue text-[16px] leading-[24px] ${textColorClass} transition-all duration-300 group-hover:translate-x-full`}
+                      >
+                        {selectedTab.buttonText}
+                      </span>
+                      <span className="invisible relative">{selectedTab.buttonText}</span>
                     </Link>
                   </div>
                   <div className="flex flex-col">

@@ -1,10 +1,16 @@
-import React, { useState } from 'react'
-import { ChevronDownIcon, ChevronUpIcon, XIcon } from '@heroicons/react/outline'
-import Image from 'next/image'
-interface props {
-  item: {}
+import React, { FC, useState } from 'react'
+import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'
+
+interface propsT {
+  item: {
+    pageName: string
+    paragraph: string
+    buttonText: string
+    pages: string[]
+  }
 }
-const MobileNavbar = ({ ...props }) => {
+
+const MobileNavbar: FC<propsT> = ({ item }) => {
   const [show, setShow] = useState(false)
 
   return (
@@ -18,7 +24,7 @@ const MobileNavbar = ({ ...props }) => {
             }}
           >
             <span className="decoration-[#E5C183] underline-offset-[15px] transition group-hover:underline">
-              {props.item.pageName}
+              {item.pageName}
             </span>
             {show ? (
               <ChevronUpIcon className="mt-1 ml-1  h-4 w-4 group-hover:text-[#E5C183]" />
@@ -33,7 +39,7 @@ const MobileNavbar = ({ ...props }) => {
               show && 'scale-y-100 transform opacity-100 transition delay-100'
             } mt-5 flex transform flex-col items-start justify-start `}
           >
-            <p className="mt-5 max-w-[500px] text-sm">{props.item.paragraph}</p>
+            <p className="mt-5 max-w-[500px] text-sm">{item.paragraph}</p>
             <a
               href="#_"
               className="group relative my-6 inline-flex w-[260px] items-center justify-center overflow-hidden rounded-full border-2  border-white p-4 px-6 py-3 font-medium text-white shadow-md transition duration-300 ease-out"
@@ -53,18 +59,16 @@ const MobileNavbar = ({ ...props }) => {
                     d="M14 5l7 7m0 0l-7 7m7-7H3"
                   ></path>
                 </svg>
-                <span>{props.item.buttonText}</span>
+                <span>{item.buttonText}</span>
               </span>
               <span className="ease absolute flex h-full w-full transform items-center justify-center text-[16px] leading-[24px] text-white transition-all duration-300 group-hover:translate-x-full">
-                {props.item.buttonText}
+                {item.buttonText}
               </span>
-              <span className="invisible relative">
-                {props.item.buttonText}
-              </span>
+              <span className="invisible relative">{item.buttonText}</span>
             </a>
 
             <div className="flex flex-col justify-center space-y-5 pl-5">
-              {props.item.pages.map((item: string, index: number) => (
+              {item.pages.map((item, index) => (
                 <div className="group " key={index}>
                   <li className=" relative -translate-x-6 cursor-pointer list-none py-2 px-2 opacity-70 duration-300 ease-out hover:translate-x-0 hover:opacity-100 ">
                     {/* <span className="absolute top-0 left-0 h-full w-0  transition-all duration-150 ease-in-out group-hover:w-full group-hover:bg-[#f1eded45]"></span> */}

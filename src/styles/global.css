@@ -66,4 +66,13 @@
     -moz-transform: translate3d(0, 0, 0);
     @apply will-change-transform;
   }
+
+  .arta-hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .arta-hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }

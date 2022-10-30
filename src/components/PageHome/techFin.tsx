@@ -324,17 +324,19 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
             the world. We carry this out every day by providing clients with a variety of financial
             services.
           </p>
-          <ul className="flex min-h-[12em] w-full list-none flex-row">
-            {businesses.map((business: any, i: number) => (
-              <BusinessCircle
-                key={i}
-                index={i}
-                business={business}
-                selectedBusiness={selectedBusiness}
-                setSelectedBusiness={setSelectedBusiness}
-              />
-            ))}
-          </ul>
+          <div className='lg:w-full w-[100vw] lg:overflow-visible lg:ml-0 -ml-[6em] overflow-x-auto arta-hide-scrollbar'>
+            <ul className="flex lg:min-h-[12em] min-h-[390px] lg:w-full list-none flex-row lg:px-0 px-[6em]">
+              {businesses.map((business: any, i: number) => (
+                <BusinessCircle
+                  key={i}
+                  index={i}
+                  business={business}
+                  selectedBusiness={selectedBusiness}
+                  setSelectedBusiness={setSelectedBusiness}
+                />
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -348,14 +350,14 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
 
   return (
     <li
-      className="relative flex min-w-[11.7em] justify-center self-center will-change-transform"
+      className="relative flex lg:min-w-[11.7em] lg:w-full w-[327px] lg:flex-auto flex-[0_0_327px] justify-center self-center will-change-transform"
       onMouseEnter={() => setSelectedBusiness(index)}
     >
       <div
         className={cn(
           index === selectedBusiness &&
-            'innerShadow !h-[11.7em] !w-[11.7em] text-[3em] !opacity-100 lg:!text-[1em]',
-          `flex h-[10em] w-[10em] items-center justify-center self-center rounded-full border border-white text-[0.85em] opacity-70 transition-all will-change-transform hover:h-[12em] hover:w-[12em] hover:opacity-100`
+            'innerShadow lg:!h-[12em] lg:!w-[12em] lg:flex-[0_0_12em] flex-[0_0_264px] h-[264px] w-[264px] text-[18px] !opacity-100 lg:!text-[20px]',
+          `flex lg:h-[10em] lg:w-[10em] h-[264px] w-[264px] lg:flex-[0_0_10em] flex-[0_0_264px] items-center justify-center self-center rounded-full border border-white lg:text-[20px] text-[18px]  opacity-70 transition-all will-change-transform lg:hover:h-[12em] lg:hover:w-[12em] lg:hover:flex-[0_0_12em] hover:opacity-100 innerShadow lg:shadow-none`
         )}
       >
         <a href="#">{business.title}</a>
@@ -363,7 +365,7 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
 
       <div
         className={cn(
-          `absolute bottom-0 left-1/2 w-full translate-y-full -translate-x-1/2 transform transition-all duration-300`,
+          `absolute flex flex-col justify-center bottom-0 left-1/2 w-full translate-y-full -translate-x-1/2 transform transition-all duration-300`,
           index === selectedBusiness ? 'opacity-100' : 'opacity-0'
         )}
       >
@@ -374,7 +376,7 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
         <ButtonAnimated
           as="a"
           href="#_"
-          className="mt-[1em] border-white py-[0.5em] px-[2em] font-Neue text-[3.6em] text-white lg:px-[3em] lg:text-[1em]"
+          className="mt-[1em] border-white py-[0.5em] md:px-[2em] px-[1em] font-Neue text-[3.6em] text-white lg:px-[3em] lg:text-[1em]"
         >
           Learn more
         </ButtonAnimated>

@@ -11,7 +11,7 @@ export const getStaticProps = async () => {
 }
 
 const InvestorPage = (props: { cms: Awaited<ReturnType<typeof getReportCms>> }) => {
-  return <PageInvestor cms={props.cms} tabType="announcement" />
+  return <PageInvestor cms={props.cms} tabType="financial-report" />
 }
 
 export default InvestorPage

@@ -61,9 +61,9 @@ const pageInfoList: pageInfoItemT[] = [
     href: links.investor,
     pages: [
       { title: 'Announcements and notices', link: links.investor },
-      { title: 'Financial Reports', link: links.investor },
-      { title: 'Financial Calender', link: links.investor },
-      { title: 'ESG', link: links.investor },
+      { title: 'Financial Reports', link: links.investorFinReport },
+      { title: 'Financial Calender', link: links.investorFinCalendar },
+      { title: 'ESG', link: links.investorEsg },
     ],
   },
   {

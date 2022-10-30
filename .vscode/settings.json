@@ -17,5 +17,6 @@
     "truetype",
     "updatetime",
     "Verah"
-  ]
+  ],
+  "nuxt.isNuxtApp": false
 }

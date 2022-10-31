@@ -3,6 +3,8 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import cn from 'classnames'
 import { ButtonAnimated } from '../ButtonAnimated'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }: any) => {
   gsap.registerPlugin(ScrollTrigger)
@@ -314,28 +316,40 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
         </div>
         <div
           ref={businessRef}
-          className="absolute left-[6em] bottom-[22em] z-2 transform text-white opacity-0 lg:left-[4em] lg:bottom-auto lg:top-[20em] lg:top-1/2 lg:-translate-y-1/2"
+          className="absolute lg:left-[6em] bottom-[22em] z-2 transform text-white opacity-0 lg:left-[4em] lg:bottom-auto top-[25em] lg:top-[21em] lg:top-1/2 lg:-translate-y-1/2"
         >
-          <h1 className="font-verah text-left text-[6em] tracking-[0.06em] lg:text-[3.4em]">
+          <h1 className="font-verah text-left text-[6em] tracking-[0.06em] lg:text-[3.4em] ml-[0.9em] lg:ml-0">
             Our Businesses
           </h1>
-          <p className="max-w-[30em] pb-5 text-left font-Neue text-[3.6em] lg:text-[1em]">
+          <p className="max-w-[30em] pb-5 text-left font-Neue text-[3.6em] lg:text-[1em] ml-[1.6em] lg:ml-0">
             ARTA TechFin is determined to create the fairest, most transparent, and open markets in
             the world. We carry this out every day by providing clients with a variety of financial
             services.
           </p>
-          <div className='lg:w-full w-[100vw] lg:overflow-visible lg:ml-0 -ml-[6em] overflow-x-auto arta-hide-scrollbar'>
-            <ul className="flex lg:min-h-[12em] min-h-[390px] lg:w-full list-none flex-row lg:px-0 px-[6em]">
+          <div className="w-[100vw] lg:max-w-[80vw]">
+            <Swiper
+              loop={false}
+              slidesPerView={1}
+              spaceBetween={0}
+              breakpoints={{
+                767: {
+                  slidesPerView: 5,
+                }
+              }}
+              className="!overflow-visible"
+            >
               {businesses.map((business: any, i: number) => (
-                <BusinessCircle
-                  key={i}
-                  index={i}
-                  business={business}
-                  selectedBusiness={selectedBusiness}
-                  setSelectedBusiness={setSelectedBusiness}
-                />
+                <SwiperSlide className="min-h-[13em] min-w-[13em] flex flex-col justify-center text-center" key={`option-${i}`}>
+                  <BusinessCircle
+                    key={i}
+                    index={i}
+                    business={business}
+                    selectedBusiness={selectedBusiness}
+                    setSelectedBusiness={setSelectedBusiness}
+                  />
+                </SwiperSlide>
               ))}
-            </ul>
+            </Swiper>
           </div>
         </div>
       </div>
@@ -346,18 +360,16 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
 const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness }: any) => {
   if (!business) return null
 
-  console.log(index, selectedBusiness)
-
   return (
-    <li
-      className="relative flex lg:min-w-[11.7em] lg:w-full w-[327px] lg:flex-auto flex-[0_0_327px] justify-center self-center will-change-transform"
+    <div
+      className="relative flex mx-auto will-change-transform mt-[4em] lg:mt-0"
       onMouseEnter={() => setSelectedBusiness(index)}
     >
       <div
         className={cn(
           index === selectedBusiness &&
-            'innerShadow lg:!h-[12em] lg:!w-[12em] lg:!flex-[0_0_12em] flex-[0_0_264px] h-[264px] w-[264px] text-[18px] !opacity-100 lg:!text-[20px]',
-          `flex lg:h-[10em] lg:w-[10em] h-[264px] w-[264px] lg:flex-[0_0_10em] flex-[0_0_264px] items-center justify-center self-center rounded-full border border-white lg:text-[20px] text-[18px]  opacity-70 transition-all will-change-transform lg:hover:h-[12em] lg:hover:w-[12em] lg:hover:flex-[0_0_12em] hover:opacity-100 innerShadowMobile`
+          'innerShadow !opacity-100 lg:h-[12em] lg:text-[1.04em] lg:w-[12em]',
+          `flex mx-auto h-[16em] w-[16em] lg:h-[10em] lg:w-[10em] items-center justify-center self-center rounded-full border border-white opacity-70 transition-all will-change-transform innerShadowMobile text-[3.4em] lg:text-[1em]`
         )}
       >
         <a href="#">{business.title}</a>
@@ -365,23 +377,23 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
 
       <div
         className={cn(
-          `absolute flex flex-col justify-center bottom-0 left-1/2 w-full translate-y-full -translate-x-1/2 transform transition-all duration-300`,
-          index === selectedBusiness ? 'opacity-100' : 'opacity-0'
+          `absolute flex flex-col justify-center bottom-0 left-1/2 w-full translate-y-full -translate-x-1/2 transform transition-all duration-300 w-[110%]`,
+          index === selectedBusiness ? 'lg:opacity-100' : 'lg:opacity-0'
         )}
       >
-        <p className="mt-[1em] hidden w-full text-center font-Neue text-[3em] text-white lg:block lg:text-[0.7em]">
+        <p className="mt-[1em] hidden w-full text-center font-Neue text-[3em] text-white lg:block lg:text-[0.8em]">
           We develop innovative and transformative blockchain-enabled solutions for financial
           services processes and products.
         </p>
         <ButtonAnimated
           as="a"
           href="#_"
-          className="mt-[1em] border-white py-[0.5em] md:px-[2em] px-[1em] font-Neue text-[3.6em] text-white lg:px-[3em] lg:text-[1em]"
+          className="mt-[1em] border-white py-[0.4em] md:px-[2em] px-[1em] font-Neue text-[3em] text-white lg:px-[3em] lg:text-[1em]"
         >
           Learn more
         </ButtonAnimated>
       </div>
-    </li>
+    </div>
   )
 }
 

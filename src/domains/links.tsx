@@ -9,6 +9,9 @@ export const links = {
   businessesSecurities: '/businesses/securities',
   businessesWeb3: '/businesses/web3-media',
   investor: '/investor-relations',
+  investorFinReport: '/investor-relations/fin-report',
+  investorFinCalendar: '/investor-relations/fin-calendar',
+  investorEsg: '/investor-relations/esg',
   media: '/media-centre',
   contact: '/contact',
 }

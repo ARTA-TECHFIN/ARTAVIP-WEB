@@ -1,0 +1,133 @@
+# Financial Reports: incl. Annual, Interim , ESG reports
+# Announcements & Notices: incl. all HKEX Statutory documents except Financial Reports
+
+# List of filetype
+# ANN ＝ Announcement
+# RAN = Result announcement
+# AR = Annual report
+# IR = Interim report
+# ESR = Environmental and social responsibility report
+# NDR = Next day disclosure return
+# MR = Monthly returns
+# PF = Proxy form
+# CIR = Circulars
+# LD = Listing document
+# CD = Constitutional document
+
+
+### Financial Reports (by page)
+### EN
+https://sync.irasia.com/api/sync/2.5/arta/en/byType/r/latest/10?apikey=1797b3e1-a886-43ec-9e6f-c3ec41ed5a47&page=1
+### TC
+https://sync.irasia.com/api/sync/2.5/arta/tc/byType/r/latest/10?apikey=1797b3e1-a886-43ec-9e6f-c3ec41ed5a47&page=1
+### SC
+https://sync.irasia.com/api/sync/2.5/arta/sc/byType/r/latest/10?apikey=1797b3e1-a886-43ec-9e6f-c3ec41ed5a47&page=1
+
+# Response
+# {
+#   "status": 200,
+#   "message": "Success",
+#   "data": {
+#     "lang": "en",
+#     "company": "arta",
+#     "type": "r",
+#     "keyword": null,
+#     "page": 1,
+#     "take": 10,
+#     "total": 29,
+#     "results": [
+#       {
+#         "doc_date": "2022-07-15",
+#         "filetype": "AR",
+#         "filetype2": "",
+#         "headline": "Annual Report 2021\/2022",
+#         "overseas_announcement": 0,
+#         "url": "https:\/\/doc.irasia.com\/listco\/hk\/artatechfin\/annual\/2022\/ar2022.pdf",
+#         "file_id": 267943,
+#         "cover_url": "https:\/\/www.irasia.com\/listco\/hk\/artatechfin\/annual\/cover2022.jpg",
+#         "cover_hires_url": null,
+#         "updatetime": "2022-07-15 17:07:25"
+#       }
+#     ]
+#   }
+# }
+
+### Financial Reports (by year)
+https://sync.irasia.com/api/sync/2.5/arta/en/byType/r/2022?apikey=1797b3e1-a886-43ec-9e6f-c3ec41ed5a47
+
+# Response
+# {
+#   "status": 200,
+#   "message": "Success",
+#   "data": {
+#     "total": 1,
+#     "max_year": 2022,
+#     "min_year": 2008,
+#     "lang": "en",
+#     "company": "arta",
+#     "type": "r",
+#     "page": 1,
+#     "take": null,
+#     "results": [
+#       {
+#         "doc_date": "2022-07-15",
+#         "filetype": "AR",
+#         "filetype2": "",
+#         "headline": "Annual Report 2021\/2022",
+#         "overseas_announcement": 0,
+#         "url": "https:\/\/doc.irasia.com\/listco\/hk\/artatechfin\/annual\/2022\/ar2022.pdf",
+#         "file_id": 267943,
+#         "cover_url": "https:\/\/www.irasia.com\/listco\/hk\/artatechfin\/annual\/cover2022.jpg",
+#         "cover_hires_url": null,
+#         "updatetime": "2022-07-15 17:07:25"
+#       }
+#     ]
+#   }
+# }
+
+
+### Announcements & Notices (by page)
+### EN 
+https://sync.irasia.com/api/sync/2.5/arta/en/byType/acl/latest/10?apikey=1797b3e1-a886-43ec-9e6f-c3ec41ed5a47&page=1
+### TC 
+https://sync.irasia.com/api/sync/2.5/arta/tc/byType/acl/latest/10?apikey=1797b3e1-a886-43ec-9e6f-c3ec41ed5a47&page=1
+### SC 
+https://sync.irasia.com/api/sync/2.5/arta/sc/byType/acl/latest/10?apikey=1797b3e1-a886-43ec-9e6f-c3ec41ed5a47&page=1
+
+# Response
+# {
+#   "status": 200,
+#   "message": "Success",
+#   "data": {
+#     "lang": "en",
+#     "company": "arta",
+#     "type": "acl",
+#     "keyword": null,
+#     "page": 1,
+#     "take": 10,
+#     "total": 1081,
+#     "results": [
+#       {
+#         "doc_date": "2022-10-21",
+#         "filetype": "ANN",
+#         "filetype2": "",
+#         "headline": "PROFIT WARNING",
+#         "overseas_announcement": 0,
+#         "url": "https:\/\/doc.irasia.com\/listco\/hk\/artatechfin\/announcement\/a221021.pdf",
+#         "file_id": 273807,
+#         "cover_url": null,
+#         "cover_hires_url": null,
+#         "updatetime": "2022-10-21 20:05:58"
+#       },
+#     ]
+#   }
+# }
+
+
+### Announcements & Notices (by year)
+### en
+https://sync.irasia.com/api/sync/2.5/arta/en/byType/acl/2022?apikey=1797b3e1-a886-43ec-9e6f-c3ec41ed5a47
+### tc
+https://sync.irasia.com/api/sync/2.5/arta/tc/byType/acl/2022?apikey=1797b3e1-a886-43ec-9e6f-c3ec41ed5a47
+### sc
+https://sync.irasia.com/api/sync/2.5/arta/sc/byType/acl/2022?apikey=1797b3e1-a886-43ec-9e6f-c3ec41ed5a47

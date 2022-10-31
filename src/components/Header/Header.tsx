@@ -107,7 +107,6 @@ const Header: React.FC<{ textColor?: 'white' | 'brown' }> = (props) => {
     _setActiveTabIndex(index)
     gsap.fromTo('#fadeIn', { opacity: 0 }, { opacity: 1, duration: 0.6, delay: 0.3 })
   }
-
   const selectedTab = activeTabIndex === DEFAULT_TAB_INDEX ? null : pageInfoList[activeTabIndex]
 
   return (

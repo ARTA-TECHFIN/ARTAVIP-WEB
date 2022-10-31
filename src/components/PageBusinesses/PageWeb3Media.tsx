@@ -10,7 +10,8 @@ const cms = {
   heroBanner: {
     title: 'Web3 Media',
     description: `We offer trading services on an all-in-one platform on various products as well as comprehensive risk management.`,
-    image: '/images/asset-management/banner.jpg',
+    image: '/images/asset-management/banner.png',
+    mobileImage: '/images/asset-management/mobile-banner.png',
     label: 'Our Businesses',
   },
   section1: {
@@ -46,6 +47,7 @@ const PageWeb3Media: NextPage = () => {
           title={cms.heroBanner.title}
           description={cms.heroBanner.description}
           image={cms.heroBanner.image}
+          mobileImage={cms.heroBanner.mobileImage}
           label={cms.heroBanner.label}
         />
         <ModuleTextColList

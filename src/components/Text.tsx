@@ -5,6 +5,7 @@
 
 export const textClass = {
   body_regular: `font-Neue text-[1rem] leading-[1.5rem] tracking-wide`, // font-size: 16px; line-height: 24px;
+  body_regular_verah: `font-Verah text-[1rem] leading-[1.5rem] tracking-wide`, // font-size: 16px; line-height: 24px;
   h1_style2: `font-Verah text-[4.25rem] leading-[5rem] tracking-wide`, // font-size: 68px; line-height: 80px;
   h2_style2: `font-Verah text-[3rem] leading-[3.75rem] tracking-wide`, // font-size: 48px; line-height: 60px;
   h3_style2: `font-Verah text-[2.25rem] leading-[2.875rem]`, // font-size: 36px; line-height: 46px;

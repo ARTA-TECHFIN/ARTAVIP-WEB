@@ -11,13 +11,14 @@ const cms = {
   heroBanner: {
     title: 'Asset Management',
     description: `We provide professional investment management and advisory primarily to institutional clients and family offices, allowing them to tap the flexibility and diversity of investment products and asset classes.`,
-    image: '/images/asset-management/banner.jpg',
+    image: '/images/asset-management/banner.png',
+    mobileImage: '/images/asset-management/mobile-banner.png',
     label: 'Our Businesses',
   },
   section1: {
     title: 'Introduction',
     body: `Our Asset Management division provides professional investment management, advisory, and securities brokerage services primarily to institutional clients and family offices, allowing them to tap the flexibility and diversity of investment products and asset classes available in Hong Kong and international markets. Our goal is to generate optimal risk-adjusted investment returns, offer balanced asset and liability management (especially for insurance companies) and provide investment solutions customized for our valued clients’ unique needs and risk appetite. `,
-    bgImage: '',
+    bgImage: '/images/asset-management/bg-introduction.png',
   },
   section2: {
     headerPosition: 'left' as const,
@@ -46,6 +47,7 @@ const PageBusinessesPage: NextPage = () => {
           title={cms.heroBanner.title}
           description={cms.heroBanner.description}
           image={cms.heroBanner.image}
+          mobileImage={cms.heroBanner.mobileImage}
           label={cms.heroBanner.label}
         />
         <ModuleTextSection

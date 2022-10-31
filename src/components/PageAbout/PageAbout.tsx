@@ -20,6 +20,7 @@ export const t = {
     title: 'About Us',
     description: `Established in October 2021, ARTA TechFin Corporation Limited (“ARTA TechFin”) (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology (“Technology in Finance” or “TechFin”).`,
     image: '/images/about/banner.jpg',
+    mobileImage: '/images/about/mobile-banner.png',
   },
   mission: {
     title: 'Vision & Mission',
@@ -91,6 +92,7 @@ const PageAbout: NextPage = () => {
           title={t.heroBanner.title}
           description={t.heroBanner.description}
           image={t.heroBanner.image}
+          mobileImage={t.heroBanner.mobileImage}
         />
         <SectionMission />
         <SectionCulture />

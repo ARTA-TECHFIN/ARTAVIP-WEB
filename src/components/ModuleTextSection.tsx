@@ -15,7 +15,7 @@ type propsT = {
 // TODO: styling
 const ModuleTextSection: FC<propsT> = ({ title, description, bgImage }) => {
   return (
-    <div className="group/bg relative" id="mission">
+    <div className="group/bg relative overflow-hidden" id="mission">
       <div className="easeInOutSine absolute h-full w-full scale-105 overflow-hidden duration-300 group-hover/bg:scale-100">
         <Image src={bgImage} alt="" fill className="object-cover" />
       </div>

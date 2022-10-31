@@ -12,13 +12,14 @@ const cms = {
   heroBanner: {
     title: 'Securities Banking',
     description: `We offer trading services on an all-in-one platform on various products as well as comprehensive risk management.`,
-    image: '/images/asset-management/banner.jpg',
+    image: '/images/asset-management/banner.png',
+    mobileImage: '/images/asset-management/mobile-banner.png',
     label: 'Our Businesses',
   },
   section1: {
     title: 'Trading',
     body: `Our Trading division provides trading platform services supporting different products which include stocks, futures, options, fixed income, funds, CFD, swap, structured products and virtual assets. Our clients include financial institutions, family offices, high-net-worth investors and retail investors. We also manage credit and market risk of clients’ and house positions.`,
-    bgImage: '',
+    bgImage: '/images/asset-management/bg-introduction.png',
   },
   section2: {
     iconList: [
@@ -90,6 +91,7 @@ const PageSecurities: NextPage = () => {
           title={cms.heroBanner.title}
           description={cms.heroBanner.description}
           image={cms.heroBanner.image}
+          mobileImage={cms.heroBanner.mobileImage}
           label={cms.heroBanner.label}
         />
         <ModuleTextSection

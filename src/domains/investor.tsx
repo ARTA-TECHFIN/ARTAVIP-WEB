@@ -1,6 +1,6 @@
 import { langT } from './i18n'
 
-const host = process.env.HOSTING_PATH
+const host = process.env.NEXT_PUBLIC_HOSTING_PATH
 const reportEndpoint = `${host}/api/report-list`
 
 const fileType = {
@@ -60,8 +60,13 @@ export const getReportList = async ({ lang, page, year, reportType }: reportRequ
   const res = await fetch(endpoint)
   const result = await res.json()
 
+  if (result.status !== 200) throw new Error(result.message)
+
   return result as apiResponseT<reportItemT>
 }
+
+// TODO: generate this from cms
+export type reportCmsT = Awaited<ReturnType<typeof getReportCms>>
 
 export const getReportCms = async ({ lang }: { lang: langT }) => {
   // TODO: get cms from api

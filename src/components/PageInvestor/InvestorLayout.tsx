@@ -44,6 +44,7 @@ const InvestorLayout: FC<propsT> = ({ cms, tabType, children }) => {
           title={cms.heroBanner.title}
           description={cms.heroBanner.description}
           image={cms.heroBanner.image}
+          mobileImage={cms.heroBanner.mobileImage}
           label={cms.heroBanner.label}
         />
         <TabBar

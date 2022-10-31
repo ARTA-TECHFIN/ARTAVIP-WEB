@@ -62,6 +62,27 @@ const IconArrowRight = (props: propsT) => {
   )
 }
 
+const IconArrowRightCircle = (props: propsT) => {
+  const fill = props.fill || '#593725'
+  return (
+    <svg
+      width="32" 
+      height="32"
+      fill="none"
+      viewBox="0 0 32 32"
+      xmlns="http://www.w3.org/2000/svg"
+      className={props.className}
+    >
+      <circle cx="16" cy="16" r="15.5" transform="rotate(180 16 16)" stroke={fill}/>
+      <path
+        d="M13 24C13.0353 23.7981 13.0529 23.5831 13.0529 23.3549C13.0529 23.1092 13.0353 22.8941 13 22.7098L20.7255 16.0197L13 9.39393C13.0353 9.26228 13.0529 9.11747 13.0529 8.95949C13.0529 8.79273 13.0353 8.13165 13 8C15.26 9.89731 22.2632 16.0197 22.2632 16.0197C22.2632 16.0197 15.2094 22.1548 13 24Z"
+        fill={fill}
+      />
+    </svg>
+  )
+}
+
+
 const IconFacebook = (props: propsT) => {
   const fill = props.fill || '#878095'
   return (
@@ -182,4 +203,5 @@ export {
   IconWeChat,
   IconTwitter,
   IconLinkedIn,
+  IconArrowRightCircle
 }

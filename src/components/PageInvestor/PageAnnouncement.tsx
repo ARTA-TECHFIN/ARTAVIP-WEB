@@ -30,7 +30,7 @@ const PageAnnouncement: NextPage = () => {
   if (status === 'error') return <ErrorMessage error={error} />
 
   return (
-    <div>
+    <div className='mt-16'>
       {data.map((yearly) => (
         <CalendarAccordion
           key={yearly.year}

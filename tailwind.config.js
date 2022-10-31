@@ -27,6 +27,7 @@ module.exports = {
         'arta-sunray-100': '#E5C183',
         'arta-russet-100': '#2E1605',
         'arta-sand-100': '#593725',
+        'arta-sand-200': '#AC9B92',
         'arta-eggshell-100': '#F4F1E1',
         'arta-snow-100': '#FFFFFF',
         'arta-bistre-100': '#402414',

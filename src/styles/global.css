@@ -81,4 +81,13 @@
   .arta-hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
+  .arta-eventItem:first-child {
+    padding-top: 0;
+  }
+
+  .arta-eventItem:last-child {
+    border: none;
+    padding-bottom: 0;
+  }
 }

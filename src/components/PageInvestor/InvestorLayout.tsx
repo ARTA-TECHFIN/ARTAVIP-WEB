@@ -47,14 +47,18 @@ const InvestorLayout: FC<propsT> = ({ cms, tabType, children }) => {
           mobileImage={cms.heroBanner.mobileImage}
           label={cms.heroBanner.label}
         />
-        <TabBar
-          tabs={tabList.map((t) => t.title)}
-          selectedTab={tabInfo.title}
-          setSelectedTab={(_, index) =>
-            Router.push(tabList[index].link, undefined, { scroll: false })
-          }
-        />
-        {children}
+        <div className='pt-16 pb-[206px] bg-arta-eggshell-100'>
+          <div className='arta-container mx-auto'>
+            <TabBar
+              tabs={tabList.map((t) => t.title)}
+              selectedTab={tabInfo.title}
+              setSelectedTab={(_, index) =>
+                Router.push(tabList[index].link, undefined, { scroll: false })
+              }
+            />
+            {children}
+          </div>
+        </div>
       </main>
       <Footer textColor="brown" />
     </>

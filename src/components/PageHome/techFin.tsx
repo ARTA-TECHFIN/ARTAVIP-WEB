@@ -356,8 +356,8 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
       <div
         className={cn(
           index === selectedBusiness &&
-            'innerShadow lg:!h-[12em] lg:!w-[12em] lg:flex-[0_0_12em] flex-[0_0_264px] h-[264px] w-[264px] text-[18px] !opacity-100 lg:!text-[20px]',
-          `flex lg:h-[10em] lg:w-[10em] h-[264px] w-[264px] lg:flex-[0_0_10em] flex-[0_0_264px] items-center justify-center self-center rounded-full border border-white lg:text-[20px] text-[18px]  opacity-70 transition-all will-change-transform lg:hover:h-[12em] lg:hover:w-[12em] lg:hover:flex-[0_0_12em] hover:opacity-100 innerShadow lg:shadow-none`
+            'innerShadow lg:!h-[12em] lg:!w-[12em] lg:!flex-[0_0_12em] flex-[0_0_264px] h-[264px] w-[264px] text-[18px] !opacity-100 lg:!text-[20px]',
+          `flex lg:h-[10em] lg:w-[10em] h-[264px] w-[264px] lg:flex-[0_0_10em] flex-[0_0_264px] items-center justify-center self-center rounded-full border border-white lg:text-[20px] text-[18px]  opacity-70 transition-all will-change-transform lg:hover:h-[12em] lg:hover:w-[12em] lg:hover:flex-[0_0_12em] hover:opacity-100 innerShadowMobile`
         )}
       >
         <a href="#">{business.title}</a>

@@ -90,4 +90,8 @@
     border: none;
     padding-bottom: 0;
   }
+
+  .arta-calendarAccordionSahdow {
+    box-shadow: 0px 8px 16px rgba(89, 55, 37, 0.2);
+  }
 }

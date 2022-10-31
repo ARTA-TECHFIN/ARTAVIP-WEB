@@ -1,6 +1,7 @@
 import {ChevronDownIcon} from '@heroicons/react/outline'
 import {IconArrowRightCircle} from '../Svg/Icon'
 import { useEffect, useRef, useState } from 'react'
+import cn from 'classnames'
 import { textClass } from 'src/components/Text'
 import gsap from 'gsap'
 
@@ -26,7 +27,7 @@ const CalendarAccordion = ({ year, events }: propsT) => {
   }
 
   return (
-    <div className="mb-6 bg-white">
+    <div className={cn(`mb-6 bg-white transition-shadow`, showMenu ? 'arta-calendarAccordionSahdow': '')}>
       <div className="flex justify-between items-center p-8 cursor-pointer" onClick={() => setShowMenu(!showMenu)}>
         <span className={`${textClass.h6} text-black`}>{year}</span>
         <ChevronDownIcon ref={togglerIcon} className='h-4 w-4'/>

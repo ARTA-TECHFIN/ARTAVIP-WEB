@@ -30,7 +30,7 @@ const PageFinancialReport: NextPage = () => {
   if (status === 'error') return <ErrorMessage error={error} />
 
   return (
-    <div>
+    <div className='pt-[66px]'>
       {data.map((yearly) => (
         <ReportSection key={yearly.year} year={yearly.year} reports={yearly.results} />
       ))}

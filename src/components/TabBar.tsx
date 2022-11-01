@@ -10,16 +10,15 @@ const TabBar = (props: propsT) => {
   const { tabs, selectedTab, setSelectedTab } = props
 
   return (
-    <ul className="flex justify-center gap-8">
+    <ul className="flex justify-center gap-16 border-solid border-b border-arta-sand-200 text-arta-sand-200">
       {tabs.map((tab, index) => {
         const isSelected = tab === selectedTab
         return (
           <li
             key={index}
             onClick={() => setSelectedTab(tab, index)}
-            className={cn('', isSelected && 'bg-blue-500')}
           >
-            <button>{tab}</button>
+            <button className={cn('pb-2 transition-all', isSelected && 'text-arta-sand-100  border-solid border-b-2 border-arta-sand-100')}>{tab}</button>
           </li>
         )
       })}

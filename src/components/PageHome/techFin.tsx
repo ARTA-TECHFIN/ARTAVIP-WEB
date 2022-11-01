@@ -15,7 +15,6 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
   const circleRef = useRef(null)
   const sec1MaskCircleRef = useRef(null)
   const sec1VideoRed = useRef(null)
-
   const [selectedBusiness, setSelectedBusiness] = useState(0)
 
   const [lastFireTime, setLastFireTime] = useState<number>(Date.now())

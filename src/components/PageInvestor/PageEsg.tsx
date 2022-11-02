@@ -13,7 +13,6 @@ const PageEsg: NextPage = () => {
 
   const nav:any = useRef()
   const sections = useRef(null)
-
   const goToSection = (index:number) => () => {
       const esgSections = document.querySelectorAll('.esg-section')
       gsap.to(window, {duration: 1, scrollTo:{ y: esgSections[index], offsetY: 130}});

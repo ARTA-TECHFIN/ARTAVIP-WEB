@@ -195,6 +195,30 @@ const IconLinkedIn = (props: propsT) => {
   )
 }
 
+const Circle = (props: propsT) => {
+  const fill = props.fill || '#878095'
+  return (
+    <svg 
+      width="576" 
+      height="576" 
+      viewBox="0 0 576 576" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+      className={props.className}
+    >
+      <circle cx="288" cy="288" r="287.5" stroke="url(#paint0_linear_183_1178)"/>
+      <defs>
+        <linearGradient id="paint0_linear_183_1178" x1="288" y1="0" x2="288" y2="576" gradientUnits="userSpaceOnUse">
+          <stop stopColor="white"/>
+          <stop offset="1" stopColor="#7D592C"/>
+        </linearGradient>
+      </defs>
+    </svg>
+
+  )
+}
+
+
 export {
   IconListItemArrow,
   IconArrowLeft,
@@ -204,4 +228,5 @@ export {
   IconTwitter,
   IconLinkedIn,
   IconArrowRightCircle,
+  Circle
 }

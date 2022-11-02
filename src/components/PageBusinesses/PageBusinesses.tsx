@@ -55,12 +55,14 @@ const PageBusinessesPage: NextPage = () => {
           description={cms.section1.body}
           bgImage={cms.section1.bgImage}
         />
-        <ModuleTextColList
-          headerPosition={cms.section2.headerPosition}
-          header={cms.section2.header}
-          title={cms.section2.title}
-          list={cms.section2.list}
-        />
+        <div className='overflow-hidden bg-arta-eggshell-100'>
+          <ModuleTextColList
+            headerPosition={cms.section2.headerPosition}
+            header={cms.section2.header}
+            title={cms.section2.title}
+            list={cms.section2.list}
+          />
+        </div>
       </main>
       <Footer textColor="brown" />
     </>

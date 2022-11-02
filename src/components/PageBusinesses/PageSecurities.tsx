@@ -58,7 +58,7 @@ const cms = {
   section3: {
     title: 'Prime Services',
     body: `Our Prime Services division offers fund managers, family offices and institutional asset managers tailored solutions, including trading & execution services, portfolio financing, capital introduction and more. Backed by innovative technology, experienced client services team, and comprehensive risk management, we aspire to provide clients with an all-in-one platform and a new experience in traditional prime finance.`,
-    bgImage: '',
+    bgImage: '/images/asset-management/bg-introduction.png',
   },
   section4: {
     headerPosition: 'right' as const,

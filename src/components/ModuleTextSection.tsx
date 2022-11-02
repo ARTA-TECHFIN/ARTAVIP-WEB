@@ -19,9 +19,9 @@ const ModuleTextSection: FC<propsT> = ({ title, description, bgImage }) => {
       <div className="easeInOutSine absolute h-full w-full scale-105 overflow-hidden duration-300 group-hover/bg:scale-100">
         <Image src={bgImage} alt="" fill className="object-cover" />
       </div>
-      <div className="arta-container relative flex flex-col items-center justify-center py-36 text-arta-sand-100">
-        <h2 className={`${textClass.title_style2} mb-4 text-center `}>{title}</h2>
-        <span className={`${textClass.small_text}`}>{description}</span>
+      <div className="arta-container mx-auto max-w-[950px] relative flex flex-col items-center justify-center py-36 text-arta-sand-100">
+        <h2 className={`${textClass.h2_style2} mb-6 text-center `}>{title}</h2>
+        <span className={`${textClass.body_regular_verah} text-center tracking-normal`}>{description}</span>
       </div>
     </div>
   )

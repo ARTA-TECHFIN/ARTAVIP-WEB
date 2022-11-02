@@ -82,22 +82,6 @@ const IconArrowRightCircle = (props: propsT) => {
   )
 }
 
-const IconArrowLine = (props: propsT) => {
-  const fill = props.fill || '#593725'
-  return (
-    <svg width="24" 
-      height="24" 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      xmlns="http://www.w3.org/2000/svg" 
-      className={props.className}
-    >
-      <path d="M16.9492 13.05L16.9492 10.8107L19.1886 13.05H16.9492Z" fill={fill} stroke={fill} strokeWidth="1.5"/>
-      <path fillRule="evenodd" clipRule="evenodd" d="M3 12.6H18V13.8H3V12.6Z" fill={fill}/>
-    </svg>
-  )
-}
-
 
 const IconFacebook = (props: propsT) => {
   const fill = props.fill || '#878095'
@@ -220,5 +204,4 @@ export {
   IconTwitter,
   IconLinkedIn,
   IconArrowRightCircle,
-  IconArrowLine
 }

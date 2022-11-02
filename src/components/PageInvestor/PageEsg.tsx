@@ -4,7 +4,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin'
 import { useEffect, useRef } from 'react'
-import {IconArrowLine} from '../Svg/Icon'
+import {IconListItemArrow} from '../Svg/Icon'
 
 
 gsap.registerPlugin(ScrollToPlugin);
@@ -84,7 +84,7 @@ const PageEsg: NextPage = () => {
               key={index} 
               onClick={goToSection(index)}
             >
-              <IconArrowLine className='mr-2 w-0'/> 
+              <IconListItemArrow className='mr-2 w-0' fill="#593725"/> 
               {item}
             </li>
           ))

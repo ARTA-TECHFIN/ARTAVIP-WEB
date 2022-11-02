@@ -24,32 +24,32 @@ const cms = {
   section2: {
     iconList: [
       {
-        icon: '/images/asset-management/icons/1.svg',
+        icon: '/images/asset-management/icons/1.png',
         title: 'Agency Services',
         body: `We offer a wide range of investment products in different markets for our clients to achieve their wealth management goals according to their risk profiles.  We also provide mobile and web applications for clients to keep track of investment performance and rebalance their different investment products in one platform.`,
       },
       {
-        icon: '/images/asset-management/icons/1.svg',
+        icon: '/images/asset-management/icons/2.png',
         title: 'Trading Services',
         body: `We provide flow wealth management products, including ELN, Accumulator/Decummulator and Range Accrual on single and baskets of various asset classes on different markets.  We will tailor-make products to satisfy the needs of sophisticated investors, including institutions and corporates. We also source liquidity and facilitate clients on fixed incomes and virtual assets trading.`,
       },
       {
-        icon: '/images/asset-management/icons/1.svg',
+        icon: '/images/asset-management/icons/3.png',
         title: 'Risk Management',
         body: `We are the first line of defence in managing credit and market risk exposure. We proactively manage our house positions and hedge dynamically to secure our sales margin and maintain our risk exposure within the limit.`,
       },
       {
-        icon: '/images/asset-management/icons/1.svg',
+        icon: '/images/asset-management/icons/1.png',
         title: 'Agency Services',
         body: `We offer a wide range of investment products in different markets for our clients to achieve their wealth management goals according to their risk profiles.  We also provide mobile and web applications for clients to keep track of investment performance and rebalance their different investment products in one platform.`,
       },
       {
-        icon: '/images/asset-management/icons/1.svg',
+        icon: '/images/asset-management/icons/1.png',
         title: 'Agency Services',
         body: `We offer a wide range of investment products in different markets for our clients to achieve their wealth management goals according to their risk profiles.  We also provide mobile and web applications for clients to keep track of investment performance and rebalance their different investment products in one platform.`,
       },
       {
-        icon: '/images/asset-management/icons/1.svg',
+        icon: '/images/asset-management/icons/1.png',
         title: 'Agency Services',
         body: `We offer a wide range of investment products in different markets for our clients to achieve their wealth management goals according to their risk profiles.  We also provide mobile and web applications for clients to keep track of investment performance and rebalance their different investment products in one platform.`,
       },

@@ -6,6 +6,12 @@ phases:
       nodejs: 16
   pre_build:
     commands:
+      - |
+        cat <<EOT >> "./.env"
+        REPORT_API_ENDPOINT="$REPORT_API_ENDPOINT"
+        REPORT_API_KEY="$REPORT_API_KEY"
+        NEXT_PUBLIC_HOSTING_PATH="$NEXT_PUBLIC_HOSTING_PATH"
+        EOT
       - yarn
   build:
     commands:

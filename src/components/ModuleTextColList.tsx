@@ -70,7 +70,7 @@ const ModuleTextColList = ({ header, title, list, headerPosition }: propsT) => {
 
   return (
     <div className="arta-container mx-auto relative grid grid-cols-12 py-36">
-      <div className={cn(`col-span-4 flex items-center relative`,  headerPosition == 'left' ? 'order-0' : 'order-1 text-right') }>
+      <div className={cn(`col-span-4 flex items-center relative`,  headerPosition == 'left' ? 'order-0' : 'order-1 justify-end text-left') }>
         <h2 className={textClass.h2_style2}>{header}</h2>
         <div className={cn('absolute  will-change-transform', headerPosition == 'left' ?  '-left-[250px]' : '-right-[250px]')} ref={circle}>
            <Circle />

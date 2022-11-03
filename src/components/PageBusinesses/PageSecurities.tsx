@@ -105,12 +105,14 @@ const PageSecurities: NextPage = () => {
           description={cms.section3.body}
           bgImage={cms.section3.bgImage}
         />
-        <ModuleTextColList
-          headerPosition={cms.section4.headerPosition}
-          header={cms.section4.header}
-          title={cms.section4.title}
-          list={cms.section4.list}
-        />
+        <div className='bg-arta-eggshell-100 overflow-hidden'>
+          <ModuleTextColList
+            headerPosition={cms.section4.headerPosition}
+            header={cms.section4.header}
+            title={cms.section4.title}
+            list={cms.section4.list}
+          />
+        </div>
       </main>
       <Footer textColor="brown" />
     </>

@@ -17,11 +17,11 @@ const CalendarAccordion = ({ year, events }: propsT) => {
   const [showMenu, setShowMenu] = useState(false)
   const togglerIcon = useRef(null)
   const listWrapper = useRef(null)
-  const list: any = useRef(null)
+  const list = useRef<HTMLUListElement>(null)
 
   if (showMenu) {
     gsap.to(togglerIcon.current, { rotate: -180, duration: 0.8 })
-    gsap.to(listWrapper.current, { height: list.current.clientHeight, duration: 0.8 })
+    gsap.to(listWrapper.current, { height: list.current?.clientHeight, duration: 0.8 })
   } else {
     gsap.to(togglerIcon.current, { rotate: 0, duration: 0.8 })
     gsap.to(listWrapper.current, { height: 0, duration: 0.8 })

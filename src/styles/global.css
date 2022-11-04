@@ -41,7 +41,7 @@
 
   @media (max-width: 1024px) {
     .innerShadowMobile {
-      box-shadow: inset 0px 4px 30px #C69354;;
+      box-shadow: inset 0px 4px 30px #c69354;
     }
   }
 
@@ -91,7 +91,7 @@
     padding-bottom: 0;
   }
 
-  .arta-calendarAccordionSahdow {
+  .arta-calendarAccordionShadow {
     box-shadow: 0px 8px 16px rgba(89, 55, 37, 0.2);
   }
 
@@ -100,7 +100,7 @@
     border-radius: 0 64px;
   }
 
-  .arta-gradient-border>div {
+  .arta-gradient-border > div {
     border-radius: 0 62px;
   }
 
@@ -108,13 +108,20 @@
     position: absolute;
     inset: -600px;
     z-index: 0;
-    background-image: linear-gradient(248.41deg, #9A7B49 3.4%, #8C7035 31.07%, #ECC962 46.16%, #AD9149 63.27%, #9A7B49 100%);;
+    background-image: linear-gradient(
+      248.41deg,
+      #9a7b49 3.4%,
+      #8c7035 31.07%,
+      #ecc962 46.16%,
+      #ad9149 63.27%,
+      #9a7b49 100%
+    );
     border-radius: 0 64px;
   }
 
   .arta-gradient-line-left {
     width: 1px;
     height: 100%;
-    background-image: linear-gradient(89.57deg, #E3D29A 0.19%, #AE8D55 52.49%, #D4BF87 99.62%);
+    background-image: linear-gradient(89.57deg, #e3d29a 0.19%, #ae8d55 52.49%, #d4bf87 99.62%);
   }
 }

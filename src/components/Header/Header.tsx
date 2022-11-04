@@ -43,8 +43,8 @@ const pageInfoList: pageInfoItemT[] = [
     pageName: 'Our Businesses',
     title: 'Our Businesses',
     paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
-    buttonText: 'Our Businesses home',
-    href: links.businesses,
+    buttonText: '',
+    href: '',
     pages: [
       { title: 'Asset Management', link: links.businesses },
       { title: 'Investment Banking', link: links.businesses },
@@ -165,14 +165,18 @@ const Header: React.FC<{ textColor?: 'white' | 'brown' }> = (props) => {
                     <h6 className="font-Verah text-2xl">{selectedTab.title}</h6>
                     <p className="font-Neue text-[14px] leading-[20px]">{selectedTab.paragraph}</p>
 
-                    <ButtonAnimated
-                      href={selectedTab.href}
-                      as="a"
-                      className={`w-[260px] p-4 px-6 py-3 font-medium shadow-md ${textColorClass} ${borderColorClass}`}
-                      borderWidth={2}
-                    >
-                      {selectedTab.buttonText}
-                    </ButtonAnimated>
+                    {
+                      selectedTab.buttonText.length > 0 && (
+                        <ButtonAnimated
+                          href={selectedTab.href}
+                          as="a"
+                          className={`w-[260px] p-4 px-6 py-3 font-medium shadow-md ${textColorClass} ${borderColorClass}`}
+                          borderWidth={2}
+                        >
+                          {selectedTab.buttonText}
+                        </ButtonAnimated>
+                      )
+                    }
                   </div>
                   <div className="flex flex-col">
                     {selectedTab.pages.map((item, index) => (

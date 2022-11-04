@@ -24,6 +24,7 @@ module.exports = {
         Neue: ['Helvetica Neue', ...defaultTheme.fontFamily.sans],
       },
       colors: {
+        'arta-secondary': '#AB8250',
         'arta-sunray-100': '#E5C183',
         'arta-russet-100': '#2E1605',
         'arta-sand-100': '#593725',

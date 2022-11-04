@@ -11,6 +11,7 @@ export const textClass = {
   h3_style2: `font-Verah text-[2.25rem] leading-[2.875rem]`, // font-size: 36px; line-height: 46px;
   h6: `font-Verah text-[1.5rem] leading-[2rem]`, // font-size: 24px; line-height: 32px;
   small_text: `font-Neue text-[0.875rem] leading-[1.375rem]`, // font-size: 14px; line-height: 22px;
+  small_text_style2: `font-Verah text-[0.875rem] leading-[1.375rem]`, // font-size: 14px; line-height: 22px;
   title_style2: `font-Verah text-[1.25rem] leading-[1.75rem] tracking-wide`, // font-size: 20px; line-height: 30px;
   title: `font-Neue text-[1.25rem] leading-[1.75rem] font-medium`, // font-size: 20px; font-weight: 500; line-height: 28px;
   title_verah: `font-Verah text-[1.25rem] leading-[1.75rem] font-medium`, // font-size: 20px; font-weight: 500; line-height: 28px;

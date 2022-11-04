@@ -4,7 +4,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin'
 import { useEffect, useRef } from 'react'
-import {IconListItemArrow} from '../Svg/Icon'
+import {IconListItemArrow, TopDownArrow, DownTopArrow} from '../Svg/Icon'
 
 
 gsap.registerPlugin(ScrollToPlugin);
@@ -13,19 +13,24 @@ const PageEsg: NextPage = () => {
 
   const nav:any = useRef()
   const sections = useRef(null)
+
   const goToSection = (index:number) => () => {
       const esgSections = document.querySelectorAll('.esg-section')
       gsap.to(window, {duration: 1, scrollTo:{ y: esgSections[index], offsetY: 130}});
   }
+
+
   
   useEffect(()=> {
     const esgSections = document.querySelectorAll('.esg-section')
+
+    gsap.to('.arta-gradient-border-inner', {rotate: 360, duration: 3, repeat: -1})
 
     ScrollTrigger.create({
       trigger: nav.current,
       start: "top center-=200px",
       endTrigger: sections.current,
-      end: "bottom bottom",
+      end: "bottom center",
       pin: true,
       pinSpacing: false,
       scrub: .5,
@@ -127,7 +132,7 @@ const PageEsg: NextPage = () => {
 
         <h3 className={`mt-4 text-arta-sand-200 ${textClass.h6}`}>{`Board Committees`}</h3>
         <p className={`mt-4 ${textClass.body_regular_verah}`}>{`There are seven committees established directly under the Board to oversee the accountability of the corporate governance framework, including:`}</p>
-        <ul className='mt-4'>
+        <ul className={`mt-4 pl-8 list-disc ${textClass.body_regular_verah}`}>
           <li>{`Management Committee`}</li>
           <li>{`Executive Committee`}</li>
           <li>{`Advisory Committee`}</li>
@@ -138,8 +143,58 @@ const PageEsg: NextPage = () => {
           <li>{`Technology Committee`}</li>
         </ul>
 
-        <h3 className={`mt-4 ${textClass.body_regular_verah}`}>{`Risk management`}</h3>
+        <h3 className={`mt-12 text-arta-sand-200 ${textClass.h6}`}>{`Risk management`}</h3>
         <p className={`mt-4 ${textClass.body_regular_verah}`}>{`The Group has adopted both the “Top-down” and “Bottom-up” approaches.`}</p>
+
+        <div className='arta-gradient-border relative mt-6 overflow-hidden'>
+        <div className="arta-gradient-border-inner"></div>
+          <div className=" relative py-12 px-[60px] z-20 flex bg-arta-eggshell-100">
+            <div className='relative'>
+              <div className="arta-gradient-line-left absolute right-0"></div>
+              <div className='pr-6'>
+                <h3 className={`text-arta-secondary pl-4 ${textClass.h6}`}>{`The Board`}</h3>
+                <p className={`!text-arta-secondary pl-4 ${textClass.small_text_style2}`}>{`(Risk Management Oversight)`}</p>
+                <ul className={`mt-4 list-disc pl-4 ${textClass.body_regular_verah}`}>
+                  <li >{`Oversees the Company’s risk management policies and process`}</li>
+                  <li className='mt-4'>{`Reviews and ensure that the Group has maintained and carried out effective and appropriate risk management and internal control systems`}</li>
+                  <li className='mt-4'>{`Determines the nature and extent of the outstanding emerging and existing risks`}</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className='pl-6 relative'>
+              <div >
+                <h3 className={`text-arta-secondary pl-4 ${textClass.h6}`}>{`Head of departments`}</h3>
+                <p className={`!text-arta-secondary pl-4 ${textClass.small_text_style2}`}>{`(Risk & Control Monitoring)`}</p>
+                <ul className={`mt-4 list-disc pl-4 ${textClass.body_regular_verah}`}>
+                  <li>{`Oversees the Company’s risk management policies and process`}</li>
+                  <li>{`Reviews and ensure that the Group has maintained and carried out effective and appropriate risk management and internal control systems`}</li>
+                  <li>{`Determines the nature and extent of the outstanding emerging and existing risks`}</li>
+                </ul>
+              </div>
+              <div className='mt-11'>
+                <h3 className={`text-arta-secondary pl-4 ${textClass.h6}`}>{`Business/operating units`}</h3>
+                <p className={`!text-arta-secondary pl-4 ${textClass.small_text_style2}`}>{`(Operating Risks & Internal Controls Ownership)`}</p>
+                <ul className={`mt-4 list-disc pl-4 ${textClass.body_regular_verah}`}>
+                  <li>{`Oversees the Company’s risk management policies and process`}</li>
+                  <li>{`Reviews and ensure that the Group has maintained and carried out effective and appropriate risk management and internal control systems`}</li>
+                  <li>{`Determines the nature and extent of the outstanding emerging and existing risks`}</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className=' absolute top-0 left-1'>
+                <p className=' absolute top-2/4 left-2/4 w-[110px] text-center -translate-y-2/4 -translate-x-2/4 rotate-90'>Top-down</p>
+                <TopDownArrow/>
+            </div>
+
+            <div className=' absolute bottom-0 right-1'>
+                <p className=' absolute top-2/4 left-2/4 w-[110px] text-center -translate-y-2/4 -translate-x-2/4 -rotate-90'>Bottom-up</p>
+                <DownTopArrow/>
+            </div>
+          </div>
+          
+        </div>
 
         {/* Top-down
   The Board
@@ -156,8 +211,8 @@ const PageEsg: NextPage = () => {
   Risk identification, assessment and mitigation performed across various departments
   Practices across business operations and functional areas
   Bottom-up */}
-        <h3>{`Code of Conduct`}</h3>
-        <p>{`The Company recognizes that employees play an essential and integral part in the risk management and internal control systems of the corporate structure. During the induction process, employees are required to understand the Company’s objectives, expectations and practices through training and the Compliance Manual.`}</p>
+        <h3 className={`mt-12 text-arta-sand-200 ${textClass.h6}`}>{`Code of Conduct`}</h3>
+        <p className={`mt-4 ${textClass.body_regular_verah}`}>{`The Company recognizes that employees play an essential and integral part in the risk management and internal control systems of the corporate structure. During the induction process, employees are required to understand the Company’s objectives, expectations and practices through training and the Compliance Manual.`}</p>
       
        </div>
         

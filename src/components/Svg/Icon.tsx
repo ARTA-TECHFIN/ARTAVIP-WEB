@@ -218,6 +218,48 @@ const Circle = (props: propsT) => {
   )
 }
 
+const TopDownArrow = (props: propsT) => {
+  return (
+    <svg width="52"
+      height="184"
+      viewBox="0 0 52 184"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={props.className} 
+    >
+      <rect x="10" width="32" height="166" fill="url(#paint0_linear_160_2791)"/>
+      <path d="M26 184L3.48334 162.25L48.5167 162.25L26 184Z" fill="#E3D29A"/>
+      <defs>
+        <linearGradient id="paint0_linear_160_2791" x1="42.0001" y1="166" x2="123.858" y2="96.7218" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#E3D29A"/>
+          <stop offset="1" stop-color="#AE8D55"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  )
+}
+
+const DownTopArrow = (props: propsT) => {
+  return (
+    <svg width="52" 
+      height="187" 
+      viewBox="0 0 52 187" 
+      fill="none" xmlns="http://www.w3.org/2000/svg"
+      className={props.className} 
+    >
+      <rect x="42" y="187" width="32" height="166" transform="rotate(-180 42 187)" fill="url(#paint0_linear_160_2785)"/>
+      <path d="M26 4.54598e-06L48.5167 21.75L3.48334 21.75L26 4.54598e-06Z" fill="#E3D29A"/>
+      <defs>
+        <linearGradient id="paint0_linear_160_2785" x1="74.0001" y1="353" x2="155.858" y2="283.722" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#E3D29A"/>
+          <stop offset="1" stop-color="#AE8D55"/>
+        </linearGradient>
+      </defs>
+    </svg>
+
+  )
+}
+
 
 export {
   IconListItemArrow,
@@ -228,5 +270,7 @@ export {
   IconTwitter,
   IconLinkedIn,
   IconArrowRightCircle,
-  Circle
+  Circle,
+  TopDownArrow,
+  DownTopArrow
 }

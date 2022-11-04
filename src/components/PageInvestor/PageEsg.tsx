@@ -152,7 +152,7 @@ const PageEsg: NextPage = () => {
         <div className="arta-gradient-border-inner"></div>
           <div className=" relative py-12 px-[60px] z-20 flex bg-arta-eggshell-100">
             <div className='relative'>
-              <div className="arta-gradient-line-left absolute right-0"></div>
+              <div className="arta-gradient-line-left absolute right-0 h-full"></div>
               <div className='pr-6'>
                 <h3 className={`text-arta-secondary pl-4 ${textClass.h6}`}>{`The Board`}</h3>
                 <p className={`!text-arta-secondary pl-4 ${textClass.small_text_style2}`}>{`(Risk Management Oversight)`}</p>

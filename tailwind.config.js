@@ -42,6 +42,10 @@ module.exports = {
         'reportCard-gradient': 'linear-gradient(154.36deg, #F4DB98 12.84%, #948265 83.78%)',
         //'linear-gradient(131.63deg, #653711 26.47%, #3D230A 99.16%);' #522716  #572A18 #5E2F1B,
       }),
+
+      boxShadow: {
+        'calendarAccordion': '0px 8px 16px rgba(89, 55, 37, 0.2)'
+      }
     },
   },
   plugins: [],

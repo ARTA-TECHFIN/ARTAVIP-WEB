@@ -23,7 +23,7 @@
 */
 @layer components {
   .arta-container-px {
-    @apply px-6 md:px-24;
+    @apply px-6 lg:px-24;
   }
   .arta-container {
     @apply arta-container-px w-full max-w-main-contain;

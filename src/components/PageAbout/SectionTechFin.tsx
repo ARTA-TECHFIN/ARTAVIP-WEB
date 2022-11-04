@@ -11,7 +11,7 @@ export const SectionTechFin = () => {
   const [selectedIndex, setSelectedIndex] = useState(2)
 
   return (
-    <div className="relative flex flex-col" id="tech-fin">
+    <div className="relative flex flex-col overflow-hidden" id="tech-fin">
       <div className="absolute h-full w-full overflow-hidden">
         <Image src={tech_fin_bg} alt="" fill className="object-cover" />
       </div>

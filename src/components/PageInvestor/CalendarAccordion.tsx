@@ -29,7 +29,7 @@ const CalendarAccordion = ({ year, events }: propsT) => {
 
   return (
     <div
-      className={cn(`mb-6 bg-white transition-shadow`, showMenu && 'arta-calendarAccordionShadow')}
+      className={cn(`mb-6 bg-white transition-shadow`, showMenu && 'shadow-calendarAccordion')}
     >
       <div
         className="flex cursor-pointer items-center justify-between p-8"

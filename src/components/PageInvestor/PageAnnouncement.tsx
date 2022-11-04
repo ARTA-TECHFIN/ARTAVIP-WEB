@@ -26,18 +26,21 @@ const PageAnnouncement: NextPage = () => {
     }))
   })
 
+
   if (status === 'loading') return <Loader />
   if (status === 'error') return <ErrorMessage error={error} />
 
   return (
     <div className='mt-16'>
       {data.map((yearly) => (
+        
         <CalendarAccordion
           key={yearly.year}
           year={yearly.year}
           events={yearly.results.map((r) => ({
             date: new Date(r.doc_date),
             title: r.headline,
+            url: r.url
           }))}
         />
       ))}

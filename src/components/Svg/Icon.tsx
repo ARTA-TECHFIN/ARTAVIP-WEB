@@ -231,8 +231,8 @@ const TopDownArrow = (props: propsT) => {
       <path d="M26 184L3.48334 162.25L48.5167 162.25L26 184Z" fill="#E3D29A"/>
       <defs>
         <linearGradient id="paint0_linear_160_2791" x1="42.0001" y1="166" x2="123.858" y2="96.7218" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#E3D29A"/>
-          <stop offset="1" stop-color="#AE8D55"/>
+          <stop stopColor="#E3D29A"/>
+          <stop offset="1" stopColor="#AE8D55"/>
         </linearGradient>
       </defs>
     </svg>
@@ -251,8 +251,8 @@ const DownTopArrow = (props: propsT) => {
       <path d="M26 4.54598e-06L48.5167 21.75L3.48334 21.75L26 4.54598e-06Z" fill="#E3D29A"/>
       <defs>
         <linearGradient id="paint0_linear_160_2785" x1="74.0001" y1="353" x2="155.858" y2="283.722" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#E3D29A"/>
-          <stop offset="1" stop-color="#AE8D55"/>
+          <stop stopColor="#E3D29A"/>
+          <stop offset="1" stopColor="#AE8D55"/>
         </linearGradient>
       </defs>
     </svg>

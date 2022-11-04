@@ -24,6 +24,8 @@ const PageEsg: NextPage = () => {
   useEffect(()=> {
     const esgSections = document.querySelectorAll('.esg-section')
 
+    if(!esgSections.length) return
+
     gsap.to('.arta-gradient-border-inner', {rotate: 360, duration: 3, repeat: -1})
 
     ScrollTrigger.create({

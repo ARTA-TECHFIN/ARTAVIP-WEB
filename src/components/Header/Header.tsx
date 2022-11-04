@@ -110,7 +110,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown' }> = (props) => {
   const selectedTab = activeTabIndex === DEFAULT_TAB_INDEX ? null : pageInfoList[activeTabIndex]
 
   return (
-    <div className="fixed z-10 w-full">
+    <div className="fixed z-50 w-full">
       <ClickAwayListener onClickAway={() => setActiveTabIndex(DEFAULT_TAB_INDEX)}>
         <header className="w-full px-[4em] pt-[6em] lg:pt-[2.8em] xl:mx-auto">
           <div className="flex w-full justify-between lg:space-x-6">

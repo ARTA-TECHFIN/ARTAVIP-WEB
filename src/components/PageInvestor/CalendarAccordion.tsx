@@ -10,6 +10,7 @@ type propsT = {
   events: {
     date: Date
     title: string
+    url: string
   }[]
 }
 const CalendarAccordion = ({ year, events }: propsT) => {
@@ -36,10 +37,15 @@ const CalendarAccordion = ({ year, events }: propsT) => {
         <ul ref={list} className="px-8 pb-8">
           {events.map((event, index) => {
             return (
-              <li className="arta-eventItem flex items-center py-6 border-solid	 border-b	 border-arta-sand-200" key={index}>
-                <span className="mr-8 w-20">{event.date.toDateString()}</span>
-                <span className={`${textClass.title_verah} text-arta-sand-100`}>{event.title}</span>
-                <IconArrowRightCircle className='ml-auto'/>
+              <li className="arta-eventItem py-6 border-solid	 border-b	 border-arta-sand-200" key={index}>
+                <a href={event.url} target="_blank" className='flex items-center '>
+                  <div className="mr-8 w-20 text-center">
+                    <p className={`${textClass.h3_style2} text-[#878095]`}>{event.date.toDateString().slice(7, 10)}</p>
+                    <p className={`${textClass.title_style2} text-black`}>{event.date.toDateString().slice(3, 7)}</p>
+                  </div>
+                  <span className={`${textClass.title_verah} text-arta-sand-100`}>{event.title}</span>
+                  <IconArrowRightCircle className='ml-auto flex-[0_0_32px]'/>
+                </a>
               </li>
             )
           })}

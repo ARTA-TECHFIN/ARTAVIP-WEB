@@ -4,6 +4,8 @@ import { textClass } from 'src/components/Text'
 import {Circle} from './Svg/Icon'
 import { gsap } from 'gsap'
 import cn from 'classnames'
+import parse from 'html-react-parser';
+
 
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
@@ -63,17 +65,17 @@ const ModuleTextColList = ({ header, title, list, headerPosition }: propsT) => {
 
     spinTl.to(circle.current, {
       duration: 3,
-      rotate: 360
+      rotation: 360
     })
 
   }, [])
 
   return (
     <div className="arta-container mx-auto relative grid grid-cols-12 py-36">
-      <div className={cn(`col-span-4 flex items-center relative`,  headerPosition == 'left' ? 'order-0' : 'order-1 justify-end text-left') }>
-        <h2 className={textClass.h2_style2}>{header}</h2>
-        <div className={cn('absolute  will-change-transform', headerPosition == 'left' ?  '-left-[250px]' : '-right-[250px]')} ref={circle}>
-           <Circle />
+      <div className={cn(`col-span-4 flex items-center relative`,  headerPosition == 'left' ? 'order-0' : 'order-1 justify-end text-right') }>
+        <h2 className={`relative z-10 ${textClass.h2_style2}`}>{header}</h2>
+        <div className={cn('absolute text-col-circle will-change-transform z-0', headerPosition == 'left' ?  '-left-[250px]' : '-right-[250px]')} ref={circle}>
+           <Circle className='xl:scale-100 lg:scale-75 scale-50'/>
         </div>
       </div>
       <div className="col-span-8">
@@ -82,7 +84,7 @@ const ModuleTextColList = ({ header, title, list, headerPosition }: propsT) => {
         {list.map((item, index) => (
           <Fragment key={index}>
             <h4 className={`${textClass.h6} mt-8`}>{item.title}</h4>
-            <p className={`${textClass.body_regular_verah} max-w-[80%] mt-4 mb-8`}>{item.body}</p>
+            <div className={`${textClass.body_regular_verah} lg:max-w-[80%] mt-4 mb-8`}>{parse(item.body)}</div>
             <Hr />
           </Fragment>
         ))}

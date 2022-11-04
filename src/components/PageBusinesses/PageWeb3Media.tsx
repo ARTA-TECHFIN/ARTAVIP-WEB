@@ -24,7 +24,7 @@ const cms = {
         body: `
         <p>ARTAZINE is an online Editorial destination dedicated to bridging the gap between art, culture and Web3. Our exclusive, multiplatform stories and unique insights aim to explore the ways crypto, gaming, NFTs and the latest metaverse projects are empowering a global community of emerging creators. Standing at the intersection of art and technology, we are your authoritative guide to the future of cultural-commerce. </p>
         
-        <ul>
+        <ul class='mt-4 list-disc pl-4'>
           <li>Committed to curating the most relevant cultural news and features, finding the signal amongst the noise. </li>
           <li>Exclusive interviews with industry leaders, artists, collectors and creatives, both traditional and modern. </li>
           <li>Educational content that breaks down barriers, spreads knowledge and prepares readers for the future. </li>
@@ -50,12 +50,14 @@ const PageWeb3Media: NextPage = () => {
           mobileImage={cms.heroBanner.mobileImage}
           label={cms.heroBanner.label}
         />
-        <ModuleTextColList
-          headerPosition={cms.section1.headerPosition}
-          header={cms.section1.header}
-          title={cms.section1.title}
-          list={cms.section1.list}
-        />
+        <div className="overflow-hidden bg-arta-eggshell-100">
+          <ModuleTextColList
+            headerPosition={cms.section1.headerPosition}
+            header={cms.section1.header}
+            title={cms.section1.title}
+            list={cms.section1.list}
+          />
+        </div>
       </main>
       <Footer textColor="brown" />
     </>

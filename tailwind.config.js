@@ -40,6 +40,7 @@ module.exports = {
         contact: "url('/images/newcc.png')",
         'about-gradient': 'linear-gradient(#733921  ,#3c1d10  )',
         'reportCard-gradient': 'linear-gradient(154.36deg, #F4DB98 12.84%, #948265 83.78%)',
+        'mobile-header-gradint': 'linear-gradient(180deg, #DFD8CA 52.6%, rgba(223, 216, 202, 0) 100%)'
         //'linear-gradient(131.63deg, #653711 26.47%, #3D230A 99.16%);' #522716  #572A18 #5E2F1B,
       }),
 

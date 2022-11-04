@@ -40,15 +40,15 @@ const HeroBanner = ({ title, label, description, image, mobileImage }: propsT) =
   }, [])
 
   return (
-    <div className="relative aspect-video h-auto w-full overflow-hidden">
+    <div className="relative md:aspect-video md:h-auto h-screen w-full overflow-hidden">
       <div ref={bannerImage} className="absolute h-full w-full overflow-hidden">
         <Image priority src={image} alt="" fill className="object-cover md:block hidden" />
         <Image priority src={mobileImage} alt="" fill className="object-cover md:hidden" />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white" />
-      <div className="absolute inset-0 flex flex-col items-center justify-center pt-20">
+      {/* <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white" /> */}
+      <div className="absolute inset-0 flex flex-col items-center lg:justify-center justify-end pt-20  lg:mb-0 mb-12">
         <div className="arta-container">
-          <div className="w-1/2">
+          <div className="md:w-1/2">
             <p className={textClass.title_style2}>{label}</p>
             <h1 className={`mt-1 ${textClass.h1_style2}`}>{title}</h1>
             <p className={`mt-4 ${textClass.body_regular_verah}`}>{description}</p>

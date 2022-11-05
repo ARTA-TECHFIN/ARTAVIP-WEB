@@ -74,7 +74,7 @@ const PageEsg: NextPage = () => {
 
   return (
     <div className="grid grid-cols-12 gap-x-5 pt-16">
-      <ul ref={nav} className="col-span-3 h-[140px] !translate-y-0">
+      <ul ref={nav} className="col-span-3 h-[140px] !translate-y-0 md:block hidden">
         {navList.map((item, index) => (
           <li
             className={`mb-6 flex cursor-pointer items-center text-black ${textClass.body_regular_verah}`}
@@ -86,8 +86,8 @@ const PageEsg: NextPage = () => {
           </li>
         ))}
       </ul>
-      <div className="col-span-9" ref={sections}>
-        <div id="introduction" className="esg-section pb-16">
+      <div className="md:col-span-9 col-span-full" ref={sections}>
+        <div id="introduction" className="esg-section md:pb-16 pb-12">
           <h2 className={`${textClass.h3_style2}`}>{`Introduction`}</h2>
           <p className={`mt-4 ${textClass.body_regular_verah}`}>
             {`ARTA TechFin is determined to become a sustainability-conscious corporation. By engaging Group-wide initiative and taking sustainability-conscious into our decision-making process, we will answer our conscience and the general public with commitment and action.`}
@@ -107,7 +107,7 @@ const PageEsg: NextPage = () => {
           >{`We also take a prudent approach to ensure our business is not a threat to the environment. In every investment strategy and service provider selection, we shall take sustainability into consideration.`}</p>
         </div>
 
-        <div id="social" className="esg-section pt-16">
+        <div id="social" className="esg-section md:pt-16 pt-12">
           <h2 className={`${textClass.h3_style2}`}>{`Social`}</h2>
           <h3 className={`mt-4 text-arta-sand-200 ${textClass.h6}`}>{`Employee care`}</h3>
           <p
@@ -131,7 +131,7 @@ const PageEsg: NextPage = () => {
           >{`Sharing knowledge to the youth and people in need generously is our social obligation. We will organize talks, seminars and courses with different institutions every year. We will offer up-to-date technical and finance know-how, case studies and market information to the interested parties.`}</p>
         </div>
 
-        <div id="Governance" className="esg-section pt-16">
+        <div id="Governance" className="esg-section md:pt-16 pt-12">
           <h2 className={`${textClass.h3_style2}`}>{`Governance`}</h2>
           <p
             className={`mt-4 ${textClass.body_regular_verah}`}
@@ -164,60 +164,60 @@ const PageEsg: NextPage = () => {
 
           <div className="arta-gradient-border relative mt-6 overflow-hidden">
             <div className="arta-gradient-border-inner"></div>
-            <div className=" relative z-20 flex bg-arta-eggshell-100 py-12 px-[60px]">
+            <div className=" relative z-20 flex bg-arta-eggshell-100 md:py-12 py-4 md:px-[60px] px-6">
               <div className="relative">
                 <div className="arta-gradient-line-left absolute right-0 h-full"></div>
-                <div className="pr-6">
-                  <h3 className={`pl-4 text-arta-secondary ${textClass.h6}`}>{`The Board`}</h3>
+                <div className="md:pr-6 pr-2">
+                  <h3 className={`pl-4 text-arta-secondary sm:text-2xl text-sm`}>{`The Board`}</h3>
                   <p
-                    className={`pl-4 !text-arta-secondary ${textClass.small_text_style2}`}
+                    className={`pl-4 !text-arta-secondary sm:text-xs text-[1.5em]`}
                   >{`(Risk Management Oversight)`}</p>
-                  <ul className={`mt-4 list-disc pl-4 ${textClass.body_regular_verah}`}>
+                  <ul className={`md:mt-4 mt-2 list-disc pl-4 `}>
                     <li>{`Oversees the Company’s risk management policies and process`}</li>
-                    <li className="mt-4">{`Reviews and ensure that the Group has maintained and carried out effective and appropriate risk management and internal control systems`}</li>
-                    <li className="mt-4">{`Determines the nature and extent of the outstanding emerging and existing risks`}</li>
+                    <li className="md:mt-4 mt-1">{`Reviews and ensure that the Group has maintained and carried out effective and appropriate risk management and internal control systems`}</li>
+                    <li className="md:mt-4 mt-1">{`Determines the nature and extent of the outstanding emerging and existing risks`}</li>
                   </ul>
                 </div>
               </div>
 
-              <div className="relative pl-6">
+              <div className="relative md:pl-6 pl-2">
                 <div>
                   <h3
-                    className={`pl-4 text-arta-secondary ${textClass.h6}`}
+                    className={`pl-4 text-arta-secondary  sm:text-2xl text-sm`}
                   >{`Head of departments`}</h3>
                   <p
-                    className={`pl-4 !text-arta-secondary ${textClass.small_text_style2}`}
+                    className={`pl-4 !text-arta-secondary sm:text-xs text-[1.5em]`}
                   >{`(Risk & Control Monitoring)`}</p>
-                  <ul className={`mt-4 list-disc pl-4 ${textClass.body_regular_verah}`}>
-                    <li>{`Oversees the Company’s risk management policies and process`}</li>
-                    <li>{`Reviews and ensure that the Group has maintained and carried out effective and appropriate risk management and internal control systems`}</li>
-                    <li>{`Determines the nature and extent of the outstanding emerging and existing risks`}</li>
+                  <ul className={`md:mt-4 mt-2 list-disc pl-4 `}>
+                    <li className="md:mt-4 mt-1">{`Oversees the Company’s risk management policies and process`}</li>
+                    <li className="md:mt-4 mt-1">{`Reviews and ensure that the Group has maintained and carried out effective and appropriate risk management and internal control systems`}</li>
+                    <li className="md:mt-4 mt-1">{`Determines the nature and extent of the outstanding emerging and existing risks`}</li>
                   </ul>
                 </div>
-                <div className="mt-11">
+                <div className="md:mt-11 mt-4">
                   <h3
-                    className={`pl-4 text-arta-secondary ${textClass.h6}`}
+                    className={`pl-4 text-arta-secondary  sm:text-2xl text-sm`}
                   >{`Business/operating units`}</h3>
                   <p
-                    className={`pl-4 !text-arta-secondary ${textClass.small_text_style2}`}
+                    className={`pl-4 !text-arta-secondary sm:text-xs text-[1.5em]`}
                   >{`(Operating Risks & Internal Controls Ownership)`}</p>
-                  <ul className={`mt-4 list-disc pl-4 ${textClass.body_regular_verah}`}>
-                    <li>{`Oversees the Company’s risk management policies and process`}</li>
-                    <li>{`Reviews and ensure that the Group has maintained and carried out effective and appropriate risk management and internal control systems`}</li>
-                    <li>{`Determines the nature and extent of the outstanding emerging and existing risks`}</li>
+                  <ul className={`md:mt-4 mt-2 list-disc pl-4`}>
+                    <li className="md:mt-4 mt-1">{`Oversees the Company’s risk management policies and process`}</li>
+                    <li className="md:mt-4 mt-1">{`Reviews and ensure that the Group has maintained and carried out effective and appropriate risk management and internal control systems`}</li>
+                    <li className="md:mt-4 mt-1">{`Determines the nature and extent of the outstanding emerging and existing risks`}</li>
                   </ul>
                 </div>
               </div>
 
-              <div className=" absolute top-0 left-1">
-                <p className=" absolute top-2/4 left-2/4 w-[110px] -translate-y-2/4 -translate-x-2/4 rotate-90 text-center">
+              <div className=" absolute md:top-0 -top-[50px] md:left-1 -left-[12px] md:scale-100 scale-50">
+                <p className=" absolute text-lg top-2/4 left-2/4 w-[110px] -translate-y-2/4 -translate-x-2/4 rotate-90 text-center">
                   Top-down
                 </p>
                 <TopDownArrow />
               </div>
 
-              <div className=" absolute bottom-0 right-1">
-                <p className=" absolute top-2/4 left-2/4 w-[110px] -translate-y-2/4 -translate-x-2/4 -rotate-90 text-center">
+              <div className=" absolute md:bottom-0 -bottom-[50px] md:scale-100 scale-50 md:right-1 -right-[12px]">
+                <p className=" absolute text-lg top-2/4 left-2/4 w-[110px] -translate-y-2/4 -translate-x-2/4 -rotate-90 text-center">
                   Bottom-up
                 </p>
                 <DownTopArrow />

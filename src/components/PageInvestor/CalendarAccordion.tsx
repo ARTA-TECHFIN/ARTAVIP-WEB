@@ -32,14 +32,14 @@ const CalendarAccordion = ({ year, events }: propsT) => {
       className={cn(`mb-6 bg-white transition-shadow`, showMenu && 'shadow-calendarAccordion')}
     >
       <div
-        className="flex cursor-pointer items-center justify-between p-8"
+        className="flex cursor-pointer items-center justify-between lg:p-8 p-6"
         onClick={() => setShowMenu(!showMenu)}
       >
         <span className={`${textClass.h6} text-black`}>{year}</span>
         <ChevronDownIcon ref={togglerIcon} className="h-4 w-4" />
       </div>
       <div ref={listWrapper} className="h-0 overflow-hidden">
-        <ul ref={list} className="px-8 pb-8">
+        <ul ref={list} className="lg:px-8 px-6 lg:pb-8 pb-6">
           {events.map((event, index) => {
             return (
               <li
@@ -47,7 +47,7 @@ const CalendarAccordion = ({ year, events }: propsT) => {
                 key={index}
               >
                 <a href={event.url} target="_blank" className="flex items-center" rel="noreferrer">
-                  <div className="mr-8 w-20 text-center">
+                  <div className="lg:mr-8 mr-2 md:w-20 w-12 text-center">
                     <p className={`${textClass.h3_style2} text-[#878095]`}>
                       {event.date.toDateString().slice(7, 10)}
                     </p>
@@ -58,7 +58,7 @@ const CalendarAccordion = ({ year, events }: propsT) => {
                   <span className={`${textClass.title_verah} text-arta-sand-100`}>
                     {event.title}
                   </span>
-                  <IconArrowRightCircle className="ml-auto flex-[0_0_32px]" />
+                  <IconArrowRightCircle className="ml-auto flex-[0_0_32px] sm:block hidden" />
                 </a>
               </li>
             )

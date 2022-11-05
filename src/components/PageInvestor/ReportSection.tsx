@@ -8,16 +8,16 @@ type propsT = {
 }
 const ReportSection = (props: propsT) => {
   return (
-    <div className="mb-12 grid grid-cols-12  gap-x-8">
+    <div className="mb-12 grid sm:grid-cols-12 col-span-full  gap-x-8">
       <span
-        className={`col-span-2 border-t-2 border-arta-sand-300 pt-4 text-black ${textClass.h6}`}
+        className={`sm:col-span-2 col-span-full border-t-2 border-arta-sand-300 pt-4 text-black ${textClass.h6}`}
       >
         {props.year}
       </span>
-      <ul className="col-span-10 grid grid-cols-12 gap-8">
+      <ul className="sm:col-span-10 col-span-full grid grid-cols-12 sm:gap-8 gap-4 sm:mt-0 mt-4">
         {props.reports.map((report, index) => {
           return (
-            <li key={index} className="col-span-6">
+            <li key={index} className="md:col-span-6 col-span-12">
               <a href={report.url} target="_blank" rel="noreferrer">
                 <ReportCard title={report.headline} />
               </a>

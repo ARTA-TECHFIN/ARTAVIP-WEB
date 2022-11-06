@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import {IconArrowLeft, IconArrowRight} from './Svg/Icon'
 
 type propsT = {
   page: number
@@ -32,20 +33,20 @@ const Pagination = (props: propsT) => {
   if (totalPage <= 1) return null
 
   return (
-    <ol className="grid grid-cols-12">
-      <li>
+    <ol className="grid grid-cols-12 gap-[2px] max-w-[406px] mx-auto">
+      <li className='col-span-1 flex items-center'>
         <button
-          className={'w-6' + (page === 1 ? ' pointer-events-none opacity-0' : '')}
+          className={'w-full !h-8 bg-white flex items-center justify-center' + (page === 1 ? ' pointer-events-none opacity-0' : '')}
           onClick={() => onChange(page - 1)}
           disabled={disabled}
         >
-          {`<`}
+          <IconArrowLeft className='w-4 h-4' fill='#593725'/>
         </button>
       </li>
       {pageList.map((p) => (
-        <li key={p}>
+        <li key={p} className="col-span-1 flex items-center">
           <button
-            className={'w-6' + (p === page ? ' bg-red-700' : ' bg-gray-200')}
+            className={'w-full h-8 text-base font-Verah tracking-wide transition' + (p === page ? ' bg-arta-sand-100 text-white' : ' bg-white')}
             onClick={() => onChange(p)}
             disabled={disabled}
           >
@@ -53,13 +54,13 @@ const Pagination = (props: propsT) => {
           </button>
         </li>
       ))}
-      <li>
+      <li className='className="col-span-1 flex items-center'>
         <button
-          className={'w-6' + (page >= totalPage ? ' pointer-events-none opacity-0' : '')}
+          className={'w-full h-8 text-base bg-white  flex items-center justify-center' + (page >= totalPage ? ' pointer-events-none opacity-0' : '')}
           onClick={() => onChange(page + 1)}
           disabled={disabled}
         >
-          {`>`}
+          <IconArrowRight className='w-4 h-4' fill='#593725'/>
         </button>
       </li>
     </ol>

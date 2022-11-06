@@ -7,6 +7,8 @@
  *    3. Mobile view alignments are different.
  */
 
+import {textClass} from 'src/components/Text'
+
 type propsT = {
   year: number
   events: {
@@ -19,13 +21,21 @@ type propsT = {
 const CalendarCardList = (props: propsT) => {
   const { year, events } = props
   return (
-    <div>
-      <p>{year}</p>
+    <div >
+      <p className={`${textClass.h6} text-black mb-4`}>{year}</p>
       {events.map((event, index) => (
-        <div key={index}>
-          <p>{event.date.toLocaleDateString()}</p>
-          <p>{event.title}</p>
-          <a href={event.url}>Link</a>
+        <div key={index} className='bg-white px-6 md:pt-8 pt-6 !pb-6 arta-eventItem border-b border-solid'>
+          <a href={event.url} target='_blank' className='ml-auto flex items-center'>
+            <div className="lg:mr-8 mr-2 md:flex-[0_0_80px] flex-[0_0_48px] text-center">
+              <p className={`${textClass.h3_style2} text-[#878095]`}>
+                {event.date.toDateString().slice(7, 10)}
+              </p>
+              <p className={`${textClass.title_style2} text-black`}>
+                {event.date.toDateString().slice(3, 7)}
+              </p>
+            </div>
+            <p className={`${textClass.title_verah} text-arta-sand-100`}>{event.title}</p>
+          </a>
         </div>
       ))}
     </div>

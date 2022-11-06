@@ -33,6 +33,7 @@ module.exports = {
         'arta-eggshell-100': '#F4F1E1',
         'arta-snow-100': '#FFFFFF',
         'arta-bistre-100': '#402414',
+        'arta-indigo-100': '#878095',
         'arta-page-background': '#D1C2AC',
       },
       backgroundColor: ['active'],

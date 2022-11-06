@@ -61,8 +61,8 @@ const PageFinancialCalendar: NextPage = () => {
   }, [data])
 
   return (
-    <div className="arta-container mt-16 flex flex-col">
-      <div className="flex justify-end">
+    <div className="mt-16 flex flex-col">
+      <div className="sm:w-[288px] w-full ml-auto">
         <InputDropdown
           value={`${selectedYear}`}
           onChange={(v) => setSelectedYear(+v.target.value || null)}
@@ -74,7 +74,7 @@ const PageFinancialCalendar: NextPage = () => {
       ) : status === 'error' ? (
         <ErrorMessage error={error} />
       ) : (
-        <div>
+        <div className='mt-6'>
           {groupedDataByYear.map((yearly) => (
             <CalendarCardList
               key={yearly.year}
@@ -86,7 +86,9 @@ const PageFinancialCalendar: NextPage = () => {
               }))}
             />
           ))}
-          <Pagination page={selectedPage} onChange={setSelectedPage} totalPage={20} />
+          <div className='mt-12'>
+            <Pagination page={selectedPage} onChange={setSelectedPage} totalPage={20} />
+          </div>
         </div>
       )}
     </div>

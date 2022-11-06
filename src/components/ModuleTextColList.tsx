@@ -71,14 +71,14 @@ const ModuleTextColList = ({ header, title, list, headerPosition }: propsT) => {
   }, [])
 
   return (
-    <div className="arta-container mx-auto relative grid grid-cols-12 py-36">
-      <div className={cn(`col-span-4 flex items-center relative`,  headerPosition == 'left' ? 'order-0' : 'order-1 justify-end text-right') }>
+    <div className="arta-container mx-auto relative grid grid-cols-12 md:py-[150px] py-12">
+      <div className={cn(`md:col-span-4 col-span-full flex items-center relative`,  headerPosition == 'left' ? 'order-0' : 'order-1 justify-end text-right') }>
         <h2 className={`relative z-10 ${textClass.h2_style2}`}>{header}</h2>
         <div className={cn('absolute text-col-circle will-change-transform z-0', headerPosition == 'left' ?  '-left-[250px]' : '-right-[250px]')} ref={circle}>
-           <Circle className='xl:scale-100 lg:scale-75 scale-50'/>
+           <Circle className='xl:scale-100 lg:scale-75 md:scale-[0.70] md:block hidden'/>
         </div>
       </div>
-      <div className="col-span-8">
+      <div className="md:col-span-8 col-span-full md:mt-0 mt-6">
         <h3 className={`${textClass.h3_style2} mb-6`}>{title}</h3>
         <Hr />
         {list.map((item, index) => (

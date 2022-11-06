@@ -92,8 +92,9 @@ const pageInfoList: pageInfoItemT[] = [
   },
 ]
 
-const Header: React.FC<{ textColor?: 'white' | 'brown' }> = (props) => {
-  const { textColor = 'white' } = props
+  
+  const Header: React.FC<{ textColor?: 'white' | 'brown',  fontSize?: string}> = (props) => {
+  const { textColor = 'white', fontSize = '16px'  } = props
   const textColorClass = textColor === 'white' ? 'text-arta-snow-100' : 'text-arta-russet-100'
   const bgColorClass = textColor === 'white' ? 'bg-arta-russet-100/90' : 'bg-arta-snow-100/95'
   const borderColorClass = textColor === 'white' ? 'border-arta-snow-100' : 'border-arta-russet-100'
@@ -103,15 +104,17 @@ const Header: React.FC<{ textColor?: 'white' | 'brown' }> = (props) => {
 
   const DEFAULT_TAB_INDEX = -1
   const [activeTabIndex, _setActiveTabIndex] = useState(DEFAULT_TAB_INDEX)
-  const setActiveTabIndex = (index: number) => {
+  const setActiveTabIndex = (index: number, selected:boolean) => {
     _setActiveTabIndex(index)
-    gsap.fromTo('#fadeIn', { opacity: 0 }, { opacity: 1, duration: 0.6, delay: 0.3 })
+
+    if(selected) return
+      gsap.fromTo('#fadeIn', { opacity: 0 }, { opacity: 1, duration: 0.6, delay: 0.3})
   }
   const selectedTab = activeTabIndex === DEFAULT_TAB_INDEX ? null : pageInfoList[activeTabIndex]
 
   return (
     <div className="fixed z-50 w-full">
-      <ClickAwayListener onClickAway={() => setActiveTabIndex(DEFAULT_TAB_INDEX)}>
+      <div onMouseLeave={() => setActiveTabIndex(DEFAULT_TAB_INDEX, true)}>
         <header className="w-full px-[4em] pt-[6em] lg:pt-[2.8em] xl:mx-auto">
           <div className="flex w-full justify-between lg:space-x-6">
             <div className="hidden items-center justify-center space-x-8 lg:flex">
@@ -122,11 +125,12 @@ const Header: React.FC<{ textColor?: 'white' | 'brown' }> = (props) => {
                   <div
                     key={index}
                     className={`group z-[4] flex cursor-pointer items-center justify-center opacity-70 transition hover:opacity-100 ${textColorClass}`}
-                    onClick={() => setActiveTabIndex(selected ? DEFAULT_TAB_INDEX : index)}
+                    onMouseEnter={() => setActiveTabIndex(index, selected)}
                   >
                     <span
+                      style={{fontSize: `${fontSize}`}}
                       className={
-                        'z-[3] text-[1em] leading-[24px] decoration-arta-sunray-100 underline-offset-[20px] transition group-hover:underline' +
+                        `z-[3] leading-[24px] decoration-arta-sunray-100 underline-offset-[20px] transition group-hover:underline` +
                         (selected ? ' underline' : '')
                       }
                     >
@@ -182,7 +186,8 @@ const Header: React.FC<{ textColor?: 'white' | 'brown' }> = (props) => {
                     {selectedTab.pages.map((item, index) => (
                       <li
                         key={index}
-                        className="group relative -translate-x-4 cursor-pointer list-none py-2 px-2 text-[16px] leading-[24px] opacity-70 duration-300 ease-out hover:translate-x-0 hover:opacity-100"
+                        style={{fontSize: `${fontSize}`}}
+                        className={`group relative -translate-x-4 cursor-pointer list-none py-2 px-2 leading-[24px] opacity-70 duration-300 ease-out hover:translate-x-0 hover:opacity-100`}
                       >
                         <Link className="flex items-start pl-5" href={item.link}>
                           <IconListItemArrow
@@ -206,7 +211,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown' }> = (props) => {
                 <div className="flex items-center justify-between">
                   <div
                     className="h-6 w-6 text-arta-eggshell-100"
-                    onClick={() => {
+                    onMouseEnter={() => {
                       setShowMenu(!showMenu)
                     }}
                   >
@@ -231,7 +236,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown' }> = (props) => {
             )}
           </div>
         </header>
-      </ClickAwayListener>
+      </div>
     </div>
   )
 }

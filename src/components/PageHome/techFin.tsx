@@ -380,7 +380,7 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
 
       <div
         className={cn(
-          `absolute bottom-0 left-1/2 flex w-full w-[110%] translate-y-full -translate-x-1/2 transform flex-col justify-center transition-all duration-300`,
+          `absolute bottom-0 left-1/2 flex w-[110%] translate-y-full -translate-x-1/2 transform flex-col justify-center transition-all duration-300`,
           index === selectedBusiness ? 'lg:opacity-100' : 'lg:opacity-0'
         )}
       >

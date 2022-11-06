@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Seo />
-      <Header />
+      <Header fontSize={'16px'}/>
       <main>
         <Slides />
       </main>

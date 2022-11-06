@@ -47,7 +47,7 @@ const CalendarAccordion = ({ year, events }: propsT) => {
                 key={index}
               >
                 <a href={event.url} target="_blank" className="flex items-center" rel="noreferrer">
-                  <div className="lg:mr-8 mr-2 md:w-20 w-12 text-center">
+                  <div className="lg:mr-8 mr-2 md:flex-[0_0_80px] flex-[0_0_48px] text-center">
                     <p className={`${textClass.h3_style2} text-[#878095]`}>
                       {event.date.toDateString().slice(7, 10)}
                     </p>
@@ -55,7 +55,7 @@ const CalendarAccordion = ({ year, events }: propsT) => {
                       {event.date.toDateString().slice(3, 7)}
                     </p>
                   </div>
-                  <span className={`${textClass.title_verah} text-arta-sand-100`}>
+                  <span className={`${textClass.title_verah} text-arta-sand-100 mr-4`}>
                     {event.title}
                   </span>
                   <IconArrowRightCircle className="ml-auto flex-[0_0_32px] sm:block hidden" />

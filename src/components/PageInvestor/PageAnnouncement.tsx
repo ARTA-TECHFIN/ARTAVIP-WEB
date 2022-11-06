@@ -9,38 +9,39 @@ import { CalendarAccordion } from './CalendarAccordion'
 const QUERY_ANNOUNCEMENT = 'QUERY_ANNOUNCEMENT'
 
 // TODO: Assume only get four years of data
-const PageAnnouncement: NextPage = () => {
+const useGetData = () => {
   const lang = 'en'
   const year = new Date().getFullYear()
-  const { status, data, error } = useQuery([QUERY_ANNOUNCEMENT, lang, year], async () => {
-    const res = await Promise.all([
-      getReportList({ lang, page: 1, reportType: 'acl', year: year }),
-      getReportList({ lang, page: 1, reportType: 'acl', year: year - 1 }),
-      getReportList({ lang, page: 1, reportType: 'acl', year: year - 2 }),
-      getReportList({ lang, page: 1, reportType: 'acl', year: year - 3 }),
-    ])
+  const yearList = [year, year - 1, year - 2, year - 3]
+
+  return useQuery([QUERY_ANNOUNCEMENT, lang, year], async () => {
+    const res = await Promise.all(
+      yearList.map((year) => getReportList({ lang, page: 1, reportType: 'acl', year }))
+    )
 
     return res.map((r, i) => ({
       year: year - i,
       results: r.data.results.filter((r) => r.filetype === 'ANN'),
     }))
   })
+}
 
+const PageAnnouncement: NextPage = () => {
+  const { status, data, error } = useGetData()
 
   if (status === 'loading') return <Loader />
   if (status === 'error') return <ErrorMessage error={error} />
 
   return (
-    <div className='mt-16'>
+    <div className="mt-16">
       {data.map((yearly) => (
-        
         <CalendarAccordion
           key={yearly.year}
           year={yearly.year}
           events={yearly.results.map((r) => ({
             date: new Date(r.doc_date),
             title: r.headline,
-            url: r.url
+            url: r.url,
           }))}
         />
       ))}

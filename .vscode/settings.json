@@ -13,10 +13,12 @@
     "Neue",
     "opentype",
     "sunray",
+    "swiper",
     "tanstack",
     "truetype",
     "updatetime",
-    "Verah"
+    "Verah",
+    "whatis"
   ],
   "nuxt.isNuxtApp": false
 }

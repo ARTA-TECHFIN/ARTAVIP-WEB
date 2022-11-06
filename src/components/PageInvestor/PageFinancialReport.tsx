@@ -9,28 +9,31 @@ import { ReportSection } from './ReportSection'
 const QUERY_FINANCIAL_REPORT = 'QUERY_FINANCIAL_REPORT'
 
 // TODO: Assume only get four years of data
-const PageFinancialReport: NextPage = () => {
+const useGetData = () => {
   const lang = 'en'
   const year = new Date().getFullYear()
-  const { status, data, error } = useQuery([QUERY_FINANCIAL_REPORT, lang, year], async () => {
-    const res = await Promise.all([
-      getReportList({ lang, page: 1, reportType: 'r', year: year }),
-      getReportList({ lang, page: 1, reportType: 'r', year: year - 1 }),
-      getReportList({ lang, page: 1, reportType: 'r', year: year - 2 }),
-      getReportList({ lang, page: 1, reportType: 'r', year: year - 3 }),
-    ])
+  const yearList = [year, year - 1, year - 2, year - 3]
+
+  return useQuery([QUERY_FINANCIAL_REPORT, lang, year], async () => {
+    const res = await Promise.all(
+      yearList.map((year) => getReportList({ lang, page: 1, reportType: 'r', year }))
+    )
 
     return res.map((r, i) => ({
       year: year - i,
       results: r.data.results,
     }))
   })
+}
+
+const PageFinancialReport: NextPage = () => {
+  const { status, data, error } = useGetData()
 
   if (status === 'loading') return <Loader />
   if (status === 'error') return <ErrorMessage error={error} />
 
   return (
-    <div className='pt-[66px]'>
+    <div className="pt-[66px]">
       {data.map((yearly) => (
         <ReportSection key={yearly.year} year={yearly.year} reports={yearly.results} />
       ))}

@@ -3,8 +3,8 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import cn from 'classnames'
 import { ButtonAnimated } from '../ButtonAnimated'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
 
 const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }: any) => {
   gsap.registerPlugin(ScrollTrigger)
@@ -231,6 +231,7 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
     } else if (currentSectionId === 2) {
       fromSec1_5ToSec2()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentSectionId])
 
   return (
@@ -315,12 +316,12 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
         </div>
         <div
           ref={businessRef}
-          className="absolute lg:left-[6em] bottom-[22em] z-2 transform text-white opacity-0 lg:left-[4em] lg:bottom-auto top-[25em] lg:top-[21em] lg:top-1/2 lg:-translate-y-1/2"
+          className="absolute bottom-[22em] top-[25em] z-2 transform text-white opacity-0 lg:left-[6em] lg:left-[4em] lg:bottom-auto lg:top-[21em] lg:top-1/2 lg:-translate-y-1/2"
         >
-          <h1 className="font-verah text-left text-[6em] tracking-[0.06em] lg:text-[3.4em] ml-[0.9em] lg:ml-0">
+          <h1 className="font-verah ml-[0.9em] text-left text-[6em] tracking-[0.06em] lg:ml-0 lg:text-[3.4em]">
             Our Businesses
           </h1>
-          <p className="max-w-[30em] pb-5 text-left font-Neue text-[3.6em] lg:text-[1em] ml-[1.6em] lg:ml-0">
+          <p className="ml-[1.6em] max-w-[30em] pb-5 text-left font-Neue text-[3.6em] lg:ml-0 lg:text-[1em]">
             ARTA TechFin is determined to create the fairest, most transparent, and open markets in
             the world. We carry this out every day by providing clients with a variety of financial
             services.
@@ -333,12 +334,15 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
               breakpoints={{
                 767: {
                   slidesPerView: 5,
-                }
+                },
               }}
               className="!overflow-visible"
             >
               {businesses.map((business: any, i: number) => (
-                <SwiperSlide className="min-h-[13em] min-w-[13em] flex flex-col justify-center text-center" key={`option-${i}`}>
+                <SwiperSlide
+                  className="flex min-h-[13em] min-w-[13em] flex-col justify-center text-center"
+                  key={`option-${i}`}
+                >
                   <BusinessCircle
                     key={i}
                     index={i}
@@ -361,14 +365,14 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
 
   return (
     <div
-      className="relative flex mx-auto will-change-transform mt-[4em] lg:mt-0"
+      className="relative mx-auto mt-[4em] flex will-change-transform lg:mt-0"
       onMouseEnter={() => setSelectedBusiness(index)}
     >
       <div
         className={cn(
           index === selectedBusiness &&
-          'innerShadow !opacity-100 lg:h-[12em] lg:text-[1.04em] lg:w-[12em]',
-          `flex mx-auto h-[16em] w-[16em] lg:h-[10em] lg:w-[10em] items-center justify-center self-center rounded-full border border-white opacity-70 transition-all will-change-transform innerShadowMobile text-[3.4em] lg:text-[1em]`
+            'innerShadow !opacity-100 lg:h-[12em] lg:w-[12em] lg:text-[1.04em]',
+          `innerShadowMobile mx-auto flex h-[16em] w-[16em] items-center justify-center self-center rounded-full border border-white text-[3.4em] opacity-70 transition-all will-change-transform lg:h-[10em] lg:w-[10em] lg:text-[1em]`
         )}
       >
         <a href="#">{business.title}</a>
@@ -376,7 +380,7 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
 
       <div
         className={cn(
-          `absolute flex flex-col justify-center bottom-0 left-1/2 w-full translate-y-full -translate-x-1/2 transform transition-all duration-300 w-[110%]`,
+          `absolute bottom-0 left-1/2 flex w-full w-[110%] translate-y-full -translate-x-1/2 transform flex-col justify-center transition-all duration-300`,
           index === selectedBusiness ? 'lg:opacity-100' : 'lg:opacity-0'
         )}
       >
@@ -387,7 +391,7 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
         <ButtonAnimated
           as="a"
           href="#_"
-          className="mt-[1em] border-white py-[0.4em] md:px-[2em] px-[1em] font-Neue text-[3em] text-white lg:px-[3em] lg:text-[1em]"
+          className="mt-[1em] border-white py-[0.4em] px-[1em] font-Neue text-[3em] text-white md:px-[2em] lg:px-[3em] lg:text-[1em]"
         >
           Learn more
         </ButtonAnimated>

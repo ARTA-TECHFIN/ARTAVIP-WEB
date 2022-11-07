@@ -158,14 +158,14 @@ const pageInfoList: pageInfoItemT[] = [
 
           <div
             className={
-              `absolute top-0 left-0 min-h-[100px] w-full ${bgColorClass} py-12 px-24 pt-[130px] ${textColorClass} transition-all duration-300 ease-in-out xl:mx-auto` +
+              `absolute top-0 left-0 min-h-[100px] w-full ${bgColorClass} py-12 px-[4em] pt-[130px] ${textColorClass} transition-all duration-300 ease-in-out xl:mx-auto` +
               (selectedTab ? ' translate-y-0' : ' pointer-events-none -translate-y-full')
             }
           >
-            <div className="flex max-w-main-contain xl:mx-auto" id="fadeIn">
+            <div className="flex max-w-main-contain " id="fadeIn">
               {selectedTab && (
-                <div className="flex justify-center space-x-8 2xl:w-3/4">
-                  <div className="flex max-w-[400px] flex-col space-y-10">
+                <div className="flex space-x-8 2xl:w-3/4">
+                  <div className="flex max-w-[400px] flex-col space-y-6">
                     <h6 className="font-Verah text-2xl">{selectedTab.title}</h6>
                     <p className="font-Neue text-[14px] leading-[20px]">{selectedTab.paragraph}</p>
 
@@ -187,7 +187,7 @@ const pageInfoList: pageInfoItemT[] = [
                       <li
                         key={index}
                         style={{fontSize: `${fontSize}`}}
-                        className={`group relative -translate-x-4 cursor-pointer list-none py-2 px-2 leading-[24px] opacity-70 duration-300 ease-out hover:translate-x-0 hover:opacity-100`}
+                        className={`group relative -translate-x-4 cursor-pointer list-none py-1 px-2 leading-[24px] opacity-70 duration-300 ease-out hover:translate-x-0 hover:opacity-100`}
                       >
                         <Link className="flex items-start pl-5" href={item.link}>
                           <IconListItemArrow

@@ -25,7 +25,7 @@ const CalendarCardList = (props: propsT) => {
       <p className={`${textClass.h6} text-black mb-4`}>{year}</p>
       {events.map((event, index) => (
         <div key={index} className='bg-white px-6 md:pt-8 pt-6 !pb-6 arta-eventItem border-b border-solid'>
-          <a href={event.url} target='_blank' className='ml-auto flex items-center'>
+          <a href={event.url} target='_blank' className='ml-auto flex items-center' rel="noreferrer">
             <div className="lg:mr-8 mr-2 md:flex-[0_0_80px] flex-[0_0_48px] text-center">
               <p className={`${textClass.h3_style2} text-[#878095]`}>
                 {event.date.toDateString().slice(7, 10)}

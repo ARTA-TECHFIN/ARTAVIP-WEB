@@ -303,7 +303,7 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
             <ButtonAnimated
               as="a"
               href="#_"
-              className="py-[0.5em] px-[2em] font-Neue text-[3.6em] text-white lg:px-[3em] lg:text-[1em]"
+              className="text-white"
             >
               Explore more
             </ButtonAnimated>
@@ -380,7 +380,7 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
 
       <div
         className={cn(
-          `absolute bottom-0 left-1/2 flex w-[110%] translate-y-full -translate-x-1/2 transform flex-col justify-center transition-all duration-300`,
+          `absolute bottom-0 left-1/2 flex w-[110%] translate-y-full -translate-x-1/2 transform flex-col  md:items-center  justify-center transition-all duration-300`,
           index === selectedBusiness ? 'lg:opacity-100' : 'lg:opacity-0'
         )}
       >
@@ -391,7 +391,7 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
         <ButtonAnimated
           as="a"
           href="#_"
-          className="mt-[1em] border-white py-[0.4em] px-[1em] font-Neue text-[3em] text-white md:px-[2em] lg:px-[3em] lg:text-[1em]"
+          className="mt-6 border-white  text-white "
         >
           Learn more
         </ButtonAnimated>

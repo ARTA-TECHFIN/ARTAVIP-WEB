@@ -18,6 +18,7 @@ const ButtonAnimated = (props: propsT) => {
       href={href}
       className={cn(
         'arta-transition-fix',
+        'font-Neue md:text-base text-sm px-8 py-2',
         'group relative inline-flex items-center justify-center overflow-hidden',
         'rounded-full', // border-white
         // 'font-Neue text-[3.6em] text-white',
@@ -44,7 +45,7 @@ const ButtonAnimated = (props: propsT) => {
         </svg>
         <span>{children}</span>
       </span>
-      <span className="ease absolute flex h-full w-full transform items-center justify-center font-Neue text-[1em] transition-all duration-300 group-hover:translate-x-full">
+      <span className="ease absolute flex h-full w-full transform items-center justify-center transition-all duration-300 group-hover:translate-x-full">
         {children}
       </span>
       <span className="invisible relative">{children}</span>

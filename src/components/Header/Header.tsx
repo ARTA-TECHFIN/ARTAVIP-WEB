@@ -10,6 +10,7 @@ import { IconListItemArrow } from '../Svg/Icon'
 import ArtaLogo from 'src/components/Svg/arta-logo'
 import { links } from 'src/domains/links'
 import { ButtonAnimated } from '../ButtonAnimated'
+import cn from 'classnames'
 
 type menuItemT = {
   title: string
@@ -142,15 +143,17 @@ const pageInfoList: pageInfoItemT[] = [
               })}
             </div>
             <div
-              className="flex cursor-pointer items-center justify-center p-2 text-arta-eggshell-100 lg:hidden"
+              className="flex flex-col justify-between w-[26px] h-[22px] cursor-pointer lg:hidden"
               onClick={() => setShowMenu(!showMenu)}
             >
-              <img src="/images/Group 1.png" alt="menu" />
+              <span className={cn('w-full h-[2px]', textColor == 'white' ? 'bg-[#F4F1E1]' : 'bg-[#593725]')}></span>
+              <span className={cn('w-full h-[2px]', textColor == 'white' ? 'bg-[#F4F1E1]' : 'bg-[#593725]')}></span>
+              <span className={cn('w-full h-[2px]', textColor == 'white' ? 'bg-[#F4F1E1]' : 'bg-[#593725]')}></span>
             </div>
             <div className="z-[1] text-right">
               <Link href="/">
-                <div className="relative cursor-pointer opacity-100 transition hover:opacity-100">
-                  <ArtaLogo className={textColorClass} />
+                <div className="relative cursor-pointer opacity-100 transition hover:opacity-100 md:w-auto md:h-auto w-[78.67px] h-[32px]">
+                  <ArtaLogo className={`${textColorClass} md:w-auto w-full md:h-auto h-full`} />
                 </div>
               </Link>
             </div>
@@ -207,7 +210,7 @@ const pageInfoList: pageInfoItemT[] = [
 
           <div>
             {showMenu && (
-              <div className="absolute top-0 left-0 z-[801] flex min-h-[100vh] w-full flex-col bg-arta-russet-100 py-8 px-6 md:py-12 md:px-24">
+              <div className="absolute top-0 left-0 z-[801] flex min-h-[100vh] w-full flex-col bg-arta-russet-100 px-[4em] pt-[6em] lg:pt-[2.8em] ">
                 <div className="flex items-center justify-between">
                   <div
                     className="h-6 w-6 text-arta-eggshell-100"
@@ -217,7 +220,7 @@ const pageInfoList: pageInfoItemT[] = [
                   >
                     <XIcon className="h-6 w-6" />
                   </div>
-                  <div className="relative cursor-pointer opacity-100 transition hover:opacity-100">
+                  <div className="relative cursor-pointer opacity-100 transition hover:opacity-100 md:w-auto md:h-auto w-[78.67px] h-[32px]">
                     <img src="/images/Group.png" alt="logo" className=" object-contain" />
                   </div>
                 </div>

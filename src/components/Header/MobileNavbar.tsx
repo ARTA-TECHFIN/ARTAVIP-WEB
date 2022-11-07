@@ -7,6 +7,7 @@ interface propsT {
     pageName: string
     paragraph: string
     buttonText: string
+    href: string
     pages: {
       title: string
       link: string
@@ -17,12 +18,15 @@ interface propsT {
 const MobileNavbar: FC<propsT> = ({ item }) => {
   const [show, setShow] = useState(false)
 
+  console.log(item);
+  
+
   return (
     <div>
       <div>
         <ul>
           <li
-            className=" group flex cursor-pointer text-[16px] leading-[24px] "
+            className=" group flex cursor-pointer text-base leading-[24px] "
             onClick={() => {
               setShow(!show)
             }}
@@ -44,28 +48,35 @@ const MobileNavbar: FC<propsT> = ({ item }) => {
             } mt-5 flex transform flex-col items-start justify-start `}
           >
             <p className="mt-5 max-w-[500px] text-sm">{item.paragraph}</p>
-            <ButtonAnimated
-              as="a"
-              href="#_"
-              className="my-6 w-[260px] border-2 border-white p-4 px-6 py-3 font-medium text-white shadow-md "
-              borderWidth={2}
-            >
-              {item.buttonText}
-            </ButtonAnimated>
+            {
+              item.buttonText && (
+                <ButtonAnimated
+                  as="a"
+                  href={item.href}
+                  className="mt-6 sm:w-[260px] w-full border-2 border-white p-4 px-6 py-3 font-medium text-white shadow-md "
+                  borderWidth={2}
+                >
+                  {item.buttonText}
+                </ButtonAnimated>
+              )
+            }
+            
 
-            <div className="flex flex-col justify-center space-y-5 pl-5">
+            <div className="flex flex-col justify-center space-y-1 pl-5 mt-6">
               {item.pages.map((item, index) => (
-                <div className="group " key={index}>
-                  <li className=" relative -translate-x-6 cursor-pointer list-none py-2 px-2 opacity-70 duration-300 ease-out hover:translate-x-0 hover:opacity-100 ">
-                    {/* <span className="absolute top-0 left-0 h-full w-0  transition-all duration-150 ease-in-out group-hover:w-full group-hover:bg-[#f1eded45]"></span> */}
-                    <span className="flex items-start pl-5">
-                      <img
-                        src="/images/Group 5.png"
-                        alt="arrow"
-                        className=" ease hidden -translate-x-full pt-[10px] pr-2 duration-300 group-hover:block group-hover:translate-x-0"
-                      />
-                      <span>{item.title}</span>
-                    </span>
+                <div className="group" key={index}>
+                  <li className=" relative -translate-x-6 cursor-pointer text-base list-none py-1 opacity-70 duration-300 ease-out hover:translate-x-0 hover:opacity-100 ">
+                    <a href={item.link}>
+                      {/* <span className="absolute top-0 left-0 h-full w-0  transition-all duration-150 ease-in-out group-hover:w-full group-hover:bg-[#f1eded45]"></span> */}
+                      <span className="flex items-start">
+                        <img
+                          src="/images/Group 5.png"
+                          alt="arrow"
+                          className=" ease hidden -translate-x-full pt-[10px] pr-2 duration-300 group-hover:block group-hover:translate-x-0"
+                        />
+                        <span>{item.title}</span>
+                      </span>
+                    </a>
                   </li>
                 </div>
               ))}

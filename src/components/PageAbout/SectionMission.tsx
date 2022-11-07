@@ -9,7 +9,7 @@ export const SectionMission = () => {
       <div className="easeInOutSine absolute h-full w-full scale-105 overflow-hidden duration-300 group-hover/bg:scale-100">
         <Image src={mission_bg} alt="" fill className="object-cover" />
       </div>
-      <div className="arta-container relative flex flex-col items-center justify-center py-36">
+      <div className="arta-container mx-auto relative flex flex-col items-center justify-center py-36">
         <h2 className={`${textClass.title_style2} mb-4 text-center text-arta-eggshell-100`}>
           {t.mission.title}
         </h2>

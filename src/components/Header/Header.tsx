@@ -105,17 +105,17 @@ const pageInfoList: pageInfoItemT[] = [
 
   const DEFAULT_TAB_INDEX = -1
   const [activeTabIndex, _setActiveTabIndex] = useState(DEFAULT_TAB_INDEX)
-  const setActiveTabIndex = (index: number, selected:boolean) => {
+  const setActiveTabIndex = (index: number) => {
     _setActiveTabIndex(index)
 
-    if(selected) return
+    if(selectedTab) return
       gsap.fromTo('#fadeIn', { opacity: 0 }, { opacity: 1, duration: 0.6, delay: 0.3})
   }
   const selectedTab = activeTabIndex === DEFAULT_TAB_INDEX ? null : pageInfoList[activeTabIndex]
 
   return (
     <div className="fixed z-50 w-full">
-      <div onMouseLeave={() => setActiveTabIndex(DEFAULT_TAB_INDEX, true)}>
+      <div onMouseLeave={() => setActiveTabIndex(DEFAULT_TAB_INDEX)}>
         <header className="w-full px-[4em] pt-[6em] lg:pt-[2.8em] xl:mx-auto">
           <div className="flex w-full justify-between lg:space-x-6">
             <div className="hidden items-center justify-center space-x-8 lg:flex">
@@ -126,7 +126,7 @@ const pageInfoList: pageInfoItemT[] = [
                   <div
                     key={index}
                     className={`group z-[4] flex cursor-pointer items-center justify-center opacity-70 transition hover:opacity-100 ${textColorClass}`}
-                    onMouseEnter={() => setActiveTabIndex(index, selected)}
+                    onMouseEnter={() => setActiveTabIndex(index)}
                   >
                     <span
                       style={{fontSize: `${fontSize}`}}

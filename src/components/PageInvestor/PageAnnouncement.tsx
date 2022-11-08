@@ -34,8 +34,9 @@ const PageAnnouncement: NextPage = () => {
 
   return (
     <div className="mt-16">
-      {data.map((yearly) => (
+      {data.map((yearly, index) => (
         <CalendarAccordion
+          index={index}
           key={yearly.year}
           year={yearly.year}
           events={yearly.results.map((r) => ({

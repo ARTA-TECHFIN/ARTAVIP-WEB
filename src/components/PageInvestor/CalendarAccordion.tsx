@@ -6,6 +6,7 @@ import { textClass } from 'src/components/Text'
 import gsap from 'gsap'
 
 type propsT = {
+  index: number
   year: number
   events: {
     date: Date
@@ -13,11 +14,16 @@ type propsT = {
     url: string
   }[]
 }
-const CalendarAccordion = ({ year, events }: propsT) => {
+const CalendarAccordion = ({index, year, events }: propsT) => {
   const [showMenu, setShowMenu] = useState(false)
   const togglerIcon = useRef(null)
   const listWrapper = useRef(null)
   const list = useRef<HTMLUListElement>(null)
+
+
+  useEffect(()=> {
+    if(index === 0) setShowMenu(!showMenu)
+  }, [])
 
   if (showMenu) {
     gsap.to(togglerIcon.current, { rotate: -180, duration: 0.8 })

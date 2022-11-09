@@ -46,7 +46,9 @@ module.exports = {
       }),
 
       boxShadow: {
-        'calendarAccordion': '0px 8px 16px rgba(89, 55, 37, 0.2)'
+        'calendarAccordion': '0px 8px 16px rgba(89, 55, 37, 0.2)',
+        'postCard': '0px 8px 16px rgba(89, 55, 37, 0.2)',
+        'blogPost': '0px 64px 64px rgba(89, 55, 37, 0.2)'
       }
     },
   },

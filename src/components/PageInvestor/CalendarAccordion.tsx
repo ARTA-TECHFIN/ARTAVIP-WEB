@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import cn from 'classnames'
 import { textClass } from 'src/components/Text'
 import gsap from 'gsap'
+import Router from 'next/router'
 
 type propsT = {
   index: number
@@ -11,7 +12,8 @@ type propsT = {
   events: {
     date: Date
     title: string
-    url: string
+    url?: string
+    postPageUrl?: string
   }[]
 }
 const CalendarAccordion = ({index, year, events }: propsT) => {
@@ -51,8 +53,13 @@ const CalendarAccordion = ({index, year, events }: propsT) => {
               <li
                 className="arta-eventItem border-b border-solid	 border-arta-sand-200 py-6"
                 key={index}
+                onClick={()=> {
+                  if(event.postPageUrl) {
+                    Router.push(`${event.postPageUrl}`, undefined, { scroll: false })
+                  }
+                }}
               >
-                <a href={event.url} target="_blank" className="flex items-center" rel="noreferrer">
+                <a href={event.url} target="_blank" className="flex md:items-center" rel="noreferrer">
                   <div className="lg:mr-8 mr-2 md:flex-[0_0_80px] flex-[0_0_48px] text-center">
                     <p className={`${textClass.h3_style2} text-[#878095]`}>
                       {event.date.toDateString().slice(7, 10)}

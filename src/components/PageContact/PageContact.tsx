@@ -24,7 +24,7 @@ const PageContactPage: NextPage = () => {
     <>
       <Seo />
       <Header textColor="brown" />
-      <main className="flex flex-col">
+      <main className="flex flex-col text-arta-sand-100">
         <HeroBanner
           title={cms.heroBanner.title}
           description={cms.heroBanner.description}

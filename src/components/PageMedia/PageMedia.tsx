@@ -10,7 +10,7 @@ import { TabBar } from '../TabBar'
 import { links } from 'src/domains/links'
 import Router from 'next/router'
 
-import {mediaCmsT} from 'src/domains/media'
+import { mediaCmsT } from 'src/domains/media'
 
 const TABS = {
   Blog: 'Blog',
@@ -32,33 +32,32 @@ type propsT = {
   children: React.ReactNode
 }
 
-
-const PageMediaPage: FC<propsT> = ({ cms, tabType, children })  => {
+const PageMediaPage: FC<propsT> = ({ cms, tabType, children }) => {
   const tabInfo = tabInfoMap[tabType]
 
   return (
     <>
       <Seo />
       <Header textColor="brown" />
-      <main className="flex flex-col bg-arta-eggshell-100 text-arta-sand-100 md:pb-[150px] pb-12">
+      <main className="flex flex-col bg-arta-eggshell-100 pb-12 text-arta-sand-100 md:pb-[150px]">
         <HeroBanner
           title={cms.heroBanner.title}
           description={cms.heroBanner.description}
           image={cms.heroBanner.image}
           mobileImage={cms.heroBanner.mobileImage}
         />
-          <div className="arta-container mx-auto">
-            <div className='overflow-auto arta-hide-scrollbar md:mx-0 -mx-6 py-16 '>
-                <TabBar
-                  tabs={tabList.map((t) => t.title)}
-                  selectedTab={tabInfo.title}
-                  setSelectedTab={(_, index) =>
-                    Router.push(tabList[index].link, undefined, { scroll: false })
-                  }
-                />
-              </div>
+        <div className="arta-container mx-auto">
+          <div className="arta-hide-scrollbar -mx-6 overflow-auto py-16 md:mx-0 ">
+            <TabBar
+              tabs={tabList.map((t) => t.title)}
+              selectedTab={tabInfo.title}
+              setSelectedTab={(_, index) =>
+                Router.push(tabList[index].link, undefined, { scroll: false })
+              }
+            />
           </div>
-            {children}
+        </div>
+        {children}
       </main>
       <Footer textColor="brown" />
     </>
@@ -66,6 +65,5 @@ const PageMediaPage: FC<propsT> = ({ cms, tabType, children })  => {
 }
 
 export { TABS }
-
 
 export default PageMediaPage

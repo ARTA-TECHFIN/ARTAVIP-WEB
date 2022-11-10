@@ -51,7 +51,7 @@ const CalendarAccordion = ({index, year, events }: propsT) => {
           {events.map((event, index) => {
             return (
               <li
-                className="arta-eventItem border-b border-solid	 border-arta-sand-200 py-6"
+                className="arta-eventItem border-b border-solid	cursor-pointer border-arta-sand-200 py-6"
                 key={index}
                 onClick={()=> {
                   if(event.postPageUrl) {

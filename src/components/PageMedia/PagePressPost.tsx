@@ -22,13 +22,13 @@ const PagePressPost: FC<propsT> = ({ cms, id1, id2 })  => {
 
     return(
         <div className="arta-container mx-auto">
-            <div 
+            <Link 
                 className={`underline cursor-pointer flex items-center ${textClass.body_regular_verah}`}
-                onClick={() =>  Router.push(`${links.mediaPress}`, undefined, { scroll: false })}
+                href={links.mediaPress}
             >
                 <IconArrowLeft fill='#593725' className='h-4 mr-2'/>
                 {'Back to listing'}
-            </div>
+            </Link>
             <div className="md:p-12 p-6 bg-white shadow-blogPost mt-4">
                 <p className='text-xs text-arta-indigo-100'>{post.date}</p>
                 <h2 className={`mt-2 ${textClass.h3_style2} text-arta-secondary`}>{post.title}</h2>

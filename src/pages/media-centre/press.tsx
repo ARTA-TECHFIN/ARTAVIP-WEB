@@ -1,8 +1,7 @@
-import { InferGetStaticPropsType } from 'next'
 import { CalendarAccordion } from 'src/components/PageInvestor/CalendarAccordion'
 import { MediaLayout, MediaTab, MediaTABS } from 'src/components/PageMedia/Layout'
 import { links } from 'src/domains/links'
-import { getMediaCms, getSlug } from 'src/domains/media'
+import { getMediaCms, getMediaCmsT, getSlug } from 'src/domains/media'
 
 export const getStaticProps = async () => {
   const cms = await getMediaCms({ lang: 'en' })
@@ -11,7 +10,7 @@ export const getStaticProps = async () => {
   }
 }
 
-const PageMediaCenter = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
   const { cms } = props
   return (
     <MediaLayout cms={cms}>

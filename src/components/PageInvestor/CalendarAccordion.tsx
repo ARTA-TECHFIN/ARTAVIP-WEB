@@ -16,15 +16,14 @@ type propsT = {
     postPageUrl?: string
   }[]
 }
-const CalendarAccordion = ({index, year, events }: propsT) => {
+const CalendarAccordion = ({ index, year, events }: propsT) => {
   const [showMenu, setShowMenu] = useState(false)
   const togglerIcon = useRef(null)
   const listWrapper = useRef(null)
   const list = useRef<HTMLUListElement>(null)
 
-
-  useEffect(()=> {
-    if(index === 0) setShowMenu(!showMenu)
+  useEffect(() => {
+    if (index === 0) setShowMenu(!showMenu)
   }, [])
 
   if (showMenu) {
@@ -36,31 +35,34 @@ const CalendarAccordion = ({index, year, events }: propsT) => {
   }
 
   return (
-    <div
-      className={cn(`mb-6 bg-white transition-shadow`, showMenu && 'shadow-calendarAccordion')}
-    >
+    <div className={cn(`mb-6 bg-white transition-shadow`, showMenu && 'shadow-calendarAccordion')}>
       <div
-        className="flex cursor-pointer items-center justify-between lg:p-8 p-6"
+        className="flex cursor-pointer items-center justify-between p-6 lg:p-8"
         onClick={() => setShowMenu(!showMenu)}
       >
         <span className={`${textClass.h6} text-black`}>{year}</span>
         <ChevronDownIcon ref={togglerIcon} className="h-4 w-4" />
       </div>
       <div ref={listWrapper} className="h-0 overflow-hidden">
-        <ul ref={list} className="lg:px-8 px-6 lg:pb-8 pb-6">
+        <ul ref={list} className="px-6 pb-6 lg:px-8 lg:pb-8">
           {events.map((event, index) => {
             return (
               <li
-                className="arta-eventItem border-b border-solid	cursor-pointer border-arta-sand-200 py-6"
+                className="arta-eventItem cursor-pointer border-b	border-solid border-arta-sand-200 py-6"
                 key={index}
-                onClick={()=> {
-                  if(event.postPageUrl) {
-                    Router.push(`${event.postPageUrl}`, undefined, { scroll: false })
+                onClick={() => {
+                  if (event.postPageUrl) {
+                    Router.push(`${event.postPageUrl}`)
                   }
                 }}
               >
-                <a href={event.url} target="_blank" className="flex md:items-center" rel="noreferrer">
-                  <div className="lg:mr-8 mr-2 md:flex-[0_0_80px] flex-[0_0_48px] text-center">
+                <a
+                  href={event.url}
+                  target="_blank"
+                  className="flex md:items-center"
+                  rel="noreferrer"
+                >
+                  <div className="mr-2 flex-[0_0_48px] text-center md:flex-[0_0_80px] lg:mr-8">
                     <p className={`${textClass.h3_style2} text-[#878095]`}>
                       {event.date.toDateString().slice(7, 10)}
                     </p>
@@ -68,10 +70,10 @@ const CalendarAccordion = ({index, year, events }: propsT) => {
                       {event.date.toDateString().slice(3, 7)}
                     </p>
                   </div>
-                  <span className={`${textClass.title_verah} text-arta-sand-100 mr-4`}>
+                  <span className={`${textClass.title_verah} mr-4 text-arta-sand-100`}>
                     {event.title}
                   </span>
-                  <IconArrowRightCircle className="ml-auto flex-[0_0_32px] sm:block hidden" />
+                  <IconArrowRightCircle className="ml-auto hidden flex-[0_0_32px] sm:block" />
                 </a>
               </li>
             )

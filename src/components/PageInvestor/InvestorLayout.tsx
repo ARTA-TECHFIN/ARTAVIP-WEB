@@ -3,7 +3,7 @@ import Footer from 'src/components/Footer'
 import { Seo } from 'src/components/Seo'
 import { HeroBanner } from '../HeroBanner'
 
-import { getReportCms, reportCmsT } from 'src/domains/investor'
+import { reportCmsT } from 'src/domains/investor'
 import { FC } from 'react'
 import { TabBar } from '../TabBar'
 import { links } from 'src/domains/links'
@@ -47,9 +47,9 @@ const InvestorLayout: FC<propsT> = ({ cms, tabType, children }) => {
           mobileImage={cms.heroBanner.mobileImage}
           label={cms.heroBanner.label}
         />
-        <div className='pt-12 pb-6 md:pt-16 md:pb-[206px] bg-arta-eggshell-100'>
-          <div className='arta-container mx-auto'>
-            <div className='overflow-auto arta-hide-scrollbar md:mx-0 -mx-6'>
+        <div className="bg-arta-eggshell-100 pt-12 pb-6 md:pt-16 md:pb-[206px]">
+          <div className="arta-container mx-auto">
+            <div className="arta-hide-scrollbar -mx-6 overflow-auto md:mx-0">
               <TabBar
                 tabs={tabList.map((t) => t.title)}
                 selectedTab={tabInfo.title}

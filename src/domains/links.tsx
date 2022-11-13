@@ -13,7 +13,7 @@ export const links = {
   investorFinCalendar: '/investor-relations/fin-calendar',
   investorEsg: '/investor-relations/esg',
   media: '/media-centre',
-  mediaBlog: '/media-centre/blogs',
+  mediaBlog: '/media-centre',
   mediaPress: '/media-centre/press',
   mediaBlogPost: '/media-centre/blog-post',
   mediaPressPost: '/media-centre/press-post',

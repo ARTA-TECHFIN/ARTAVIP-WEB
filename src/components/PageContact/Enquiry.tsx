@@ -63,19 +63,19 @@ const Enquiry = ()=> {
 
                     <h4 className={`${textClass.h6} mt-8 text-arta-sand-100`}>{`Enquiry`}</h4>
                     <div className='grid grid-cols-12 sm:gap-y-8 gap-y-5 mt-4 mb-8'>
-                        <div className='xs:col-span-6 col-span-full'>
+                        <div className='sm:col-span-6 col-span-full'>
                             <div className='text-base text-black'>
                                 <div className="font-bold">Media</div>
                                 <a href="mailto:marketing@artatechfin.com" className='underline'>marketing@artatechfin.com</a>
                             </div>
                         </div>
-                        <div className='xs:col-span-6 col-span-full'>
+                        <div className='sm:col-span-6 col-span-full'>
                             <div className='text-base text-black'>
                                 <div className="font-bold">Investor</div>
                                 <a href="mailto:ir@artatechfin.com" className='underline'>ir@artatechfin.com</a>
                             </div>
                         </div>
-                        <div className='xs:col-span-6 col-span-full'>
+                        <div className='sm:col-span-6 col-span-full'>
                             <div className='text-base text-black'>
                                 <div className="font-bold">Recruitment</div>
                                 <a href="mailto:recruit@artatechfin.com" className='underline'>recruit@artatechfin.com</a>

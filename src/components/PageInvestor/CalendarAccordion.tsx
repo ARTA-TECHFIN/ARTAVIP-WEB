@@ -16,6 +16,11 @@ type propsT = {
     postPageUrl?: string
   }[]
 }
+
+gsap.config({
+  nullTargetWarn: false,
+})
+
 const CalendarAccordion = ({ index, year, events }: propsT) => {
   const [showMenu, setShowMenu] = useState(false)
   const togglerIcon = useRef(null)
@@ -23,8 +28,13 @@ const CalendarAccordion = ({ index, year, events }: propsT) => {
   const list = useRef<HTMLUListElement>(null)
 
   useEffect(() => {
-    if (index === 0) setShowMenu(!showMenu)
+    if (index === 0) {
+      gsap.set(togglerIcon.current, { rotate: -180 })
+      gsap.set(listWrapper.current, { height: list.current?.clientHeight})
+      setShowMenu(!showMenu)
+    }
   }, [])
+
 
   if (showMenu) {
     gsap.to(togglerIcon.current, { rotate: -180, duration: 0.8 })

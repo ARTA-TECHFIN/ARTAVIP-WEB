@@ -51,7 +51,7 @@ const pageInfoList: pageInfoItemT[] = [
       { title: 'Investment Banking', link: links.businesses },
       { title: 'Insurance Brokerage', link: links.businesses },
       { title: 'Securities Brokerage', link: links.businessesSecurities },
-      { title: 'Artazine', link: links.businessesWeb3 },
+      { title: 'Artazine Web3 Media', link: links.businessesWeb3 },
     ],
   },
   {
@@ -76,20 +76,28 @@ const pageInfoList: pageInfoItemT[] = [
     pages: [
       { title: 'ARTA Blog', link: links.media },
       { title: 'Press Release', link: links.media },
-      { title: 'Media Enquiry', link: links.media },
     ],
   },
   {
-    pageName: 'Contact Us',
-    title: 'Contact Us',
+    pageName: 'Join Us',
+    title: 'Join Us',
     paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
     buttonText: 'Contact Us home',
     href: links.contact,
     pages: [
       { title: 'Work with ARTA', link: links.contact },
+      { title: 'Our Value', link: links.contact },
+      { title: 'ARTA Cares', link: links.contact },
       { title: 'Job Openings', link: links.contact },
-      { title: 'Our Office', link: links.contact },
     ],
+  },
+  {
+    pageName: 'Contact Us',
+    title: 'Contact Us',
+    paragraph: ``,
+    buttonText: '',
+    href: links.contact,
+    pages: [],
   },
 ]
 
@@ -126,7 +134,7 @@ const pageInfoList: pageInfoItemT[] = [
                   <div
                     key={index}
                     className={`group z-[4] flex cursor-pointer items-center justify-center opacity-70 transition hover:opacity-100 ${textColorClass}`}
-                    onMouseEnter={() => setActiveTabIndex(index)}
+                    onMouseEnter={() => page.pages.length > 0 ? setActiveTabIndex(index) : null}
                   >
                     <span
                       style={{fontSize: `${fontSize}`}}
@@ -137,7 +145,11 @@ const pageInfoList: pageInfoItemT[] = [
                     >
                       {page.pageName}
                     </span>
-                    <ChevronIcon className="z-[3] ml-1 h-4 w-4 transition group-hover:text-arta-sunray-100" />
+                    {
+                      page.pages.length > 0 && (
+                        <ChevronIcon className="z-[3] ml-1 h-4 w-4 transition group-hover:text-arta-sunray-100" />
+                      )
+                    }
                   </div>
                 )
               })}

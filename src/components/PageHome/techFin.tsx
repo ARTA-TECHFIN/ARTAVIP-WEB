@@ -179,7 +179,7 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
     })
 
     gsap.to(sec1VideoRed.current, {
-      filter: 'hue-rotate(180deg)',
+      filter: 'hue-rotate(170deg)',
       ease: 'slow(0.7, 0.7, false)',
     })
 

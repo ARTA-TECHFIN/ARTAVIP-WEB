@@ -11,7 +11,7 @@ import { CalendarCardList } from './CalendarCardList'
 
 const QUERY_FINANCIAL_CALENDAR = 'QUERY_FINANCIAL_CALENDAR'
 
-// TODO: Assume only get five years of data
+// TODO: Assume only get five years of data.
 /**
  * TODO: This is a temporary solution to get the data from the API.
  * Since the API cannot filter by filetype, we need to filter it manually.

@@ -136,18 +136,28 @@ const pageInfoList: pageInfoItemT[] = [
                     className={`group z-[4] flex cursor-pointer items-center justify-center opacity-70 transition hover:opacity-100 ${textColorClass}`}
                     onMouseEnter={() => page.pages.length > 0 ? setActiveTabIndex(index) : null}
                   >
-                    <span
-                      style={{fontSize: `${fontSize}`}}
-                      className={
-                        `z-[3] leading-[24px] decoration-arta-sunray-100 underline-offset-[20px] transition group-hover:underline` +
-                        (selected ? ' underline' : '')
-                      }
-                    >
-                      {page.pageName}
-                    </span>
+                    {
+                      page.pages.length === 0 && (
+                        <Link className="flex items-start" href={page.href}>
+                          <span>{page.title}</span>
+                        </Link>
+                      )
+                    }
+                    
                     {
                       page.pages.length > 0 && (
-                        <ChevronIcon className="z-[3] ml-1 h-4 w-4 transition group-hover:text-arta-sunray-100" />
+                        <>
+                          <span
+                            style={{fontSize: `${fontSize}`}}
+                            className={
+                              `z-[3] leading-[24px] decoration-arta-sunray-100 underline-offset-[20px] transition group-hover:underline` +
+                              (selected ? ' underline' : '')
+                            }
+                          >
+                            {page.pageName}
+                          </span>
+                          <ChevronIcon className="z-[3] ml-1 h-4 w-4 transition group-hover:text-arta-sunray-100" />
+                        </>
                       )
                     }
                   </div>

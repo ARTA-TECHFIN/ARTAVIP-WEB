@@ -233,10 +233,10 @@ const pageInfoList: pageInfoItemT[] = [
           <div>
             {showMenu && (
               <div className="absolute top-0 left-0 z-[801] flex min-h-[100vh] w-full flex-col bg-arta-russet-100 px-[4em] pt-[6em] lg:pt-[2.8em] ">
-                <div className="flex items-center justify-between">
+                <div className="flex items-start justify-between">
                   <div
-                    className="h-6 w-6 text-arta-eggshell-100"
-                    onMouseEnter={() => {
+                    className="h-6 w-6 text-arta-eggshell-100 cursor-pointer"
+                    onClick={() => {
                       setShowMenu(!showMenu)
                     }}
                   >

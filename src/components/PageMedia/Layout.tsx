@@ -2,6 +2,7 @@ import { getMediaCmsT } from 'src/domains/media'
 import { Seo } from 'src/components/Seo'
 import Header from 'src/components/Header/Header'
 import { HeroBanner } from 'src/components/HeroBanner'
+import Footer from 'src/components/Footer'
 
 import { TabBar } from '../TabBar'
 import { links } from 'src/domains/links'
@@ -36,6 +37,7 @@ const Layout = (props: { cms: getMediaCmsT; children: React.ReactNode }) => {
         />
         {children}
       </main>
+      <Footer textColor="brown" />
     </>
   )
 }

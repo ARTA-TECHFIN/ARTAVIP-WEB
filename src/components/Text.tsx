@@ -15,7 +15,8 @@ export const textClass = {
   title_style2: `font-Verah md:text-[1.25rem] text-lg md:leading-[1.75rem] leading-[1.5rem] tracking-wide`, // font-size: 20px; line-height: 30px;
   title: `font-Neue text-[1.25rem] leading-[1.75rem] font-medium`, // font-size: 20px; font-weight: 500; line-height: 28px;
   title_verah: `font-Verah md:text-[1.25rem] text-lg leading-[1.75rem] font-medium`, // font-size: 20px; font-weight: 500; line-height: 28px;
+  caption: `font-Neue text-[0.75rem] leading-[1.25rem]`, // font-size: 12px; line-height: 20px;
 }
 
 /** This is for autocomplete */
-// const className = 'text-[1.5rem] leading-[2rem]'
+// const className = 'text-[0.75rem] leading-[2rem]'

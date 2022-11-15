@@ -1,17 +1,16 @@
-import { ChangeEvent } from 'react'
+import { ComponentProps } from 'react'
 
-type propsT = {
+type propsT = ComponentProps<'select'> & {
   options: Array<{ label: string; value: string }>
-  value: string
-  onChange: (event: ChangeEvent<HTMLSelectElement>, value: string) => void
 }
 
-const InputDropdown = (props: propsT) => {
+const InputDropdown = ({ options, ...rest }: propsT) => {
   return (
-    <select value={props.value} onChange={(e) => props.onChange(e, e.target.value)} 
-      className='bg-transparent w-full py-3 border-b border-solid border-arta-indigo-100 focus:outline-none text-base'
+    <select
+      className="w-full border-b border-solid border-arta-indigo-100 bg-transparent py-3 text-base focus:outline-none"
+      {...rest}
     >
-      {props.options.map((option) => (
+      {options.map((option) => (
         <option key={option.value} value={option.value}>
           {option.label}
         </option>

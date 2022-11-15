@@ -6,6 +6,7 @@ import { Seo } from 'src/components/Seo'
 
 import { HeroBanner } from '../HeroBanner'
 import Enquiry from './Enquiry'
+import { EnquiryForm } from './EnquiryForm'
 
 const cms = {
   heroBanner: {
@@ -31,6 +32,7 @@ const PageContactPage: NextPage = () => {
         <div className="overflow-hidden bg-arta-eggshell-100">
           <Enquiry />
         </div>
+        <EnquiryForm />
       </main>
       <Footer textColor="brown" />
     </>

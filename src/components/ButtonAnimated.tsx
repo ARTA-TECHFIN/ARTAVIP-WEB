@@ -7,9 +7,10 @@ type propsT = {
   children: string
   className?: string
   borderWidth?: 1 | 2
+  extraProps?: any
 }
 const ButtonAnimated = (props: propsT) => {
-  const { as = 'button', href = '', children, className, borderWidth = 1 } = props
+  const { as = 'button', href = '', children, className, borderWidth = 1, extraProps } = props
 
   const Component = as === 'a' ? Link : 'button'
 
@@ -18,7 +19,7 @@ const ButtonAnimated = (props: propsT) => {
       href={href}
       className={cn(
         'arta-transition-fix',
-        'font-Neue md:text-base text-sm px-8 py-2',
+        'px-8 py-2 font-Neue text-sm md:text-base',
         'group relative inline-flex items-center justify-center overflow-hidden',
         'rounded-full', // border-white
         // 'font-Neue text-[3.6em] text-white',
@@ -27,6 +28,7 @@ const ButtonAnimated = (props: propsT) => {
         borderWidth === 1 ? 'border' : 'border-2',
         className
       )}
+      {...extraProps}
     >
       <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-4 bg-[#f1eded45] duration-300 will-change-transform group-hover:translate-x-0">
         <svg

@@ -20,12 +20,12 @@ export const SectionCulture = () => {
         <Image src={culture_bg} alt="" fill className="object-cover" />
       </div>
 
-      <div className="arta-container mx-auto relative grid grid-cols-2 py-36">
-        <div className="flex flex-col justify-center">
+      <div className="arta-container mx-auto relative grid md:grid-cols-2 pt-16 pb-8 md:py-36">
+        <div className="flex flex-col justify-center mb-12">
           <h2 className={`${textClass.h2_style2} mb-2`}>{t.culture.title}</h2>
           <p className={textClass.body_regular}>{t.culture.subtitle1}</p>
         </div>
-        <div className="pl-8">
+        <div className="md:pl-8">
           <h3 className={textClass.h3_style2}>{t.culture.sectionTitle}</h3>
           <Hr />
           <ul>

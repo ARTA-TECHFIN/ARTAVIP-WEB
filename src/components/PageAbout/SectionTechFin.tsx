@@ -26,7 +26,7 @@ export const SectionTechFin = () => {
       />
 
       {/* SectionEcosystem */}
-      <div className="relative flex flex-col items-center pb-36">
+      <div className="relative flex flex-col items-center pb-12 md:pb-36">
         <div className="mb-12 max-w-3xl text-center">
           <h3 className={textClass.h3_style2}>{t.ecosystem.title}</h3>
           <p className={textClass.body_regular}>{t.ecosystem.subtitle}</p>

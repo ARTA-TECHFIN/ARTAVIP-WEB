@@ -2,6 +2,8 @@ import Image from 'next/image'
 import leadership_bg from './images/leadership_bg.png'
 import { textClass } from 'src/components/Text'
 import { t } from './PageAbout'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
 
 export const SectionLeadership = () => {
   return (
@@ -11,17 +13,22 @@ export const SectionLeadership = () => {
       </div>
       <div className="arta-container relative py-36">
         <h2 className={`${textClass.h2_style2} mb-2`}>{t.leadership.title}</h2>
-        <ul className="flex w-full max-w-full flex-nowrap overflow-x-auto">
+        <Swiper
+         loop={false}
+         slidesPerView= 'auto'
+         spaceBetween={32}
+         className="!overflow-visible"
+        >
           {t.leadership.leaderList.map((leader, index) => (
-            <li key={index} className="mr-8 flex w-[14rem] min-w-[14rem] flex-col last:mr-0">
+            <SwiperSlide key={index} className="flex w-[220px] flex-[0_0_220px] min-w-[220px] flex-col">
               <div className="relative mb-4 aspect-[3/4] h-auto w-full overflow-hidden">
                 <Image src={leader.image} alt="" fill className="object-cover" />
               </div>
               <span className={`${textClass.small_text} whitespace-pre`}>{leader.title}</span>
               <span className={textClass.h6}>{leader.name}</span>
-            </li>
+            </SwiperSlide>
           ))}
-        </ul>
+        </Swiper>
       </div>
     </div>
   )

@@ -11,7 +11,7 @@ export const SectionLeadership = () => {
       <div className="easeInOutSine absolute h-full w-full scale-150 overflow-hidden duration-300 group-hover/bg:scale-100">
         <Image src={leadership_bg} alt="" fill className="object-cover" />
       </div>
-      <div className="arta-container relative py-36">
+      <div className="arta-container mx-auto relative py-36">
         <h2 className={`${textClass.h2_style2} mb-2`}>{t.leadership.title}</h2>
         <Swiper
          loop={false}

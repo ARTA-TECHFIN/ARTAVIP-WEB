@@ -36,7 +36,7 @@ const EnquiryForm = () => {
   const isExpanded = topic !== ''
 
   return (
-    <div className="arta-container bg-arta-sand-200 py-12">
+    <div className="arta-container mx-auto bg-arta-sand-200 py-12">
       <h2 className={`${textClass.h2_style2} mb-6`}>{t.title}</h2>
       {isSubmitted ? (
         <div className="min-h-[220px] w-full max-w-[820px] flex-col gap-10 bg-arta-snow-100 p-6 shadow-2xl">

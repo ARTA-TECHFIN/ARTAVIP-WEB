@@ -139,7 +139,7 @@ const pageInfoList: pageInfoItemT[] = [
                     {
                       page.pages.length === 0 && (
                         <Link className="flex items-start" href={page.href}>
-                          <span>{page.title}</span>
+                          <span style={{fontSize: `${fontSize}`}}>{page.title}</span>
                         </Link>
                       )
                     }

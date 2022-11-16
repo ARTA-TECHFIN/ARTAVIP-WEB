@@ -25,6 +25,7 @@ const ButtonAnimated = (props: propsT) => {
         // 'font-Neue text-[3.6em] text-white',
         // 'py-[0.5em] px-[2em]  lg:px-[3em] lg:text-[1em]',
         'transition duration-300 ease-out',
+        'disabled:cursor-not-allowed disabled:opacity-50',
         borderWidth === 1 ? 'border' : 'border-2',
         className
       )}

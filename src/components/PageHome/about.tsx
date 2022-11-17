@@ -32,7 +32,7 @@ const about: React.FC = () => {
 
           <ButtonAnimated
             as="a"
-            href="#_"
+            href="/about"
             className="border-white text-white"
           >
             Show more

@@ -9,7 +9,7 @@ import 'swiper/css'
 const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }: any) => {
   gsap.registerPlugin(ScrollTrigger)
 
-  const [windowWidth, setWindowWith] = useState<number>(0)
+  const [windowWidth, setWindowWith] = useState<number>(1000)
   const sec1ContentRef = useRef(null)
   const businessRef = useRef(null)
   const circleRef = useRef(null)
@@ -29,22 +29,27 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
     {
       title: 'Asset Management',
       description: `We develop innovative and transformative blockchain-enabled solutions for financial services processes and products.`,
+      link: '/businesses',
     },
     {
       title: 'Investment Banking',
       description: `We develop innovative and transformative blockchain-enabled solutions for financial services processes and products.`,
+      link: '/businesses',
     },
     {
       title: 'Insurance Brokerage',
       description: `We develop innovative and transformative blockchain-enabled solutions for financial services processes and products.`,
+      link: '/businesses',
     },
     {
       title: 'Securities Brokerage',
       description: `We develop innovative and transformative blockchain-enabled solutions for financial services processes and products.`,
+      link: '/businesses/securities',
     },
     {
       title: 'Artazine',
       description: `We develop innovative and transformative blockchain-enabled solutions for financial services processes and products.`,
+      link: '/businesses/web3-media',
     },
   ]
 
@@ -93,7 +98,7 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
       autoAlpha: 0.0,
       width: isMobile ? '90em' : '38em',
       height: isMobile ? '90em' : '38em',
-      left: '42%',
+      left: '-30%',
       xPercent: -2,
       ease: 'slow(0.7, 0.7, false)',
     })
@@ -123,7 +128,8 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
       autoAlpha: 0.25,
       width: isMobile ? '140em' : '38em',
       height: isMobile ? '140em' : '38em',
-      left: isMobile ? '-9%' : '48%',
+      left: '-9%',
+      top: '-50%',
       xPercent: -2,
       ease: 'slow(0.7, 0.7, false)',
     })
@@ -167,6 +173,7 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
       width: '65em',
       height: '65em',
       xPercent: -110,
+      top: '-90%',
       ease: 'slow(0.7, 0.7, false)',
     })
 
@@ -302,7 +309,7 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
             </p>
             <ButtonAnimated
               as="a"
-              href="#_"
+              href="/about#tech-fin"
               className="text-white"
             >
               Explore more
@@ -311,17 +318,17 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
           <div
             id="circle"
             ref={circleRef}
-            className="pointer-events-none absolute -top-[26em] left-[38%] z-0 h-[38em] w-[38em] -translate-x-[44%] transform rounded-full border-2 border-white opacity-0 will-change-transform lg:top-1/2 lg:-translate-y-[50%]"
+            className="pointer-events-none absolute -top-[26em] left-[38%] z-0 h-[38em] w-[38em] rounded-full border-2 border-white opacity-0 will-change-transform lg:-left-[2%] lg:-top-[10em]"
           />
         </div>
         <div
           ref={businessRef}
-          className="absolute bottom-[22em] top-[25em] z-2 transform text-white opacity-0 lg:left-[6em] lg:left-[4em] lg:bottom-auto lg:top-[21em] lg:top-1/2 lg:-translate-y-1/2"
+          className="absolute bottom-[22em] top-[25em] z-2 transform text-white opacity-0 md:top-[16em] lg:left-[6em] lg:left-[4em] lg:bottom-auto lg:top-[21em] lg:top-1/2 lg:-translate-y-1/2"
         >
-          <h1 className="font-verah ml-[0.9em] text-left text-[6em] tracking-[0.06em] lg:ml-0 lg:text-[3.4em]">
+          <h1 className="font-verah ml-[0.9em] text-left text-[6em] tracking-[0.06em] md:ml-[0.6em] lg:ml-0 lg:text-[3.4em]">
             Our Businesses
           </h1>
-          <p className="ml-[1.6em] max-w-[30em] pb-5 text-left font-Neue text-[3.6em] lg:ml-0 lg:text-[1em]">
+          <p className="ml-[1.6em] max-w-[30em] pb-5 text-left font-Neue text-[3.6em] md:ml-[2em] lg:ml-0 md:text-[1.8em] lg:text-[1em]">
             ARTA TechFin is determined to create the fairest, most transparent, and open markets in
             the world. We carry this out every day by providing clients with a variety of financial
             services.
@@ -333,6 +340,9 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
               spaceBetween={0}
               breakpoints={{
                 767: {
+                  slidesPerView: 3,
+                },
+                1024: {
                   slidesPerView: 5,
                 },
               }}
@@ -372,10 +382,10 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
         className={cn(
           index === selectedBusiness &&
             'innerShadow !opacity-100 lg:h-[12em] lg:w-[12em] lg:text-[1.04em]',
-          `innerShadowMobile mx-auto flex h-[16em] w-[16em] items-center justify-center self-center rounded-full border border-white text-[3.4em] opacity-70 transition-all will-change-transform lg:h-[10em] lg:w-[10em] lg:text-[1em]`
+          `innerShadowMobile mx-auto flex h-[14em] w-[14em] items-center justify-center self-center rounded-full border border-white text-[3.4em] opacity-70 transition-all will-change-transform md:h-[10em] md:w-[10em] md:text-[2em] lg:h-[10em] lg:w-[10em] lg:text-[1em]`
         )}
       >
-        <a href="#">{business.title}</a>
+        <a href={business.link}>{business.title}</a>
       </div>
 
       <div
@@ -390,7 +400,7 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
         </p>
         <ButtonAnimated
           as="a"
-          href="#_"
+          href={business.link}
           className="mt-6 border-white  text-white "
         >
           Learn more

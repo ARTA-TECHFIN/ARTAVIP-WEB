@@ -9,7 +9,6 @@ export const SectionMission = () => {
   const [isPlaying, setIsPlaying] = useState(false)
 
   const toggleVideo = () => {
-    console.log("toggle")
     if (videoRef.current && !isPlaying) {
       videoRef.current.play();
       setIsPlaying(true)
@@ -36,18 +35,30 @@ export const SectionMission = () => {
           {t.mission.subtitle2}
         </span>
 
-        <video
-          data-keepplaying
-          playsInline
-          ref={videoRef}
-          preload="true"
-          crossOrigin="anonymous"
-          className="will-change-transform max-w-[800px] w-[90%]"
-          onClick={() => toggleVideo()}
-        >
-          <source src="/videos/1017-arta-video-brand-r12_comp.mp4" typeof="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <div className="relative">
+          <video
+            data-keepplaying
+            playsInline
+            ref={videoRef}
+            preload="true"
+            crossOrigin="anonymous"
+            className="will-change-transform max-w-[800px] w-full"
+            onClick={() => toggleVideo()}
+          >
+            <source src="/videos/1017-arta-video-brand-r12_comp.mp4" typeof="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          {
+            !isPlaying && (
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-arta-sand-100 rounded-full w-[55px] h-[55px] flex justify-center text-center flex-col cursor-pointer" onClick={() => toggleVideo()}>
+                <svg className="ml-5" width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21.9331 12.5733L0.173104 25.1365L0.173105 0.0101748L21.9331 12.5733Z" fill="#F4F1E1"/>
+                </svg>
+              </div>
+            )
+          }
+        </div>
       </div>
     </div>
   )

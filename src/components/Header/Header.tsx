@@ -1,11 +1,10 @@
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 // import Image from 'next/image'
 // import { useRouter } from 'next/router'
 import { ChevronDownIcon, ChevronUpIcon, XIcon } from '@heroicons/react/outline'
 import MobileNavbar from './MobileNavbar'
 import { gsap } from 'gsap'
-import ClickAwayListener from 'react-click-away-listener'
 import { IconListItemArrow } from '../Svg/Icon'
 import ArtaLogo from 'src/components/Svg/arta-logo'
 import { links } from 'src/domains/links'
@@ -110,6 +109,7 @@ const pageInfoList: pageInfoItemT[] = [
 
   // For mobile navbar
   const [showMenu, setShowMenu] = useState(false)
+  const [navbarBg, setNavbarBg] = useState(false)
 
   const DEFAULT_TAB_INDEX = -1
   const [activeTabIndex, _setActiveTabIndex] = useState(DEFAULT_TAB_INDEX)
@@ -121,10 +121,24 @@ const pageInfoList: pageInfoItemT[] = [
   }
   const selectedTab = activeTabIndex === DEFAULT_TAB_INDEX ? null : pageInfoList[activeTabIndex]
 
+  const changeBackground = () => {
+    console.log(window.scrollY)
+    if (window.scrollY >= 66) {
+      setNavbarBg(true)
+    } else {
+      setNavbarBg(false)
+    }
+  }
+
+  useEffect(() => {
+    changeBackground()
+    window.addEventListener("scroll", changeBackground)
+  })
+
   return (
     <div className="fixed z-50 w-full">
       <div onMouseLeave={() => setActiveTabIndex(DEFAULT_TAB_INDEX)}>
-        <header className="w-full px-[4em] pt-[6em] lg:pt-[2.8em] xl:mx-auto">
+        <header className={cn('w-full px-[4em] pt-[6em] transition duration-300 lg:pt-[2.6em] lg:pb-[2em] xl:mx-auto', navbarBg && 'lg:bg-white lg:bg-opacity-75')}>
           <div className="flex w-full justify-between lg:space-x-6">
             <div className="hidden items-center justify-center space-x-8 lg:flex">
               {pageInfoList.map((page, index) => {

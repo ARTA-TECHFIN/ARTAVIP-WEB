@@ -5,6 +5,7 @@ import {Circle} from './Svg/Icon'
 import { gsap } from 'gsap'
 import cn from 'classnames'
 import parse from 'html-react-parser';
+import { FadeUp } from 'src/components/FadeUp';
 
 
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
@@ -73,7 +74,9 @@ const ModuleTextColList = ({ header, title, list, headerPosition }: propsT) => {
   return (
     <div className="arta-container mx-auto relative grid grid-cols-12 md:py-[150px] py-16 lg:py-12">
       <div className={cn(`md:col-span-4 col-span-full flex items-center relative`,  headerPosition == 'left' ? 'order-0' : 'order-1 justify-end text-right') }>
-        <h2 className={`relative z-10 ${textClass.h2_style2}`}>{header}</h2>
+        <FadeUp>
+          <h2 className={`relative z-10 ${textClass.h2_style2}`}>{header}</h2>
+        </FadeUp>
         <div className={cn('absolute text-col-circle will-change-transform z-0', headerPosition == 'left' ?  '-left-[250px]' : '-right-[250px]')} ref={circle}>
            <Circle className='xl:scale-100 lg:scale-75 md:scale-[0.70] md:block hidden'/>
         </div>

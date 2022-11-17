@@ -2,6 +2,7 @@ import { FC } from 'react'
 import Image from 'next/image'
 
 import { textClass } from 'src/components/Text'
+import { FadeUp } from 'src/components/FadeUp'
 
 type propsT = {
   title: string
@@ -20,8 +21,12 @@ const ModuleTextSection: FC<propsT> = ({ title, description, bgImage }) => {
         <Image src={bgImage} alt="" fill className="object-cover" />
       </div>
       <div className="arta-container mx-auto max-w-[950px] relative flex flex-col items-center justify-center py-36 text-arta-sand-100">
-        <h2 className={`${textClass.h2_style2} mb-6 text-center `}>{title}</h2>
-        <span className={`${textClass.body_regular_verah} text-center tracking-normal`}>{description}</span>
+        <FadeUp>
+          <>
+            <h2 className={`${textClass.h2_style2} mb-6 text-center `}>{title}</h2>
+            <span className={`${textClass.body_regular_verah} text-center tracking-normal`}>{description}</span>
+          </>
+        </FadeUp>
       </div>
     </div>
   )

@@ -39,7 +39,7 @@ const LanguageSwitcher: NextPage = () => {
         if (lang !== locale) {
           return (
             <React.Fragment key={i}>
-              <p className="inline-block cursor-pointer mr-2" onClick={() => switchToLocale()}>
+              <p className="inline-block cursor-pointer mr-4" onClick={() => switchToLocale()}>
                 { langMap(lang) }
               </p>
             </React.Fragment>

@@ -20,11 +20,11 @@ const about: React.FC = () => {
         </video>
       </div>
       <div className="absolute right-[3em] bottom-[0] z-1 flex w-[70em] -translate-y-1/2 transform justify-end self-center lg:bottom-auto lg:top-1/2 lg:w-[50em]">
-        <div className="ml-auto h-full flex-col items-end justify-center gap-[24px] p-6 text-right lg:w-1/2  ">
+        <div className="ml-auto h-full flex-col items-end justify-center gap-[24px] p-2 text-right lg:w-1/2  ">
           <h1 className="text-right font-Verah text-[6em] tracking-[0.06em] text-white will-change-transform lg:text-[3.4em]">
             About ARTA
           </h1>
-          <p className="mb-[1.5em] max-w-[30em] font-Neue text-[3.6em] text-white lg:text-[1em]">
+          <p className="mb-[1.5em] max-w-[30em] font-Neue text-[3.6em] text-white md:text-[1.8em] lg:text-[1em]">
             ARTA TechFin aims to build the next generation of financial services, using technology
             to transform the traditional financial industry and expand into new services, products
             and experiences.

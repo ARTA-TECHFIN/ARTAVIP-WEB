@@ -6,6 +6,7 @@ import { IconListItemArrow } from 'src/components/Svg/Icon'
 import { Hr } from 'src/components/Hr'
 import { gsap } from 'gsap'
 import { t } from './PageAbout'
+import { FadeUp } from 'src/components/FadeUp';
 
 export const SectionCulture = () => {
   const [selectedIndex, _setSelectedIndex] = useState(0)
@@ -22,8 +23,12 @@ export const SectionCulture = () => {
 
       <div className="arta-container mx-auto relative grid md:grid-cols-2 pt-16 pb-8 md:py-36">
         <div className="flex flex-col justify-center mb-12">
-          <h2 className={`${textClass.h2_style2} mb-2`}>{t.culture.title}</h2>
-          <p className={textClass.body_regular}>{t.culture.subtitle1}</p>
+          <FadeUp>
+            <>
+              <h2 className={`${textClass.h2_style2} mb-2`}>{t.culture.title}</h2>
+              <p className={textClass.body_regular}>{t.culture.subtitle1}</p>
+            </>
+          </FadeUp>
         </div>
         <div className="md:pl-8">
           <h3 className={textClass.h3_style2}>{t.culture.sectionTitle}</h3>

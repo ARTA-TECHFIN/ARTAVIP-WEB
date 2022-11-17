@@ -3,6 +3,7 @@ import { textClass } from 'src/components/Text'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import React, { useEffect, useRef } from 'react'
+import { FadeUp } from 'src/components/FadeUp';
 
 type propsT = {
   title: string
@@ -48,11 +49,13 @@ const HeroBanner = ({ title, label, description, image, mobileImage }: propsT) =
       {/* <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white" /> */}
       <div className="absolute inset-0 flex flex-col items-center lg:justify-center justify-end pt-20  lg:mb-0 mb-12">
         <div className="arta-container">
-          <div className="md:w-1/2">
-            <p className={textClass.title_style2}>{label}</p>
-            <h1 className={`mt-1 ${textClass.h1_style2}`}>{title}</h1>
-            <p className={`mt-4 ${textClass.body_regular_verah}`}>{description}</p>
-          </div>
+          <FadeUp>
+            <div className="md:w-1/2">
+              <p className={textClass.title_style2}>{label}</p>
+              <h1 className={`mt-1 ${textClass.h1_style2}`}>{title}</h1>
+              <p className={`mt-4 ${textClass.body_regular_verah}`}>{description}</p>
+            </div>
+          </FadeUp>
         </div>
       </div>
     </div>

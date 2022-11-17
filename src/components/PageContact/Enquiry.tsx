@@ -6,6 +6,7 @@ import { textClass } from 'src/components/Text'
 import { Circle } from '../Svg/Icon'
 import { Hr } from 'src/components/Hr'
 import { IconFacebook, IconWeChat, IconTwitter, IconLinkedIn } from '../Svg/Icon'
+import { FadeUp } from 'src/components/FadeUp';
 
 const Enquiry = () => {
   const circle = useRef(null)
@@ -46,7 +47,9 @@ const Enquiry = () => {
     <div className="bg-arta-eggshell-100">
       <div className="arta-container relative mx-auto grid grid-cols-12 py-12 md:py-[150px]">
         <div className={`relative col-span-full flex items-center md:col-span-4`}>
-          <h2 className={`relative z-10 ${textClass.h2_style2} text-arta-sand-100`}>{`Enquiry`}</h2>
+          <FadeUp>
+            <h2 className={`relative z-10 ${textClass.h2_style2} text-arta-sand-100`}>{`Enquiry`}</h2>
+          </FadeUp>
           <div
             className="text-col-circle absolute -left-[250px] z-0 will-change-transform"
             ref={circle}

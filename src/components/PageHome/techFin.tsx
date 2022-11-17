@@ -301,7 +301,7 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
             <h1 className="font-Verah text-[6em] tracking-[0.06em] text-white will-change-transform lg:text-[3.4em]">
               What is TechFin
             </h1>
-            <p className="mb-[0.6em] max-w-[30em] text-left font-Neue text-[3.6em] text-white will-change-transform lg:text-right lg:text-[1em]">
+            <p className="mb-[0.6em] max-w-[30em] text-left font-Neue text-[3.6em] text-white will-change-transform md:text-[1.8em] lg:text-right lg:text-[1em]">
               ARTA TechFin believes that technology is the key to building a happier and more
               fulfilling future for all. As technology has continually transformed how we live and
               do business, it is expected that technology-driven change in the financial services
@@ -318,7 +318,7 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
           <div
             id="circle"
             ref={circleRef}
-            className="pointer-events-none absolute -top-[26em] left-[38%] z-0 h-[38em] w-[38em] rounded-full border-2 border-white opacity-0 will-change-transform lg:-left-[2%] lg:-top-[10em]"
+            className="innerShadow pointer-events-none absolute -top-[26em] left-[38%] z-0 h-[38em] w-[38em] rounded-full border-2 border-white opacity-0 will-change-transform lg:-left-[2%] lg:-top-[10em]"
           />
         </div>
         <div

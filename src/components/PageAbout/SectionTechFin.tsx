@@ -6,6 +6,7 @@ import { IconArrowLeft, IconArrowRight } from 'src/components/Svg/Icon'
 import { Hr } from 'src/components/Hr'
 import { t } from './PageAbout'
 import { ModuleTextColList } from '../ModuleTextColList'
+import { FadeUp } from 'src/components/FadeUp'
 
 export const SectionTechFin = () => {
   const [selectedIndex, setSelectedIndex] = useState(2)
@@ -28,8 +29,12 @@ export const SectionTechFin = () => {
       {/* SectionEcosystem */}
       <div className="relative flex flex-col items-center pb-12 md:pb-36">
         <div className="mb-12 max-w-3xl text-center">
-          <h3 className={textClass.h3_style2}>{t.ecosystem.title}</h3>
-          <p className={textClass.body_regular}>{t.ecosystem.subtitle}</p>
+          <FadeUp>
+            <>
+              <h3 className={textClass.h3_style2}>{t.ecosystem.title}</h3>
+              <p className={textClass.body_regular}>{t.ecosystem.subtitle}</p>
+            </>
+          </FadeUp>
         </div>
         <div className="relative h-96 w-full max-w-full overflow-hidden">
           {t.ecosystem.itemList.map((item, index) => {

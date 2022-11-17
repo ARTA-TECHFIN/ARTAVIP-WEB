@@ -12,15 +12,13 @@ interface propsT {
       title: string
       link: string
     }[]
-  }
+  },
+  index: number,
+  expand: boolean,
+  setActiveMobileNavItem: any,
 }
 
-const MobileNavbar: FC<propsT> = ({ item }) => {
-  const [show, setShow] = useState(false)
-
-  console.log(item);
-  
-
+const MobileNavbar: FC<propsT> = ({ item, index, expand, setActiveMobileNavItem }) => {
   return (
     <div>
       <div>
@@ -28,23 +26,23 @@ const MobileNavbar: FC<propsT> = ({ item }) => {
           <li
             className=" group flex cursor-pointer text-base leading-[24px] "
             onClick={() => {
-              setShow(!show)
+              setActiveMobileNavItem(index)
             }}
           >
             <span className="decoration-[#E5C183] underline-offset-[15px] transition group-hover:underline">
               {item.pageName}
             </span>
-            {show ? (
+            {expand ? (
               <ChevronUpIcon className="mt-1 ml-1  h-4 w-4 group-hover:text-[#E5C183]" />
             ) : (
               <ChevronDownIcon className="mt-1 ml-1  h-4 w-4 group-hover:text-[#E5C183]" />
             )}
           </li>
         </ul>
-        {show && (
+        {expand && (
           <div
             className={`${
-              show && 'scale-y-100 transform opacity-100 transition delay-100'
+              expand && 'scale-y-100 transform opacity-100 transition delay-100'
             } mt-5 flex transform flex-col items-start justify-start `}
           >
             <p className="mt-5 max-w-[500px] text-sm">{item.paragraph}</p>

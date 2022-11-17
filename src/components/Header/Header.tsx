@@ -110,6 +110,7 @@ const pageInfoList: pageInfoItemT[] = [
   // For mobile navbar
   const [showMenu, setShowMenu] = useState(false)
   const [navbarBg, setNavbarBg] = useState(false)
+  const [activeMobileNavItem, setActiveMobileNavItem] = useState(-1)
 
   const DEFAULT_TAB_INDEX = -1
   const [activeTabIndex, _setActiveTabIndex] = useState(DEFAULT_TAB_INDEX)
@@ -265,7 +266,7 @@ const pageInfoList: pageInfoItemT[] = [
                     <div className="flex flex-col space-y-8">
                       {pageInfoList.map((item, index) => (
                         <div key={index}>
-                          <MobileNavbar item={item} />
+                          <MobileNavbar item={item} expand={activeMobileNavItem === index} index={index} setActiveMobileNavItem={setActiveMobileNavItem} />
                         </div>
                       ))}
                     </div>

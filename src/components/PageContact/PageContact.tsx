@@ -12,8 +12,8 @@ const cms = {
   heroBanner: {
     title: 'Contact Us',
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
-    image: '/images/contact-us/banner.png',
-    mobileImage: '/images/contact-us/mobile-banner.png',
+    image: '/images/contact-us/banner.jpg',
+    mobileImage: '/images/contact-us/mobile-banner.jpg',
   },
 }
 

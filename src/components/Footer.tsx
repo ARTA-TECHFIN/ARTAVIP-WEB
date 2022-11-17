@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { Hr } from './Hr'
 import { IconFacebook, IconLinkedIn, IconTwitter, IconWeChat } from './Svg/Icon'
+import LanguageSwitcher from './LanguageSwitcher'
 
 const t = {
   address: `Units 1-2, Level 9, \nK11 ATELIER King’s Road, \n728 King’s Road,Quarry Bay,\nHong Kong`,
@@ -91,7 +92,7 @@ const Footer: FC<{ textColor?: 'white' | 'brown' }> = (props) => {
               <p>|</p>
               <p className="cursor-pointer hover:underline">PRIVACY POLICY </p>
               <p>|</p>
-              <p className="cursor-pointer hover:underline">繁中 簡中</p>
+              <LanguageSwitcher />
             </div>
             <div className="text-xs leading-[20px]">
               <p>© Arta TechFin Corporation Limited. All rights reserved.</p>

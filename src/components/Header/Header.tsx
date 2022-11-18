@@ -82,12 +82,12 @@ const pageInfoList: pageInfoItemT[] = [
     title: 'Join Us',
     paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
     buttonText: 'Contact Us home',
-    href: links.contact,
+    href: links.joinUs,
     pages: [
-      { title: 'Work with ARTA', link: links.contact },
-      { title: 'Our Value', link: links.contact },
-      { title: 'ARTA Cares', link: links.contact },
-      { title: 'Job Openings', link: links.contact },
+      { title: 'Work with ARTA', link: links.joinUs },
+      { title: 'Our Value', link: links.joinUs },
+      { title: 'ARTA Cares', link: links.joinUs },
+      { title: 'Job Openings', link: links.joinUs },
     ],
   },
   {

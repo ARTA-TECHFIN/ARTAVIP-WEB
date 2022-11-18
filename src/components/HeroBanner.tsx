@@ -21,7 +21,6 @@ type propsT = {
 
 gsap.registerPlugin(ScrollTrigger)
 
-
 const HeroBanner = ({ title, label, description, image, mobileImage }: propsT) => {
   const bannerImage = useRef(null)
 

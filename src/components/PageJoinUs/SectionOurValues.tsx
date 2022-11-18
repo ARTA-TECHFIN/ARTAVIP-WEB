@@ -13,23 +13,23 @@ const SectionOurValues = () => {
             <p className={`${textClass.body_regular_verah}`}>{`Values are the DNA of ARTA to create a kindred spirit in the workplace. We love to work with people sharing the same beliefs and mentality. It is crucial to drive our business forward and go beyond our boundaries.`}</p>
 
             <div className='grid grid-cols-10 gird-gap-x-12'>
-                <div className='col-span-2 flex items-center text-center flex-col p-8'>
+                <div className='col-span-5 md:col-span-2 flex items-center text-center flex-col p-8'>
                   <MindSet/>
                   <p className={`mt-4 ${textClass.small_text_style2}`}>{`Entrepreneurial Mindset`}</p>
                 </div>
-                <div className='col-span-2 flex items-center text-center flex-col p-8'>
+                <div className='col-span-5 md:col-span-2 flex items-center text-center flex-col p-8'>
                   <Compassionate/>
                   <p className={`mt-4 ${textClass.small_text_style2}`}>{`Compassionate`}</p>
                 </div>
-                <div className='col-span-2 flex items-center text-center flex-col p-8'>
+                <div className='col-span-5 md:col-span-2 flex items-center text-center flex-col p-8'>
                   <Integrity/>
                   <p className={`mt-4 ${textClass.small_text_style2}`}>{`Integrity and Trust`}</p>
                 </div>
-                <div className='col-span-2 flex items-center text-center flex-col p-8'>
+                <div className='col-span-5 md:col-span-2 flex items-center text-center flex-col p-8'>
                   <Value/>
                   <p className={`mt-4 ${textClass.small_text_style2}`}>{`Create Shared Value`}</p>
                 </div>
-                <div className='col-span-2 flex items-center text-center flex-col p-8'>
+                <div className='col-span-5 md:col-span-2 flex items-center text-center flex-col p-8'>
                   <Diversity/>
                   <p className={`mt-4 ${textClass.small_text_style2}`}>{`Embrace Diversity`}</p>
                 </div>

@@ -4,7 +4,7 @@ import {MindSet, Compassionate, Integrity, Value, Diversity} from '../Svg/Icon'
 
 const SectionOurValues = () => {
   return (
-    <div className="bg-arta-eggshell-100">
+    <div className="bg-arta-eggshell-100" id="our-value">
       <div className="arta-container relative mx-auto grid grid-cols-12 py-12 md:py-[201px]">
         <div className="md:col-span-4 col-span-full flex items-center">
             <ModuleTextColListHeader header={`Our Values`} headerPosition={'left'} />

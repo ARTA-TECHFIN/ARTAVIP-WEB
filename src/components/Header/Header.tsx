@@ -84,10 +84,10 @@ const pageInfoList: pageInfoItemT[] = [
     buttonText: 'Contact Us home',
     href: links.joinUs,
     pages: [
-      { title: 'Work with ARTA', link: links.joinUs },
-      { title: 'Our Value', link: links.joinUs },
-      { title: 'ARTA Cares', link: links.joinUs },
-      { title: 'Job Openings', link: links.joinUs },
+      { title: 'Work with ARTA', link: `${links.joinUs}#work-with-arta` },
+      { title: 'Our Value', link: `${links.joinUs}#our-value` },
+      { title: 'ARTA Cares', link: `${links.joinUs}#arta-care` },
+      { title: 'Job Openings', link: `/job-opening` },
     ],
   },
   {

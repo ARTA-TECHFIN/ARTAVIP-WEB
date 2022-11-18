@@ -23,6 +23,7 @@ const SectionThankYou = () => {
               <a
                 href="https://www.linkedin.com/company/arta-techfin-corporation-limited"
                 target="_blank"
+                rel="noreferrer"
               >{' '}
                 https://www.linkedin.com/company/arta-techfin-corporation-limited
               </a>

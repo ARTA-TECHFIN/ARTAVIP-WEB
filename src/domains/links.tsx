@@ -17,5 +17,6 @@ export const links = {
   mediaPress: '/media-centre/press',
   mediaBlogPost: '/media-centre/blog-post',
   mediaPressPost: '/media-centre/press-post',
+  joinUs: '/join-us',
   contact: '/contact',
 }

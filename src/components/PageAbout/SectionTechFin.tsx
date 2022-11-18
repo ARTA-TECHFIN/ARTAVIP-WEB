@@ -7,6 +7,7 @@ import { Hr } from 'src/components/Hr'
 import { t } from './PageAbout'
 import { ModuleTextColList } from '../ModuleTextColList'
 import { FadeUp } from 'src/components/FadeUp'
+import TechFin from '../PageHome/techFin'
 
 export const SectionTechFin = () => {
   const [selectedIndex, setSelectedIndex] = useState(2)

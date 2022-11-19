@@ -1,5 +1,5 @@
 import { textClass } from 'src/components/Text'
-import { Pin } from 'src/components/Svg/Icon'
+import { Pin, IconArrowRight } from 'src/components/Svg/Icon'
 
 type propsT = {
   title: string
@@ -15,6 +15,7 @@ const JobCard = ({ title, subTitle, seniority, location }: propsT) => {
         <div className={`${textClass.caption} flex items-center`}>
           <Pin className="mr-1"/> {location}
         </div>
+        <IconArrowRight fill='#593725' className='h-[9.26px] w-4'/>
       </div>
       <h3 className={`mt-8 ${textClass.h6}`}>{title}</h3>
       <h4 className={textClass.body_regular_verah}>{subTitle}</h4>

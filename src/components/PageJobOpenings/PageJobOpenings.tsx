@@ -10,6 +10,7 @@ import SectionJobView from './SectionJobView'
 import SectionThankYou from './SectionThankYou'
 import { IconArrowLeft } from 'src/components/Svg/Icon'
 import { textClass } from 'src/components/Text'
+import { links } from 'src/domains/links'
 
 const PageJobOpenings: NextPage = () => {
   return (
@@ -22,7 +23,7 @@ const PageJobOpenings: NextPage = () => {
           <div className="arta-container mx-auto">
             <Link
               className={`flex cursor-pointer items-center underline mb-4 ${textClass.body_regular_verah}`}
-              href={'#'}
+              href={links.joinUs}
             >
               <IconArrowLeft fill="#593725" className="mr-2 h-4" />
               {'Back to job openings list'}

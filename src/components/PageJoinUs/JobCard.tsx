@@ -10,16 +10,20 @@ type propsT = {
 
 const JobCard = ({ title, subTitle, seniority, location }: propsT) => {
   return (
-    <div className="bg-white p-6 shadow-postCard">
-      <div className="flex justify-between">
-        <div className={`${textClass.caption} flex items-center`}>
-          <Pin className="mr-1"/> {location}
+    <div className="h-full bg-white p-6 shadow-postCard">
+      <div className="flex h-full flex-col justify-between">
+        <div className="flex justify-between">
+          <div className={`${textClass.caption} flex items-center`}>
+            <Pin className="mr-1" /> {location}
+          </div>
+          <IconArrowRight fill="#593725" className="h-[9.26px] w-4" />
         </div>
-        <IconArrowRight fill='#593725' className='h-[9.26px] w-4'/>
+        <div className="mt-8">
+          <h3 className={`${textClass.h6}`}>{title}</h3>
+          <h4 className={textClass.body_regular_verah}>{subTitle}</h4>
+          <p className={textClass.caption}>Seniority: {seniority}</p>
+        </div>
       </div>
-      <h3 className={`mt-8 ${textClass.h6}`}>{title}</h3>
-      <h4 className={textClass.body_regular_verah}>{subTitle}</h4>
-      <p className={textClass.caption}>Seniority: {seniority}</p>
     </div>
   )
 }

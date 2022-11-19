@@ -9,6 +9,8 @@ import { SectionWorkWithArta } from './SectionWorkWithArta'
 import SectionOurValues from './SectionOurValues'
 import SectionCare from './SectionCare'
 import SectionJobOpenings from './SectionJobOpenings'
+import { JobTabs } from './SectionJobOpenings'
+import { FC } from 'react'
 
 export const t = {
   heroBanner: {
@@ -19,7 +21,12 @@ export const t = {
   },
 }
 
-const pageJoinUs: NextPage = () => {
+type propsT = {
+  tabType: keyof typeof JobTabs
+  children: React.ReactNode
+}
+
+const JoinUsLayout: FC<propsT> = ({ tabType, children }) => {
   return (
     <>
       <Seo />
@@ -32,13 +39,13 @@ const pageJoinUs: NextPage = () => {
           mobileImage={t.heroBanner.mobileImage}
         />
         <SectionWorkWithArta />
-        <SectionOurValues/>
-        <SectionCare/>
-        <SectionJobOpenings/>
+        <SectionOurValues />
+        <SectionCare />
+        <SectionJobOpenings tabType={tabType}>{children}</SectionJobOpenings>
       </main>
       <Footer textColor="brown" />
     </>
   )
 }
 
-export default pageJoinUs
+export default JoinUsLayout

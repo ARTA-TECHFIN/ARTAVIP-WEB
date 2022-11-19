@@ -18,6 +18,8 @@ export const links = {
   mediaBlogPost: '/media-centre/blog-post',
   mediaPressPost: '/media-centre/press-post',
   joinUs: '/join-us',
+  joinUsFrontOffice: '/join-us/front-office',
+  joinUsMiddleAndBackOffice: '/join-us/middle-and-back-office',
   jobOpening: '/job-opening',
   contact: '/contact',
 }

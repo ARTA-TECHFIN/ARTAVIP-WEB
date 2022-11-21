@@ -29,7 +29,7 @@ type propsT = {
 // TODO: Title can be null or empty string, see Web3Media page
 const ModuleTextColList = ({ header, title, list, headerPosition }: propsT) => {
   return (
-    <div className="arta-container mx-auto relative grid grid-cols-12 md:py-[150px] py-16 lg:py-12">
+    <div className="arta-container mx-auto relative grid grid-cols-12 md:py-[150px] py-16 lg:py-36">
       <div
         className={cn(
           `relative flex items-center md:col-span-4 col-span-full`,

@@ -7,6 +7,7 @@ import { Seo } from 'src/components/Seo'
 import leader_1 from './images/leader_1.jpg'
 
 import eco_icon1 from './images/eco_icon1.png'
+import { IconTechnologyInternetCompanies } from '../Svg/Icon'
 
 import { SectionMission } from './SectionMission'
 import { SectionCulture } from './SectionCulture'

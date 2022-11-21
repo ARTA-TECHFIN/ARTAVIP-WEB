@@ -169,10 +169,10 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
     const isMobile = windowWidth < 768
     gsap.to(circleRef.current, {
       duration: 0.9,
-      autoAlpha: 0.25,
+      autoAlpha: 0.05,
       width: '65em',
       height: '65em',
-      xPercent: -110,
+      xPercent: 60,
       top: '-90%',
       ease: 'slow(0.7, 0.7, false)',
     })

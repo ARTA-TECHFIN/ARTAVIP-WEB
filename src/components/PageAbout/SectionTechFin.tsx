@@ -8,6 +8,7 @@ import { t } from './PageAbout'
 import { ModuleTextColList } from '../ModuleTextColList'
 import { FadeUp } from 'src/components/FadeUp'
 import TechFin from '../PageHome/techFin'
+import { IconTechnologyInternetCompanies } from '../Svg/Icon'
 
 export const SectionTechFin = () => {
   const [selectedIndex, setSelectedIndex] = useState(2)
@@ -20,6 +21,7 @@ export const SectionTechFin = () => {
 
       <ModuleTextColList
         header={t.techFin.title}
+        headerPosition="left"
         title={t.techFin.subtitle}
         list={[
           { title: t.techFin.section1Title, body: t.techFin.section1Body },
@@ -59,8 +61,8 @@ export const SectionTechFin = () => {
                     : ' bg-arta-sand-100/70 text-arta-snow-100')
                 }
               >
-                <div className="relative mb-4 h-16 w-16">
-                  <Image src={item.image} alt="" fill className="object-cover" />
+                <div className={"relative mb-4 h-16 w-16 lg:h-20 lg:w-20" + (isSelected ? 'lg:h-20 lg:w-20' : 'lg:h-16 lg:w-16')}>
+                  <IconTechnologyInternetCompanies className="object-cover w-full h-full" />
                 </div>
                 <span className={`${textClass.body_regular} max-w-[60%] text-center`}>
                   {item.title}

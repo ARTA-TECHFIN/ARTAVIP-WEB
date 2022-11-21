@@ -49,7 +49,7 @@ const ModuleTextColListHeader = ({ header, headerPosition }: propsT) => {
     })
 
     spinTl.to(circle.current, {
-      duration: 3,
+      duration: 5,
       rotation: 360,
     })
   }, [])
@@ -64,11 +64,11 @@ const ModuleTextColListHeader = ({ header, headerPosition }: propsT) => {
       <div
         className={cn(
           'text-col-circle absolute z-0 will-change-transform',
-          headerPosition == 'left' ? '-left-[250px]' : '-right-[250px]'
+          headerPosition == 'left' ? '-left-[220px]' : '-right-[220px]'
         )}
         ref={circle}
       >
-        <Circle className="hidden md:block md:scale-[0.70] lg:scale-75 xl:scale-100" />
+        <Circle className="hidden md:block md:scale-[0.70] lg:scale-75 xl:scale-105" />
       </div>
     </div>
   )

@@ -26,8 +26,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         // need to confirm email address in AWS SES
         // sender address must be verified with Amazon SES.
         // recipient address must be verified with Amazon SES if sandbox mode is enabled.
-        from: 'test@twopies.io',
-        to: 'test@twopies.io',
+        from: 'noreply@artatechfin.com',
+        to: 'horsehcj@gmail.com',
         subject: 'Message title',
         text: 'Plaintext version of the message',
         html: '<p>HTML version of the message</p>',

@@ -37,6 +37,7 @@ export const SectionMission = () => {
 
         <div className="relative hover:brightness-90 transition">
           <video
+            controls
             data-keepplaying
             playsInline
             ref={videoRef}

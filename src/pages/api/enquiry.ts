@@ -15,6 +15,7 @@ const transporter = nodemailer.createTransport({
   },
 })
 
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     console.log('[Enquiry Form submitted]. req.body: ', req.body || 'No body')

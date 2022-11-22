@@ -40,7 +40,7 @@ const HeroBanner = ({ title, label, description, image, mobileImage }: propsT) =
   }, [])
 
   return (
-    <div className="relative md:aspect-video md:h-auto h-screen w-full overflow-hidden">
+    <div className="relative md:aspect-video md:h-auto h-screen w-full overflow-hidden z-2">
       <div ref={bannerImage} className="absolute h-full w-full overflow-hidden">
         <Image priority src={image} alt="" fill className="object-cover md:block hidden" />
         <Image priority src={mobileImage} alt="" fill className="object-cover md:hidden" />

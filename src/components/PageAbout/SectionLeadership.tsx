@@ -7,7 +7,7 @@ import 'swiper/css'
 
 export const SectionLeadership = () => {
   return (
-    <div className="group/bg relative overflow-hidden" id="leadership">
+    <div className="group/bg relative overflow-hidden z-1" id="leadership">
       <div className="easeInOutSine absolute h-full w-full scale-150 overflow-hidden duration-300 group-hover/bg:scale-100">
         <Image src={leadership_bg} alt="" fill className="object-cover" />
       </div>

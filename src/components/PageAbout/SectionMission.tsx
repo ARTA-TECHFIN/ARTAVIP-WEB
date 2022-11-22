@@ -21,7 +21,7 @@ export const SectionMission = () => {
 
   return (
     <div className="group/bg relative overflow-hidden" id="mission">
-      <div className="easeInOutSine absolute h-full w-full scale-105 overflow-hidden duration-300 group-hover/bg:scale-100">
+      <div className="easeInOutSine fixed top-0 left-0 h-full w-full overflow-hidden duration-300">
         <Image src={mission_bg} alt="" fill className="object-cover" />
       </div>
       <div className="arta-container mx-auto relative flex flex-col items-center justify-center py-16 md:py-36">

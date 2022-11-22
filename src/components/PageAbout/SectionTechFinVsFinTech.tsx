@@ -6,11 +6,7 @@ import { t } from './PageAbout'
 
 export const SectionTechFinVsFinTech = () => {
   return (
-    <div className="group/bg relative overflow-hidden md:pb-[150px] bg-[#DFD8CA]">
-      <div className="easeInOutSine absolute h-full w-full scale-105 overflow-hidden duration-300 md:group-hover/bg:scale-100">
-        <Image src={compare_bg} alt="" fill className="object-cover md:block hidden" />
-        <Image src={compare_bg_mobile} alt="" fill className="object-cover mt-40 md:hidden block" />
-      </div>
+    <div className={`group/bg relative overflow-hidden md:pb-[150px] bg-[#DFD8CA] bg-[url('/images/compare_bg_mobile.png')] lg:bg-[url('/images/compare_bg.jpg')] bg-fixed bg-cover`}>
 
       <div className="arta-container mx-auto relative grid grid-cols-12  md:py-[150px] py-20 md:py-12">
         <div className='md:hidden block col-span-full mb-12'>

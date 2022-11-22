@@ -16,7 +16,7 @@ export const SectionCulture = () => {
   }
 
   return (
-    <div className="group/bg relative overflow-hidden" id="culture">
+    <div className="group/bg relative overflow-hidden z-1" id="culture">
       <div className="easeInOutSine absolute h-full w-full scale-150 overflow-hidden duration-300 group-hover/bg:scale-100">
         <Image src={culture_bg} alt="" fill className="object-cover" />
       </div>

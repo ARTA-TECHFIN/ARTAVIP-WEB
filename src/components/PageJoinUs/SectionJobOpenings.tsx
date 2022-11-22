@@ -33,7 +33,7 @@ const SectionJobOpenings: FC<propsT> = ({ tabType, children }) => {
   const tabInfo = tabInfoMap[tabType]
 
   return (
-    <div className="bg-arta-eggshell-100 py-12 md:py-[150px]">
+    <div className="bg-arta-eggshell-100 py-12 md:py-[150px]" id="job-opening">
       <div className="arta-container mx-auto">
         <div className="text-center">
           <h3 className={textClass.h2_style2}>Job Openings</h3>

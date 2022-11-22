@@ -15,7 +15,7 @@ const about: React.FC = () => {
           className="absolute h-full w-full object-cover will-change-transform"
         >
           {/* md:translate-x-[-20%] */}
-          <source src="/videos/landing_about.mov" typeof="video/mp4" />
+          <source src="/videos/landing_about.mp4" typeof="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>

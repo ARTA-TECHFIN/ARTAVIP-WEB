@@ -107,7 +107,7 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
         crossOrigin="anonymous"
         className="h-full w-full object-cover will-change-transform"
       >
-        <source src="/videos/Comp 1_2.mp4" typeof="video/mp4" />
+        <source src="/videos/landing_top.mp4" typeof="video/mp4" />
         Your browser does not support the video tag.
       </video>
       {/* top-[20%] left-0   sm:top-[40%] lg:left-[10%] xl:left-[20%] xl:mx-auto */}

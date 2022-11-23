@@ -16,12 +16,12 @@ const useGetData = () => {
 
   return useQuery([QUERY_ANNOUNCEMENT, lang, year], async () => {
     const res = await Promise.all(
-      yearList.map((year) => getReportList({ lang, page: 1, reportType: 'acl', year }))
+      yearList.map((year) => getReportList({ lang, page: 1, reportType: 'b03', year }))
     )
 
     return res.map((r, i) => ({
       year: year - i,
-      results: r.data.results.filter((r) => r.filetype === 'ANN'),
+      results: r.data.results,
     }))
   })
 }

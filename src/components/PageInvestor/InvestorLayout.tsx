@@ -30,10 +30,11 @@ const tabList = Object.values(tabInfoMap)
 type propsT = {
   cms: reportCmsT
   tabType: tabsT
+  hideTab: boolean
   children: React.ReactNode
 }
 
-const InvestorLayout: FC<propsT> = ({ cms, tabType, children }) => {
+const InvestorLayout: FC<propsT> = ({ cms, tabType, hideTab = false, children }) => {
   const tabInfo = tabInfoMap[tabType]
   return (
     <>
@@ -49,15 +50,19 @@ const InvestorLayout: FC<propsT> = ({ cms, tabType, children }) => {
         />
         <div className="bg-arta-eggshell-100 pt-12 pb-6 md:pt-16 md:pb-[206px]">
           <div className="arta-container mx-auto">
-            <div className="arta-hide-scrollbar -mx-6 overflow-auto md:mx-0">
-              <TabBar
-                tabs={tabList.map((t) => t.title)}
-                selectedTab={tabInfo.title}
-                setSelectedTab={(_, index) =>
-                  Router.push(tabList[index].link, undefined, { scroll: false })
-                }
-              />
-            </div>
+            {
+              !hideTab && (
+                <div className="arta-hide-scrollbar -mx-6 overflow-auto md:mx-0">
+                  <TabBar
+                    tabs={tabList.map((t) => t.title)}
+                    selectedTab={tabInfo.title}
+                    setSelectedTab={(_, index) =>
+                      Router.push(tabList[index].link, undefined, { scroll: false })
+                    }
+                  />
+                </div>
+              )
+            }
             {children}
           </div>
         </div>

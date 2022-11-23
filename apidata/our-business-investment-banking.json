@@ -1,0 +1,31 @@
+{
+  "data":{
+     "id":1,
+     "attributes":{
+        "description_en":"Our Investment Banking division offers a broad range of products and services including advisory services related to mergers & acquisitions, restructuring, as well as debt and equity offerings.",
+        "description_tc":"我們的投資銀行業務提供併購、重組、債券/股票發行等方面的企業諮詢和承銷服務，主要服務家族企業、公司、機構和個人專業投資者。",
+        "description_sc":"我们的投资银行业务提供并购、重组、债券/股票发行等方面的企业咨询和承销服务，主要服务家族企业、公司、机构和个人专业投资者。",
+        "createdAt":"2022-11-23T03:48:40.928Z",
+        "updatedAt":"2022-11-23T08:07:23.145Z",
+        "publishedAt":"2022-11-23T03:48:41.999Z",
+        "components":[
+           {
+              "id":2,
+              "__component":"our-business.component-3",
+              "title_en":"Our Investment Banking ",
+              "title_tc":"投資銀行業務",
+              "title_sc":"投资银行业务",
+              "subtitle_en":null,
+              "subtitle_tc":null,
+              "subtitle_sc":null,
+              "content_en":"#### Mergers & Acquisitions: \nWe support corporates and institutions in their strategic decision-making process. Our offerings include advice on acquisitions, corporate sales, mergers, spin-offs, restructuring, divestitures, joint ventures, privatizations and more.\n \n ----\n \n#### Equity Capital Market Solutions: \nWe provide support in the origination of primary market transactions and manage the structuring, syndication, marketing and distribution of these transactions. We also assist clients with both pre-and post-transaction communications. Our offering ranges from the largest privatizations, initial public offerings and secondary placements to smaller public transactions, private placements and equity-related transactions.\n \n-----\n\n#### Debt Capital Market Solutions:\nWe support our clients from plain vanilla financings to liability management advice by providing and implementing tailored solutions to their debt financing needs. Our capabilities span the spectrum of fixed income financing including investment grade and high yield bonds, loans, and securitized products.\n",
+              "content_tc":"#### 併購\n我們為企業和機構的戰略決策過程提供支持，並提供收購、公司銷售、兼并、分拆、重組、資產剝離、合資、私有化等方面的服務和建議。\n \n ------\n \n#### 股權資本市場解決方案\n我們為一級市場交易的發行提供支持，並提供其結構化、銀團化、營銷和承銷等相關服務，同時協助客戶進行交易前和交易後的溝通。服務範圍涵蓋私有化、首次公開發行、二次配售、公開交易、私人配售、及股權相關交易等。\n \n -----\n \n#### 債券資本市場解決方案\n我們為客戶提供從普通融資到負債管理建議等各方面支持，為他們的債務融資需求提供並實施定製化的解決方案。我們開展各類固定收益融資相關的業務，包括投資級債券、高收益債券、貸款、及證券化產品。\n",
+              "content_sc":"#### 并购\n我们为企业和机构的战略决策过程提供支持，并提供收购、公司销售、兼并、分拆、重组、资产剥离、合资、私有化等方面的服务和建议。\n \n -----\n \n#### 股权资本市场解决方案\n我们为一级市场交易的发行提供支持，并提供其结构化、银团化、营销和承销等相关服务，同时协助客户进行交易前和交易后的沟通。服务范围涵盖私有化、首次公开发行、二次配售、公开交易、私人配售、及股权相关交易等。\n \n -----\n \n#### 债券资本市场解决方案\n我们为客户提供从普通融资到负债管理建议等各方面支持，为他们的债务融资需求提供并实施定制化的解决方案。我们开展各类固定收益融资相关的业务，包括投资级债券、高收益债券、贷款、及证券化产品。\n"
+           }
+        ]
+     }
+  },
+  "meta":{
+     
+  }
+}

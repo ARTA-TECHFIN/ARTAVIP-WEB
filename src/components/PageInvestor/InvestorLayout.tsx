@@ -30,7 +30,7 @@ const tabList = Object.values(tabInfoMap)
 type propsT = {
   cms: reportCmsT
   tabType: tabsT
-  hideTab: boolean
+  hideTab?: boolean
   children: React.ReactNode
 }
 

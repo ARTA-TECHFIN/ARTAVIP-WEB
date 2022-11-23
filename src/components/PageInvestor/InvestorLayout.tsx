@@ -20,7 +20,7 @@ type tabsT = keyof typeof TABS
 
 const tabInfoMap = {
   [TABS.announcement]: { title: 'Announcements & Notices', link: links.investor },
-  [TABS.financial_report]: { title: 'Financial Reports', link: links.investorFinReport },
+  [TABS.financial_report]: { title: 'Corporate Information', link: links.investorResultAnnouncements },
   [TABS.financial_calendar]: { title: 'Financial Calendar', link: links.investorFinCalendar },
   [TABS.esg]: { title: 'ESG', link: links.investorEsg },
 }

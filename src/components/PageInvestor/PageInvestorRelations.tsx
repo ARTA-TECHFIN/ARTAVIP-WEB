@@ -7,6 +7,7 @@ import { ErrorMessage } from '../ErrorMessage'
 import { Loader } from '../Loader'
 import { ReportSection } from './ReportSection'
 import { ReportCard } from './ReportCard'
+import { links } from 'src/domains/links'
 
 const QUERY_FINANCIAL_REPORT = 'QUERY_FINANCIAL_REPORT'
 
@@ -28,7 +29,7 @@ const useGetData = () => {
   })
 }
 
-const PageFinancialReport: NextPage = () => {
+const PageInvestorRelations: NextPage = () => {
   const { status, data, error } = useGetData()
 
   if (status === 'loading') return <Loader />
@@ -39,8 +40,32 @@ const PageFinancialReport: NextPage = () => {
       <div className="mb-12 grid sm:grid-cols-12 col-span-full  gap-x-8">
         <ul className="col-span-full col-span-full grid grid-cols-12 sm:gap-8 gap-4 sm:mt-0 mt-4">
           <li className="md:col-span-6 col-span-12">
+            <Link href={links.investorResultAnnouncements}>
+              <ReportCard title={"Results Announcements"} />
+            </Link>
+          </li>
+
+          <li className="md:col-span-6 col-span-12">
             <Link href={"/investor-relations/announcements-notices"}>
+              <ReportCard title={"Interim & Annual Reports"} />
+            </Link>
+          </li>
+
+          <li className="md:col-span-6 col-span-12">
+            <Link href={links.investorAnnouncementsNotices}>
               <ReportCard title={"Announcements & Notices"} />
+            </Link>
+          </li>
+
+          <li className="md:col-span-6 col-span-12">
+            <Link href={"/investor-relations/announcements-notices"}>
+              <ReportCard title={"Circulars"} />
+            </Link>
+          </li>
+
+          <li className="md:col-span-6 col-span-12">
+            <Link href={"/investor-relations/announcements-notices"}>
+              <ReportCard title={"Listing Documents"} />
             </Link>
           </li>
         </ul>
@@ -49,4 +74,4 @@ const PageFinancialReport: NextPage = () => {
   )
 }
 
-export default PageFinancialReport
+export default PageInvestorRelations

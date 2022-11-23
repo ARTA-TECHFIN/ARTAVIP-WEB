@@ -16,7 +16,7 @@ const useGetData = () => {
 
   return useQuery([QUERY_FINANCIAL_REPORT, lang, year], async () => {
     const res = await Promise.all(
-      yearList.map((year) => getReportList({ lang, page: 1, reportType: 'r', year }))
+      yearList.map((year) => getReportList({ lang, page: 1, reportType: 't26', year }))
     )
 
     return res.map((r, i) => ({
@@ -26,7 +26,7 @@ const useGetData = () => {
   })
 }
 
-const PageFinancialReport: NextPage = () => {
+const PageResultAnnouncements: NextPage = () => {
   const { status, data, error } = useGetData()
 
   if (status === 'loading') return <Loader />
@@ -34,11 +34,11 @@ const PageFinancialReport: NextPage = () => {
 
   return (
     <div className="pt-[66px]">
-      {data.map((yearly) => (
+      {data?.map((yearly) => (
         <ReportSection key={yearly.year} year={yearly.year} reports={yearly.results} />
       ))}
     </div>
   )
 }
 
-export default PageFinancialReport
+export default PageResultAnnouncements

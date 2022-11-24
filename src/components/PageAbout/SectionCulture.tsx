@@ -5,10 +5,12 @@ import { useState } from 'react'
 import { IconListItemArrow } from 'src/components/Svg/Icon'
 import { Hr } from 'src/components/Hr'
 import { gsap } from 'gsap'
-import { t } from './PageAbout'
-import { FadeUp } from 'src/components/FadeUp';
+import { FadeUp } from 'src/components/FadeUp'
+import { PageAboutCmsT } from 'src/pages/about'
 
-export const SectionCulture = () => {
+export const SectionCulture = (props: { t: PageAboutCmsT }) => {
+  const { t } = props
+
   const [selectedIndex, _setSelectedIndex] = useState(0)
   const setSelectedIndex = (index: number) => {
     _setSelectedIndex(index)
@@ -16,13 +18,13 @@ export const SectionCulture = () => {
   }
 
   return (
-    <div className="group/bg relative overflow-hidden z-1" id="culture">
+    <div className="group/bg relative z-1 overflow-hidden" id="culture">
       <div className="easeInOutSine absolute h-full w-full scale-150 overflow-hidden duration-300 group-hover/bg:scale-100">
         <Image src={culture_bg} alt="" fill className="object-cover" />
       </div>
 
-      <div className="arta-container mx-auto relative grid md:grid-cols-2 pt-16 pb-8 md:py-36">
-        <div className="flex flex-col justify-center mb-12">
+      <div className="arta-container relative mx-auto grid pt-16 pb-8 md:grid-cols-2 md:py-36">
+        <div className="mb-12 flex flex-col justify-center">
           <FadeUp>
             <>
               <h2 className={`${textClass.h2_style2} mb-2`}>{t.culture.title}</h2>

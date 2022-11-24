@@ -1,3 +1,98 @@
+import type { GetServerSideProps } from 'next'
 import PageAbout from 'src/components/PageAbout/PageAbout'
+import aboutUsJson from 'apidata/about-us.json'
+
+import leader_1 from 'src/components/PageAbout/images/leader_1.jpg'
+import eco_icon1 from 'src/components/PageAbout/images/eco_icon1.png'
+
+const fetchCmsData = async () => {
+  // TODO: confirm how to fetch data from CMS
+  const res = await fetch('https://api.artatechfin.com/api/v1/about-us')
+  const data = await res.json()
+  return data
+}
+
+const massageData = (pageData: any, locale: string | undefined = 'en') => {
+  const g = (keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
+
+  return {
+    heroBanner: {
+      title: 'About Us',
+      description: g('about_us_description'),
+      image: '/images/about/banner.jpg',
+      mobileImage: '/images/about/mobile-banner.png',
+    },
+    mission: {
+      title: 'Vision & Mission',
+      subtitle1: g('vision_mission_line_1'),
+      subtitle2: g('vision_mission_line_2'),
+    },
+    culture: {
+      title: 'Culture & Values',
+      subtitle1: g('culture_value_description'),
+      sectionTitle: g('culture_value_subtitle'),
+      // prettier-ignore
+      valueList: pageData.data.attributes.culture_value_values.map((item: any) => ({
+        title: item[`value_${locale}`], description: item[`description_${locale}`],
+      })) as { title: string; description: string }[],
+    },
+    leadership: {
+      title: 'Leadership',
+      // prettier-ignore
+      leaderList: [
+        { name: 'Mr. Adrian Cheng', title: 'Chairman', image: leader_1 },
+        { name: 'Mr. Eddie Lau', title: 'Chief Executive Officer', image: leader_1 },
+        { name: 'Mr. Eddie Lau', title: 'Chief Finance Officer /\n Head of Global Markets', image: leader_1 },
+        { name: 'Mr. Eddie Lau', title: 'Chief Executive Officer', image: leader_1 },
+        { name: 'Mr. Eddie Lau', title: 'Chief Executive Officer', image: leader_1 },
+      ],
+    },
+    techFin: {
+      title: 'What is TechFin',
+      subtitle: g('techfin_title'),
+      section1Title: g('techfin_subtitle_1'),
+      section1Body: g('techfin_content_1'),
+      section2Title: g('techfin_subtitle_2'),
+      section2Body: g('techfin_content_2'),
+    },
+    ecosystem: {
+      title: 'Our Ecosystem',
+      subtitle: `Supported by ARTA TechFin’s major shareholder, we work closely with our affiliates within the ecosystem, which comprises our clients, shareholders, business partners and investee companies, to build an inter-connected network that creates value for all.`,
+      // TODO: now, only support 5 items. Need to confirm how to support more items
+      itemList: [
+        { title: g('our_ecosystem_1'), image: eco_icon1 },
+        { title: g('our_ecosystem_2'), image: eco_icon1 },
+        { title: g('our_ecosystem_3'), image: eco_icon1 },
+        { title: g('our_ecosystem_4'), image: eco_icon1 },
+        { title: g('our_ecosystem_5'), image: eco_icon1 },
+        // { title: g('our_ecosystem_6'), image: eco_icon1 },
+        // { title: g('our_ecosystem_7'), image: eco_icon1 },
+        // { title: g('our_ecosystem_8'), image: eco_icon1 },
+      ],
+    },
+    techFinVsFinTech: {
+      title: 'TechFin vs FinTech',
+      subtitle: g('techfin_vs_fintech_description'),
+      techFinTitle: g('techfin_vs_fintech_1_title'),
+      techFinBody: g('techfin_vs_fintech_1_content'),
+      finTechTitle: g('techfin_vs_fintech_2_title'),
+      finTechBody: g('techfin_vs_fintech_2_content'),
+    },
+  }
+}
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { locale } = context
+  const useLocalCms = process.env.USE_LOCAL_CMS_DATA === 'true'
+
+  const pageData = useLocalCms ? aboutUsJson : await fetchCmsData()
+
+  return {
+    props: {
+      t: massageData(pageData, locale),
+    },
+  }
+}
 
 export default PageAbout
+export type PageAboutCmsT = ReturnType<typeof massageData>

@@ -4,17 +4,18 @@ import { textClass } from 'src/components/Text'
 import { useState } from 'react'
 import { IconArrowLeft, IconArrowRight } from 'src/components/Svg/Icon'
 import { Hr } from 'src/components/Hr'
-import { t } from './PageAbout'
 import { ModuleTextColList } from '../ModuleTextColList'
 import { FadeUp } from 'src/components/FadeUp'
 import TechFin from '../PageHome/techFin'
 import { IconTechnologyInternetCompanies } from '../Svg/Icon'
+import { PageAboutCmsT } from 'src/pages/about'
 
-export const SectionTechFin = () => {
+export const SectionTechFin = (props: { t: PageAboutCmsT }) => {
+  const { t } = props
   const [selectedIndex, setSelectedIndex] = useState(2)
 
   return (
-    <div className="relative flex flex-col overflow-hidden z-1" id="tech-fin">
+    <div className="relative z-1 flex flex-col overflow-hidden" id="tech-fin">
       <div className="absolute h-full w-full overflow-hidden">
         <Image src={tech_fin_bg} alt="" fill className="object-cover" />
       </div>
@@ -61,8 +62,13 @@ export const SectionTechFin = () => {
                     : ' bg-arta-sand-100/70 text-arta-snow-100')
                 }
               >
-                <div className={"relative mb-4 h-16 w-16 lg:h-20 lg:w-20" + (isSelected ? 'lg:h-20 lg:w-20' : 'lg:h-16 lg:w-16')}>
-                  <IconTechnologyInternetCompanies className="object-cover w-full h-full" />
+                <div
+                  className={
+                    'relative mb-4 h-16 w-16 lg:h-20 lg:w-20' +
+                    (isSelected ? 'lg:h-20 lg:w-20' : 'lg:h-16 lg:w-16')
+                  }
+                >
+                  <IconTechnologyInternetCompanies className="h-full w-full object-cover" />
                 </div>
                 <span className={`${textClass.body_regular} max-w-[60%] text-center`}>
                   {item.title}

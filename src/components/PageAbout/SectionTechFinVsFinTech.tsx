@@ -1,35 +1,46 @@
-import Image from 'next/image'
-import compare_bg from './images/compare_bg.jpg'
-import compare_bg_mobile from './images/compare_bg_mobile.png'
 import { textClass } from 'src/components/Text'
-import { t } from './PageAbout'
+import { PageAboutCmsT } from 'src/pages/about'
 
-export const SectionTechFinVsFinTech = () => {
+export const SectionTechFinVsFinTech = (props: { t: PageAboutCmsT }) => {
+  const { t } = props
   return (
-    <div className={`group/bg relative overflow-hidden md:pb-[150px] bg-[#DFD8CA] bg-[url('/images/compare_bg_mobile.png')] lg:bg-[url('/images/compare_bg.jpg')] bg-fixed bg-cover`}>
-
-      <div className="arta-container mx-auto relative grid grid-cols-12  md:py-[150px] py-20 md:py-12">
-        <div className='md:hidden block col-span-full mb-12'>
+    <div
+      className={`group/bg relative overflow-hidden bg-[#DFD8CA] bg-[url('/images/compare_bg_mobile.png')] bg-cover bg-fixed md:pb-[150px] lg:bg-[url('/images/compare_bg.jpg')]`}
+    >
+      <div className="arta-container relative mx-auto grid grid-cols-12  py-20 md:py-[150px] md:py-12">
+        <div className="col-span-full mb-12 block md:hidden">
           <h2 className={`${textClass.h2_style2} mb-4`}>{t.techFinVsFinTech.title}</h2>
           <span className={textClass.body_regular}>{t.techFinVsFinTech.subtitle}</span>
         </div>
-        <div className="md:col-span-5 col-span-full flex items-center justify-center">
-          <div className="flex md:aspect-square aspect-auto w-full md:translate-y-12 flex-col items-center justify-center rounded-full md:bg-arta-eggshell-100 md:p-12 px-6 text-center md:shadow-blogPost">
-            <h3 className={`${textClass.h2_style2} aspect-square md:aspect-auto md:bg-transparent bg-arta-eggshell-100  w-full flex items-center justify-center rounded-full md:mb-0 mb-6 shadow-circle md:shadow-none`}>{t.techFinVsFinTech.techFinTitle}</h3>
-            <span className={`${textClass.body_regular} md:mx-auto -mx-6`}>{t.techFinVsFinTech.techFinBody}</span>
+        <div className="col-span-full flex items-center justify-center md:col-span-5">
+          <div className="flex aspect-auto w-full flex-col items-center justify-center rounded-full px-6 text-center md:aspect-square md:translate-y-12 md:bg-arta-eggshell-100 md:p-12 md:shadow-blogPost">
+            <h3
+              className={`${textClass.h2_style2} mb-6 flex aspect-square w-full  items-center justify-center rounded-full bg-arta-eggshell-100 shadow-circle md:mb-0 md:aspect-auto md:bg-transparent md:shadow-none`}
+            >
+              {t.techFinVsFinTech.techFinTitle}
+            </h3>
+            <span className={`${textClass.body_regular} -mx-6 md:mx-auto`}>
+              {t.techFinVsFinTech.techFinBody}
+            </span>
           </div>
         </div>
-        <div className="md:col-span-2 col-span-full md:mt-0 my-8 flex items-center justify-center">
+        <div className="col-span-full my-8 flex items-center justify-center md:col-span-2 md:mt-0">
           <span className={textClass.h1_style2}>VS</span>
         </div>
-        <div className="md:col-span-5 col-span-full ">
-          <div className='md:block hidden'>
+        <div className="col-span-full md:col-span-5 ">
+          <div className="hidden md:block">
             <h2 className={`${textClass.h2_style2} mb-4`}>{t.techFinVsFinTech.title}</h2>
             <span className={textClass.body_regular}>{t.techFinVsFinTech.subtitle}</span>
           </div>
-          <div className="flex md:aspect-square aspect-auto w-full md:translate-y-12 flex-col items-center justify-center rounded-full md:bg-arta-eggshell-100 md:p-12 px-6 text-center md:shadow-blogPost">
-            <h3 className={`${textClass.h2_style2} aspect-square md:aspect-auto md:bg-transparent bg-arta-eggshell-100  w-full flex items-center justify-center rounded-full md:mb-0 mb-6 shadow-circle md:shadow-none`}>{t.techFinVsFinTech.finTechTitle}</h3>
-            <span className={`${textClass.body_regular} md:mx-auto -mx-6`}>{t.techFinVsFinTech.finTechBody}</span>
+          <div className="flex aspect-auto w-full flex-col items-center justify-center rounded-full px-6 text-center md:aspect-square md:translate-y-12 md:bg-arta-eggshell-100 md:p-12 md:shadow-blogPost">
+            <h3
+              className={`${textClass.h2_style2} mb-6 flex aspect-square w-full  items-center justify-center rounded-full bg-arta-eggshell-100 shadow-circle md:mb-0 md:aspect-auto md:bg-transparent md:shadow-none`}
+            >
+              {t.techFinVsFinTech.finTechTitle}
+            </h3>
+            <span className={`${textClass.body_regular} -mx-6 md:mx-auto`}>
+              {t.techFinVsFinTech.finTechBody}
+            </span>
           </div>
         </div>
       </div>

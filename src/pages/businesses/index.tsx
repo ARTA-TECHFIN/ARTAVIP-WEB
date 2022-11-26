@@ -11,13 +11,10 @@ const fetchCmsData = async () => {
 const massageData = (pageData: any, locale: string | undefined = 'en') => {
   const g = (keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
 
-  console.log("123s")
-  console.log(pageData)
-
   return {
     heroBanner: {
       title: 'Asset Management',
-      description: g('description'),
+      description: g('description') == null ? g('description') : '',
       image: '/images/asset-management/banner.png',
       mobileImage: '/images/asset-management/mobile-banner.png',
       label: 'Our Businesses',

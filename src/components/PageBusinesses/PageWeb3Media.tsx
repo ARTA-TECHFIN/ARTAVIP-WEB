@@ -1,10 +1,11 @@
-import type { NextPage } from 'next'
+import React, { FC } from 'react'
 
 import Header from 'src/components/Header/Header'
 import Footer from 'src/components/Footer'
 import { Seo } from 'src/components/Seo'
 import { HeroBanner } from '../HeroBanner'
 import { ModuleTextColList } from '../ModuleTextColList'
+import BusinessPageModules from '../BusinessPageModules'
 
 const cms = {
   heroBanner: {
@@ -37,18 +38,18 @@ const cms = {
   },
 }
 
-const PageWeb3Media: NextPage = () => {
+const PageWeb3Media: FC<{ t: any, locale: string }> = ({ t, locale }) => {
   return (
     <>
       <Seo />
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
-          title={cms.heroBanner.title}
-          description={cms.heroBanner.description}
-          image={cms.heroBanner.image}
-          mobileImage={cms.heroBanner.mobileImage}
-          label={cms.heroBanner.label}
+          title={t.heroBanner.title}
+          description={t.heroBanner.description}
+          image={t.heroBanner.image}
+          mobileImage={t.heroBanner.mobileImage}
+          label={t.heroBanner.label}
         />
         <div className="overflow-hidden bg-arta-eggshell-100">
           <ModuleTextColList
@@ -58,6 +59,7 @@ const PageWeb3Media: NextPage = () => {
             list={cms.section1.list}
           />
         </div>
+        <BusinessPageModules locale={locale} components={t.components} />
       </main>
       <Footer textColor="brown" />
     </>

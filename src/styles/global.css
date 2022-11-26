@@ -113,3 +113,13 @@
     background-image: linear-gradient(89.57deg, #E3D29A 0.19%, #AE8D55 52.49%, #D4BF87 99.62%);
   }
 }
+
+.module-text-section ul {
+  padding-left: 12px;
+  list-style: disc;
+  margin-top: 12px;
+}
+
+.module-text-section ul li {
+  margin-top: 12px;
+}

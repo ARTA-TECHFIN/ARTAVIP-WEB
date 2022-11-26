@@ -24,7 +24,7 @@ const ModuleTextSection: FC<propsT> = ({ title, description, bgImage }) => {
         <FadeUp>
           <>
             <h2 className={`${textClass.h2_style2} mb-6 text-center `}>{title}</h2>
-            <span className={`${textClass.body_regular_verah} text-center tracking-normal`}>{description}</span>
+            <div className={`module-text-section ${textClass.body_regular_verah} tracking-normal`} dangerouslySetInnerHTML={{__html: description}}></div>
           </>
         </FadeUp>
       </div>

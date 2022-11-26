@@ -1,0 +1,28 @@
+{
+  "data":{
+     "id":1,
+     "attributes":{
+        "description_en":null,
+        "description_tc":null,
+        "description_sc":null,
+        "createdAt":"2022-11-23T08:31:53.512Z",
+        "updatedAt":"2022-11-23T18:18:36.238Z",
+        "publishedAt":"2022-11-23T08:31:56.762Z",
+        "components":[
+           {
+              "id":6,
+              "__component":"our-business.component-1",
+              "title_en":"About Artazine",
+              "title_tc":"關於Artazine",
+              "title_sc":"关于Artazine",
+              "content_en":"<p>Artazine is an online Editorial destination dedicated to bridging the gap between art, culture and Web3. Our exclusive, multiplatform stories and unique insights aim to explore the ways crypto, gaming, NFTs and the latest metaverse projects are empowering a global community of emerging creators. Standing at the intersection of art and technology, we are your authoritative guide to the future of cultural-commerce.</p><ul><li>Committed to curating the most relevant cultural news and features, finding the signal amongst the noise.&nbsp;</li><li>Exclusive interviews with industry leaders, artists, collectors and creatives, both traditional and modern.&nbsp;</li><li>Educational content that breaks down barriers, spreads knowledge and prepares readers for the future.&nbsp;</li><li>Cutting-edge NFT and crypto market analysis to demystify the market and promote mainstream adoption.&nbsp;</li><li>Connecting a global community of discerning individuals across multiple mediums, offering readers seamless access to our interactive, curated content.&nbsp;</li><li>All-around Web3 insights, educational tools and exclusive knowledge to empower the next generation.</li></ul>",
+              "content_tc":"<p><a href=\"https://www.artazine.com/\">Artazine</a>是一個線上媒體平台，致力於架起藝術、文化和Web3之間的橋樑。我們在多個平台發佈獨家文章和獨特見解，旨在探索加密貨幣、遊戲、NFT和最新的元宇宙項目如何賦予全球新興創作者力量。站在藝術和科技的交叉點上，我們將是您未來文化商業的權威指南。</p>",
+              "content_sc":"<p><a href=\"https://www.artazine.com/\">Artazine</a>是一个线上媒体平台，致力于架起艺术、文化和Web3之间的桥梁。我们在多个平台发布独家文章和独特见解，旨在探索加密货币、游戏、NFT和最新的元宇宙项目如何赋予全球新兴创作者力量。站在艺术和科技的交叉点上，我们将是您未来文化商业的权威指南。</p>"
+           }
+        ]
+     }
+  },
+  "meta":{
+     
+  }
+}

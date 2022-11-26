@@ -95,8 +95,6 @@ const PageSecurities: FC<{ t: any, locale: string }> = ({ t, locale }) => {
           mobileImage={t.heroBanner.mobileImage}
           label={t.heroBanner.label}
         />
-        <BusinessPageModules locale={locale} components={t.components} />
-
         {/* Modules for preview */}
         <ModuleTextSection
           title={cms.section1.title}
@@ -117,6 +115,8 @@ const PageSecurities: FC<{ t: any, locale: string }> = ({ t, locale }) => {
             list={cms.section4.list}
           />
         </div>
+
+        <BusinessPageModules locale={locale} components={t.components} />
       </main>
       <Footer textColor="brown" />
     </>

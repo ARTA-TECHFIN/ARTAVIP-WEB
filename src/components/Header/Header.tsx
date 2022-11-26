@@ -135,8 +135,6 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
     }
   }, [])
 
-  console.log('navbarBg', navbarBg)
-
   return (
     <div className="fixed z-50 w-full">
       <div onMouseLeave={() => setActiveTabIndex(DEFAULT_TAB_INDEX)}>

@@ -6,6 +6,7 @@ export const links = {
   aboutLeadership: '/about#leadership',
   aboutTechFin: '/about#tech-fin',
   businesses: '/businesses',
+  businessesInvestmentBanking: '/businesses/investment-banking',
   businessesSecurities: '/businesses/securities',
   businessesWeb3: '/businesses/web3-media',
   investor: '/investor-relations',

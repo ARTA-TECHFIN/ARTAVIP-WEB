@@ -1,6 +1,6 @@
 import type { GetServerSideProps } from 'next'
 import PageBusinessesPage from 'src/components/PageBusinesses/PageBusinesses'
-import ourBusinessAssetManagementJson from 'apidata/about-us.json'
+import ourBusinessAssetManagementJson from 'apidata/our-business-asset-management.json'
 
 const fetchCmsData = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/our-business-asset-management`)
@@ -10,6 +10,9 @@ const fetchCmsData = async () => {
 
 const massageData = (pageData: any, locale: string | undefined = 'en') => {
   const g = (keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
+
+  console.log("123s")
+  console.log(pageData)
 
   return {
     heroBanner: {

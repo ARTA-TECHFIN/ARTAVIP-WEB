@@ -7,6 +7,7 @@ import { HeroBanner } from '../HeroBanner'
 import BusinessPageModules from '../BusinessPageModules'
 
 const PageBusinessesPage: FC<{ t: any, locale: string }> = ({ t, locale }) => {
+  console.log(t)
   return (
     <>
       <Seo />

@@ -6,7 +6,7 @@
          "description_tc":"我們的資產管理業務主要為機構客戶和家庭辦公室提供專業的投資管理、顧問和證券經紀服務。",
          "description_sc":"我们的资产管理业务主要为机构客户和家庭办公室提供专业的投资管理、顾问和证券经纪服务。",
          "createdAt":"2022-11-23T03:49:10.833Z",
-         "updatedAt":"2022-11-26T15:53:12.942Z",
+         "updatedAt":"2022-11-26T16:42:34.122Z",
          "publishedAt":"2022-11-23T03:49:13.862Z",
          "components":[
             {
@@ -25,9 +25,9 @@
                "title_en":"What is Asset Management",
                "title_tc":"什麼是資產管理",
                "title_sc":"什么是资产管理",
-               "subtitle_en":null,
-               "subtitle_tc":null,
-               "subtitle_sc":null,
+               "subtitle_en":"Title",
+               "subtitle_tc":"Title",
+               "subtitle_sc":"Title",
                "content_en":"#### Investment Advisor & Manager:\nWe provide tailor-made investment advisory and management services. Our extensive investment experience, exclusive access to certain investment opportunities and global tech-driven and ESG-compliant mindset enable us to identify subtle market trends and intricate investment opportunities in today's fast-moving markets.\n\n-----\n\n#### Fund of Funds (FoF):\nWe set up co-branded FoF products and services in Hong Kong for local and cross-border businesses. The FoF methodology and system are mutually developed and endorsed by global financial institutions and us, both aiming for an international gold standard.\n\n",
                "content_tc":"#### 投資顧問管理\n我們提供定製化的投資顧問和管理服務。我們具有豐富的投資經驗、市場機會的獨家信息、科技驅動的思維方式、以及符合ESG標準的投資理念，這些使得我們能夠在當今快速發展的市場中精準地發現市場趨勢和投資機會。\n\n-----\n\n#### 組合型基金 \n我們為香港本地及跨境企業提供聯名的組合型基金產品服務，組合方法及系統是由我們與其他全球金融機構共同開發認可，皆以國際最高標準為目標。",
                "content_sc":"#### 投资顾问管理\n我们提供定制化的投资顾问和管理服务。我们具有丰富的投资经验、市场机会的独家信息、科技驱动的思维方式、以及符合ESG标准的投资理念，这些使得我们能够在当今快速发展的市场中精准地发现市场趋势和投资机会。\n\n-----\n\n#### 组合型基金 \n我们为香港本地及跨境企业提供联名的組合型基金产品服务，组合方法及系统是由我们与其他全球金融机构共同开发认可，皆以国际最高标准为目标。"

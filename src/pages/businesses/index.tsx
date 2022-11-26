@@ -5,7 +5,6 @@ import ourBusinessAssetManagementJson from 'apidata/about-us.json'
 const fetchCmsData = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/our-business-asset-management`)
   const data = await res.json()
-  console.log(data)
   return data
 }
 

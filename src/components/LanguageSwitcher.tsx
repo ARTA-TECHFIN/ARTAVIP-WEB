@@ -6,9 +6,6 @@ const LanguageSwitcher: NextPage = () => {
   const router = useRouter();
   const { locale, pathname } = router;
 
-  const formStyle =
-    pathname.indexOf("onboarding-form") == -1 ? "" : "form-style";
-
   const langs = ["tc", "en", "sc"];
 
   const switchToLocale = (lang:string) => {

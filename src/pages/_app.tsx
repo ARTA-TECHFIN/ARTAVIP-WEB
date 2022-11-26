@@ -1,5 +1,6 @@
 import { appWithTranslation } from "next-i18next";
 import type { AppProps } from 'next/app'
+import NextNProgress from 'nextjs-progressbar';
 import 'src/styles/global.css'
 import 'src/styles/typography.css'
 
@@ -10,6 +11,7 @@ const queryClient = new QueryClient()
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
+      <NextNProgress color="#593725"/>
       <Component {...pageProps} />
     </QueryClientProvider>
   )

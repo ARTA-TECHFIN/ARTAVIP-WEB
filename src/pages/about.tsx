@@ -6,7 +6,6 @@ import leader_1 from 'src/components/PageAbout/images/leader_1.jpg'
 import eco_icon1 from 'src/components/PageAbout/images/eco_icon1.png'
 
 const fetchCmsData = async () => {
-  // TODO: confirm how to fetch data from CMS
   const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/about-us`)
   const data = await res.json()
   return data

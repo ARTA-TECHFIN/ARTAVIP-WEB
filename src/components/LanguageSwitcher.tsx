@@ -11,9 +11,9 @@ const LanguageSwitcher: NextPage = () => {
 
   const langs = ["tc", "en", "sc"];
 
-  const switchToLocale = () => {
+  const switchToLocale = (lang:string) => {
     const path = router.asPath;
-    router.push(path, path, { locale: locale === "tc"? "en" : "tc" });
+    router.push(path, path, { locale: lang });
   }
 
   const langMap = (lang:string) => {
@@ -39,7 +39,7 @@ const LanguageSwitcher: NextPage = () => {
         if (lang !== locale) {
           return (
             <React.Fragment key={i}>
-              <p className="inline-block cursor-pointer mr-4" onClick={() => switchToLocale()}>
+              <p className="inline-block cursor-pointer mr-4" onClick={() => switchToLocale(lang)}>
                 { langMap(lang) }
               </p>
             </React.Fragment>

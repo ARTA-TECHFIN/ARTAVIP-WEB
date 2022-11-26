@@ -1,0 +1,48 @@
+{
+  "data":{
+     "id":1,
+     "attributes":{
+        "description_en":"Our Insurance Brokerage division offers all types of life and general insurance products in the market. We have teamed up with a group of selected global insurance companies, insurance brokerage partners and InsurTech platforms. ",
+        "description_tc":"我們的保險經紀業務提供市場上所有類型的人壽和一般保險產品，還與許多全球知名保險公司、保險經紀合作夥伴、及保險科技平台合作。",
+        "description_sc":"我们的保险经纪业务提供市场上所有类型的人寿和一般保险产品，还与许多全球知名保险公司、保险经纪合作伙伴、及保险科技平台合作。",
+        "createdAt":"2022-11-23T03:48:16.956Z",
+        "updatedAt":"2022-11-23T08:09:51.131Z",
+        "publishedAt":"2022-11-23T03:48:17.734Z",
+        "components":[
+           {
+              "id":1,
+              "__component":"our-business.component-1",
+              "title_en":"Individual Clients",
+              "title_tc":"個人客戶",
+              "title_sc":"个人客户",
+              "content_en":"Our professionals work with individual clients to evaluate risk exposures, conduct gap analysis, develop personal plans and provide options for customized insurance portfolio. We offer access to a deep pool of specialized expertise and resources in traditional insurance products and areas of emerging risk. ",
+              "content_tc":"我們的專業人員將與個人客戶一起評估風險，進行差距分析，制定個人計劃，並提供定製化的保險組合選擇。我們在傳統保險產品和新興風險領域都具備深厚的專業知識和資源。",
+              "content_sc":"我们的专业人员将与个人客户一起评估风险，进行差距分析，制定个人计划，并提供定制化的保险组合选择。我们在传统保险产品和新兴风险领域都具备深厚的专业知识和资源。"
+           },
+           {
+              "id":2,
+              "__component":"our-business.component-1",
+              "title_en":"Corporate Clients",
+              "title_tc":"企業客戶",
+              "title_sc":"企业客户",
+              "content_en":"Our team focuses on delivering desired outcomes to both employee benefits programs and business risk management. We take an enterprise-wide approach, consulting closely with corporate clients to identify, analyze and manage the broadest possible range of business risks. We also help manage short-term cost control challenges and longer-term issues relating to health management, employee engagement, accountability, and ESG matters.",
+              "content_tc":"我們的團隊致力於提供合適的員工福利計劃和商業風險管理方案。我們採取企業級的方法，與企業客戶密切協商，以確定、分析和管理儘可能廣泛的商業風險。我們還幫助管理企業短期的成本控制問題，以及與健康管理、員工參與、問責性和ESG事務有關的長期問題。",
+              "content_sc":"我们的团队致力于提供合适的员工福利计划和商业风险管理方案。我们采取企业级的方法，与企业客户密切协商，以确定、分析和管理尽可能广泛的商业风险。我们还帮助管理企业短期的成本控制问题，以及与健康管理、员工参与、问责性和ESG事务有关的长期问题。"
+           },
+           {
+              "id":3,
+              "__component":"our-business.component-1",
+              "title_en":"Virtual Asset insurance",
+              "title_tc":"虛擬資產保險",
+              "title_sc":"虚拟资产保险",
+              "content_en":"Our collaborative relationship with leading global (re)insurers has enabled the organization to secure leading market capacity for virtual assets risks. We work to create a bespoke tailored risk transfer solution that provides robust and cost-effective risk protection coverage to meet our client’s specific needs.",
+              "content_tc":"我們與全球領先的（再）保險公司合作，提供市場領先的虛擬資產風險管理服務。我們為客戶量身定製風險轉移解決方案，提供穩健並具有成本效益的風險保護，以滿足客戶的具體需求。",
+              "content_sc":"我们与全球领先的（再）保险公司合作，提供市场领先的虚拟资产风险管理服务。我们为客户量身定制风险转移解决方案，提供稳健并具有成本效益的风险保护，以满足客户的具体需求。"
+           }
+        ]
+     }
+  },
+  "meta":{
+     
+  }
+}

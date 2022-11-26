@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import React, { FC } from 'react'
 
 import Header from 'src/components/Header/Header'
 import Footer from 'src/components/Footer'
@@ -7,6 +7,7 @@ import { HeroBanner } from '../HeroBanner'
 import { ModuleTextSection } from '../ModuleTextSection'
 import { ModuleTextColList } from '../ModuleTextColList'
 import { ModuleIconList } from '../ModuleIconList'
+import BusinessPageModules from '../BusinessPageModules'
 
 const cms = {
   heroBanner: {
@@ -81,19 +82,22 @@ const cms = {
   },
 }
 
-const PageSecurities: NextPage = () => {
+const PageSecurities: FC<{ t: any, locale: string }> = ({ t, locale }) => {
   return (
     <>
       <Seo />
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
-          title={cms.heroBanner.title}
-          description={cms.heroBanner.description}
-          image={cms.heroBanner.image}
-          mobileImage={cms.heroBanner.mobileImage}
-          label={cms.heroBanner.label}
+          title={t.heroBanner.title}
+          description={t.heroBanner.description}
+          image={t.heroBanner.image}
+          mobileImage={t.heroBanner.mobileImage}
+          label={t.heroBanner.label}
         />
+        <BusinessPageModules locale={locale} components={t.components} />
+
+        {/* Modules for preview */}
         <ModuleTextSection
           title={cms.section1.title}
           description={cms.section1.body}

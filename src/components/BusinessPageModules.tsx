@@ -1,9 +1,12 @@
 import React, { FC } from 'react'
 import { ModuleTextSection } from './ModuleTextSection'
 import { ModuleTextColList } from './ModuleTextColList'
+import { ModuleIconList } from './ModuleIconList'
 
 const BusinessPageModules: FC<{ components: any[], locale: string }> = ({components, locale}) => {
   const g = (compData: any, keyWithoutLang: string) => `${compData[`${keyWithoutLang}_${locale}`]}`
+
+  console.log(components)
 
   return (
     <>
@@ -20,7 +23,22 @@ const BusinessPageModules: FC<{ components: any[], locale: string }> = ({compone
                 />
               )
             case "our-business.component-2":
-              return <div key={i}>234</div>
+              return (
+                <ModuleIconList
+                  iconList={[
+                    {
+                      icon: component.icon_left?.data?.attributes?.url || "",
+                      title: g(component, 'title_left'),
+                      body: g(component, 'content_left'),
+                    },
+                    {
+                      icon: component.icon_right?.data?.attributes?.url || "",
+                      title: g(component, 'title_right'),
+                      body: g(component, 'content_right'),
+                    }]
+                  }
+                />
+              )
             case "our-business.component-3":
               return (
                 <div key={i} className='overflow-hidden bg-arta-eggshell-100'>
@@ -41,8 +59,10 @@ const BusinessPageModules: FC<{ components: any[], locale: string }> = ({compone
                   />
                 </div>
               )
+            case "our-business.component-4":
+              return <div key={i}>4</div>
             default:
-              return <div key={i}></div>
+              return <div key={i}>5</div>
           }
         })
       }

@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import { FC } from 'react'
 import { textClass } from 'src/components/Text'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
@@ -8,9 +8,11 @@ import { IconListItemArrow, TopDownArrow, DownTopArrow } from '../Svg/Icon'
 
 gsap.registerPlugin(ScrollToPlugin)
 
-const PageEsg: NextPage = () => {
+const PageEsg: FC<{ t: any, locale: string }> = ({ t, locale }) => {
   const nav = useRef<HTMLUListElement>(null)
   const sections = useRef(null)
+
+  console.log(t)
 
   const goToSection = (index: number) => () => {
     const esgSections = document.querySelectorAll('.esg-section')
@@ -70,7 +72,7 @@ const PageEsg: NextPage = () => {
     setActive(0)
   }, [])
 
-  const navList = ['Introduction', 'Environmental', 'Social', 'Governance']
+  const navList = ['Environmental', 'Social', 'Governance']
 
   return (
     <div className="grid grid-cols-12 gap-x-5 pt-16">
@@ -87,13 +89,6 @@ const PageEsg: NextPage = () => {
         ))}
       </ul>
       <div className="md:col-span-9 col-span-full" ref={sections}>
-        <div id="introduction" className="esg-section md:pb-16 pb-12">
-          <h2 className={`${textClass.h3_style2}`}>{`Introduction`}</h2>
-          <p className={`mt-4 ${textClass.body_regular_verah}`}>
-            {`ARTA TechFin is determined to become a sustainability-conscious corporation. By engaging Group-wide initiative and taking sustainability-conscious into our decision-making process, we will answer our conscience and the general public with commitment and action.`}
-          </p>
-        </div>
-
         <div id="environmental" className="esg-section">
           <h2 className={`${textClass.h3_style2}`}>{`Environmental`}</h2>
           <p

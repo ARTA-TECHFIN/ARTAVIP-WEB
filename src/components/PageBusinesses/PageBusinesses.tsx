@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import React, { FC } from 'react'
 
 import Header from 'src/components/Header/Header'
 import Footer from 'src/components/Footer'
@@ -6,8 +6,7 @@ import { Seo } from 'src/components/Seo'
 import { HeroBanner } from '../HeroBanner'
 import BusinessPageModules from '../BusinessPageModules'
 
-const PageBusinessesPage: FC<{ t: any, locale: string }> = ({ t, locale }) => {
-  console.log(t)
+const PageBusinesses: FC<{ t: any, locale: string }> = ({ t, locale }) => {
   return (
     <>
       <Seo />
@@ -27,4 +26,4 @@ const PageBusinessesPage: FC<{ t: any, locale: string }> = ({ t, locale }) => {
   )
 }
 
-export default PageBusinessesPage
+export default PageBusinesses

@@ -6,7 +6,7 @@ import { Seo } from 'src/components/Seo'
 import { HeroBanner } from '../HeroBanner'
 import BusinessPageModules from '../BusinessPageModules'
 
-const PageWeb3Media: FC<{ t: any, locale: string }> = ({ t, locale }) => {
+const PageInvestmentBanking: FC<{ t: any, locale: string }> = ({ t, locale }) => {
   return (
     <>
       <Seo />
@@ -26,4 +26,4 @@ const PageWeb3Media: FC<{ t: any, locale: string }> = ({ t, locale }) => {
   )
 }
 
-export default PageWeb3Media
+export default PageInvestmentBanking

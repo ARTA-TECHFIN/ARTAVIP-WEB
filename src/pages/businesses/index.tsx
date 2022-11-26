@@ -1,5 +1,5 @@
 import type { GetServerSideProps } from 'next'
-import PageBusinessesPage from 'src/components/PageBusinesses/PageBusinesses'
+import PageAssetManagementPage from 'src/components/PageBusinesses/PageAssetManagement'
 import ourBusinessAssetManagementJson from 'apidata/our-business-asset-management.json'
 
 const fetchCmsData = async () => {
@@ -37,4 +37,4 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 }
 
-export default PageBusinessesPage
+export default PageAssetManagementPage

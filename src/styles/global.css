@@ -133,3 +133,50 @@
 .module-etg-text-section h4 {
   @apply mt-4 text-arta-sand-200 font-Verah md:text-[1.5rem] text-xl leading-[2rem];
 }
+
+.animatedSpotLight1 {
+  background: radial-gradient(circle, rgb(196, 146, 96) 0%, rgba(53,29,14,0) 70%);
+  opacity: 0.4;
+	top: 20vh;
+	left: 50vh;
+  animation: gradientSpot1 55s ease infinite;
+}
+
+.animatedSpotLight2 {
+  background: radial-gradient(circle, rgba(196, 146, 96, 0.7) 0%, rgba(53,29,14,0) 70%);
+  transform-origin: -2%;
+	top: 20vh;
+	left: 50vh;
+  animation: gradientSpot2 75s ease infinite;
+}
+
+@keyframes gradientSpot1 {
+	0% {
+    top: 100vh;
+		left: -50vh;
+    opacity: 0;
+	}
+  50% {
+    opacity: 0.4;
+	}
+	100% {
+    top: -200vh;
+		left: 130vh;
+    opacity: 1;
+	}
+}
+
+@keyframes gradientSpot2 {
+	0% {
+    opacity: 0.6;
+    transform: rotate(-160deg);
+	}
+  80% {
+    opacity: 0.5;
+    transform: rotate(0deg);
+	}
+	100% {
+    opacity: 0.6;
+    transform: rotate(200deg);
+	}
+}

@@ -94,7 +94,7 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
     <section
       ref={sec1Container}
       id="break-barriers"
-      className=" tigger-01 relative z-3 flex h-screen w-screen flex-col overflow-hidden bg-arta-russet-100 will-change-transform"
+      className="relative tigger-01 relative z-3 flex h-screen w-screen flex-col overflow-hidden bg-arta-russet-100 will-change-transform"
       onMouseMove={(ev) => section1HandleMouseMove(ev)}
     >
       <video
@@ -111,6 +111,10 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
         Your browser does not support the video tag.
       </video>
       {/* top-[20%] left-0   sm:top-[40%] lg:left-[10%] xl:left-[20%] xl:mx-auto */}
+      <div className="">
+        <div className="animatedSpotLight1 mix-blend-lighten w-[100vw] h-[100vw] absolute blur-[35px]" />
+        <div className="animatedSpotLight2 mix-blend-lighten w-[100vw] h-[100vw] absolute blur-[35px]" />
+      </div>
       <div className=" movable-elements-wrapper flex max-w-main-contain items-start justify-center  px-6 xl:mx-auto">
         <div className="absolute bottom-[7em] left-[0] lg:bottom-[6em] lg:left-[5em]">
           <h1

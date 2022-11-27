@@ -1,8 +1,6 @@
 import JoinUsLayout from 'src/components/PageJoinUs/JoinUsLayout'
-import { JobTabs } from '../components/PageJoinUs/SectionJobOpenings'
-import JobCards from 'src/components/PageJoinUs/JobCards'
 
-import { getJobsCms, getJobsCmsT } from '../domains/jobs'
+import { getJobsCms, getJobsCmsT } from 'src/domains/jobs'
 
 export const getStaticProps = async () => {
   const cms = await getJobsCms({ lang: 'en' })
@@ -17,9 +15,7 @@ const PageJoinUs = (props: { cms: getJobsCmsT }) => {
   const jobs = cms.jobs
 
   return (
-    <JoinUsLayout tabType={JobTabs.All}>
-      <JobCards jobs={jobs} />
-    </JoinUsLayout>
+    <JoinUsLayout jobs={jobs} />
   )
 }
 

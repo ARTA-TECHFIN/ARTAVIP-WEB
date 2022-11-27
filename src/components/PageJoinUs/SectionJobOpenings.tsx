@@ -1,36 +1,35 @@
 import { textClass } from '../Text'
+import { useState } from 'react'
 
 import { TabBar } from '../TabBar'
-import { links } from 'src/domains/links'
-import Router from 'next/router'
+import JobCards from 'src/components/PageJoinUs/JobCards'
 import { FC } from 'react'
+import { getJobsCmsT } from '../../domains/jobs'
 
 const TABS = {
-  All: 'All',
-  Front_office: 'Front_office',
-  Middle_and_Back_Office: 'Middle_and_Back_Office',
+  all: 'All',
+  fontOffice: 'Front Office',
+  middleAndBackOffice: 'Middle and Back Office',
 } as const
 
-type tabsT = keyof typeof TABS
-
-const tabInfoMap = {
-  [TABS.All]: { title: 'All', link: links.joinUs },
-  [TABS.Front_office]: { title: 'Front Office', link: links.joinUsFrontOffice },
-  [TABS.Middle_and_Back_Office]: {
-    title: 'Middle and Back Office',
-    link: links.joinUsMiddleAndBackOffice,
-  },
-}
-
-const tabList = Object.values(tabInfoMap)
-
 type propsT = {
-  tabType: tabsT
-  children: React.ReactNode
+  jobs: getJobsCmsT
 }
 
-const SectionJobOpenings: FC<propsT> = ({ tabType, children }) => {
-  const tabInfo = tabInfoMap[tabType]
+const SectionJobOpenings: FC<propsT> = ({ jobs }) => {
+  const [selectedTab, setSelectedTab] = useState("All")
+
+  const filteredJobs = jobs.filter((job: any) => {
+    if (selectedTab === "All") return job
+
+    if (selectedTab === TABS['fontOffice']) {
+      return job.tag === 'fontOffice'
+    }
+
+    if (selectedTab === TABS['middleAndBackOffice']) {
+      return job.tag === 'middleAndBackOffice'
+    }
+  })
 
   return (
     <div className="bg-arta-eggshell-100 py-12 md:py-[150px]" id="job-opening">
@@ -44,14 +43,12 @@ const SectionJobOpenings: FC<propsT> = ({ tabType, children }) => {
         </div>
         <div className="arta-hide-scrollbar -mx-6 overflow-auto py-16 md:mx-0 ">
           <TabBar
-            tabs={tabList.map((t) => t.title)}
-            selectedTab={tabInfo.title}
-            setSelectedTab={(_, index) =>
-              Router.push(tabList[index].link, undefined, { scroll: false })
-            }
+            tabs={[TABS['all'], TABS['fontOffice'], TABS['middleAndBackOffice']]}
+            selectedTab={selectedTab}
+            setSelectedTab={setSelectedTab}
           />
         </div>
-        {children}
+        <JobCards jobs={filteredJobs} />
       </div>
     </div>
   )

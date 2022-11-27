@@ -5,7 +5,7 @@ import JobCard from './JobCard'
 const JobCards = ({ jobs }: getJobsCmsT) => {
   return (
     <div className="grid grid-cols-none lg:gap-8 gap-4 sm:grid-cols-2 md:grid-cols-3">
-      {jobs.map((job, index) => (
+      {jobs.map((job: any, index: number) => (
         <div className="col-span-1" key={index}>
           <JobCard
             title={job.title}

@@ -9,8 +9,8 @@ import { SectionWorkWithArta } from './SectionWorkWithArta'
 import SectionOurValues from './SectionOurValues'
 import SectionCare from './SectionCare'
 import SectionJobOpenings from './SectionJobOpenings'
-import { JobTabs } from './SectionJobOpenings'
 import { FC } from 'react'
+import { getJobsCmsT } from '../../domains/jobs'
 
 export const t = {
   heroBanner: {
@@ -22,11 +22,10 @@ export const t = {
 }
 
 type propsT = {
-  tabType: keyof typeof JobTabs
-  children: React.ReactNode
+  jobs: getJobsCmsT
 }
 
-const JoinUsLayout: FC<propsT> = ({ tabType, children }) => {
+const JoinUsLayout: FC<propsT> = ({ jobs }) => {
   return (
     <>
       <Seo />
@@ -41,7 +40,7 @@ const JoinUsLayout: FC<propsT> = ({ tabType, children }) => {
         <SectionWorkWithArta />
         <SectionOurValues />
         <SectionCare />
-        <SectionJobOpenings tabType={tabType}>{children}</SectionJobOpenings>
+        <SectionJobOpenings jobs={jobs}></SectionJobOpenings>
       </main>
       <Footer textColor="brown" />
     </>

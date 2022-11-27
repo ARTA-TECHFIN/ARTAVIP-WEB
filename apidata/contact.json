@@ -1,0 +1,63 @@
+{
+  "data":{
+     "id":1,
+     "attributes":{
+        "description_en":"ContactUsEN ContactUsEN ContactUsEN ContactUsEN\nContactUsEN ContactUsEN ContactUsEN ContactUsEN",
+        "description_tc":"ContactUsTC ContactUsTC ContactUsTC ContactUsTC ContactUsTC ContactUsTC ContactUsTC ContactUsTC ",
+        "description_sc":"ContactUsSC ContactUsSC ContactUsSC ContactUsSC ContactUsSC ContactUsSC ContactUsSC ContactUsSC ",
+        "address_en":"Units 1-2, Level 9,\nK11 ATELIER King’s Road,\n728 King’s Road, Quarry Bay, Hong Kong",
+        "address_tc":"香港鰂魚涌英皇道728號\nK11 ATELIER King’s Road \n9樓1-2室",
+        "address_sc":"香港鲗鱼涌英皇道728号\nK11 ATELIER King’s Road \n9楼1-2室",
+        "media_email":"marketing@artatechfin.com",
+        "recruitment_email":"recruit@artatechfin.com",
+        "investor_email":"ir@artatechfin.com",
+        "social_media_link_linkedin":"https://www.linkedin.com/company/arta-techfin-corporation-limited/",
+        "social_media_link_twitter":"https://twitter.com/ARTATechFin",
+        "social_media_link_facebook":"https://www.facebook.com/ARTAtechfin",
+        "footer_tel":"(852) 3513 8279",
+        "footer_fax":"(852) 2507 2009",
+        "footer_email":"marketing@artatechfin.com",
+        "createdAt":"2022-11-22T10:15:57.900Z",
+        "updatedAt":"2022-11-22T10:16:53.892Z",
+        "publishedAt":"2022-11-22T10:16:53.887Z",
+        "social_media_link_wechat":{
+           "data":{
+              "id":3,
+              "attributes":{
+                 "name":"Screenshot 2022-11-22 at 6.14.02 PM.png",
+                 "alternativeText":"Screenshot 2022-11-22 at 6.14.02 PM.png",
+                 "caption":"Screenshot 2022-11-22 at 6.14.02 PM.png",
+                 "width":209,
+                 "height":210,
+                 "formats":{
+                    "thumbnail":{
+                       "ext":".png",
+                       "url":"https://dhrhnojxde2hk.cloudfront.net/thumbnail_Screenshot_2022_11_22_at_6_14_02_PM_81ff5d37a4.png",
+                       "hash":"thumbnail_Screenshot_2022_11_22_at_6_14_02_PM_81ff5d37a4",
+                       "mime":"image/png",
+                       "name":"thumbnail_Screenshot 2022-11-22 at 6.14.02 PM.png",
+                       "path":null,
+                       "size":23.29,
+                       "width":155,
+                       "height":156
+                    }
+                 },
+                 "hash":"Screenshot_2022_11_22_at_6_14_02_PM_81ff5d37a4",
+                 "ext":".png",
+                 "mime":"image/png",
+                 "size":42.73,
+                 "url":"https://dhrhnojxde2hk.cloudfront.net/Screenshot_2022_11_22_at_6_14_02_PM_81ff5d37a4.png",
+                 "previewUrl":null,
+                 "provider":"aws-s3",
+                 "provider_metadata":null,
+                 "createdAt":"2022-11-22T10:14:18.809Z",
+                 "updatedAt":"2022-11-22T10:14:18.809Z"
+              }
+           }
+        }
+     }
+  },
+  "meta":{
+     
+  }
+}

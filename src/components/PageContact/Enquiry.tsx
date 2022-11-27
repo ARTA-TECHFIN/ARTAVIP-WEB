@@ -8,7 +8,7 @@ import { Hr } from 'src/components/Hr'
 import { IconFacebook, IconWeChat, IconTwitter, IconLinkedIn } from '../Svg/Icon'
 import { FadeUp } from 'src/components/FadeUp';
 
-const Enquiry = () => {
+const Enquiry = ({t}: any) => {
   const circle = useRef(null)
 
   useEffect(() => {
@@ -61,11 +61,9 @@ const Enquiry = () => {
           <Hr />
           <h4 className={`${textClass.h6} mt-8 text-arta-sand-100`}>{`Headquarters`}</h4>
           <div
-            className={`${textClass.body_regular_verah} mt-4 mb-8 text-arta-sand-100 lg:max-w-[80%]`}
+            className={`${textClass.body_regular_verah} mt-4 mb-8 text-arta-sand-100 whitespace-pre lg:max-w-[80%]`}
           >
-            {parse(`Units 1-2, Level 9, <br>
-                    K11 ATELIER King’s Road,<br>
-                    728 King’s Road, Quarry Bay, Hong Kong`)}
+            {parse(t.address)}
           </div>
           <Hr />
 
@@ -74,24 +72,24 @@ const Enquiry = () => {
             <div className="col-span-full sm:col-span-6">
               <div className="text-base text-black">
                 <div className="font-bold">Media</div>
-                <a href="mailto:marketing@artatechfin.com" className="underline">
-                  marketing@artatechfin.com
+                <a href={`mailto:${t.media_email}`} className="underline">
+                  {t.media_email}
                 </a>
               </div>
             </div>
             <div className="col-span-full sm:col-span-6">
               <div className="text-base text-black">
                 <div className="font-bold">Investor</div>
-                <a href="mailto:ir@artatechfin.com" className="underline">
-                  ir@artatechfin.com
+                <a href={`mailto:${t.investor_email}`} className="underline">
+                  {t.investor_email}
                 </a>
               </div>
             </div>
             <div className="col-span-full sm:col-span-6">
               <div className="text-base text-black">
                 <div className="font-bold">Recruitment</div>
-                <a href="mailto:recruit@artatechfin.com" className="underline">
-                  recruit@artatechfin.com
+                <a href={`mailto:${t.recruitment_email}`} className="underline">
+                  {t.recruitment_email}
                 </a>
               </div>
             </div>
@@ -99,13 +97,13 @@ const Enquiry = () => {
           <Hr />
           <h4 className={`${textClass.h6} mt-8 text-arta-sand-100`}>{`Follow Us`}</h4>
           <div className="mt-4 flex">
-            <a href="#" target="_blank" className="mr-6">
+            <a href={t.social_media_link_facebook} target="_blank" rel="noreferrer" className="mr-6">
               <IconFacebook className="h-8 w-8" fill="#593725" />
             </a>
-            <a href="#" target="_blank" className="mr-6">
+            <a href={t.social_media_link_twitter} target="_blank" rel="noreferrer" className="mr-6">
               <IconTwitter className="h-8 w-8" fill="#593725" />
             </a>
-            <a href="#" target="_blank" className="mr-6">
+            <a href={t.social_media_link_linkedin} target="_blank" rel="noreferrer" className="mr-6">
               <IconLinkedIn className="h-8 w-8" fill="#593725" />
             </a>
             <a href="#" target="_blank" className="mr-6">

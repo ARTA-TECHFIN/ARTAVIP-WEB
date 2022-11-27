@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import { FC } from 'react'
 
 import Header from 'src/components/Header/Header'
 import Footer from 'src/components/Footer'
@@ -8,29 +8,20 @@ import { HeroBanner } from '../HeroBanner'
 import Enquiry from './Enquiry'
 import { EnquiryForm } from './EnquiryForm'
 
-const cms = {
-  heroBanner: {
-    title: 'Contact Us',
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
-    image: '/images/contact-us/banner.jpg',
-    mobileImage: '/images/contact-us/mobile-banner.jpg',
-  },
-}
-
-const PageContactPage: NextPage = () => {
+const PageContactPage: FC<{ t: any, locale: string }> = ({ t, locale }) => {
   return (
     <>
       <Seo />
       <Header textColor="brown" />
       <main className="flex flex-col text-arta-sand-100">
         <HeroBanner
-          title={cms.heroBanner.title}
-          description={cms.heroBanner.description}
-          image={cms.heroBanner.image}
-          mobileImage={cms.heroBanner.mobileImage}
+          title={t.heroBanner.title}
+          description={t.heroBanner.description}
+          image={t.heroBanner.image}
+          mobileImage={t.heroBanner.mobileImage}
         />
         <div className="overflow-hidden bg-arta-eggshell-100">
-          <Enquiry />
+          <Enquiry t={t} />
         </div>
         <EnquiryForm />
       </main>

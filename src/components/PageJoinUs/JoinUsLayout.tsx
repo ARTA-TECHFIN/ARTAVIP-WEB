@@ -14,7 +14,7 @@ import { getJobsCmsT } from '../../domains/jobs'
 
 type propsT = {
   t: any
-  jobs: getJobsCmsT
+  jobs: any
 }
 
 const JoinUsLayout: FC<propsT> = ({ t, jobs }) => {

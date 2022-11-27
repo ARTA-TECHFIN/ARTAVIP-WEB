@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { TabBar } from '../TabBar'
 import JobCards from 'src/components/PageJoinUs/JobCards'
 import { FC } from 'react'
-import { getJobsCmsT } from '../../domains/jobs'
 
 const TABS = {
   all: 'All',
@@ -13,7 +12,7 @@ const TABS = {
 } as const
 
 type propsT = {
-  jobs: getJobsCmsT
+  jobs: any
 }
 
 const SectionJobOpenings: FC<propsT> = ({ jobs }) => {

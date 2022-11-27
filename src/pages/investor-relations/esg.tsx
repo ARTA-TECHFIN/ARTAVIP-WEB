@@ -16,11 +16,15 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
   return {
     heroBanner: {
       title: 'Investor Relation',
-      description: `Established in October 2021, ARTA TechFin Corporation Limited (“ARTA TechFin”) (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology (“Technology in Finance” or “TechFin”).`,
+      description: g('description'),
       image: '/images/investor-relations/banner.png',
       mobileImage: '/images/investor-relations/mobile-banner.png',
       label: '',
     },
+    esg_environmental: g('esg_environmental'),
+    esg_social: g('esg_social'),
+    esg_governance_1: g('esg_governance_1'),
+    esg_governance_2: g('esg_governance_2'),
   }
 }
 
@@ -43,7 +47,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     props: {
       t: massageData(pageData, locale),
       locale,
-      cms,
+      cms: massageData(pageData, locale),
     },
   }
 }

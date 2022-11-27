@@ -114,12 +114,22 @@
   }
 }
 
-.module-text-section ul {
-  padding-left: 12px;
+.module-text-section ul,
+.module-etg-text-section ul {
+  padding-left: 24px;
   list-style: disc;
   margin-top: 12px;
+  margin-bottom: 24px;
 }
 
 .module-text-section ul li {
   margin-top: 12px;
+}
+
+.module-etg-text-section p {
+  @apply mt-4;
+}
+
+.module-etg-text-section h4 {
+  @apply mt-4 text-arta-sand-200 font-Verah md:text-[1.5rem] text-xl leading-[2rem];
 }

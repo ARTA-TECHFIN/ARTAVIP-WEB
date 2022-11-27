@@ -12,20 +12,12 @@ import SectionJobOpenings from './SectionJobOpenings'
 import { FC } from 'react'
 import { getJobsCmsT } from '../../domains/jobs'
 
-export const t = {
-  heroBanner: {
-    title: 'Join Us',
-    description: `Established in October 2021, ARTA TechFin Corporation Limited (“ARTA TechFin”) (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology (“Technology in Finance” or “TechFin”).`,
-    image: '/images/join-us/banner.png',
-    mobileImage: '/images/join-us/mobile-banner.png',
-  },
-}
-
 type propsT = {
+  t: any
   jobs: getJobsCmsT
 }
 
-const JoinUsLayout: FC<propsT> = ({ jobs }) => {
+const JoinUsLayout: FC<propsT> = ({ t, jobs }) => {
   return (
     <>
       <Seo />

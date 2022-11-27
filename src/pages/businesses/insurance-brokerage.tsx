@@ -14,7 +14,7 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
   return {
     heroBanner: {
       title: 'Insurance Brokerage',
-      description: g('description') == null ? g('description') : '',
+      description: g('description') !== null ? g('description') : '',
       image: '/images/asset-management/banner.png',
       mobileImage: '/images/asset-management/mobile-banner.png',
       label: 'Our Businesses',

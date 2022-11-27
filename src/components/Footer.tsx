@@ -2,8 +2,9 @@ import React, { FC } from 'react'
 import { Hr } from './Hr'
 import { IconFacebook, IconLinkedIn, IconTwitter, IconWeChat } from './Svg/Icon'
 import LanguageSwitcher from './LanguageSwitcher'
+import { useTranslation } from 'next-i18next';
 
-const t = {
+const k = {
   address: `Units 1-2, Level 9, \nK11 ATELIER King’s Road, \n728 King’s Road,Quarry Bay,\nHong Kong`,
   socialMediaList: [
     { href: '#LinkedIn', Component: IconLinkedIn },
@@ -14,6 +15,7 @@ const t = {
 }
 
 const Footer: FC<{ textColor?: 'white' | 'brown' }> = (props) => {
+  const { t } = useTranslation('common')
   const { textColor = 'white' } = props
 
   const textClass =
@@ -30,21 +32,21 @@ const Footer: FC<{ textColor?: 'white' | 'brown' }> = (props) => {
           <div className="flex flex-col justify-between lg:flex-row lg:space-x-9">
             <div className="order-2 flex flex-col space-y-5 text-[16px] md:flex-row md:space-x-5 md:space-y-0 lg:order-1">
               <div className="flex flex-col items-start justify-start space-y-4">
-                <h6 className="font-Verah text-[16px] leading-[24px]">Address</h6>
+                <h6 className="font-Verah text-[16px] leading-[24px]">{t('footer.address')}</h6>
                 <a
                   href="#"
                   className="cursor-pointer whitespace-pre font-Neue text-[12px] leading-[20px] hover:underline"
                 >
-                  {t.address}
+                  {k.address}
                 </a>
               </div>
               <div className="flex flex-col items-start space-y-4">
-                <h6 className="font-Verah text-[16px] leading-[24px]">Contact us</h6>
+                <h6 className="font-Verah text-[16px] leading-[24px]">{t('footer.contact_us')}</h6>
                 <ul className="list-none font-Neue text-[12px] leading-[20px]">
                   <li>
                     <a href="tel:+852 3513 8279">
                       <span>
-                        Tel <span className="cursor-pointer hover:underline">(852) 3513 8279</span>
+                        {t('footer.tel')} <span className="cursor-pointer hover:underline">(852) 3513 8279</span>
                       </span>
                     </a>
                   </li>
@@ -52,14 +54,14 @@ const Footer: FC<{ textColor?: 'white' | 'brown' }> = (props) => {
                   <li>
                     <a href="fax:+852 2507 2009">
                       <span>
-                        Fax <span className="cursor-pointer hover:underline">(852) 2507 2009</span>
+                        {t('footer.fax')} <span className="cursor-pointer hover:underline">(852) 2507 2009</span>
                       </span>
                     </a>
                   </li>
                   <li>
                     <a href="mailto:marketing@artatechfin.com">
                       <span>
-                        Email{' '}
+                        {t('footer.email')}{' '}
                         <span className="cursor-pointer hover:underline">
                           marketing@artatechfin.com
                         </span>
@@ -69,9 +71,9 @@ const Footer: FC<{ textColor?: 'white' | 'brown' }> = (props) => {
                 </ul>
               </div>
               <div className="flex flex-col items-start space-y-4">
-                <h6 className=" text-[16px] leading-[24px]">Social media</h6>
+                <h6 className=" text-[16px] leading-[24px]">{t('footer.social_media')}{' '}</h6>
                 <div className="flex space-x-2">
-                  {t.socialMediaList.map(({ href, Component }) => (
+                  {k.socialMediaList.map(({ href, Component }) => (
                     <a href={href} key={href}>
                       <Component className="h-6 w-6 pr-1 last:pr-0" />
                     </a>
@@ -81,21 +83,21 @@ const Footer: FC<{ textColor?: 'white' | 'brown' }> = (props) => {
             </div>
             <div className="order-1 mb-4 flex items-start justify-start space-y-3 lg:order-2 lg:mb-0 lg:space-y-0">
               <h3 className="text-left text-[32px] font-bold leading-[40px] lg:text-right lg:text-[36px] lg:leading-[45px]">
-                Break Barriers for Greatness.
+                {t('footer.tagline')}
               </h3>
             </div>
           </div>
           <Hr borderColorClass={borderClass} />
           <div className="flex  flex-col items-start justify-start space-y-5 font-Neue lg:flex-row lg:items-center lg:justify-between">
             <div className="flex items-center justify-around space-x-3 text-[12px] leading-[20px] sm:space-x-6">
-              <p className="cursor-pointer hover:underline">DISCLAIMER</p>
+              <p className="cursor-pointer hover:underline">{t('page_title.disclaimer')}</p>
               <p>|</p>
-              <p className="cursor-pointer hover:underline">PRIVACY POLICY </p>
+              <p className="cursor-pointer hover:underline">{t('page_title.privacy_policy')}</p>
               <p>|</p>
               <LanguageSwitcher />
             </div>
             <div className="text-xs leading-[20px]">
-              <p>© Arta TechFin Corporation Limited. All rights reserved.</p>
+              <p>{t('footer.copyright')}</p>
             </div>
           </div>
         </div>

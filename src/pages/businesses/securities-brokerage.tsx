@@ -1,4 +1,5 @@
 import type { GetServerSideProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import PageSecurities from 'src/components/PageBusinesses/PageSecurities'
 import ourBusinessSecurityJson from 'apidata/our-business-securities-brokerage.json'
 
@@ -33,6 +34,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     props: {
       t: massageData(pageData, locale),
       locale,
+      ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }
 }

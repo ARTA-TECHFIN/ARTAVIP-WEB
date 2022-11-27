@@ -1,3 +1,4 @@
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { getMediaCms, getMediaCmsT, getSlug } from 'src/domains/media'
 import { MediaLayout, MediaTab, MediaTABS } from 'src/components/PageMedia/Layout'
 import Link from 'next/link'

@@ -5,7 +5,7 @@ export const links = {
   aboutCulture: '/about#culture',
   aboutLeadership: '/about#leadership',
   aboutTechFin: '/about#tech-fin',
-  businesses: '/businesses',
+  businessesAssetManagement: '/businesses/asset-management',
   businessesInvestmentBanking: '/businesses/investment-banking',
   businessesInsuranceBrokerage: '/businesses/insurance-brokerage',
   businessesSecuritiesBrokerage: '/businesses/securities-brokerage',

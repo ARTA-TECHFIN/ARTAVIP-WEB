@@ -1,6 +1,9 @@
 import type { GetServerSideProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import PageAbout from 'src/components/PageAbout/PageAbout'
 import aboutUsJson from 'apidata/about-us.json'
+
+import { useTranslation } from 'next-i18next';
 
 import leader_1 from 'src/components/PageAbout/images/leader_1.jpg'
 import eco_icon1 from 'src/components/PageAbout/images/eco_icon1.png'
@@ -88,7 +91,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   return {
     props: {
-      t: massageData(pageData, locale),
+      k: massageData(pageData, locale),
+      ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }
 }

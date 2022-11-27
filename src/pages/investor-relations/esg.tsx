@@ -1,4 +1,5 @@
 import type { GetServerSideProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import InvestorLayout, { TABS } from 'src/components/PageInvestor/InvestorLayout'
 import PageEsg from 'src/components/PageInvestor/PageEsg'
 import { getReportCms, reportCmsT } from 'src/domains/investor'
@@ -48,6 +49,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       t: massageData(pageData, locale),
       locale,
       cms: massageData(pageData, locale),
+      ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }
 }

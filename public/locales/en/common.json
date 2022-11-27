@@ -1,3 +1,41 @@
 {
-  "site_title": "Arta Web"
+  "site_title": "Arta Web",
+  "page_title": {
+    "about_us": "About Us",
+    "our_businesses": "Our Businesses",
+    "investor_relations": "Investor Relations",
+    "media_centre": "Media Centre",
+    "join_us": "Join Us",
+    "contact_us": "Contact Us",
+    "disclaimer": "Disclaimer",
+    "privacy_policy": "Privacy Policy",
+    "asset_management": "Asset Management",
+    "investment_banking": "Investment Banking",
+    "insurance_brokerage": "Insurance Brokerage",
+    "global_markets": "Global Markets",
+    "artazine": "Artazine Web3 Media"
+  },
+  "footer": {
+    "address": "Address",
+    "contact_us": "Contact Us",
+    "social_media": "Social Media",
+    "tel": "Tel",
+    "fax": "Fax",
+    "email": "Email",
+    "tagline": "Break Barriers for Greatness",
+    "copyright": "© Arta TechFin Corporation Limited. All rights reserved."
+  },
+  "home": {
+    "explore_more": "Explore More",
+    "learn_more": "Learn More",
+    "show_more": "Show More"
+  },
+  "about_us": {
+    "vision_mission": "Vision & Mission",
+    "culture_values": "Culture & Values",
+    "leadership": "Leadership",
+    "what_is_techfin": "What is TechFin",
+    "our_ecosystem": "Our Ecosystem",
+    "techfin_vs_fintech": "TechFin vs FinTech"
+  }
 }

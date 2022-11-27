@@ -9,12 +9,12 @@ import { Slides } from 'src/components/PageHome/PageHome'
 import { Seo } from 'src/components/Seo'
 
 const Home: NextPage = () => {
-  const { t, i18n } = useTranslation('common')
+  const { t } = useTranslation('common')
   // console.log(t)
   // console.log(i18n)
   return (
     <>
-      <Seo title={t('site_title', { ns: 'common' })} />
+      <Seo title={t('site_title')} />
       <Header fontSize={'1em'} />
       <main>
         <Slides />

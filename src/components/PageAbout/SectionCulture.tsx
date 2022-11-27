@@ -8,8 +8,8 @@ import { gsap } from 'gsap'
 import { FadeUp } from 'src/components/FadeUp'
 import { PageAboutCmsT } from 'src/pages/about'
 
-export const SectionCulture = (props: { t: PageAboutCmsT }) => {
-  const { t } = props
+export const SectionCulture = (props: { k: PageAboutCmsT }) => {
+  const { k } = props
 
   const [selectedIndex, _setSelectedIndex] = useState(0)
   const setSelectedIndex = (index: number) => {
@@ -27,16 +27,16 @@ export const SectionCulture = (props: { t: PageAboutCmsT }) => {
         <div className="mb-12 flex flex-col justify-center">
           <FadeUp>
             <>
-              <h2 className={`${textClass.h2_style2} mb-2`}>{t.culture.title}</h2>
-              <p className={textClass.body_regular}>{t.culture.subtitle1}</p>
+              <h2 className={`${textClass.h2_style2} mb-2`}>{k.culture.title}</h2>
+              <p className={textClass.body_regular}>{k.culture.subtitle1}</p>
             </>
           </FadeUp>
         </div>
         <div className="md:pl-8">
-          <h3 className={textClass.h3_style2}>{t.culture.sectionTitle}</h3>
+          <h3 className={textClass.h3_style2}>{k.culture.sectionTitle}</h3>
           <Hr />
           <ul>
-            {t.culture.valueList.map((value, index) => {
+            {k.culture.valueList.map((value, index) => {
               const isSelected = index === selectedIndex
               return (
                 <li key={index} className="group/list mb-8 flex flex-col overflow-hidden">

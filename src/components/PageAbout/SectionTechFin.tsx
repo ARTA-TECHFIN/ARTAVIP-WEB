@@ -10,8 +10,8 @@ import TechFin from '../PageHome/techFin'
 import { IconTechnologyInternetCompanies } from '../Svg/Icon'
 import { PageAboutCmsT } from 'src/pages/about'
 
-export const SectionTechFin = (props: { t: PageAboutCmsT }) => {
-  const { t } = props
+export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
+  const { k } = props
   const [selectedIndex, setSelectedIndex] = useState(2)
 
   return (
@@ -21,12 +21,12 @@ export const SectionTechFin = (props: { t: PageAboutCmsT }) => {
       </div>
 
       <ModuleTextColList
-        header={t.techFin.title}
+        header={k.techFin.title}
         headerPosition="left"
-        title={t.techFin.subtitle}
+        title={k.techFin.subtitle}
         list={[
-          { title: t.techFin.section1Title, body: t.techFin.section1Body },
-          { title: t.techFin.section2Title, body: t.techFin.section2Body },
+          { title: k.techFin.section1Title, body: k.techFin.section1Body },
+          { title: k.techFin.section2Title, body: k.techFin.section2Body },
         ]}
       />
 
@@ -35,13 +35,13 @@ export const SectionTechFin = (props: { t: PageAboutCmsT }) => {
         <div className="mb-12 max-w-3xl text-center">
           <FadeUp>
             <>
-              <h3 className={textClass.h3_style2}>{t.ecosystem.title}</h3>
-              <p className={textClass.body_regular}>{t.ecosystem.subtitle}</p>
+              <h3 className={textClass.h3_style2}>{k.ecosystem.title}</h3>
+              <p className={textClass.body_regular}>{k.ecosystem.subtitle}</p>
             </>
           </FadeUp>
         </div>
         <div className="relative h-96 w-full max-w-full overflow-hidden">
-          {t.ecosystem.itemList.map((item, index) => {
+          {k.ecosystem.itemList.map((item, index) => {
             const isSelected = index === selectedIndex
             const styledIndex = (index - selectedIndex + 7) % 5
 
@@ -81,7 +81,7 @@ export const SectionTechFin = (props: { t: PageAboutCmsT }) => {
             className="absolute bottom-4 left-1/2 translate-x-[-350%]"
             onClick={() =>
               setSelectedIndex((s) =>
-                !t.ecosystem.itemList[s - 1] ? t.ecosystem.itemList.length - 1 : s - 1
+                !k.ecosystem.itemList[s - 1] ? k.ecosystem.itemList.length - 1 : s - 1
               )
             }
           >
@@ -89,7 +89,7 @@ export const SectionTechFin = (props: { t: PageAboutCmsT }) => {
           </button>
           <button
             className="absolute bottom-4 left-1/2 translate-x-[250%]"
-            onClick={() => setSelectedIndex((s) => (!t.ecosystem.itemList[s + 1] ? 0 : s + 1))}
+            onClick={() => setSelectedIndex((s) => (!k.ecosystem.itemList[s + 1] ? 0 : s + 1))}
           >
             <IconArrowRight fill="#593725" />
           </button>

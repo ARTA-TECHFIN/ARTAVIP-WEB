@@ -1,3 +1,41 @@
 {
-  "site_title": "Arta 網站"
+  "site_title": "Arta 網站",
+  "page_title": {
+    "about_us": "關於我們",
+    "our_businesses": "公司業務",
+    "investor_relations": "投資者關係",
+    "media_centre": "媒體中心",
+    "join_us": "加入我們",
+    "contact_us": "聯絡我們",
+    "disclaimer": "免責聲明",
+    "privacy_policy": "私隱政策聲明",
+    "asset_management": "資產管理",
+    "investment_banking": "投資銀行",
+    "insurance_brokerage": "保險經紀",
+    "global_markets": "環球市場",
+    "artazine": "Artazine Web3媒體平台"
+  },
+  "footer": {
+    "address": "地址",
+    "contact_us": "聯絡我們",
+    "social_media": "社交媒體",
+    "tel": "電話",
+    "fax": "傳真",
+    "email": "電郵",
+    "tagline": "打破壁壘，成就輝煌",
+    "copyright": "© 裕承科金有限公司。版權所有。"
+  },
+  "home": {
+    "explore_more": "探索更多",
+    "learn_more": "探索更多",
+    "show_more": "探索更多"
+  },
+  "about_us": {
+    "vision_mission": "願景及使命",
+    "culture_values": "文化價值觀",
+    "leadership": "管理團隊",
+    "what_is_techfin": "什麼是科技金融？",
+    "our_ecosystem": "商業生態系統",
+    "techfin_vs_fintech": "科技金融 VS 金融科技"
+  }
 }

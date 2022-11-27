@@ -4,8 +4,8 @@ import mission_bg from './images/mission_bg.png'
 import { textClass } from 'src/components/Text'
 import { PageAboutCmsT } from 'src/pages/about'
 
-export const SectionMission = (props: { t: PageAboutCmsT }) => {
-  const { t } = props
+export const SectionMission = (props: { k: PageAboutCmsT }) => {
+  const { k } = props
 
   const videoRef = useRef<any>(null)
   const [isPlaying, setIsPlaying] = useState(false)
@@ -28,13 +28,13 @@ export const SectionMission = (props: { t: PageAboutCmsT }) => {
       </div>
       <div className="arta-container relative mx-auto flex flex-col items-center justify-center py-16 md:py-36">
         <h2 className={`${textClass.title_style2} mb-4 text-center text-arta-eggshell-100`}>
-          {t.mission.title}
+          {k.mission.title}
         </h2>
         <span className={`${textClass.h2_style2} text-arta-snow-100 md:-translate-x-24`}>
-          {t.mission.subtitle1}
+          {k.mission.subtitle1}
         </span>
         <span className={`${textClass.h2_style2} mb-12 text-arta-snow-100 md:translate-x-24`}>
-          {t.mission.subtitle2}
+          {k.mission.subtitle2}
         </span>
 
         <div className="relative transition hover:brightness-90">

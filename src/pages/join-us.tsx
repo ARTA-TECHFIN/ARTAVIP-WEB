@@ -1,4 +1,5 @@
 import type { GetServerSideProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import JoinUsLayout from 'src/components/PageJoinUs/JoinUsLayout'
 import joinUsJson from 'apidata/join-us.json'
 
@@ -47,6 +48,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     props: {
       t: massageData(pageData, locale),
       cms,
+      ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }
 }

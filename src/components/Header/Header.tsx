@@ -10,6 +10,7 @@ import ArtaLogo from 'src/components/Svg/arta-logo'
 import { links } from 'src/domains/links'
 import { ButtonAnimated } from '../ButtonAnimated'
 import cn from 'classnames'
+import { useTranslation } from 'next-i18next';
 
 type menuItemT = {
   title: string
@@ -25,83 +26,10 @@ type pageInfoItemT = {
   pages: menuItemT[]
 }
 
-const pageInfoList: pageInfoItemT[] = [
-  {
-    pageName: 'About Us',
-    title: 'About Us',
-    paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
-    buttonText: 'About Us home',
-    href: links.about,
-    pages: [
-      { title: 'Vision and Mission', link: links.aboutVision },
-      { title: 'Culture and Values', link: links.aboutCulture },
-      { title: 'Leadership', link: links.aboutLeadership },
-      { title: 'What is TechFin', link: links.aboutTechFin },
-    ],
-  },
-  {
-    pageName: 'Our Businesses',
-    title: 'Our Businesses',
-    paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
-    buttonText: '',
-    href: '',
-    pages: [
-      { title: 'Asset Management', link: links.businesses },
-      { title: 'Investment Banking', link: links.businessesInvestmentBanking },
-      { title: 'Insurance Brokerage', link: links.businessesInsuranceBrokerage },
-      { title: 'Securities Brokerage', link: links.businessesSecuritiesBrokerage },
-      { title: 'Artazine Web3 Media', link: links.businessesWeb3 },
-    ],
-  },
-  {
-    pageName: 'Investor Relations',
-    title: 'Investor Relations',
-    paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
-    buttonText: 'Investor Relations',
-    href: links.investor,
-    pages: [
-      { title: 'Announcements and notices', link: links.investor },
-      { title: 'Financial Reports', link: links.investorResultAnnouncements },
-      { title: 'Financial Calender', link: links.investorFinCalendar },
-      { title: 'ESG', link: links.investorEsg },
-    ],
-  },
-  {
-    pageName: 'Media Centre',
-    title: 'Media Centre',
-    paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
-    buttonText: 'Media Centre home',
-    href: links.media,
-    pages: [
-      { title: 'ARTA Blog', link: links.media },
-      { title: 'Press Release', link: links.media },
-    ],
-  },
-  {
-    pageName: 'Join Us',
-    title: 'Join Us',
-    paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
-    buttonText: 'Contact Us home',
-    href: links.joinUs,
-    pages: [
-      { title: 'Work with ARTA', link: `${links.joinUs}#work-with-arta` },
-      { title: 'Our Value', link: `${links.joinUs}#our-value` },
-      { title: 'ARTA Cares', link: `${links.joinUs}#arta-care` },
-      { title: 'Job Openings', link: `${links.joinUs}#job-opening` },
-    ],
-  },
-  {
-    pageName: 'Contact Us',
-    title: 'Contact Us',
-    paragraph: ``,
-    buttonText: '',
-    href: links.contact,
-    pages: [],
-  },
-]
-
 const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (props) => {
   const { textColor = 'white', fontSize = '16px' } = props
+  const { t } = useTranslation('common')
+
   const textColorClass = textColor === 'white' ? 'text-arta-snow-100' : 'text-arta-russet-100'
   const bgColorClass = textColor === 'white' ? 'bg-arta-russet-100/90' : 'bg-arta-snow-100/95'
   const borderColorClass = textColor === 'white' ? 'border-arta-snow-100' : 'border-arta-russet-100'
@@ -110,6 +38,81 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
   const [showMenu, setShowMenu] = useState(false)
   const [navbarBg, setNavbarBg] = useState(false)
   const [activeMobileNavItem, setActiveMobileNavItem] = useState(-1)
+
+  const pageInfoList: pageInfoItemT[] = [
+    {
+      pageName: t('page_title.about_us'),
+      title: t('page_title.about_us'),
+      paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
+      buttonText: t('page_title.about_us'),
+      href: links.about,
+      pages: [
+        { title: t('about_us.vision_mission'), link: links.aboutVision },
+        { title: t('about_us.culture_values'), link: links.aboutCulture },
+        { title: t('about_us.leadership'), link: links.aboutLeadership },
+        { title: t('about_us.what_is_techfin'), link: links.aboutTechFin },
+      ],
+    },
+    {
+      pageName: t('page_title.our_businesses'),
+      title: t('page_title.our_businesses'),
+      paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
+      buttonText: '',
+      href: '',
+      pages: [
+        { title: t('page_title.asset_management'), link: links.businessesAssetManagement },
+        { title: t('page_title.investment_banking'), link: links.businessesInvestmentBanking },
+        { title: t('page_title.insurance_brokerage'), link: links.businessesInsuranceBrokerage },
+        { title: t('page_title.global_markets'), link: links.businessesSecuritiesBrokerage },
+        { title: t('page_title.artazine'), link: links.businessesWeb3 },
+      ],
+    },
+    {
+      pageName: t('page_title.investor_relations'),
+      title: t('page_title.investor_relations'),
+      paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
+      buttonText: t('page_title.investor_relations'),
+      href: links.investor,
+      pages: [
+        { title: 'Announcements and notices', link: links.investorAnnouncementsNotices },
+        { title: 'Financial Reports', link: links.investorResultAnnouncements },
+        { title: 'Financial Calender', link: links.investorFinCalendar },
+        { title: 'ESG', link: links.investorEsg },
+      ],
+    },
+    {
+      pageName: t('page_title.media_centre'),
+      title: t('page_title.media_centre'),
+      paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
+      buttonText: 'Media Centre home',
+      href: links.media,
+      pages: [
+        { title: 'ARTA Blog', link: links.media },
+        { title: 'Press Release', link: links.media },
+      ],
+    },
+    {
+      pageName: t('page_title.join_us'),
+      title: t('page_title.join_us'),
+      paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
+      buttonText: 'Join Us home',
+      href: links.joinUs,
+      pages: [
+        { title: 'Work with ARTA', link: `${links.joinUs}#work-with-arta` },
+        { title: 'Our Value', link: `${links.joinUs}#our-value` },
+        { title: 'ARTA Cares', link: `${links.joinUs}#arta-care` },
+        { title: 'Job Openings', link: `${links.joinUs}#job-opening` },
+      ],
+    },
+    {
+      pageName: t('page_title.contact_us'),
+      title: t('page_title.contact_us'),
+      paragraph: ``,
+      buttonText: '',
+      href: links.contact,
+      pages: [],
+    },
+  ]
 
   const DEFAULT_TAB_INDEX = -1
   const [activeTabIndex, _setActiveTabIndex] = useState(DEFAULT_TAB_INDEX)

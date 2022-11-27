@@ -13,7 +13,9 @@
     "investment_banking": "Investment Banking",
     "insurance_brokerage": "Insurance Brokerage",
     "global_markets": "Global Markets",
-    "artazine": "Artazine Web3 Media"
+    "artazine": "Artazine Web3 Media",
+    "arta_blog": "Arta Blog",
+    "press_release": "Press Release"
   },
   "footer": {
     "address": "Address",
@@ -37,5 +39,11 @@
     "what_is_techfin": "What is TechFin",
     "our_ecosystem": "Our Ecosystem",
     "techfin_vs_fintech": "TechFin vs FinTech"
+  },
+  "join_us": {
+    "work_with_arta": "Work with ARTA",
+    "our_values": "Our Values",
+    "arta_cares": "ARTA Cares",
+    "job_openings": "Job Openings"
   }
 }

@@ -87,8 +87,8 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
       buttonText: 'Media Centre home',
       href: links.media,
       pages: [
-        { title: 'ARTA Blog', link: links.media },
-        { title: 'Press Release', link: links.media },
+        { title: t('page_title.arta_blog'), link: links.media },
+        { title: t('page_title.press_release'), link: links.media },
       ],
     },
     {
@@ -98,10 +98,10 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
       buttonText: 'Join Us home',
       href: links.joinUs,
       pages: [
-        { title: 'Work with ARTA', link: `${links.joinUs}#work-with-arta` },
-        { title: 'Our Value', link: `${links.joinUs}#our-value` },
-        { title: 'ARTA Cares', link: `${links.joinUs}#arta-care` },
-        { title: 'Job Openings', link: `${links.joinUs}#job-opening` },
+        { title: t('join_us.work_with_arta'), link: `${links.joinUs}#work-with-arta` },
+        { title: t('join_us.our_values'), link: `${links.joinUs}#our-value` },
+        { title: t('join_us.arta_cares'), link: `${links.joinUs}#arta-care` },
+        { title: t('join_us.job_openings'), link: `${links.joinUs}#job-opening` },
       ],
     },
     {

@@ -8,20 +8,24 @@ import { HeroBanner } from '../HeroBanner'
 import Enquiry from './Enquiry'
 import { EnquiryForm } from './EnquiryForm'
 
-const PageContactPage: FC<{ t: any, locale: string }> = ({ t, locale }) => {
+import { useTranslation } from 'next-i18next';
+
+const PageContactPage: FC<{ k: any, locale: string }> = ({ k, locale }) => {
+  const { t } = useTranslation('common')
+
   return (
     <>
       <Seo />
       <Header textColor="brown" />
       <main className="flex flex-col text-arta-sand-100">
         <HeroBanner
-          title={t.heroBanner.title}
-          description={t.heroBanner.description}
-          image={t.heroBanner.image}
-          mobileImage={t.heroBanner.mobileImage}
+          title={t('page_title.contact_us')}
+          description={k.heroBanner.description}
+          image={k.heroBanner.image}
+          mobileImage={k.heroBanner.mobileImage}
         />
         <div className="overflow-hidden bg-arta-eggshell-100">
-          <Enquiry t={t} />
+          <Enquiry t={k} />
         </div>
         <EnquiryForm />
       </main>

@@ -13,7 +13,9 @@
     "investment_banking": "投資銀行",
     "insurance_brokerage": "保險經紀",
     "global_markets": "環球市場",
-    "artazine": "Artazine Web3媒體平台"
+    "artazine": "Artazine Web3媒體平台",
+    "arta_blog": "公司網誌",
+    "press_release": "新聞稿"
   },
   "footer": {
     "address": "地址",
@@ -37,5 +39,11 @@
     "what_is_techfin": "什麼是科技金融？",
     "our_ecosystem": "商業生態系統",
     "techfin_vs_fintech": "科技金融 VS 金融科技"
+  },
+  "join_us": {
+    "work_with_arta": "在这里工作",
+    "our_values": "我们的价值观",
+    "arta_cares": "关怀与融合",
+    "job_openings": "职位空缺"
   }
 }

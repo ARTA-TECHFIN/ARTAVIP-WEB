@@ -1,13 +1,19 @@
+import type { GetServerSideProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import InvestorLayout, { TABS } from 'src/components/PageInvestor/InvestorLayout'
 import PageFinancialCalendar from 'src/components/PageInvestor/PageFinancialCalendar'
 import { getReportCms, reportCmsT } from 'src/domains/investor'
 
 // Add get report here if seo is needed
-export const getStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { locale } = context
   const cms = await getReportCms({ lang: 'en' })
 
   return {
-    props: { cms },
+    props: {
+      cms,
+      ...(await serverSideTranslations(locale || 'en', ['common'])),
+    },
   }
 }
 

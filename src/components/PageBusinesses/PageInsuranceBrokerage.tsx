@@ -7,7 +7,7 @@ import { HeroBanner } from '../HeroBanner'
 import BusinessPageModules from '../BusinessPageModules'
 import { useTranslation } from 'next-i18next'
 
-const PageInvestmentBanking: FC<{ k: any, locale: string }> = ({ k, locale }) => {
+const PageInsuranceBrokerage: FC<{ k: any, locale: string }> = ({ k, locale }) => {
   const { t } = useTranslation('common')
 
   return (
@@ -16,7 +16,7 @@ const PageInvestmentBanking: FC<{ k: any, locale: string }> = ({ k, locale }) =>
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
-          title={t("page_title.investment_banking")}
+          title={t("page_title.our_businesses")}
           description={k.heroBanner.description}
           image={k.heroBanner.image}
           mobileImage={k.heroBanner.mobileImage}
@@ -29,4 +29,4 @@ const PageInvestmentBanking: FC<{ k: any, locale: string }> = ({ k, locale }) =>
   )
 }
 
-export default PageInvestmentBanking
+export default PageInsuranceBrokerage

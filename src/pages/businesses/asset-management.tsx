@@ -32,7 +32,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   return {
     props: {
-      t: massageData(pageData, locale),
+      k: massageData(pageData, locale),
       locale,
       ...(await serverSideTranslations(locale || 'en', ['common'])),
     },

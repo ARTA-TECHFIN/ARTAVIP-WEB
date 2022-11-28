@@ -45,5 +45,14 @@
     "our_values": "我们的价值观",
     "arta_cares": "关怀与融合",
     "job_openings": "职位空缺"
+  },
+  "investor_relations": {
+    "announcements_notices": "公示及報告",
+    "corporate_information": "公司資料",
+    "financial_calendar": "財務日誌",
+    "esg": "可持續發展",
+    "environmental": "環境",
+    "social": "社會",
+    "governance": "管治"
   }
 }

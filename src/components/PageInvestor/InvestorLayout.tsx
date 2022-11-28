@@ -8,45 +8,48 @@ import { FC } from 'react'
 import { TabBar } from '../TabBar'
 import { links } from 'src/domains/links'
 import Router from 'next/router'
+import { useTranslation } from 'next-i18next'
 
 const TABS = {
   announcement: 'announcement',
-  financial_report: 'financial_report',
+  corporate_information: 'corporate_information',
   financial_calendar: 'financial_calendar',
   esg: 'esg',
 } as const
 
 type tabsT = keyof typeof TABS
 
-const tabInfoMap = {
-  [TABS.announcement]: { title: 'Announcements & Notices', link: links.investor },
-  [TABS.financial_report]: { title: 'Corporate Information', link: links.investorResultAnnouncements },
-  [TABS.financial_calendar]: { title: 'Financial Calendar', link: links.investorFinCalendar },
-  [TABS.esg]: { title: 'ESG', link: links.investorEsg },
-}
-
-const tabList = Object.values(tabInfoMap)
-
 type propsT = {
-  cms: reportCmsT
+  k: any
+  cms?: reportCmsT
   tabType: tabsT
   hideTab?: boolean
   children: React.ReactNode
 }
 
-const InvestorLayout: FC<propsT> = ({ cms, tabType, hideTab = false, children }) => {
+const InvestorLayout: FC<propsT> = ({ k, cms, tabType, hideTab = false, children }) => {
+  const { t } = useTranslation('common')
+  const tabInfoMap = {
+    [TABS.announcement]: { title: t("investor_relations.announcements_notices"), link: links.investor },
+    [TABS.corporate_information]: { title: t("investor_relations.corporate_information"), link: links.investorCorporateInformation },
+    [TABS.financial_calendar]: { title: t("investor_relations.financial_calendar"), link: links.investorFinCalendar },
+    [TABS.esg]: { title: t("investor_relations.esg"), link: links.investorEsg },
+  }
+  const tabList = Object.values(tabInfoMap)
+
   const tabInfo = tabInfoMap[tabType]
+
   return (
     <>
       <Seo />
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
-          title={cms.heroBanner.title}
-          description={cms.heroBanner.description}
-          image={cms.heroBanner.image}
-          mobileImage={cms.heroBanner.mobileImage}
-          label={cms.heroBanner.label}
+          title={t("page_title.investor_relations")}
+          description={k.heroBanner.description}
+          image={k.heroBanner.image}
+          mobileImage={k.heroBanner.mobileImage}
+          label={k.heroBanner.label}
         />
         <div className="bg-arta-eggshell-100 pt-12 pb-6 md:pt-16 md:pb-[206px]">
           <div className="arta-container mx-auto">

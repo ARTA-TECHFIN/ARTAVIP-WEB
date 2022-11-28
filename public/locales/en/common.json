@@ -45,5 +45,14 @@
     "our_values": "Our Values",
     "arta_cares": "ARTA Cares",
     "job_openings": "Job Openings"
+  },
+  "investor_relations": {
+    "announcements_notices": "Announcements & Notices",
+    "corporate_information": "Corporate Information",
+    "financial_calendar": "Financial Canlendar",
+    "esg": "ESG",
+    "environmental": "Environmental",
+    "social": "Social",
+    "governance": "Governance"
   }
 }

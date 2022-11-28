@@ -74,10 +74,10 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
       buttonText: t('page_title.investor_relations'),
       href: links.investor,
       pages: [
-        { title: 'Announcements and notices', link: links.investorAnnouncementsNotices },
-        { title: 'Financial Reports', link: links.investorResultAnnouncements },
-        { title: 'Financial Calender', link: links.investorFinCalendar },
-        { title: 'ESG', link: links.investorEsg },
+        { title: t("investor_relations.announcements_notices"), link: links.investor },
+        { title: t("investor_relations.corporate_information"), link: links.investorCorporateInformation },
+        { title: t("investor_relations.financial_calendar"), link: links.investorFinCalendar },
+        { title: t("investor_relations.esg"), link: links.investorEsg },
       ],
     },
     {

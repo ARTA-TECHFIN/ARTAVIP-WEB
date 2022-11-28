@@ -1,7 +1,7 @@
 import type { GetServerSideProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import InvestorLayout, { TABS } from 'src/components/PageInvestor/InvestorLayout'
-import PageInvestorRelations from 'src/components/PageInvestor/PageInvestorRelations'
+import PageCorporateInformation from 'src/components/PageInvestor/PageCorporateInformation'
 import investorRelationJson from 'apidata/investor-relation.json'
 
 const fetchCmsData = async () => {
@@ -40,8 +40,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 const InvestorPage = (props: { k: any }) => {
   return (
-    <InvestorLayout k={props.k} tabType={TABS.announcement}>
-      <PageInvestorRelations />
+    <InvestorLayout k={props.k} tabType={TABS.corporate_information}>
+      <PageCorporateInformation k={props.k} />
     </InvestorLayout>
   )
 }

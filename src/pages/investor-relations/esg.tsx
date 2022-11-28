@@ -29,26 +29,24 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
   }
 }
 
-const InvestorPage = (props: { cms: reportCmsT, t:any, locale: string }) => {
+const InvestorPage = (props: { k:any, locale: string }) => {
   return (
-    <InvestorLayout cms={props.cms} tabType={TABS.esg}>
-      <PageEsg t={props.t} locale={props.locale} />
+    <InvestorLayout k={props.k} tabType={TABS.esg}>
+      <PageEsg k={props.k} locale={props.locale} />
     </InvestorLayout>
   )
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { locale } = context
-  const cms = await getReportCms({ lang: 'en' })
   const useLocalCms = process.env.USE_LOCAL_CMS_DATA === 'true'
 
   const pageData = useLocalCms ? investorRelationJson : await fetchCmsData()
 
   return {
     props: {
-      t: massageData(pageData, locale),
+      k: massageData(pageData, locale),
       locale,
-      cms: massageData(pageData, locale),
       ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }

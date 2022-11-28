@@ -3,30 +3,44 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import InvestorLayout, { TABS } from 'src/components/PageInvestor/InvestorLayout'
 import PageResultAnnouncements from 'src/components/PageInvestor/PageResultAnnouncements'
 import { reportCmsT } from 'src/domains/investor'
+import investorRelationJson from 'apidata/investor-relation.json'
+
+const fetchCmsData = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/investor-relation`)
+  const data = await res.json()
+  return data
+}
+
+const massageData = (pageData: any, locale: string | undefined = 'en') => {
+  const g = (keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
+
+  return {
+    heroBanner: {
+      description: g('description') !== null ? g('description') : '',
+      image: '/images/asset-management/banner.png',
+      mobileImage: '/images/asset-management/mobile-banner.png',
+      label: '',
+    },
+  }
+}
 
 // Add get report here if seo is needed
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { locale } = context
+  const useLocalCms = process.env.USE_LOCAL_CMS_DATA === 'true'
+  const pageData = useLocalCms ? investorRelationJson : await fetchCmsData()
 
   return {
     props: {
-      cms: {
-        heroBanner: {
-          title: 'Results Announcement',
-          description: `Investor Relataion`,
-          image: '/images/investor-relations/banner.png',
-          mobileImage: '/images/investor-relations/mobile-banner.png',
-          label: '',
-        }
-      },
+      k: massageData(pageData, locale),
       ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }
 }
 
-const InvestorPage = (props: { cms: reportCmsT }) => {
+const InvestorPage = (props: { k: any, cms: reportCmsT }) => {
   return (
-    <InvestorLayout cms={props.cms} tabType={TABS.financial_report} hideTab={true}>
+    <InvestorLayout k={props.k} tabType={TABS.corporate_information} hideTab={true}>
       <PageResultAnnouncements />
     </InvestorLayout>
   )

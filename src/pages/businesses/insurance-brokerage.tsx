@@ -1,6 +1,6 @@
 import type { GetServerSideProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import PageBusinessesPage from 'src/components/PageBusinesses/PageBusinesses'
+import PageInsuranceBrokeragePage from 'src/components/PageBusinesses/PageInsuranceBrokerage'
 import ourBusinessInsuranceBrokerageJson from 'apidata/our-business-insurance-brokerage.json'
 
 const fetchCmsData = async () => {
@@ -32,11 +32,11 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   return {
     props: {
-      t: massageData(pageData, locale),
+      k: massageData(pageData, locale),
       locale,
       ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }
 }
 
-export default PageBusinessesPage
+export default PageInsuranceBrokeragePage

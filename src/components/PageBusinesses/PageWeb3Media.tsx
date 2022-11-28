@@ -6,6 +6,7 @@ import { Seo } from 'src/components/Seo'
 import { HeroBanner } from '../HeroBanner'
 import { ModuleTextColList } from '../ModuleTextColList'
 import BusinessPageModules from '../BusinessPageModules'
+import { useTranslation } from 'next-i18next'
 
 const cms = {
   heroBanner: {
@@ -38,18 +39,20 @@ const cms = {
   },
 }
 
-const PageWeb3Media: FC<{ t: any, locale: string }> = ({ t, locale }) => {
+const PageWeb3Media: FC<{ k: any, locale: string }> = ({ k, locale }) => {
+  const { t } = useTranslation('common')
+
   return (
     <>
       <Seo />
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
-          title={t.heroBanner.title}
-          description={t.heroBanner.description}
-          image={t.heroBanner.image}
-          mobileImage={t.heroBanner.mobileImage}
-          label={t.heroBanner.label}
+          title={t("page_title.artazine")}
+          description={k.heroBanner.description}
+          image={k.heroBanner.image}
+          mobileImage={k.heroBanner.mobileImage}
+          label={t("page_title.our_businesses")}
         />
         <div className="overflow-hidden bg-arta-eggshell-100">
           <ModuleTextColList
@@ -59,7 +62,7 @@ const PageWeb3Media: FC<{ t: any, locale: string }> = ({ t, locale }) => {
             list={cms.section1.list}
           />
         </div>
-        <BusinessPageModules locale={locale} components={t.components} />
+        <BusinessPageModules locale={locale} components={k.components} />
       </main>
       <Footer textColor="brown" />
     </>

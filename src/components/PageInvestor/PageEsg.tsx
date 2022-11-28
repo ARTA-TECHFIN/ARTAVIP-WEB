@@ -5,18 +5,20 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin'
 import { useEffect, useRef } from 'react'
 import { IconListItemArrow, TopDownArrow, DownTopArrow } from '../Svg/Icon'
+import { useTranslation } from 'next-i18next'
 
 gsap.registerPlugin(ScrollToPlugin)
 
-const PageEsg: FC<{ t: any, locale: string }> = ({ t, locale }) => {
+const PageEsg: FC<{ k: any, locale: string }> = ({ k, locale }) => {
   const nav = useRef<HTMLUListElement>(null)
   const sections = useRef(null)
+  const { t } = useTranslation('common')
 
   console.log(t)
 
   const goToSection = (index: number) => () => {
     const esgSections = document.querySelectorAll('.esg-section')
-    gsap.to(window, { duration: 1, scrollTo: { y: esgSections[index], offsetY: 130 } })
+    gsap.to(window, { duration: 0.7, scrollTo: { y: esgSections[index], offsetY: 130 } })
   }
 
   useEffect(() => {
@@ -72,7 +74,7 @@ const PageEsg: FC<{ t: any, locale: string }> = ({ t, locale }) => {
     setActive(0)
   }, [])
 
-  const navList = ['Environmental', 'Social', 'Governance']
+  const navList = [t('investor_relations.environmental'), t('investor_relations.social'), t('investor_relations.governance')]
 
   return (
     <div className="grid grid-cols-12 gap-x-5 pt-16">
@@ -90,18 +92,18 @@ const PageEsg: FC<{ t: any, locale: string }> = ({ t, locale }) => {
       </ul>
       <div className="md:col-span-9 col-span-full" ref={sections}>
         <div id="environmental" className="esg-section">
-          <h2 className={`${textClass.h3_style2}`}>{`Environmental`}</h2>
-          <div className={`module-etg-text-section ${textClass.body_regular_verah}`} dangerouslySetInnerHTML={{__html: t.esg_environmental}}></div>
+          <h2 className={`${textClass.h3_style2}`}>{t('investor_relations.environmental')}</h2>
+          <div className={`module-etg-text-section ${textClass.body_regular_verah}`} dangerouslySetInnerHTML={{__html: k.esg_environmental}}></div>
         </div>
 
         <div id="social" className="esg-section md:pt-16 pt-12">
-          <h2 className={`${textClass.h3_style2}`}>{`Social`}</h2>
-          <div className={`module-etg-text-section ${textClass.body_regular_verah}`} dangerouslySetInnerHTML={{__html: t.esg_social}}></div>
+          <h2 className={`${textClass.h3_style2}`}>{t('investor_relations.social')}</h2>
+          <div className={`module-etg-text-section ${textClass.body_regular_verah}`} dangerouslySetInnerHTML={{__html: k.esg_social}}></div>
         </div>
 
         <div id="Governance" className="esg-section md:pt-16 pt-12">
-          <h2 className={`${textClass.h3_style2}`}>{`Governance`}</h2>
-          <div className={`module-etg-text-section ${textClass.body_regular_verah}`} dangerouslySetInnerHTML={{__html: t.esg_governance_1}}></div>
+          <h2 className={`${textClass.h3_style2}`}>{t('investor_relations.governance')}</h2>
+          <div className={`module-etg-text-section ${textClass.body_regular_verah}`} dangerouslySetInnerHTML={{__html: k.esg_governance_1}}></div>
 
           <div className="arta-gradient-border relative mb-12 overflow-hidden">
             <div className="arta-gradient-border-inner"></div>
@@ -166,7 +168,7 @@ const PageEsg: FC<{ t: any, locale: string }> = ({ t, locale }) => {
             </div>
           </div>
 
-          <div className={`module-etg-text-section ${textClass.body_regular_verah}`} dangerouslySetInnerHTML={{__html: t.esg_governance_2}}></div>
+          <div className={`module-etg-text-section ${textClass.body_regular_verah}`} dangerouslySetInnerHTML={{__html: k.esg_governance_2}}></div>
         </div>
       </div>
     </div>

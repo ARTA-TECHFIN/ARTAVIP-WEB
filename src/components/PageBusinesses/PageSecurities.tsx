@@ -8,6 +8,7 @@ import { ModuleTextSection } from '../ModuleTextSection'
 import { ModuleTextColList } from '../ModuleTextColList'
 import { ModuleIconList } from '../ModuleIconList'
 import BusinessPageModules from '../BusinessPageModules'
+import { useTranslation } from 'next-i18next'
 
 const cms = {
   heroBanner: {
@@ -82,18 +83,20 @@ const cms = {
   },
 }
 
-const PageSecurities: FC<{ t: any, locale: string }> = ({ t, locale }) => {
+const PageSecurities: FC<{ k: any, locale: string }> = ({ k, locale }) => {
+  const { t } = useTranslation('common')
+
   return (
     <>
       <Seo />
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
-          title={t.heroBanner.title}
-          description={t.heroBanner.description}
-          image={t.heroBanner.image}
-          mobileImage={t.heroBanner.mobileImage}
-          label={t.heroBanner.label}
+          title={t("page_title.global_markets")}
+          description={k.heroBanner.description}
+          image={k.heroBanner.image}
+          mobileImage={k.heroBanner.mobileImage}
+          label={t("page_title.our_businesses")}
         />
         {/* Modules for preview */}
         <ModuleTextSection
@@ -116,7 +119,7 @@ const PageSecurities: FC<{ t: any, locale: string }> = ({ t, locale }) => {
           />
         </div>
 
-        <BusinessPageModules locale={locale} components={t.components} />
+        <BusinessPageModules locale={locale} components={k.components} />
       </main>
       <Footer textColor="brown" />
     </>

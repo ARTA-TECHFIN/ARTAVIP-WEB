@@ -54,5 +54,27 @@
     "environmental": "环境",
     "social": "社会",
     "governance": "管治"
+  },
+  "contact_us": {
+    "enquiry": "查询",
+    "headquarter": "总部",
+    "follow_us": "关注我们",
+    "media": "媒体查询",
+    "recruitment": "求职查询",
+    "investor_relations": "投资者关系",
+    "enquiry_form": "查询表格",
+    "category_question": "您想要查询哪一方面的相关信息？",
+    "select": "请选择",
+    "others": "其他",
+    "submit": "提交",
+    "name": "姓名",
+    "email_address": "邮箱",
+    "max_500_characters": "最多500个字符",
+    "company_name": "公司名称",
+    "job_title": "职位",
+    "contact_number": "电话",
+    "thanks_title": "感谢您的查询！",
+    "thanks_message": "我们已收到您的查询，将会尽快与您联络。",
+    "scan": "扫描二维码，关注我们！"
   }
 }

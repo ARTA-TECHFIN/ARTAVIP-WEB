@@ -1,7 +1,7 @@
 import type { GetServerSideProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { getMediaCms, getMediaCmsT, getSlug } from 'src/domains/media'
-import { MediaLayout, MediaTab, MediaTABS } from 'src/components/PageMedia/Layout'
+import { MediaLayout, MediaTABS } from 'src/components/PageMedia/Layout'
 import Link from 'next/link'
 import { links } from 'src/domains/links'
 import Image from 'next/image'

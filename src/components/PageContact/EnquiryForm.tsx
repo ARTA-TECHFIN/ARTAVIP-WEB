@@ -8,34 +8,7 @@ import { InputField } from '../InputField'
 import { InputText } from '../InputText'
 import { InputTextArea } from '../InputTextArea'
 import { textClass } from '../Text'
-
-const TOPIC_TYPES = {
-  default: '',
-  media: 'Media',
-  other: 'Other',
-}
-
-const topicOptions = [
-  { value: TOPIC_TYPES.default, label: 'Please select' },
-  { value: TOPIC_TYPES.media, label: 'Media' },
-  { value: TOPIC_TYPES.other, label: 'Other' },
-]
-
-const t = {
-  title: 'Enquiry Form',
-  question_topic: 'What are you going to enquire?',
-  question_name: 'Name',
-  question_company: 'Company Name',
-  question_jobTitle: 'Job Title',
-  question_email: 'Email Address',
-  question_phone: 'Contact Number',
-  question_message: 'Brief Introduction',
-  question_message_hints: 'Max. 500 characters',
-  question_submit: 'Submit',
-
-  success_title: 'Thank you!',
-  success_message: '(Dummy text) Thank you for your enquiry, we will contact you very soon.',
-}
+import { useTranslation } from 'next-i18next'
 
 interface FormValues {
   topic: string
@@ -45,6 +18,12 @@ interface FormValues {
   email: string
   phone: string
   message: string
+}
+
+const TOPIC_TYPES = {
+  default: '',
+  media: 'Media',
+  other: 'Other',
 }
 
 const useEnquiryForm = () => {
@@ -93,6 +72,35 @@ const useEnquiryForm = () => {
 
 const EnquiryForm = () => {
   const { register, errors, watch, onSubmit, submitStatus } = useEnquiryForm()
+  const { t } = useTranslation('common')
+
+  const TOPIC_TYPES = {
+    default: '',
+    media: 'Media',
+    other: 'Other',
+  }
+  
+  const topicOptions = [
+    { value: TOPIC_TYPES.default, label: t("contact_us.select") },
+    { value: TOPIC_TYPES.media, label: t("contact_us.media") },
+    { value: TOPIC_TYPES.other, label: t("contact_us.others") },
+  ]
+  
+  const r = {
+    title: t("contact_us.enquiry_form"),
+    question_topic: t("contact_us.category_question"),
+    question_name: t("contact_us.name"),
+    question_company: t("contact_us.company_name"),
+    question_jobTitle: t("contact_us.job_title"),
+    question_email: t("contact_us.email_address"),
+    question_phone: t("contact_us.contact_number"),
+    question_message: 'Brief Introduction',
+    question_message_hints: t("contact_us.max_500_characters"),
+    question_submit: t("contact_us.submit"),
+  
+    success_title: t("contact_us.thanks_title"),
+    success_message: t("contact_us.thanks_message"),
+  }
 
   const topic = watch('topic') || TOPIC_TYPES.default
   const isExpanded = topic !== TOPIC_TYPES.default
@@ -110,11 +118,11 @@ const EnquiryForm = () => {
         />
       </div>
       <div className="arta-container relative z-1 mx-auto py-12">
-        <h2 className={`${textClass.h2_style2} mb-8`}>{t.title}</h2>
+        <h2 className={`${textClass.h2_style2} mb-8`}>{r.title}</h2>
         {submitStatus.isSuccess ? (
           <div className="min-h-[220px] w-full max-w-[820px] flex-col gap-10 bg-arta-snow-100 p-6 shadow-2xl">
-            <h3 className={`${textClass.h6} mb-4`}>{t.success_title}</h3>
-            <p className={`${textClass.body_regular} mb-6`}>{t.success_message}</p>
+            <h3 className={`${textClass.h6} mb-4`}>{r.success_title}</h3>
+            <p className={`${textClass.body_regular} mb-6`}>{r.success_message}</p>
           </div>
         ) : (
           <form onSubmit={onSubmit}>
@@ -125,36 +133,36 @@ const EnquiryForm = () => {
                 (isExpanded ? ' md:max-h-[1000px]' : ' md:max-h-[200px]')
               }
             >
-              <InputField label={t.question_topic}>
+              <InputField label={r.question_topic}>
                 <InputDropdown options={topicOptions} {...register('topic')} />
               </InputField>
               {isExpanded && (
                 <>
                   <div />
-                  <InputField label={t.question_name} error={errors.name?.message}>
+                  <InputField label={r.question_name} error={errors.name?.message}>
                     <InputText {...register('name')} />
                   </InputField>
                   {isMediaTopic && (
                     <>
                       <div />
-                      <InputField label={t.question_company} error={errors.company?.message}>
+                      <InputField label={r.question_company} error={errors.company?.message}>
                         <InputText {...register('company')} />
                       </InputField>
-                      <InputField label={t.question_jobTitle} error={errors.jobTitle?.message}>
+                      <InputField label={r.question_jobTitle} error={errors.jobTitle?.message}>
                         <InputText {...register('jobTitle')} />
                       </InputField>
                     </>
                   )}
-                  <InputField label={t.question_email} error={errors.email?.message}>
+                  <InputField label={r.question_email} error={errors.email?.message}>
                     <InputText {...register('email')} />
                   </InputField>
                   {isMediaTopic && (
-                    <InputField label={t.question_phone} error={errors.phone?.message}>
+                    <InputField label={r.question_phone} error={errors.phone?.message}>
                       <InputText {...register('phone')} />
                     </InputField>
                   )}
                   <InputField
-                    label={t.question_message}
+                    label={r.question_message}
                     error={errors.message?.message}
                     className="col-span-2"
                   >
@@ -162,7 +170,7 @@ const EnquiryForm = () => {
                     <span
                       className={`${textClass.caption} mt-2 font-bold tracking-widest text-arta-sand-100 `}
                     >
-                      {t.question_message_hints}
+                      {r.question_message_hints}
                     </span>
                   </InputField>
                   <div className="col-span-2">
@@ -170,7 +178,7 @@ const EnquiryForm = () => {
                       extraProps={{ type: 'submit' }}
                       className="w-full border-arta-sand-100 text-arta-sand-100 md:w-[120px]"
                     >
-                      {t.question_submit}
+                      {r.question_submit}
                     </ButtonAnimated>
                   </div>
                 </>

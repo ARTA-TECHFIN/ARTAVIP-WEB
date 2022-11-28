@@ -54,5 +54,27 @@
     "environmental": "Environmental",
     "social": "Social",
     "governance": "Governance"
+  },
+  "contact_us": {
+    "enquiry": "Enquiry",
+    "headquarter": "Headquarter",
+    "follow_us": "Follow Us",
+    "media": "Media",
+    "recruitment": "Recruitment",
+    "investor_relations": "Investor Relations",
+    "enquiry_form": "Enquiry Form",
+    "category_question": "What are you going to enquire about?",
+    "select": "Please select",
+    "others": "Others",
+    "submit": "Submit",
+    "name": "Name",
+    "email_address": "Email Address",
+    "max_500_characters": "Max. 500 characters",
+    "company_name": "Company Name",
+    "job_title": "Job Title",
+    "contact_number": "Contact Number",
+    "thanks_title": "Thanks for your enquiry!",
+    "thanks_message": "This message acknowledges that we have received your application. We will contact you very soon.",
+    "scan": "Scan and follow us"
   }
 }

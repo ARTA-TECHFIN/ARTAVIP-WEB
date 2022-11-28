@@ -25,7 +25,7 @@ const PageContactPage: FC<{ k: any, locale: string }> = ({ k, locale }) => {
           mobileImage={k.heroBanner.mobileImage}
         />
         <div className="overflow-hidden bg-arta-eggshell-100">
-          <Enquiry t={k} />
+          <Enquiry k={k} />
         </div>
         <EnquiryForm />
       </main>

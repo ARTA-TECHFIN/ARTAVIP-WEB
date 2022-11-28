@@ -54,5 +54,27 @@
     "environmental": "環境",
     "social": "社會",
     "governance": "管治"
+  },
+  "contact_us": {
+    "enquiry": "查詢",
+    "headquarter": "總部",
+    "follow_us": "關注我們",
+    "media": "媒體查詢",
+    "recruitment": "求職查詢",
+    "investor_relations": "投資者關係",
+    "enquiry_form": "查詢表格",
+    "category_question": "您想要查詢哪一方面的相關信息？",
+    "select": "請選擇",
+    "others": "其他",
+    "submit": "提交",
+    "name": "姓名",
+    "email_address": "電郵",
+    "max_500_characters": "最多500個字符",
+    "company_name": "公司名稱",
+    "job_title": "職位",
+    "contact_number": "電話",
+    "thanks_title": "感謝您的查詢！",
+    "thanks_message": "我們已收到您的查詢，將會儘快與您聯絡。",
+    "scan": "掃描二維碼，關注我們！"
   }
 }

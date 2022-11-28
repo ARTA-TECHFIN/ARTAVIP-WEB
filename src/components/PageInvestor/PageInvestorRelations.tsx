@@ -8,12 +8,15 @@ import { Loader } from '../Loader'
 import { ReportSection } from './ReportSection'
 import { ReportCard } from './ReportCard'
 import { links } from 'src/domains/links'
+import { useTranslation } from 'next-i18next'
+import { useRouter } from "next/router"
 
 const QUERY_FINANCIAL_REPORT = 'QUERY_FINANCIAL_REPORT'
 
 // TODO: Assume only get four years of data
-const useGetData = () => {
-  const lang = 'en'
+const useGetData = (locale: 'en' | 'tc' | 'sc') => {
+  const lang = locale || 'en'
+  console.log(lang)
   const year = new Date().getFullYear()
   const yearList = [year, year - 1, year - 2, year - 3]
 
@@ -30,7 +33,10 @@ const useGetData = () => {
 }
 
 const PageInvestorRelations: NextPage = () => {
-  const { status, data, error } = useGetData()
+  const { t } = useTranslation('common')
+  const router = useRouter()
+  const { locale } = router
+  const { status, data, error } = useGetData(locale)
 
   if (status === 'loading') return <Loader />
   if (status === 'error') return <ErrorMessage error={error} />
@@ -41,31 +47,31 @@ const PageInvestorRelations: NextPage = () => {
         <ul className="col-span-full col-span-full grid grid-cols-12 sm:gap-8 gap-4 sm:mt-0 mt-4">
           <li className="md:col-span-6 col-span-12">
             <Link href={links.investorResultAnnouncements}>
-              <ReportCard title={"Results Announcements"} />
+              <ReportCard title={t("join_us.results_announcements")} />
             </Link>
           </li>
 
           <li className="md:col-span-6 col-span-12">
             <Link href={"/investor-relations/announcements-notices"}>
-              <ReportCard title={"Interim & Annual Reports"} />
+              <ReportCard title={t("join_us.interim_annual_reports")} />
             </Link>
           </li>
 
           <li className="md:col-span-6 col-span-12">
             <Link href={links.investorAnnouncementsNotices}>
-              <ReportCard title={"Announcements & Notices"} />
+              <ReportCard title={t("join_us.announments_noties")} />
             </Link>
           </li>
 
           <li className="md:col-span-6 col-span-12">
             <Link href={"/investor-relations/announcements-notices"}>
-              <ReportCard title={"Circulars"} />
+              <ReportCard title={t("join_us.circulars")} />
             </Link>
           </li>
 
           <li className="md:col-span-6 col-span-12">
             <Link href={"/investor-relations/announcements-notices"}>
-              <ReportCard title={"Listing Documents"} />
+              <ReportCard title={t("join_us.listing_documents")} />
             </Link>
           </li>
         </ul>

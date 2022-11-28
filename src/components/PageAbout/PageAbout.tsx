@@ -17,7 +17,7 @@ const PageAbout: FC<{ k: PageAboutCmsT }> = ({ k }) => {
   const { t } = useTranslation('common')
   return (
     <>
-      <Seo />
+      <Seo title={t('page_title.about_us')} />
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner

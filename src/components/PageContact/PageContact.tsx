@@ -15,7 +15,7 @@ const PageContactPage: FC<{ k: any, locale: string }> = ({ k, locale }) => {
 
   return (
     <>
-      <Seo />
+      <Seo title={t('page_title.contact_us')} />
       <Header textColor="brown" />
       <main className="flex flex-col text-arta-sand-100">
         <HeroBanner

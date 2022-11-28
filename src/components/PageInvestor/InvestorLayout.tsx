@@ -41,7 +41,7 @@ const InvestorLayout: FC<propsT> = ({ k, cms, tabType, hideTab = false, children
 
   return (
     <>
-      <Seo />
+      <Seo title={t("page_title.investor_relations")} />
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner

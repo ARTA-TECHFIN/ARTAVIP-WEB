@@ -95,7 +95,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
       pageName: t('page_title.join_us'),
       title: t('page_title.join_us'),
       paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
-      buttonText: 'Join Us home',
+      buttonText: t('page_title.join_us'),
       href: links.joinUs,
       pages: [
         { title: t('join_us.work_with_arta'), link: `${links.joinUs}#work-with-arta` },

@@ -2,24 +2,25 @@ import type { NextPage } from 'next'
 
 import { useQuery } from '@tanstack/react-query'
 import { getReportList } from 'src/domains/investor'
-import { ErrorMessage } from '../ErrorMessage'
 import { Loader } from '../Loader'
-import { ReportSection } from './ReportSection'
+import { ErrorMessage } from '../ErrorMessage'
+import { CalendarAccordion } from './CalendarAccordion'
 import { useRouter } from "next/router"
 import Link from 'next/link'
 import { links } from 'src/domains/links'
 import { useTranslation } from 'next-i18next'
 
-const QUERY_RESULT_ANNOUNCEMENT = 'QUERY_RESULT_ANNOUNCEMENT'
+const QUERY_ANNOUNCEMENT = 'QUERY_ANNOUNCEMENT'
+
 // TODO: Assume only get four years of data
 const useGetData = (locale: string) => {
   const lang = locale === 'en'? 'en': locale === 'tc'? 'tc': 'sc'
   const year = new Date().getFullYear()
   const yearList = [year, year - 1, year - 2, year - 3, year - 4]
 
-  return useQuery([QUERY_RESULT_ANNOUNCEMENT, lang, year], async () => {
+  return useQuery([QUERY_ANNOUNCEMENT, lang, year], async () => {
     const res = await Promise.all(
-      yearList.map((year) => getReportList({ lang, page: 1, reportType: 't26', year }))
+      yearList.map((year) => getReportList({ lang, page: 1, reportType: 'c', year }))
     )
 
     return res.map((r, i) => ({
@@ -29,17 +30,17 @@ const useGetData = (locale: string) => {
   })
 }
 
-const PageResultAnnouncements: NextPage = () => {
-  const { t } = useTranslation('common')
+const PageCirculars: NextPage = () => {
   const router = useRouter()
   const { locale } = router
-  const { status, data, error } = useGetData(locale || 'en')
+  const { status, data, error } = useGetData(locale || "en")
+  const { t } = useTranslation('common')
 
   if (status === 'loading') return <Loader />
   if (status === 'error') return <ErrorMessage error={error} />
 
   return (
-    <div className="pt-16">
+    <div className="mt-16">
       <Link href={links.investor}>
         <p className="mb-12 flex gap-4">
           <svg className="mt-1" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,11 +49,20 @@ const PageResultAnnouncements: NextPage = () => {
           <span className="underline">{t("investor_relations.back")}</span>
         </p>
       </Link>
-      {data?.map((yearly) => (
-        <ReportSection key={yearly.year} year={yearly.year} reports={yearly.results} />
+      {data?.map((yearly, index) => (
+        <CalendarAccordion
+          index={index}
+          key={yearly.year}
+          year={yearly.year}
+          events={yearly.results.map((r) => ({
+            date: new Date(r.doc_date),
+            title: r.headline,
+            url: r.url,
+          }))}
+        />
       ))}
     </div>
   )
 }
 
-export default PageResultAnnouncements
+export default PageCirculars

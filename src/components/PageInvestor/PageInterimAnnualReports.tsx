@@ -39,7 +39,7 @@ const PageResultAnnouncements: NextPage = () => {
   if (status === 'error') return <ErrorMessage error={error} />
 
   return (
-    <div className="pt-[40px]">
+    <div className="pt-16">
       <Link href={links.investor}>
         <p className="mb-12 flex gap-4">
           <svg className="mt-1" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">

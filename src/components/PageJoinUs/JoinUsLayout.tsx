@@ -22,7 +22,7 @@ const JoinUsLayout: FC<propsT> = ({ k, jobs }) => {
   const { t } = useTranslation('common')
   return (
     <>
-      <Seo />
+      <Seo title={t("page_title.join_us")} />
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner

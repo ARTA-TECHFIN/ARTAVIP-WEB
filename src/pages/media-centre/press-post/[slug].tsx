@@ -27,6 +27,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = params?.slug
 
   let post: any = null
+  let k = {
+    heroBanner: {
+      description: '',
+      image: '/images/media-centre/banner.png',
+      mobileImage: '/images/media-centre/mobile-banner.png',
+    }
+  }
   cms.pressPosts.some((pressByYear) => {
     const r = pressByYear.posts.find((post) => getSlug(post.title) === slug)
     if (r) post = r
@@ -36,6 +43,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
+      k,
       cms,
       post,
     },
@@ -43,13 +51,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 const PressPost = (props: {
+  k: any
   cms: getMediaCmsT
   post: getMediaCmsT['pressPosts'][number]['posts'][number]
 }) => {
-  const { cms, post } = props
+  const { k, cms, post } = props
 
   return (
-    <MediaLayout cms={cms}>
+    <MediaLayout k={k}>
       <div className="arta-container mx-auto mt-8">
         <Link
           className={`flex cursor-pointer items-center underline ${textClass.body_regular_verah}`}

@@ -1,3 +1,5 @@
+import type { GetServerSideProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Image from 'next/image'
 
 import { GetStaticPaths, GetStaticProps } from 'next'
@@ -8,35 +10,50 @@ import { textClass } from 'src/components/Text'
 import { links } from 'src/domains/links'
 import { IconArrowLeft } from 'src/components/Svg/Icon'
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const cms = await getMediaCms({ lang: 'en' })
+import mediaCentreJson from 'apidata/media-centre.json'
 
-  const paths = cms.blogPosts.map((blog, index) => ({
-    params: { pid: getSlug(blog.title) },
-  }))
+const fetchCmsData = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/media-center`)
+  const data = await res.json()
+  console.log(data)
+  return data
+}
+
+const massageData = (pageData: any, locale: string | undefined = 'en') => {
+  console.log(pageData)
+  const g = (keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
 
   return {
-    paths,
-    fallback: false,
+    heroBanner: {
+      description: g('description') !== null ? g('description') : '',
+      image: '/images/media-centre/banner.png',
+      mobileImage: '/images/media-centre/mobile-banner.png',
+    },
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const cms = await getMediaCms({ lang: 'en' })
-  const pid = params?.pid
+  const pid = context.params?.pid
+
+  const { locale } = context
+  const useLocalCms = process.env.USE_LOCAL_CMS_DATA === 'true'
+  const pageData = useLocalCms ? mediaCentreJson : await fetchCmsData()
 
   return {
     props: {
       cms,
       blog: cms.blogPosts.find((blog) => getSlug(blog.title) === pid)!,
+      k: massageData(pageData, locale),
+      ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }
 }
 
-const Post = (props: { cms: getMediaCmsT; blog: getMediaCmsT['blogPosts'][number] }) => {
-  const { cms, blog } = props
+const Post = (props: { k:any, cms: getMediaCmsT; blog: getMediaCmsT['blogPosts'][number] }) => {
+  const { k, cms, blog } = props
   return (
-    <MediaLayout cms={cms}>
+    <MediaLayout k={k}>
       <div className="arta-container mx-auto mt-8">
         <Link
           className={`flex cursor-pointer items-center underline ${textClass.body_regular_verah}`}

@@ -16,7 +16,7 @@ const TABS = {
 
 type tabsT = keyof typeof TABS
 
-const Layout = (props: { k: any; children: React.ReactNode, tabType: tabsT }) => {
+const Layout = (props: { k: any; children: React.ReactNode, tabType?: tabsT }) => {
   const { t } = useTranslation('common')
   const { k, children } = props
 
@@ -25,7 +25,7 @@ const Layout = (props: { k: any; children: React.ReactNode, tabType: tabsT }) =>
     [TABS.Press_Releases]: { title: t('page_title.press_release'), link: links.mediaPress },
   }
   const tabList = Object.values(tabInfoMap)
-  const tabInfo = tabInfoMap[props.tabType]
+  const tabInfo = tabInfoMap[props.tabType || 'Blog']
 
   return (
     <>
@@ -38,17 +38,21 @@ const Layout = (props: { k: any; children: React.ReactNode, tabType: tabsT }) =>
           image={k.heroBanner.image}
           mobileImage={k.heroBanner.mobileImage}
         />
-        <div className="arta-container mx-auto">
-          <div className="arta-hide-scrollbar -mx-6 overflow-auto py-16 md:mx-0 ">
-            <TabBar
-              tabs={tabList.map((t) => t.title)}
-              selectedTab={tabInfo.title}
-              setSelectedTab={(_, index) =>
-                Router.push(tabList[index].link, undefined, { scroll: false })
-              }
-            />
-          </div>
-        </div>
+        {
+          props.tabType && (
+            <div className="arta-container mx-auto">
+              <div className="arta-hide-scrollbar -mx-6 overflow-auto py-16 md:mx-0 ">
+                <TabBar
+                  tabs={tabList.map((t) => t.title)}
+                  selectedTab={tabInfo.title}
+                  setSelectedTab={(_, index) =>
+                    Router.push(tabList[index].link, undefined, { scroll: false })
+                  }
+                />
+              </div>
+            </div>
+          )
+        }
         {children}
       </main>
       <Footer textColor="brown" />

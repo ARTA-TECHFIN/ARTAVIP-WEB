@@ -11,8 +11,7 @@ import { SectionTechFin } from './SectionTechFin'
 import { SectionTechFinVsFinTech } from './SectionTechFinVsFinTech'
 import { HeroBanner } from '../HeroBanner'
 import { PageAboutCmsT } from 'src/pages/about'
-
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next'
 
 const PageAbout: FC<{ k: PageAboutCmsT }> = ({ k }) => {
   const { t } = useTranslation('common')

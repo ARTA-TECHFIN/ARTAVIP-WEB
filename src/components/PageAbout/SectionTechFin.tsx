@@ -9,10 +9,12 @@ import { FadeUp } from 'src/components/FadeUp'
 import TechFin from '../PageHome/techFin'
 import { IconTechnologyInternetCompanies } from '../Svg/Icon'
 import { PageAboutCmsT } from 'src/pages/about'
+import { useTranslation } from 'next-i18next'
 
 export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
   const { k } = props
   const [selectedIndex, setSelectedIndex] = useState(2)
+  const { t } = useTranslation('common')
 
   return (
     <div className="relative z-1 flex flex-col overflow-hidden" id="tech-fin">
@@ -21,7 +23,7 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
       </div>
 
       <ModuleTextColList
-        header={k.techFin.title}
+        header={t("about_us.what_is_techfin")}
         headerPosition="left"
         title={k.techFin.subtitle}
         list={[
@@ -35,7 +37,7 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
         <div className="mb-12 max-w-3xl text-center">
           <FadeUp>
             <>
-              <h3 className={textClass.h3_style2}>{k.ecosystem.title}</h3>
+              <h3 className={textClass.h3_style2}>{t("about_us.our_ecosystem")}</h3>
               <p className={textClass.body_regular}>{k.ecosystem.subtitle}</p>
             </>
           </FadeUp>

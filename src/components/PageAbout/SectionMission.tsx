@@ -3,19 +3,20 @@ import Image from 'next/image'
 import mission_bg from './images/mission_bg.png'
 import { textClass } from 'src/components/Text'
 import { PageAboutCmsT } from 'src/pages/about'
+import { useTranslation } from 'next-i18next'
 
 export const SectionMission = (props: { k: PageAboutCmsT }) => {
   const { k } = props
 
   const videoRef = useRef<any>(null)
   const [isPlaying, setIsPlaying] = useState(false)
+  const { t } = useTranslation('common')
 
   const toggleVideo = () => {
     if (videoRef.current && !isPlaying) {
       videoRef.current.play()
       setIsPlaying(true)
     } else {
-      console.log('pause')
       videoRef.current.pause()
       setIsPlaying(false)
     }
@@ -28,7 +29,7 @@ export const SectionMission = (props: { k: PageAboutCmsT }) => {
       </div>
       <div className="arta-container relative mx-auto flex flex-col items-center justify-center py-16 md:py-36">
         <h2 className={`${textClass.title_style2} mb-4 text-center text-arta-eggshell-100`}>
-          {k.mission.title}
+          {t("about_us.vision_mission")}
         </h2>
         <span className={`${textClass.h2_style2} text-arta-snow-100 md:-translate-x-24`}>
           {k.mission.subtitle1}

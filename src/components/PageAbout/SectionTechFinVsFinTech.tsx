@@ -1,15 +1,18 @@
 import { textClass } from 'src/components/Text'
 import { PageAboutCmsT } from 'src/pages/about'
+import { useTranslation } from 'next-i18next';
 
 export const SectionTechFinVsFinTech = (props: { k: PageAboutCmsT }) => {
   const { k } = props
+  const { t } = useTranslation('common')
+
   return (
     <div
       className={`group/bg relative overflow-hidden bg-[#DFD8CA] bg-[url('/images/compare_bg_mobile.png')] bg-cover bg-fixed md:pb-[150px] lg:bg-[url('/images/compare_bg.jpg')]`}
     >
       <div className="arta-container relative mx-auto grid grid-cols-12  py-20 md:py-[150px] md:py-12">
         <div className="col-span-full mb-12 block md:hidden">
-          <h2 className={`${textClass.h2_style2} mb-4`}>{k.techFinVsFinTech.title}</h2>
+          <h2 className={`${textClass.h2_style2} mb-4`}>{t("about_us.techfin_vs_fintech")}</h2>
           <span className={textClass.body_regular}>{k.techFinVsFinTech.subtitle}</span>
         </div>
         <div className="col-span-full flex items-center justify-center md:col-span-5">
@@ -29,7 +32,7 @@ export const SectionTechFinVsFinTech = (props: { k: PageAboutCmsT }) => {
         </div>
         <div className="col-span-full md:col-span-5 ">
           <div className="hidden md:block">
-            <h2 className={`${textClass.h2_style2} mb-4`}>{k.techFinVsFinTech.title}</h2>
+            <h2 className={`${textClass.h2_style2} mb-4`}>{t("about_us.techfin_vs_fintech")}</h2>
             <span className={textClass.body_regular}>{k.techFinVsFinTech.subtitle}</span>
           </div>
           <div className="flex aspect-auto w-full flex-col items-center justify-center rounded-full px-6 text-center md:aspect-square md:translate-y-12 md:bg-arta-eggshell-100 md:p-12 md:shadow-blogPost">

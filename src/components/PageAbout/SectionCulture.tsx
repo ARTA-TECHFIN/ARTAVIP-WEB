@@ -7,9 +7,11 @@ import { Hr } from 'src/components/Hr'
 import { gsap } from 'gsap'
 import { FadeUp } from 'src/components/FadeUp'
 import { PageAboutCmsT } from 'src/pages/about'
+import { useTranslation } from 'next-i18next'
 
 export const SectionCulture = (props: { k: PageAboutCmsT }) => {
   const { k } = props
+  const { t } = useTranslation('common')
 
   const [selectedIndex, _setSelectedIndex] = useState(0)
   const setSelectedIndex = (index: number) => {
@@ -27,7 +29,7 @@ export const SectionCulture = (props: { k: PageAboutCmsT }) => {
         <div className="mb-12 flex flex-col justify-center">
           <FadeUp>
             <>
-              <h2 className={`${textClass.h2_style2} mb-2`}>{k.culture.title}</h2>
+              <h2 className={`${textClass.h2_style2} mb-2`}>{t("about_us.culture_values")}</h2>
               <p className={textClass.body_regular}>{k.culture.subtitle1}</p>
             </>
           </FadeUp>

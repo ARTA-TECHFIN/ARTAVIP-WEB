@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { textClass } from '../Text'
+import { useTranslation } from 'next-i18next'
 
 import {
   StartUp,
@@ -14,7 +15,8 @@ import {
   Employee,
 } from '../Svg/Icon'
 
-const SectionCare = () => {
+const SectionCare = ({k}: any) => {
+  const { t } = useTranslation('common')
   return (
     <div className="group/bg relative overflow-hidden" id="arta-care">
       <div className="easeInOutSine absolute h-full w-full scale-150 overflow-hidden duration-300 group-hover/bg:scale-100">
@@ -27,11 +29,8 @@ const SectionCare = () => {
       </div>
 
       <div className="arta-container relative z-1 mx-auto py-12 text-center md:py-[150px]">
-        <h2 className={textClass.h2_style2}>{`ARTA Cares`}</h2>
-        <p className={`mx-auto mt-4 max-w-[882px] ${textClass.body_regular_verah}`}>
-          We value our people. We would love to see you feel engaged together. It is our quest to
-          keep up high morale and motivation. The drive of our work should be joy and excitement.
-        </p>
+        <h2 className={textClass.h2_style2}>{t("join_us.arta_cares")}</h2>
+        <div className={`${textClass.body_regular_verah} mx-auto mt-4 whitespace-pre-line`} dangerouslySetInnerHTML={{__html: k.arta_cares_description}} />
         <div className="grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 gap-x-8">
           <div className="col-span-1 flex flex-col items-center p-8 text-center">
             <StartUp />

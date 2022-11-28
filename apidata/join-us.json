@@ -1,13 +1,80 @@
 {
-  "data":{
-     "id":1,
-     "attributes":{
-        "description_en":"Established in October 2021, ARTA TechFin Corporation Limited (“ARTA TechFin”) (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology (“Technology in Finance” or “TechFin”).",
-        "description_tc":"裕承科金有限公司（下稱「裕承科金」）（0279.HK）成立於2021年10月，是一家總部設於香港的綜合金融服務機構，致力於增強科技在金融領域的應用。我們的目標是建立下一代的金融服務，通過科技改變傳統金融業，打破傳統金融服務的壁壘，減少信息不對稱，降低門檻，提供無障礙、友好、知識驅動的客戶體驗。我們將積極創新區塊鏈基礎設施和應用，連接Web2和Web3，引導用戶以最合規、最安全的方式，通過一站式的混合金融服務進入Web3的世界。",
-        "description_sc":"裕承科金有限公司（下称“裕承科金”）（0279.HK）成立于2021年10月，是一家总部设于香港的综合金融服务机构，致力于增强科技在金融领域的应用。我们的目标是建立下一代的金融服务，通过科技改变传统金融业，打破传统金融服务的壁垒，减少信息不对称，降低门槛，提供无障碍、友好、知识驱动的客户体验。我们将积极创新区块链基础设施和应用，连接Web2和Web3，提供一站式“传统金融+虚拟金融”的混合型金融服务，引导用户以合规安全的方式，进入Web3的世界。"
-     }
-  },
-  "meta":{
-     
-  }
+   "data":{
+      "id":1,
+      "attributes":{
+         "description_en":"JoinUsEN JoinUsEN JoinUsEN JoinUsEN JoinUsEN JoinUsEN JoinUsEN JoinUsEN",
+         "description_tc":"JoinUsTC JoinUsTC JoinUsTC JoinUsTC JoinUsTC JoinUsTC JoinUsTC JoinUsTC ",
+         "description_sc":"JoinUsSC JoinUsSC JoinUsSC JoinUsSC JoinUsSC JoinUsSC JoinUsSC JoinUsSC ",
+         "work_with_arta_description_en":"At ARTA TechFin, our vision is to “Break Barriers for Greatness”. We aim to dismantle conventional financial barriers and consistently create changes. Additionally, we are committed to putting our customers first, understanding their needs to practically innovate and providing an accessible, friendly and knowledge-driven experience.\n\nWe label ourselves as a TechFin company, which means we deliver financial services and solutions by thinking like a Tech company. But we are more than that. We think Tech, and we think People. Our people are our greatest asset. We believe that brilliant people working in a great culture will produce the best results. We appreciate and treasure talents who are willing to say no to being second or to the norm, who dare to speak up and give constructive criticism, and who can deliver results together with teammates.",
+         "work_with_arta_description_tc":"我們的願景是「打破壁壘，成就輝煌」，突破傳統金融業的障礙，不斷創新。我們把客戶放在首位，了解他們的需求，在實際中創新，提供方便、友好、知識驅動的客戶體驗。\n\n我們將自己定位為科技公司，這意味着我們會以科技公司的角度思考如何提供金融服務和解決方案。不僅如此，我們以科技思維服務人。員工是我們最寶貴的資產。我們相信，優秀的人才在良好的工作環境中將會發揮最大的作用。我們欣賞那些勇爭第一、不走尋常路的人才，他們敢於直言不諱，提出建設性的批評意見，並能與團隊成員一起取得成果。",
+         "work_with_arta_description_sc":"我们的愿景是 \"打破壁垒，成就辉煌\"，突破传统金融业的障碍，不断创新。我们把客户放在首位，了解他们的需求，在实际中创新，提供方便、友好、知识驱动的客户体验。\n\n我们将自己定位为科技公司，这意味着我们会以科技公司的角度思考如何提供金融服务和解决方案。不仅如此，我们以科技思维服务人。员工是我们最宝贵的资产。我们相信，优秀的人才在良好的工作环境中将会发挥最大的作用。我们欣赏那些勇争第一、不走寻常路的人才，他们敢于直言不讳，提出建设性的批评意见，并能与团队成员一起取得成果。",
+         "our_values_description_en":"Values are the DNA of ARTA to create a kindred spirit in the workplace. We love to work with people sharing the same beliefs and mentality. It is crucial to drive our business forward and go beyond our boundaries.",
+         "our_values_description_tc":"我們希望能夠在辦公室營造親切友好的氛圍，希望能與擁有相同價值觀的人一起工作，我們認為這對推動業務發展、突破自我至關重要。",
+         "our_values_description_sc":"我们希望能够在办公室营造亲切友好的氛围，希望能与拥有相同价值观的人一起工作，我们认为这对推动业务发展、突破自我至关重要。",
+         "arta_cares_description_en":"We value our people. We would love to see you feel engaged together. It is our quest to keep up high morale and motivation. The drive of our work should be joy and excitement.",
+         "arta_cares_description_tc":"我們重視員工的發展，樂於看到大家充分投入工作的模樣。我們希望能夠保持高昂的士氣和動力，以工作帶來的快樂和興奮為動力。",
+         "arta_cares_description_sc":"我们重视员工的发展，乐于看到大家充分投入工作的模样。我们希望能够保持高昂的士气和动力，以工作带来的快乐和兴奋为动力。",
+         "job_openings_description_en":"We are looking for the below positions. If you think this is the right place for you to be your true self, click on the links today. Join us. For further information, please contact our HRBP via recruit@artatechfin.com.",
+         "job_openings_description_tc":"我們正在尋找適合以下職位的人才。如果你認為這裡是你理想的工作地點，馬上點擊鏈接，加入我們。如果想要了解更多信息，請通過電郵至recruit@artatechfin.com聯繫我們的人力資本管理部分。",
+         "job_openings_description_sc":"我们正在寻找适合以下职位的人才。如果你认为这里是你理想的工作地点，马上点击链接，加入我们。如果想要了解更多信息，请通过电邮至recruit@artatechfin.com联系我们的人力资本管理部分。",
+         "createdAt":"2022-11-22T10:20:45.788Z",
+         "updatedAt":"2022-11-28T09:43:29.090Z",
+         "publishedAt":"2022-11-28T09:43:29.085Z",
+         "work_with_arta_image":{
+            "data":{
+               "id":19,
+               "attributes":{
+                  "name":"28531C75-1658-4AFB-8864-C8F6F1AB012A.png",
+                  "alternativeText":"28531C75-1658-4AFB-8864-C8F6F1AB012A.png",
+                  "caption":"28531C75-1658-4AFB-8864-C8F6F1AB012A.png",
+                  "width":714,
+                  "height":473,
+                  "formats":{
+                     "small":{
+                        "ext":".png",
+                        "url":"https://dhrhnojxde2hk.cloudfront.net/small_28531_C75_1658_4_AFB_8864_C8_F6_F1_AB_012_A_a555b7cb36.png",
+                        "hash":"small_28531_C75_1658_4_AFB_8864_C8_F6_F1_AB_012_A_a555b7cb36",
+                        "mime":"image/png",
+                        "name":"small_28531C75-1658-4AFB-8864-C8F6F1AB012A.png",
+                        "path":null,
+                        "size":239.18,
+                        "width":500,
+                        "height":331
+                     },
+                     "thumbnail":{
+                        "ext":".png",
+                        "url":"https://dhrhnojxde2hk.cloudfront.net/thumbnail_28531_C75_1658_4_AFB_8864_C8_F6_F1_AB_012_A_a555b7cb36.png",
+                        "hash":"thumbnail_28531_C75_1658_4_AFB_8864_C8_F6_F1_AB_012_A_a555b7cb36",
+                        "mime":"image/png",
+                        "name":"thumbnail_28531C75-1658-4AFB-8864-C8F6F1AB012A.png",
+                        "path":null,
+                        "size":58.82,
+                        "width":235,
+                        "height":156
+                     }
+                  },
+                  "hash":"28531_C75_1658_4_AFB_8864_C8_F6_F1_AB_012_A_a555b7cb36",
+                  "ext":".png",
+                  "mime":"image/png",
+                  "size":384.31,
+                  "url":"https://dhrhnojxde2hk.cloudfront.net/28531_C75_1658_4_AFB_8864_C8_F6_F1_AB_012_A_a555b7cb36.png",
+                  "previewUrl":null,
+                  "provider":"aws-s3",
+                  "provider_metadata":null,
+                  "createdAt":"2022-11-28T09:42:23.597Z",
+                  "updatedAt":"2022-11-28T09:42:23.597Z"
+               }
+            }
+         },
+         "our_values_icons":[
+            
+         ],
+         "arta_cares_icons":[
+            
+         ]
+      }
+   },
+   "meta":{
+      
+   }
 }

@@ -11,28 +11,30 @@ import SectionCare from './SectionCare'
 import SectionJobOpenings from './SectionJobOpenings'
 import { FC } from 'react'
 import { getJobsCmsT } from '../../domains/jobs'
+import { useTranslation } from 'next-i18next'
 
 type propsT = {
-  t: any
+  k: any
   jobs: any
 }
 
-const JoinUsLayout: FC<propsT> = ({ t, jobs }) => {
+const JoinUsLayout: FC<propsT> = ({ k, jobs }) => {
+  const { t } = useTranslation('common')
   return (
     <>
       <Seo />
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
-          title={t.heroBanner.title}
-          description={t.heroBanner.description}
-          image={t.heroBanner.image}
-          mobileImage={t.heroBanner.mobileImage}
+          title={t("page_title.join_us")}
+          description={k.heroBanner.description}
+          image={k.heroBanner.image}
+          mobileImage={k.heroBanner.mobileImage}
         />
-        <SectionWorkWithArta />
-        <SectionOurValues />
-        <SectionCare />
-        <SectionJobOpenings jobs={jobs}></SectionJobOpenings>
+        <SectionWorkWithArta k={k} />
+        <SectionOurValues k={k} />
+        <SectionCare k={k} />
+        <SectionJobOpenings k={k} jobs={jobs}></SectionJobOpenings>
       </main>
       <Footer textColor="brown" />
     </>

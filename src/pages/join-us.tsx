@@ -21,17 +21,20 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
       image: '/images/about/banner.jpg',
       mobileImage: '/images/about/mobile-banner.png',
     },
+    work_with_arta_description: g('work_with_arta_description'),
+    our_values_description: g('our_values_description'),
+    arta_cares_description: g('arta_cares_description'),
+    job_openings_description: g('job_openings_description'),
+    work_with_arta_image: pageData.data.attributes.work_with_arta_image.data.attributes.url || ""
   }
 }
 
-const PageJoinUs = (props: { t: any, cms: getJobsCmsT }) => {
-  const { t, cms } = props
+const PageJoinUs = (props: { k: any, cms: getJobsCmsT }) => {
+  const { k, cms } = props
   const jobs = cms.jobs
 
-  console.log(t)
-
   return (
-    <JoinUsLayout t={t} jobs={jobs} />
+    <JoinUsLayout k={k} jobs={jobs} />
   )
 }
 
@@ -46,7 +49,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   return {
     props: {
-      t: massageData(pageData, locale),
+      k: massageData(pageData, locale),
       cms,
       ...(await serverSideTranslations(locale || 'en', ['common'])),
     },

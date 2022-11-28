@@ -1,16 +1,19 @@
 import ModuleTextColListHeader from '../ModuleTextColListHeader'
 import { textClass } from '../Text'
 import {MindSet, Compassionate, Integrity, Value, Diversity} from '../Svg/Icon'
+import { useTranslation } from 'next-i18next'
 
-const SectionOurValues = () => {
+const SectionOurValues = ({k}: any) => {
+  const { t } = useTranslation('common')
+
   return (
     <div className="bg-arta-eggshell-100" id="our-value">
       <div className="arta-container relative mx-auto grid grid-cols-12 py-12 md:py-[201px]">
         <div className="md:col-span-4 col-span-full flex items-center">
-            <ModuleTextColListHeader header={`Our Values`} headerPosition={'left'} />
+            <ModuleTextColListHeader header={t("join_us.our_values")} headerPosition={'left'} />
         </div>
         <div className='md:col-span-8 col-span-full border-y-[1px] border-arta-russet-100 pt-8'>
-            <p className={`${textClass.body_regular_verah}`}>{`Values are the DNA of ARTA to create a kindred spirit in the workplace. We love to work with people sharing the same beliefs and mentality. It is crucial to drive our business forward and go beyond our boundaries.`}</p>
+            <div className={`${textClass.body_regular_verah} mx-auto mt-4 whitespace-pre-line`} dangerouslySetInnerHTML={{__html: k.our_values_description}} />
 
             <div className='grid grid-cols-10 gird-gap-x-12'>
                 <div className='col-span-5 md:col-span-2 flex items-center text-center flex-col p-8'>

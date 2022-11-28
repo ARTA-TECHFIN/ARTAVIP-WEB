@@ -13,7 +13,7 @@ const QUERY_FINANCIAL_REPORT = 'QUERY_FINANCIAL_REPORT'
 const useGetData = (locale: string) => {
   const lang = locale === 'en'? 'en': locale === 'tc'? 'tc': 'sc'
   const year = new Date().getFullYear()
-  const yearList = [year, year - 1, year - 2, year - 3]
+  const yearList = [year, year - 1, year - 2, year - 3, year - 4]
 
   return useQuery([QUERY_FINANCIAL_REPORT, lang, year], async () => {
     const res = await Promise.all(

@@ -5,21 +5,21 @@ import { getReportList } from 'src/domains/investor'
 import { ErrorMessage } from '../ErrorMessage'
 import { Loader } from '../Loader'
 import { ReportSection } from './ReportSection'
-import { useRouter } from "next/router"
+import { useRouter } from "next/router";
 import Link from 'next/link'
 import { links } from 'src/domains/links'
 import { useTranslation } from 'next-i18next'
 
-const QUERY_RESULT_ANNOUNCEMENT = 'QUERY_RESULT_ANNOUNCEMENT'
+const QUERY_INTERIM_ANNUAL_REPORTS = 'QUERY_INTERIM_ANNUAL_REPORTS'
 // TODO: Assume only get four years of data
 const useGetData = (locale: string) => {
   const lang = locale === 'en'? 'en': locale === 'tc'? 'tc': 'sc'
   const year = new Date().getFullYear()
   const yearList = [year, year - 1, year - 2, year - 3, year - 4]
 
-  return useQuery([QUERY_RESULT_ANNOUNCEMENT, lang, year], async () => {
+  return useQuery([QUERY_INTERIM_ANNUAL_REPORTS, lang, year], async () => {
     const res = await Promise.all(
-      yearList.map((year) => getReportList({ lang, page: 1, reportType: 't26', year }))
+      yearList.map((year) => getReportList({ lang, page: 1, reportType: 't11t13', year }))
     )
 
     return res.map((r, i) => ({

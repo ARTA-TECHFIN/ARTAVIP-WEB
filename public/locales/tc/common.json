@@ -58,7 +58,8 @@
     "esg": "可持續發展",
     "environmental": "環境",
     "social": "社會",
-    "governance": "管治"
+    "governance": "管治",
+    "back": "Back to landing page"
   },
   "contact_us": {
     "enquiry": "查詢",
@@ -66,6 +67,7 @@
     "follow_us": "關注我們",
     "media": "媒體查詢",
     "recruitment": "求職查詢",
+    "investor": "Investor",
     "investor_relations": "投資者關係",
     "enquiry_form": "查詢表格",
     "category_question": "您想要查詢哪一方面的相關信息？",

@@ -5,12 +5,13 @@ import { getReportList } from 'src/domains/investor'
 import { Loader } from '../Loader'
 import { ErrorMessage } from '../ErrorMessage'
 import { CalendarAccordion } from './CalendarAccordion'
+import { useRouter } from "next/router"
 
 const QUERY_ANNOUNCEMENT = 'QUERY_ANNOUNCEMENT'
 
 // TODO: Assume only get four years of data
-const useGetData = () => {
-  const lang = 'en'
+const useGetData = (locale: string) => {
+  const lang = locale === 'en'? 'en': locale === 'tc'? 'tc': 'sc'
   const year = new Date().getFullYear()
   const yearList = [year, year - 1, year - 2, year - 3]
 
@@ -27,7 +28,9 @@ const useGetData = () => {
 }
 
 const PageAnnouncement: NextPage = () => {
-  const { status, data, error } = useGetData()
+  const router = useRouter()
+  const { locale } = router
+  const { status, data, error } = useGetData(locale || "en")
 
   if (status === 'loading') return <Loader />
   if (status === 'error') return <ErrorMessage error={error} />

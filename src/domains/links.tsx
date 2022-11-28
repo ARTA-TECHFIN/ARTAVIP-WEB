@@ -12,6 +12,7 @@ export const links = {
   businessesWeb3: '/businesses/web3-media',
   investor: '/investor-relations',
   investorCorporateInformation: '/investor-relations/corporate-information',
+  investorInterimAnnualReports: '/investor-relations/interim-annual-reports',
   investorResultAnnouncements: '/investor-relations/result-announcements',
   investorAnnouncementsNotices: '/investor-relations/announcements-notices',
   investorFinCalendar: '/investor-relations/fin-calendar',

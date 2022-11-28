@@ -58,7 +58,8 @@
     "esg": "ESG",
     "environmental": "Environmental",
     "social": "Social",
-    "governance": "Governance"
+    "governance": "Governance",
+    "back": "Back to landing page"
   },
   "contact_us": {
     "enquiry": "Enquiry",
@@ -66,6 +67,7 @@
     "follow_us": "Follow Us",
     "media": "Media",
     "recruitment": "Recruitment",
+    "investor": "Investor",
     "investor_relations": "Investor Relations",
     "enquiry_form": "Enquiry Form",
     "category_question": "What are you going to enquire about?",

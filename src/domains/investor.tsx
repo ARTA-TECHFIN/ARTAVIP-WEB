@@ -38,7 +38,7 @@ interface apiResponseT<listItemT extends unknown> {
   data: {
     lang: string
     company: string
-    type: 'r' | 'acl' | 'b03' | 't26'
+    type: 'r' | 'acl' | 'b03' | 't26' | 't11t13'
     // keyword: null
     page: number
     take: number | null
@@ -51,7 +51,7 @@ export interface reportRequestT {
   lang: langT
   page: number
   year?: number | null
-  reportType: 'r' | 'acl' | 'b03' | 't26'
+  reportType: 'r' | 'acl' | 'b03' | 't26' | 't11t13'
 }
 
 export const getReportList = async ({ lang, page, year, reportType }: reportRequestT) => {

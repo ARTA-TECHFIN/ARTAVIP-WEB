@@ -58,7 +58,8 @@
     "esg": "可持续发展",
     "environmental": "环境",
     "social": "社会",
-    "governance": "管治"
+    "governance": "管治",
+    "back": "Back to landing page"
   },
   "contact_us": {
     "enquiry": "查询",
@@ -66,6 +67,7 @@
     "follow_us": "关注我们",
     "media": "媒体查询",
     "recruitment": "求职查询",
+    "investor": "Investor",
     "investor_relations": "投资者关系",
     "enquiry_form": "查询表格",
     "category_question": "您想要查询哪一方面的相关信息？",

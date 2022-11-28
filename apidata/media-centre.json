@@ -1,0 +1,16 @@
+{
+  "data":{
+     "id":1,
+     "attributes":{
+        "description_en":"MediaCentreEN MediaCentreEN MediaCentreEN MediaCentreEN MediaCentreEN MediaCentreEN MediaCentreEN MediaCentreEN ",
+        "description_tc":"MediaCentreTC MediaCentreTC MediaCentreTC MediaCentreTC MediaCentreTC MediaCentreTC MediaCentreTC MediaCentreTC ",
+        "description_sc":"MediaCentreSC MediaCentreSC MediaCentreSC MediaCentreSC MediaCentreSC MediaCentreSC MediaCentreSC MediaCentreSC ",
+        "createdAt":"2022-11-22T10:03:32.005Z",
+        "updatedAt":"2022-11-22T10:03:32.901Z",
+        "publishedAt":"2022-11-22T10:03:32.898Z"
+     }
+  },
+  "meta":{
+     
+  }
+}

@@ -99,7 +99,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
       href: links.media,
       pages: [
         { title: t('page_title.arta_blog'), link: links.media },
-        { title: t('page_title.press_release'), link: links.media },
+        { title: t('page_title.press_release'), link: links.mediaPress },
       ],
     },
     {

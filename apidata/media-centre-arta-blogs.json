@@ -1,0 +1,73 @@
+{
+  "data":[
+     {
+        "id":1,
+        "attributes":{
+           "date":"2022-08-15",
+           "title_en":"Mid-Autumn Festival Activities",
+           "title_tc":"[TC] Mid-Autumn Festival Activities",
+           "title_sc":"[SC] Mid-Autumn Festival Activities",
+           "content_en":"<p>The Mid-Autumn Festival is around the corner. To celebrate the holiday, family members usually gather to revel in festivities like feasting on mooncakes and moon gazing. We want to share this joyful festive atmosphere to the elderly in our #community. Last week, in collaboration with the Yang Memorial Methodist Social Service, our colleagues visited the elderly who reside alone in Fu Shan Estate, Diamond Hill, and helped distribute gift bags. We hope these senior citizens stay healthy and enjoy a confident and contented golden age.</p><p><img src=\"https://dhrhnojxde2hk.cloudfront.net/Screenshot_2022_11_23_at_6_32_37_PM_1448b1a409.png\" alt=\"Screenshot 2022-11-23 at 6.32.37 PM.png\"></p>",
+           "content_tc":"<p>[TC] The Mid-Autumn Festival is around the corner. To celebrate the holiday, family members usually gather to revel in festivities like feasting on mooncakes and moon gazing. We want to share this joyful festive atmosphere to the elderly in our #community. Last week, in collaboration with the Yang Memorial Methodist Social Service, our colleagues visited the elderly who reside alone in Fu Shan Estate, Diamond Hill, and helped distribute gift bags. We hope these senior citizens stay healthy and enjoy a confident and contented golden age.</p><p><img src=\"https://dhrhnojxde2hk.cloudfront.net/Screenshot_2022_11_23_at_6_32_37_PM_1448b1a409.png\" alt=\"Screenshot 2022-11-23 at 6.32.37 PM.png\"></p>",
+           "content_sc":"<p>[SC] The Mid-Autumn Festival is around the corner. To celebrate the holiday, family members usually gather to revel in festivities like feasting on mooncakes and moon gazing. We want to share this joyful festive atmosphere to the elderly in our #community. Last week, in collaboration with the Yang Memorial Methodist Social Service, our colleagues visited the elderly who reside alone in Fu Shan Estate, Diamond Hill, and helped distribute gift bags. We hope these senior citizens stay healthy and enjoy a confident and contented golden age.</p><p><img src=\"https://dhrhnojxde2hk.cloudfront.net/Screenshot_2022_11_23_at_6_32_37_PM_1448b1a409.png\" alt=\"Screenshot 2022-11-23 at 6.32.37 PM.png\"></p>",
+           "createdAt":"2022-11-23T10:33:15.554Z",
+           "updatedAt":"2022-11-23T10:33:17.085Z",
+           "publishedAt":"2022-11-23T10:33:17.083Z",
+           "thumbnail":{
+              "data":{
+                 "id":18,
+                 "attributes":{
+                    "name":"Screenshot 2022-11-23 at 6.32.37 PM.png",
+                    "alternativeText":"Screenshot 2022-11-23 at 6.32.37 PM.png",
+                    "caption":"Screenshot 2022-11-23 at 6.32.37 PM.png",
+                    "width":552,
+                    "height":386,
+                    "formats":{
+                       "small":{
+                          "ext":".png",
+                          "url":"https://dhrhnojxde2hk.cloudfront.net/small_Screenshot_2022_11_23_at_6_32_37_PM_1448b1a409.png",
+                          "hash":"small_Screenshot_2022_11_23_at_6_32_37_PM_1448b1a409",
+                          "mime":"image/png",
+                          "name":"small_Screenshot 2022-11-23 at 6.32.37 PM.png",
+                          "path":null,
+                          "size":469.33,
+                          "width":500,
+                          "height":350
+                       },
+                       "thumbnail":{
+                          "ext":".png",
+                          "url":"https://dhrhnojxde2hk.cloudfront.net/thumbnail_Screenshot_2022_11_23_at_6_32_37_PM_1448b1a409.png",
+                          "hash":"thumbnail_Screenshot_2022_11_23_at_6_32_37_PM_1448b1a409",
+                          "mime":"image/png",
+                          "name":"thumbnail_Screenshot 2022-11-23 at 6.32.37 PM.png",
+                          "path":null,
+                          "size":102.57,
+                          "width":223,
+                          "height":156
+                       }
+                    },
+                    "hash":"Screenshot_2022_11_23_at_6_32_37_PM_1448b1a409",
+                    "ext":".png",
+                    "mime":"image/png",
+                    "size":421.13,
+                    "url":"https://dhrhnojxde2hk.cloudfront.net/Screenshot_2022_11_23_at_6_32_37_PM_1448b1a409.png",
+                    "previewUrl":null,
+                    "provider":"aws-s3",
+                    "provider_metadata":null,
+                    "createdAt":"2022-11-23T10:32:53.046Z",
+                    "updatedAt":"2022-11-23T10:32:55.360Z"
+                 }
+              }
+           }
+        }
+     }
+  ],
+  "meta":{
+     "pagination":{
+        "page":1,
+        "pageSize":25,
+        "pageCount":1,
+        "total":1
+     }
+  }
+}

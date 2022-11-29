@@ -1,7 +1,10 @@
 import React from 'react'
 import { ButtonAnimated } from '../ButtonAnimated'
+import { useTranslation } from 'next-i18next'
 
-const about: React.FC = () => {
+const about: React.FC = ({k}: any) => {
+  const { t } = useTranslation('common')
+
   return (
     <div className="relative z-3 flex h-screen w-screen will-change-transform">
       <div className="video-container absolute top-0 left-0 h-full w-full">
@@ -25,9 +28,7 @@ const about: React.FC = () => {
             About ARTA
           </h1>
           <p className="mb-[1.5em] max-w-[30em] font-Neue text-[3.6em] text-white md:text-[1.8em] lg:text-[1em]">
-            ARTA TechFin aims to build the next generation of financial services, using technology
-            to transform the traditional financial industry and expand into new services, products
-            and experiences.
+            {k.about_us_description}
           </p>
 
           <ButtonAnimated
@@ -35,7 +36,7 @@ const about: React.FC = () => {
             href="/about"
             className="border-white text-white"
           >
-            Show more
+            {t("home.show_more")}
           </ButtonAnimated>
         </div>
       </div>

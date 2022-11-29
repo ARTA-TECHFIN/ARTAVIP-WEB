@@ -5,7 +5,7 @@ import { BreakBarriers } from './breakBarriers'
 import TechFin from './techFin'
 import Footer from 'src/components/Footer';
 
-export const Slides = () => {
+export const Slides = ({k}: any) => {
 
   const [disableScroll, setDisableScroll] = useState(false)
   const [currentSectionId, setCurrentSectionId] = useState<number>(0)
@@ -44,6 +44,7 @@ export const Slides = () => {
               </section>
               <section className="section section double w-full h-full flex justify-center items-center relative box-border will-change-transform">
                 <TechFin
+                  k={k}
                   currentSectionId={currentSectionId}
                   setCurrentSectionById={setCurrentSectionById}
                   setTriggerSection={async(id:number) => {
@@ -54,7 +55,7 @@ export const Slides = () => {
                 />
               </section>
               <section className="section section double w-full h-full flex justify-center items-center text-center relative box-border">
-                <About />
+                <About k={k} />
               </section>
               <div className="section fp-auto-height" id="section3"> 
                 <Footer />

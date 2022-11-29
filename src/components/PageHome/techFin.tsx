@@ -3,10 +3,12 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import cn from 'classnames'
 import { ButtonAnimated } from '../ButtonAnimated'
+import { links } from 'src/domains/links'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
+import { useTranslation } from 'next-i18next'
 
-const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }: any) => {
+const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection }: any) => {
   gsap.registerPlugin(ScrollTrigger)
 
   const [windowWidth, setWindowWith] = useState<number>(1000)
@@ -25,31 +27,33 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
     }
   }
 
+  const { t } = useTranslation('common')
+
   const businesses = [
     {
-      title: 'Asset Management',
-      description: `We develop innovative and transformative blockchain-enabled solutions for financial services processes and products.`,
-      link: '/businesses',
+      title: t('page_title.asset_management'),
+      description: k.our_business_product_description_1,
+      link: links.businessesAssetManagement,
     },
     {
-      title: 'Investment Banking',
-      description: `We develop innovative and transformative blockchain-enabled solutions for financial services processes and products.`,
-      link: '/businesses',
+      title: t('page_title.investment_banking'),
+      description: k.our_business_product_description_2,
+      link: links.businessesInvestmentBanking,
     },
     {
-      title: 'Insurance Brokerage',
-      description: `We develop innovative and transformative blockchain-enabled solutions for financial services processes and products.`,
-      link: '/businesses',
+      title: t('page_title.insurance_brokerage'),
+      description: k.our_business_product_description_3,
+      link: links.businessesInsuranceBrokerage,
     },
     {
-      title: 'Securities Brokerage',
-      description: `We develop innovative and transformative blockchain-enabled solutions for financial services processes and products.`,
-      link: '/businesses/securities',
+      title: t('page_title.global_markets'),
+      description: k.our_business_product_description_4,
+      link: links.businessesSecuritiesBrokerage
     },
     {
-      title: 'Artazine',
-      description: `We develop innovative and transformative blockchain-enabled solutions for financial services processes and products.`,
-      link: '/businesses/web3-media',
+      title: t('page_title.artazine'),
+      description: k.our_business_product_description_5,
+      link: links.businessesWeb3
     },
   ]
 
@@ -299,20 +303,17 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
             className="flex h-full w-full flex-col justify-center gap-[24px] px-[6em] opacity-0 lg:items-end lg:px-0 lg:text-right"
           >
             <h1 className="font-Verah text-[6em] tracking-[0.06em] text-white will-change-transform lg:text-[3.4em]">
-              What is TechFin
+              {t("about_us.what_is_techfin")}
             </h1>
             <p className="mb-[0.6em] max-w-[30em] text-left font-Neue text-[3.6em] text-white will-change-transform md:text-[1.8em] lg:text-right lg:text-[1em]">
-              ARTA TechFin believes that technology is the key to building a happier and more
-              fulfilling future for all. As technology has continually transformed how we live and
-              do business, it is expected that technology-driven change in the financial services
-              sector will be the next wave. And we aim to be at the forefront of this change.{' '}
+              {k.what_is_techfin_description}
             </p>
             <ButtonAnimated
               as="a"
               href="/about#tech-fin"
               className="text-white"
             >
-              Explore more
+              {t("home.explore_more")}
             </ButtonAnimated>
           </div>
           <div
@@ -326,12 +327,10 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
           className="absolute bottom-[22em] top-[25em] z-2 transform text-white opacity-0 md:top-[16em] lg:left-[6em] lg:left-[4em] lg:bottom-auto lg:top-[21em] lg:top-1/2 lg:-translate-y-1/2"
         >
           <h1 className="font-verah ml-[0.9em] text-left text-[6em] tracking-[0.06em] md:ml-[0.6em] lg:ml-0 lg:text-[3.4em]">
-            Our Businesses
+            {t('page_title.our_businesses')}
           </h1>
           <p className="ml-[1.6em] max-w-[30em] pb-5 text-left font-Neue text-[3.6em] md:ml-[2em] lg:ml-0 md:text-[1.8em] lg:text-[1em]">
-            ARTA TechFin is determined to create the fairest, most transparent, and open markets in
-            the world. We carry this out every day by providing clients with a variety of financial
-            services.
+            {k.our_business_description}
           </p>
           <div className="w-[100vw] lg:max-w-[80vw]">
             <Swiper
@@ -359,6 +358,7 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
                     business={business}
                     selectedBusiness={selectedBusiness}
                     setSelectedBusiness={setSelectedBusiness}
+                    label={t("home.learn_more")}
                   />
                 </SwiperSlide>
               ))}
@@ -370,7 +370,7 @@ const TechFin = ({ currentSectionId, setCurrentSectionById, setTriggerSection }:
   )
 }
 
-const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness }: any) => {
+const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness, label }: any) => {
   if (!business) return null
 
   return (
@@ -395,15 +395,14 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
         )}
       >
         <p className="mt-[1em] hidden w-full text-center font-Neue text-[3em] text-white lg:block lg:text-[0.8em]">
-          We develop innovative and transformative blockchain-enabled solutions for financial
-          services processes and products.
+          {business.description}
         </p>
         <ButtonAnimated
           as="a"
           href={business.link}
           className="mt-6 border-white  text-white "
         >
-          Learn more
+          {label}
         </ButtonAnimated>
       </div>
     </div>

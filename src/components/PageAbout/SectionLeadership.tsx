@@ -21,7 +21,7 @@ export const SectionLeadership = (props: { k: PageAboutCmsT }) => {
           {k.leadership.leaderList.map((leader, index) => (
             <SwiperSlide
               key={index}
-              className="flex w-[220px] min-w-[220px] flex-[0_0_220px] flex-col"
+              className="flex w-[220px] flex-[0_0_220px] flex-col"
             >
               <div className="relative mb-4 aspect-[3/4] h-auto w-full overflow-hidden">
                 <Image src={leader.image} alt="" fill className="object-cover" />

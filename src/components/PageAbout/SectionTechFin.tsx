@@ -10,6 +10,8 @@ import TechFin from '../PageHome/techFin'
 import { IconTechnologyInternetCompanies } from '../Svg/Icon'
 import { PageAboutCmsT } from 'src/pages/about'
 import { useTranslation } from 'next-i18next'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
 
 export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
   const { k } = props
@@ -42,42 +44,52 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
             </>
           </FadeUp>
         </div>
-        <div className="relative h-96 w-full max-w-full overflow-hidden">
-          {k.ecosystem.itemList.map((item, index) => {
-            const isSelected = index === selectedIndex
-            const styledIndex = (index - selectedIndex + 7) % 5
+        <div className="relative h-96 w-full max-w-full overflow-hidden px-12">
+          <Swiper 
+            loop={true}
+            spaceBetween={50}
+            slidesPerView={5}
+            breakpoints={{
+              767: {
+                slidesPerView: 3,
+              },
+              1024: {
+                slidesPerView: 5,
+              },
+            }}
+            className="!overflow-visible">
+            {k.ecosystem.itemList.map((item, index) => {
+              const isSelected = index === selectedIndex
 
-            return (
-              <div
-                key={index}
-                className={
-                  'absolute left-1/2 flex aspect-square flex-col items-center justify-center rounded-full shadow-2xl transition-all duration-300' +
-                  [
-                    ' top-[24%] h-[60%] translate-x-[-300%]',
-                    ' top-[10%] h-[70%] translate-x-[-164%]',
-                    ' top-0 h-[80%] translate-x-[-50%]',
-                    ' top-[10%] h-[70%] translate-x-[64%]',
-                    ' top-[24%] h-[60%] translate-x-[200%]',
-                  ][styledIndex] +
-                  (isSelected
-                    ? ' bg-arta-eggshell-100 text-arta-sand-100'
-                    : ' bg-arta-sand-100/70 text-arta-snow-100')
-                }
-              >
-                <div
-                  className={
-                    'relative mb-4 h-16 w-16 lg:h-20 lg:w-20' +
-                    (isSelected ? 'lg:h-20 lg:w-20' : 'lg:h-16 lg:w-16')
-                  }
+              return (
+                <SwiperSlide
+                  key={index}
                 >
-                  <IconTechnologyInternetCompanies className="h-full w-full object-cover" />
-                </div>
-                <span className={`${textClass.body_regular} max-w-[60%] text-center`}>
-                  {item.title}
-                </span>
-              </div>
-            )
-          })}
+                  <div
+                    key={index}
+                    className={
+                      'w-full flex aspect-square flex-col items-center justify-center rounded-full shadow-2xl transition-all duration-300' +
+                      (isSelected
+                        ? ' bg-arta-eggshell-100 text-arta-sand-100'
+                        : ' bg-arta-sand-100/70 text-arta-snow-100')
+                    }
+                  >
+                    <div
+                      className={
+                        'relative mb-4 h-16 w-16 lg:h-20 lg:w-20' +
+                        (isSelected ? 'lg:h-20 lg:w-20' : 'lg:h-16 lg:w-16')
+                      }
+                    >
+                      <IconTechnologyInternetCompanies className="h-full w-full object-cover" />
+                    </div>
+                    <span className={`${textClass.body_regular} max-w-[60%] text-center`}>
+                      {item.title}
+                    </span>
+                  </div>
+                </SwiperSlide>
+              )
+            })}
+          </Swiper>
 
           <button
             className="absolute bottom-4 left-1/2 translate-x-[-350%]"

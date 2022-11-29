@@ -7,7 +7,6 @@ import { Seo } from 'src/components/Seo'
 
 import SectionBanner from './SectionBanner'
 import SectionJobView from './SectionJobView'
-import SectionThankYou from './SectionThankYou'
 import { IconArrowLeft } from 'src/components/Svg/Icon'
 import { textClass } from 'src/components/Text'
 import { links } from 'src/domains/links'

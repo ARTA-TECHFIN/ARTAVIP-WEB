@@ -10,7 +10,8 @@ import ArtaLogo from 'src/components/Svg/arta-logo'
 import { links } from 'src/domains/links'
 import { ButtonAnimated } from '../ButtonAnimated'
 import cn from 'classnames'
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next'
+import { useRouter } from "next/router";
 
 type menuItemT = {
   title: string
@@ -29,6 +30,16 @@ type pageInfoItemT = {
 const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (props) => {
   const { textColor = 'white', fontSize = '16px' } = props
   const { t } = useTranslation('common')
+  const router = useRouter()
+  const { locale } = router
+
+  const [headerData, setHeaderData] = useState({
+    about_us: "",
+    investor_relation: "",
+    join_us: "",
+    media_centre: "",
+    our_business: ""
+  })
 
   const textColorClass = textColor === 'white' ? 'text-arta-snow-100' : 'text-arta-russet-100'
   const bgColorClass = textColor === 'white' ? 'bg-arta-russet-100/90' : 'bg-arta-snow-100/95'
@@ -43,7 +54,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
     {
       pageName: t('page_title.about_us'),
       title: t('page_title.about_us'),
-      paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
+      paragraph: headerData["about_us"],
       buttonText: t('page_title.about_us'),
       href: links.about,
       pages: [
@@ -56,7 +67,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
     {
       pageName: t('page_title.our_businesses'),
       title: t('page_title.our_businesses'),
-      paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
+      paragraph: headerData["our_business"],
       buttonText: '',
       href: '',
       pages: [
@@ -70,7 +81,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
     {
       pageName: t('page_title.investor_relations'),
       title: t('page_title.investor_relations'),
-      paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
+      paragraph: headerData["investor_relation"],
       buttonText: t('page_title.investor_relations'),
       href: links.investor,
       pages: [
@@ -83,7 +94,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
     {
       pageName: t('page_title.media_centre'),
       title: t('page_title.media_centre'),
-      paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
+      paragraph: headerData["media_centre"],
       buttonText: 'Media Centre home',
       href: links.media,
       pages: [
@@ -94,7 +105,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
     {
       pageName: t('page_title.join_us'),
       title: t('page_title.join_us'),
-      paragraph: `ARTA TechFin is determined to create the fairest, most transparent, and open markets in the world. We carry this out every day by providing clients with a variety of financial services.`,
+      paragraph: headerData["join_us"],
       buttonText: t('page_title.join_us'),
       href: links.joinUs,
       pages: [
@@ -136,6 +147,28 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
     return () => {
       window.removeEventListener('scroll', changeBackground)
     }
+  }, [])
+
+  useEffect(() => {
+    const g = (pageData: any, keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
+    const fetchData = async () => {
+      const result = await fetch(
+        '/api/cms/hover-menu-description',
+      );
+
+      const data = await result.json()
+      if (data.data?.attributes) {
+        setHeaderData({
+          about_us: g(data, "about_us"),
+          investor_relation: g(data, "investor_relation"),
+          join_us: g(data, "join_us"),
+          media_centre: g(data, "media_centre"),
+          our_business: g(data, "our_business")
+        })
+      }
+    };
+
+    fetchData();
   }, [])
 
   return (

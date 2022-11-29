@@ -1,0 +1,60 @@
+{
+  "data":[
+     {
+        "id":1,
+        "attributes":{
+           "job_title_en":"Assistant Client Relations Manager",
+           "job_title_tc":"Assistant Client Relations Manager",
+           "job_title_sc":"Assistant Client Relations Manager",
+           "category":"Front Office",
+           "seniority":"Middle",
+           "work_location_en":"Wan Chai",
+           "work_location_tc":"Wan Chai",
+           "work_location_sc":"Wan Chai",
+           "department_en":"Department",
+           "department_tc":"Department",
+           "department_sc":"Department",
+           "job_description_en":"<h4><strong>Exciting things that you will be involved in…</strong></h4><ul><li>Provide high quality customer service experience to clients;</li><li>Lead team members performing daily operations duties;</li><li>Perform KYC checking and different account openings;</li><li>Handle clients’ enquiries and offer solutions;</li><li>Participate in different projects, including revamping online platforms, mobile trading application developments and marketing events, etc;</li><li>Support sales teams in different campaigns to develop and maintain good relations with potential and existing clients;</li><li>Report the performance of the department and clients' feedback to management;</li><li>Perform other ad hoc tasks assigned by management.</li></ul><h4><strong>How will you be qualified?</strong></h4><ul><li>University degree or above;</li><li>5 years’ of relevant experiences;</li><li>Familiar with brokerage firm operations is preferrable;</li><li>Responsible and willing to take challenges;</li><li>Self-motivated and good interpersonal skills;</li><li>Strong customer service and communication skills;</li><li>Fluent in Cantonese and Mandarin, good command of English</li><li>Eager to drive and succeed</li><li>Entrepreneurial spirit</li></ul>",
+           "job_description_tc":"<h4><strong>Exciting things that you will be involved in…</strong></h4><ul><li>Provide high quality customer service experience to clients;</li><li>Lead team members performing daily operations duties;</li><li>Perform KYC checking and different account openings;</li><li>Handle clients’ enquiries and offer solutions;</li><li>Participate in different projects, including revamping online platforms, mobile trading application developments and marketing events, etc;</li><li>Support sales teams in different campaigns to develop and maintain good relations with potential and existing clients;</li><li>Report the performance of the department and clients' feedback to management;</li><li>Perform other ad hoc tasks assigned by management.</li></ul><h4><strong>How will you be qualified?</strong></h4><ul><li>University degree or above;</li><li>5 years’ of relevant experiences;</li><li>Familiar with brokerage firm operations is preferrable;</li><li>Responsible and willing to take challenges;</li><li>Self-motivated and good interpersonal skills;</li><li>Strong customer service and communication skills;</li><li>Fluent in Cantonese and Mandarin, good command of English</li><li>Eager to drive and succeed</li><li>Entrepreneurial spirit</li></ul>",
+           "job_description_sc":"<h4><strong>Exciting things that you will be involved in…</strong></h4><ul><li>Provide high quality customer service experience to clients;</li><li>Lead team members performing daily operations duties;</li><li>Perform KYC checking and different account openings;</li><li>Handle clients’ enquiries and offer solutions;</li><li>Participate in different projects, including revamping online platforms, mobile trading application developments and marketing events, etc;</li><li>Support sales teams in different campaigns to develop and maintain good relations with potential and existing clients;</li><li>Report the performance of the department and clients' feedback to management;</li><li>Perform other ad hoc tasks assigned by management.</li></ul><h4><strong>How will you be qualified?</strong></h4><ul><li>University degree or above;</li><li>5 years’ of relevant experiences;</li><li>Familiar with brokerage firm operations is preferrable;</li><li>Responsible and willing to take challenges;</li><li>Self-motivated and good interpersonal skills;</li><li>Strong customer service and communication skills;</li><li>Fluent in Cantonese and Mandarin, good command of English</li><li>Eager to drive and succeed</li><li>Entrepreneurial spirit</li></ul>",
+           "createdAt":"2022-11-23T10:36:58.308Z",
+           "updatedAt":"2022-11-24T09:10:10.806Z",
+           "publishedAt":"2022-11-23T10:36:59.982Z",
+           "showing_start_date":"2022-11-01",
+           "showing_end_date":"2023-01-31"
+        }
+     },
+     {
+        "id":2,
+        "attributes":{
+           "job_title_en":"Relationship Manager",
+           "job_title_tc":"客戶關係經理",
+           "job_title_sc":"客戶關係經理",
+           "category":"All",
+           "seniority":"Middle",
+           "work_location_en":"HK",
+           "work_location_tc":"HK",
+           "work_location_sc":"HK",
+           "department_en":"Investment Banking Division",
+           "department_tc":"投資銀行部",
+           "department_sc":"投資銀行部",
+           "job_description_en":"<p>投資銀行部投資銀行部投資銀行部投資銀行部</p>",
+           "job_description_tc":"<p>2017年3月29日 — 在投資銀行中，大家最熟悉的應為<i>IBD</i>，該部門主要負責公開 ... 副總裁（Vice President，簡稱VP）：千萬別被這<i>中文</i>職稱嚇到，因為一個投資銀行可以有十&nbsp;.</p>",
+           "job_description_sc":"<p>投資銀行(<i>Investment Banking</i>)，簡稱投行投資銀行是最典型的投資性金融機構，一般認為，投資銀行是在資本市場上為企業發行債券、股票，籌集長期資金提供中介服務的金融&nbsp;..</p>",
+           "createdAt":"2022-11-29T03:44:57.067Z",
+           "updatedAt":"2022-11-29T03:44:58.435Z",
+           "publishedAt":"2022-11-29T03:44:58.432Z",
+           "showing_start_date":"2022-11-01",
+           "showing_end_date":"2022-12-31"
+        }
+     }
+  ],
+  "meta":{
+     "pagination":{
+        "page":1,
+        "pageSize":25,
+        "pageCount":1,
+        "total":2
+     }
+  }
+}

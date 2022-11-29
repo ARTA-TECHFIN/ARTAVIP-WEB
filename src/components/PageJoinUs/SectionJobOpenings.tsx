@@ -21,15 +21,18 @@ const SectionJobOpenings: FC<propsT> = ({ k, jobs }) => {
   const { t } = useTranslation('common')
   const [selectedTab, setSelectedTab] = useState("All")
 
+  console.log("jobs")
+  console.log(jobs)
+
   const filteredJobs = jobs.filter((job: any) => {
     if (selectedTab === "All") return job
 
     if (selectedTab === TABS['fontOffice']) {
-      return job.tag === 'fontOffice'
+      return job.attributes.category === 'Front Office' || job.attributes.category === 'All'
     }
 
     if (selectedTab === TABS['middleAndBackOffice']) {
-      return job.tag === 'middleAndBackOffice'
+      return job.attributes.category === 'Middle Office' || job.attributes.category === 'Back Office' || job.attributes.category === 'All'
     }
   })
 

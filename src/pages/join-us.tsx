@@ -2,6 +2,7 @@ import type { GetServerSideProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import JoinUsLayout from 'src/components/PageJoinUs/JoinUsLayout'
 import joinUsJson from 'apidata/join-us.json'
+import joinUsJobsOpeningsJson from 'apidata/join-us-jobs-openings.json'
 
 import { getJobsCms, getJobsCmsT } from 'src/domains/jobs'
 
@@ -9,6 +10,12 @@ const fetchCmsData = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/join-us`)
   const data = await res.json()
   return data
+}
+
+const fetchJobsData = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/join-us-jobs-openings`)
+  const data = await res.json()
+  return data.data
 }
 
 const massageData = (pageData: any, locale: string | undefined = 'en') => {
@@ -29,9 +36,8 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
   }
 }
 
-const PageJoinUs = (props: { k: any, cms: getJobsCmsT }) => {
-  const { k, cms } = props
-  const jobs = cms.jobs
+const PageJoinUs = (props: { k: any, cms: getJobsCmsT, jobs: any }) => {
+  const { k, cms, jobs } = props
 
   return (
     <JoinUsLayout k={k} jobs={jobs} />
@@ -44,13 +50,15 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const cms = await getJobsCms({ lang: 'en' })
 
   // CMS join us page is broken
-  // const pageData = useLocalCms ? joinUsJson : await fetchCmsData()
-  const pageData = joinUsJson
+  const pageData = useLocalCms ? joinUsJson : await fetchCmsData()
+  const jobs = useLocalCms ? joinUsJobsOpeningsJson : await fetchJobsData()
+  // const pageData = joinUsJson
 
   return {
     props: {
       k: massageData(pageData, locale),
       cms,
+      jobs,
       ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }

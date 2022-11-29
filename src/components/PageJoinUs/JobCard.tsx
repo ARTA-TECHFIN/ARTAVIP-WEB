@@ -3,15 +3,16 @@ import { Pin, IconArrowRight } from 'src/components/Svg/Icon'
 import Link from 'next/link'
 
 type propsT = {
+  id: number
   title: string
   subTitle: string
   seniority: string
   location: string
 }
 
-const JobCard = ({ title, subTitle, seniority, location }: propsT) => {
+const JobCard = ({ id, title, subTitle, seniority, location }: propsT) => {
   return (
-    <Link href="job-opening">
+    <Link href={`/job/${id}`}>
       <div className="h-full bg-white p-6 shadow-postCard">
         <div className="flex h-full flex-col justify-between">
           <div className="flex justify-between">

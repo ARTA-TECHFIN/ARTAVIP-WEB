@@ -16,7 +16,7 @@ const QUERY_LISTING_DOCUMENTS = 'QUERY_LISTING_DOCUMENTS'
 const useGetData = (locale: string) => {
   const lang = locale === 'en'? 'en': locale === 'tc'? 'tc': 'sc'
   const year = new Date().getFullYear()
-  const yearList = [year, year - 1, year - 2, year - 3, year - 4]
+  const yearList = [2013, 2012, 2009, 2008]
 
   return useQuery([QUERY_LISTING_DOCUMENTS, lang, year], async () => {
     const res = await Promise.all(
@@ -24,7 +24,7 @@ const useGetData = (locale: string) => {
     )
 
     return res.map((r, i) => ({
-      year: year - i,
+      year: yearList[i],
       results: r.data.results,
     }))
   })
@@ -38,6 +38,8 @@ const PageCirculars: NextPage = () => {
 
   if (status === 'loading') return <Loader />
   if (status === 'error') return <ErrorMessage error={error} />
+
+  console.log(data)
 
   return (
     <div className="mt-16">

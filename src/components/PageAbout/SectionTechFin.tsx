@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import tech_fin_bg from './images/tech_fin_bg.png'
 import { textClass } from 'src/components/Text'
@@ -12,11 +13,20 @@ import { PageAboutCmsT } from 'src/pages/about'
 import { useTranslation } from 'next-i18next'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
+import { Navigation } from "swiper"
 
 export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
   const { k } = props
   const [selectedIndex, setSelectedIndex] = useState(2)
   const { t } = useTranslation('common')
+  const [showComponent, setShowComponent] = useState(false);
+  
+  useEffect(() => {
+      setShowComponent(true);
+  },[])
+
+  const prevRef = useRef(null)
+  const nextRef = useRef(null)
 
   return (
     <div className="relative z-1 flex flex-col overflow-hidden" id="tech-fin">
@@ -45,65 +55,68 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
           </FadeUp>
         </div>
         <div className="relative h-96 w-full max-w-full overflow-hidden px-12">
-          <Swiper 
-            loop={true}
-            spaceBetween={50}
-            slidesPerView={5}
-            breakpoints={{
-              767: {
-                slidesPerView: 3,
-              },
-              1024: {
-                slidesPerView: 5,
-              },
-            }}
-            className="!overflow-visible">
-            {k.ecosystem.itemList.map((item, index) => {
-              const isSelected = index === selectedIndex
+          {showComponent && (
+            <Swiper
+              modules={[Navigation]}
+              navigation={{
+                prevEl: prevRef?.current,
+                nextEl: nextRef?.current
+              }}
+              loop={true}
+              centeredSlides={true}
+              spaceBetween={50}
+              slidesPerView={1}
+              breakpoints={{
+                767: {
+                  slidesPerView: 3,
+                },
+                1024: {
+                  slidesPerView: 5,
+                },
+              }}
+              className="!overflow-visible">
+              {k.ecosystem.itemList.map((item, index) => {
+                const isSelected = index === selectedIndex
 
-              return (
-                <SwiperSlide
-                  key={index}
-                >
-                  <div
+                return (
+                  <SwiperSlide
                     key={index}
-                    className={
-                      'w-full flex aspect-square flex-col items-center justify-center rounded-full shadow-2xl transition-all duration-300' +
-                      (isSelected
-                        ? ' bg-arta-eggshell-100 text-arta-sand-100'
-                        : ' bg-arta-sand-100/70 text-arta-snow-100')
-                    }
                   >
                     <div
+                      key={index}
                       className={
-                        'relative mb-4 h-16 w-16 lg:h-20 lg:w-20' +
-                        (isSelected ? 'lg:h-20 lg:w-20' : 'lg:h-16 lg:w-16')
+                        'w-full flex aspect-square flex-col items-center justify-center rounded-full shadow-2xl transition-all duration-300' +
+                        (isSelected
+                          ? ' bg-arta-eggshell-100 text-arta-sand-100'
+                          : ' bg-arta-sand-100/70 text-arta-snow-100')
                       }
                     >
-                      <IconTechnologyInternetCompanies className="h-full w-full object-cover" />
+                      <div
+                        className={
+                          'relative mb-4 h-16 w-16 lg:h-20 lg:w-20' +
+                          (isSelected ? 'lg:h-20 lg:w-20' : 'lg:h-16 lg:w-16')
+                        }
+                      >
+                        <IconTechnologyInternetCompanies className="h-full w-full object-cover" />
+                      </div>
+                      <span className={`${textClass.body_regular} max-w-[60%] text-center`}>
+                        {item.title}
+                      </span>
                     </div>
-                    <span className={`${textClass.body_regular} max-w-[60%] text-center`}>
-                      {item.title}
-                    </span>
-                  </div>
-                </SwiperSlide>
-              )
-            })}
-          </Swiper>
-
+                  </SwiperSlide>
+                )
+              })}
+            </Swiper>
+          )}
           <button
+            ref={prevRef}
             className="absolute bottom-4 left-1/2 translate-x-[-350%]"
-            onClick={() =>
-              setSelectedIndex((s) =>
-                !k.ecosystem.itemList[s - 1] ? k.ecosystem.itemList.length - 1 : s - 1
-              )
-            }
           >
             <IconArrowLeft fill="#593725" />
           </button>
           <button
+            ref={nextRef}
             className="absolute bottom-4 left-1/2 translate-x-[250%]"
-            onClick={() => setSelectedIndex((s) => (!k.ecosystem.itemList[s + 1] ? 0 : s + 1))}
           >
             <IconArrowRight fill="#593725" />
           </button>

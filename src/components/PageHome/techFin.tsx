@@ -18,6 +18,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
   const sec1MaskCircleRef = useRef(null)
   const sec1VideoRed = useRef(null)
   const [selectedBusiness, setSelectedBusiness] = useState(0)
+  const [currentSection, setCurrentSection] = useState<"10" | "15">("10")
 
   const [lastFireTime, setLastFireTime] = useState<number>(Date.now())
   const throttle = (fn: any, delay: number) => {
@@ -126,6 +127,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
 
   const fromSec0ToSec1 = () => {
     const isMobile = windowWidth < 768
+    setCurrentSection("10")
 
     gsap.to(circleRef.current, {
       duration: 1.4,
@@ -170,6 +172,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
   }
 
   const fromSec1ToSec1_5 = () => {
+    setCurrentSection("15")
     const isMobile = windowWidth < 768
     gsap.to(circleRef.current, {
       duration: 0.9,
@@ -202,7 +205,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
     })
 
     gsap.to(businessRef.current, {
-      delay: 0.8,
+      delay: 0,
       zIndex: 3,
       autoAlpha: 1,
       duration: 1,
@@ -211,6 +214,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
   }
 
   const fromSec1_5ToSec2 = () => {
+    setCurrentSection("15")
     gsap.to(businessRef.current, {
       delay: 0,
       zIndex: 3,
@@ -300,7 +304,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
           <div
             id="sec1ContentRef"
             ref={sec1ContentRef}
-            className="flex h-full w-full flex-col justify-center gap-[24px] px-[6em] opacity-0 lg:items-end lg:px-0 lg:text-right"
+            className={cn("flex h-full w-full flex-col justify-center gap-[24px] px-[6em] opacity-0 lg:items-end lg:px-0 lg:text-right", currentSection == "15" && "!opacity-0")}
           >
             <h1 className="font-Verah text-[6em] tracking-[0.06em] text-white will-change-transform lg:text-[3.4em]">
               {t("about_us.what_is_techfin")}
@@ -324,7 +328,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
         </div>
         <div
           ref={businessRef}
-          className="absolute bottom-[22em] top-[25em] z-2 transform text-white opacity-0 md:top-[16em] lg:left-[6em] lg:left-[4em] lg:bottom-auto lg:top-[21em] lg:top-1/2 lg:-translate-y-1/2"
+          className={cn("absolute bottom-[22em] top-[25em] z-2 transform text-white opacity-0 transition duration-1000 md:top-[16em] lg:left-[6em] lg:left-[4em] lg:bottom-auto lg:top-[21em] lg:top-1/2 lg:-translate-y-1/2", currentSection == "10" && "!opacity-0")}
         >
           <h1 className="font-verah ml-[0.9em] text-left text-[6em] tracking-[0.06em] md:ml-[0.6em] lg:ml-0 lg:text-[3.4em]">
             {t('page_title.our_businesses')}

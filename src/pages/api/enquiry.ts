@@ -28,7 +28,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         // sender address must be verified with Amazon SES.
         // recipient address must be verified with Amazon SES if sandbox mode is enabled.
         from: 'noreply@artatechfin.com',
-        to: 'horsehcj@gmail.com',
+        to: 'katie.hu@keysocapp.com',
         subject: 'Message title',
         text: 'Plaintext version of the message',
         html: '<p>HTML version of the message</p>',

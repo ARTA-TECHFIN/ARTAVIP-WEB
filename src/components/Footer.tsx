@@ -33,12 +33,11 @@ const Footer: FC<{ textColor?: 'white' | 'brown' }> = (props) => {
             <div className="order-2 flex flex-col space-y-5 text-[16px] md:flex-row md:space-x-5 md:space-y-0 lg:order-1">
               <div className="flex flex-col items-start justify-start space-y-4">
                 <h6 className="font-Verah text-[16px] leading-[24px]">{t('footer.address')}</h6>
-                <a
-                  href="#"
-                  className="cursor-pointer whitespace-pre font-Neue text-[12px] leading-[20px] hover:underline"
+                <p
+                  className="whitespace-pre font-Neue text-[12px] leading-[20px]"
                 >
                   {k.address}
-                </a>
+                </p>
               </div>
               <div className="flex flex-col items-start space-y-4">
                 <h6 className="font-Verah text-[16px] leading-[24px]">{t('footer.contact_us')}</h6>

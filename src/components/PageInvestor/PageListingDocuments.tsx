@@ -10,7 +10,7 @@ import Link from 'next/link'
 import { links } from 'src/domains/links'
 import { useTranslation } from 'next-i18next'
 
-const QUERY_CIRCULARS = 'QUERY_CIRCULARS'
+const QUERY_LISTING_DOCUMENTS = 'QUERY_LISTING_DOCUMENTS'
 
 // TODO: Assume only get four years of data
 const useGetData = (locale: string) => {
@@ -18,9 +18,9 @@ const useGetData = (locale: string) => {
   const year = new Date().getFullYear()
   const yearList = [year, year - 1, year - 2, year - 3, year - 4]
 
-  return useQuery([QUERY_CIRCULARS, lang, year], async () => {
+  return useQuery([QUERY_LISTING_DOCUMENTS, lang, year], async () => {
     const res = await Promise.all(
-      yearList.map((year) => getReportList({ lang, page: 1, reportType: 'c', year }))
+      yearList.map((year) => getReportList({ lang, page: 1, reportType: 'l', year }))
     )
 
     return res.map((r, i) => ({

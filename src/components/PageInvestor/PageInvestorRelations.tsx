@@ -37,7 +37,7 @@ const PageInvestorRelations: NextPage = () => {
           </li>
 
           <li className="md:col-span-6 col-span-12">
-            <Link href={"/investor-relations/announcements-notices"}>
+            <Link href={links.investorListingDocuments}>
               <ReportCard title={t("join_us.listing_documents")} />
             </Link>
           </li>

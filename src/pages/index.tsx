@@ -5,9 +5,11 @@ import React from 'react'
 import Header from 'src/components/Header/Header'
 import Footer from 'src/components/Footer'
 import homepageJson from 'apidata/homepage.json'
+import contactpageJson from 'apidata/contact.json'
 
 import { Slides } from 'src/components/PageHome/PageHome'
 import { Seo } from 'src/components/Seo'
+import { getFooterCms } from 'src/domains/footer'
 
 const fetchCmsData = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/homepage`)
@@ -30,8 +32,9 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
   }
 }
 
-const Home: NextPage = ({k}: any) => {
+const Home: NextPage = ({k, f}: any) => {
   const { t } = useTranslation('common')
+
   return (
     <>
       <Seo title={t('site_title')} />
@@ -39,7 +42,7 @@ const Home: NextPage = ({k}: any) => {
       <main>
         <Slides k={k} />
       </main>
-      <Footer />
+      <Footer f={f} />
     </>
   )
 }
@@ -49,9 +52,11 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const useLocalCms = process.env.USE_LOCAL_CMS_DATA === 'true'
 
   const pageData = useLocalCms ? homepageJson : await fetchCmsData()
+  const footerData = useLocalCms ? contactpageJson : await getFooterCms({lang: locale})
 
   return {
     props: {
+      f: footerData,
       k: massageData(pageData, locale),
       ...(await serverSideTranslations(locale || 'en', ['common'])),
     },

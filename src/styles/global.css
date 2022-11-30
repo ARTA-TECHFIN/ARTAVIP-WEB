@@ -115,14 +115,16 @@
 }
 
 .module-text-section ul,
-.module-etg-text-section ul {
+.module-etg-text-section ul,
+.job-description ul {
   padding-left: 24px;
   list-style: disc;
   margin-top: 12px;
   margin-bottom: 24px;
 }
 
-.module-text-section ul li {
+.module-text-section ul li,
+.job-description ul li {
   margin-top: 12px;
 }
 
@@ -130,7 +132,8 @@
   @apply mt-4;
 }
 
-.module-etg-text-section h4 {
+.module-etg-text-section h4,
+.job-description h4 {
   @apply mt-4 text-arta-sand-200 font-Verah md:text-[1.5rem] text-xl leading-[2rem];
 }
 

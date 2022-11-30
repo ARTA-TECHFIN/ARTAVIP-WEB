@@ -12,8 +12,9 @@ import { textClass } from 'src/components/Text'
 import { links } from 'src/domains/links'
 import { useTranslation } from 'next-i18next'
 
-const PageJobOpenings: NextPage = () => {
+const PageJobOpenings: NextPage = ({k}: any) => {
   const { t } = useTranslation('common')
+
   return (
     <>
       <Seo />
@@ -29,7 +30,7 @@ const PageJobOpenings: NextPage = () => {
               <IconArrowLeft fill="#593725" className="mr-2 h-4" />
               {t("join_us.back")}
             </Link>
-            <SectionJobView />
+            <SectionJobView k={k} />
           </div>
         </div>
       </main>

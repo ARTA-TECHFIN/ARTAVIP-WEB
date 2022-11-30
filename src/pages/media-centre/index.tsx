@@ -64,7 +64,7 @@ const PageMediaCenter = (props: { blogs: any, cms: getMediaCmsT, k: any }) => {
             <Link
               key={index}
               className="col-span-full md:col-span-6 lg:col-span-4"
-              href={`/media-centre/blog-post/${post.attributes.id}`}
+              href={`/media-centre/blog-post/${post.id}`}
             >
               <div className="w-full cursor-pointer bg-white transition-shadow hover:shadow-postCard">
                 <img src={post.attributes.thumbnail.data?.attributes.url} alt="" className="w-full" />

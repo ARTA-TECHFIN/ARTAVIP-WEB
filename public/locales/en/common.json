@@ -106,5 +106,9 @@
     "thanks_title": "Thanks for your enquiry!",
     "thanks_message": "This message acknowledges that we have received your application. We will contact you very soon.",
     "scan": "Scan and follow us"
+  },
+  "media": {
+    "back_blog": "Back",
+    "back_press": "Back"
   }
 }

@@ -46,8 +46,6 @@ const Footer: FC<{ textColor?: 'white' | 'brown' }> = (props) => {
     ],
   }
 
-  console.log(footerData)
-
   return (
     <footer className={`relative z-2 h-full w-full ${bgClass} ${textClass} will-change-transform`}>
       <div className="flex max-w-main-contain py-6 px-6 md:px-20 md:py-12 xl:mx-auto">

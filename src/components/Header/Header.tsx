@@ -11,7 +11,7 @@ import { links } from 'src/domains/links'
 import { ButtonAnimated } from '../ButtonAnimated'
 import cn from 'classnames'
 import { useTranslation } from 'next-i18next'
-import { useRouter } from "next/router";
+import { useRouter } from "next/router"
 
 type menuItemT = {
   title: string

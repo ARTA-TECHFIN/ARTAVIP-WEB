@@ -6,6 +6,7 @@ import { textClass } from 'src/components/Text'
 import { links } from 'src/domains/links'
 import { getMediaCms, getMediaCmsT, getSlug } from 'src/domains/media'
 import parse from 'html-react-parser'
+import { useTranslation } from 'next-i18next'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const cms = await getMediaCms({ lang: 'en' })
@@ -56,6 +57,9 @@ const PressPost = (props: {
   post: getMediaCmsT['pressPosts'][number]['posts'][number]
 }) => {
   const { k, cms, post } = props
+  const { t } = useTranslation('common')
+
+  console.log(post)
 
   return (
     <MediaLayout k={k}>
@@ -65,7 +69,7 @@ const PressPost = (props: {
           href={links.mediaPress}
         >
           <IconArrowLeft fill="#593725" className="mr-2 h-4" />
-          {'Back to listing'}
+          {t("media.back_press")}
         </Link>
         <div className="mt-4 bg-white p-6 shadow-blogPost md:p-12">
           <p className="text-xs text-arta-indigo-100">{post.date}</p>

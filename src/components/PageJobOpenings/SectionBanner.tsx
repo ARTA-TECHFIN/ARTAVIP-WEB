@@ -1,7 +1,9 @@
 import Image from 'next/image'
 import { textClass } from '../Text'
+import { useTranslation } from 'next-i18next'
 
 const SectionBanner = () => {
+  const { t } = useTranslation('common')
   return (
     <div className="group/bg relative overflow-hidden">
       <div className="easeInOutSine absolute h-full w-full scale-150 overflow-hidden duration-300 group-hover/bg:scale-100">
@@ -13,8 +15,8 @@ const SectionBanner = () => {
         />
       </div>
       <div className="arta-container mx-auto h-[480px] py-12 relative z-1 flex flex-col justify-end">
-            <p className={textClass.body_regular_verah}>{`Our Businesses`}</p>
-            <h1 className={`${textClass.h1_style2} mt-1`}>{`Job Openings`}</h1>
+            <p className={textClass.body_regular_verah}>{t("page_title.join_us")}</p>
+            <h1 className={`${textClass.h1_style2} mt-1`}>{t("join_us.job_openings")}</h1>
       </div>
     </div>
   )

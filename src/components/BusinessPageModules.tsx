@@ -25,16 +25,17 @@ const BusinessPageModules: FC<{ components: any[], locale: string }> = ({compone
             case "our-business.component-2":
               return (
                 <ModuleIconList
+                  padding={component.padding}
                   iconList={[
                     {
                       icon: component.icon_left?.data?.attributes?.url || "",
-                      title: g(component, 'title_left'),
-                      body: g(component, 'content_left'),
+                      title: g(component, 'title_left') || "",
+                      body: g(component, 'content_left') || "",
                     },
                     {
                       icon: component.icon_right?.data?.attributes?.url || "",
-                      title: g(component, 'title_right'),
-                      body: g(component, 'content_right'),
+                      title: g(component, 'title_right') ?? "",
+                      body: g(component, 'content_right') ?? "",
                     }]
                   }
                 />
@@ -43,7 +44,7 @@ const BusinessPageModules: FC<{ components: any[], locale: string }> = ({compone
               return (
                 <div key={i} className='overflow-hidden bg-arta-eggshell-100'>
                   <ModuleTextColList
-                    headerPosition={component.headerPosition || 'right'}
+                    headerPosition={'right'}
                     header={g(component, 'title')}
                     title={g(component, 'subtitle')}
                     list={[
@@ -60,7 +61,25 @@ const BusinessPageModules: FC<{ components: any[], locale: string }> = ({compone
                 </div>
               )
             case "our-business.component-4":
-              return <div key={i}>4</div>
+              return (
+                <div key={i} className='overflow-hidden bg-arta-eggshell-100'>
+                  <ModuleTextColList
+                    headerPosition={'left'}
+                    header={g(component, 'title')}
+                    title={g(component, 'subtitle')}
+                    list={[
+                      {
+                        title: "Title",
+                        body: "Body"
+                      },
+                      {
+                        title: "Title",
+                        body: "Body"
+                      },
+                    ]}
+                  />
+                </div>
+              )
             default:
               return <div key={i}>5</div>
           }

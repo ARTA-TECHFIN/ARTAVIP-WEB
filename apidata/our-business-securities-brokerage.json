@@ -6,7 +6,7 @@
          "description_tc":"Demo data",
          "description_sc":"Demo data",
          "createdAt":"2022-11-23T03:50:13.033Z",
-         "updatedAt":"2022-11-26T17:10:08.349Z",
+         "updatedAt":"2022-11-30T04:39:57.919Z",
          "publishedAt":"2022-11-23T03:50:43.225Z",
          "components":[
             {
@@ -34,6 +34,7 @@
                "content_right_en":"We are the first line of defence in managing credit and market risk exposure. We proactively manage our house positions and hedge dynamically to secure our sales margin and maintain our risk exposure within the limit. ",
                "content_right_tc":"我們是信貸管理和市場風險的第一道防線。我們積極主動地管理投資資產，並進行動態對沖，以確保獲利，並將風險維持在可接受的限度內。",
                "content_right_sc":"我们是信贷管理和市场风险的第一道防线。我们积极主动地管理投资资产，并进行动态对冲，以确保获利，并将风险维持在可接受的限度内。",
+               "padding":"Top",
                "icon_left":{
                   "data":{
                      "id":4,
@@ -96,6 +97,7 @@
                "content_right_en":null,
                "content_right_tc":null,
                "content_right_sc":null,
+               "padding":"Bottom",
                "icon_left":{
                   "data":{
                      "id":6,
@@ -148,6 +150,7 @@
                "content_right_en":"We provide bespoke financing solutions for our clients to utilize leverage effectively and increase the flexibility of capital. On both security and portfolio levels, we aim to enhance buying power to enable treasury optimization and alpha enhancement of our clients.",
                "content_right_tc":"我們為客戶提供定製化的融資解決方案，幫助他們有效利用槓桿，提高資本的靈活性。我們致力於幫助客戶提高證券和投資組合的購買力，助其實現財務優化並提高超額收益。",
                "content_right_sc":"我们为客户提供定制化的融资解决方案，帮助他们有效利用杠杆，提高资本的灵活性。我们致力于帮助客户提高证券和投资组合的购买力，助其实现财务优化并提高超额收益。",
+               "padding":"Top",
                "icon_left":{
                   "data":{
                      "id":9,
@@ -210,6 +213,7 @@
                "content_right_en":"Clients’ safety and security are our top priorities. With a transparent structure backed by investment-grade custodians and technology, we ensure clients’ assets are safely kept in a regulated and segregated manner. ",
                "content_right_tc":"保障客戶資產的安全是我們的首要任務。在投資級的託管服務商和技術的支持下，我們建立了一個透明的結構體系，確保客戶的資產以受監管的方式被安全獨立地保管。",
                "content_right_sc":"保障客户资产的安全是我们的首要任务。在投资级的托管服务商和技术的支持下，我们建立了一个透明的结构体系，确保客户的资产以受监管的方式被安全独立地保管。",
+               "padding":"Bottom",
                "icon_left":{
                   "data":{
                      "id":5,

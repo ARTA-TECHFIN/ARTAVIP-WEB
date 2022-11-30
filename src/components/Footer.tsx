@@ -1,22 +1,17 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import { Hr } from './Hr'
 import { IconFacebook, IconLinkedIn, IconTwitter, IconWeChat } from './Svg/Icon'
 import LanguageSwitcher from './LanguageSwitcher'
 import { useTranslation } from 'next-i18next';
-
-const k = {
-  address: `Units 1-2, Level 9, \nK11 ATELIER King’s Road, \n728 King’s Road,Quarry Bay,\nHong Kong`,
-  socialMediaList: [
-    { href: '#LinkedIn', Component: IconLinkedIn },
-    { href: '#Twitter', Component: IconTwitter },
-    { href: '#Facebook', Component: IconFacebook },
-    { href: '#WeChat', Component: IconWeChat },
-  ],
-}
+import { useRouter } from "next/router"
 
 const Footer: FC<{ textColor?: 'white' | 'brown' }> = (props) => {
   const { t } = useTranslation('common')
   const { textColor = 'white' } = props
+  const router = useRouter()
+  const { locale } = router
+
+  const [footerData, setFooterData] = useState<any>({})
 
   const textClass =
     textColor === 'white'
@@ -24,6 +19,32 @@ const Footer: FC<{ textColor?: 'white' | 'brown' }> = (props) => {
       : 'text-arta-sand-100 decoration-arta-sand-100'
   const bgClass = textColor === 'white' ? 'bg-arta-bistre-100' : 'bg-arta-eggshell-100'
   const borderClass = textColor === 'white' ? 'border-[#878095]' : 'border-arta-sand-100/50'
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await fetch(
+        '/api/cms/contact-us',
+      );
+
+      const data = await result.json()
+      setFooterData(data.data.attributes)
+
+    };
+
+    fetchData();
+  }, [])
+
+  const g = (keyWithoutLang: string) => `${footerData[`${keyWithoutLang}_${locale}`]}`
+
+  const k = {
+    address: `Units 1-2, Level 9, \nK11 ATELIER King’s Road, \n728 King’s Road,Quarry Bay,\nHong Kong`,
+    socialMediaList: [
+      { href: footerData.social_media_link_linkedin, Component: IconLinkedIn },
+      { href: footerData.social_media_link_twitter, Component: IconTwitter },
+      { href: footerData.social_media_link_facebook, Component: IconFacebook },
+      { href: '#WeChat', Component: IconWeChat },
+    ],
+  }
 
   return (
     <footer className={`relative z-2 h-full w-full ${bgClass} ${textClass} will-change-transform`}>
@@ -36,7 +57,7 @@ const Footer: FC<{ textColor?: 'white' | 'brown' }> = (props) => {
                 <p
                   className="whitespace-pre font-Neue text-[12px] leading-[20px]"
                 >
-                  {k.address}
+                  {g("address")}
                 </p>
               </div>
               <div className="flex flex-col items-start space-y-4">
@@ -73,7 +94,7 @@ const Footer: FC<{ textColor?: 'white' | 'brown' }> = (props) => {
                 <h6 className=" text-[16px] leading-[24px]">{t('footer.social_media')}{' '}</h6>
                 <div className="flex space-x-2">
                   {k.socialMediaList.map(({ href, Component }) => (
-                    <a href={href} key={href}>
+                    <a href={href} key={href} target="_blank" rel="noreferrer">
                       <Component className="h-6 w-6 pr-1 last:pr-0" />
                     </a>
                   ))}

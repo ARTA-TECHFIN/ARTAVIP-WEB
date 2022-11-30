@@ -6,12 +6,6 @@ import JobCards from 'src/components/PageJoinUs/JobCards'
 import { FC } from 'react'
 import { useTranslation } from 'next-i18next'
 
-const TABS = {
-  all: 'All',
-  fontOffice: 'Front Office',
-  middleAndBackOffice: 'Middle and Back Office',
-} as const
-
 type propsT = {
   k: any
   jobs: any
@@ -21,11 +15,14 @@ const SectionJobOpenings: FC<propsT> = ({ k, jobs }) => {
   const { t } = useTranslation('common')
   const [selectedTab, setSelectedTab] = useState("All")
 
-  console.log("jobs")
-  console.log(jobs)
+  const TABS = {
+    all: t("join_us.all"),
+    fontOffice: t("join_us.front_office"),
+    middleAndBackOffice: t("join_us.back_office"),
+  } as const
 
   const filteredJobs = jobs.filter((job: any) => {
-    if (selectedTab === "All") return job
+    if (selectedTab === TABS['all']) return job
 
     if (selectedTab === TABS['fontOffice']) {
       return job.attributes.category === 'Front Office' || job.attributes.category === 'All'
@@ -56,5 +53,4 @@ const SectionJobOpenings: FC<propsT> = ({ k, jobs }) => {
   )
 }
 
-export { TABS as JobTabs }
 export default SectionJobOpenings

@@ -106,5 +106,9 @@
     "thanks_title": "感谢您的查询！",
     "thanks_message": "我们已收到您的查询，将会尽快与您联络。",
     "scan": "扫描二维码，关注我们！"
+  },
+  "media": {
+    "back_blog": "返回公司网志主页",
+    "back_press": "返回新闻稿主页"
   }
 }

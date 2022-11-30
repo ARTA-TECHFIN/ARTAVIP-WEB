@@ -106,5 +106,9 @@
     "thanks_title": "感謝您的查詢！",
     "thanks_message": "我們已收到您的查詢，將會儘快與您聯絡。",
     "scan": "掃描二維碼，關注我們！"
+  },
+  "media": {
+    "back_blog": "返回公司網誌主頁",
+    "back_press": "返回新聞稿主頁"
   }
 }

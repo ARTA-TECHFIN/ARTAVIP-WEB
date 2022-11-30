@@ -180,3 +180,25 @@
     transform: rotate(200deg);
 	}
 }
+
+.our-eco .swiper-slide {
+  padding-top: 20px;
+}
+
+.ss-container {
+  @apply bg-arta-sand-100/70 text-arta-snow-100 transition;
+  transform: scale(0.9);
+}
+
+.ss-circle {
+  @apply lg:h-16 lg:w-16;
+}
+
+.swiper-slide-active .ss-container {
+  @apply bg-arta-eggshell-100 text-arta-sand-100;
+  transform: scale(1.1);
+}
+
+.swiper-slide-active .ss-circle {
+  @apply lg:h-20 lg:w-20;
+}

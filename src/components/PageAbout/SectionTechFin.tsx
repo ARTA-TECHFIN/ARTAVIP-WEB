@@ -17,7 +17,6 @@ import { Navigation } from "swiper"
 
 export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
   const { k } = props
-  const [selectedIndex, setSelectedIndex] = useState(2)
   const { t } = useTranslation('common')
   const [showComponent, setShowComponent] = useState(false);
   
@@ -54,7 +53,7 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
             </>
           </FadeUp>
         </div>
-        <div className="relative h-96 w-full max-w-full overflow-hidden px-12">
+        <div className="our-eco relative h-96 md:h-80 w-full max-w-full overflow-hidden px-12">
           {showComponent && (
             <Swiper
               modules={[Navigation]}
@@ -68,7 +67,7 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
               slidesPerView={1}
               breakpoints={{
                 767: {
-                  slidesPerView: 3,
+                  slidesPerView: 1,
                 },
                 1024: {
                   slidesPerView: 5,
@@ -76,8 +75,6 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
               }}
               className="!overflow-visible">
               {k.ecosystem.itemList.map((item, index) => {
-                const isSelected = index === selectedIndex
-
                 return (
                   <SwiperSlide
                     key={index}
@@ -85,16 +82,12 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
                     <div
                       key={index}
                       className={
-                        'w-full flex aspect-square flex-col items-center justify-center rounded-full shadow-2xl transition-all duration-300' +
-                        (isSelected
-                          ? ' bg-arta-eggshell-100 text-arta-sand-100'
-                          : ' bg-arta-sand-100/70 text-arta-snow-100')
+                        'ss-container w-3/5 md:w-4/5 mx-auto lg:w-full flex aspect-square flex-col items-center justify-center rounded-full shadow-2xl transition-all duration-300'
                       }
                     >
                       <div
                         className={
-                          'relative mb-4 h-16 w-16 lg:h-20 lg:w-20' +
-                          (isSelected ? 'lg:h-20 lg:w-20' : 'lg:h-16 lg:w-16')
+                          'ss-circle relative mb-4 h-16 w-16 transition'
                         }
                       >
                         <IconTechnologyInternetCompanies className="h-full w-full object-cover" />
@@ -110,13 +103,13 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
           )}
           <button
             ref={prevRef}
-            className="absolute bottom-4 left-1/2 translate-x-[-350%]"
+            className="absolute bottom-0 left-1/2 translate-x-[-350%]"
           >
             <IconArrowLeft fill="#593725" />
           </button>
           <button
             ref={nextRef}
-            className="absolute bottom-4 left-1/2 translate-x-[250%]"
+            className="absolute bottom-0 left-1/2 translate-x-[250%]"
           >
             <IconArrowRight fill="#593725" />
           </button>

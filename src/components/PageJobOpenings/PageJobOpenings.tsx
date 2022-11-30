@@ -10,8 +10,10 @@ import SectionJobView from './SectionJobView'
 import { IconArrowLeft } from 'src/components/Svg/Icon'
 import { textClass } from 'src/components/Text'
 import { links } from 'src/domains/links'
+import { useTranslation } from 'next-i18next'
 
 const PageJobOpenings: NextPage = () => {
+  const { t } = useTranslation('common')
   return (
     <>
       <Seo />
@@ -25,7 +27,7 @@ const PageJobOpenings: NextPage = () => {
               href={links.joinUs}
             >
               <IconArrowLeft fill="#593725" className="mr-2 h-4" />
-              {'Back to job openings list'}
+              {t("join_us.back")}
             </Link>
             <SectionJobView />
           </div>

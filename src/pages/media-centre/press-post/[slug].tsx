@@ -22,18 +22,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const cms = await getMediaCms({ lang: 'en' })
+export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
+  const cms = await getMediaCms({ lang: locale })
   const slug = params?.slug
 
   let post: any = null
-  let k = {
-    heroBanner: {
-      description: '',
-      image: '/images/media-centre/banner.png',
-      mobileImage: '/images/media-centre/mobile-banner.png',
-    }
-  }
   cms.pressPosts.some((pressByYear) => {
     const r = pressByYear.posts.find((post) => getSlug(post.title) === slug)
     if (r) post = r
@@ -43,7 +36,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      k,
       cms,
       post,
     },
@@ -51,14 +43,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 const PressPost = (props: {
-  k: any
   cms: getMediaCmsT
   post: getMediaCmsT['pressPosts'][number]['posts'][number]
 }) => {
-  const { k, cms, post } = props
+  const { cms, post } = props
 
   return (
-    <MediaLayout k={k}>
+    <MediaLayout cms={cms}>
       <div className="arta-container mx-auto mt-8">
         <Link
           className={`flex cursor-pointer items-center underline ${textClass.body_regular_verah}`}

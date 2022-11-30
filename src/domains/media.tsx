@@ -1,5 +1,9 @@
 import { langT } from './i18n'
 
+import mediaCentreJson from 'apidata/media-centre.json'
+import mediaCentreArtaBlogsJson from 'apidata/media-centre-arta-blogs.json'
+import mediaCentrePressReleasesJson from 'apidata/media-centre-press-releases.json'
+
 // TODO: generate this from cms
 export type getMediaCmsT = Awaited<ReturnType<typeof getMediaCms>>
 
@@ -10,7 +14,83 @@ export const getSlug = (title: string) => {
     .replace(/[^\w-]+/g, '')
 }
 
-export const getMediaCms = async ({ lang }: { lang: langT }) => {
+const fetchCmsData = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/media-center`)
+  const data = await res.json()
+  return data
+}
+
+const fetchBlogsData = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/media-centre-arta-blogs`)
+  const data = await res.json()
+  return data.data
+}
+
+const fetchPressData = async () => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/media-centre-press-releases`
+  )
+  const data = await res.json()
+  return data.data
+}
+
+const massageData = (
+  pageData: any,
+  blogData: any,
+  pressData: any,
+  locale: string | undefined = 'en'
+) => {
+  const g = (keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
+  const getKey = (keyWithoutLang: string) => `${`${keyWithoutLang}_${locale}`}`
+
+  return {
+    heroBanner: {
+      title: 'Media Centre',
+      description: g('description') !== null ? g('description') : '',
+      image: '/images/media-centre/banner.png',
+      mobileImage: '/images/media-centre/mobile-banner.png',
+    },
+
+    blogPosts: blogData.data.map(({ attributes: blog }: any) => ({
+      image: blog.thumbnail.data?.attributes.url, //'/images/media-centre/blog-posts/1.png',
+      date: blog.date, // 'OCT 21 2022',
+      title: blog[getKey('title')],
+      text: blog[getKey('content')],
+    })) as { image: string; date: string; title: string; text: string }[],
+
+    pressPosts: pressData.data
+      .sort((a: any, b: any) => a.attributes.date.localeCompare(b.attributes.date))
+      .map(({ attributes: press }: any) => ({
+        year: +press.date.split('-')[0],
+        post: {
+          date: press.date,
+          title: press[getKey('title')],
+          text: press[getKey('content')],
+        },
+      }))
+      .reduce((acc: any, curr: any) => {
+        const last = acc[acc.length - 1]
+        if (last && last.year === curr.year) {
+          last.posts.push(curr.post)
+        } else {
+          acc.push({ year: curr.year, posts: [curr.post] })
+        }
+        return acc
+      }, []) as {
+      year: number
+      posts: { date: string; title: string; text: string }[]
+    }[],
+  }
+}
+
+export const getMediaCms = async ({ lang }: { lang: string | undefined }) => {
+  const useLocalCms = process.env.USE_LOCAL_CMS_DATA === 'true'
+  const pageData = useLocalCms ? mediaCentreJson : await fetchCmsData()
+  const blogsData = useLocalCms ? mediaCentreArtaBlogsJson : await fetchBlogsData()
+  const pressData = useLocalCms ? mediaCentrePressReleasesJson : await fetchPressData()
+
+  return massageData(pageData, blogsData, pressData, lang)
+
   // TODO: get cms from api
   return {
     heroBanner: {

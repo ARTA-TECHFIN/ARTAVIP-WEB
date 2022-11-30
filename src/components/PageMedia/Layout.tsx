@@ -8,6 +8,7 @@ import { links } from 'src/domains/links'
 import Router from 'next/router'
 
 import { useTranslation } from 'next-i18next'
+import { PageMediaCmsT } from 'src/pages/media-centre'
 
 const TABS = {
   Blog: 'Blog',
@@ -16,9 +17,9 @@ const TABS = {
 
 type tabsT = keyof typeof TABS
 
-const Layout = (props: { k: any; children: React.ReactNode, tabType?: tabsT }) => {
+const Layout = (props: { cms: PageMediaCmsT; children: React.ReactNode; tabType?: tabsT }) => {
   const { t } = useTranslation('common')
-  const { k, children } = props
+  const { cms, children } = props
 
   const tabInfoMap = {
     [TABS.Blog]: { title: t('page_title.arta_blog'), link: links.mediaBlog },
@@ -33,26 +34,24 @@ const Layout = (props: { k: any; children: React.ReactNode, tabType?: tabsT }) =
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-eggshell-100 pb-12 text-arta-sand-100 md:pb-[150px]">
         <HeroBanner
-          title={t("page_title.media_centre")}
-          description={k.heroBanner.description}
-          image={k.heroBanner.image}
-          mobileImage={k.heroBanner.mobileImage}
+          title={t('page_title.media_centre')}
+          description={cms.heroBanner.description}
+          image={cms.heroBanner.image}
+          mobileImage={cms.heroBanner.mobileImage}
         />
-        {
-          props.tabType && (
-            <div className="arta-container mx-auto">
-              <div className="arta-hide-scrollbar -mx-6 overflow-auto py-16 md:mx-0 ">
-                <TabBar
-                  tabs={tabList.map((t) => t.title)}
-                  selectedTab={tabInfo.title}
-                  setSelectedTab={(_, index) =>
-                    Router.push(tabList[index].link, undefined, { scroll: false })
-                  }
-                />
-              </div>
+        {props.tabType && (
+          <div className="arta-container mx-auto">
+            <div className="arta-hide-scrollbar -mx-6 overflow-auto py-16 md:mx-0 ">
+              <TabBar
+                tabs={tabList.map((t) => t.title)}
+                selectedTab={tabInfo.title}
+                setSelectedTab={(_, index) =>
+                  Router.push(tabList[index].link, undefined, { scroll: false })
+                }
+              />
             </div>
-          )
-        }
+          </div>
+        )}
         {children}
       </main>
       <Footer textColor="brown" />

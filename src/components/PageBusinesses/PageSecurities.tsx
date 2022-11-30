@@ -98,26 +98,6 @@ const PageSecurities: FC<{ k: any, locale: string }> = ({ k, locale }) => {
           mobileImage={k.heroBanner.mobileImage}
           label={t("page_title.our_businesses")}
         />
-        {/* Modules for preview */}
-        <ModuleTextSection
-          title={cms.section1.title}
-          description={cms.section1.body}
-          bgImage={cms.section1.bgImage}
-        />
-        <ModuleIconList iconList={cms.section2.iconList} />
-        <ModuleTextSection
-          title={cms.section3.title}
-          description={cms.section3.body}
-          bgImage={cms.section3.bgImage}
-        />
-        <div className='bg-arta-eggshell-100 overflow-hidden'>
-          <ModuleTextColList
-            headerPosition={cms.section4.headerPosition}
-            header={cms.section4.header}
-            title={cms.section4.title}
-            list={cms.section4.list}
-          />
-        </div>
 
         <BusinessPageModules locale={locale} components={k.components} />
       </main>

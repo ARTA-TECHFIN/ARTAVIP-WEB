@@ -23,7 +23,7 @@ const fetchCmsData = async () => {
 const fetchBlogsData = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/media-centre-arta-blogs`)
   const data = await res.json()
-  return data.data
+  return data
 }
 
 const fetchPressData = async () => {
@@ -31,7 +31,7 @@ const fetchPressData = async () => {
     `${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/media-centre-press-releases`
   )
   const data = await res.json()
-  return data.data
+  return data
 }
 
 const massageData = (

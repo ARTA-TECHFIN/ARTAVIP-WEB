@@ -128,12 +128,26 @@
   margin-top: 12px;
 }
 
-.module-etg-text-section p {
+.module-etg-text-section p,
+.module-text-col-list p {
   @apply mt-4;
 }
 
+.module-text-col-list p {
+  @apply text-[1rem] mb-8;
+}
+.module-text-col-list h3 {
+  @apply pt-6;
+  border-top: 1px solid;
+}
+
+.module-text-col-list h3:first-of-type {
+  border-top: none;
+}
+
 .module-etg-text-section h4,
-.job-description h4 {
+.job-description h4,
+.module-text-col-list h3 {
   @apply mt-4 text-arta-sand-200 font-Verah md:text-[1.5rem] text-xl leading-[2rem];
 }
 

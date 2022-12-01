@@ -19,6 +19,7 @@ type propsT = {
   header: string
   title: string | null
   list: listT[]
+  content: string
   headerPosition?: 'left' | 'right'
 }
 
@@ -27,13 +28,13 @@ type propsT = {
 // TODO: responsive
 // TODO: headerPosition
 // TODO: Title can be null or empty string, see Web3Media page
-const ModuleTextColList = ({ header, title, list, headerPosition }: propsT) => {
+const ModuleTextColList = ({ header, title, list, content, headerPosition }: propsT) => {
   return (
     <div className="arta-container mx-auto relative grid grid-cols-12 md:py-[150px] py-16 lg:py-36">
       <div
         className={cn(
           `relative flex items-center md:col-span-4 col-span-full`,
-          headerPosition == 'left' ? 'order-0 pr-10' : 'pl-10 md:order-1 md:justify-end'
+          headerPosition == 'left' ? 'order-0 lg:pr-10' : 'lg:pl-10 md:order-1 md:justify-end'
         )}
       >
         <ModuleTextColListHeader header={header} headerPosition={headerPosition} />
@@ -41,15 +42,7 @@ const ModuleTextColList = ({ header, title, list, headerPosition }: propsT) => {
       <div className="col-span-full mt-6 md:col-span-8 md:mt-0">
         <h3 className={`${textClass.h3_style2} mb-6`}>{title}</h3>
         <Hr />
-        {list.map((item, index) => (
-          <Fragment key={index}>
-            <h4 className={`${textClass.h6} mt-8`}>{item.title}</h4>
-            <div className={`${textClass.body_regular_verah} mt-4 mb-8 lg:max-w-[80%]`}>
-              {parse(item.body)}
-            </div>
-            <Hr />
-          </Fragment>
-        ))}
+        <div className="module-text-col-list" dangerouslySetInnerHTML={{__html: content}} />
       </div>
     </div>
   )

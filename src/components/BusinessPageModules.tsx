@@ -45,6 +45,7 @@ const BusinessPageModules: FC<{ components: any[], locale: string }> = ({compone
                     headerPosition={'right'}
                     header={g(component, 'title')}
                     title={g(component, 'subtitle')}
+                    content={g(component, 'content')}
                     list={[
                       {
                         title: "Title",

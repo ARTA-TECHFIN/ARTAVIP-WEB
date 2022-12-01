@@ -59,6 +59,7 @@ const PageWeb3Media: FC<{ k: any, locale: string }> = ({ k, locale }) => {
             headerPosition={cms.section1.headerPosition}
             header={cms.section1.header}
             title={cms.section1.title}
+            content=""
             list={cms.section1.list}
           />
         </div>

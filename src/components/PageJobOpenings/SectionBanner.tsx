@@ -6,7 +6,7 @@ const SectionBanner = () => {
   const { t } = useTranslation('common')
   return (
     <div className="group/bg relative overflow-hidden">
-      <div className="easeInOutSine absolute h-full w-full scale-150 overflow-hidden duration-300 group-hover/bg:scale-100">
+      <div className="easeInOutSine absolute h-full w-full overflow-hidden duration-300">
         <Image
           src="/images/asset-management/bg-introduction.png"
           alt=""

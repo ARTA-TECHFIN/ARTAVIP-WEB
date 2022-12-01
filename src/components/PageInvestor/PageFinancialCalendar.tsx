@@ -62,13 +62,13 @@ const PageFinancialCalendar: NextPage = () => {
 
   return (
     <div className="mt-16 flex flex-col">
-      <div className="sm:w-[288px] w-full ml-auto">
+      {/* <div className="sm:w-[288px] w-full ml-auto">
         <InputDropdown
           value={`${selectedYear}`}
           onChange={(v) => setSelectedYear(+v.target.value || null)}
           options={yearOptions}
         />
-      </div>
+      </div> */}
       {status === 'loading' ? (
         <Loader />
       ) : status === 'error' ? (
@@ -86,9 +86,9 @@ const PageFinancialCalendar: NextPage = () => {
               }))}
             />
           ))}
-          <div className='mt-12'>
+          {/* <div className='mt-12'>
             <Pagination page={selectedPage} onChange={setSelectedPage} totalPage={20} />
-          </div>
+          </div> */}
         </div>
       )}
     </div>

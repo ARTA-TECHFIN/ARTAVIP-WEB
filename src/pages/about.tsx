@@ -2,6 +2,7 @@ import type { GetServerSideProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import PageAbout from 'src/components/PageAbout/PageAbout'
 import aboutUsJson from 'apidata/about-us.json'
+import leadershipJson from 'apidata/about-us-leaderships.json'
 
 import leader_1 from 'src/components/PageAbout/images/leader_1.jpg'
 import eco_icon1 from 'src/components/PageAbout/images/eco_icon1.svg'
@@ -12,8 +13,16 @@ const fetchCmsData = async () => {
   return data
 }
 
-const massageData = (pageData: any, locale: string | undefined = 'en') => {
+const fetchLeadershipData = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/about-us-leaderships`)
+  const data = await res.json()
+  return data
+}
+
+const massageData = (pageData: any, leadershipData: any, locale: string | undefined = 'en') => {
   const g = (keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
+
+  console.log(leadershipData)
 
   return {
     heroBanner: {
@@ -39,13 +48,7 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
     leadership: {
       title: 'Leadership',
       // prettier-ignore
-      leaderList: [
-        { name: 'Mr. Adrian Cheng', title: 'Chairman', image: leader_1 },
-        { name: 'Mr. Eddie Lau', title: 'Chief Executive Officer', image: leader_1 },
-        { name: 'Mr. Eddie Lau', title: 'Chief Finance Officer /\n Head of Global Markets', image: leader_1 },
-        { name: 'Mr. Eddie Lau', title: 'Chief Executive Officer', image: leader_1 },
-        { name: 'Mr. Eddie Lau', title: 'Chief Executive Officer', image: leader_1 },
-      ],
+      leaderList: leadershipData.data,
     },
     techFin: {
       title: 'What is TechFin',
@@ -85,10 +88,11 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const useLocalCms = process.env.USE_LOCAL_CMS_DATA === 'true'
 
   const pageData = useLocalCms ? aboutUsJson : await fetchCmsData()
+  const leadershipData = useLocalCms ? leadershipJson : await fetchLeadershipData()
 
   return {
     props: {
-      k: massageData(pageData, locale),
+      k: massageData(pageData, leadershipData, locale),
       ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }

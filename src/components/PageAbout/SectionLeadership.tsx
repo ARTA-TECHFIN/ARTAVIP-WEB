@@ -5,10 +5,14 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import { PageAboutCmsT } from 'src/pages/about'
 import { useTranslation } from 'next-i18next'
+import { useRouter } from 'next/router'
 
 export const SectionLeadership = (props: { k: PageAboutCmsT }) => {
   const { k } = props
   const { t } = useTranslation('common')
+  const { locale } = useRouter()
+  // const g = (keyWithoutLang: string) => `${k[`${keyWithoutLang}_${locale}`]}`
+  const g = (leader: any, keyWithoutLang: string) => `${leader.attributes[`${keyWithoutLang}_${locale}`]}`
 
   return (
     <div className="group/bg relative z-1 overflow-hidden" id="leadership">
@@ -18,16 +22,16 @@ export const SectionLeadership = (props: { k: PageAboutCmsT }) => {
       <div className="arta-container relative mx-auto pt-16 pb-8 md:py-36">
         <h2 className={`${textClass.h2_style2} mb-4`}>{t("about_us.leadership")}</h2>
         <Swiper loop={false} slidesPerView="auto" spaceBetween={32} className="!overflow-visible">
-          {k.leadership.leaderList.map((leader, index) => (
+          {k.leadership.leaderList.map((leader: any, index: number) => (
             <SwiperSlide
               key={index}
               className="flex w-[220px] flex-[0_0_220px] flex-col"
             >
               <div className="relative mb-4 aspect-[3/4] h-auto w-full overflow-hidden">
-                <Image src={leader.image} alt="" fill className="object-cover" />
+                <img src={leader.attributes.profile_image.data.attributes.url} alt="" className="object-cover" />
               </div>
-              <span className={`${textClass.small_text} whitespace-pre`}>{leader.title}</span>
-              <span className={textClass.h6}>{leader.name}</span>
+              <span className={`${textClass.small_text} whitespace-pre`}>{g(leader, "title")}</span>
+              <span className={textClass.h6}>{g(leader, "name")}</span>
             </SwiperSlide>
           ))}
         </Swiper>

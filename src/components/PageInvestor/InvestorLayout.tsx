@@ -56,13 +56,15 @@ const InvestorLayout: FC<propsT> = ({ k, cms, tabType, hideTab = false, children
             {
               !hideTab && (
                 <div className="arta-hide-scrollbar -mx-6 overflow-auto md:mx-0">
-                  <TabBar
-                    tabs={tabList.map((t) => t.title)}
-                    selectedTab={tabInfo.title}
-                    setSelectedTab={(_, index) =>
-                      Router.push(tabList[index].link, undefined, { scroll: false })
-                    }
-                  />
+                  <div className="hidden lg:block">
+                    <TabBar
+                      tabs={tabList.map((t) => t.title)}
+                      selectedTab={tabInfo.title}
+                      setSelectedTab={(_, index) =>
+                        Router.push(tabList[index].link, undefined, { scroll: false })
+                      }
+                    />
+                  </div>
                 </div>
               )
             }

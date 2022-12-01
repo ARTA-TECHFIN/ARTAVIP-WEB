@@ -110,5 +110,31 @@
   "media": {
     "back_blog": "返回公司網誌主頁",
     "back_press": "返回新聞稿主頁"
+  },
+  "corporate_information": {
+    "basic_information": "Basic Information",
+    "company_name": "Company Name",
+    "sector": "Sector",
+    "principal_place_of_business": "Principal Place of Business",
+    "registered_office": "Registered Office",
+    "website": "Web Site Address",
+    "phone": "Phone Number",
+    "fax": "Fax Number",
+    "financial_year_end": "Financial Year End",
+    "board_of_directors": "Board of Directors",
+    "executive_directors": "Executive Directors",
+    "non_executive_directors": "Non-executive Directors",
+    "independent_non_executive_directors": "Independent Non-executive Directors",
+    "finance_and_admin": "Finance and Admin",
+    "company_secretary": "Company Secretary",
+    "principal_bankers": "Principal Bankers",
+    "auditors": "Auditors",
+    "legal_counsels": "Legal Counsels",
+    "hong_kong": "Hong Kong",
+    "cayman_islands": "Cayman Islands",
+    "share_information": "Share information",
+    "hkex_stock_code": "HKEX Stock Code",
+    "listing_date": "Listing Date",
+    "share_registrar": "Share Registrar and Transfer Office in Hong Kong"
   }
 }

@@ -12,6 +12,7 @@ import { ButtonAnimated } from '../ButtonAnimated'
 import cn from 'classnames'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from "next/router"
+import hoverMenuJson from "apidata/hover-menu.json"
 
 type menuItemT = {
   title: string
@@ -25,6 +26,12 @@ type pageInfoItemT = {
   buttonText: string
   href: string
   pages: menuItemT[]
+}
+
+const fetchCmsData = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/hover-menu-description`)
+  const data = await res.json()
+  return data
 }
 
 const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (props) => {
@@ -152,18 +159,16 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
   useEffect(() => {
     const g = (pageData: any, keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
     const fetchData = async () => {
-      const result = await fetch(
-        '/api/cms/hover-menu-description',
-      );
+      const useLocalCms = process.env.NEXT_PUBLIC_USE_LOCAL_CMS_DATA === 'true'
+      const result = useLocalCms ? hoverMenuJson : await fetchCmsData()
 
-      const data = await result.json()
-      if (data.data?.attributes) {
+      if (result.data?.attributes) {
         setHeaderData({
-          about_us: g(data, "about_us"),
-          investor_relation: g(data, "investor_relation"),
-          join_us: g(data, "join_us"),
-          media_centre: g(data, "media_centre"),
-          our_business: g(data, "our_business")
+          about_us: g(result, "about_us"),
+          investor_relation: g(result, "investor_relation"),
+          join_us: g(result, "join_us"),
+          media_centre: g(result, "media_centre"),
+          our_business: g(result, "our_business")
         })
       }
     };

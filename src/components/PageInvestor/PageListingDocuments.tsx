@@ -39,8 +39,6 @@ const PageCirculars: NextPage = () => {
   if (status === 'loading') return <Loader />
   if (status === 'error') return <ErrorMessage error={error} />
 
-  console.log(data)
-
   return (
     <div className="mt-16">
       <Link href={links.investor}>

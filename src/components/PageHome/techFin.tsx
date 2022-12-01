@@ -235,7 +235,6 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
 
   useEffect(() => {
     setWindowWith(window?.innerWidth || 0)
-    console.log(window?.innerWidth)
 
     if (currentSectionId === 0) {
       fromSec1ToSec0()

@@ -4,6 +4,13 @@ import { IconFacebook, IconLinkedIn, IconTwitter, IconWeChat } from './Svg/Icon'
 import LanguageSwitcher from './LanguageSwitcher'
 import { useTranslation } from 'next-i18next';
 import { useRouter } from "next/router"
+import contactJson from "apidata/contact.json"
+
+const fetchCmsData = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/contact-us`)
+  const data = await res.json()
+  return data
+}
 
 const Footer: FC<{ textColor?: 'white' | 'brown' }> = (props) => {
   const { t } = useTranslation('common')
@@ -22,14 +29,11 @@ const Footer: FC<{ textColor?: 'white' | 'brown' }> = (props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await fetch(
-        '/api/cms/contact-us',
-      );
+      const useLocalCms = process.env.NEXT_PUBLIC_USE_LOCAL_CMS_DATA === 'true'
+      const result = useLocalCms ? contactJson : await fetchCmsData()
 
-      const data = await result.json()
-      setFooterData(data.data.attributes)
-
-    };
+      setFooterData(result.data.attributes)
+    }
 
     fetchData();
   }, [])
@@ -93,8 +97,8 @@ const Footer: FC<{ textColor?: 'white' | 'brown' }> = (props) => {
               <div className="flex flex-col items-start space-y-4">
                 <h6 className=" text-[16px] leading-[24px]">{t('footer.social_media')}{' '}</h6>
                 <div className="flex space-x-2">
-                  {k.socialMediaList.map(({ href, Component }) => (
-                    <a href={href} key={href} target="_blank" rel="noreferrer">
+                  {k.socialMediaList.map(({ href, Component }, i: number) => (
+                    <a href={href} key={i} target="_blank" rel="noreferrer">
                       <Component className="h-6 w-6 pr-1 last:pr-0" />
                     </a>
                   ))}

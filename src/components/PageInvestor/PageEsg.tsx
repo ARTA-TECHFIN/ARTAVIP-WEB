@@ -14,8 +14,6 @@ const PageEsg: FC<{ k: any, locale: string }> = ({ k, locale }) => {
   const sections = useRef(null)
   const { t } = useTranslation('common')
 
-  console.log(t)
-
   const goToSection = (index: number) => () => {
     const esgSections = document.querySelectorAll('.esg-section')
     gsap.to(window, { duration: 0.7, scrollTo: { y: esgSections[index], offsetY: 130 } })

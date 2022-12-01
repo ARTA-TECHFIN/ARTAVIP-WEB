@@ -8,7 +8,16 @@ import { Hr } from 'src/components/Hr'
 import { ModuleTextColList } from '../ModuleTextColList'
 import { FadeUp } from 'src/components/FadeUp'
 import TechFin from '../PageHome/techFin'
-import { IconTechnologyInternetCompanies, IconOrganizationsLedByArta, IconBanksBasedInHK, HKTycoons } from '../Svg/Icon'
+import {
+  IconTechnologyInternetCompanies,
+  IconOrganizationsLedByArta,
+  IconBanksBasedInHK,
+  HKTycoons,
+  EducationProfessionalIcon,
+  RegionalBanksIcon,
+  FinTechCompaniesIcon,
+  FinancialInvestmentPlatformIcon
+} from '../Svg/Icon'
 import { PageAboutCmsT } from 'src/pages/about'
 import { useTranslation } from 'next-i18next'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -44,7 +53,7 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
       />
 
       {/* SectionEcosystem */}
-      <div className="relative flex flex-col items-center pb-12 md:pb-36">
+      <div className="relative flex flex-col items-center pb-12 md:pb-28">
         <div className="mb-12 max-w-3xl text-center">
           <FadeUp>
             <>
@@ -53,7 +62,7 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
             </>
           </FadeUp>
         </div>
-        <div className="our-eco relative h-96 md:h-80 w-full max-w-full overflow-hidden px-12">
+        <div className="our-eco relative h-96 md:h-96 w-full max-w-full overflow-hidden px-12">
           {showComponent && (
             <Swiper
               modules={[Navigation]}
@@ -94,11 +103,10 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
                         {(index === 1) && <IconOrganizationsLedByArta className="h-full w-full object-cover" />}
                         {(index === 2) && <IconBanksBasedInHK className="h-full w-full object-cover" />}
                         {(index === 3) && <HKTycoons className="h-full w-full object-cover" />}
-                        {(index === 4) && <IconOrganizationsLedByArta className="h-full w-full object-cover" />}
-                        {(index === 5) && <IconOrganizationsLedByArta className="h-full w-full object-cover" />}
-                        {(index === 6) && <IconOrganizationsLedByArta className="h-full w-full object-cover" />}
-                        {(index === 7) && <IconOrganizationsLedByArta className="h-full w-full object-cover" />}
-                        {(index === 8) && <IconOrganizationsLedByArta className="h-full w-full object-cover" />}
+                        {(index === 4) && <EducationProfessionalIcon className="h-full w-full object-cover" />}
+                        {(index === 5) && <RegionalBanksIcon className="h-full w-full object-cover" />}
+                        {(index === 6) && <FinTechCompaniesIcon className="h-full w-full object-cover" />}
+                        {(index === 7) && <FinancialInvestmentPlatformIcon className="h-full w-full object-cover" />}
                       </div>
                       <span className={`${textClass.body_regular} max-w-[60%] text-center`}>
                         {item.title}
@@ -111,13 +119,13 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
           )}
           <button
             ref={prevRef}
-            className="absolute bottom-0 left-1/2 translate-x-[-350%]"
+            className="absolute bottom-8 left-1/2 translate-x-[-350%]"
           >
             <IconArrowLeft fill="#593725" />
           </button>
           <button
             ref={nextRef}
-            className="absolute bottom-0 left-1/2 translate-x-[250%]"
+            className="absolute bottom-8 left-1/2 translate-x-[250%]"
           >
             <IconArrowRight fill="#593725" />
           </button>

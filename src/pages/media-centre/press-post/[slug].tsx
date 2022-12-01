@@ -51,7 +51,7 @@ const PressPost = (props: {
         <div className="mt-4 bg-white p-6 shadow-blogPost md:p-12">
           <p className="text-xs text-arta-indigo-100">{post.date}</p>
           <h2 className={`mt-2 ${textClass.h3_style2} text-arta-secondary`}>{post.title}</h2>
-          <div className={`mt-6 ${textClass.body_regular_verah} text-black`}>
+          <div className={`blog-content mt-6 ${textClass.body_regular_verah} text-black`}>
             {parse(post.text)}
           </div>
         </div>

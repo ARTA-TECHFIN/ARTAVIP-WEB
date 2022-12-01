@@ -53,10 +53,9 @@ export const SectionMission = (props: { k: PageAboutCmsT }) => {
             Your browser does not support the video tag.
           </video>
 
-          {!isPlaying && (
+          {isPlaying && (
             <div
-              className="absolute top-1/2 left-1/2 flex h-[55px] w-[55px] -translate-x-1/2 -translate-y-1/2 transform cursor-pointer flex-col justify-center rounded-full bg-arta-sand-100 text-center hover:shadow-lg"
-              onClick={() => toggleVideo()}
+              className="absolute pointer-events-none top-1/2 left-1/2 flex h-[55px] w-[55px] -translate-x-1/2 -translate-y-1/2 transform cursor-pointer flex-col justify-center rounded-full bg-arta-sand-100 text-center hover:shadow-lg"
             >
               <svg
                 className="ml-5"

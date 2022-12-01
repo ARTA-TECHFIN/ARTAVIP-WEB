@@ -22,8 +22,6 @@ const fetchLeadershipData = async () => {
 const massageData = (pageData: any, leadershipData: any, locale: string | undefined = 'en') => {
   const g = (keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
 
-  console.log(leadershipData)
-
   return {
     heroBanner: {
       title: 'About Us',

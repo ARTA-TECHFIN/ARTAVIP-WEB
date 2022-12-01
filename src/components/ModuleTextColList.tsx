@@ -39,8 +39,12 @@ const ModuleTextColList = ({ header, title, list, content, headerPosition }: pro
       >
         <ModuleTextColListHeader header={header} headerPosition={headerPosition} />
       </div>
-      <div className="col-span-full mt-6 md:col-span-8 md:mt-0">
-        <h3 className={`${textClass.h3_style2} mb-6`}>{title}</h3>
+      <div className="col-span-full mt-6 border-b border-black pb-2 md:col-span-8 md:mt-0">
+        {
+          title && title.length && (
+            <h3 className={`${textClass.h3_style2} mb-6`}>{title}</h3>
+          )
+        }
         <Hr />
         {
           content && content.length && (

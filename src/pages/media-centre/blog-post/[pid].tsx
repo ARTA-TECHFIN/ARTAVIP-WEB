@@ -29,6 +29,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 const Post = (props: { cms: getMediaCmsT; blog: getMediaCmsT['blogPosts'][number] }) => {
   const { cms, blog } = props
   const { t } = useTranslation('common')
+
   return (
     <MediaLayout cms={cms}>
       <div className="arta-container mx-auto mt-8">
@@ -39,14 +40,10 @@ const Post = (props: { cms: getMediaCmsT; blog: getMediaCmsT['blogPosts'][number
           <IconArrowLeft fill="#593725" className="mr-2 h-4" />
           {t('media.back_blog')}
         </Link>
-        <div className="mt-4 bg-white p-6 shadow-blogPost md:p-12">
+        <div className="blog-content mt-4 bg-white p-6 shadow-blogPost md:p-12">
           <p className="text-xs text-arta-indigo-100">{blog.date}</p>
           <h2 className={`mt-2 ${textClass.h3_style2} text-arta-secondary`}>{blog.title}</h2>
-          <p className={`mt-6 ${textClass.body_regular_verah} text-black`}>{blog.text}</p>
-          <div className="mx-auto mt-12 w-fit">
-            {/* <img src={blog.image} alt="" /> */}
-            <Image src={blog.image} alt="" width={470.39} height={350} />
-          </div>
+          <div className={`mt-6 ${textClass.body_regular_verah} text-black`} dangerouslySetInnerHTML={{__html: blog.text}} />
         </div>
       </div>
     </MediaLayout>

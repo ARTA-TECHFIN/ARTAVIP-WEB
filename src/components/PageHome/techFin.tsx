@@ -327,12 +327,12 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
         </div>
         <div
           ref={businessRef}
-          className={cn("absolute bottom-[22em] top-[25em] z-2 transform text-white opacity-0 transition duration-1000 md:top-[16em] lg:left-[6em] lg:left-[4em] lg:bottom-auto lg:top-[21em] lg:top-1/2 lg:-translate-y-1/2", currentSection == "10" && "!opacity-0")}
+          className={cn("absolute bottom-[22em] top-[25em] z-2 transform text-white opacity-0 transition duration-1000 md:top-[16em] lg:left-[6em] lg:left-[4em] lg:bottom-auto lg:top-[19.5em] lg:top-1/2 lg:-translate-y-1/2", currentSection == "10" && "!opacity-0")}
         >
           <h1 className="font-verah ml-[0.9em] text-left text-[6em] tracking-[0.06em] md:ml-[0.6em] lg:ml-0 lg:text-[3.4em]">
             {t('page_title.our_businesses')}
           </h1>
-          <p className="ml-[1.6em] max-w-[30em] pb-5 text-left font-Neue text-[3.6em] md:ml-[2em] lg:ml-0 md:text-[1.8em] lg:text-[1em]">
+          <p className="ml-[1.6em] max-w-[30em] text-left font-Neue text-[3.6em] md:ml-[2em] lg:ml-0 md:text-[1.8em] lg:text-[1em]">
             {k.our_business_description}
           </p>
           <div className="w-[100vw] lg:max-w-[80vw]">
@@ -385,7 +385,7 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
         className={cn(
           index === selectedBusiness &&
             'innerShadow !opacity-100 lg:h-[12em] lg:w-[12em] lg:text-[1.04em]',
-          `innerShadowMobile mx-auto flex h-[14em] w-[14em] items-center justify-center self-center rounded-full border border-white text-[3.4em] opacity-70 transition-all will-change-transform md:h-[10em] md:w-[10em] md:text-[2em] lg:h-[10em] lg:w-[10em] lg:text-[1em]`
+          `innerShadowMobile mx-auto flex h-[14em] w-[14em] items-center justify-center self-center rounded-full border border-white text-[3.4em] opacity-70 transition-all will-change-transform md:h-[10em] md:w-[10em] md:text-[2em] lg:h-[10em] lg:w-[10em] lg:text-[0.85em]`
         )}
       >
         <a href={business.link}>{business.title}</a>
@@ -393,7 +393,7 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
 
       <div
         className={cn(
-          `absolute bottom-0 left-1/2 flex w-[110%] translate-y-full -translate-x-1/2 transform flex-col  md:items-center  justify-center transition-all duration-300`,
+          `absolute bottom-0 left-1/2 flex w-[120%] translate-y-full -translate-x-1/2 transform flex-col  md:items-center  justify-center transition-all duration-300`,
           index === selectedBusiness ? 'lg:opacity-100' : 'lg:opacity-0'
         )}
       >
@@ -403,7 +403,7 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
         <ButtonAnimated
           as="a"
           href={business.link}
-          className="mt-6 border-white  text-white "
+          className="mt-4 border-white text-white "
         >
           {label}
         </ButtonAnimated>

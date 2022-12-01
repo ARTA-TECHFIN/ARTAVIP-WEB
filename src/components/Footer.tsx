@@ -70,9 +70,9 @@ const Footer: FC<{ textColor?: 'white' | 'brown' }> = (props) => {
                   <h6 className="font-Verah text-[16px] leading-[24px]">{t('footer.contact_us')}</h6>
                   <ul className="list-none font-Neue text-[12px] leading-[20px]">
                     <li>
-                      <a href="tel:+852 3513 8279">
+                      <a href={`tel: ${footerData.footer_tel}`}>
                         <span>
-                          {t('footer.tel')} <span className="cursor-pointer hover:underline">(852) 3513 8279</span>
+                          {t('footer.tel')} <span className="cursor-pointer hover:underline">{footerData.footer_tel}</span>
                         </span>
                       </a>
                     </li>
@@ -80,16 +80,16 @@ const Footer: FC<{ textColor?: 'white' | 'brown' }> = (props) => {
                     <li>
                       <a href="fax:+852 2507 2009">
                         <span>
-                          {t('footer.fax')} <span className="cursor-pointer hover:underline">(852) 2507 2009</span>
+                          {t('footer.fax')} <span className="cursor-pointer hover:underline">{footerData.footer_fax}</span>
                         </span>
                       </a>
                     </li>
                     <li>
-                      <a href="mailto:marketing@artatechfin.com">
+                      <a href={`mailto:${footerData.footer_email}`}>
                         <span>
                           {t('footer.email')}{' '}
                           <span className="cursor-pointer hover:underline">
-                            marketing@artatechfin.com
+                            {footerData.footer_email}
                           </span>
                         </span>
                       </a>

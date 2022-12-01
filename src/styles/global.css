@@ -116,7 +116,8 @@
 
 .module-text-section ul,
 .module-etg-text-section ul,
-.job-description ul {
+.job-description ul,
+.blog-content ul {
   padding-left: 24px;
   list-style: disc;
   margin-top: 12px;
@@ -124,23 +125,30 @@
 }
 
 .module-text-section ul li,
-.job-description ul li {
+.job-description ul li,
+.blog-content ul li {
   margin-top: 12px;
 }
 
 .module-etg-text-section p,
-.module-text-col-list p {
-  @apply mt-4;
+.module-text-col-list p,
+.blog-content p {
+  @apply mt-3;
 }
 
-.module-text-col-list p {
-  @apply text-[1rem] mb-8;
+.module-text-col-list p,
+.blog-content p {
+  @apply text-[1rem] mb-6;
 }
+.module-text-col-list h1,
+.module-text-col-list h2,
 .module-text-col-list h3 {
   @apply pt-6;
   border-top: 1px solid;
 }
 
+.module-text-col-list h1:first-of-type,
+.module-text-col-list h2:first-of-type,
 .module-text-col-list h3:first-of-type {
   border-top: none;
 }

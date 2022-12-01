@@ -1,0 +1,50 @@
+import { GetServerSideProps } from 'next'
+import { StaticLayout } from 'src/components/PageStatic/Layout'
+import { textClass } from 'src/components/Text'
+import parse from 'html-react-parser'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
+const fetchCmsData = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/privacy-policy`)
+  const data = await res.json()
+  return data
+}
+
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  const cms = await fetchCmsData()
+
+  return {
+    props: {
+      cms: {
+        heroBanner: {
+          title: 'Privacy Policy',
+          description: '',
+          image: '/images/bg-static.jpg',
+          mobileImage: '/images/bg-static.jpg',
+        },
+        content: cms.data.attributes[`content_${locale}`]
+      },
+      ...(await serverSideTranslations(locale || 'en', ['common'])),
+    },
+  }
+}
+
+const PrivacyPolicy = (props: {
+  cms: any
+}) => {
+  const { cms } = props
+
+  return (
+    <StaticLayout cms={cms}>
+      <div className="arta-container mx-auto mt-8">
+        <div className="mt-4 bg-white p-6 shadow-blogPost md:p-12">
+          <div className={`blog-content mt-6 ${textClass.body_regular_verah} text-black`}>
+            {parse(cms.content)}
+          </div>
+        </div>
+      </div>
+    </StaticLayout>
+  )
+}
+
+export default PrivacyPolicy

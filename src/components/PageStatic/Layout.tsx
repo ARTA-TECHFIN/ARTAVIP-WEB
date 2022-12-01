@@ -9,21 +9,31 @@ import ArtaLogo from 'src/components/Svg/arta-logo'
 import Link from 'next/link'
 
 
-const Layout = (props: { cms: any; children: React.ReactNode; hideFooter?: boolean }) => {
+const Layout = (props: { cms: any; children: React.ReactNode; hideMenu?: boolean, hideFooter?: boolean }) => {
   const { t } = useTranslation('common')
-  const { cms, children, hideFooter = false } = props
+  const { cms, children, hideFooter = false, hideMenu = false } = props
   const bannerImage = useRef(null)
 
   return (
     <>
       <Seo />
-      <div className="absolute arta-container text-right z-[20]">
-        <Link href="/">
-          <div className="z-2 h-[32px] w-[78.67px] cursor-pointer opacity-100 transition text-right hover:opacity-100 md:h-auto md:w-auto">
-            <ArtaLogo className={`ml-auto mt-8 text-arta-russet-100 h-full w-full md:h-auto md:w-auto`} />
+      {
+        hideMenu && (
+          <div className="absolute arta-container text-right z-[20]">
+            <Link href="/">
+              <div className="z-2 h-[32px] w-[78.67px] cursor-pointer opacity-100 transition text-right hover:opacity-100 md:h-auto md:w-auto">
+                <ArtaLogo className={`ml-auto mt-8 text-arta-russet-100 h-full w-full md:h-auto md:w-auto`} />
+              </div>
+            </Link>
           </div>
-        </Link>
-      </div>
+        )
+      }
+
+      {
+        !hideMenu && (
+          <Header textColor="brown" />
+        )
+      }
       <main className="flex flex-col bg-arta-eggshell-100 pb-12 text-arta-sand-100 md:pb-[150px]">
         <div className="relative md:aspect-video md:h-[50vh] h-[50vh] w-full overflow-hidden z-2">
           <div ref={bannerImage} className="absolute h-[50vh] w-full overflow-hidden">
@@ -42,7 +52,7 @@ const Layout = (props: { cms: any; children: React.ReactNode; hideFooter?: boole
         {children}
       </main>
       {
-        hideFooter && <Footer textColor="brown" />
+        !hideFooter && <Footer textColor="brown" />
       }
     </>
   )

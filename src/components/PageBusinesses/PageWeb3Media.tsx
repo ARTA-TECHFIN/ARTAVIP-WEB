@@ -54,15 +54,6 @@ const PageWeb3Media: FC<{ k: any, locale: string }> = ({ k, locale }) => {
           mobileImage={k.heroBanner.mobileImage}
           label={t("page_title.our_businesses")}
         />
-        <div className="overflow-hidden bg-arta-eggshell-100">
-          <ModuleTextColList
-            headerPosition={cms.section1.headerPosition}
-            header={cms.section1.header}
-            title={cms.section1.title}
-            content=""
-            list={cms.section1.list}
-          />
-        </div>
         <BusinessPageModules locale={locale} components={k.components} />
       </main>
       <Footer textColor="brown" />

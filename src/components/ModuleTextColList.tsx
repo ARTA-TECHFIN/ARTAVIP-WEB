@@ -18,8 +18,8 @@ type listT = {
 type propsT = {
   header: string
   title: string | null
-  list: listT[]
-  content: string
+  list?: listT[]
+  content?: string
   headerPosition?: 'left' | 'right'
 }
 
@@ -42,7 +42,26 @@ const ModuleTextColList = ({ header, title, list, content, headerPosition }: pro
       <div className="col-span-full mt-6 md:col-span-8 md:mt-0">
         <h3 className={`${textClass.h3_style2} mb-6`}>{title}</h3>
         <Hr />
-        <div className="module-text-col-list" dangerouslySetInnerHTML={{__html: content}} />
+        {
+          content && content.length && (
+            <div className="module-text-col-list" dangerouslySetInnerHTML={{__html: content || ""}} />
+          )
+        }
+
+        {
+          list && list.length && (
+            list.map((item, index) => (
+              <Fragment key={index}>
+                <h4 className={`${textClass.h6} mt-8`}>{item.title}</h4>
+                <div className={`${textClass.body_regular_verah} mt-4 mb-8 lg:max-w-[80%]`}>
+                  {parse(item.body)}
+                </div>
+                <Hr />
+              </Fragment>
+            ))
+          )
+        }
+        
       </div>
     </div>
   )

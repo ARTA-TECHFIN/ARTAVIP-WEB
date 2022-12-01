@@ -37,7 +37,6 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
         header={t("about_us.what_is_techfin")}
         headerPosition="left"
         title={k.techFin.subtitle}
-        content={""}
         list={[
           { title: k.techFin.section1Title, body: k.techFin.section1Body },
           { title: k.techFin.section2Title, body: k.techFin.section2Body },

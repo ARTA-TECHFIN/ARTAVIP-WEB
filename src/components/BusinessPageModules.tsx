@@ -46,16 +46,6 @@ const BusinessPageModules: FC<{ components: any[], locale: string }> = ({compone
                     header={g(component, 'title')}
                     title={g(component, 'subtitle')}
                     content={g(component, 'content')}
-                    list={[
-                      {
-                        title: "Title",
-                        body: "Body"
-                      },
-                      {
-                        title: "Title",
-                        body: "Body"
-                      },
-                    ]}
                   />
                 </div>
               )
@@ -67,16 +57,6 @@ const BusinessPageModules: FC<{ components: any[], locale: string }> = ({compone
                     header={g(component, 'title')}
                     title={g(component, 'subtitle')}
                     content={g(component, 'content')}
-                    list={[
-                      {
-                        title: "Title",
-                        body: "Body"
-                      },
-                      {
-                        title: "Title",
-                        body: "Body"
-                      },
-                    ]}
                   />
                 </div>
               )

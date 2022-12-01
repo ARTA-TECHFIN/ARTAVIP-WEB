@@ -4,7 +4,7 @@ import PageAbout from 'src/components/PageAbout/PageAbout'
 import aboutUsJson from 'apidata/about-us.json'
 
 import leader_1 from 'src/components/PageAbout/images/leader_1.jpg'
-import eco_icon1 from 'src/components/PageAbout/images/eco_icon1.png'
+import eco_icon1 from 'src/components/PageAbout/images/eco_icon1.svg'
 
 const fetchCmsData = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/about-us`)
@@ -59,14 +59,14 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
       title: 'Our Ecosystem',
       subtitle: `Supported by ARTA TechFin’s major shareholder, we work closely with our affiliates within the ecosystem, which comprises our clients, shareholders, business partners and investee companies, to build an inter-connected network that creates value for all.`,
       itemList: [
-        { title: g('our_ecosystem_1'), image: eco_icon1 },
-        { title: g('our_ecosystem_2'), image: eco_icon1 },
-        { title: g('our_ecosystem_3'), image: eco_icon1 },
-        { title: g('our_ecosystem_4'), image: eco_icon1 },
-        { title: g('our_ecosystem_5'), image: eco_icon1 },
-        { title: g('our_ecosystem_6'), image: eco_icon1 },
-        { title: g('our_ecosystem_7'), image: eco_icon1 },
-        { title: g('our_ecosystem_8'), image: eco_icon1 },
+        { title: g('our_ecosystem_1'), Component: eco_icon1 },
+        { title: g('our_ecosystem_2'), Component: eco_icon1 },
+        { title: g('our_ecosystem_3'), Component: eco_icon1 },
+        { title: g('our_ecosystem_4'), Component: eco_icon1 },
+        { title: g('our_ecosystem_5'), Component: eco_icon1 },
+        { title: g('our_ecosystem_6'), Component: eco_icon1 },
+        { title: g('our_ecosystem_7'), Component: eco_icon1 },
+        { title: g('our_ecosystem_8'), Component: eco_icon1 },
       ],
     },
     techFinVsFinTech: {

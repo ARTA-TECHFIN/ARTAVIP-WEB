@@ -8,7 +8,7 @@ import { Hr } from 'src/components/Hr'
 import { ModuleTextColList } from '../ModuleTextColList'
 import { FadeUp } from 'src/components/FadeUp'
 import TechFin from '../PageHome/techFin'
-import { IconTechnologyInternetCompanies } from '../Svg/Icon'
+import { IconTechnologyInternetCompanies, IconOrganizationsLedByArta, IconBanksBasedInHK, HKTycoons } from '../Svg/Icon'
 import { PageAboutCmsT } from 'src/pages/about'
 import { useTranslation } from 'next-i18next'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -90,7 +90,15 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
                           'ss-circle relative mb-4 h-16 w-16 transition'
                         }
                       >
-                        <IconTechnologyInternetCompanies className="h-full w-full object-cover" />
+                        {(index === 0) && <IconTechnologyInternetCompanies className="h-full w-full object-cover" />}
+                        {(index === 1) && <IconOrganizationsLedByArta className="h-full w-full object-cover" />}
+                        {(index === 2) && <IconBanksBasedInHK className="h-full w-full object-cover" />}
+                        {(index === 3) && <HKTycoons className="h-full w-full object-cover" />}
+                        {(index === 4) && <IconOrganizationsLedByArta className="h-full w-full object-cover" />}
+                        {(index === 5) && <IconOrganizationsLedByArta className="h-full w-full object-cover" />}
+                        {(index === 6) && <IconOrganizationsLedByArta className="h-full w-full object-cover" />}
+                        {(index === 7) && <IconOrganizationsLedByArta className="h-full w-full object-cover" />}
+                        {(index === 8) && <IconOrganizationsLedByArta className="h-full w-full object-cover" />}
                       </div>
                       <span className={`${textClass.body_regular} max-w-[60%] text-center`}>
                         {item.title}

@@ -2,7 +2,7 @@ import React from 'react'
 import { ButtonAnimated } from '../ButtonAnimated'
 import { useTranslation } from 'next-i18next'
 
-const about: React.FC = ({k}: any) => {
+const About = ({ k }: any) => {
   const { t } = useTranslation('common')
 
   return (
@@ -44,4 +44,4 @@ const about: React.FC = ({k}: any) => {
   )
 }
 
-export default about
+export default About

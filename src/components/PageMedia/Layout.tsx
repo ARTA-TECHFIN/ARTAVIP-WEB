@@ -8,7 +8,6 @@ import { links } from 'src/domains/links'
 import Router from 'next/router'
 
 import { useTranslation } from 'next-i18next'
-import { PageMediaCmsT } from 'src/pages/media-centre'
 
 const TABS = {
   Blog: 'Blog',
@@ -17,7 +16,7 @@ const TABS = {
 
 type tabsT = keyof typeof TABS
 
-const Layout = (props: { cms: PageMediaCmsT; children: React.ReactNode; tabType?: tabsT }) => {
+const Layout = (props: { cms: any; children: React.ReactNode; tabType?: tabsT }) => {
   const { t } = useTranslation('common')
   const { cms, children } = props
 

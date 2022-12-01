@@ -29,4 +29,6 @@ export const links = {
   joinUsMiddleAndBackOffice: '/join-us/middle-and-back-office',
   jobOpening: '/job-opening',
   contact: '/contact',
+  disclaimer: '/disclaimer',
+  privacy_policy: '/privacy-policy'
 }

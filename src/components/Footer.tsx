@@ -6,6 +6,8 @@ import { useTranslation } from 'next-i18next';
 import { useRouter } from "next/router"
 import contactJson from "apidata/contact.json"
 import { WechatPopup } from './WechatPopup'
+import { links } from 'src/domains/links'
+import Link from 'next/link';
 
 const fetchCmsData = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/contact-us`)
@@ -119,9 +121,9 @@ const Footer: FC<{ textColor?: 'white' | 'brown' }> = (props) => {
             <Hr borderColorClass={borderClass} />
             <div className="flex  flex-col items-start justify-start space-y-5 font-Neue lg:flex-row lg:items-center lg:justify-between">
               <div className="flex items-center justify-around space-x-3 text-[12px] leading-[20px] sm:space-x-6">
-                <p className="cursor-pointer hover:underline">{t('page_title.disclaimer')}</p>
+                <Link href={links.disclaimer} className="cursor-pointer hover:underline">{t('page_title.disclaimer')}</Link>
                 <p>|</p>
-                <p className="cursor-pointer hover:underline">{t('page_title.privacy_policy')}</p>
+                <Link href={links.privacy_policy} className="cursor-pointer hover:underline">{t('page_title.privacy_policy')}</Link>
                 <p>|</p>
                 <LanguageSwitcher />
               </div>

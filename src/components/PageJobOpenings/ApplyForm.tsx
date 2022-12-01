@@ -11,7 +11,7 @@ const Applyform = () => {
   return (
     <form>
       <fieldset>
-        <h2 className={`${textClass.h2_style2} mb-8`}>{`Apply`}</h2>
+        <h2 className={`${textClass.h2_style2} mb-8`}>{`${t("join_us.application_form")}`}</h2>
         <div className="grid grid-cols-2 gap-x-8 gap-y-6">
           <div className="col-span-1">
             <InputField label={`${t("join_us.first_name")}*`}>

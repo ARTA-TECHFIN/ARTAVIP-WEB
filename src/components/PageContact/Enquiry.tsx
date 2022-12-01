@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import parse from 'html-react-parser'
 import { textClass } from 'src/components/Text'
@@ -8,10 +8,12 @@ import { Hr } from 'src/components/Hr'
 import { IconFacebook, IconWeChat, IconTwitter, IconLinkedIn } from '../Svg/Icon'
 import { FadeUp } from 'src/components/FadeUp'
 import { useTranslation } from 'next-i18next'
+import { WechatPopup } from 'src/components/WechatPopup';
 
 const Enquiry = ({k}: any) => {
   const { t } = useTranslation('common')
   const circle = useRef(null)
+  const [openWeChatPopup, setOpenWeChatPopup] = useState(false)
 
   useEffect(() => {
     gsap.set(circle.current, {
@@ -108,12 +110,15 @@ const Enquiry = ({k}: any) => {
             <a href={k.social_media_link_linkedin} target="_blank" rel="noreferrer" className="mr-6">
               <IconLinkedIn className="h-8 w-8" fill="#593725" />
             </a>
-            <a href="#" target="_blank" className="mr-6">
+            <div className="mr-6 cursor-pointer" onClick={() => setOpenWeChatPopup(true)}>
               <IconWeChat className="h-8 w-8" fill="#593725" />
-            </a>
+            </div>
           </div>
         </div>
       </div>
+      {
+        openWeChatPopup && <WechatPopup togglePopup={setOpenWeChatPopup} />
+      }
     </div>
   )
 }

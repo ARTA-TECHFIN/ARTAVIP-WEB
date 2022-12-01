@@ -21,7 +21,7 @@ type propsT = {
 const CalendarCardList = (props: propsT) => {
   const { year, events } = props
   return (
-    <div >
+    <div className="transition hover:brightness-95">
       <p className={`${textClass.h6} text-black mb-4`}>{year}</p>
       {events.map((event, index) => (
         <div key={index} className='bg-white px-6 md:pt-8 pt-6 !pb-6 arta-eventItem border-b border-solid'>

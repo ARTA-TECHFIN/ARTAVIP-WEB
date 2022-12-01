@@ -45,7 +45,7 @@ const CalendarAccordion = ({ index, year, events }: propsT) => {
   }
 
   return (
-    <div className={cn(`mb-6 bg-white transition-shadow`, showMenu && 'shadow-calendarAccordion')}>
+    <div className={cn(`mb-6 bg-white transition-shadow transition hover:brightness-95`, showMenu && 'shadow-calendarAccordion')}>
       <div
         className="flex cursor-pointer items-center justify-between p-6 lg:p-8"
         onClick={() => setShowMenu(!showMenu)}

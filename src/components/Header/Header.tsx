@@ -102,7 +102,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
       pageName: t('page_title.media_centre'),
       title: t('page_title.media_centre'),
       paragraph: headerData["media_centre"],
-      buttonText: 'Media Centre home',
+      buttonText: t('page_title.media_centre'),
       href: links.media,
       pages: [
         { title: t('page_title.arta_blog'), link: links.media },

@@ -33,7 +33,7 @@ const About = ({ k }: any) => {
 
           <ButtonAnimated
             as="a"
-            href="/about"
+            href="/"
             className="border-white text-white"
           >
             {t("home.show_more")}

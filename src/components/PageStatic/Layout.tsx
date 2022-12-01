@@ -3,37 +3,27 @@ import { Seo } from 'src/components/Seo'
 import Header from 'src/components/Header/Header'
 import { textClass } from 'src/components/Text'
 import Footer from 'src/components/Footer'
-import { FadeUp } from 'src/components/FadeUp'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
-import { gsap } from 'gsap'
+import ArtaLogo from 'src/components/Svg/arta-logo'
+import Link from 'next/link'
 
 
-const Layout = (props: { cms: any; children: React.ReactNode; }) => {
+const Layout = (props: { cms: any; children: React.ReactNode; hideFooter?: boolean }) => {
   const { t } = useTranslation('common')
-  const { cms, children } = props
-
+  const { cms, children, hideFooter = false } = props
   const bannerImage = useRef(null)
-
-  // useEffect(()=> {
-  //   const tl = gsap.timeline({
-  //       scrollTrigger: {
-  //           trigger: bannerImage.current,
-  //           start: 'top top',
-  //           end: 'bottom top',
-  //           scrub: true,
-  //       }
-  //   })
-
-  //   tl.to(bannerImage.current, {
-  //     y: 200
-  //   })
-  // }, [])
 
   return (
     <>
       <Seo />
-      <Header textColor="brown" />
+      <div className="absolute arta-container text-right z-[20]">
+        <Link href="/">
+          <div className="z-2 h-[32px] w-[78.67px] cursor-pointer opacity-100 transition text-right hover:opacity-100 md:h-auto md:w-auto">
+            <ArtaLogo className={`ml-auto mt-8 text-arta-russet-100 h-full w-full md:h-auto md:w-auto`} />
+          </div>
+        </Link>
+      </div>
       <main className="flex flex-col bg-arta-eggshell-100 pb-12 text-arta-sand-100 md:pb-[150px]">
         <div className="relative md:aspect-video md:h-[50vh] h-[50vh] w-full overflow-hidden z-2">
           <div ref={bannerImage} className="absolute h-[50vh] w-full overflow-hidden">
@@ -51,7 +41,9 @@ const Layout = (props: { cms: any; children: React.ReactNode; }) => {
         </div>
         {children}
       </main>
-      <Footer textColor="brown" />
+      {
+        hideFooter && <Footer textColor="brown" />
+      }
     </>
   )
 }

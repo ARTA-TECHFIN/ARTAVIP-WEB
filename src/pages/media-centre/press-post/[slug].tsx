@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 import Link from 'next/link'
 import { MediaLayout } from 'src/components/PageMedia/Layout'
 import { IconArrowLeft } from 'src/components/Svg/Icon'
@@ -7,24 +7,11 @@ import { links } from 'src/domains/links'
 import { getMediaCms, getMediaCmsT, getSlug } from 'src/domains/media'
 import parse from 'html-react-parser'
 import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const cms = await getMediaCms({ lang: 'en' })
-
-  const paths = cms.pressPosts.flatMap((pressByYear) => {
-    return pressByYear.posts.map((post, index) => ({
-      params: { slug: getSlug(post.title) },
-    }))
-  })
-
-  return {
-    paths,
-    fallback: false,
-  }
-}
-
-export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
+export const getServerSideProps: GetServerSideProps = async ({ locale, params }) => {
   const cms = await getMediaCms({ lang: locale })
+
   const slug = params?.slug
 
   let post: any = null
@@ -33,12 +20,13 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
     if (r) post = r
 
     return r
-  })!
+  })
 
   return {
     props: {
       cms,
       post,
+      ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }
 }
@@ -63,7 +51,9 @@ const PressPost = (props: {
         <div className="mt-4 bg-white p-6 shadow-blogPost md:p-12">
           <p className="text-xs text-arta-indigo-100">{post.date}</p>
           <h2 className={`mt-2 ${textClass.h3_style2} text-arta-secondary`}>{post.title}</h2>
-          <p className={`mt-6 ${textClass.body_regular_verah} text-black`}>{parse(post.text)}</p>
+          <div className={`mt-6 ${textClass.body_regular_verah} text-black`}>
+            {parse(post.text)}
+          </div>
         </div>
       </div>
     </MediaLayout>

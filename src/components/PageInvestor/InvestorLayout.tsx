@@ -51,12 +51,12 @@ const InvestorLayout: FC<propsT> = ({ k, cms, tabType, hideTab = false, children
           mobileImage={k.heroBanner.mobileImage}
           label={k.heroBanner.label}
         />
-        <div className="bg-arta-eggshell-100 pt-12 pb-6 md:pt-16 md:pb-[206px]">
+        <div className="bg-arta-eggshell-100 pt-0 pb-6 md:pt-16 md:pb-[206px]">
           <div className="arta-container mx-auto">
             {
               !hideTab && (
                 <div className="arta-hide-scrollbar -mx-6 overflow-auto md:mx-0">
-                  <div className="hidden lg:block">
+                  <div className="">
                     <TabBar
                       tabs={tabList.map((t) => t.title)}
                       selectedTab={tabInfo.title}

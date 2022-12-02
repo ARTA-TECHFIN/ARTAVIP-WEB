@@ -6,8 +6,6 @@ import parse from 'html-react-parser'
 const PageCorporateInformation: FC<{ k: any }> = ({ k }) => {
   const { t } = useTranslation('common')
 
-  console.log(k)
-
   const basicInformation = [
     {label: t("corporate_information.company_name"), value: k.ci_company_name},
     {label: t("corporate_information.sector"), value: k.ci_sector},
@@ -37,7 +35,7 @@ const PageCorporateInformation: FC<{ k: any }> = ({ k }) => {
   ]
 
   return (
-    <div className="pt-16">
+    <div className="pt-8">
       <div className="mb-12 grid sm:grid-cols-12 col-span-full  gap-x-8">
         <div className="col-span-full lg:col-span-8 lg:col-start-3">
           <h4 className={`${textClass.h6} mt-8 text-arta-sand-100`}>{t("corporate_information.basic_information")}</h4>

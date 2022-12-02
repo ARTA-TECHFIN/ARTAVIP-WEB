@@ -76,7 +76,7 @@ const PageEsg: FC<{ k: any, locale: string }> = ({ k, locale }) => {
   const navList = [t('investor_relations.environmental'), t('investor_relations.social'), t('investor_relations.governance')]
 
   return (
-    <div className="grid grid-cols-12 gap-x-5 pt-16">
+    <div className="relative grid grid-cols-12 gap-x-5 pt-16">
       <ul ref={nav} className="col-span-3 h-[140px] !translate-y-0 md:block hidden">
         {navList.map((item, index) => (
           <li
@@ -89,6 +89,10 @@ const PageEsg: FC<{ k: any, locale: string }> = ({ k, locale }) => {
           </li>
         ))}
       </ul>
+      {/* <div className="bg-arta-sand-100 lg:hidden top-0 -ml-6 w-[100vw]">
+        <p>123</p>
+        <p>123</p>
+      </div> */}
       <div className="md:col-span-9 col-span-full" ref={sections}>
         <div id="environmental" className="esg-section">
           <h2 className={`${textClass.h3_style2}`}>{t('investor_relations.environmental')}</h2>
@@ -100,7 +104,7 @@ const PageEsg: FC<{ k: any, locale: string }> = ({ k, locale }) => {
           <div className={`module-etg-text-section ${textClass.body_regular_verah}`} dangerouslySetInnerHTML={{__html: k.esg_social}}></div>
         </div>
 
-        <div id="Governance" className="esg-section md:pt-16 pt-12">
+        <div id="Governance" className="esg-section md:pt-16 pt-12 mb-16 lg:mb-0">
           <h2 className={`${textClass.h3_style2}`}>{t('investor_relations.governance')}</h2>
           <div className={`module-etg-text-section ${textClass.body_regular_verah}`} dangerouslySetInnerHTML={{__html: k.esg_governance_1}}></div>
 

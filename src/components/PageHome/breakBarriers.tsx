@@ -117,7 +117,7 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
         <div className="animatedSpotLight2 mix-blend-lighten w-[100vw] h-[100vw] absolute blur-[35px]" />
       </div>
       <div className=" movable-elements-wrapper flex max-w-main-contain items-start justify-center z-1 px-6 xl:mx-auto">
-        <div className="absolute bottom-[95em] lg:bottom-[7em] left-[0] lg:bottom-[6em] lg:left-[5em]">
+        <div className="absolute bottom-[95em] left-[0] md:bottom-[7em] md:bottom-[6em] md:left-[5em]">
           <h1
             id="animation"
             ref={sec1TtlRef}

@@ -26,7 +26,7 @@ const About = ({ k }: any) => {
       <div className="absolute left-[3em] lg:left-auto lg:right-[4em] bottom-[0] z-1 flex w-[70em] -translate-y-1/2 transform justify-end self-center z-[2] lg:bottom-auto lg:top-1/2 lg:w-[50em]">
         <div className="ml-auto h-full flex-col items-end justify-center gap-[24px] p-2 text-left lg:text-right lg:w-1/2  ">
           <h1 className="lg:text-right font-Verah text-[6em] tracking-[0.06em] text-white will-change-transform lg:text-[3.4em]">
-            About ARTA
+            {t("home.about_arta")}
           </h1>
           <p className="mb-[1.5em] max-w-[30em] font-Neue text-[3.6em] text-white md:text-[1.8em] lg:text-[1em]">
             {k.about_us_description}

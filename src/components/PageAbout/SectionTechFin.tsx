@@ -62,7 +62,7 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
             </>
           </FadeUp>
         </div>
-        <div className="our-eco relative h-96 md:h-96 w-full max-w-full overflow-hidden px-12">
+        <div className="our-eco relative pb-28 w-full arta-container overflow-hidden px-12">
           {showComponent && (
             <Swiper
               modules={[Navigation]}
@@ -76,9 +76,9 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
               slidesPerView={1}
               breakpoints={{
                 767: {
-                  slidesPerView: 1,
+                  slidesPerView: 3,
                 },
-                1024: {
+                1200: {
                   slidesPerView: 5,
                 },
               }}

@@ -103,15 +103,15 @@ const PageEsg: FC<{ k: any, locale: string }> = ({ k, locale }) => {
           <h2 className={`${textClass.h3_style2}`}>{t('investor_relations.governance')}</h2>
           <div className={`module-etg-text-section ${textClass.body_regular_verah}`} dangerouslySetInnerHTML={{__html: k.esg_governance_1}}></div>
 
-          <div className="arta-gradient-border relative mb-12 overflow-hidden">
+          <div className="arta-gradient-border relative mb-12 overflow-hidden font-Verah text-[1rem] leading-[1.5rem] tracking-wide">
             <div className="arta-gradient-border-inner"></div>
-            <div className=" relative z-20 flex bg-arta-eggshell-100 md:py-12 py-4 md:px-[60px] px-6">
-              <div className="relative">
-                <div className="arta-gradient-line-left absolute right-0 h-full"></div>
+            <div className="relative z-20 flex flex-col lg:flex-row bg-arta-eggshell-100 md:py-12 py-10 md:px-[60px] pl-16 pr-12">
+              <div className="relative mb-6 pb-6 lg:mb-0 border-b border-arta-secondary lg:border-none">
+                <div className="lg:arta-gradient-line-left absolute right-0 h-full"></div>
                 <div className="md:pr-6 pr-2">
                   <h3 className={`pl-4 text-arta-secondary sm:text-2xl text-sm`}>{`The Board`}</h3>
                   <p
-                    className={`pl-4 !text-arta-secondary sm:text-xs text-[1.5em]`}
+                    className={`pl-4 !text-arta-secondary leading-normal sm:text-xs text-[1.5em]`}
                   >{`(Risk Management Oversight)`}</p>
                   <ul className={`md:mt-4 mt-2 list-disc pl-4 `}>
                     <li>{`Oversees the Company’s risk management policies and process`}</li>
@@ -121,13 +121,13 @@ const PageEsg: FC<{ k: any, locale: string }> = ({ k, locale }) => {
                 </div>
               </div>
 
-              <div className="relative md:pl-6 pl-2">
+              <div className="relative lg:pl-6">
                 <div>
                   <h3
                     className={`pl-4 text-arta-secondary  sm:text-2xl text-sm`}
                   >{`Head of departments`}</h3>
                   <p
-                    className={`pl-4 !text-arta-secondary sm:text-xs text-[1.5em]`}
+                    className={`pl-4 !text-arta-secondary sm:text-xs text-[1.5em] leading-normal`}
                   >{`(Risk & Control Monitoring)`}</p>
                   <ul className={`md:mt-4 mt-2 list-disc pl-4 `}>
                     <li className="md:mt-4 mt-1">{`Oversees the Company’s risk management policies and process`}</li>
@@ -140,7 +140,7 @@ const PageEsg: FC<{ k: any, locale: string }> = ({ k, locale }) => {
                     className={`pl-4 text-arta-secondary  sm:text-2xl text-sm`}
                   >{`Business/operating units`}</h3>
                   <p
-                    className={`pl-4 !text-arta-secondary sm:text-xs text-[1.5em]`}
+                    className={`pl-4 !text-arta-secondary sm:text-xs text-[1.5em] leading-normal`}
                   >{`(Operating Risks & Internal Controls Ownership)`}</p>
                   <ul className={`md:mt-4 mt-2 list-disc pl-4`}>
                     <li className="md:mt-4 mt-1">{`Oversees the Company’s risk management policies and process`}</li>
@@ -150,14 +150,14 @@ const PageEsg: FC<{ k: any, locale: string }> = ({ k, locale }) => {
                 </div>
               </div>
 
-              <div className=" absolute md:top-0 -top-[50px] md:left-1 -left-[12px] md:scale-100 scale-50">
+              <div className=" absolute top-0 left-1 lg:scale-100 scale-80">
                 <p className=" absolute text-lg top-2/4 left-2/4 w-[110px] -translate-y-2/4 -translate-x-2/4 rotate-90 text-center">
                   Top-down
                 </p>
                 <TopDownArrow />
               </div>
 
-              <div className=" absolute md:bottom-0 -bottom-[50px] md:scale-100 scale-50 md:right-1 -right-[12px]">
+              <div className=" absolute bottom-0 lg:scale-100 scale-80 right-1">
                 <p className=" absolute text-lg top-2/4 left-2/4 w-[110px] -translate-y-2/4 -translate-x-2/4 -rotate-90 text-center">
                   Bottom-up
                 </p>

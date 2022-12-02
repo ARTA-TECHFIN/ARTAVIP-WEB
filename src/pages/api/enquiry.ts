@@ -20,6 +20,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     console.log('[Enquiry Form submitted]. req.body: ', req.body || 'No body')
 
+    const reqMessage = JSON.parse(req.body)
+
     if (process.env.EMAIL_HOST) {
       const message = {
         // 554 error if from is not set
@@ -29,9 +31,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         // recipient address must be verified with Amazon SES if sandbox mode is enabled.
         from: 'noreply@artatechfin.com',
         to: `${process.env.ENQUIRY_RECIPIENT_EMAIL || 'katie.hu@keysocapp.com,jason@y714.com'}`,
-        subject: `Media Enquiry from ${req.body.name}`,
+        subject: `Media Enquiry from ${reqMessage.name}`,
         text: 'Plaintext version of the message',
-        html: `<p>Name: ${req.body.name}</p><p>Company Name: ${req.body.email}</p><p>Job Title: ${req.body.job_title}</p><p>Email Address: ${req.body.email}</p><p>Contact Number: ${req.body.phone}</p><p>Enquiry Details: ${req.body.message}</p><p>${JSON.stringify(req.body)}</p>`,
+        html: `<p>Name: ${reqMessage.name}</p><p>Company Name: ${reqMessage.email}</p><p>Job Title: ${reqMessage.jobTitle}</p><p>Email Address: ${reqMessage.email}</p><p>Contact Number: ${reqMessage.phone}</p><p>Enquiry Details: ${reqMessage.message}</p>`,
       }
 
       await transporter.sendMail(message)

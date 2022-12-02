@@ -52,7 +52,11 @@ const HeroBanner = ({ title, label, description, image, mobileImage }: propsT) =
             <div className="md:w-1/2">
               <p className={textClass.title_style2}>{label}</p>
               <h1 className={`mt-1 ${textClass.h1_style2}`}>{title}</h1>
-              <p className={`mt-4 ${textClass.body_regular_verah}`}>{description}</p>
+              {
+                description !== 'null' && (
+                  <p className={`mt-4 ${textClass.body_regular_verah}`}>{description}</p>
+                )
+              }
             </div>
           </FadeUp>
         </div>

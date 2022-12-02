@@ -89,10 +89,9 @@ const PageEsg: FC<{ k: any, locale: string }> = ({ k, locale }) => {
           </li>
         ))}
       </ul>
-      {/* <div className="bg-arta-sand-100 lg:hidden top-0 -ml-6 w-[100vw]">
-        <p>123</p>
-        <p>123</p>
-      </div> */}
+      <div className="bg-arta-sand-100 absolute lg:hidden top-0 -ml-6 w-[100vw]">
+        <p className="text-white text-[1rem] px-6 py-3 cursor-pointer">Environmental</p>
+      </div>
       <div className="md:col-span-9 col-span-full" ref={sections}>
         <div id="environmental" className="esg-section">
           <h2 className={`${textClass.h3_style2}`}>{t('investor_relations.environmental')}</h2>

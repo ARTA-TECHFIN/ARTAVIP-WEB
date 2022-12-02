@@ -82,7 +82,18 @@
     "environmental": "Environmental",
     "social": "Social",
     "governance": "Governance",
-    "back": "Back to landing page"
+    "back": "Back to landing page",
+    "esg_top_down": "Top-down",
+    "esg_bottom_up": "Bottom-up",
+    "esg_the_board": "The Board",
+    "esg_the_board_subtitle": "(Risk Management Oversight)",
+    "esg_the_board_content": "<ul><li>Oversees the Company’s risk management policies and process</li><li>Reviews and ensures that the Group has maintained and carried out effective and appropriate risk management and internal control systems</li><li>Determines the nature and extent of the outstanding emerging and existing risks</li></ul>",
+    "esg_head_of_departments": "Head of Departments",
+    "esg_head_of_departments_subtitle": "(Risk & Control Monitoring)",
+    "esg_head_of_departments_content": "<ul><li>Identifies, assesses and manages the significant operating risks facing the Company</li><li>Monitors the risk management and internal control systems and implements new controls</li></ul>",
+    "esg_unit": "Business/Operating Units",
+    "esg_unit_subtitle": "(Operation Risks & Internal Controls Ownership)",
+    "esg_unit_content": "<ul><li>Risk identification, assessment and mitigation performed across various departments</li><li>Practices across business operations and functional areas</li><li>Monitors the risk management and internal control systems and implements new controls</li></ul>"
   },
   "contact_us": {
     "enquiry": "Enquiry",

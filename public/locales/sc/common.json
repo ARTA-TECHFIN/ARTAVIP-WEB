@@ -82,7 +82,18 @@
     "environmental": "环境",
     "social": "社会",
     "governance": "管治",
-    "back": "返回投资者关系主页"
+    "back": "返回投资者关系主页",
+    "esg_top_down": "自上而下",
+    "esg_bottom_up": "自下而上",
+    "esg_the_board": "董事会",
+    "esg_the_board_subtitle": "（风险管理监督）",
+    "esg_the_board_content": "<ul><li>监督公司的风险管理政策和流程</li><li>检讨并确保公司已维持和实施有效且充足的风险管理和内部监控系统</li><li>确定新出现的和现有风险的性质和程度</li></ul>",
+    "esg_head_of_departments": "部门负责人",
+    "esg_head_of_departments_subtitle": "（风险与监控监察）",
+    "esg_head_of_departments_content": "<ul><li>识别、评估及管理公司面临的重大营运风险</li><li>监察风险管理及内部控制系统并实施新的监控措施</li></ul>",
+    "esg_unit": "业务/营运单位",
+    "esg_unit_subtitle": "（营运风险及内部监控所有权）",
+    "esg_unit_content": "<ul><li>于各部门进行风险识别、评估及减缓</li><li>于业务营运和职能方面实行</li></ul>"
   },
   "contact_us": {
     "enquiry": "查询",

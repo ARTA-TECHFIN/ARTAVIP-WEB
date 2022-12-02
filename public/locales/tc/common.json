@@ -82,7 +82,18 @@
     "environmental": "環境",
     "social": "社會",
     "governance": "管治",
-    "back": "返回投資者關係主頁"
+    "back": "返回投資者關係主頁",
+    "esg_top_down": "自上而下",
+    "esg_bottom_up": "自下而上",
+    "esg_the_board": "董事會",
+    "esg_the_board_subtitle": "（風險管理監督）",
+    "esg_the_board_content": "<ul><li>監督公司的風險管理政策和流程</li><li>檢討並確保公司已維持和實施有效且充足的風險管理和內部監控系統</li><li>確定新出現的和現有風險的性質和程度</li></ul>",
+    "esg_head_of_departments": "部門負責人",
+    "esg_head_of_departments_subtitle": "（風險與監控監察）",
+    "esg_head_of_departments_content": "<ul><li>識別、評估及管理公司面臨的重大營運風險</li><li>監察風險管理及內部控制系統並實施新的監控措施</li></ul>",
+    "esg_unit": "業務/營運單位",
+    "esg_unit_subtitle": "（營運風險及內部監控所有權）",
+    "esg_unit_content": "<ul><li>於各部門進行風險識別、評估及減緩</li><li>於業務營運和職能方面實行</li></ul>"
   },
   "contact_us": {
     "enquiry": "查詢",

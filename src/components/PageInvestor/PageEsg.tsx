@@ -6,6 +6,7 @@ import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin'
 import { useEffect, useRef } from 'react'
 import { IconListItemArrow, TopDownArrow, DownTopArrow } from '../Svg/Icon'
 import { useTranslation } from 'next-i18next'
+import parse from 'html-react-parser'
 
 gsap.registerPlugin(ScrollToPlugin)
 
@@ -106,60 +107,54 @@ const PageEsg: FC<{ k: any, locale: string }> = ({ k, locale }) => {
           <div className="arta-gradient-border relative mb-12 overflow-hidden font-Verah text-[1rem] leading-[1.5rem] tracking-wide">
             <div className="arta-gradient-border-inner"></div>
             <div className="relative z-20 flex flex-col lg:flex-row bg-arta-eggshell-100 md:py-12 py-10 md:px-[60px] pl-16 pr-12">
-              <div className="relative mb-6 pb-6 lg:mb-0 border-b border-arta-secondary lg:border-none">
+              <div className="relative mb-6 pb-6 flex-1 lg:mb-0 border-b border-arta-secondary lg:border-none">
                 <div className="lg:arta-gradient-line-left absolute right-0 h-full"></div>
                 <div className="md:pr-6 pr-2">
-                  <h3 className={`pl-4 text-arta-secondary sm:text-2xl text-sm`}>{`The Board`}</h3>
+                  <h3 className={`pl-4 text-arta-secondary sm:text-2xl text-sm`}>{t("investor_relations.esg_the_board")}</h3>
                   <p
                     className={`pl-4 !text-arta-secondary leading-normal sm:text-xs text-[1.5em]`}
-                  >{`(Risk Management Oversight)`}</p>
-                  <ul className={`md:mt-4 mt-2 list-disc pl-4 `}>
-                    <li>{`Oversees the Company’s risk management policies and process`}</li>
-                    <li className="md:mt-4 mt-1">{`Reviews and ensure that the Group has maintained and carried out effective and appropriate risk management and internal control systems`}</li>
-                    <li className="md:mt-4 mt-1">{`Determines the nature and extent of the outstanding emerging and existing risks`}</li>
-                  </ul>
+                  >{t("investor_relations.esg_the_board_subtitle")}</p>
+                  <div className="module-text-section">
+                    {parse(t("investor_relations.esg_the_board_content"))}
+                  </div>
                 </div>
               </div>
 
-              <div className="relative lg:pl-6">
+              <div className="relative lg:pl-6 flex-1">
                 <div>
                   <h3
                     className={`pl-4 text-arta-secondary  sm:text-2xl text-sm`}
-                  >{`Head of departments`}</h3>
+                  >{t("investor_relations.esg_head_of_departments")}</h3>
                   <p
                     className={`pl-4 !text-arta-secondary sm:text-xs text-[1.5em] leading-normal`}
-                  >{`(Risk & Control Monitoring)`}</p>
-                  <ul className={`md:mt-4 mt-2 list-disc pl-4 `}>
-                    <li className="md:mt-4 mt-1">{`Oversees the Company’s risk management policies and process`}</li>
-                    <li className="md:mt-4 mt-1">{`Reviews and ensure that the Group has maintained and carried out effective and appropriate risk management and internal control systems`}</li>
-                    <li className="md:mt-4 mt-1">{`Determines the nature and extent of the outstanding emerging and existing risks`}</li>
-                  </ul>
+                  >{t("investor_relations.esg_head_of_departments_subtitle")}</p>
+                  <div className="module-text-section">
+                    {parse(t("investor_relations.esg_head_of_departments_content"))}
+                  </div>
                 </div>
                 <div className="md:mt-11 mt-4">
                   <h3
                     className={`pl-4 text-arta-secondary  sm:text-2xl text-sm`}
-                  >{`Business/operating units`}</h3>
+                  >{t("investor_relations.esg_unit")}</h3>
                   <p
                     className={`pl-4 !text-arta-secondary sm:text-xs text-[1.5em] leading-normal`}
-                  >{`(Operating Risks & Internal Controls Ownership)`}</p>
-                  <ul className={`md:mt-4 mt-2 list-disc pl-4`}>
-                    <li className="md:mt-4 mt-1">{`Oversees the Company’s risk management policies and process`}</li>
-                    <li className="md:mt-4 mt-1">{`Reviews and ensure that the Group has maintained and carried out effective and appropriate risk management and internal control systems`}</li>
-                    <li className="md:mt-4 mt-1">{`Determines the nature and extent of the outstanding emerging and existing risks`}</li>
-                  </ul>
+                  >{t("investor_relations.esg_unit_subtitle")}</p>
+                  <div className="module-text-section">
+                    {parse(t("investor_relations.esg_unit_content"))}
+                  </div>
                 </div>
               </div>
 
               <div className=" absolute top-0 left-1 lg:scale-100 scale-80">
                 <p className=" absolute text-lg top-2/4 left-2/4 w-[110px] -translate-y-2/4 -translate-x-2/4 rotate-90 text-center">
-                  Top-down
+                  {t("investor_relations.esg_top_down")}
                 </p>
                 <TopDownArrow />
               </div>
 
               <div className=" absolute bottom-0 lg:scale-100 scale-80 right-1">
                 <p className=" absolute text-lg top-2/4 left-2/4 w-[110px] -translate-y-2/4 -translate-x-2/4 -rotate-90 text-center">
-                  Bottom-up
+                  {t("investor_relations.esg_bottom_up")}
                 </p>
                 <DownTopArrow />
               </div>

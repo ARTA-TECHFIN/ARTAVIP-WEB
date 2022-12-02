@@ -384,7 +384,7 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
       <div
         className={cn(
           index === selectedBusiness &&
-            'innerShadow !opacity-100 lg:h-[13em] lg:w-[13em] lg:text-[1.04em]',
+            'innerShadow !opacity-100 lg:h-[13.5em] lg:w-[13.5em] lg:text-[1.04em]',
           `innerShadowMobile mx-auto flex h-[14em] w-[14em] items-center justify-center self-center rounded-full border border-white text-[3.4em] opacity-70 transition-all will-change-transform md:h-[10em] md:w-[10em] md:text-[2em] lg:h-[10em] lg:w-[10em] lg:text-[0.85em]`
         )}
       >

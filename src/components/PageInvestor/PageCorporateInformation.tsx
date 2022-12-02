@@ -6,32 +6,34 @@ import parse from 'html-react-parser'
 const PageCorporateInformation: FC<{ k: any }> = ({ k }) => {
   const { t } = useTranslation('common')
 
+  console.log(k)
+
   const basicInformation = [
-    {label: t("corporate_information.company_name"), value: "ARTA TechFin Corporation Limited"},
-    {label: t("corporate_information.sector"), value: "Consolidated Enterprises"},
-    {label: t("corporate_information.principal_place_of_business"), value: "Units 1-2, Level 9\nK11 ATELIER King's Road\n728 King's Road, Quarry Bay\nHong Kong"},
-    {label: t("corporate_information.registered_office"), value: "Cricket Square\nHutchins Drive\nP.O. Box 2681\nGrand Cayman KY1-1111\nCayman Islands"},
-    {label: t("corporate_information.website"), value: "http://www.artatechfin.com"},
-    {label: t("corporate_information.phone"), value: "(852) 3513 8279"},
-    {label: t("corporate_information.fax"), value: "(852) 2507 2009"},
-    {label: t("corporate_information.financial_year_end"), value: "March 31"},
+    {label: t("corporate_information.company_name"), value: k.ci_company_name},
+    {label: t("corporate_information.sector"), value: k.ci_sector},
+    {label: t("corporate_information.principal_place_of_business"), value: k.ci_principal_place},
+    {label: t("corporate_information.registered_office"), value: k.ci_register_office},
+    {label: t("corporate_information.website"), value: k.ci_web_address},
+    {label: t("corporate_information.phone"), value: k.ci_phone_number},
+    {label: t("corporate_information.fax"), value: k.ci_fax_number},
+    {label: t("corporate_information.financial_year_end"), value: k.ci_financial_year_end},
   ]
 
   const boardOfDirectors = [
-    {label: t("corporate_information.executive_directors"), value: "<ul><li>Mr. Lau Fu Wing, Eddie (Chief Executive Officer)</li><li>Ms. Yeung Shuet Fan Pamela</li><li>Ms. Li Chuchu, Tracy</li>"},
-    {label: t("corporate_information.non_executive_directors"), value: "<ul><li>Dr. Cheng Chi-Kong, Adrian JP</li><li>Mr. Han Kam Leung, Michael</li></ul>"},
-    {label: t("corporate_information.independent_non_executive_directors"), value: "<ul><li>Ms. Ling Kit Sum Imma</li><li>Mr. Lo Chun Yu Toby</li><li>Dr. Tam Lai Fan Gloria</li></ul>"},
+    {label: t("corporate_information.executive_directors"), value: k.ci_executive_directors},
+    {label: t("corporate_information.non_executive_directors"), value: k.ci_non_executive_directors},
+    {label: t("corporate_information.independent_non_executive_directors"), value: k.ci_independent_directors},
   ]
 
   const legalCounsels = [
-    {label: t("corporate_information.hong_kong"), value: "Reed Smith Richards Butler\n17/F One Island East\nTaikoo Place, 18 Westlands Road\nQuarry Bay, Hong Kong"},
-    {label: t("corporate_information.cayman_islands"), value: "Conyers Dill & Pearman\n29th Floor, One Exchange Square\n8 Connaught Place\nCentral, Hong Kong"},
+    {label: '', value: k.ci_legal_counsels_1},
+    {label: '', value: k.ci_legal_counsels_2},
   ]
 
   const shareInformation = [
-    {label: t("corporate_information.hkex_stock_code"), value: "279"},
-    {label: t("corporate_information.listing_date"), value: "11th May, 1988"},
-    {label: t("corporate_information.share_registrar"), value: "Tricor Secretaries Limited\n17/F, Far East Finance Centre\n16 Harcourt Road\nHong Kong"},
+    {label: t("corporate_information.hkex_stock_code"), value: k.ci_hkex_stock_code},
+    {label: t("corporate_information.listing_date"), value: k.ci_listing_date},
+    {label: t("corporate_information.share_registrar"), value: k.ci_share_register_transfer_office},
   ]
 
   return (
@@ -41,12 +43,12 @@ const PageCorporateInformation: FC<{ k: any }> = ({ k }) => {
           <h4 className={`${textClass.h6} mt-8 text-arta-sand-100`}>{t("corporate_information.basic_information")}</h4>
           <div className="mt-4 mb-8 grid grid-cols-12 gap-y-5 border-b border-black pb-10 sm:gap-y-8">
             {
-              basicInformation.map((j) => {
+              basicInformation.map((j, i) => {
                 return (
-                  <div className="col-span-full sm:col-span-6">
+                  <div className="col-span-full sm:col-span-6" key={i}>
                     <div className="text-base text-black">
                       <div className={`font-bold`}>{j.label}</div>
-                      <p className="whitespace-pre">{parse(j.value)}</p>
+                      <div className="whitespace-pre">{parse(j.value)}</div>
                     </div>
                   </div>
                 )
@@ -57,12 +59,12 @@ const PageCorporateInformation: FC<{ k: any }> = ({ k }) => {
           <h4 className={`${textClass.h6} mt-8 text-arta-sand-100`}>{t("corporate_information.board_of_directors")}</h4>
           <div className="mt-4 mb-8 grid grid-cols-12 gap-y-5 border-b border-black pb-10 sm:gap-y-8">
             {
-              boardOfDirectors.map((j) => {
+              boardOfDirectors.map((j, i) => {
                 return (
-                  <div className="col-span-full sm:col-span-6">
+                  <div className="col-span-full sm:col-span-6" key={i}>
                     <div className="text-base text-black">
                       <div className={`font-bold`}>{j.label}</div>
-                      <p className="whitespace-pre">{parse(j.value)}</p>
+                      <div className="whitespace-pre">{parse(j.value)}</div>
                     </div>
                   </div>
                 )
@@ -73,12 +75,12 @@ const PageCorporateInformation: FC<{ k: any }> = ({ k }) => {
           <h4 className={`${textClass.h6} mt-8 text-arta-sand-100`}>{t("corporate_information.finance_and_admin")}</h4>
           <div className="mt-4 mb-8 grid grid-cols-12 gap-y-5 border-b border-black pb-10 sm:gap-y-8">
             {
-              boardOfDirectors.map((j) => {
+              boardOfDirectors.map((j, i) => {
                 return (
-                  <div className="col-span-full sm:col-span-6">
+                  <div className="col-span-full sm:col-span-6" key={i}>
                     <div className="text-base text-black">
                       <div className={`font-bold`}>{j.label}</div>
-                      <p className="whitespace-pre">{parse(j.value)}</p>
+                      <div className="whitespace-pre">{parse(j.value)}</div>
                     </div>
                   </div>
                 )
@@ -89,12 +91,12 @@ const PageCorporateInformation: FC<{ k: any }> = ({ k }) => {
           <h4 className={`${textClass.h6} mt-8 text-arta-sand-100`}>{t("corporate_information.legal_counsels")}</h4>
           <div className="mt-4 mb-8 grid grid-cols-12 gap-y-5 border-b border-black pb-10 sm:gap-y-8">
             {
-              legalCounsels.map((j) => {
+              legalCounsels.map((j, i) => {
                 return (
-                  <div className="col-span-full sm:col-span-6">
+                  <div className="col-span-full sm:col-span-6" key={i}>
                     <div className="text-base text-black">
                       <div className={`font-bold`}>{j.label}</div>
-                      <p className="whitespace-pre">{parse(j.value)}</p>
+                      <div className="whitespace-pre">{parse(j.value)}</div>
                     </div>
                   </div>
                 )
@@ -105,12 +107,12 @@ const PageCorporateInformation: FC<{ k: any }> = ({ k }) => {
           <h4 className={`${textClass.h6} mt-8 text-arta-sand-100`}>{t("corporate_information.share_information")}</h4>
           <div className="mt-4 mb-8 grid grid-cols-12 gap-y-5 border-b border-black pb-10 sm:gap-y-8">
             {
-              shareInformation.map((j) => {
+              shareInformation.map((j, i) => {
                 return (
-                  <div className="col-span-full sm:col-span-6">
+                  <div className="col-span-full sm:col-span-6" key={i}>
                     <div className="text-base text-black">
                       <div className={`font-bold`}>{j.label}</div>
-                      <p className="whitespace-pre">{parse(j.value)}</p>
+                      <div className="whitespace-pre">{parse(j.value)}</div>
                     </div>
                   </div>
                 )

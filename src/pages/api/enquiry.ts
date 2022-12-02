@@ -31,7 +31,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         // recipient address must be verified with Amazon SES if sandbox mode is enabled.
         from: 'noreply@artatechfin.com',
         to: `${process.env.ENQUIRY_RECIPIENT_EMAIL || 'katie.hu@keysocapp.com,jason@y714.com'}`,
-        subject: `Media Enquiry from ${reqMessage.name}`,
+        subject: `${reqMessage.topic} Enquiry from ${reqMessage.name}`,
         text: 'Plaintext version of the message',
         html: `<p>Name: ${reqMessage.name?.replace(/</g, "&lt;")}</p><p>Company Name: ${reqMessage.company?.replace(/</g, "&lt;").replace(/>/g, "&gt;") || "--"}</p><p>Job Title: ${reqMessage.jobTitle?.replace(/</g, "&lt;").replace(/>/g, "&gt;") || "--"}</p><p>Email Address: ${reqMessage.email?.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p><p>Contact Number: ${reqMessage.phone?.replace(/</g, "&lt;").replace(/>/g, "&gt;") || "--"}</p><p>Enquiry Details: ${reqMessage.message?.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p>`,
       }

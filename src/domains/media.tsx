@@ -65,8 +65,9 @@ const massageData = (
         post: {
           date: press.date,
           title: press[getKey('title')],
+          title_en: press.title_en,
           text: press[getKey('content')],
-          pdf: press[getKey('pdf')]
+          pdf: press[getKey('pdf')] ?? {}
         },
       }))
       .reduce((acc: any, curr: any) => {
@@ -79,7 +80,7 @@ const massageData = (
         return acc
       }, []) as {
       year: number
-      posts: { date: string; title: string; text: string, pdf: any }[]
+      posts: { date: string; title: string; title_en: string; text: string, pdf: any }[]
     }[],
   }
 }

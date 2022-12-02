@@ -109,7 +109,8 @@
   },
   "media": {
     "back_blog": "Back",
-    "back_press": "Back"
+    "back_press": "Back",
+    "download_pdf": "Download PDF version"
   },
   "corporate_information": {
     "basic_information": "Basic Information",

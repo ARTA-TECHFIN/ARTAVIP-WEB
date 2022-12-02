@@ -109,7 +109,8 @@
   },
   "media": {
     "back_blog": "返回公司网志主页",
-    "back_press": "返回新闻稿主页"
+    "back_press": "返回新闻稿主页",
+    "download_pdf": "下载PDF版本"
   },
   "corporate_information": {
     "basic_information": "基本资料",

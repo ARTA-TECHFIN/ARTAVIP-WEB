@@ -30,7 +30,7 @@ const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
             events={yearly.posts.map((r, i) => ({
               date: new Date(r.date),
               title: r.title,
-              postPageUrl: `${links.mediaPressPost}/${getSlug(r.title)}`,
+              postPageUrl: `${links.mediaPressPost}/${getSlug(r.title_en)}`,
             }))}
           />
         ))}

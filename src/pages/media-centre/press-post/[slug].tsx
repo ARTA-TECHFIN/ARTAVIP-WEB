@@ -17,7 +17,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, params })
 
   let post: any = null
   cms.pressPosts.some((pressByYear) => {
-    const r = pressByYear.posts.find((post) => getSlug(post.title) === slug)
+    const r = pressByYear.posts.find((post) => getSlug(post.title_en) === slug)
     if (r) post = r
 
     return r
@@ -40,6 +40,7 @@ const PressPost = (props: {
   const { t } = useTranslation('common')
 
   console.log(post)
+  console.log(cms)
 
   return (
     <MediaLayout cms={cms}>
@@ -65,7 +66,7 @@ const PressPost = (props: {
                 href={post.pdf.data.attributes.url}
                 className="border-arta-sand-100 text-arta-sand-100"
               >
-                {"Download PDF version"}
+                {t("media.download_pdf")}
               </ButtonAnimated>
             )
           }

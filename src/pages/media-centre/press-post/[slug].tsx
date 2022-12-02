@@ -8,6 +8,7 @@ import { getMediaCms, getMediaCmsT, getSlug } from 'src/domains/media'
 import parse from 'html-react-parser'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { ButtonAnimated } from 'src/components/ButtonAnimated'
 
 export const getServerSideProps: GetServerSideProps = async ({ locale, params }) => {
   const cms = await getMediaCms({ lang: locale })
@@ -38,6 +39,8 @@ const PressPost = (props: {
   const { cms, post } = props
   const { t } = useTranslation('common')
 
+  console.log(post)
+
   return (
     <MediaLayout cms={cms}>
       <div className="arta-container mx-auto mt-8">
@@ -54,6 +57,18 @@ const PressPost = (props: {
           <div className={`blog-content mt-6 ${textClass.body_regular_verah} text-black`}>
             {parse(post.text)}
           </div>
+          {
+            post.pdf.data && (
+              <ButtonAnimated
+                as="a"
+                external={true}
+                href={post.pdf.data.attributes.url}
+                className="border-arta-sand-100 text-arta-sand-100"
+              >
+                {"Download PDF version"}
+              </ButtonAnimated>
+            )
+          }
         </div>
       </div>
     </MediaLayout>

@@ -8,11 +8,12 @@ type propsT = {
   className?: string
   borderWidth?: 1 | 2
   extraProps?: any
+  external?: boolean
 }
 const ButtonAnimated = (props: propsT) => {
-  const { as = 'button', href = '', children, className, borderWidth = 1, extraProps } = props
+  const { as = 'button', href = '', children, className, borderWidth = 1, extraProps, external = false } = props
 
-  const Component = as === 'a' ? Link : 'button'
+  const Component = as === 'a' ? (external? 'a' : Link) : 'button'
 
   return (
     <Component
@@ -29,6 +30,7 @@ const ButtonAnimated = (props: propsT) => {
         borderWidth === 1 ? 'border' : 'border-2',
         className
       )}
+      target={external? '_blank' : '_self'}
       {...extraProps}
     >
       <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center space-x-4 bg-[#f1eded45] duration-300 will-change-transform group-hover:translate-x-0">

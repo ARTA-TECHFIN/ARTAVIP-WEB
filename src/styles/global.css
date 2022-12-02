@@ -227,3 +227,7 @@
 .swiper-slide-active .ss-circle {
   @apply lg:h-20 lg:w-20;
 }
+
+.home-background-gradient {
+  background: linear-gradient(0deg, rgba(14,28,45,0) 0%, rgba(53,30,14,1) 49%);
+}

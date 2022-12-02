@@ -94,7 +94,7 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
     <section
       ref={sec1Container}
       id="break-barriers"
-      className="relative tigger-01 relative z-3 flex h-screen w-screen flex-col overflow-hidden bg-arta-russet-100 will-change-transform"
+      className="relative tigger-01 relative z-3 flex h-screen w-screen flex-col overflow-hidden bg-[#351e0e] will-change-transform"
       onMouseMove={(ev) => section1HandleMouseMove(ev)}
     >
       <video
@@ -105,18 +105,19 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
         playsInline
         preload="true"
         crossOrigin="anonymous"
-        className="h-full w-full object-cover will-change-transform"
+        className="absolute bottom-[20%] left-[-50%] transform scale-[2.5] md:scale-100 md:left-0 md:bottom-0 md:h-full md:w-full md:object-cover md:relative will-change-transform"
       >
         <source src="/videos/landing_top.mp4" typeof="video/mp4" />
         Your browser does not support the video tag.
       </video>
       {/* top-[20%] left-0   sm:top-[40%] lg:left-[10%] xl:left-[20%] xl:mx-auto */}
-      <div className="">
+      <div className="aboluste h-[40vh] w-full top-0 left-0 home-background-gradient z-1 lg:hidden" />
+      <div className="z-1">
         <div className="animatedSpotLight1 mix-blend-lighten w-[100vw] h-[100vw] absolute blur-[35px]" />
         <div className="animatedSpotLight2 mix-blend-lighten w-[100vw] h-[100vw] absolute blur-[35px]" />
       </div>
-      <div className=" movable-elements-wrapper flex max-w-main-contain items-start justify-center  px-6 xl:mx-auto">
-        <div className="absolute bottom-[7em] left-[0] lg:bottom-[6em] lg:left-[5em]">
+      <div className=" movable-elements-wrapper flex max-w-main-contain items-start justify-center z-1 px-6 xl:mx-auto">
+        <div className="absolute bottom-[95em] lg:bottom-[7em] left-[0] lg:bottom-[6em] lg:left-[5em]">
           <h1
             id="animation"
             ref={sec1TtlRef}

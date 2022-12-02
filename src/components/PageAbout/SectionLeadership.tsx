@@ -14,6 +14,8 @@ export const SectionLeadership = (props: { k: PageAboutCmsT }) => {
   // const g = (keyWithoutLang: string) => `${k[`${keyWithoutLang}_${locale}`]}`
   const g = (leader: any, keyWithoutLang: string) => `${leader.attributes[`${keyWithoutLang}_${locale}`]}`
 
+  console.log(k.leadership)
+
   return (
     <div className="group/bg relative z-1 overflow-hidden" id="leadership">
       <div className="easeInOutSine absolute h-full w-full scale-150 overflow-hidden duration-300 group-hover/bg:scale-100">

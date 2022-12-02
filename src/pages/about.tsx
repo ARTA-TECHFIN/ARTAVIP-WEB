@@ -46,7 +46,7 @@ const massageData = (pageData: any, leadershipData: any, locale: string | undefi
     leadership: {
       title: 'Leadership',
       // prettier-ignore
-      leaderList: leadershipData.data,
+      leaderList: leadershipData.data.sort((a, b) => a.attributes.priority - b.attributes.priority),
     },
     techFin: {
       title: 'What is TechFin',

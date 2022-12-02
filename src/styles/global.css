@@ -142,14 +142,16 @@
 }
 .module-text-col-list h1,
 .module-text-col-list h2,
-.module-text-col-list h3 {
+.module-text-col-list h3,
+.module-text-col-list h4 {
   @apply pt-6;
   border-top: 1px solid;
 }
 
 .module-text-col-list h1:first-of-type,
 .module-text-col-list h2:first-of-type,
-.module-text-col-list h3:first-of-type {
+.module-text-col-list h3:first-of-type,
+.module-text-col-list h4:first-of-type {
   border-top: none;
 }
 

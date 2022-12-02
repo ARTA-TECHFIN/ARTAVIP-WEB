@@ -54,15 +54,16 @@ const ModuleTextColList = ({ header, title, list, content, headerPosition }: pro
 
         {
           list && list.length && (
-            list.map((item, index) => (
-              <Fragment key={index}>
-                <h4 className={`${textClass.h6} mt-8`}>{item.title}</h4>
-                <div className={`${textClass.body_regular_verah} mt-4 mb-8 lg:max-w-[80%]`}>
-                  {parse(item.body)}
-                </div>
-                <Hr />
-              </Fragment>
-            ))
+            <div className="module-text-col-list">
+              {list.map((item, index) => (
+                <Fragment key={index}>
+                  <h4 className={`${textClass.h6}`}>{item.title}</h4>
+                  <div className={`${textClass.body_regular_verah} mt-4 mb-8 lg:max-w-[80%]`}>
+                    {parse(item.body)}
+                  </div>
+                </Fragment>
+              ))}
+            </div>
           )
         }
         

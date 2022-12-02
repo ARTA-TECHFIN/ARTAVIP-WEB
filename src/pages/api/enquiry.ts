@@ -28,10 +28,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         // sender address must be verified with Amazon SES.
         // recipient address must be verified with Amazon SES if sandbox mode is enabled.
         from: 'noreply@artatechfin.com',
-        to: 'katie.hu@keysocapp.com, jason@y714.com',
-        subject: 'Message title',
+        to: `${process.env.ENQUIRY_RECIPIENT_EMAIL || 'katie.hu@keysocapp.com,jason@y714.com'}`,
+        subject: `Media Enquiry from ${req.body.name}`,
         text: 'Plaintext version of the message',
-        html: `<p>${JSON.stringify(req.body)}</p>`,
+        html: `<p>Name: ${req.body.name}</p><p>Company Name: ${req.body.email}</p><p>Job Title: ${req.body.job_title}</p><p>Email Address: ${req.body.email}</p><p>Contact Number: ${req.body.phone}</p><p>Enquiry Details: ${req.body.message}</p><p>${JSON.stringify(req.body)}</p>`,
       }
 
       await transporter.sendMail(message)

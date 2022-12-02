@@ -233,3 +233,7 @@
 .home-background-gradient {
   background: linear-gradient(0deg, rgba(14,28,45,0) 0%, rgba(53,30,14,1) 49%);
 }
+
+.about-background-gradient {
+  background: linear-gradient(180deg, rgba(14,28,45,0) 0%, rgba(60,37,22,1) 49%);
+}

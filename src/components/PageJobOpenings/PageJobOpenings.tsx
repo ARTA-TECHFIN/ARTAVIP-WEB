@@ -25,7 +25,7 @@ const PageJobOpenings: NextPage = ({k}: any) => {
           <div className="arta-container mx-auto">
             <Link
               className={`flex cursor-pointer items-center underline mb-4 ${textClass.body_regular_verah}`}
-              href={links.joinUs}
+              href={`${links.joinUs}#job-opening`}
             >
               <IconArrowLeft fill="#593725" className="mr-2 h-4" />
               {t("join_us.back")}

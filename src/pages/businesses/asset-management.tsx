@@ -14,7 +14,6 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
 
   return {
     heroBanner: {
-      title: 'Asset Management',
       description: g('description') !== null ? g('description') : '',
       image: '/images/asset-management/banner.png',
       mobileImage: '/images/asset-management/mobile-banner.png',
@@ -27,7 +26,6 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { locale } = context
   const useLocalCms = process.env.USE_LOCAL_CMS_DATA === 'true'
-
   const pageData = useLocalCms ? ourBusinessAssetManagementJson : await fetchCmsData()
 
   return {

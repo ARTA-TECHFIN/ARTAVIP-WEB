@@ -16,7 +16,7 @@ const PageInsuranceBrokerage: FC<{ k: any, locale: string }> = ({ k, locale }) =
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
-          title={t("page_title.our_businesses")}
+          title={t("page_title.insurance_brokerage")}
           description={k.heroBanner.description}
           image={k.heroBanner.image}
           mobileImage={k.heroBanner.mobileImage}

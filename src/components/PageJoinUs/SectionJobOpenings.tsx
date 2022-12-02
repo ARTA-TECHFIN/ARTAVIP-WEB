@@ -13,13 +13,14 @@ type propsT = {
 
 const SectionJobOpenings: FC<propsT> = ({ k, jobs }) => {
   const { t } = useTranslation('common')
-  const [selectedTab, setSelectedTab] = useState("All")
 
   const TABS = {
     all: t("join_us.all"),
     fontOffice: t("join_us.front_office"),
     middleAndBackOffice: t("join_us.back_office"),
   } as const
+
+  const [selectedTab, setSelectedTab] = useState(TABS["all"])
 
   const filteredJobs = jobs.filter((job: any) => {
     if (selectedTab === TABS['all']) return job

@@ -18,7 +18,7 @@
          "job_openings_description_tc":"我們正在尋找適合以下職位的人才。如果你認為這裡是你理想的工作地點，馬上點擊鏈接，加入我們。如果想要了解更多信息，請通過電郵至recruit@artatechfin.com聯繫我們的人力資本管理部分。",
          "job_openings_description_sc":"我们正在寻找适合以下职位的人才。如果你认为这里是你理想的工作地点，马上点击链接，加入我们。如果想要了解更多信息，请通过电邮至recruit@artatechfin.com联系我们的人力资本管理部分。",
          "createdAt":"2022-11-22T10:20:45.788Z",
-         "updatedAt":"2022-11-28T09:43:29.090Z",
+         "updatedAt":"2022-11-30T10:40:12.234Z",
          "publishedAt":"2022-11-28T09:43:29.085Z",
          "work_with_arta_image":{
             "data":{
@@ -67,10 +67,443 @@
             }
          },
          "our_values_icons":[
-            
+            {
+               "id":1,
+               "icon_description_en":"Entrepreneurial Mindset",
+               "icon_description_tc":"企業家思維",
+               "icon_description_sc":"企业家思维",
+               "image":{
+                  "data":{
+                     "id":25,
+                     "attributes":{
+                        "name":"Group 230.png",
+                        "alternativeText":"Group 230.png",
+                        "caption":"Group 230.png",
+                        "width":48,
+                        "height":48,
+                        "formats":null,
+                        "hash":"Group_230_db0b7da05d",
+                        "ext":".png",
+                        "mime":"image/png",
+                        "size":1.95,
+                        "url":"https://dhrhnojxde2hk.cloudfront.net/Group_230_db0b7da05d.png",
+                        "previewUrl":null,
+                        "provider":"aws-s3",
+                        "provider_metadata":null,
+                        "createdAt":"2022-11-30T10:19:12.458Z",
+                        "updatedAt":"2022-11-30T10:19:12.458Z"
+                     }
+                  }
+               }
+            },
+            {
+               "id":2,
+               "icon_description_en":"Compassionate",
+               "icon_description_tc":"富有同理心",
+               "icon_description_sc":"富有同理心",
+               "image":{
+                  "data":{
+                     "id":27,
+                     "attributes":{
+                        "name":"Group 231.png",
+                        "alternativeText":"Group 231.png",
+                        "caption":"Group 231.png",
+                        "width":48,
+                        "height":48,
+                        "formats":null,
+                        "hash":"Group_231_184989e5bc",
+                        "ext":".png",
+                        "mime":"image/png",
+                        "size":1.54,
+                        "url":"https://dhrhnojxde2hk.cloudfront.net/Group_231_184989e5bc.png",
+                        "previewUrl":null,
+                        "provider":"aws-s3",
+                        "provider_metadata":null,
+                        "createdAt":"2022-11-30T10:19:12.462Z",
+                        "updatedAt":"2022-11-30T10:19:12.462Z"
+                     }
+                  }
+               }
+            },
+            {
+               "id":3,
+               "icon_description_en":"Integrity and Trust",
+               "icon_description_tc":"創造共享價值",
+               "icon_description_sc":"创造共享价值",
+               "image":{
+                  "data":{
+                     "id":22,
+                     "attributes":{
+                        "name":"Group 232.png",
+                        "alternativeText":"Group 232.png",
+                        "caption":"Group 232.png",
+                        "width":48,
+                        "height":48,
+                        "formats":null,
+                        "hash":"Group_232_1680a96242",
+                        "ext":".png",
+                        "mime":"image/png",
+                        "size":1.68,
+                        "url":"https://dhrhnojxde2hk.cloudfront.net/Group_232_1680a96242.png",
+                        "previewUrl":null,
+                        "provider":"aws-s3",
+                        "provider_metadata":null,
+                        "createdAt":"2022-11-30T10:19:12.293Z",
+                        "updatedAt":"2022-11-30T10:31:00.222Z"
+                     }
+                  }
+               }
+            },
+            {
+               "id":4,
+               "icon_description_en":"Create Shared Value",
+               "icon_description_tc":"擁抱多元化",
+               "icon_description_sc":"拥抱多元化",
+               "image":{
+                  "data":{
+                     "id":20,
+                     "attributes":{
+                        "name":"Group 233.png",
+                        "alternativeText":"Group 233.png",
+                        "caption":"Group 233.png",
+                        "width":48,
+                        "height":48,
+                        "formats":null,
+                        "hash":"Group_233_a071e00956",
+                        "ext":".png",
+                        "mime":"image/png",
+                        "size":1.54,
+                        "url":"https://dhrhnojxde2hk.cloudfront.net/Group_233_a071e00956.png",
+                        "previewUrl":null,
+                        "provider":"aws-s3",
+                        "provider_metadata":null,
+                        "createdAt":"2022-11-30T10:19:11.861Z",
+                        "updatedAt":"2022-11-30T10:31:46.267Z"
+                     }
+                  }
+               }
+            },
+            {
+               "id":5,
+               "icon_description_en":"Embrace Diversity",
+               "icon_description_tc":"誠實與信任",
+               "icon_description_sc":"诚实与信任",
+               "image":{
+                  "data":{
+                     "id":21,
+                     "attributes":{
+                        "name":"Group 234.png",
+                        "alternativeText":"Group 234.png",
+                        "caption":"Group 234.png",
+                        "width":48,
+                        "height":48,
+                        "formats":null,
+                        "hash":"Group_234_ef4e5e72d2",
+                        "ext":".png",
+                        "mime":"image/png",
+                        "size":1.93,
+                        "url":"https://dhrhnojxde2hk.cloudfront.net/Group_234_ef4e5e72d2.png",
+                        "previewUrl":null,
+                        "provider":"aws-s3",
+                        "provider_metadata":null,
+                        "createdAt":"2022-11-30T10:19:12.153Z",
+                        "updatedAt":"2022-11-30T10:19:12.153Z"
+                     }
+                  }
+               }
+            }
          ],
-         "arta_cares_icons":[
-            
+         "our_cares_icons":[
+            {
+               "id":6,
+               "icon_description_en":"Start-up environment",
+               "icon_description_tc":"創業公司環境",
+               "icon_description_sc":"创业公司环境",
+               "image":{
+                  "data":{
+                     "id":33,
+                     "attributes":{
+                        "name":"Group 235.png",
+                        "alternativeText":"Group 235.png",
+                        "caption":"Group 235.png",
+                        "width":48,
+                        "height":48,
+                        "formats":null,
+                        "hash":"Group_235_289386eae4",
+                        "ext":".png",
+                        "mime":"image/png",
+                        "size":2.29,
+                        "url":"https://dhrhnojxde2hk.cloudfront.net/Group_235_289386eae4.png",
+                        "previewUrl":null,
+                        "provider":"aws-s3",
+                        "provider_metadata":null,
+                        "createdAt":"2022-11-30T10:19:12.538Z",
+                        "updatedAt":"2022-11-30T10:19:12.538Z"
+                     }
+                  }
+               }
+            },
+            {
+               "id":7,
+               "icon_description_en":"Flexi-hour",
+               "icon_description_tc":"靈活的工作時間安排",
+               "icon_description_sc":"灵活的工作时间安排",
+               "image":{
+                  "data":{
+                     "id":23,
+                     "attributes":{
+                        "name":"Group 236.png",
+                        "alternativeText":"Group 236.png",
+                        "caption":"Group 236.png",
+                        "width":48,
+                        "height":48,
+                        "formats":null,
+                        "hash":"Group_236_04a2e06f56",
+                        "ext":".png",
+                        "mime":"image/png",
+                        "size":1.71,
+                        "url":"https://dhrhnojxde2hk.cloudfront.net/Group_236_04a2e06f56.png",
+                        "previewUrl":null,
+                        "provider":"aws-s3",
+                        "provider_metadata":null,
+                        "createdAt":"2022-11-30T10:19:12.453Z",
+                        "updatedAt":"2022-11-30T10:19:12.453Z"
+                     }
+                  }
+               }
+            },
+            {
+               "id":8,
+               "icon_description_en":"Medical coverage from day one",
+               "icon_description_tc":"入職即提供的醫療保障",
+               "icon_description_sc":"入职即提供的医疗保障",
+               "image":{
+                  "data":{
+                     "id":31,
+                     "attributes":{
+                        "name":"Group 237.png",
+                        "alternativeText":"Group 237.png",
+                        "caption":"Group 237.png",
+                        "width":48,
+                        "height":48,
+                        "formats":null,
+                        "hash":"Group_237_9f71217027",
+                        "ext":".png",
+                        "mime":"image/png",
+                        "size":0.92,
+                        "url":"https://dhrhnojxde2hk.cloudfront.net/Group_237_9f71217027.png",
+                        "previewUrl":null,
+                        "provider":"aws-s3",
+                        "provider_metadata":null,
+                        "createdAt":"2022-11-30T10:19:12.534Z",
+                        "updatedAt":"2022-11-30T10:19:12.534Z"
+                     }
+                  }
+               }
+            },
+            {
+               "id":10,
+               "icon_description_en":"Generous leave plans",
+               "icon_description_tc":"慷慨的假期計劃",
+               "icon_description_sc":"慷慨的假期计划",
+               "image":{
+                  "data":{
+                     "id":34,
+                     "attributes":{
+                        "name":"Group 238.png",
+                        "alternativeText":"Group 238.png",
+                        "caption":"Group 238.png",
+                        "width":48,
+                        "height":48,
+                        "formats":null,
+                        "hash":"Group_238_0a51a2eabc",
+                        "ext":".png",
+                        "mime":"image/png",
+                        "size":1.44,
+                        "url":"https://dhrhnojxde2hk.cloudfront.net/Group_238_0a51a2eabc.png",
+                        "previewUrl":null,
+                        "provider":"aws-s3",
+                        "provider_metadata":null,
+                        "createdAt":"2022-11-30T10:19:12.572Z",
+                        "updatedAt":"2022-11-30T10:19:12.572Z"
+                     }
+                  }
+               }
+            },
+            {
+               "id":9,
+               "icon_description_en":"Genders inclusive benefits",
+               "icon_description_tc":"性別平等的福利",
+               "icon_description_sc":"性别平等的福利",
+               "image":{
+                  "data":{
+                     "id":30,
+                     "attributes":{
+                        "name":"Group 239.png",
+                        "alternativeText":"Group 239.png",
+                        "caption":"Group 239.png",
+                        "width":48,
+                        "height":48,
+                        "formats":null,
+                        "hash":"Group_239_ed52089b40",
+                        "ext":".png",
+                        "mime":"image/png",
+                        "size":1.14,
+                        "url":"https://dhrhnojxde2hk.cloudfront.net/Group_239_ed52089b40.png",
+                        "previewUrl":null,
+                        "provider":"aws-s3",
+                        "provider_metadata":null,
+                        "createdAt":"2022-11-30T10:19:12.523Z",
+                        "updatedAt":"2022-11-30T10:35:42.851Z"
+                     }
+                  }
+               }
+            },
+            {
+               "id":11,
+               "icon_description_en":"Flat organization structure",
+               "icon_description_tc":"扁平化的組織結構",
+               "icon_description_sc":"扁平化的组织结构",
+               "image":{
+                  "data":{
+                     "id":28,
+                     "attributes":{
+                        "name":"Group 240.png",
+                        "alternativeText":"Group 240.png",
+                        "caption":"Group 240.png",
+                        "width":48,
+                        "height":48,
+                        "formats":null,
+                        "hash":"Group_240_8c6e91a2e3",
+                        "ext":".png",
+                        "mime":"image/png",
+                        "size":1.74,
+                        "url":"https://dhrhnojxde2hk.cloudfront.net/Group_240_8c6e91a2e3.png",
+                        "previewUrl":null,
+                        "provider":"aws-s3",
+                        "provider_metadata":null,
+                        "createdAt":"2022-11-30T10:19:12.463Z",
+                        "updatedAt":"2022-11-30T10:19:12.463Z"
+                     }
+                  }
+               }
+            },
+            {
+               "id":12,
+               "icon_description_en":"Healthy food and snacks",
+               "icon_description_tc":"健康的食物和零食",
+               "icon_description_sc":"健康的食物和零食",
+               "image":{
+                  "data":{
+                     "id":24,
+                     "attributes":{
+                        "name":"Group 241.png",
+                        "alternativeText":"Group 241.png",
+                        "caption":"Group 241.png",
+                        "width":48,
+                        "height":48,
+                        "formats":null,
+                        "hash":"Group_241_b482f619cb",
+                        "ext":".png",
+                        "mime":"image/png",
+                        "size":2.07,
+                        "url":"https://dhrhnojxde2hk.cloudfront.net/Group_241_b482f619cb.png",
+                        "previewUrl":null,
+                        "provider":"aws-s3",
+                        "provider_metadata":null,
+                        "createdAt":"2022-11-30T10:19:12.455Z",
+                        "updatedAt":"2022-11-30T10:19:12.455Z"
+                     }
+                  }
+               }
+            },
+            {
+               "id":13,
+               "icon_description_en":"Casual work attire",
+               "icon_description_tc":"休閑的工作服裝要求",
+               "icon_description_sc":"休闲的工作服装要求",
+               "image":{
+                  "data":{
+                     "id":26,
+                     "attributes":{
+                        "name":"Group 242.png",
+                        "alternativeText":"Group 242.png",
+                        "caption":"Group 242.png",
+                        "width":52,
+                        "height":48,
+                        "formats":null,
+                        "hash":"Group_242_2d88e73fe2",
+                        "ext":".png",
+                        "mime":"image/png",
+                        "size":1.57,
+                        "url":"https://dhrhnojxde2hk.cloudfront.net/Group_242_2d88e73fe2.png",
+                        "previewUrl":null,
+                        "provider":"aws-s3",
+                        "provider_metadata":null,
+                        "createdAt":"2022-11-30T10:19:12.460Z",
+                        "updatedAt":"2022-11-30T10:39:25.865Z"
+                     }
+                  }
+               }
+            },
+            {
+               "id":14,
+               "icon_description_en":"Tech-enabled work",
+               "icon_description_tc":"科技化的工作",
+               "icon_description_sc":"科技化的工作",
+               "image":{
+                  "data":{
+                     "id":29,
+                     "attributes":{
+                        "name":"Group 243.png",
+                        "alternativeText":"Group 243.png",
+                        "caption":"Group 243.png",
+                        "width":48,
+                        "height":48,
+                        "formats":null,
+                        "hash":"Group_243_74aaa04d4d",
+                        "ext":".png",
+                        "mime":"image/png",
+                        "size":1.59,
+                        "url":"https://dhrhnojxde2hk.cloudfront.net/Group_243_74aaa04d4d.png",
+                        "previewUrl":null,
+                        "provider":"aws-s3",
+                        "provider_metadata":null,
+                        "createdAt":"2022-11-30T10:19:12.519Z",
+                        "updatedAt":"2022-11-30T10:19:12.519Z"
+                     }
+                  }
+               }
+            },
+            {
+               "id":15,
+               "icon_description_en":"Employee well-being ",
+               "icon_description_tc":"員工福利",
+               "icon_description_sc":"员工福利",
+               "image":{
+                  "data":{
+                     "id":32,
+                     "attributes":{
+                        "name":"Group 244.png",
+                        "alternativeText":"Group 244.png",
+                        "caption":"Group 244.png",
+                        "width":48,
+                        "height":48,
+                        "formats":null,
+                        "hash":"Group_244_f99e37da1c",
+                        "ext":".png",
+                        "mime":"image/png",
+                        "size":2.07,
+                        "url":"https://dhrhnojxde2hk.cloudfront.net/Group_244_f99e37da1c.png",
+                        "previewUrl":null,
+                        "provider":"aws-s3",
+                        "provider_metadata":null,
+                        "createdAt":"2022-11-30T10:19:12.537Z",
+                        "updatedAt":"2022-11-30T10:19:12.537Z"
+                     }
+                  }
+               }
+            }
          ]
       }
    },

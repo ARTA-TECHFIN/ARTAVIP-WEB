@@ -18,10 +18,11 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
   const { cms } = props
+  console.log(cms.pressPosts)
   return (
     <MediaLayout cms={cms} tabType={MediaTABS.Press_Releases}>
       <div className="arta-container mx-auto">
-        {cms.pressPosts.map((yearly, index) => (
+        {cms.pressPosts.sort((a, b) => b.year - a.year).map((yearly, index) => (
           <CalendarAccordion
             index={index}
             key={yearly.year}

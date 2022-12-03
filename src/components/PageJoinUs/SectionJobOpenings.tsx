@@ -15,12 +15,12 @@ const SectionJobOpenings: FC<propsT> = ({ k, jobs }) => {
   const { t } = useTranslation('common')
 
   const TABS = {
-    all: t("join_us.all"),
-    fontOffice: t("join_us.front_office"),
-    middleAndBackOffice: t("join_us.back_office"),
+    all: t('join_us.all'),
+    fontOffice: t('join_us.front_office'),
+    middleAndBackOffice: t('join_us.back_office'),
   } as const
 
-  const [selectedTab, setSelectedTab] = useState("all")
+  const [selectedTab, setSelectedTab] = useState('all')
 
   const filteredJobs = jobs.filter((job: any) => {
     if (selectedTab === 'all') return job
@@ -30,20 +30,31 @@ const SectionJobOpenings: FC<propsT> = ({ k, jobs }) => {
     }
 
     if (selectedTab === 'backOffice') {
-      return job.attributes.category === 'Middle Office' || job.attributes.category === 'Back Office' || job.attributes.category === 'All'
+      return (
+        job.attributes.category === 'Middle Office' ||
+        job.attributes.category === 'Back Office' ||
+        job.attributes.category === 'All'
+      )
     }
   })
 
   return (
     <div className="bg-arta-eggshell-100 py-12 md:py-[150px]" id="job-opening">
       <div className="arta-container mx-auto">
-        <div className="text-center lg:w-3/5 lg:mx-auto">
+        <div className="text-center lg:mx-auto lg:w-3/5">
           <h3 className={textClass.h2_style2}>{t('join_us.job_openings')}</h3>
-          <div className={`${textClass.body_regular_verah} mt-4 whitespace-pre-line`} dangerouslySetInnerHTML={{__html: k.job_openings_description}} />
+          <div
+            className={`${textClass.body_regular_verah} mt-4 whitespace-pre-line`}
+            dangerouslySetInnerHTML={{ __html: k.job_openings_description }}
+          />
         </div>
         <div className="arta-hide-scrollbar -mx-6 overflow-auto py-16 md:mx-0 ">
           <TabBar
-            tabs={[{label: TABS['all'], value: "all"}, {label: TABS['fontOffice'], value: "frontOffice"}, {label: TABS['middleAndBackOffice'], value: "backOffice"}]}
+            tabs={[
+              { label: TABS['all'], value: 'all' },
+              { label: TABS['fontOffice'], value: 'frontOffice' },
+              { label: TABS['middleAndBackOffice'], value: 'backOffice' },
+            ]}
             selectedTab={selectedTab}
             setSelectedTab={setSelectedTab}
           />

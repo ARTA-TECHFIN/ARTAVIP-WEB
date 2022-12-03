@@ -5,7 +5,9 @@ import PageJobOpenings from 'src/components/PageJobOpenings/PageJobOpenings'
 import jobJson from 'apidata/job.json'
 
 const fetchJobData = async (id: string) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/join-us-jobs-openings/${id}`)
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/join-us-jobs-openings/${id}`
+  )
   const data = await res.json()
   return data.data
 }
@@ -28,12 +30,12 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { locale, query } = context
   const useLocalCms = process.env.USE_LOCAL_CMS_DATA === 'true'
-  const job = !useLocalCms ? jobJson : await fetchJobData(query.id + "")
+  const job = useLocalCms ? jobJson : await fetchJobData(query.id + '')
   return {
     props: {
       k: massageData(job, locale),
       ...(await serverSideTranslations(locale || 'en', ['common'])),
-    }
+    },
   }
 }
 

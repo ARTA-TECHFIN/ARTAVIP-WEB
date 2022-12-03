@@ -33,16 +33,14 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
     job_openings_description: g('job_openings_description'),
     our_values_icons: pageData.data.attributes.our_values_icons,
     our_cares_icons: pageData.data.attributes.our_cares_icons,
-    work_with_arta_image: pageData.data.attributes.work_with_arta_image.data.attributes.url || ""
+    work_with_arta_image: pageData.data.attributes.work_with_arta_image.data.attributes.url || '',
   }
 }
 
-const PageJoinUs = (props: { k: any, cms: getJobsCmsT, jobs: any }) => {
+const PageJoinUs = (props: { k: any; cms: getJobsCmsT; jobs: any }) => {
   const { k, cms, jobs } = props
 
-  return (
-    <JoinUsLayout k={k} jobs={jobs} />
-  )
+  return <JoinUsLayout k={k} jobs={jobs} />
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -52,7 +50,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   // CMS join us page is broken
   const pageData = useLocalCms ? joinUsJson : await fetchCmsData()
-  const jobs = useLocalCms ? joinUsJobsOpeningsJson : await fetchJobsData()
+  const jobs = useLocalCms ? joinUsJobsOpeningsJson.data : await fetchJobsData()
   // const pageData = joinUsJson
 
   return {

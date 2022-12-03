@@ -1,8 +1,6 @@
 import type { GetServerSideProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import Image from 'next/image'
 
-import { GetStaticPaths, GetStaticProps } from 'next'
 import { getMediaCms, getMediaCmsT, getSlug } from 'src/domains/media'
 import { MediaLayout } from 'src/components/PageMedia/Layout'
 import Link from 'next/link'
@@ -43,7 +41,10 @@ const Post = (props: { cms: getMediaCmsT; blog: getMediaCmsT['blogPosts'][number
         <div className="blog-content mt-4 bg-white p-6 shadow-blogPost md:p-12">
           <p className="text-xs text-arta-indigo-100">{blog.date}</p>
           <h2 className={`mt-2 ${textClass.h3_style2} text-arta-secondary`}>{blog.title}</h2>
-          <div className={`mt-6 ${textClass.body_regular_verah} text-black`} dangerouslySetInnerHTML={{__html: blog.text}} />
+          <div
+            className={`mt-6 ${textClass.body_regular_verah} text-black`}
+            dangerouslySetInnerHTML={{ __html: blog.text }}
+          />
         </div>
       </div>
     </MediaLayout>

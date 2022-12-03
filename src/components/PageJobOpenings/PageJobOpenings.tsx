@@ -12,7 +12,7 @@ import { textClass } from 'src/components/Text'
 import { links } from 'src/domains/links'
 import { useTranslation } from 'next-i18next'
 
-const PageJobOpenings: NextPage = ({k}: any) => {
+const PageJobOpenings: NextPage = ({ k }: any) => {
   const { t } = useTranslation('common')
 
   return (
@@ -24,11 +24,11 @@ const PageJobOpenings: NextPage = ({k}: any) => {
         <div className="bg-arta-eggshell-100 pt-12 pb-[150px]">
           <div className="arta-container mx-auto">
             <Link
-              className={`flex cursor-pointer items-center underline mb-4 ${textClass.body_regular_verah}`}
+              className={`mb-4 flex cursor-pointer items-center underline ${textClass.body_regular_verah}`}
               href={`${links.joinUs}#job-opening`}
             >
               <IconArrowLeft fill="#593725" className="mr-2 h-4" />
-              {t("join_us.back")}
+              {t('join_us.back')}
             </Link>
             <SectionJobView k={k} />
           </div>

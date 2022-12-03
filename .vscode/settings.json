@@ -10,6 +10,7 @@
     "fullpage",
     "gsap",
     "heroicons",
+    "HKEX",
     "irasia",
     "listco",
     "Neue",
@@ -21,6 +22,7 @@
     "truetype",
     "updatetime",
     "Verah",
+    "Wechat",
     "whatis"
   ],
   "nuxt.isNuxtApp": false

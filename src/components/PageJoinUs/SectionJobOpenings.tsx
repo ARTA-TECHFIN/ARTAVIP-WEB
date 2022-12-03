@@ -1,5 +1,5 @@
 import { textClass } from '../Text'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import { TabBar } from '../TabBar'
 import JobCards from 'src/components/PageJoinUs/JobCards'
@@ -20,16 +20,16 @@ const SectionJobOpenings: FC<propsT> = ({ k, jobs }) => {
     middleAndBackOffice: t("join_us.back_office"),
   } as const
 
-  const [selectedTab, setSelectedTab] = useState(TABS["all"])
+  const [selectedTab, setSelectedTab] = useState("all")
 
   const filteredJobs = jobs.filter((job: any) => {
-    if (selectedTab === TABS['all']) return job
+    if (selectedTab === 'all') return job
 
-    if (selectedTab === TABS['fontOffice']) {
+    if (selectedTab === 'frontOffice') {
       return job.attributes.category === 'Front Office' || job.attributes.category === 'All'
     }
 
-    if (selectedTab === TABS['middleAndBackOffice']) {
+    if (selectedTab === 'backOffice') {
       return job.attributes.category === 'Middle Office' || job.attributes.category === 'Back Office' || job.attributes.category === 'All'
     }
   })
@@ -43,7 +43,7 @@ const SectionJobOpenings: FC<propsT> = ({ k, jobs }) => {
         </div>
         <div className="arta-hide-scrollbar -mx-6 overflow-auto py-16 md:mx-0 ">
           <TabBar
-            tabs={[TABS['all'], TABS['fontOffice'], TABS['middleAndBackOffice']]}
+            tabs={[{label: TABS['all'], value: "all"}, {label: TABS['fontOffice'], value: "frontOffice"}, {label: TABS['middleAndBackOffice'], value: "backOffice"}]}
             selectedTab={selectedTab}
             setSelectedTab={setSelectedTab}
           />

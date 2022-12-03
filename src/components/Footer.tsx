@@ -15,9 +15,9 @@ const fetchCmsData = async () => {
   return data
 }
 
-const Footer: FC<{ textColor?: 'white' | 'brown' }> = (props) => {
+const Footer: FC<{ textColor?: 'white' | 'brown', setShowWechatPopup?: (f: boolean) => void }> = (props) => {
   const { t } = useTranslation('common')
-  const { textColor = 'white' } = props
+  const { textColor = 'white', setShowWechatPopup } = props
   const router = useRouter()
   const { locale } = router
   const [openWeChatPopup, setOpenWeChatPopup] = useState(false)
@@ -114,7 +114,10 @@ const Footer: FC<{ textColor?: 'white' | 'brown' }> = (props) => {
                         <Component className="h-6 w-6 pr-1 last:pr-0" />
                       </a>
                     ))}
-                    <div className="cursor-pointer" onClick={() => setOpenWeChatPopup(true)}>
+                    <div className="cursor-pointer" onClick={() => {
+                      setOpenWeChatPopup(true)
+                      if (setShowWechatPopup) setShowWechatPopup(true)
+                    }}>
                       <IconWeChat className="h-6 w-6 pr-1 last:pr-0" />
                     </div>
                   </div>

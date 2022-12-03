@@ -1,11 +1,11 @@
 import type { GetServerSideProps, NextPage } from 'next'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import React from 'react'
+import React, { useState } from 'react'
 import Header from 'src/components/Header/Header'
 import Footer from 'src/components/Footer'
 import homepageJson from 'apidata/homepage.json'
-import contactpageJson from 'apidata/contact.json'
+import { WechatPopup } from 'src/components/WechatPopup'
 
 import { Slides } from 'src/components/PageHome/PageHome'
 import { Seo } from 'src/components/Seo'
@@ -33,15 +33,22 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
 
 const Home: NextPage = ({k}: any) => {
   const { t } = useTranslation('common')
+  const [showWechatPopup, setShowWechatPopup] = useState(false)
+
+  const togglePopup = () => {
+    setShowWechatPopup(false)
+  }
 
   return (
     <>
       <Seo title={t('site_title')} />
       <Header fontSize={'1em'} />
       <main>
-        <Slides k={k} />
+        <Slides k={k} setShowWechatPopup={setShowWechatPopup} />
       </main>
-      <Footer />
+      {
+        showWechatPopup && <WechatPopup togglePopup={togglePopup} />
+      }
     </>
   )
 }

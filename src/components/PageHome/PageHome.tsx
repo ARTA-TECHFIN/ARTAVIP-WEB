@@ -5,7 +5,7 @@ import { BreakBarriers } from './breakBarriers'
 import TechFin from './techFin'
 import Footer from 'src/components/Footer';
 
-export const Slides = ({k}: any) => {
+export const Slides = ({k, setShowWechatPopup}: any) => {
 
   const [disableScroll, setDisableScroll] = useState(false)
   const [currentSectionId, setCurrentSectionId] = useState<number>(0)
@@ -58,7 +58,7 @@ export const Slides = ({k}: any) => {
                 <About k={k} />
               </section>
               <div className="section fp-auto-height" id="section3"> 
-                <Footer />
+                <Footer setShowWechatPopup={setShowWechatPopup} />
               </div>
             </ReactFullpage.Wrapper>
           </>

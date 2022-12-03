@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-
+import { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { getReportList } from 'src/domains/investor'
 import { Loader } from '../Loader'
@@ -35,9 +35,18 @@ const PageCirculars: NextPage = () => {
   const { locale } = router
   const { status, data, error } = useGetData(locale || "en")
   const { t } = useTranslation('common')
+  const [openYear, setOpenYear] = useState(data && data[0].year || 2013)
 
   if (status === 'loading') return <Loader />
   if (status === 'error') return <ErrorMessage error={error} />
+
+  const setOpenYearFunc = (year: number) => {
+    if (year == openYear) {
+      setOpenYear(0)
+    } else {
+      setOpenYear(year)
+    }
+  }
 
   return (
     <div className="mt-16">
@@ -59,6 +68,8 @@ const PageCirculars: NextPage = () => {
             title: r.headline,
             url: r.url,
           }))}
+          openYear={openYear}
+          setOpenYear={setOpenYearFunc}
         />
       ))}
     </div>

@@ -15,40 +15,43 @@ type propsT = {
     url?: string
     postPageUrl?: string
   }[]
+  openYear: number
+  setOpenYear: (year: number) => void
 }
 
 gsap.config({
   nullTargetWarn: false,
 })
 
-const CalendarAccordion = ({ index, year, events }: propsT) => {
-  const [showMenu, setShowMenu] = useState(false)
+const CalendarAccordion = ({ index, year, events, openYear, setOpenYear }: propsT) => {
   const togglerIcon = useRef(null)
   const listWrapper = useRef(null)
   const list = useRef<HTMLUListElement>(null)
 
   useEffect(() => {
-    if (index === 0) {
-      gsap.set(togglerIcon.current, { rotate: -180 })
-      gsap.set(listWrapper.current, { height: list.current?.clientHeight})
-      setShowMenu(!showMenu)
+    if (year === openYear) {
+      gsap.to(togglerIcon.current, { rotate: -180, duration: 0.8 })
+      gsap.to(listWrapper.current, { height: list.current?.clientHeight, duration: 0.8 })
+  
+      setTimeout(() => {
+        if (year !== 0) {
+          const scrollDiv = (document.getElementById(`year-${openYear}`)?.offsetTop || 0) - 170;
+          window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+        }
+      }, 800)
+    } else {
+      gsap.to(togglerIcon.current, { rotate: 0, duration: 0.8 })
+      gsap.to(listWrapper.current, { height: 0, duration: 0.8 })
     }
-  }, [])
+  }, [openYear])
 
-
-  if (showMenu) {
-    gsap.to(togglerIcon.current, { rotate: -180, duration: 0.8 })
-    gsap.to(listWrapper.current, { height: list.current?.clientHeight, duration: 0.8 })
-  } else {
-    gsap.to(togglerIcon.current, { rotate: 0, duration: 0.8 })
-    gsap.to(listWrapper.current, { height: 0, duration: 0.8 })
-  }
+  if (events.length === 0) return <></>
 
   return (
-    <div className={cn(`mb-6 bg-white transition-shadow transition hover:brightness-95`, showMenu && 'shadow-calendarAccordion')}>
+    <div id={`year-${year}`} className={cn(`mb-6 bg-white transition-shadow transition hover:brightness-95`)}>
       <div
         className="flex cursor-pointer items-center justify-between p-6 lg:p-8"
-        onClick={() => setShowMenu(!showMenu)}
+        onClick={() => setOpenYear(year)}
       >
         <span className={`${textClass.h6} text-black`}>{year}</span>
         <ChevronDownIcon ref={togglerIcon} className="h-4 w-4" />

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import type { GetServerSideProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { CalendarAccordion } from 'src/components/PageInvestor/CalendarAccordion'
@@ -18,20 +19,30 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
   const { cms } = props
-  console.log(cms.pressPosts)
+  const [openYear, setOpenYear] = useState(cms.pressPosts && cms.pressPosts[0].year || 2022)
+
+  const setOpenYearFunc = (year: number) => {
+    if (year == openYear) {
+      setOpenYear(0)
+    } else {
+      setOpenYear(year)
+    }
+  }
   return (
     <MediaLayout cms={cms} tabType={MediaTABS.Press_Releases}>
       <div className="arta-container mx-auto">
-        {cms.pressPosts.sort((a, b) => b.year - a.year).map((yearly, index) => (
+        {cms.pressPosts.sort((a:any, b:any) => b.year - a.year).map((yearly:any, index:any) => (
           <CalendarAccordion
             index={index}
             key={yearly.year}
             year={yearly.year}
-            events={yearly.posts.map((r, i) => ({
+            events={yearly.posts.map((r: any) => ({
               date: new Date(r.date),
               title: r.title,
               postPageUrl: `${links.mediaPressPost}/${getSlug(r.title_en)}`,
             }))}
+            openYear={openYear}
+            setOpenYear={setOpenYearFunc}
           />
         ))}
       </div>

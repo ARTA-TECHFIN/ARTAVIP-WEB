@@ -21,8 +21,8 @@ const Layout = (props: { cms: any; children: React.ReactNode; tabType?: tabsT })
   const { cms, children } = props
 
   const tabInfoMap = {
-    [TABS.Blog]: { title: t('page_title.arta_blog'), link: links.mediaBlog },
-    [TABS.Press_Releases]: { title: t('page_title.press_release'), link: links.mediaPress },
+    [TABS.Blog]: { title: t('page_title.arta_blog'), link: links.mediaBlog, value: t('page_title.arta_blog') },
+    [TABS.Press_Releases]: { title: t('page_title.press_release'), link: links.mediaPress, value: t('page_title.press_release') },
   }
   const tabList = Object.values(tabInfoMap)
   const tabInfo = tabInfoMap[props.tabType || 'Blog']
@@ -42,7 +42,12 @@ const Layout = (props: { cms: any; children: React.ReactNode; tabType?: tabsT })
           <div className="arta-container mx-auto">
             <div className="arta-hide-scrollbar -mx-6 overflow-auto py-16 md:mx-0 ">
               <TabBar
-                tabs={tabList.map((t) => t.title)}
+                tabs={tabList.map((t) => {
+                  return {
+                    label: t.title,
+                    value: t.value
+                  }
+                })}
                 selectedTab={tabInfo.title}
                 setSelectedTab={(_, index) =>
                   Router.push(tabList[index].link, undefined, { scroll: false })

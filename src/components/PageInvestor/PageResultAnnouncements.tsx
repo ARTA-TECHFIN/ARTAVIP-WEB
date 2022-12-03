@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-
 import { useQuery } from '@tanstack/react-query'
 import { getReportList } from 'src/domains/investor'
 import { ErrorMessage } from '../ErrorMessage'

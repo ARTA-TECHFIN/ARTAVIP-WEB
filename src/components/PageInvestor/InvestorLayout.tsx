@@ -32,14 +32,12 @@ type propsT = {
 const InvestorLayout: FC<propsT> = ({ k, cms, tabType, hideTab = false, children }) => {
   const { t } = useTranslation('common')
   const tabInfoMap = {
-    [TABS.announcement]: { title: t("investor_relations.announcements_notices"), link: links.investor },
-    [TABS.corporate_information]: { title: t("investor_relations.corporate_information"), link: links.investorCorporateInformation },
-    [TABS.financial_calendar]: { title: t("investor_relations.financial_calendar"), link: links.investorFinCalendar },
-    [TABS.esg]: { title: t("investor_relations.esg"), link: links.investorEsg },
+    [TABS.announcement]: { title: t("investor_relations.announcements_notices"), link: links.investor, value: "announcement" },
+    [TABS.corporate_information]: { title: t("investor_relations.corporate_information"), link: links.investorCorporateInformation, value: "corporate_information" },
+    [TABS.financial_calendar]: { title: t("investor_relations.financial_calendar"), link: links.investorFinCalendar, value: "financial_calendar" },
+    [TABS.esg]: { title: t("investor_relations.esg"), link: links.investorEsg, value: "esg" },
   }
   const tabList = Object.values(tabInfoMap)
-
-  const tabInfo = tabInfoMap[tabType]
 
   useEffect(() => {
     if ( tabType === "esg" && document.getElementById("tab")) {
@@ -47,12 +45,12 @@ const InvestorLayout: FC<propsT> = ({ k, cms, tabType, hideTab = false, children
       document.getElementById("tab").scrollLeft = document.getElementById("tab")?.scrollWidth
     }
 
-    if (tabType === "financial_calendar") {
+    if (tabType === "financial_calendar" && document.getElementById("tab")) {
       // @ts-ignore
       document.getElementById("tab").scrollLeft = document.getElementById("tab")?.scrollWidth - 100
     }
 
-    if (tabType === "corporate_information") {
+    if (tabType === "corporate_information" && document.getElementById("tab")) {
       // @ts-ignore
       document.getElementById("tab").scrollLeft = 100
     }
@@ -76,8 +74,10 @@ const InvestorLayout: FC<propsT> = ({ k, cms, tabType, hideTab = false, children
               !hideTab && (
                 <div id="tab" className="arta-hide-scrollbar -mx-6 overflow-scroll md:mx-0">
                   <TabBar
-                    tabs={tabList.map((t) => t.title)}
-                    selectedTab={tabInfo.title}
+                    tabs={tabList.map((t) => {
+                      return {label: t.title, value: t.value}
+                    })}
+                    selectedTab={tabType}
                     setSelectedTab={(_, index) =>
                       Router.push(tabList[index].link, undefined, { scroll: false })
                     }

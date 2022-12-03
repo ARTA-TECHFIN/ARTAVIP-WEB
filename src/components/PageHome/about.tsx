@@ -7,7 +7,7 @@ const About = ({ k }: any) => {
 
   return (
     <div className="relative z-3 flex h-screen w-screen will-change-transform bg-[#3c2516]">
-      <div className="video-container absolute top-0 left-0 h-full w-full">
+      <div className="video-container absolute top-0 left-0 h-full w-full overflow-hidden">
         <video
           data-keepplaying
           autoPlay
@@ -17,7 +17,6 @@ const About = ({ k }: any) => {
           crossOrigin="anonymous"
           className="absolute h-full w-full transform scale-[320%] lg:scale-100 left-[70%] -top-[20%] lg:left-0 lg:top-0 lg:object-cover will-change-transform"
         >
-          {/* md:translate-x-[-20%] */}
           <source src="/videos/landing_about.mp4" typeof="video/mp4" />
           Your browser does not support the video tag.
         </video>

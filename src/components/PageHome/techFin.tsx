@@ -134,7 +134,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
       autoAlpha: 0.25,
       width: isMobile ? '140em' : '38em',
       height: isMobile ? '140em' : '38em',
-      left: '-9%',
+      left: isMobile ? '-30%' : '-9%',
       top: '-50%',
       xPercent: -2,
       ease: 'slow(0.7, 0.7, false)',
@@ -144,7 +144,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
       xPercent: 5,
       duration: 1.7,
       attr: {
-        r: isMobile ? '90em' : '45em',
+        r: isMobile ? '120em' : '45em',
       },
       ease: 'power1.out',
     })
@@ -176,7 +176,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
     const isMobile = windowWidth < 768
     gsap.to(circleRef.current, {
       duration: 0.9,
-      autoAlpha: 0.05,
+      autoAlpha: 0,
       width: '65em',
       height: '65em',
       xPercent: 60,
@@ -329,7 +329,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
           ref={businessRef}
           className={cn("absolute bottom-[22em] top-[25em] z-2 transform text-white opacity-0 transition duration-1000 md:top-[16em] lg:left-[6em] lg:left-[4em] lg:bottom-auto lg:top-[19.5em] lg:top-1/2 lg:-translate-y-1/2", currentSection == "10" && "!opacity-0")}
         >
-          <h1 className="font-verah ml-[0.9em] text-left text-[6em] tracking-[0.06em] md:ml-[0.6em] lg:ml-0 lg:text-[3.4em]">
+          <h1 className="font-verah mt-[2em] sm:mt-0 ml-[0.9em] text-left text-[6em] tracking-[0.06em] md:ml-[0.6em] lg:ml-0 lg:text-[3.4em]">
             {t('page_title.our_businesses')}
           </h1>
           <p className="ml-[1.6em] max-w-[30em] text-left font-Neue text-[3.6em] md:ml-[2em] lg:ml-0 md:text-[1.8em] lg:text-[1em]">

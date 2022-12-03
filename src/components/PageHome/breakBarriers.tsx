@@ -105,7 +105,7 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
         playsInline
         preload="true"
         crossOrigin="anonymous"
-        className="absolute bottom-[20%] left-[-50%] transform scale-[2.5] md:scale-100 md:left-0 md:bottom-0 md:h-full md:w-full md:object-cover md:relative will-change-transform"
+        className="absolute bottom-[15%] left-[-50%] transform scale-[2.5] sm:scale-[2] md:scale-[1.5] md:left-[-25%] lg:scale-100 lg:left-0 sm:bottom-0 md:h-full md:w-full md:object-cover md:relative will-change-transform"
       >
         <source src="/videos/landing_top.mp4" typeof="video/mp4" />
         Your browser does not support the video tag.
@@ -117,11 +117,11 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
         <div className="animatedSpotLight2 mix-blend-lighten w-[100vw] h-[100vw] absolute blur-[35px]" />
       </div>
       <div className=" movable-elements-wrapper flex max-w-main-contain items-start justify-center z-1 px-6 xl:mx-auto">
-        <div className="absolute bottom-[95em] left-[0] md:bottom-[7em] md:bottom-[6em] md:left-[5em]">
+        <div className="absolute bottom-[85em] sm:bottom-[45em] left-[0] md:bottom-[7em] md:bottom-[6em] md:left-[5em]">
           <h1
             id="animation"
             ref={sec1TtlRef}
-            className="movable z-[200] text-left font-Verah text-[10em] leading-[1.02em] text-white will-change-transform lg:text-[5em]"
+            className="movable z-[200] text-left font-Verah text-[10em] leading-[1.02em] text-white will-change-transform md:text-[5em]"
           >
             BREAK
             <br />

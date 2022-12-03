@@ -56,6 +56,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
   const [showMenu, setShowMenu] = useState(false)
   const [navbarBg, setNavbarBg] = useState(false)
   const [activeMobileNavItem, setActiveMobileNavItem] = useState(-1)
+  const [scrollDir, setScrollDir] = useState("scrolling down");
 
   const pageInfoList: pageInfoItemT[] = [
     {
@@ -143,10 +144,31 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
   const selectedTab = activeTabIndex === DEFAULT_TAB_INDEX ? null : pageInfoList[activeTabIndex]
 
   useEffect(() => {
+    const threshold = 0;
+    let lastScrollY = window.pageYOffset;
+    let ticking = false;
+
+    const updateScrollDir = () => {
+      const scrollY = window.pageYOffset;
+
+      if (Math.abs(scrollY - lastScrollY) < threshold) {
+        ticking = false;
+        return;
+      }
+      setScrollDir(scrollY > lastScrollY ? "scrolling down" : "scrolling up");
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+      ticking = false;
+    };
+
     const changeBackground = () => {
       // home page no bg is needed. It is working on home page because scrolling is not in home page, its window.scrollY is always 0
       // 66 is just a number that feels good, better than 0
-      setNavbarBg(window.scrollY >= 66)
+      if (window) setNavbarBg(window?.scrollY >= 66 || false)
+  
+      if (!ticking) {
+        window.requestAnimationFrame(updateScrollDir);
+        ticking = true;
+      }
     }
 
     changeBackground()
@@ -154,7 +176,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
     return () => {
       window.removeEventListener('scroll', changeBackground)
     }
-  }, [])
+  }, [scrollDir])
 
   useEffect(() => {
     const g = (pageData: any, keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
@@ -177,12 +199,12 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
   }, [])
 
   return (
-    <div className="fixed z-50 w-full">
+    <div className={cn("fixed z-50 w-full transition-all top-0 opacity-100 duration-500", scrollDir=='scrolling down' && 'opacity-0 -top-32')}>
       <div onMouseLeave={() => setActiveTabIndex(DEFAULT_TAB_INDEX)}>
         <header
           className={cn(
-            'w-full px-[4em] pt-[6em] transition duration-300 lg:pt-[2.6em] lg:pb-[2em] xl:mx-auto',
-            navbarBg && 'lg:bg-white lg:bg-opacity-75'
+            'w-full px-[4em] pt-[6em] transition duration-300 lg:pt-[2.6em] lg:pb-[2em] xl:mx-auto mt-0',
+            navbarBg && 'lg:bg-white lg:bg-opacity-75',
           )}
         >
           <div className="flex w-full justify-between lg:space-x-6">

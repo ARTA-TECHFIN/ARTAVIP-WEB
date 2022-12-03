@@ -29,7 +29,7 @@ const SectionJobView = ({ k }: { k: jobDetailsT }) => {
 
       <div className="p-12">
         <div className="max-w-[756px]">
-          <ApplyForm />
+          <ApplyForm job={k} />
         </div>
       </div>
     </div>

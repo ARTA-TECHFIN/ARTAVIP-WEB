@@ -79,27 +79,27 @@ const EnquiryForm = () => {
     media: 'Media',
     other: 'Other',
   }
-  
+
   const topicOptions = [
-    { value: TOPIC_TYPES.default, label: t("contact_us.select") },
-    { value: TOPIC_TYPES.media, label: t("contact_us.media") },
-    { value: TOPIC_TYPES.other, label: t("contact_us.others") },
+    { value: TOPIC_TYPES.default, label: t('contact_us.select') },
+    { value: TOPIC_TYPES.media, label: t('contact_us.media') },
+    { value: TOPIC_TYPES.other, label: t('contact_us.others') },
   ]
-  
+
   const r = {
-    title: t("contact_us.enquiry_form"),
-    question_topic: t("contact_us.category_question"),
-    question_name: t("contact_us.name"),
-    question_company: t("contact_us.company_name"),
-    question_jobTitle: t("contact_us.job_title"),
-    question_email: t("contact_us.email_address"),
-    question_phone: t("contact_us.contact_number"),
+    title: t('contact_us.enquiry_form'),
+    question_topic: t('contact_us.category_question'),
+    question_name: t('contact_us.name'),
+    question_company: t('contact_us.company_name'),
+    question_jobTitle: t('contact_us.job_title'),
+    question_email: t('contact_us.email_address'),
+    question_phone: t('contact_us.contact_number'),
     question_message: 'Brief Introduction',
-    question_message_hints: t("contact_us.max_500_characters"),
-    question_submit: t("contact_us.submit"),
-  
-    success_title: t("contact_us.thanks_title"),
-    success_message: t("contact_us.thanks_message"),
+    question_message_hints: t('contact_us.max_500_characters'),
+    question_submit: t('contact_us.submit'),
+
+    success_title: t('contact_us.thanks_title'),
+    success_message: t('contact_us.thanks_message'),
   }
 
   const topic = watch('topic') || TOPIC_TYPES.default

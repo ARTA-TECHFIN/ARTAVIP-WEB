@@ -12,9 +12,9 @@ const InputFile = forwardRef<HTMLInputElement, propsT>((props, ref) => {
       <div className="flex flex-col items-center text-center">
         <Upload />
         <p className="text-sm text-black">
-          <span className="font-bold text-arta-secondary underline">{t("join_us.upload_box")}</span>
+          <span className="font-bold text-arta-secondary underline">{t('join_us.upload_box')}</span>
         </p>
-        <p className="mt-4 text-xs">{t("join_us.upload_limitation")}</p>
+        <p className="mt-4 text-xs">{t('join_us.upload_limitation')}</p>
       </div>
       <input
         ref={ref}

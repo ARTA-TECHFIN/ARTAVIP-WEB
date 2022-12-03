@@ -9,7 +9,7 @@ const fetchJobData = async (id: string) => {
     `${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/join-us-jobs-openings/${id}`
   )
   const data = await res.json()
-  return data.data
+  return data
 }
 
 const massageData = (pageData: any, locale: string | undefined = 'en') => {
@@ -40,3 +40,4 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 }
 
 export default PageJobOpenings
+export type jobDetailsT = ReturnType<typeof massageData>

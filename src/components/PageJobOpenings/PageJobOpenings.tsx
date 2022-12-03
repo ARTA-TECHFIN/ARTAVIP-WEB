@@ -11,8 +11,9 @@ import { IconArrowLeft } from 'src/components/Svg/Icon'
 import { textClass } from 'src/components/Text'
 import { links } from 'src/domains/links'
 import { useTranslation } from 'next-i18next'
+import { jobDetailsT } from 'src/pages/job/[id]'
 
-const PageJobOpenings: NextPage = ({ k }: any) => {
+const PageJobOpenings = ({ k }: { k: jobDetailsT }) => {
   const { t } = useTranslation('common')
 
   return (

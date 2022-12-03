@@ -1,9 +1,10 @@
 import { Pin } from '../Svg/Icon'
 import { textClass } from '../Text'
-import Applyform from './ApplyForm'
+import ApplyForm from './ApplyForm'
 import { useTranslation } from 'next-i18next'
+import { jobDetailsT } from 'src/pages/job/[id]'
 
-const SectionJobView = ({k}: any) => {
+const SectionJobView = ({ k }: { k: jobDetailsT }) => {
   const { t } = useTranslation('common')
 
   return (
@@ -16,14 +17,19 @@ const SectionJobView = ({k}: any) => {
             <Pin />
             <div className="ml-1">{k.work_location}</div>
           </div>
-          <div className="pl-6">{t("join_us.seniority")}: {k.seniority}</div>
+          <div className="pl-6">
+            {t('join_us.seniority')}: {k.seniority}
+          </div>
         </div>
       </div>
-      <div className="job-description border-b-2 px-8 py-8" dangerouslySetInnerHTML={{__html: k.job_description}} />
+      <div
+        className="job-description border-b-2 px-8 py-8"
+        dangerouslySetInnerHTML={{ __html: k.job_description }}
+      />
 
       <div className="p-12">
         <div className="max-w-[756px]">
-          <Applyform />
+          <ApplyForm />
         </div>
       </div>
     </div>

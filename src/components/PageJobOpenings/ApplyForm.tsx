@@ -70,15 +70,14 @@ const useApplyForm = () => {
   return { onSubmit, submitStatus, ...formStatus, errors }
 }
 
-const ApplyForm = (props: { job: jobDetailsT }) => {
-  const { job } = props
+const ApplyForm = (props: { job: jobDetailsT, setShowSuccess: (isSuccess: boolean) => void }) => {
+  const { job, setShowSuccess } = props
   const { t } = useTranslation('common')
 
   const { onSubmit, submitStatus, errors, register } = useApplyForm()
 
   if (submitStatus.isSuccess) {
-    // TODO: Show success message
-    return <div>Success</div>
+    setShowSuccess(true)
   }
 
   return (

@@ -20,6 +20,7 @@ type propsT = {
 
 const JoinUsLayout: FC<propsT> = ({ k, jobs }) => {
   const { t } = useTranslation('common')
+
   return (
     <>
       <Seo title={t("page_title.join_us")} />

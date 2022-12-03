@@ -3,19 +3,6 @@ import { textClass } from '../Text'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
 
-import {
-  StartUp,
-  FlexiHour,
-  Medical,
-  LeavePlans,
-  Genders,
-  Organization,
-  Food,
-  WorkAttire,
-  TechEnable,
-  Employee,
-} from '../Svg/Icon'
-
 const SectionCare = ({k}: any) => {
   const { t } = useTranslation('common')
   const { locale } = useRouter()

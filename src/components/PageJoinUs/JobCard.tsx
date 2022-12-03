@@ -1,6 +1,7 @@
 import { textClass } from 'src/components/Text'
 import { Pin, IconArrowRight } from 'src/components/Svg/Icon'
 import Link from 'next/link'
+import { useTranslation } from 'next-i18next'
 
 type propsT = {
   id: number
@@ -11,6 +12,7 @@ type propsT = {
 }
 
 const JobCard = ({ id, title, subTitle, seniority, location }: propsT) => {
+  const { t } = useTranslation()
   return (
     <Link href={`/job/${id}`}>
       <div className="h-full bg-white p-6 shadow-postCard">
@@ -24,7 +26,7 @@ const JobCard = ({ id, title, subTitle, seniority, location }: propsT) => {
           <div className="mt-8">
             <h3 className={`${textClass.h6}`}>{title}</h3>
             <h4 className={textClass.body_regular_verah}>{subTitle}</h4>
-            <p className={textClass.caption}>Seniority: {seniority}</p>
+            <p className={textClass.caption}>{t("join_us.seniority")}: {seniority}</p>
           </div>
         </div>
       </div>

@@ -56,7 +56,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const message = {
           from: EMAIL_SENDER,
           to: EMAIL_RECIPIENT,
-          subject: `[Job Apply] ${reqMessage.job_title} - ${reqMessage.firstName} ${reqMessage.lastName}`,
+          subject: `[Job Apply] ${reqMessage.jobTitle} - ${reqMessage.firstName} ${reqMessage.lastName}`,
           text: toPlainText(html),
           html,
         }

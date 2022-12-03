@@ -23,7 +23,6 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
 
   return {
     heroBanner: {
-      title: 'Join Us',
       description: g('description') !== null ? g('description') : '',
       image: '/images/about/banner.jpg',
       mobileImage: '/images/about/mobile-banner.png',
@@ -32,6 +31,8 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
     our_values_description: g('our_values_description'),
     arta_cares_description: g('arta_cares_description'),
     job_openings_description: g('job_openings_description'),
+    our_values_icons: pageData.data.attributes.our_values_icons,
+    our_cares_icons: pageData.data.attributes.our_cares_icons,
     work_with_arta_image: pageData.data.attributes.work_with_arta_image.data.attributes.url || ""
   }
 }

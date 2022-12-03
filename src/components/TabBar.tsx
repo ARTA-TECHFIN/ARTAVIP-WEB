@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import cn from 'classnames'
 
 type propsT = {
@@ -8,9 +9,10 @@ type propsT = {
 
 const TabBar = (props: propsT) => {
   const { tabs, selectedTab, setSelectedTab } = props
+  const ulRef = useRef(null)
 
   return (
-    <ul className="flex md:justify-center justify-start mt-4 lg:mt-0 lg:pl-0 pl-8 lg:gap-16 gap-8 border-solid border-b border-arta-sand-200 text-arta-sand-200 min-w-[750px] lg:min-w-[650px]">
+    <ul ref={ulRef} className="flex md:justify-center justify-start mt-4 lg:mt-0 lg:pl-0 pl-6 lg:gap-16 gap-8 border-solid border-b border-arta-sand-200 text-arta-sand-200 min-w-[750px] lg:min-w-[650px]">
       {tabs.map((tab, index) => {
         const isSelected = tab === selectedTab
         return (

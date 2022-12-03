@@ -108,7 +108,7 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
                         {(index === 6) && <FinTechCompaniesIcon className="h-full w-full object-cover" />}
                         {(index === 7) && <FinancialInvestmentPlatformIcon className="h-full w-full object-cover" />}
                       </div>
-                      <span className={`${textClass.body_regular} max-w-[60%] text-center`}>
+                      <span className={`${textClass.body_regular} max-w-[70%] text-center`}>
                         {item.title}
                       </span>
                     </div>

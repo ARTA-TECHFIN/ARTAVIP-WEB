@@ -1,3 +1,5 @@
+/* eslint-disable */
+import { useEffect } from 'react'
 import Header from 'src/components/Header/Header'
 import Footer from 'src/components/Footer'
 import { Seo } from 'src/components/Seo'
@@ -39,6 +41,23 @@ const InvestorLayout: FC<propsT> = ({ k, cms, tabType, hideTab = false, children
 
   const tabInfo = tabInfoMap[tabType]
 
+  useEffect(() => {
+    if ( tabType === "esg" && document.getElementById("tab")) {
+      // @ts-ignore
+      document.getElementById("tab").scrollLeft = document.getElementById("tab")?.scrollWidth
+    }
+
+    if (tabType === "financial_calendar") {
+      // @ts-ignore
+      document.getElementById("tab").scrollLeft = document.getElementById("tab")?.scrollWidth - 100
+    }
+
+    if (tabType === "corporate_information") {
+      // @ts-ignore
+      document.getElementById("tab").scrollLeft = 100
+    }
+  }, []);
+
   return (
     <>
       <Seo title={t("page_title.investor_relations")} />
@@ -55,16 +74,14 @@ const InvestorLayout: FC<propsT> = ({ k, cms, tabType, hideTab = false, children
           <div className="arta-container mx-auto">
             {
               !hideTab && (
-                <div className="arta-hide-scrollbar -mx-6 overflow-auto md:mx-0">
-                  <div className="">
-                    <TabBar
-                      tabs={tabList.map((t) => t.title)}
-                      selectedTab={tabInfo.title}
-                      setSelectedTab={(_, index) =>
-                        Router.push(tabList[index].link, undefined, { scroll: false })
-                      }
-                    />
-                  </div>
+                <div id="tab" className="arta-hide-scrollbar -mx-6 overflow-scroll md:mx-0">
+                  <TabBar
+                    tabs={tabList.map((t) => t.title)}
+                    selectedTab={tabInfo.title}
+                    setSelectedTab={(_, index) =>
+                      Router.push(tabList[index].link, undefined, { scroll: false })
+                    }
+                  />
                 </div>
               )
             }

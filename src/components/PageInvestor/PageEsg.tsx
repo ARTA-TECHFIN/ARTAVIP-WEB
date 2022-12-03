@@ -3,7 +3,7 @@ import { textClass } from 'src/components/Text'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { IconListItemArrow, TopDownArrow, DownTopArrow } from '../Svg/Icon'
 import { useTranslation } from 'next-i18next'
 import parse from 'html-react-parser'
@@ -12,10 +12,12 @@ gsap.registerPlugin(ScrollToPlugin)
 
 const PageEsg: FC<{ k: any, locale: string }> = ({ k, locale }) => {
   const nav = useRef<HTMLUListElement>(null)
+  const [openNavMenu, setOpenNavMenu] = useState(false)
   const sections = useRef(null)
   const { t } = useTranslation('common')
 
   const goToSection = (index: number) => () => {
+    setOpenNavMenu(false)
     const esgSections = document.querySelectorAll('.esg-section')
     gsap.to(window, { duration: 0.7, scrollTo: { y: esgSections[index], offsetY: 130 } })
   }
@@ -90,9 +92,20 @@ const PageEsg: FC<{ k: any, locale: string }> = ({ k, locale }) => {
         ))}
       </ul>
       <div className="bg-arta-sand-100 absolute lg:hidden top-0 -ml-6 w-[100vw]">
-        <p className="text-white text-[1rem] px-6 py-3 cursor-pointer">Environmental</p>
+        <p className="text-white text-[1rem] px-6 py-3 cursor-pointer" onClick={() => setOpenNavMenu(!openNavMenu)}>{t('investor_relations.environmental')}</p>
+        <svg className="absolute top-5 right-6 pointer-events-none" width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 2.05092e-08C0.174335 0.030466 0.36004 0.045699 0.557115 0.045699C0.769349 0.045699 0.955054 0.030466 1.11423 2.05092e-08L6.89204 6.67205L12.6143 0C12.728 0.030466 12.8531 0.045699 12.9895 0.045699C13.1335 0.045699 13.7045 0.030466 13.8182 2.05092e-08C12.1796 1.95179 6.89204 8 6.89204 8C6.89204 8 1.59358 1.90812 0 2.05092e-08Z" fill="white"/>
+        </svg>
+        {
+          openNavMenu && (
+            <div className="text-white h-auto w-full absolute top-12 bg-arta-sand-100 text-[1rem]">
+              <p className="px-6 py-3 cursor-pointer" onClick={goToSection(1)}>{t('investor_relations.social')}</p>
+              <p className="px-6 py-3 cursor-pointer" onClick={goToSection(2)}>{t('investor_relations.governance')}</p>
+            </div>
+          )
+        }
       </div>
-      <div className="md:col-span-9 col-span-full" ref={sections}>
+      <div className="md:col-span-9 col-span-full" ref={sections} onClick={() => setOpenNavMenu(false)}>
         <div id="environmental" className="esg-section">
           <h2 className={`${textClass.h3_style2}`}>{t('investor_relations.environmental')}</h2>
           <div className={`module-etg-text-section ${textClass.body_regular_verah}`} dangerouslySetInnerHTML={{__html: k.esg_environmental}}></div>

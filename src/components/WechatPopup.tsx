@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-const WechatPopup = ({togglePopup}: any) => {
+const WechatPopup = ({togglePopup, qrCode}: any) => {
   return (
     <div className="fixed top-0 left-0 w-full h-full z-[60]">
       <div onClick={() => togglePopup()} className="fixed bg-black bg-opacity-70 w-full h-full" />
@@ -10,7 +10,7 @@ const WechatPopup = ({togglePopup}: any) => {
             <line x1="0.353553" y1="0.646447" x2="17.3536" y2="17.6464" stroke="#593725"/>
             <line x1="17.3536" y1="0.353553" x2="0.353553" y2="17.3536" stroke="#593725"/>
           </svg>
-          <Image src="/images/wechat.jpg" width={400} height={400} alt="" />
+          <Image src={qrCode || "/images/wechat.jpg"} width={400} height={400} alt="" />
         </div>
       </div>
     </div>

@@ -22,8 +22,8 @@ const About = ({ k }: any) => {
         </video>
       </div>
       <div className="absolute h-[40vh] w-full bottom-0 left-0 about-background-gradient z-1 lg:hidden" />
-      <div className="absolute left-[3em] lg:left-auto lg:right-[4em] bottom-[0] z-1 flex w-[70em] -translate-y-1/2 transform justify-end self-center z-[2] lg:bottom-auto lg:top-1/2 lg:w-[50em]">
-        <div className="ml-auto h-full flex-col items-end justify-center gap-[24px] p-2 text-left lg:text-right lg:w-1/2  ">
+      <div className="absolute left-[3em] lg:left-auto lg:right-[4em] bottom-[0] z-1 flex w-[77em] -translate-y-1/2 transform justify-end self-center z-[2] lg:bottom-auto lg:top-1/2 lg:w-[50em]">
+        <div className="ml-auto h-full flex-col items-end justify-center gap-[24px] p-2 text-left md:text-right lg:w-1/2  ">
           <h1 className="lg:text-right font-Verah text-[6em] tracking-[0.06em] text-white will-change-transform lg:text-[3.4em]">
             {t("home.about_arta")}
           </h1>
@@ -34,7 +34,7 @@ const About = ({ k }: any) => {
           <ButtonAnimated
             as="a"
             href="/about"
-            className="border-white text-white"
+            className="border-white text-white w-full md:w-auto"
           >
             {t("home.show_more")}
           </ButtonAnimated>

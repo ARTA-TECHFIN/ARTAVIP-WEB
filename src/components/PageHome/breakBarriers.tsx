@@ -94,7 +94,7 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
     <section
       ref={sec1Container}
       id="break-barriers"
-      className="relative tigger-01 relative z-3 flex min-h-app-height lg:h-screen w-screen flex-col overflow-hidden bg-[#351e0e] will-change-transform"
+      className="relative tigger-01 relative z-3 flex h-app-height lg:h-screen w-screen flex-col overflow-hidden bg-[#351e0e] will-change-transform"
       onMouseMove={(ev) => section1HandleMouseMove(ev)}
     >
       <video

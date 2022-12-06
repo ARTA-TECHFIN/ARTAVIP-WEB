@@ -6,7 +6,7 @@ const About = ({ k }: any) => {
   const { t } = useTranslation('common')
 
   return (
-    <div className="relative z-3 flex h-screen w-screen will-change-transform bg-[#3c2516]">
+    <div className="relative z-3 flex h-app-height lg:h-screen w-screen will-change-transform bg-[#3c2516]">
       <div className="video-container absolute top-0 left-0 h-full w-full overflow-hidden">
         <video
           data-keepplaying

@@ -249,7 +249,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
   }, [currentSectionId])
 
   return (
-    <div className="min-h-app-height lg:h-screen w-[100vw] overflow-hidden" onWheel={(event) => wheel(event)}>
+    <div className="h-app-height lg:h-screen w-[100vw] overflow-hidden" onWheel={(event) => wheel(event)}>
       <div className="video-container absolute top-0 left-0 h-full w-full">
         <video
           ref={sec1VideoRed}

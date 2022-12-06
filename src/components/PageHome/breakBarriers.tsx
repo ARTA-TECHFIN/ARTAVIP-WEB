@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { gsap } from 'gsap'
+import { useRouter } from 'next/router'
 
 export const BreakBarriers = ({ currentSectionId }: any) => {
+  const { locale } = useRouter()
   const sec1TtlRef = useRef(null)
   const sec1VideoRef = useRef(null)
   const sec1Container = useRef(null)
@@ -118,19 +120,47 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
       </div>
       <div className=" movable-elements-wrapper flex max-w-main-contain items-start justify-center z-1 px-6 xl:mx-auto">
         <div className="absolute bottom-[85em] sm:bottom-[45em] left-[0] md:bottom-[7em] md:bottom-[6em] md:left-[5em]">
-          <h1
-            id="animation"
-            ref={sec1TtlRef}
-            className="movable z-[200] text-left font-Verah text-[10em] leading-[1.02em] text-white will-change-transform md:text-[5em]"
-          >
-            BREAK
-            <br />
-            BARRIERS
-            <span className="flex space-x-2">
-              <hr className=" mt-[20px] h-[4px] w-[40px] sm:mt-[0.45em] sm:w-[80px]"></hr>
-              <span className="pr-3 text-[30px] sm:text-[0.6em]">for </span> GREATNESS
-            </span>
-          </h1>
+          { locale === "en" && (
+            <h1
+              id="animation"
+              ref={sec1TtlRef}
+              className="movable z-[200] text-left font-Verah text-[10em] leading-[1.02em] text-white will-change-transform md:text-[5em]"
+            >
+              BREAK
+              <br />
+              BARRIERS
+              <span className="flex space-x-2">
+                <hr className=" mt-[20px] h-[4px] w-[40px] sm:mt-[0.45em] sm:w-[80px]"></hr>
+                <span className="pr-3 text-[30px] sm:text-[0.6em]">for </span> GREATNESS
+              </span>
+            </h1>
+          )}
+          { locale === "tc" && (
+            <h1
+              id="animation"
+              ref={sec1TtlRef}
+              className="movable z-[200] text-left font-Noto text-[10em] leading-[1.4em] text-white will-change-transform md:text-[3em] md:mb-10"
+            >
+              打破壁壘
+              <span className="flex space-x-2">
+                <hr className=" mt-[20px] h-[4px] w-[40px] sm:mt-[0.8em] sm:w-[115px]"></hr>
+                <span className="pr-3 text-[30px] sm:text-[1.3em]">成就輝煌</span>
+              </span>
+            </h1>
+          )}
+          { locale === "sc" && (
+            <h1
+              id="animation"
+              ref={sec1TtlRef}
+              className="movable z-[200] text-left font-Noto text-[10em] leading-[1.4em] text-white will-change-transform md:text-[3em] md:mb-10"
+            >
+              打破壁垒
+              <span className="flex space-x-2">
+                <hr className=" mt-[20px] h-[4px] w-[40px] sm:mt-[0.8em] sm:w-[115px]"></hr>
+                <span className="pr-3 text-[30px] sm:text-[1.3em]">成就辉煌</span>
+              </span>
+            </h1>
+          )}
         </div>
       </div>
     </section>

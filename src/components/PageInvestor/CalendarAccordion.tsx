@@ -48,7 +48,7 @@ const CalendarAccordion = ({ index, year, events, openYear, setOpenYear }: props
   if (events.length === 0) return <></>
 
   return (
-    <div id={`year-${year}`} className={cn(`mb-6 bg-white transition-shadow transition hover:brightness-95`)}>
+    <div id={`year-${year}`} className={cn(`mb-6 bg-white transition-shadow transition hover:brightness-[98%]`)}>
       <div
         className="flex cursor-pointer items-center justify-between p-6 lg:p-8"
         onClick={() => setOpenYear(year)}
@@ -86,7 +86,9 @@ const CalendarAccordion = ({ index, year, events, openYear, setOpenYear }: props
                   <span className={`${textClass.title_verah} mr-4 text-arta-sand-100`}>
                     {event.title}
                   </span>
-                  <IconArrowRightCircle className="ml-auto hidden flex-[0_0_32px] sm:block" />
+                  {
+                    event.url && <IconArrowRightCircle className="ml-auto hidden flex-[0_0_32px] sm:block" />
+                  }
                 </a>
               </li>
             )

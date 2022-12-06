@@ -48,7 +48,7 @@ export const SectionLeadership = (props: { k: PageAboutCmsT }) => {
               <div className="relative mb-4 aspect-[3/4] h-auto w-full overflow-hidden">
                 <img src={leader.attributes.profile_image.data.attributes.url} alt="" className="absolute h-full w-full object-cover" />
               </div>
-              <span className={`${textClass.small_text} whitespace-pre`}>{g(leader, "title")}</span>
+              <span className={`${textClass.small_text}`}>{g(leader, "title")}</span>
               <span className={textClass.h6}>{g(leader, "name")}</span>
             </SwiperSlide>
           ))}

@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* dynamic change by js. It is a fallback */
+  --app-height: 100vh;
+}
+
 @layer base {
   html,
   body {

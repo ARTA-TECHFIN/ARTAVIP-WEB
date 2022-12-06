@@ -3,12 +3,15 @@ import type { AppProps } from 'next/app'
 import NextNProgress from 'nextjs-progressbar';
 import 'src/styles/global.css'
 import 'src/styles/typography.css'
+import { useAppHeight } from 'utils/html'
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 const queryClient = new QueryClient()
 
 function MyApp({ Component, pageProps }: AppProps) {
+  useAppHeight();
+
   return (
     <QueryClientProvider client={queryClient}>
       <NextNProgress color="#593725"/>

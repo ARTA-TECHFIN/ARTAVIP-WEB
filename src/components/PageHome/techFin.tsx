@@ -19,6 +19,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
   const sec1VideoRed = useRef(null)
   const [selectedBusiness, setSelectedBusiness] = useState(0)
   const [currentSection, setCurrentSection] = useState<"10" | "15">("10")
+  const [touchStart, setTouchStart] = useState(0)
 
   const [lastFireTime, setLastFireTime] = useState<number>(Date.now())
   const throttle = (fn: any, delay: number) => {
@@ -71,7 +72,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
     }
   }
 
-  const wheel = (event: any) => {
+  const wheel = (event: any) => {    
     throttle(() => {
       if (event.nativeEvent.wheelDelta > 0) {
         // Up
@@ -248,8 +249,42 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentSectionId])
 
+  const handleTouchStart = (event:any) => {
+    setTouchStart(event.touches[0].clientY)
+  }
+
+  const handleTouchEnd = (event: any) => {
+    // console.log(event.changedTouches[0].clientY )
+    throttle(() => {
+      console.log(currentSectionId)
+      if (event.changedTouches[0].clientY > touchStart) {
+        // Up
+        if (currentSectionId === 1) {
+          console.log("1")
+          // From 1 to 0
+          setTriggerSection(0)
+        } else {
+          console.log("2")
+          // From 1.5 to 1
+          setCurrentSectionById(1)
+        }
+      } else {
+        // Down
+        if (currentSectionId === 1) {
+          console.log("3")
+          // From 1 to 1.5
+          setCurrentSectionById(1.5)
+        } else {
+          console.log("4")
+          // From 1.5 to 2
+          setTriggerSection(3)
+        }
+      }
+    }, 2000)
+  }
+
   return (
-    <div className="h-app-height lg:h-screen w-[100vw] overflow-hidden" onWheel={(event) => wheel(event)}>
+    <div className="h-app-height lg:h-screen w-[100vw] overflow-hidden" onWheel={(event) => wheel(event)} onTouchStart={(event) => handleTouchStart(event)} onTouchEnd={(event) => handleTouchEnd(event)}>
       <div className="video-container absolute top-0 left-0 h-full w-full">
         <video
           ref={sec1VideoRed}

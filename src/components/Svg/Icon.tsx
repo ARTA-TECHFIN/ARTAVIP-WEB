@@ -1664,6 +1664,45 @@ const FinancialInvestmentPlatformIcon = (props: propsT) => {
   )
 }
 
+const AnnouncementIcon = (props: propsT) => {
+  return (
+    <svg className={props.className} width="44" height="38" viewBox="0 0 44 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clipPath="url(#clip0_552_2497)">
+        <path d="M17.4004 14.9C17.3004 9.7 21.0004 3.9 23.6004 1L34.0004 19.7C31.2004 23.5 29.2004 28.3 28.0004 33.9C31.9004 28.5 36.6004 25.1 42.2004 24.2L31.6004 5.8L29.8004 6.8" stroke="#AB8250" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M1 17.6C7.1 15.1 13.9 13 17.4 14.9L28 33.8C24.4 31.9 17.4 34.1 11.1 36.7L1 17.6Z" stroke="#593727" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+      </g>
+      <defs>
+      <clipPath id="clip0_552_2497">
+        <rect width="43.2" height="37.7" fill="white"/>
+      </clipPath>
+      </defs>
+    </svg>
+  )
+}
+
+const ReportIcon = (props: propsT) => {
+  return (
+    <svg className={props.className} width="38" height="42" viewBox="0 0 38 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_552_2000)">
+      <path d="M30.7004 21.7V4.60001H6.40039V21.7" stroke="#AB8250" strokeWidth="2" strokeMiterlimit="10" strokeLinejoin="round"/>
+      <path d="M28.9002 1.9V1H8.2002V1.9" stroke="#593727" strokeWidth="2" strokeMiterlimit="10" strokeLinejoin="round"/>
+      <path d="M11.7998 17.2H25.2998" stroke="#AB8250" strokeWidth="2" strokeMiterlimit="10" strokeLinejoin="round"/>
+      <path d="M11.7998 13.6H25.2998" stroke="#AB8250" strokeWidth="2" strokeMiterlimit="10" strokeLinejoin="round"/>
+      <path d="M11.7998 10H20.7998" stroke="#AB8250" strokeWidth="2" strokeMiterlimit="10" strokeLinejoin="round"/>
+      <path d="M36.1 40.6H1V24.4H11.8L13.6 27.1H23.5L25.4 24.4H36.1V40.6Z" stroke="#593727" strokeWidth="2" strokeMiterlimit="10" strokeLinejoin="round"/>
+      <path d="M3.7 19.9L1 23.5V24.4" stroke="#593727" strokeWidth="2" strokeMiterlimit="10" strokeLinejoin="round"/>
+      <path d="M33.4004 19.9L36.1004 23.5V24.4" stroke="#593727" strokeWidth="2" strokeMiterlimit="10" strokeLinejoin="round"/>
+      <path d="M22.6 31.6H14.5V36.1H22.6V31.6Z" stroke="#593727" strokeWidth="2" strokeMiterlimit="10" strokeLinejoin="round"/>
+      </g>
+      <defs>
+      <clipPath id="clip0_552_2000">
+      <rect width="37.1" height="41.6" fill="white"/>
+      </clipPath>
+      </defs>
+    </svg>
+  )
+}
+
 export {
   IconListItemArrow,
   IconArrowLeft,
@@ -1700,5 +1739,7 @@ export {
   EducationProfessionalIcon,
   RegionalBanksIcon,
   FinTechCompaniesIcon,
-  FinancialInvestmentPlatformIcon
+  FinancialInvestmentPlatformIcon,
+  AnnouncementIcon,
+  ReportIcon,
 }

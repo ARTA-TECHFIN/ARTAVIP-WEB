@@ -334,7 +334,9 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
                     <XIcon className="h-6 w-6" />
                   </div>
                   <div className="relative h-[32px] w-[78.67px] cursor-pointer opacity-100 transition hover:opacity-100 md:h-auto md:w-auto">
-                    <img src="/images/Group.png" alt="logo" className=" object-contain" />
+                    <Link href="/">
+                      <img src="/images/Group.png" alt="logo" className="object-contain" />
+                    </Link>
                   </div>
                 </div>
                 <div className="mt-8 text-white ">

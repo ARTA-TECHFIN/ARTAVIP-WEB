@@ -143,7 +143,7 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
             >
               打破壁壘
               <span className="flex space-x-2">
-                <hr className=" mt-[20px] h-[4px] w-[40px] sm:mt-[0.8em] sm:w-[115px]"></hr>
+                <hr className=" mt-[0.7em] h-[4px] w-[40px] sm:mt-[0.8em] sm:w-[115px]"></hr>
                 <span className="pr-3 text-[30px] sm:text-[1.3em]">成就輝煌</span>
               </span>
             </h1>
@@ -156,7 +156,7 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
             >
               打破壁垒
               <span className="flex space-x-2">
-                <hr className=" mt-[20px] h-[4px] w-[40px] sm:mt-[0.8em] sm:w-[115px]"></hr>
+                <hr className=" mt-[0.7em] h-[4px] w-[40px] sm:mt-[0.8em] sm:w-[115px]"></hr>
                 <span className="pr-3 text-[30px] sm:text-[1.3em]">成就辉煌</span>
               </span>
             </h1>

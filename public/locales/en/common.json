@@ -90,7 +90,7 @@
     "back_office": "Middle and Back Office",
     "front_office": "Front Office",
     "all": "All",
-    "apply_statement": "For further information, please contact us via recruit@artatechfin.com.",
+    "apply_statement": "For further information, please contact us via <a href='mailto:recruit@artatechfin.com'>recruit@artatechfin.com</a>.",
     "application_form": "Application Form",
     "first_name": "First Name",
     "last_name": "Last Name",

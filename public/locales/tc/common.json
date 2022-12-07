@@ -90,7 +90,7 @@
     "back_office": "中後台",
     "front_office": "前台",
     "all": "全部",
-    "apply_statement": "如欲了解更多，請發送郵件至recruit@artatechfin.com聯絡我們。",
+    "apply_statement": "如欲了解更多，請發送郵件至<a href='mailto:recruit@artatechfin.com'>recruit@artatechfin.com</a>聯絡我們。",
     "application_form": "申請表格",
     "first_name": "名",
     "last_name": "姓",

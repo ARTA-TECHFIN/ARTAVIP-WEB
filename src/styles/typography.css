@@ -20,6 +20,13 @@
 @font-face {
   font-family: 'Helvetica Neue';
   font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/HelveticaNeue-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
   font-weight: 700;
   src: url('/fonts/HelveticaNeue_Bold.ttf') format('truetype');
 }

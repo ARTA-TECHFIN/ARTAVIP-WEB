@@ -30,8 +30,8 @@ const CalendarAccordion = ({ index, year, events, openYear, setOpenYear }: props
 
   useEffect(() => {
     if (year === openYear) {
-      gsap.to(togglerIcon.current, { rotate: -180, duration: 0.8 })
-      gsap.to(listWrapper.current, { height: list.current?.clientHeight, duration: 0.8 })
+      gsap.to(togglerIcon.current, { rotate: -180, duration: 0.7 })
+      gsap.to(listWrapper.current, { height: list.current?.clientHeight, duration: 0.7 })
   
       setTimeout(() => {
         if (year !== 0) {
@@ -40,21 +40,24 @@ const CalendarAccordion = ({ index, year, events, openYear, setOpenYear }: props
         }
       }, 800)
     } else {
-      gsap.to(togglerIcon.current, { rotate: 0, duration: 0.8 })
-      gsap.to(listWrapper.current, { height: 0, duration: 0.8 })
+      gsap.to(togglerIcon.current, { rotate: 0, duration: 0.7 })
+      gsap.to(listWrapper.current, { height: 0, duration: 0.7 })
     }
   }, [openYear])
 
   if (events.length === 0) return <></>
 
   return (
-    <div id={`year-${year}`} className={cn(`mb-6 bg-white transition-shadow transition hover:brightness-[98%]`)}>
+    <div id={`year-${year}`} className={cn(`mb-6 bg-white transition-all transition shadow-lg hover:brightness-[98%]`)}>
       <div
         className="flex cursor-pointer items-center justify-between p-6 lg:p-8"
         onClick={() => setOpenYear(year)}
       >
-        <span className={`${textClass.h6} text-black`}>{year}</span>
-        <ChevronDownIcon ref={togglerIcon} className="h-4 w-4" />
+        <span className={`${textClass.h6} text-arta-sand-100`}>{year}</span>
+        <svg ref={togglerIcon} className="h-6 w-6" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 16.2632C19.7981 16.2279 19.5831 16.2102 19.3549 16.2102C19.1092 16.2102 18.8941 16.2279 18.7098 16.2632L12.0197 8.53763L5.39393 16.2632C5.26228 16.2279 5.11747 16.2102 4.95949 16.2102C4.79273 16.2102 4.13165 16.2279 4 16.2632C5.89731 14.0032 12.0197 7 12.0197 7C12.0197 7 18.1548 14.0538 20 16.2632Z" fill="#593725"/>
+        </svg>
+
       </div>
       <div ref={listWrapper} className="h-0 overflow-hidden">
         <ul ref={list} className="px-6 pb-6 lg:px-8 lg:pb-8">
@@ -79,15 +82,15 @@ const CalendarAccordion = ({ index, year, events, openYear, setOpenYear }: props
                     <p className={`${textClass.h3_style2} text-[#878095]`}>
                       {event.date.toDateString().slice(7, 10)}
                     </p>
-                    <p className={`${textClass.title_style2} text-black`}>
+                    <p className={`${textClass.title_style2} text-[#878095]`}>
                       {event.date.toDateString().slice(3, 7)}
                     </p>
                   </div>
-                  <span className={`${textClass.title_verah} mr-4 text-arta-sand-100`}>
+                  <span className={`${textClass.title} mr-4 font-Neue text-arta-sand-100`}>
                     {event.title}
                   </span>
                   {
-                    event.url && <IconArrowRightCircle className="ml-auto hidden flex-[0_0_32px] sm:block" />
+                    event.postPageUrl && <IconArrowRightCircle className="ml-auto hidden flex-[0_0_32px] sm:block" />
                   }
                 </a>
               </li>

@@ -1,18 +1,20 @@
 import { useEffect, useRef } from 'react'
 import cn from 'classnames'
+import classNames from 'classnames'
 
 type propsT = {
+  className?: string
   tabs: {label: string, value: string}[]
   selectedTab: string
   setSelectedTab: (tab: string, index: number) => void
 }
 
 const TabBar = (props: propsT) => {
-  const { tabs, selectedTab, setSelectedTab } = props
+  const { tabs, selectedTab, setSelectedTab, className } = props
   const ulRef = useRef(null)
 
   return (
-    <ul ref={ulRef} className="flex md:justify-center justify-start mt-4 lg:mt-0 lg:pl-0 pl-6 lg:gap-16 gap-8 border-solid border-b border-arta-sand-200 text-arta-sand-200 min-w-[750px] lg:min-w-[650px]">
+    <ul ref={ulRef} className={`flex md:justify-center justify-start mt-4 lg:mt-0 lg:pl-0 lg:pl-6 lg:gap-16 gap-8 border-solid border-b border-arta-sand-200 text-arta-sand-200 ${className}`}>
       {tabs.map((tab, index) => {
         const isSelected = tab.value === selectedTab
         return (

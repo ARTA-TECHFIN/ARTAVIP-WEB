@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import Image from 'next/image'
-import mission_bg from './images/mission_bg.png'
+import mission_bg from './images/aboutus_vision_bg.jpg'
 import { textClass } from 'src/components/Text'
 import { PageAboutCmsT } from 'src/pages/about'
 import { useTranslation } from 'next-i18next'

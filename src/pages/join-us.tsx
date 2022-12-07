@@ -24,8 +24,8 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
   return {
     heroBanner: {
       description: g('description') !== null ? g('description') : '',
-      image: '/images/about/banner.jpg',
-      mobileImage: '/images/about/mobile-banner.png',
+      image: '/images/join-us/banner.jpg',
+      mobileImage: '/images/join-us/mobile-banner.jpg',
     },
     work_with_arta_description: g('work_with_arta_description'),
     our_values_description: g('our_values_description'),

@@ -47,8 +47,8 @@ const massageData = (
     heroBanner: {
       title: 'Media Centre',
       description: g('description') !== null ? g('description') : '',
-      image: '/images/media-centre/banner.png',
-      mobileImage: '/images/media-centre/mobile-banner.png',
+      image: '/images/media-centre/banner.jpg',
+      mobileImage: '/images/media-centre/mobile-banner.jpg',
     },
 
     blogPosts: blogData.data.map(({ attributes: blog }: any) => ({

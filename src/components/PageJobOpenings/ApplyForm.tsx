@@ -21,7 +21,7 @@ type formValuesT = {
   cvUpload: string
   briefIntroduction: string
 }
-const useApplyForm = () => {
+const useApplyForm = (t:any) => {
   const {
     handleSubmit,
     formState: { errors },
@@ -30,26 +30,26 @@ const useApplyForm = () => {
     resolver: (data) => {
       const errors: Partial<Record<keyof formValuesT, { message: string }>> = {}
 
-      if (!data.firstName) errors.firstName = { message: 'Please enter your first name' }
-      if (!data.lastName) errors.lastName = { message: 'Please enter your last name' }
-      if (!data.emailAddress) errors.emailAddress = { message: 'Please enter your email address' }
+      if (!data.firstName) errors.firstName = { message: t("warning.required") }
+      if (!data.lastName) errors.lastName = { message: t("warning.required") }
+      if (!data.emailAddress) errors.emailAddress = { message: t("warning.required") }
       else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(data.emailAddress))
-        errors.emailAddress = { message: 'Please enter a valid email address' }
+        errors.emailAddress = { message: t("warning.invalid_format") }
       if (!data.contactNumber)
-        errors.contactNumber = { message: 'Please enter your contact number' }
-      if (!data.lastSalary) errors.lastSalary = { message: 'Please enter your last salary' }
+        errors.contactNumber = { message: t("warning.required") }
+      if (!data.lastSalary) errors.lastSalary = { message: t("warning.required") }
       else if (!/^\d+$/.test(data.lastSalary))
-        errors.lastSalary = { message: 'Please enter a valid last salary' }
+        errors.lastSalary = { message: t("warning.invalid_format") }
       if (!data.expectedSalary)
-        errors.expectedSalary = { message: 'Please enter your expected salary' }
+        errors.expectedSalary = { message: t("warning.required") }
       else if (!/^\d+$/.test(data.expectedSalary))
-        errors.expectedSalary = { message: 'Please enter a valid expected salary' }
+        errors.expectedSalary = { message: t("warning.invalid_format") }
       // TODO: add validation for cvUpload
       // if (!data.cvUpload) errors.cvUpload = { message: 'Please upload your CV' }
       if (!data.briefIntroduction)
-        errors.briefIntroduction = { message: 'Please enter your brief introduction' }
+        errors.briefIntroduction = { message: t("warning.required") }
       else if (data.briefIntroduction.length > 500)
-        errors.briefIntroduction = { message: 'Please enter less than 500 characters' }
+        errors.briefIntroduction = { message: t("warning.word_count_500") }
 
       return { values: data, errors }
     },
@@ -74,7 +74,7 @@ const ApplyForm = (props: { job: jobDetailsT, setShowSuccess: (isSuccess: boolea
   const { job, setShowSuccess } = props
   const { t } = useTranslation('common')
 
-  const { onSubmit, submitStatus, errors, register } = useApplyForm()
+  const { onSubmit, submitStatus, errors, register } = useApplyForm(t)
 
   if (submitStatus.isSuccess) {
     setShowSuccess(true)

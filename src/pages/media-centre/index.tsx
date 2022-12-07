@@ -3,6 +3,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { getMediaCms, getMediaCmsT, getSlug } from 'src/domains/media'
 import { MediaLayout, MediaTABS } from 'src/components/PageMedia/Layout'
 import Link from 'next/link'
+import { dateFormat } from 'utils/date'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { locale } = context
@@ -21,7 +22,7 @@ const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
     <MediaLayout cms={cms} tabType={MediaTABS.Blog}>
       <div className="arta-container mx-auto">
         <div className="grid grid-cols-12 gap-4 md:gap-8">
-          {cms.blogPosts.map((post, index) => (
+          {cms.blogPosts.map((post:any, index: number) => (
             <Link
               key={index}
               className="col-span-full h-full md:col-span-6 lg:col-span-4"
@@ -32,7 +33,7 @@ const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
                   <img src={post.image} alt="" className="w-full object-cover absolute h-full" />
                 </div>
                 <div className="px-6 pt-4 pb-6 md:pt-6 md:pb-12">
-                  <span className="text-xs">{post.date}</span>
+                  <span className="text-xs">{dateFormat(new Date(post.date))}</span>
                   <h5 className="mt-1 text-xl">{post.title}</h5>
                 </div>
               </div>

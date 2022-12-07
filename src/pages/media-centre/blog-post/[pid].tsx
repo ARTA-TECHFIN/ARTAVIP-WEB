@@ -8,6 +8,7 @@ import { textClass } from 'src/components/Text'
 import { links } from 'src/domains/links'
 import { IconArrowLeft } from 'src/components/Svg/Icon'
 import { useTranslation } from 'next-i18next'
+import { dateFormat } from 'utils/date'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { locale } = context
@@ -39,7 +40,7 @@ const Post = (props: { cms: getMediaCmsT; blog: getMediaCmsT['blogPosts'][number
           {t('media.back_blog')}
         </Link>
         <div className="blog-content mt-4 bg-white p-6 shadow-blogPost md:p-12">
-          <p className="text-xs text-arta-indigo-100">{blog.date}</p>
+          <p className="text-xs text-arta-indigo-100">{dateFormat(new Date(blog.date))}</p>
           <h2 className={`mt-2 ${textClass.h3_style2} text-arta-secondary`}>{blog.title}</h2>
           <div
             className={`mt-6 ${textClass.body_regular_verah} text-black`}

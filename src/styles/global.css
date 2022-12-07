@@ -244,3 +244,7 @@
 .about-background-gradient {
   background: linear-gradient(180deg, rgba(14,28,45,0) 0%, rgba(60,37,22,1) 49%);
 }
+
+.blog-content img {
+  margin: 0 auto;
+}

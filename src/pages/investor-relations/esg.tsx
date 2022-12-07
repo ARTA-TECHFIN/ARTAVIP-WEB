@@ -18,8 +18,8 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
     heroBanner: {
       title: 'Investor Relation',
       description: g('description') !== null ? g('description') : '',
-      image: '/images/investor-relations/banner.png',
-      mobileImage: '/images/investor-relations/mobile-banner.png',
+      image: '/images/investor-relations/banner.jpg',
+      mobileImage: '/images/investor-relations/mobile-banner.jpg',
       label: '',
     },
     esg_environmental: g('esg_environmental'),

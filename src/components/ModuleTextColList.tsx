@@ -45,7 +45,6 @@ const ModuleTextColList = ({ header, title, list, content, headerPosition }: pro
             <h3 className={`${textClass.h3_style2} mb-6`}>{title}</h3>
           )
         }
-        <Hr />
         {
           content && content.length && (
             <div className="module-text-col-list" dangerouslySetInnerHTML={{__html: content || ""}} />

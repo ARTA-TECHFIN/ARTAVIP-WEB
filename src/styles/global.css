@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* dynamic change by js. It is a fallback */
+  --app-height: 100vh;
+}
+
 @layer base {
   html,
   body {
@@ -144,20 +149,22 @@
 .module-text-col-list h2,
 .module-text-col-list h3,
 .module-text-col-list h4 {
-  @apply pt-6;
-  border-top: 1px solid;
+  @apply pt-6 border-black border-t;
 }
 
-.module-text-col-list h1:first-of-type,
+/* .module-text-col-list h1:first-of-type,
 .module-text-col-list h2:first-of-type,
 .module-text-col-list h3:first-of-type,
 .module-text-col-list h4:first-of-type {
   border-top: none;
-}
+} */
 
 .module-etg-text-section h4,
 .job-description h4,
-.module-text-col-list h3 {
+.module-text-col-list h1,
+.module-text-col-list h2,
+.module-text-col-list h3,
+.module-text-col-list h4 {
   @apply mt-4 text-arta-sand-200 font-Verah md:text-[1.5rem] text-xl leading-[2rem];
 }
 

@@ -1,17 +1,23 @@
 import type { GetServerSideProps, NextPage } from 'next'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from 'src/components/Header/Header'
 import Footer from 'src/components/Footer'
 import homepageJson from 'apidata/homepage.json'
 import { WechatPopup } from 'src/components/WechatPopup'
-
+import contactJson from 'apidata/contact.json'
 import { Slides } from 'src/components/PageHome/PageHome'
 import { Seo } from 'src/components/Seo'
 
 const fetchCmsData = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/homepage`)
+  const data = await res.json()
+  return data
+}
+
+const fetchFooterData = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/contact-us`)
   const data = await res.json()
   return data
 }
@@ -34,10 +40,21 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
 const Home: NextPage = ({k}: any) => {
   const { t } = useTranslation('common')
   const [showWechatPopup, setShowWechatPopup] = useState(false)
+  const [qrCode, setQrCode] = useState("")
 
   const togglePopup = () => {
     setShowWechatPopup(false)
   }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const useLocalCms = process.env.NEXT_PUBLIC_USE_LOCAL_CMS_DATA === 'true'
+      const result = useLocalCms ? contactJson : await fetchFooterData()
+      setQrCode(result.data.attributes.social_media_link_wechat.data.attributes.url)
+    }
+
+    fetchData()
+  }, [])
 
   return (
     <>
@@ -47,7 +64,7 @@ const Home: NextPage = ({k}: any) => {
         <Slides k={k} setShowWechatPopup={setShowWechatPopup} />
       </main>
       {
-        showWechatPopup && <WechatPopup togglePopup={togglePopup} />
+        showWechatPopup && <WechatPopup togglePopup={togglePopup} qrCode={qrCode} />
       }
     </>
   )

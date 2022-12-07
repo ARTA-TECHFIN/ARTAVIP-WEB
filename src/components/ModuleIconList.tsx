@@ -14,8 +14,8 @@ type propsT = {
 
 const ModuleIconList = (props: propsT) => {
   return (
-    <div className={cn('bg-arta-eggshell-100', props.padding ==="Bottom" && "pb-10 md:pb-[140px]", props.padding === "Top" && "pt-10 md:pt-[140px]")}>
-      <div className="arta-container mx-auto grid grid-cols-12 gap-x-12 gap-y-12">
+    <div className={cn('bg-arta-eggshell-100', props.padding ==="Bottom" && "pb-14 md:pb-[140px]", props.padding === "Top" && "pt-14 md:pt-[140px]")}>
+      <div className="arta-container mx-auto grid grid-cols-12 md:gap-x-12 md:gap-y-12">
         {props.iconList.map((item, index) => (
           <div key={index} className="md:col-span-6 col-span-12 flex my-6">
             <div className='xl:w-[157px] xl:h-[157px] lg:w-[100px] lg:h-[100px] w-[64px] 

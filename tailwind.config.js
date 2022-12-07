@@ -22,6 +22,7 @@ module.exports = {
       fontFamily: {
         Verah: ['"Vera Humana 95"', ...defaultTheme.fontFamily.sans],
         Neue: ['Helvetica Neue', ...defaultTheme.fontFamily.sans],
+        Noto: ["Noto Serif TC", "Times", "Times New Roman", "serif"]
       },
       colors: {
         'arta-secondary': '#AB8250',
@@ -44,7 +45,9 @@ module.exports = {
         'mobile-header-gradint': 'linear-gradient(180deg, #DFD8CA 52.6%, rgba(223, 216, 202, 0) 100%)'
         //'linear-gradient(131.63deg, #653711 26.47%, #3D230A 99.16%);' #522716  #572A18 #5E2F1B,
       }),
-
+      height: {
+        'app-height': 'var(--app-height)',
+      },
       boxShadow: {
         'calendarAccordion': '0px 8px 16px rgba(89, 55, 37, 0.2)',
         'postCard': '0px 8px 16px rgba(89, 55, 37, 0.2)',

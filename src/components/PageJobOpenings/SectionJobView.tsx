@@ -10,7 +10,7 @@ import { ButtonAnimated } from '../ButtonAnimated'
 
 const SectionJobView = ({ k }: { k: jobDetailsT }) => {
   const { t } = useTranslation('common')
-  const [showSuccess, setShowSuccess] = useState(true)
+  const [showSuccess, setShowSuccess] = useState(false)
 
   return (
     <div className="mx-auto bg-white shadow-blogPost">

@@ -149,7 +149,7 @@ const Footer: FC<{ textColor?: 'white' | 'brown', setShowWechatPopup?: (f: boole
           </div>
         </div>
       </footer>
-      {openWeChatPopup && <WechatPopup togglePopup={setOpenWeChatPopup} />}
+      {openWeChatPopup && <WechatPopup togglePopup={setOpenWeChatPopup} qrCode={footerData.social_media_link_wechat.data.attributes.url} />}
     </>
   )
 }

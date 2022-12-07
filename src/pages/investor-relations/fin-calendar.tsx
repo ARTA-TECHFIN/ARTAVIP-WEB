@@ -4,9 +4,16 @@ import InvestorLayout, { TABS } from 'src/components/PageInvestor/InvestorLayout
 import PageFinancialCalendar from 'src/components/PageInvestor/PageFinancialCalendar'
 import { getReportCms, reportCmsT } from 'src/domains/investor'
 import investorRelationJson from 'apidata/investor-relation.json'
+import financialCalendarJson from 'apidata/investor-relations-financial-calendars.json'
 
 const fetchCmsData = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/investor-relation`)
+  const data = await res.json()
+  return data
+}
+
+const fetchFcData = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/investor-relations-financial-calendars`)
   const data = await res.json()
   return data
 }
@@ -17,11 +24,38 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
   return {
     heroBanner: {
       description: g('description') !== null ? g('description') : '',
-      image: '/images/asset-management/banner.png',
-      mobileImage: '/images/asset-management/mobile-banner.png',
+      image: '/images/investor-relations/banner.jpg',
+      mobileImage: '/images/investor-relations/mobile-banner.jpg',
       label: '',
     },
   }
+}
+
+const fcData = (fcData: any, locale: string | undefined = 'en') => {
+  const getKey = (keyWithoutLang: string) => `${`${keyWithoutLang}_${locale}`}`
+
+
+  return fcData
+    .sort((a: any, b: any) => a.attributes.date.localeCompare(b.attributes.date))
+    .map(({ attributes: press }: any) => ({
+      year: +press.date.split('-')[0],
+      post: {
+        date: press.date,
+        title: press[getKey('title')]
+      },
+    }))
+    .reduce((acc: any, curr: any) => {
+      const last = acc[acc.length - 1]
+      if (last && last.year === curr.year) {
+        last.posts.push(curr.post)
+      } else {
+        acc.push({ year: curr.year, posts: [curr.post] })
+      }
+      return acc
+    }, []) as {
+      year: number
+      posts: { date: string; title: string; }[]
+    }[]
 }
 
 // Add get report here if seo is needed
@@ -30,19 +64,21 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const useLocalCms = process.env.USE_LOCAL_CMS_DATA === 'true'
 
   const pageData = useLocalCms ? investorRelationJson : await fetchCmsData()
+  const datesData = useLocalCms ? financialCalendarJson : await fetchFcData()
 
   return {
     props: {
       k: massageData(pageData, locale),
+      fc: fcData(datesData.data, locale),
       ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }
 }
 
-const FinCalendarPage = (props: { k: any }) => {
+const FinCalendarPage = (props: { k: any, fc: any }) => {
   return (
     <InvestorLayout k={props.k} tabType={TABS.financial_calendar}>
-      <PageFinancialCalendar />
+      <PageFinancialCalendar fc={props.fc} />
     </InvestorLayout>
   )
 }

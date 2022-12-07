@@ -16,6 +16,7 @@ phases:
         EMAIL_PASS="$EMAIL_PASS"
         USE_LOCAL_CMS_DATA="$USE_LOCAL_CMS_DATA"
         CMS_API_ENDPOINT="$CMS_API_ENDPOINT"
+        ENQUIRY_RECIPIENT_EMAIL="$ENQUIRY_RECIPIENT_EMAIL"
         EOT
       - |
         cat <<EOT >> "./corp_site"

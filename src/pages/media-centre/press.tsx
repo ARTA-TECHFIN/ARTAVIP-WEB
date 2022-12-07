@@ -19,7 +19,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
   const { cms } = props
-  const [openYear, setOpenYear] = useState(cms.pressPosts && cms.pressPosts[0].year || 2022)
+  const [openYear, setOpenYear] = useState(cms.pressPosts && cms.pressPosts.sort((a:any, b:any) => b.year - a.year)[0].year || 2022)
 
   const setOpenYearFunc = (year: number) => {
     if (year == openYear) {

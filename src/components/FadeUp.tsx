@@ -17,7 +17,7 @@ export function FadeUp({ children, className, startPos = 75 }: Props) {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ref.current,
-          start: `top ${window.innerWidth > 767? startPos : 80}%`,
+          start: `top ${window.innerWidth > 767? startPos : 95}%`,
           onEnter: () => {
             setIsActive(() => true);
           },

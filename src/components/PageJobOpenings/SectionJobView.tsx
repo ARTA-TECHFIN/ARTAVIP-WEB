@@ -53,7 +53,7 @@ const SectionJobView = ({ k }: { k: jobDetailsT }) => {
               href={`${links.joinUs}#job-opening`}
               className="mt-4 border-arta-sand-100 text-arta-sand-100"
             >
-              {t("join_us.view_other")}
+              {t("join_us.back")}
             </ButtonAnimated>
           </div>
         )

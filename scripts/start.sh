@@ -5,8 +5,8 @@ echo ""
 
 echo "Restart Nginx"
 sudo rm -rf /etc/nginx/sites-enabled/*
-sudo cp /srv/www/corp_site/current/nginx/corp_site /etc/nginx/sites-available/corp_site
-sudo rm -rf /srv/www/corp_site/current/nginx
+sudo cp /srv/www/corp_site/current/corp_site /etc/nginx/sites-available/corp_site
+sudo rm -rf /srv/www/corp_site/current/corp_site
 sudo ln -sfn /etc/nginx/sites-available/corp_site /etc/nginx/sites-enabled/corp_site
 sudo service nginx restart
 echo "Done"

@@ -13,7 +13,7 @@ const Disclaimer = () => {
     }
   }
   return (
-    <StaticLayout cms={cms} hideFooter={true} hideMenu={true}>
+    <StaticLayout cms={cms} hideFooter={true} hideMenu={true} seo={{title: "404 not found", description: "", keywords: ""}}>
       <div className="arta-container mx-auto mt-8">
         <div className="mt-4 bg-white p-6 shadow-blogPost md:p-12">
           <div className={`blog-content mt-6 ${textClass.body_regular_verah} text-black`}>

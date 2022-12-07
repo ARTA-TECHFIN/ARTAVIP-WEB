@@ -39,11 +39,14 @@ const PressPost = (props: {
   const { cms, post } = props
   const { t } = useTranslation('common')
 
-  console.log(post)
-  console.log(cms)
-
   return (
-    <MediaLayout cms={cms}>
+    <MediaLayout cms={cms} seo={
+      {
+        title: post.title,
+        description: t("page_description.press_release"),
+        keywords: t("page_keywords.press_release")
+      }
+    }>
       <div className="arta-container mx-auto mt-8">
         <Link
           className={`flex cursor-pointer items-center underline ${textClass.body_regular_verah}`}

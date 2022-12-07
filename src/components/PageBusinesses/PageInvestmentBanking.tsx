@@ -12,7 +12,11 @@ const PageInvestmentBanking: FC<{ k: any, locale: string }> = ({ k, locale }) =>
 
   return (
     <>
-      <Seo title={t("page_title.investment_banking")} />
+      <Seo
+        title={t("page_title.investment_banking")}
+        description={t("page_description.investment_banking")}
+        keywords={t("page_keywords.investment_banking")}
+      />
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner

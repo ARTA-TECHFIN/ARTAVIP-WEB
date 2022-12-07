@@ -24,18 +24,15 @@ const massageData = (pageData: any, leadershipData: any, locale: string | undefi
 
   return {
     heroBanner: {
-      title: 'About Us',
       description: g('about_us_description') !== null ? g('about_us_description') : '',
       image: '/images/about/banner.jpg',
       mobileImage: '/images/about/mobile-banner.png',
     },
     mission: {
-      title: 'Vision & Mission',
       subtitle1: g('vision_mission_line_1'),
       subtitle2: g('vision_mission_line_2'),
     },
     culture: {
-      title: 'Culture & Values',
       subtitle1: g('culture_value_description'),
       sectionTitle: g('culture_value_subtitle'),
       // prettier-ignore
@@ -49,7 +46,6 @@ const massageData = (pageData: any, leadershipData: any, locale: string | undefi
       leaderList: leadershipData.data.sort((a:any, b:any) => a.attributes.priority - b.attributes.priority),
     },
     techFin: {
-      title: 'What is TechFin',
       subtitle: g('techfin_title'),
       section1Title: g('techfin_subtitle_1'),
       section1Body: g('techfin_content_1'),
@@ -57,7 +53,6 @@ const massageData = (pageData: any, leadershipData: any, locale: string | undefi
       section2Body: g('techfin_content_2'),
     },
     ecosystem: {
-      title: 'Our Ecosystem',
       subtitle: `Supported by ARTA TechFin’s major shareholder, we work closely with our affiliates within the ecosystem, which comprises our clients, shareholders, business partners and investee companies, to build an inter-connected network that creates value for all.`,
       itemList: [
         { title: g('our_ecosystem_1'), Component: eco_icon1 },
@@ -71,7 +66,6 @@ const massageData = (pageData: any, leadershipData: any, locale: string | undefi
       ],
     },
     techFinVsFinTech: {
-      title: 'TechFin vs FinTech',
       subtitle: g('techfin_vs_fintech_description'),
       techFinTitle: g('techfin_vs_fintech_1_title'),
       techFinBody: g('techfin_vs_fintech_1_content'),

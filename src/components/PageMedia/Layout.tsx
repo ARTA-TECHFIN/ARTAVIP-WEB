@@ -16,9 +16,9 @@ const TABS = {
 
 type tabsT = keyof typeof TABS
 
-const Layout = (props: { cms: any; children: React.ReactNode; tabType?: tabsT }) => {
+const Layout = (props: { seo: any; cms: any; children: React.ReactNode; tabType?: tabsT }) => {
   const { t } = useTranslation('common')
-  const { cms, children } = props
+  const { seo, cms, children } = props
 
   const tabInfoMap = {
     [TABS.Blog]: { title: t('page_title.arta_blog'), link: links.mediaBlog, value: t('page_title.arta_blog') },
@@ -29,7 +29,11 @@ const Layout = (props: { cms: any; children: React.ReactNode; tabType?: tabsT })
 
   return (
     <>
-      <Seo />
+      <Seo
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
+      />
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-eggshell-100 pb-12 text-arta-sand-100 md:pb-[150px]">
         <HeroBanner

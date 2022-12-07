@@ -1,6 +1,7 @@
 {
   "site_title": "Arta TechFin",
   "page_title": {
+    "home": "Home",
     "about_us": "About Us",
     "our_businesses": "Our Businesses",
     "investor_relations": "Investor Relations",
@@ -16,6 +17,40 @@
     "artazine": "Artazine Web3 Media",
     "arta_blog": "Arta Blog",
     "press_release": "Press Release"
+  },
+  "page_description": {
+    "home": "ARTA TechFin (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology.",
+    "about_us": "ARTA TechFin (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology.",
+    "investor_relations": "Investor Relations - ARTA TechFin (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology.",
+    "media_centre": "Media Centre - ARTA TechFin (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology.",
+    "join_us": "If you think this is the right place for you to be your true self, click on the links today. Join us.",
+    "contact_us": "Contact Us - If you have any questions or comment, please click the following button and complete the form.",
+    "disclaimer": "All information contained in this website is provided for reference only and is subject to change without notice.",
+    "privacy_policy": "This Privacy Policy Statement outlines ARTA TechFin’s practices and the choices you have concerning the collection and use of your personal data. ",
+    "asset_management": "Our Asset Management division provides provide professional investment management and advisory primarily to institutional clients and family offices.",
+    "investment_banking": "Our Investment Banking division offers a broad range of investment banking products and services.",
+    "insurance_brokerage": "Our Insurance Brokerage division offers all types of life and general insurance products, tailor-made insurance services and risk solutions.",
+    "global_markets": "Our Securities Brokerage division provides clients with an all-in-one platform and a new experience in traditional finance.",
+    "artazine": "Artazine delivers the latest news, analysis and interviews on art, culture, crypto, NFT, Metaverse, and gaming trends and happenings.",
+    "arta_blog": "ARTA Blog - ARTA TechFin (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology.",
+    "press_release": "Press Release - ARTA TechFin (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology."
+  },
+  "page_keywords": {
+    "home": "fintech, techfin, blockchain, digital asset, virtual asset, Adrian Cheng, web3, tokenization, security token, STO, custodian, NFT, asset management, investment banking, global market, insurance, trading, prime services, prime brokerage, wallet, Arta, Arta Techfin, blockfi, private bank, custodian wallet, stocks, technology, HKMA, regulated custodian, licensed techfin, Ethereum, bitcoin, solana, digital assets, Arta Techfin corporation ltd, K11, HK fintech",
+    "about_us": "fintech, techfin, blockchain, digital asset, virtual asset, Adrian Cheng, web3, tokenization, security token, STO, custodian, NFT, asset management, investment banking, global market, insurance, trading, prime services, prime brokerage, wallet, Arta, Arta Techfin, blockfi, private bank, custodian wallet, stocks, technology, HKMA, regulated custodian, licensed techfin, Ethereum, bitcoin, solana, digital assets, Arta Techfin corporation ltd, K11, HK fintech",
+    "investor_relations": "fintech, techfin, blockchain, digital asset, virtual asset, Adrian Cheng, web3, tokenization, security token, STO, custodian, NFT, asset management, investment banking, global market, insurance, trading, prime services, prime brokerage, wallet",
+    "media_centre": "fintech, techfin, blockchain, digital asset, virtual asset, Adrian Cheng, web3, tokenization, security token, STO, custodian, NFT, asset management, investment banking, global market, insurance, trading, prime services, prime brokerage, wallet",
+    "join_us": "fintech, techfin, blockchain, digital asset, virtual asset, Adrian Cheng, web3, tokenization, security token, STO, custodian, NFT, asset management, investment banking, global market, insurance, trading, prime services, prime brokerage, wallet",
+    "contact_us": "fintech, techfin, blockchain, digital asset, virtual asset, Adrian Cheng, web3, tokenization, security token, STO, custodian, NFT, asset management, investment banking, global market, insurance, trading, prime services, prime brokerage, wallet",
+    "disclaimer": "fintech, techfin, blockchain, digital asset, virtual asset, Adrian Cheng, web3, tokenization, security token, STO, custodian, NFT, asset management, investment banking, global market, insurance, trading, prime services, prime brokerage, wallet",
+    "privacy_policy": "fintech, techfin, blockchain, digital asset, virtual asset, Adrian Cheng, web3, tokenization, security token, STO, custodian, NFT, asset management, investment banking, global market, insurance, trading, prime services, prime brokerage, wallet",
+    "asset_management": "virtual asset, traditional asset, digital asset, custodian, custody, wallet, investment, fof, fund of funds, asset management, family office",
+    "investment_banking": "invest, equities, credits, futures, options, securitized product, virtual asset, hedge, STO, security tokens, equity token, asset-back token, debt token, smart contract, corporate advisiory, M&A, debt capital market, equity capital market, DCM, ECM",
+    "insurance_brokerage": "enterprise risk management, insurtech, wealthtech, wealth management, risk solutions, employee benefit, MPF, business insurance plan, virtual asset insurance, crime, d&o, directors & officers, PI, cold storage, hot storage",
+    "global_markets": "hedge fund,family office, HNWI, insitutional investor, margin financing, multi-asset, digital asset, virtual asset, delta one, structured product, capital introduction",
+    "artazine": "NFT investment, non fungible tokens, NFT marketplace, NFT art, opensea, NFT price, NFT drop, top NFT projects, crypto wallet, gas fee, play to earn game, crypto market, crypto mining, crypto trading, crypto research, mateverse news, metaverse crypto, metaverse nft, metaverse land, metaverse gaming, gamefi crypto, gamefi projects, gamefi tokenomics, web 3 metaverse, web 3.0 examples, web 3 launch date, blockchain, crypto market cap, what is nft, token, defi crypto, Ethereum, bitcoin, Solana, metamask",
+    "arta_blog": "fintech, techfin, blockchain, digital asset, virtual asset, Adrian Cheng, web3, tokenization, security token, STO, custodian, NFT, asset management, investment banking, global market, insurance, trading, prime services, prime brokerage, wallet",
+    "press_release": "fintech, techfin, blockchain, digital asset, virtual asset, Adrian Cheng, web3, tokenization, security token, STO, custodian, NFT, asset management, investment banking, global market, insurance, trading, prime services, prime brokerage, wallet"
   },
   "footer": {
     "address": "Address",

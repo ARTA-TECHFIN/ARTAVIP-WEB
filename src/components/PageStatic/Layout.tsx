@@ -4,19 +4,20 @@ import Header from 'src/components/Header/Header'
 import { textClass } from 'src/components/Text'
 import Footer from 'src/components/Footer'
 import Image from 'next/image'
-import { useTranslation } from 'next-i18next'
 import ArtaLogo from 'src/components/Svg/arta-logo'
 import Link from 'next/link'
 
 
-const Layout = (props: { cms: any; children: React.ReactNode; hideMenu?: boolean, hideFooter?: boolean }) => {
-  const { t } = useTranslation('common')
-  const { cms, children, hideFooter = false, hideMenu = false } = props
+const Layout = (props: { seo: any; cms: any; children: React.ReactNode; hideMenu?: boolean, hideFooter?: boolean }) => {
+  const { seo, cms, children, hideFooter = false, hideMenu = false } = props
   const bannerImage = useRef(null)
 
   return (
     <>
-      <Seo />
+      <Seo
+        title={seo.title}
+        description={seo.description}
+      />
       {
         hideMenu && (
           <div className="absolute arta-container text-right z-[20]">

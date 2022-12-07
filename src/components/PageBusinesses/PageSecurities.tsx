@@ -88,7 +88,11 @@ const PageSecurities: FC<{ k: any, locale: string }> = ({ k, locale }) => {
 
   return (
     <>
-      <Seo title={t("page_title.global_markets")} />
+      <Seo
+        title={t("page_title.global_markets")}
+        description={t("page_description.global_markets")}
+        keywords={t("page_keywords.global_markets")}
+      />
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner

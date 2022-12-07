@@ -4,6 +4,7 @@ import { getMediaCms, getMediaCmsT, getSlug } from 'src/domains/media'
 import { MediaLayout, MediaTABS } from 'src/components/PageMedia/Layout'
 import Link from 'next/link'
 import { dateFormat } from 'utils/date'
+import { useTranslation } from 'next-i18next'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { locale } = context
@@ -18,8 +19,15 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
   const { cms } = props
+  const { t } = useTranslation()
   return (
-    <MediaLayout cms={cms} tabType={MediaTABS.Blog}>
+    <MediaLayout cms={cms} tabType={MediaTABS.Blog} seo={
+      {
+        title: t("page_title.arta_blog"),
+        description: t("page_description.arta_blog"),
+        keywords: t("page_keywords.arta_blog"),
+      }
+    }>
       <div className="arta-container mx-auto">
         <div className="grid grid-cols-12 gap-4 md:gap-8">
           {cms.blogPosts.map((post:any, index: number) => (

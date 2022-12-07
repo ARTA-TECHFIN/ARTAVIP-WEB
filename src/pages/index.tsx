@@ -58,7 +58,10 @@ const Home: NextPage = ({k}: any) => {
 
   return (
     <>
-      <Seo title={t('site_title')} />
+      <Seo
+        title={`${t('page_title.home')} | ${t('site_title')}`}
+        description={t('page_description.home')}
+      />
       <Header fontSize={'1em'} />
       <main>
         <Slides k={k} setShowWechatPopup={setShowWechatPopup} />

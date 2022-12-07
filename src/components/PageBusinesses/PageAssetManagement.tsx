@@ -12,7 +12,11 @@ const PageAssetManagementPage: FC<{ k: any, locale: string }> = ({ k, locale }) 
 
   return (
     <>
-      <Seo title={t("page_title.asset_management")} />
+      <Seo
+        title={t("page_title.asset_management")}
+        description={t("page_description.asset_management")}
+        keywords={t("page_keywords.asset_management")}
+      />
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner

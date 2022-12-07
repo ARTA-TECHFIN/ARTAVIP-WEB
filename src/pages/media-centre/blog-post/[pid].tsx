@@ -30,7 +30,13 @@ const Post = (props: { cms: getMediaCmsT; blog: getMediaCmsT['blogPosts'][number
   const { t } = useTranslation('common')
 
   return (
-    <MediaLayout cms={cms}>
+    <MediaLayout cms={cms} seo={
+      {
+        title: blog.title,
+        description: t("page_description.arta_blog"),
+        keywords: t("page_keywords.arta_blog")
+      }
+    }>
       <div className="arta-container mx-auto mt-8">
         <Link
           className={`flex cursor-pointer items-center underline ${textClass.body_regular_verah}`}

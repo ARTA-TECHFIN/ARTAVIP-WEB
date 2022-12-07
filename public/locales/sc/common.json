@@ -119,7 +119,8 @@
     "contact_number": "电话",
     "thanks_title": "感谢您的查询！",
     "thanks_message": "我们已收到您的查询，将会尽快与您联络。",
-    "scan": "扫描二维码，关注我们！"
+    "scan": "扫描二维码，关注我们！",
+    "brief_introduction": "个人简介"
   },
   "media": {
     "back_blog": "返回公司网志主页",
@@ -151,5 +152,12 @@
     "hkex_stock_code": "香港联交所股份代号",
     "listing_date": "上市日期",
     "share_registrar": "香港股份过户登记处"
+  },
+  "warning": {
+    "required": "必填字段",
+    "invalid_format": "无效格式",
+    "required_pdf": "必需 PDF/DOC 文件",
+    "file_size_5mb": "最大文件大小 5MB",
+    "word_count_500": "不能超过 500 个字符"
   }
 }

@@ -26,7 +26,7 @@ const TOPIC_TYPES = {
   other: 'Other',
 }
 
-const useEnquiryForm = () => {
+const useEnquiryForm = (t: any) => {
   const {
     handleSubmit,
     formState: { errors },
@@ -35,18 +35,18 @@ const useEnquiryForm = () => {
     resolver: (data) => {
       const errors: Partial<Record<keyof FormValues, { message: string }>> = {}
 
-      if (!data.name) errors.name = { message: 'Please enter your name' }
-      if (!data.email) errors.email = { message: 'Please enter your email address' }
+      if (!data.name) errors.name = { message: t("warning.required") }
+      if (!data.email) errors.email = { message: t("warning.required") }
       else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(data.email))
-        errors.email = { message: 'Please enter a valid email address' }
-      if (!data.message) errors.message = { message: 'Please enter your message' }
+        errors.email = { message: t("warning.invalid_format") }
+      if (!data.message) errors.message = { message: t("warning.required") }
       else if (data.message.length > 500)
-        errors.message = { message: 'Please enter less than 500 characters' }
+        errors.message = { message: t("warning.word_count_500") }
 
       if (data.topic === TOPIC_TYPES.media) {
-        if (!data.company) errors.company = { message: 'Please enter your company name' }
-        if (!data.jobTitle) errors.jobTitle = { message: 'Please enter your job title' }
-        if (!data.phone) errors.phone = { message: 'Please enter your contact number' }
+        if (!data.company) errors.company = { message: t("warning.required") }
+        if (!data.jobTitle) errors.jobTitle = { message: t("warning.required") }
+        if (!data.phone) errors.phone = { message: t("warning.required") }
       }
 
       return { values: data, errors }
@@ -71,8 +71,8 @@ const useEnquiryForm = () => {
 }
 
 const EnquiryForm = () => {
-  const { register, errors, watch, onSubmit, submitStatus } = useEnquiryForm()
   const { t } = useTranslation('common')
+  const { register, errors, watch, onSubmit, submitStatus } = useEnquiryForm(t)
 
   const TOPIC_TYPES = {
     default: '',
@@ -94,7 +94,7 @@ const EnquiryForm = () => {
     question_jobTitle: t('contact_us.job_title'),
     question_email: t('contact_us.email_address'),
     question_phone: t('contact_us.contact_number'),
-    question_message: 'Brief Introduction',
+    question_message: t('contact_us.brief_introduction'),
     question_message_hints: t('contact_us.max_500_characters'),
     question_submit: t('contact_us.submit'),
 
@@ -179,6 +179,9 @@ const EnquiryForm = () => {
                       className="w-full border-arta-sand-100 text-arta-sand-100 md:w-[120px]"
                     >
                       {r.question_submit}
+                      {
+                        submitStatus.isLoading && <img className="absolute right-2 top-[7px] w-6 h-6" src="/images/loading.svg" />
+                      }
                     </ButtonAnimated>
                   </div>
                 </>

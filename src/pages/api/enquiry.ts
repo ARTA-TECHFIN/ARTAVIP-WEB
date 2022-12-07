@@ -65,10 +65,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       } else {
         const html = `
   <p>Name: ${sensitize(reqMessage.name)}</p>
-  <p>Company Name: ${sensitize(reqMessage.company) || '--'}</p>
-  <p>Job Title: ${sensitize(reqMessage.jobTitle) || '--'}</p>
+  ${sensitize(reqMessage.company) ? `<p>Company Name: ${sensitize(reqMessage.company)}</p>` : ''}
+  ${sensitize(reqMessage.jobTitle) ? `<p>Job Title: ${sensitize(reqMessage.jobTitle)}</p>` : ''}
   <p>Email Address: ${sensitize(reqMessage.email)}</p>
-  <p>Contact Number: ${sensitize(reqMessage.phone) || '--'}</p>
+  ${sensitize(reqMessage.phone) ? `<p>Contact Number: ${sensitize(reqMessage.phone)}</p>` : ''}
   <p>Enquiry Details: ${sensitize(reqMessage.message)}</p>`
 
         const message = {

@@ -1,6 +1,8 @@
+import Link from 'next/link'
 import React, { FC, useState } from 'react'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'
 import { ButtonAnimated } from '../ButtonAnimated'
+import { links } from 'src/domains/links'
 
 interface propsT {
   item: {
@@ -29,17 +31,28 @@ const MobileNavbar: FC<propsT> = ({ item, index, expand, setActiveMobileNavItem 
               setActiveMobileNavItem(index)
             }}
           >
-            <span className="decoration-[#E5C183] underline-offset-[15px] transition group-hover:underline">
-              {item.pageName}
-            </span>
-            {expand ? (
-              <ChevronUpIcon className="mt-1 ml-1  h-4 w-4 group-hover:text-[#E5C183]" />
-            ) : (
-              <ChevronDownIcon className="mt-1 ml-1  h-4 w-4 group-hover:text-[#E5C183]" />
-            )}
+            {
+              item.href == links.contact && <Link href={links.contact} className="decoration-[#E5C183] underline-offset-[15px] transition group-hover:underline">{item.pageName}</Link>
+            }
+
+            {
+              item.href !== links.contact && (
+                <>
+                  <span className="decoration-[#E5C183] underline-offset-[15px] transition group-hover:underline">
+                    {item.pageName}
+                  </span>
+                  {expand ? (
+                    <ChevronUpIcon className="mt-1 ml-1  h-4 w-4 group-hover:text-[#E5C183]" />
+                  ) : (
+                    <ChevronDownIcon className="mt-1 ml-1  h-4 w-4 group-hover:text-[#E5C183]" />
+                  )}
+                </>
+              )
+            }
+            
           </li>
         </ul>
-        {expand && (
+        {expand && item.href !== links.contact && (
           <div
             className={`${
               expand && 'scale-y-100 transform opacity-100 transition delay-100'

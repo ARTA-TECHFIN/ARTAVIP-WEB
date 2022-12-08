@@ -63,7 +63,7 @@ const useApplyForm = (t: any) => {
     mutationFn: async (data: any) => {
       const response = await fetch('/api/enquiry', {
         method: 'POST',
-        body: JSON.stringify({ ...data }),
+        body: JSON.stringify({ ...data, enquiryType: 'job_apply' }),
       })
       if (!response.ok) throw new Error(`Network response was not ok: ${response.statusText}  `)
     },
@@ -214,9 +214,12 @@ const ApplyForm = (props: { job: jobDetailsT; setShowSuccess: (isSuccess: boolea
             {submitStatus.error ? <ErrorMessage error={submitStatus.error} /> : null}
             <ButtonAnimated
               extraProps={{ type: 'submit' }}
-              className="w-full border-arta-sand-100 text-arta-sand-100 md:w-[120px]"
+              className={`w-full border-arta-sand-100 text-arta-sand-100 md:w-[120px] ${submitStatus.isLoading && 'pointer-events-none'}`}
             >
               {t('join_us.submit')}
+              {
+                submitStatus.isLoading && <img className="absolute right-2 top-[7px] w-6 h-6" src="/images/loading.svg" />
+              }
             </ButtonAnimated>
           </div>
         </div>

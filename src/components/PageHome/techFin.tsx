@@ -256,28 +256,29 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
   const handleTouchEnd = (event: any) => {
     // console.log(event.changedTouches[0].clientY )
     throttle(() => {
-      console.log(currentSectionId)
-      if (event.changedTouches[0].clientY > touchStart) {
-        // Up
-        if (currentSectionId === 1) {
-          console.log("1")
-          // From 1 to 0
-          setTriggerSection(0)
+      if (Math.abs(event.changedTouches[0].clientY - touchStart) > 40) {
+        if (event.changedTouches[0].clientY > touchStart) {
+          // Up
+          if (currentSectionId === 1) {
+            console.log("1")
+            // From 1 to 0
+            setTriggerSection(0)
+          } else {
+            console.log("2")
+            // From 1.5 to 1
+            setCurrentSectionById(1)
+          }
         } else {
-          console.log("2")
-          // From 1.5 to 1
-          setCurrentSectionById(1)
-        }
-      } else {
-        // Down
-        if (currentSectionId === 1) {
-          console.log("3")
-          // From 1 to 1.5
-          setCurrentSectionById(1.5)
-        } else {
-          console.log("4")
-          // From 1.5 to 2
-          setTriggerSection(3)
+          // Down
+          if (currentSectionId === 1) {
+            console.log("3")
+            // From 1 to 1.5
+            setCurrentSectionById(1.5)
+          } else {
+            console.log("4")
+            // From 1.5 to 2
+            setTriggerSection(3)
+          }
         }
       }
     }, 2000)
@@ -362,7 +363,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
         </div>
         <div
           ref={businessRef}
-          className={cn("absolute bottom-[22em] top-[18em] z-2 transform text-white opacity-0 transition duration-1000 md:top-[12em] lg:left-[6em] lg:left-[4em] lg:bottom-auto lg:top-[19.5em] lg:top-1/2 lg:-translate-y-1/2", currentSection == "10" && "!opacity-0")}
+          className={cn("absolute bottom-[22em] top-[24em] sm:top-[18em] z-2 transform text-white opacity-0 transition duration-1000 md:top-[12em] lg:left-[6em] lg:left-[4em] lg:bottom-auto lg:top-[19.5em] lg:top-1/2 lg:-translate-y-1/2", currentSection == "10" && "!opacity-0")}
         >
           <h1 className="font-verah mt-0 ml-[0.9em] text-left text-[6em] tracking-[0.06em] md:ml-[0.6em] lg:ml-0 lg:text-[3.4em]">
             {t('page_title.our_businesses')}

@@ -113,7 +113,7 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
         Your browser does not support the video tag.
       </video>
       {/* top-[20%] left-0   sm:top-[40%] lg:left-[10%] xl:left-[20%] xl:mx-auto */}
-      <div className="aboluste h-[40vh] w-full top-0 left-0 home-background-gradient z-1 lg:hidden" />
+      <div className="aboluste h-[50vh] w-full top-0 left-0 home-background-gradient z-1 lg:hidden" />
       <div className="z-1">
         <div className="animatedSpotLight1 mix-blend-lighten w-[100vw] h-[100vw] absolute blur-[35px]" />
         <div className="animatedSpotLight2 mix-blend-lighten w-[100vw] h-[100vw] absolute blur-[35px]" />

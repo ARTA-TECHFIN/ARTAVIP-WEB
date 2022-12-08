@@ -176,7 +176,6 @@
   opacity: 0.4;
 	top: 20vh;
 	left: 50vh;
-  animation: gradientSpot1 55s ease infinite;
 }
 
 .animatedSpotLight2 {
@@ -184,7 +183,15 @@
   transform-origin: -2%;
 	top: 20vh;
 	left: 50vh;
-  animation: gradientSpot2 75s ease infinite;
+}
+
+@media (min-width: 768px) {
+  .animatedSpotLight1 {
+    animation: gradientSpot1 55s ease infinite;
+  }
+  .animatedSpotLight2 {
+    animation: gradientSpot2 75s ease infinite;
+  }
 }
 
 @keyframes gradientSpot1 {

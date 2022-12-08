@@ -11,12 +11,12 @@ export const Slides = ({k, setShowWechatPopup}: any) => {
   const [currentSectionId, setCurrentSectionId] = useState<number>(0)
 
   const slideLeaveEvent = (origin:any, destination:any, direction:any) => {
+    console.log("slideLeaveEvent")
     if (origin.index === 2 && destination.index === 1) {
       setCurrentSectionById(1.5)
     } else {
       setCurrentSectionById(destination.index)
     }
-
     setDisableScroll(destination.index === 1)
   }
 
@@ -34,7 +34,9 @@ export const Slides = ({k, setShowWechatPopup}: any) => {
       verticalCentered= {false}
       sectionsColor={['#543317', '#000000', '#653711']}
       render={({ state, fullpageApi }) => {
-        if (disableScroll) fullpageApi.setAllowScrolling(false)
+        fullpageApi?.setAllowScrolling(!disableScroll)
+
+        console.log(currentSectionId)
 
         return (
           <>
@@ -50,7 +52,8 @@ export const Slides = ({k, setShowWechatPopup}: any) => {
                   setTriggerSection={async(id:number) => {
                     setDisableScroll(false)
                     fullpageApi.setAllowScrolling(true)
-                    fullpageApi.moveTo(id, 0)
+                    if(id == 0) fullpageApi.moveSectionUp()
+                    if(id == 3) fullpageApi.moveSectionDown()
                   }}
                 />
               </section>

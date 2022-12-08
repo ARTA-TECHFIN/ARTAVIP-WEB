@@ -49,9 +49,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       if (enquiryType === ENQUIRY_TYPE.job_apply) {
         const { cvUpload, cvUploadName, ...bodyObj } = reqMessage
 
+        delete bodyObj.acceptedTerms
+        delete bodyObj.enquiryType
+
         const html = Object.entries(bodyObj)
           .map(
-            ([key, value]) => `<p>${toHumanCase(key)}: ${sensitize(value as string) || '--'}</p>`
+            ([key, value]) => {
+              console.log(key)
+              return `<p>${toHumanCase(key)}: ${sensitize(value as string) || '--'}</p>`
+            }
           )
           .join('\n')
 

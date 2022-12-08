@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 import mission_bg from './images/aboutus_vision_bg.jpg'
 import { textClass } from 'src/components/Text'
-import { PageAboutCmsT } from 'src/pages/about'
+import { PageAboutCmsT } from 'src/pages/about-us'
 import { useTranslation } from 'next-i18next'
 
 export const SectionMission = (props: { k: PageAboutCmsT }) => {

@@ -6,7 +6,7 @@ import { IconListItemArrow } from 'src/components/Svg/Icon'
 import { Hr } from 'src/components/Hr'
 import { gsap } from 'gsap'
 import { FadeUp } from 'src/components/FadeUp'
-import { PageAboutCmsT } from 'src/pages/about'
+import { PageAboutCmsT } from 'src/pages/about-us'
 import { useTranslation } from 'next-i18next'
 
 export const SectionCulture = (props: { k: PageAboutCmsT }) => {

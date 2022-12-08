@@ -3,7 +3,7 @@ import leadership_bg from './images/leadership_bg.png'
 import { textClass } from 'src/components/Text'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
-import { PageAboutCmsT } from 'src/pages/about'
+import { PageAboutCmsT } from 'src/pages/about-us'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
 

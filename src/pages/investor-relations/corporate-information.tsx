@@ -3,6 +3,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import InvestorLayout, { TABS } from 'src/components/PageInvestor/InvestorLayout'
 import PageCorporateInformation from 'src/components/PageInvestor/PageCorporateInformation'
 import investorRelationJson from 'apidata/investor-relation.json'
+import { useTranslation } from 'next-i18next'
+import { t } from 'i18next'
 
 const fetchCmsData = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/investor-relation`)
@@ -59,8 +61,18 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 }
 
 const InvestorPage = (props: { k: any }) => {
+  const { t } = useTranslation()
+
   return (
-    <InvestorLayout k={props.k} tabType={TABS.corporate_information}>
+    <InvestorLayout
+      k={props.k}
+      tabType={TABS.corporate_information}
+      seo={{
+        title: t("investor_relations.corporate_information"),
+        description: t("page_description.investor_relations"),
+        keywords: t("page_keywords.investor_relations")
+      }}
+    >
       <PageCorporateInformation k={props.k} />
     </InvestorLayout>
   )

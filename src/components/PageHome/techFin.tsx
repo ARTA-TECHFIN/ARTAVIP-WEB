@@ -362,9 +362,9 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
         </div>
         <div
           ref={businessRef}
-          className={cn("absolute bottom-[22em] top-[25em] z-2 transform text-white opacity-0 transition duration-1000 md:top-[16em] lg:left-[6em] lg:left-[4em] lg:bottom-auto lg:top-[19.5em] lg:top-1/2 lg:-translate-y-1/2", currentSection == "10" && "!opacity-0")}
+          className={cn("absolute bottom-[22em] top-[18em] z-2 transform text-white opacity-0 transition duration-1000 md:top-[12em] lg:left-[6em] lg:left-[4em] lg:bottom-auto lg:top-[19.5em] lg:top-1/2 lg:-translate-y-1/2", currentSection == "10" && "!opacity-0")}
         >
-          <h1 className="font-verah mt-[2em] sm:mt-0 ml-[0.9em] text-left text-[6em] tracking-[0.06em] md:ml-[0.6em] lg:ml-0 lg:text-[3.4em]">
+          <h1 className="font-verah mt-0 ml-[0.9em] text-left text-[6em] tracking-[0.06em] md:ml-[0.6em] lg:ml-0 lg:text-[3.4em]">
             {t('page_title.our_businesses')}
           </h1>
           <p className="ml-[1.6em] max-w-[30em] text-left font-Neue text-[3.6em] md:ml-[2em] lg:ml-0 md:text-[1.8em] lg:text-[1em]">
@@ -418,9 +418,9 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
     >
       <div
         className={cn(
-          index === selectedBusiness && 'innerShadow !opacity-100 lg:h-[12em] lg:w-[12em] lg:text-[0.95em]',
-          index !== selectedBusiness && 'lg:h-[10em] lg:w-[10em]',
-          `innerShadowMobile mx-auto flex h-[14em] w-[14em] items-center justify-center self-center rounded-full border border-white text-[3.4em] opacity-70 transition-all will-change-transform md:h-[10em] md:w-[10em] md:text-[2em] lg:text-[0.85em]`
+          index === selectedBusiness && 'innerShadow !opacity-100 lg:h-[13em] lg:w-[13em] lg:text-[0.95em]',
+          index !== selectedBusiness && 'lg:h-[11em] lg:w-[11em]',
+          `innerShadowMobile mx-auto flex h-[12em] w-[12em] items-center justify-center self-center rounded-full border border-white text-[3em] opacity-70 transition-all will-change-transform md:h-[11em] md:w-[11em] md:text-[1.6em] lg:text-[0.85em]`
         )}
       >
         <a href={business.link}>{business.title}</a>

@@ -4,6 +4,7 @@ import InvestorLayout, { TABS } from 'src/components/PageInvestor/InvestorLayout
 import PageEsg from 'src/components/PageInvestor/PageEsg'
 import { getReportCms, reportCmsT } from 'src/domains/investor'
 import investorRelationJson from 'apidata/investor-relation.json'
+import { useTranslation } from 'next-i18next'
 
 const fetchCmsData = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/investor-relation`)
@@ -30,8 +31,17 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
 }
 
 const InvestorPage = (props: { k:any, locale: string }) => {
+  const { t } = useTranslation()
   return (
-    <InvestorLayout k={props.k} tabType={TABS.esg}>
+    <InvestorLayout
+      k={props.k}
+      tabType={TABS.esg}
+      seo={{
+        title: t("investor_relations.esg"),
+        description: t("page_description.investor_relations"),
+        keywords: t("page_keywords.investor_relations")
+      }}
+    >
       <PageEsg k={props.k} locale={props.locale} />
     </InvestorLayout>
   )

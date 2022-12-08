@@ -5,6 +5,7 @@ import PageFinancialCalendar from 'src/components/PageInvestor/PageFinancialCale
 import { getReportCms, reportCmsT } from 'src/domains/investor'
 import investorRelationJson from 'apidata/investor-relation.json'
 import financialCalendarJson from 'apidata/investor-relations-financial-calendars.json'
+import { useTranslation } from 'next-i18next'
 
 const fetchCmsData = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/investor-relation`)
@@ -76,8 +77,17 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 }
 
 const FinCalendarPage = (props: { k: any, fc: any }) => {
+  const { t } = useTranslation()
   return (
-    <InvestorLayout k={props.k} tabType={TABS.financial_calendar}>
+    <InvestorLayout
+      k={props.k}
+      tabType={TABS.financial_calendar}
+      seo={{
+        title: t("investor_relations.financial_calendar"),
+        description: t("page_description.investor_relations"),
+        keywords: t("page_keywords.investor_relations")
+      }}
+    >
       <PageFinancialCalendar fc={props.fc} />
     </InvestorLayout>
   )

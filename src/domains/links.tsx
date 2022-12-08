@@ -15,7 +15,7 @@ export const links = {
   investorListingDocuments: '/investor-relations/listing-documents',
   investorCorporateInformation: '/investor-relations/corporate-information',
   investorInterimAnnualReports: '/investor-relations/interim-annual-reports',
-  investorResultAnnouncements: '/investor-relations/result-announcements',
+  investorResultAnnouncements: '/investor-relations/results-announcements',
   investorAnnouncementsNotices: '/investor-relations/announcements-notices',
   investorFinCalendar: '/investor-relations/fin-calendar',
   investorEsg: '/investor-relations/esg',

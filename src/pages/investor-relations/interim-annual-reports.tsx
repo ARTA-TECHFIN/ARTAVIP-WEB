@@ -4,6 +4,7 @@ import InvestorLayout, { TABS } from 'src/components/PageInvestor/InvestorLayout
 import PageInterimAnnualReports from 'src/components/PageInvestor/PageInterimAnnualReports'
 import { reportCmsT } from 'src/domains/investor'
 import investorRelationJson from 'apidata/investor-relation.json'
+import { useTranslation } from 'next-i18next'
 
 const fetchCmsData = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/investor-relation`)
@@ -39,8 +40,18 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 }
 
 const InvestorPage = (props: { k: any, cms: reportCmsT }) => {
+  const { t } = useTranslation()
   return (
-    <InvestorLayout k={props.k} tabType={TABS.corporate_information} hideTab={true}>
+    <InvestorLayout
+      k={props.k}
+      tabType={TABS.corporate_information}
+      hideTab={true}
+      seo={{
+        title: t("investor_relations.interim_annual_reports"),
+        description: t("page_description.investor_relations"),
+        keywords: t("page_keywords.investor_relations")
+      }}
+    >
       <PageInterimAnnualReports />
     </InvestorLayout>
   )

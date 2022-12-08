@@ -15,31 +15,31 @@ const PageInvestorRelations: NextPage = () => {
         <ul className="col-span-full col-span-full grid grid-cols-12 sm:gap-8 gap-4 sm:mt-0 mt-4">
           <li className="md:col-span-6 col-span-12">
             <Link href={links.investorResultAnnouncements}>
-              <ReportCard title={t("join_us.results_announcements")} Icon={AnnouncementIcon} />
+              <ReportCard title={t("investor_relations.results_announcements")} Icon={AnnouncementIcon} />
             </Link>
           </li>
 
           <li className="md:col-span-6 col-span-12">
             <Link href={links.investorInterimAnnualReports}>
-              <ReportCard title={t("join_us.interim_annual_reports")} Icon={AnnouncementIcon} />
+              <ReportCard title={t("investor_relations.interim_annual_reports")} Icon={AnnouncementIcon} />
             </Link>
           </li>
 
           <li className="md:col-span-6 col-span-12">
             <Link href={links.investorAnnouncementsNotices}>
-              <ReportCard title={t("join_us.announments_noties")} Icon={ReportIcon} />
+              <ReportCard title={t("investor_relations.announments_noties")} Icon={ReportIcon} />
             </Link>
           </li>
 
           <li className="md:col-span-6 col-span-12">
             <Link href={links.investorCirculars}>
-              <ReportCard title={t("join_us.circulars")} Icon={ReportIcon} />
+              <ReportCard title={t("investor_relations.circulars")} Icon={ReportIcon} />
             </Link>
           </li>
 
           <li className="md:col-span-6 col-span-12">
             <Link href={links.investorListingDocuments}>
-              <ReportCard title={t("join_us.listing_documents")} Icon={ReportIcon} />
+              <ReportCard title={t("investor_relations.listing_documents")} Icon={ReportIcon} />
             </Link>
           </li>
         </ul>

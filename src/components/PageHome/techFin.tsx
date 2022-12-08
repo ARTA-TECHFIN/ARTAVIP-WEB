@@ -348,7 +348,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
             </p>
             <ButtonAnimated
               as="a"
-              href="/about#tech-fin"
+              href="/about-us#tech-fin"
               className="text-white"
             >
               {t("home.explore_more")}

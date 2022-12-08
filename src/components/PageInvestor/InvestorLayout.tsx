@@ -23,6 +23,7 @@ const TABS = {
 type tabsT = keyof typeof TABS
 
 type propsT = {
+  seo: any
   k: any
   cms?: reportCmsT
   tabType: tabsT
@@ -30,7 +31,7 @@ type propsT = {
   children: React.ReactNode
 }
 
-const InvestorLayout: FC<propsT> = ({ k, cms, tabType, hideTab = false, children }) => {
+const InvestorLayout: FC<propsT> = ({ seo = {}, k, cms, tabType, hideTab = false, children }) => {
   const { t } = useTranslation('common')
   const {locale} = useRouter()
   const tabInfoMap = {
@@ -60,11 +61,15 @@ const InvestorLayout: FC<propsT> = ({ k, cms, tabType, hideTab = false, children
 
   return (
     <>
-      <Seo title={t("page_title.investor_relations")} />
+      <Seo
+        title={seo.title || ''}
+        description={seo.description || ''}
+        keywords={seo.keywords || ''}
+      />
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
-          title={t("page_title.investor_relations")}
+          title={seo.title}
           description={k.heroBanner.description}
           image={k.heroBanner.image}
           mobileImage={k.heroBanner.mobileImage}

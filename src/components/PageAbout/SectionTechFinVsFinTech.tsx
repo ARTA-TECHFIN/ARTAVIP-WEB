@@ -1,5 +1,5 @@
 import { textClass } from 'src/components/Text'
-import { PageAboutCmsT } from 'src/pages/about'
+import { PageAboutCmsT } from 'src/pages/about-us'
 import { useTranslation } from 'next-i18next';
 
 export const SectionTechFinVsFinTech = (props: { k: PageAboutCmsT }) => {

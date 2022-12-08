@@ -18,7 +18,7 @@ import {
   FinTechCompaniesIcon,
   FinancialInvestmentPlatformIcon
 } from '../Svg/Icon'
-import { PageAboutCmsT } from 'src/pages/about'
+import { PageAboutCmsT } from 'src/pages/about-us'
 import { useTranslation } from 'next-i18next'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'

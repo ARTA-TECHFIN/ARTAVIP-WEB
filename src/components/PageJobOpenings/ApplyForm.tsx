@@ -8,6 +8,8 @@ import { useTranslation } from 'next-i18next'
 import { useForm } from 'react-hook-form'
 import { useMutation } from '@tanstack/react-query'
 import { jobDetailsT } from 'src/pages/job/[id]'
+import { DragDropArea, openFilePicker, toBase64 } from '../DragDropArea'
+import { ErrorMessage } from '../ErrorMessage'
 
 type formValuesT = {
   jobTitle: string
@@ -19,9 +21,10 @@ type formValuesT = {
   lastSalary: string
   expectedSalary: string
   cvUpload: string
+  cvUploadName: string
   briefIntroduction: string
 }
-const useApplyForm = (t:any) => {
+const useApplyForm = (t: any) => {
   const {
     handleSubmit,
     formState: { errors },
@@ -30,26 +33,22 @@ const useApplyForm = (t:any) => {
     resolver: (data) => {
       const errors: Partial<Record<keyof formValuesT, { message: string }>> = {}
 
-      if (!data.firstName) errors.firstName = { message: t("warning.required") }
-      if (!data.lastName) errors.lastName = { message: t("warning.required") }
-      if (!data.emailAddress) errors.emailAddress = { message: t("warning.required") }
+      if (!data.firstName) errors.firstName = { message: t('warning.required') }
+      if (!data.lastName) errors.lastName = { message: t('warning.required') }
+      if (!data.emailAddress) errors.emailAddress = { message: t('warning.required') }
       else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(data.emailAddress))
-        errors.emailAddress = { message: t("warning.invalid_format") }
-      if (!data.contactNumber)
-        errors.contactNumber = { message: t("warning.required") }
-      if (!data.lastSalary) errors.lastSalary = { message: t("warning.required") }
+        errors.emailAddress = { message: t('warning.invalid_format') }
+      if (!data.contactNumber) errors.contactNumber = { message: t('warning.required') }
+      if (!data.lastSalary) errors.lastSalary = { message: t('warning.required') }
       else if (!/^\d+$/.test(data.lastSalary))
-        errors.lastSalary = { message: t("warning.invalid_format") }
-      if (!data.expectedSalary)
-        errors.expectedSalary = { message: t("warning.required") }
+        errors.lastSalary = { message: t('warning.invalid_format') }
+      if (!data.expectedSalary) errors.expectedSalary = { message: t('warning.required') }
       else if (!/^\d+$/.test(data.expectedSalary))
-        errors.expectedSalary = { message: t("warning.invalid_format") }
-      // TODO: add validation for cvUpload
-      // if (!data.cvUpload) errors.cvUpload = { message: 'Please upload your CV' }
-      if (!data.briefIntroduction)
-        errors.briefIntroduction = { message: t("warning.required") }
+        errors.expectedSalary = { message: t('warning.invalid_format') }
+      if (!data.cvUpload) errors.cvUpload = { message: 'Please upload your CV' }
+      if (!data.briefIntroduction) errors.briefIntroduction = { message: t('warning.required') }
       else if (data.briefIntroduction.length > 500)
-        errors.briefIntroduction = { message: t("warning.word_count_500") }
+        errors.briefIntroduction = { message: t('warning.word_count_500') }
 
       return { values: data, errors }
     },
@@ -61,7 +60,7 @@ const useApplyForm = (t:any) => {
         method: 'POST',
         body: JSON.stringify({ ...data, enquiryType: 'job_apply' }),
       })
-      if (!response.ok) throw new Error('Network response was not ok')
+      if (!response.ok) throw new Error(`Network response was not ok: ${response.statusText}  `)
     },
   })
 
@@ -70,14 +69,30 @@ const useApplyForm = (t:any) => {
   return { onSubmit, submitStatus, ...formStatus, errors }
 }
 
-const ApplyForm = (props: { job: jobDetailsT, setShowSuccess: (isSuccess: boolean) => void }) => {
+const ApplyForm = (props: { job: jobDetailsT; setShowSuccess: (isSuccess: boolean) => void }) => {
   const { job, setShowSuccess } = props
   const { t } = useTranslation('common')
 
-  const { onSubmit, submitStatus, errors, register } = useApplyForm(t)
+  const { onSubmit, submitStatus, errors, register, watch, setValue, trigger } = useApplyForm(t)
 
-  if (submitStatus.isSuccess) {
-    setShowSuccess(true)
+  if (submitStatus.isSuccess) setShowSuccess(true)
+
+  const cvUploadName = watch('cvUploadName')
+  const onFileChange = async (files: File[]) => {
+    if (files.length > 0) {
+      const file = files[0]
+      const base64 = await toBase64(file)
+      console.log('base64', base64)
+      setValue('cvUpload', base64)
+      trigger('cvUpload')
+      setValue('cvUploadName', file.name)
+      trigger('cvUploadName')
+    } else {
+      setValue('cvUpload', '')
+      trigger('cvUpload')
+      setValue('cvUploadName', '')
+      trigger('cvUploadName')
+    }
   }
 
   return (
@@ -87,7 +102,7 @@ const ApplyForm = (props: { job: jobDetailsT, setShowSuccess: (isSuccess: boolea
           {/* May add more job details here */}
           <InputText {...register('jobTitle')} defaultValue={job.job_title} />
         </div>
-        <h2 className={`${textClass.h2_style2} mb-8`}>{`${t('join_us.application_form')}`}</h2>
+        <h2 className={`${textClass.h2_style2} mb-8`}>{t('join_us.application_form')}</h2>
         <div className="grid grid-cols-2 gap-x-8 gap-y-6">
           <div className="col-span-1">
             <InputField label={`${t('join_us.first_name')}*`} error={errors.firstName?.message}>
@@ -136,11 +151,29 @@ const ApplyForm = (props: { job: jobDetailsT, setShowSuccess: (isSuccess: boolea
             </InputField>
           </div>
 
-          <div className="col-span-full">
-            <InputField label={`${t('join_us.cv_upload')}*`}>
-              <InputFile />
-            </InputField>
-          </div>
+          <DragDropArea className="col-span-full" onDrop={onFileChange}>
+            {cvUploadName ? (
+              <button
+                className="w-full text-left"
+                type="button"
+                onClick={() => openFilePicker(onFileChange, { accept: '.doc,.pdf' })}
+              >
+                <div className="relative mt-2 flex h-[150px] w-full flex-col items-center justify-center rounded-lg bg-[#F3F2F4]">
+                  <p className="break-all px-4 text-lg">{cvUploadName}</p>
+                </div>
+              </button>
+            ) : (
+              <button
+                className="w-full text-left"
+                type="button"
+                onClick={() => openFilePicker(onFileChange, { accept: '.doc,.pdf' })}
+              >
+                <InputField label={`${t('join_us.cv_upload')}*`} error={errors.cvUpload?.message}>
+                  <InputFile />
+                </InputField>
+              </button>
+            )}
+          </DragDropArea>
 
           <div className="col-span-full">
             <InputField
@@ -156,12 +189,15 @@ const ApplyForm = (props: { job: jobDetailsT, setShowSuccess: (isSuccess: boolea
             </InputField>
           </div>
 
-          <ButtonAnimated
-            extraProps={{ type: 'submit' }}
-            className="w-full border-arta-sand-100 text-arta-sand-100 md:w-[120px]"
-          >
-            {t('join_us.submit')}
-          </ButtonAnimated>
+          <div className="col-span-full flex flex-col justify-start gap-2">
+            {submitStatus.error ? <ErrorMessage error={submitStatus.error} /> : null}
+            <ButtonAnimated
+              extraProps={{ type: 'submit' }}
+              className="w-full border-arta-sand-100 text-arta-sand-100 md:w-[120px]"
+            >
+              {t('join_us.submit')}
+            </ButtonAnimated>
+          </div>
         </div>
       </fieldset>
     </form>

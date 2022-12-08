@@ -47,7 +47,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     if (process.env.EMAIL_HOST) {
       if (enquiryType === ENQUIRY_TYPE.job_apply) {
-        const html = Object.entries(reqMessage)
+        const { cvUpload, cvUploadName, ...bodyObj } = reqMessage
+
+        const html = Object.entries(bodyObj)
           .map(
             ([key, value]) => `<p>${toHumanCase(key)}: ${sensitize(value as string) || '--'}</p>`
           )
@@ -59,6 +61,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           subject: `[artatechfin.com] ${reqMessage.jobTitle} - ${reqMessage.firstName} ${reqMessage.lastName}`,
           text: toPlainText(html),
           html,
+          attachments: [
+            {
+              filename: reqMessage.cvUploadName,
+              content: reqMessage.cvUpload.split('base64,')[1],
+              encoding: 'base64',
+            },
+            // for example:
+            // {
+            //   filename: 'text1.txt',
+            //   content: 'aGVsbG8gd29ybGQh',
+            //   encoding: 'base64',
+            // },
+          ],
         }
         console.log('Sending email: ', message)
         await transporter.sendMail(message)
@@ -90,4 +105,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     console.error(error)
     res.status(500).json({ error: 'Internal server error' })
   }
+}
+
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: '5mb',
+    },
+  },
 }

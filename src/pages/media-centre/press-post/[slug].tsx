@@ -9,6 +9,7 @@ import parse from 'html-react-parser'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { ButtonAnimated } from 'src/components/ButtonAnimated'
+import { dateFormat } from 'utils/date'
 
 export const getServerSideProps: GetServerSideProps = async ({ locale, params }) => {
   const cms = await getMediaCms({ lang: locale })
@@ -56,7 +57,7 @@ const PressPost = (props: {
           {t('media.back_press')}
         </Link>
         <div className="mt-4 bg-white p-6 shadow-blogPost md:p-12">
-          <p className="text-xs text-arta-indigo-100">{post.date}</p>
+          <p className="text-xs text-arta-indigo-100">{dateFormat(new Date(post.date))}</p>
           <h2 className={`mt-2 ${textClass.h3_style2} text-arta-secondary`}>{post.title}</h2>
           <div className={`blog-content mt-6 ${textClass.body_regular_verah} text-black`}>
             {parse(post.text)}

@@ -35,7 +35,7 @@ const Layout = (props: { seo: any; cms: any; children: React.ReactNode; tabType?
         keywords={seo.keywords}
       />
       <Header textColor="brown" />
-      <main className="flex flex-col bg-arta-eggshell-100 pb-12 text-arta-sand-100 md:pb-[150px]">
+      <main className="flex flex-col bg-arta-eggshell-100 pb-28 text-arta-sand-100 md:pb-[150px]">
         <HeroBanner
           title={t('page_title.media_centre')}
           description={cms.heroBanner.description}

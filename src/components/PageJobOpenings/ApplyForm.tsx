@@ -63,7 +63,7 @@ const useApplyForm = (t: any) => {
     mutationFn: async (data: any) => {
       const response = await fetch('/api/enquiry', {
         method: 'POST',
-        body: JSON.stringify({ ...data, enquiryType: 'job_apply' }),
+        body: JSON.stringify({ ...data }),
       })
       if (!response.ok) throw new Error(`Network response was not ok: ${response.statusText}  `)
     },

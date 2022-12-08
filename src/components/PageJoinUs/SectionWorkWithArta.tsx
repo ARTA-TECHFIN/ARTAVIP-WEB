@@ -14,12 +14,15 @@ export const SectionWorkWithArta = ({k}: any) => {
           className="object-cover"
         />
       </div>
-      <div className="arta-container relative z-1 mx-auto flex flex-col items-center py-12 md:py-[150px] lg:flex-row lg:space-x-[139px]">
-        <div className="lg:max-w-[395px]">
-          <h2 className={`${textClass.h2_style2}`}>{t("join_us.work_with_arta")}</h2>
+      <div className="arta-container relative z-1 mx-auto items-center pt-12 lg:hidden">
+        <h2 className={`${textClass.h2_style2}`}>{t("join_us.work_with_arta")}</h2>
+      </div>
+      <div className="arta-container relative z-1 mx-auto flex flex-col-reverse items-center pb-12 lg:py-[150px] lg:flex-row lg:space-x-[40px]">
+        <div className="flex-1">
+          <h2 className={`${textClass.h2_style2} hidden lg:block`}>{t("join_us.work_with_arta")}</h2>
           <div className={`${textClass.body_regular_verah} mt-4 whitespace-pre-line`} dangerouslySetInnerHTML={{__html: k.work_with_arta_description}} />
         </div>
-        <div className="mt-[25px] max-w-[714px] lg:mt-0">
+        <div className="mt-[25px] mb-4 flex-1 lg:mt-0">
           <Image
             src="/images/join-us/28531C75-1658-4AFB-8864-C8F6F1AB012A.png"
             alt=""

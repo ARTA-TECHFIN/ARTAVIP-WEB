@@ -41,14 +41,14 @@ const SectionJobOpenings: FC<propsT> = ({ k, jobs }) => {
   return (
     <div className="bg-arta-eggshell-100 py-12 md:py-[150px]" id="job-opening">
       <div className="arta-container mx-auto">
-        <div className="text-center lg:mx-auto lg:w-3/5">
+        <div className="lg:text-center lg:mx-auto lg:w-3/5">
           <h3 className={textClass.h2_style2}>{t('join_us.job_openings')}</h3>
           <div
             className={`${textClass.body_regular_verah} mt-4 whitespace-pre-line`}
             dangerouslySetInnerHTML={{ __html: k.job_openings_description }}
           />
         </div>
-        <div className="arta-hide-scrollbar -mx-6 overflow-auto py-16 md:mx-0 ">
+        <div className="arta-hide-scrollbar -mx-6 overflow-auto py-8 lg:py-16 md:mx-0 ">
           <TabBar
             tabs={[
               { label: TABS['all'], value: 'all' },

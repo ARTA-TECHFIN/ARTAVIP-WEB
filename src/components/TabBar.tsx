@@ -14,7 +14,7 @@ const TabBar = (props: propsT) => {
   const ulRef = useRef(null)
 
   return (
-    <ul ref={ulRef} className={`flex md:justify-center justify-start mt-4 lg:mt-0 lg:pl-0 lg:pl-6 lg:gap-16 gap-8 border-solid border-b border-arta-sand-200 text-arta-sand-200 ${className}`}>
+    <ul ref={ulRef} className={`flex md:justify-center justify-start mt-4 lg:mt-0 pl-6 lg:gap-16 gap-8 border-solid border-b border-arta-sand-200 text-arta-sand-200 ${className}`}>
       {tabs.map((tab, index) => {
         const isSelected = tab.value === selectedTab
         return (

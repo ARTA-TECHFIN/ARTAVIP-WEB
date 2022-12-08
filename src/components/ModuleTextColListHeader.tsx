@@ -60,7 +60,7 @@ const ModuleTextColListHeader = ({ header, headerPosition }: propsT) => {
         headerPosition == 'right' &&  ' justify-end text-right'
       )}
     >
-      <h2 className={`relative z-10 ${textClass.h2_style2}`}>{header}</h2>
+      <h2 className={`relative z-10 ${textClass.h2_style2} pb-4 lg:pb-0`}>{header}</h2>
       <div
         className={cn(
           'text-col-circle absolute z-0 will-change-transform',

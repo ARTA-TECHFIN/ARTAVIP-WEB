@@ -19,10 +19,10 @@ const SectionCare = ({k}: any) => {
         />
       </div>
 
-      <div className="arta-container relative z-1 mx-auto py-12 text-center md:py-[150px]">
+      <div className="arta-container relative z-1 mx-auto py-12 md:text-center md:py-[150px]">
         <h2 className={textClass.h2_style2}>{t("join_us.arta_cares")}</h2>
         <div className={`${textClass.body_regular_verah} mx-auto mt-4 whitespace-pre-line`} dangerouslySetInnerHTML={{__html: k.arta_cares_description}} />
-        <div className="grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 gap-x-8">
+        <div className="mt-8 grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 gap-x-8">
           {
             k.our_cares_icons && k.our_cares_icons.map((icon: any, index: number) => {
               return (

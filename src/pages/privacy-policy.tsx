@@ -3,7 +3,7 @@ import { StaticLayout } from 'src/components/PageStatic/Layout'
 import { textClass } from 'src/components/Text'
 import parse from 'html-react-parser'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 
 const fetchCmsData = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/privacy-policy`)
@@ -34,15 +34,15 @@ const PrivacyPolicy = (props: {
   cms: any
 }) => {
   const { cms } = props
-  const { t } = useTranslation()
+  const { t } = useTranslation('common')
 
   return (
     <StaticLayout
       cms={cms}
       seo={
         {
-          title: `${t('page_title.privacy_policy')} | ${t('site_title')}`,
-          description: t('page_description.privacy_policy')
+          title: t('page_title.privacy_policy'),
+          description: t("page_description.privacy_policy")
         }
       }
     >

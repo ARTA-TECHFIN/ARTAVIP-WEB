@@ -8,7 +8,7 @@ const JobCards = ({ jobs }: getJobsCmsT) => {
   const g = (pageData:any, keyWithoutLang: string) => `${pageData.attributes[`${keyWithoutLang}_${locale}`]}`
 
   return (
-    <div className="grid grid-cols-none lg:gap-8 gap-4 sm:grid-cols-2 md:grid-cols-3">
+    <div className="grid grid-cols-none gap-8 sm:grid-cols-2 md:grid-cols-3">
       {jobs.map((job: any, index: number) => (
         <div className="col-span-1" key={index}>
           <JobCard

@@ -250,3 +250,32 @@
 .blog-content img {
   margin: 0 auto;
 }
+
+.our-eco .swiper {
+  padding-top: 80px;
+}
+
+.our-eco .swiper-slide {
+  @apply transition-all;
+}
+
+.our-eco .swiper-slide.swiper-slide-active {
+  transform: translateY(-70px) scale(1.12);
+}
+
+.our-eco .swiper-slide.swiper-slide-active .ss-container {
+  @apply shadow-xl;
+}
+
+.our-eco .swiper-slide.swiper-slide-prev {
+  @apply translate-y-[-40px] translate-x-[-20px];
+}
+
+.our-eco .swiper-slide.swiper-slide-next {
+  @apply translate-y-[-40px] translate-x-[20px];
+}
+
+.our-eco .swiper-slide.swiper-slide-prev,
+.our-eco .swiper-slide.swiper-slide-next {
+  @apply transform;
+}

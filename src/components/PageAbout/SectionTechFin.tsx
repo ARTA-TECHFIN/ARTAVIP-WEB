@@ -72,7 +72,7 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
               }}
               loop={true}
               centeredSlides={true}
-              spaceBetween={50}
+              spaceBetween={40}
               slidesPerView={1}
               breakpoints={{
                 767: {
@@ -91,7 +91,7 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
                     <div
                       key={index}
                       className={
-                        'ss-container w-3/5 md:w-4/5 mx-auto lg:w-full flex aspect-square flex-col items-center justify-center rounded-full shadow-2xl transition-all duration-300'
+                        'ss-container w-3/5 md:w-4/5 mx-auto lg:w-full flex aspect-square flex-col items-center justify-center rounded-full transition-all duration-300'
                       }
                     >
                       <div

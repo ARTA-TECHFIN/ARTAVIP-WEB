@@ -22,7 +22,7 @@ const ModuleIconList = (props: propsT) => {
               h-[64px] xl:flex-[0_0_157px] lg:flex-[0_0_100px] flex-[0_0_64px] relative
               md:mt-0 -mt-[15px]'
             >
-              <img src={item.icon} alt="" className='' />
+              <img src={item.icon} alt="" className='mx-auto' />
             </div>
             <div className='xl:ml-[40px] ml-4'>
               <h4 className={textClass.h6}>{item.title}</h4>

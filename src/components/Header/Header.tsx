@@ -106,8 +106,8 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
       buttonText: t('page_title.media_centre'),
       href: links.media,
       pages: [
-        { title: t('page_title.arta_blog'), link: links.media },
-        { title: t('page_title.press_release'), link: links.mediaPress },
+        { title: t('page_title.arta_blog'), link: `${links.media}#list` },
+        { title: t('page_title.press_release'), link: `${links.mediaPress}#list` },
       ],
     },
     {

@@ -13,7 +13,7 @@ const ReportCard = (props: propsT) => {
         {props.Icon && <props.Icon className="self-center" />}
         <span className={`mx-3 mt-2 ${textClass.title_verah}`}>{props.title}</span>
       </div>
-      <IconArrowRightCircle className="flex-[0_0_32px]" />
+      <IconArrowRightCircle className="hidden lg:block flex-[0_0_32px]" />
     </div>
   )
 }

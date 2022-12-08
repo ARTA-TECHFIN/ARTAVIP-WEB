@@ -8,7 +8,7 @@ type propsT = {
 }
 const ReportSection = (props: propsT) => {
   return (
-    <div className="mb-12 grid sm:grid-cols-12 col-span-full  gap-x-8">
+    <div className="mb-12 grid sm:grid-cols-12 col-span-full gap-x-8">
       <span
         className={`sm:col-span-2 col-span-full border-t-2 border-arta-sand-300 pt-4 text-black ${textClass.h6}`}
       >

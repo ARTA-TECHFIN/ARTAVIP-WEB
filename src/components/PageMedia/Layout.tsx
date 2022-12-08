@@ -43,7 +43,7 @@ const Layout = (props: { seo: any; cms: any; children: React.ReactNode; tabType?
           mobileImage={cms.heroBanner.mobileImage}
         />
         {props.tabType && (
-          <div className="arta-container mx-auto">
+          <div className="arta-container mx-auto" id="list">
             <div className="arta-hide-scrollbar -mx-6 overflow-auto py-10 lg:py-16 md:mx-0 ">
               <TabBar
                 className="justify-center"

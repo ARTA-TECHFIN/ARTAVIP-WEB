@@ -132,6 +132,7 @@
 .module-text-section ul li,
 .job-description ul li,
 .blog-content ul li {
+  @apply font-Verah text-[1rem] leading-[1.5rem] tracking-wide;
   margin-top: 12px;
 }
 

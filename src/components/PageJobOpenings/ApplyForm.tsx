@@ -47,8 +47,6 @@ const useApplyForm = (t: any) => {
       else if (!/^\d+$/.test(data.expectedSalary))
         errors.expectedSalary = { message: t('warning.invalid_format') }
       if (!data.cvUpload) errors.cvUpload = { message: 'Please upload your CV' }
-      else if (!/\.pdf$/i.test(data.cvUploadName) && !/\.docx?$/i.test(data.cvUploadName))
-        errors.cvUpload = { message: 'Please upload a PDF or Word document' }
 
       if (!data.briefIntroduction) errors.briefIntroduction = { message: t('warning.required') }
       else if (data.briefIntroduction.length > 500)
@@ -79,8 +77,7 @@ const ApplyForm = (props: { job: jobDetailsT; setShowSuccess: (isSuccess: boolea
   const { job, setShowSuccess } = props
   const { t } = useTranslation('common')
 
-  const { onSubmit, submitStatus, errors, register, watch, setValue, trigger, setError } =
-    useApplyForm(t)
+  const { onSubmit, submitStatus, errors, register, watch, setValue, trigger } = useApplyForm(t)
 
   if (submitStatus.isSuccess) setShowSuccess(true)
 
@@ -88,6 +85,11 @@ const ApplyForm = (props: { job: jobDetailsT; setShowSuccess: (isSuccess: boolea
   const onFileChange = async (files: File[]) => {
     if (files.length > 0) {
       const file = files[0]
+      if (!file.type.includes('pdf') && !file.type.includes('word')) {
+        console.error('cvUpload', 'Please upload a PDF or Word document')
+        return
+      }
+
       const base64 = await toBase64(file)
 
       setValue('cvUpload', base64)

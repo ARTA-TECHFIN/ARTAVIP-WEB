@@ -108,7 +108,8 @@
     "submit": "Submit",
     "thanks": "Thank you for your interest in ARTA！",
     "thanks_message": "This message acknowledges that we have received your application. Our Human Capital Management team will carefully review your application and get in touch with you if your profile meets our business requirements. If you do not hear from us for more than 4 weeks, please assume your application was unsuccessful.<br />For more updates, please visit our LinkedIn page: <a target='_blank' href='https://www.linkedin.com/company/arta-techfin-corporation-limited'>https://www.linkedin.com/company/arta-techfin-corporation-limited</a>",
-    "seniority": "Seniority"
+    "seniority": "Seniority",
+    "accept_privacy_policy": "I consent to my personal data being sorted in line with the guidelines set out in the <a href='/privacy-policy' target='_blank' class='underline'>Privacy Policy</a>"
   },
   "investor_relations": {
     "announcements_notices": "Announcements & Reports",

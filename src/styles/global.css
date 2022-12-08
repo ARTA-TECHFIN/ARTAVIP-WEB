@@ -280,3 +280,7 @@
 .our-eco .swiper-slide.swiper-slide-next {
   @apply transform;
 }
+
+input[type="checkbox"] {
+  accent-color: #593725;    
+}

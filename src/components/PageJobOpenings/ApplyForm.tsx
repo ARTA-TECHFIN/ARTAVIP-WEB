@@ -10,6 +10,7 @@ import { useMutation } from '@tanstack/react-query'
 import { jobDetailsT } from 'src/pages/job/[id]'
 import { DragDropArea, openFilePicker, toBase64 } from '../DragDropArea'
 import { ErrorMessage } from '../ErrorMessage'
+import parse from 'html-react-parser'
 
 type formValuesT = {
   jobTitle: string
@@ -183,15 +184,7 @@ const ApplyForm = (props: { job: jobDetailsT; setShowSuccess: (isSuccess: boolea
               </button>
             )}
           </DragDropArea>
-
-          <InputField label="" error={errors.acceptedTerms?.message}>
-            <label className="flex gap-4">
-              <input type="checkbox" {...register('acceptedTerms')} />
-              <p className={`${textClass.body_regular} select-none`}>
-                I accept the Privacy Policy*
-              </p>
-            </label>
-          </InputField>
+          
           <div className="col-span-full">
             <InputField
               label={`${t('join_us.brief_introduction')}*`}
@@ -203,6 +196,17 @@ const ApplyForm = (props: { job: jobDetailsT; setShowSuccess: (isSuccess: boolea
               >
                 {t('join_us.introduction_limitation')}
               </span>
+            </InputField>
+          </div>
+
+          <div className="col-span-full">
+            <InputField label="" error={errors.acceptedTerms?.message}>
+              <label className="flex gap-4">
+                <input type="checkbox" {...register('acceptedTerms')} />
+                <p className={`${textClass.body_regular} select-none`}>
+                  {parse(t("join_us.accept_privacy_policy"))}
+                </p>
+              </label>
             </InputField>
           </div>
 

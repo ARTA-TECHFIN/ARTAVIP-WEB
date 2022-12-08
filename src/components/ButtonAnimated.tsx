@@ -4,7 +4,7 @@ import cn from 'classnames'
 type propsT = {
   as?: 'a' | 'button'
   href?: string
-  children: string
+  children: any
   className?: string
   borderWidth?: 1 | 2
   extraProps?: any

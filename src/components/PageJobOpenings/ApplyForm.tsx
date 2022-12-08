@@ -23,6 +23,7 @@ type formValuesT = {
   cvUpload: string
   cvUploadName: string
   briefIntroduction: string
+  acceptedTerms: boolean
 }
 const useApplyForm = (t: any) => {
   const {
@@ -46,9 +47,14 @@ const useApplyForm = (t: any) => {
       else if (!/^\d+$/.test(data.expectedSalary))
         errors.expectedSalary = { message: t('warning.invalid_format') }
       if (!data.cvUpload) errors.cvUpload = { message: 'Please upload your CV' }
+      else if (!/\.pdf$/i.test(data.cvUploadName) && !/\.docx?$/i.test(data.cvUploadName))
+        errors.cvUpload = { message: 'Please upload a PDF or Word document' }
+
       if (!data.briefIntroduction) errors.briefIntroduction = { message: t('warning.required') }
       else if (data.briefIntroduction.length > 500)
         errors.briefIntroduction = { message: t('warning.word_count_500') }
+
+      if (!data.acceptedTerms) errors.acceptedTerms = { message: t('warning.required') }
 
       return { values: data, errors }
     },
@@ -73,7 +79,8 @@ const ApplyForm = (props: { job: jobDetailsT; setShowSuccess: (isSuccess: boolea
   const { job, setShowSuccess } = props
   const { t } = useTranslation('common')
 
-  const { onSubmit, submitStatus, errors, register, watch, setValue, trigger } = useApplyForm(t)
+  const { onSubmit, submitStatus, errors, register, watch, setValue, trigger, setError } =
+    useApplyForm(t)
 
   if (submitStatus.isSuccess) setShowSuccess(true)
 
@@ -82,7 +89,7 @@ const ApplyForm = (props: { job: jobDetailsT; setShowSuccess: (isSuccess: boolea
     if (files.length > 0) {
       const file = files[0]
       const base64 = await toBase64(file)
-      console.log('base64', base64)
+
       setValue('cvUpload', base64)
       trigger('cvUpload')
       setValue('cvUploadName', file.name)
@@ -175,6 +182,14 @@ const ApplyForm = (props: { job: jobDetailsT; setShowSuccess: (isSuccess: boolea
             )}
           </DragDropArea>
 
+          <InputField label="" error={errors.acceptedTerms?.message}>
+            <label className="flex gap-4">
+              <input type="checkbox" {...register('acceptedTerms')} />
+              <p className={`${textClass.body_regular} select-none`}>
+                I accept the Privacy Policy*
+              </p>
+            </label>
+          </InputField>
           <div className="col-span-full">
             <InputField
               label={`${t('join_us.brief_introduction')}*`}

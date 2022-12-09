@@ -107,7 +107,7 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
         playsInline
         preload="true"
         crossOrigin="anonymous"
-        className="absolute bottom-[15%] left-[-50%] transform scale-[2.5] sm:scale-[2] md:scale-[1.5] md:left-[-25%] lg:scale-100 lg:left-0 sm:bottom-0 md:h-full md:w-full md:object-cover md:relative will-change-transform"
+        className="absolute bottom-[15%] left-[-50%] transform scale-[2.5] sm:scale-[1.5] md:left-[-25%] lg:scale-100 lg:left-0 sm:bottom-0 md:h-full md:w-full md:object-cover md:relative will-change-transform"
       >
         <source src="/videos/landing_top.mp4" typeof="video/mp4" />
         Your browser does not support the video tag.
@@ -124,7 +124,7 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
             <h1
               id="animation"
               ref={sec1TtlRef}
-              className="movable z-[200] text-left font-Verah text-[10em] leading-[1.02em] text-white will-change-transform md:text-[5em]"
+              className="movable z-[200] text-left font-Verah text-[10em] leading-[1.02em] text-white will-change-transform sm:text-[7em] md:text-[5em]"
             >
               BREAK
               <br />

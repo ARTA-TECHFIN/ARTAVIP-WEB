@@ -5,6 +5,7 @@ import cn from 'classnames'
 import { ButtonAnimated } from '../ButtonAnimated'
 import { links } from 'src/domains/links'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay } from "swiper"
 import 'swiper/css'
 import { useTranslation } from 'next-i18next'
 
@@ -136,7 +137,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
       width: isMobile ? '140em' : '38em',
       height: isMobile ? '140em' : '38em',
       left: isMobile ? '-30%' : '-9%',
-      top: '-50%',
+      top: isMobile ? '-50%' : '-60%',
       xPercent: -2,
       ease: 'slow(0.7, 0.7, false)',
     })
@@ -339,12 +340,12 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
           <div
             id="sec1ContentRef"
             ref={sec1ContentRef}
-            className={cn("flex h-full w-full flex-col justify-center gap-[24px] px-[6em] opacity-0 lg:items-end lg:px-0 lg:text-right", currentSection == "15" && "!opacity-0")}
+            className={cn("flex h-full w-full flex-col justify-center gap-[6px] px-[6em] opacity-0 lg:items-end lg:px-0 lg:text-right", currentSection == "15" && "!opacity-0")}
           >
-            <h1 className="font-Verah text-[6em] tracking-[0.06em] text-white will-change-transform lg:text-[3.4em]">
+            <h1 className="font-Verah text-[6em] tracking-[0.06em] text-white will-change-transform sm:text-[5em] lg:text-[3.4em]">
               {t("about_us.what_is_techfin")}
             </h1>
-            <p className="mb-[0.6em] max-w-[30em] text-left font-Neue text-[3.6em] text-white will-change-transform md:text-[1.8em] lg:text-right lg:text-[1em]">
+            <p className="mb-[0.6em] max-w-[30em] text-left font-Neue text-[3.6em] text-white will-change-transform sm:text-[1.8em] lg:text-right sm:text-[2.4em] lg:text-[1em]">
               {k.what_is_techfin_description}
             </p>
             <ButtonAnimated
@@ -363,24 +364,32 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
         </div>
         <div
           ref={businessRef}
-          className={cn("absolute bottom-[22em] top-[24em] sm:top-[18em] z-2 transform text-white opacity-0 transition duration-1000 md:top-[12em] lg:left-[6em] lg:left-[4em] lg:bottom-auto lg:top-[19.5em] lg:top-1/2 lg:-translate-y-1/2", currentSection == "10" && "!opacity-0")}
+          className={cn("absolute top-[24em] left-[3.8em] pr-4 w-[95vw] sm:top-[18em] z-2 transform text-white opacity-0 transition duration-1000 md:top-[12em] lg:left-[6em] lg:left-[4em] lg:bottom-auto lg:top-[19.5em] lg:top-1/2 lg:-translate-y-1/2", currentSection == "10" && "!opacity-0")}
         >
-          <h1 className="font-verah mt-0 ml-[0.9em] text-left text-[6em] tracking-[0.06em] md:ml-[0.6em] lg:ml-0 lg:text-[3.4em]">
+          <h1 className="font-verah mt-0 text-left text-[6em] tracking-[0.06em] sm:text-[5em] lg:text-[3.4em]">
             {t('page_title.our_businesses')}
           </h1>
-          <p className="ml-[1.6em] max-w-[30em] text-left font-Neue text-[3.6em] md:ml-[2em] lg:ml-0 md:text-[1.8em] lg:text-[1em]">
+          <p className="max-w-[30em] text-left font-Neue text-[3.6em] sm:text-[1.8em] md:text-[1.8em] lg:text-[1em]">
             {k.our_business_description}
           </p>
-          <div className="w-[100vw] lg:max-w-[80vw]">
+          <div className="w-[65vw] mx-auto sm:w-[50vw] md:w-full lg:max-w-[85vw] lg:mx-0">
             <Swiper
               loop={false}
               slidesPerView={1}
               spaceBetween={0}
+              autoplay={{
+                delay: 3500,
+                disableOnInteraction: true,
+              }}
+              modules={[Autoplay]}
               breakpoints={{
-                767: {
+                768: {
                   slidesPerView: 3,
+                  autoplay: false
                 },
                 1024: {
+                  loop: false,
+                  centeredSlides: false,
                   slidesPerView: 5,
                 },
               }}
@@ -419,9 +428,9 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
     >
       <div
         className={cn(
-          index === selectedBusiness && 'innerShadow !opacity-100 lg:h-[13em] lg:w-[13em] lg:text-[0.95em]',
-          index !== selectedBusiness && 'lg:h-[11em] lg:w-[11em]',
-          `innerShadowMobile mx-auto flex h-[12em] w-[12em] items-center justify-center self-center rounded-full border border-white text-[3em] opacity-70 transition-all will-change-transform md:h-[11em] md:w-[11em] md:text-[1.6em] lg:text-[0.85em]`
+          index === selectedBusiness && 'innerShadow !opacity-100 lg:h-[11em] lg:w-[11em]',
+          index !== selectedBusiness && 'lg:h-[10em] lg:w-[10em]',
+          `innerShadowMobile mx-auto flex h-[12em] w-[12em] items-center justify-center self-center rounded-full border border-white text-[3em] opacity-70 transition-all will-change-transform sm:text-[2.2em] md:text-[1.8em] lg:text-[0.95em]`
         )}
       >
         <a href={business.link}>{business.title}</a>

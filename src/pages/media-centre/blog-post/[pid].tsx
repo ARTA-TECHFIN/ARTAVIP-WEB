@@ -32,7 +32,7 @@ const Post = (props: { cms: getMediaCmsT; blog: getMediaCmsT['blogPosts'][number
   return (
     <MediaLayout cms={cms} seo={
       {
-        title: blog.title,
+        title: `${blog.title} | Arta TechFin`,
         description: t("page_description.arta_blog"),
         keywords: t("page_keywords.arta_blog")
       }

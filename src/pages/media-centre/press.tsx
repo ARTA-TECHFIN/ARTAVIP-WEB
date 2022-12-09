@@ -32,7 +32,7 @@ const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
   return (
     <MediaLayout cms={cms} tabType={MediaTABS.Press_Releases} seo={
       {
-        title: t("page_title.press_release"),
+        title: `${t("page_title.press_release")} | Arta TechFin`,
         description: t("page_description.press_release"),
         keywords: t("page_keywords.press_release"),
       }

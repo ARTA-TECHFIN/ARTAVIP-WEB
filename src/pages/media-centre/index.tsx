@@ -23,7 +23,7 @@ const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
   return (
     <MediaLayout cms={cms} tabType={MediaTABS.Blog} seo={
       {
-        title: t("page_title.arta_blog"),
+        title: `${t("page_title.arta_blog")} | Arta TechFin`,
         description: t("page_description.arta_blog"),
         keywords: t("page_keywords.arta_blog"),
       }

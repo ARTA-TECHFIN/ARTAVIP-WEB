@@ -8,7 +8,7 @@ type propsT = {
 const Seo = ({ title = 'ARTA WEB', description = 'Arta', keywords = '' }: propsT) => {
   return (
     <Head>
-      <title>{title} | Arta TechFin</title>
+      <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <meta name="og:title" content={title} />

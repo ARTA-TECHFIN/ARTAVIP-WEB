@@ -47,7 +47,7 @@ const CircularsPage = (props: { k: any }) => {
       tabType={TABS.announcement}
       hideTab={true}
       seo={{
-        title: t("investor_relations.listing_documents"),
+        title: `${t("investor_relations.listing_documents")} | Arta TechFin`,
         description: t("page_description.investor_relations"),
         keywords: t("page_keywords.investor_relations")
       }}

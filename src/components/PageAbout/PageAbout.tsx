@@ -18,7 +18,7 @@ const PageAbout: FC<{ k: PageAboutCmsT }> = ({ k }) => {
   return (
     <>
       <Seo
-        title={t('page_title.about_us')}
+        title={`${t('page_title.about_us')} | Arta TechFin`}
         description={t('page_description.about_us')}
         keywords={t('page_keywords.about_us')}
       />

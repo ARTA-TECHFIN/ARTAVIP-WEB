@@ -41,7 +41,7 @@ const PrivacyPolicy = (props: {
       cms={cms}
       seo={
         {
-          title: t('page_title.privacy_policy'),
+          title: `${t('page_title.privacy_policy')} | Arta TechFin`,
           description: t("page_description.privacy_policy")
         }
       }

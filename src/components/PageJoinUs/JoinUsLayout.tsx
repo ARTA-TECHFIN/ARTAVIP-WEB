@@ -24,7 +24,7 @@ const JoinUsLayout: FC<propsT> = ({ k, jobs }) => {
   return (
     <>
       <Seo
-        title={t('page_title.join_us')}
+        title={`${t('page_title.join_us')} | Arta TechFin`}
         description={t('page_description.join_us')}
         keywords={t('page_keywords.join_us')}
       />

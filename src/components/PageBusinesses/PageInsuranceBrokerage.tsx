@@ -13,7 +13,7 @@ const PageInsuranceBrokerage: FC<{ k: any, locale: string }> = ({ k, locale }) =
   return (
     <>
       <Seo
-        title={t("page_title.our_businesses")}
+        title={`${t("page_title.our_businesses")} | Arta TechFin`}
         description={t("page_description.our_businesses")}
         keywords={t("page_keywords.our_businesses")}
       />

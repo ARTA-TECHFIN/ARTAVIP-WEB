@@ -13,7 +13,7 @@ const PageWeb3Media: FC<{ k: any, locale: string }> = ({ k, locale }) => {
   return (
     <>
       <Seo
-        title={t("page_title.artazine")}
+        title={`${t("page_title.artazine")} | Arta TechFin`}
         description={t("page_description.artazine")}
         keywords={t("page_keywords.artazine")}
       />

@@ -36,8 +36,6 @@ export const Slides = ({k, setShowWechatPopup}: any) => {
       render={({ state, fullpageApi }) => {
         fullpageApi?.setAllowScrolling(!disableScroll)
 
-        console.log(currentSectionId)
-
         return (
           <>
             <ReactFullpage.Wrapper>

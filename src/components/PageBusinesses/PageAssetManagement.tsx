@@ -13,7 +13,7 @@ const PageAssetManagementPage: FC<{ k: any, locale: string }> = ({ k, locale }) 
   return (
     <>
       <Seo
-        title={t("page_title.asset_management")}
+        title={`${t("page_title.asset_management")} | Arta TechFin`}
         description={t("page_description.asset_management")}
         keywords={t("page_keywords.asset_management")}
       />

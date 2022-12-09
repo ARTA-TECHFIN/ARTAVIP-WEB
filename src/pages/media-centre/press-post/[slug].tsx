@@ -43,7 +43,7 @@ const PressPost = (props: {
   return (
     <MediaLayout cms={cms} seo={
       {
-        title: post.title,
+        title: `${post.title} | Arta TechFin`,
         description: t("page_description.press_release"),
         keywords: t("page_keywords.press_release")
       }

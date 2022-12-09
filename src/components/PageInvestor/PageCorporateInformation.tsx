@@ -30,8 +30,6 @@ const PageCorporateInformation: FC<{ k: any }> = ({ k }) => {
     {label: t("corporate_information.auditors"), value: k.ci_auditors },
   ]
 
-  console.log(k)
-
   const legalCounsels = [
     {label: '', value: k.ci_legal_counsels_1},
     {label: '', value: k.ci_legal_counsels_2},

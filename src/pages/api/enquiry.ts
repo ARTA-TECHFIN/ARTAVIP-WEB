@@ -17,8 +17,11 @@ const transporter = nodemailer.createTransport({
 
 // recipient address must be verified with Amazon SES if sandbox mode is enabled.
 const EMAIL_SENDER = 'noreply@artatechfin.com'
-const EMAIL_RECIPIENT =
+const ENQUIRT_EMAIL_RECIPIENT =
   process.env.ENQUIRY_RECIPIENT_EMAIL || 'katie.hu@keysocapp.com,jason@y714.com'
+
+const JOIN_US_EMAIL_RECIPIENT =
+  process.env.JOIN_US_RECIPIENT_EMAIL || 'katie.hu@keysocapp.com,jason@y714.com'
 
 const ENQUIRY_TYPE = {
   enquiry: 'enquiry',
@@ -31,7 +34,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // enquiryType: falsy/enquiry or job-apply
     const enquiryType = reqMessage.enquiryType || ENQUIRY_TYPE.enquiry
-    console.log(`[Form submitted - ${enquiryType}]. req.body: `, req.body || 'No body')
+
     if (!Object.values(ENQUIRY_TYPE).includes(enquiryType))
       throw new Error(
         `Invalid enquiry type. Expected: ${Object.values(ENQUIRY_TYPE)}, got: ${enquiryType}`
@@ -55,7 +58,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const html = Object.entries(bodyObj)
           .map(
             ([key, value]) => {
-              console.log(key)
               return `<p>${toHumanCase(key)}: ${sensitize(value as string) || '--'}</p>`
             }
           )
@@ -63,7 +65,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         const message = {
           from: EMAIL_SENDER,
-          to: EMAIL_RECIPIENT,
+          to: JOIN_US_EMAIL_RECIPIENT,
           subject: `[artatechfin.com] ${reqMessage.jobTitle} - ${reqMessage.firstName} ${reqMessage.lastName}`,
           text: toPlainText(html),
           html,
@@ -94,7 +96,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         const message = {
           from: EMAIL_SENDER,
-          to: EMAIL_RECIPIENT,
+          to: ENQUIRT_EMAIL_RECIPIENT,
           subject: `${reqMessage.topic} Enquiry from ${reqMessage.name}`,
           text: toPlainText(html),
           html,

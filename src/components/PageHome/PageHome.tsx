@@ -11,7 +11,6 @@ export const Slides = ({k, setShowWechatPopup}: any) => {
   const [currentSectionId, setCurrentSectionId] = useState<number>(0)
 
   const slideLeaveEvent = (origin:any, destination:any, direction:any) => {
-    console.log("slideLeaveEvent")
     if (origin.index === 2 && destination.index === 1) {
       setCurrentSectionById(1.5)
     } else {

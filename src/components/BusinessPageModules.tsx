@@ -5,7 +5,7 @@ import { ModuleIconList } from './ModuleIconList'
 
 const BusinessPageModules: FC<{ components: any[], locale: string }> = ({components, locale}) => {
   const g = (compData: any, keyWithoutLang: string) => typeof(`${compData[`${keyWithoutLang}_${locale}`]}`) === null ? "" : compData[`${keyWithoutLang}_${locale}`] 
-  console.log(components)
+
   return (
     <>
       {

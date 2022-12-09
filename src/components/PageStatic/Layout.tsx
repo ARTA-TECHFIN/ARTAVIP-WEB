@@ -12,8 +12,6 @@ const Layout = (props: { seo: any; cms: any; children: React.ReactNode; hideMenu
   const { seo, cms, children, hideFooter = false, hideMenu = false } = props
   const bannerImage = useRef(null)
 
-  console.log(seo)
-
   return (
     <>
       <Seo
@@ -44,9 +42,9 @@ const Layout = (props: { seo: any; cms: any; children: React.ReactNode; hideMenu
             <Image priority src={cms.heroBanner.mobileImage} alt="" fill className="object-cover md:hidden" />
           </div>
           {/* <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white" /> */}
-          <div className="absolute inset-0 flex flex-col items-center lg:justify-center justify-end pt-48  lg:mb-0 mb-12">
+          <div className="absolute inset-0 flex flex-col items-center justify-end bottom-8">
             <div className="arta-container">
-              <div className="md:w-1/2">
+              <div className="w-full">
                 <h1 className={`mt-1 ${textClass.h1_style2}`}>{seo.title}</h1>
               </div>
             </div>

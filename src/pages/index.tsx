@@ -59,7 +59,7 @@ const Home: NextPage = ({k}: any) => {
   return (
     <>
       <Seo
-        title={`${t('page_title.home')}`}
+        title={`${t('page_title.home')} | Arta TechFin`}
         description={t('page_description.home')}
       />
       <Header fontSize={'1em'} />

@@ -77,7 +77,7 @@ const InvestorLayout: FC<propsT> = ({ seo = {}, k, cms, simpleHeader = false, ta
           label={simpleHeader? t("page_title.investor_relations") : ""}
           simpleHeader={simpleHeader}
         />
-        <div className="bg-arta-eggshell-100 pt-0 pb-6 md:pt-16 md:pb-[206px]">
+        <div className="bg-arta-eggshell-100 pt-0 pb-6 md:pt-16 md:pb-[206px]" id="content">
           <div className="arta-container mx-auto">
             {
               !hideTab && (

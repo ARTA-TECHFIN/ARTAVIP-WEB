@@ -85,7 +85,7 @@
     "interim_annual_reports": "Interim & Annual Reports",
     "announments_noties": "Announcements & Notices",
     "circulars": "Circulars",
-    "back": "Back to job openings list",
+    "back": "Back to Job Opening Page",
     "back_office": "Middle and Back Office",
     "front_office": "Front Office",
     "all": "All",
@@ -124,7 +124,7 @@
     "listing_documents": "Listing Documents",
     "social": "Social",
     "governance": "Governance",
-    "back": "Back to landing page",
+    "back": "Back",
     "esg_top_down": "Top-down",
     "esg_bottom_up": "Bottom-up",
     "esg_the_board": "The Board",
@@ -159,7 +159,7 @@
     "thanks_title": "Thanks for your enquiry!",
     "thanks_message": "This message acknowledges that we have received your application. We will contact you very soon.",
     "scan": "Scan and follow us",
-    "brief_introduction": "Brief Introduction"
+    "brief_introduction": "Enquiry"
   },
   "media": {
     "back_blog": "Back",

@@ -4,6 +4,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import React, { useEffect, useRef } from 'react'
 import { FadeUp } from 'src/components/FadeUp';
+import cn from "classnames"
 
 type propsT = {
   title: string
@@ -11,6 +12,7 @@ type propsT = {
   description: string
   image: string
   mobileImage: string
+  simpleHeader?: boolean
 }
 
 // TODO: add animation
@@ -21,7 +23,7 @@ type propsT = {
 
 gsap.registerPlugin(ScrollTrigger)
 
-const HeroBanner = ({ title, label, description, image, mobileImage }: propsT) => {
+const HeroBanner = ({ simpleHeader = false, title, label, description, image, mobileImage }: propsT) => {
   const bannerImage = useRef(null)
 
   useEffect(()=> {
@@ -40,20 +42,20 @@ const HeroBanner = ({ title, label, description, image, mobileImage }: propsT) =
   }, [])
 
   return (
-    <div className="relative md:aspect-video md:h-auto h-screen w-full overflow-hidden z-2">
+    <div className={cn("relative md:aspect-video w-full overflow-hidden z-2", simpleHeader? "h-[60vh]" : "h-screen md:h-auto")}>
       <div ref={bannerImage} className="absolute h-full w-full overflow-hidden">
-        <Image priority src={image} alt="" fill className="object-cover md:block hidden" />
-        <Image priority src={mobileImage} alt="" fill className="object-cover md:hidden" />
+        <Image priority src={simpleHeader? '/images/bg-static.jpg': image} alt="" fill className="object-cover md:block hidden" />
+        <Image priority src={simpleHeader? '/images/bg-static.jpg' : mobileImage} alt="" fill className="object-cover md:hidden" />
       </div>
       {/* <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white" /> */}
-      <div className="absolute inset-0 flex flex-col items-center lg:justify-center justify-end pt-20  lg:mb-0 mb-12">
+      <div className={cn("absolute inset-0 flex flex-col items-center justify-end pt-20 lg:mb-0 mb-12", simpleHeader? "lg:bottom-16":"lg:justify-center")}>
         <div className="arta-container">
           <FadeUp>
-            <div className="md:w-1/2">
+            <div className={cn(simpleHeader? "":"md:w-1/2")}>
               <p className={textClass.title_style2}>{label}</p>
               <h1 className={`mt-1 ${textClass.h1_style2}`}>{title}</h1>
               {
-                description !== 'null' && (
+                description !== 'null' && !simpleHeader && (
                   <p className={`mt-4 ${textClass.body_regular_verah}`}>{description}</p>
                 )
               }

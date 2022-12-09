@@ -45,6 +45,7 @@ const InvestorPage = (props: { k: any, cms: reportCmsT }) => {
   return (
     <InvestorLayout
       k={props.k}
+      simpleHeader={true}
       tabType={TABS.corporate_information}
       hideTab={true}
       seo={{

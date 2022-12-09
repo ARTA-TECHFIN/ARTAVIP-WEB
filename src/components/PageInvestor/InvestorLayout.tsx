@@ -28,10 +28,11 @@ type propsT = {
   cms?: reportCmsT
   tabType: tabsT
   hideTab?: boolean
+  simpleHeader?: boolean
   children: React.ReactNode
 }
 
-const InvestorLayout: FC<propsT> = ({ seo = {}, k, cms, tabType, hideTab = false, children }) => {
+const InvestorLayout: FC<propsT> = ({ seo = {}, k, cms, simpleHeader = false, tabType, hideTab = false, children }) => {
   const { t } = useTranslation('common')
   const {locale} = useRouter()
   const tabInfoMap = {
@@ -69,11 +70,12 @@ const InvestorLayout: FC<propsT> = ({ seo = {}, k, cms, tabType, hideTab = false
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
-          title={seo.title}
+          title={seo.title.replace(" | Arta TechFin", "")}
           description={k.heroBanner.description}
           image={k.heroBanner.image}
           mobileImage={k.heroBanner.mobileImage}
-          label={k.heroBanner.label}
+          label={simpleHeader? t("page_title.investor_relations") : ""}
+          simpleHeader={simpleHeader}
         />
         <div className="bg-arta-eggshell-100 pt-0 pb-6 md:pt-16 md:pb-[206px]">
           <div className="arta-container mx-auto">

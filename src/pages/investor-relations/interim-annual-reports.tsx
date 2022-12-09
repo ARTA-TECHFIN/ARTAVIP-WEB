@@ -46,6 +46,7 @@ const InvestorPage = (props: { k: any, cms: reportCmsT }) => {
       k={props.k}
       tabType={TABS.corporate_information}
       hideTab={true}
+      simpleHeader={true}
       seo={{
         title: `${t("investor_relations.interim_annual_reports")} | Arta TechFin`,
         description: t("page_description.investor_relations"),

@@ -46,6 +46,7 @@ const InvestorPage = (props: { k: any }) => {
       k={props.k}
       tabType={TABS.announcement}
       hideTab={true}
+      simpleHeader={true}
       seo={{
         title: `${t("investor_relations.announments_noties")} | Arta TechFin`,
         description: t("page_description.investor_relations"),

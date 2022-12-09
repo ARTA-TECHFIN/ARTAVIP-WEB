@@ -74,7 +74,7 @@ const Footer: FC<{ textColor?: 'white' | 'brown', setShowWechatPopup?: (f: boole
                   </h6>
                   <ul className="list-none font-Neue text-[12px] leading-[20px]">
                     <li>
-                      <a href={`tel: ${footerData.footer_tel}`}>
+                      <a title={"Phone number"} href={`tel: ${footerData.footer_tel}`}>
                         <span>
                           {t('footer.tel')}{' '}
                           <span className="cursor-pointer hover:underline">
@@ -85,7 +85,7 @@ const Footer: FC<{ textColor?: 'white' | 'brown', setShowWechatPopup?: (f: boole
                     </li>
 
                     <li>
-                      <a href="fax:+852 2507 2009">
+                      <a title={"Fax"} href="fax:+852 2507 2009">
                         <span>
                           {t('footer.fax')}{' '}
                           <span className="cursor-pointer hover:underline">
@@ -95,7 +95,7 @@ const Footer: FC<{ textColor?: 'white' | 'brown', setShowWechatPopup?: (f: boole
                       </a>
                     </li>
                     <li>
-                      <a href={`mailto:${footerData.footer_email}`}>
+                      <a title={"Email Arta"} href={`mailto:${footerData.footer_email}`}>
                         <span>
                           {t('footer.email')}{' '}
                           <span className="cursor-pointer hover:underline">
@@ -132,11 +132,11 @@ const Footer: FC<{ textColor?: 'white' | 'brown', setShowWechatPopup?: (f: boole
             <Hr borderColorClass={borderClass} />
             <div className="flex  flex-col items-start justify-start space-y-5 font-Neue lg:flex-row lg:items-center lg:justify-between">
               <div className="flex items-center justify-around space-x-3 text-[12px] leading-[20px] sm:space-x-6">
-                <Link href={links.disclaimer} className="cursor-pointer hover:underline">
+                <Link title={t('page_title.disclaimer')} href={links.disclaimer} className="cursor-pointer hover:underline">
                   {t('page_title.disclaimer')}
                 </Link>
                 <p>|</p>
-                <Link href={links.privacy_policy} className="cursor-pointer hover:underline">
+                <Link title={t('page_title.privacy_policy')} href={links.privacy_policy} className="cursor-pointer hover:underline">
                   {t('page_title.privacy_policy')}
                 </Link>
                 <p>|</p>

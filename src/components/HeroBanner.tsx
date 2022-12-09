@@ -44,8 +44,8 @@ const HeroBanner = ({ simpleHeader = false, title, label, description, image, mo
   return (
     <div className={cn("relative md:aspect-video w-full overflow-hidden z-2", simpleHeader? "h-[60vh]" : "h-screen md:h-auto")}>
       <div ref={bannerImage} className="absolute h-full w-full overflow-hidden">
-        <Image priority src={simpleHeader? '/images/bg-static.jpg': image} alt="" fill className="object-cover md:block hidden" />
-        <Image priority src={simpleHeader? '/images/bg-static.jpg' : mobileImage} alt="" fill className="object-cover md:hidden" />
+        <Image priority src={simpleHeader? '/images/bg-static.jpg': image} alt={title} fill className="object-cover md:block hidden" />
+        <Image priority src={simpleHeader? '/images/bg-static.jpg' : mobileImage} alt={title} fill className="object-cover md:hidden" />
       </div>
       {/* <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white" /> */}
       <div className={cn("absolute inset-0 flex flex-col items-center justify-end pt-20 lg:mb-0 mb-12", simpleHeader? "lg:bottom-16":"lg:justify-center")}>

@@ -73,6 +73,7 @@ const CalendarAccordion = ({ index, year, events, openYear, setOpenYear }: props
                 }}
               >
                 <a
+                  title={event.title}
                   href={event.url}
                   target="_blank"
                   className="flex md:items-center"

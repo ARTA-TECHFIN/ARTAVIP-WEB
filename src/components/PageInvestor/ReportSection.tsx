@@ -18,7 +18,7 @@ const ReportSection = (props: propsT) => {
         {props.reports.map((report, index) => {
           return (
             <li key={index} className="md:col-span-6 col-span-12">
-              <a href={report.url} target="_blank" rel="noreferrer">
+              <a title={report.headline} href={report.url} target="_blank" rel="noreferrer">
                 <ReportCard title={report.headline} />
               </a>
             </li>

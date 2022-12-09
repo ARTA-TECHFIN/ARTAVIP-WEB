@@ -219,7 +219,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
                     onMouseEnter={() => (page.pages.length > 0 ? setActiveTabIndex(index) : null)}
                   >
                     {page.pages.length === 0 && (
-                      <Link className="flex items-start" href={page.href}>
+                      <Link title={page.title} className="flex items-start" href={page.href}>
                         <span style={{ fontSize: `${fontSize}` }}>{page.title}</span>
                       </Link>
                     )}
@@ -266,7 +266,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
               ></span>
             </div>
             <div className="z-[1] text-right">
-              <Link href="/">
+              <Link title={"Arta TechFin"} href="/">
                 <div className="relative h-[32px] w-[78.67px] cursor-pointer opacity-100 transition hover:opacity-100 md:h-auto md:w-auto">
                   <ArtaLogo className={`${textColorClass} h-full w-full md:h-auto md:w-auto`} />
                 </div>
@@ -334,8 +334,8 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
                     <XIcon className="h-6 w-6" />
                   </div>
                   <div className="relative h-[32px] w-[78.67px] cursor-pointer opacity-100 transition hover:opacity-100 md:h-auto md:w-auto">
-                    <Link href="/">
-                      <img src="/images/Group.png" alt="logo" className="object-contain" />
+                    <Link title="Arta TechFin" href="/">
+                      <img src="/images/Group.png" alt="Arta TechFin" className="object-contain" />
                     </Link>
                   </div>
                 </div>

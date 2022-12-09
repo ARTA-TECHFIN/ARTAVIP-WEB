@@ -76,7 +76,7 @@ const Enquiry = ({k}: any) => {
             <div className="col-span-full sm:col-span-6">
               <div className="text-base text-black">
                 <div className="font-bold">{t("contact_us.media")}</div>
-                <a href={`mailto:${k.media_email}`} className="underline">
+                <a title="Email us" href={`mailto:${k.media_email}`} className="underline">
                   {k.media_email}
                 </a>
               </div>
@@ -84,7 +84,7 @@ const Enquiry = ({k}: any) => {
             <div className="col-span-full sm:col-span-6">
               <div className="text-base text-black">
                 <div className="font-bold">{t("contact_us.investor")}</div>
-                <a href={`mailto:${k.investor_email}`} className="underline">
+                <a title="Email us" href={`mailto:${k.investor_email}`} className="underline">
                   {k.investor_email}
                 </a>
               </div>
@@ -92,7 +92,7 @@ const Enquiry = ({k}: any) => {
             <div className="col-span-full sm:col-span-6">
               <div className="text-base text-black">
                 <div className="font-bold">{t("contact_us.recruitment")}</div>
-                <a href={`mailto:${k.recruitment_email}`} className="underline">
+                <a title="Email us" href={`mailto:${k.recruitment_email}`} className="underline">
                   {k.recruitment_email}
                 </a>
               </div>
@@ -101,16 +101,16 @@ const Enquiry = ({k}: any) => {
           <Hr />
           <h4 className={`${textClass.h6} mt-8 text-arta-sand-100`}>{t("contact_us.follow_us")}</h4>
           <div className="mt-4 flex">
-            <a href={k.social_media_link_facebook} target="_blank" rel="noreferrer" className="mr-6">
+            <a title="Arta Facebook" href={k.social_media_link_facebook} target="_blank" rel="noreferrer" className="mr-6">
               <IconFacebook className="h-8 w-8" fill="#593725" />
             </a>
-            <a href={k.social_media_link_twitter} target="_blank" rel="noreferrer" className="mr-6">
+            <a title="Arta Twitter" href={k.social_media_link_twitter} target="_blank" rel="noreferrer" className="mr-6">
               <IconTwitter className="h-8 w-8" fill="#593725" />
             </a>
-            <a href={k.social_media_link_linkedin} target="_blank" rel="noreferrer" className="mr-6">
+            <a title="Arta LinkedIn" href={k.social_media_link_linkedin} target="_blank" rel="noreferrer" className="mr-6">
               <IconLinkedIn className="h-8 w-8" fill="#593725" />
             </a>
-            <div className="mr-6 cursor-pointer" onClick={() => setOpenWeChatPopup(true)}>
+            <div title="Arta WeChat" className="mr-6 cursor-pointer" onClick={() => setOpenWeChatPopup(true)}>
               <IconWeChat className="h-8 w-8" fill="#593725" />
             </div>
           </div>

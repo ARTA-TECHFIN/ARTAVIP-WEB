@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export"
+    "export": "next export",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.28",
@@ -20,6 +21,7 @@
     "i18next": "^22.0.6",
     "next": "^13.0.0",
     "next-i18next": "^12.1.0",
+    "next-sitemap": "^3.1.32",
     "nextjs-progressbar": "^0.0.16",
     "nodemailer": "^6.8.0",
     "react": "^18.2.0",

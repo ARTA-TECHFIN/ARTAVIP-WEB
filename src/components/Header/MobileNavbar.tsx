@@ -77,7 +77,7 @@ const MobileNavbar: FC<propsT> = ({ item, index, expand, setActiveMobileNavItem 
               {item.pages.map((item, index) => (
                 <div className="group" key={index}>
                   <li className=" relative -translate-x-6 cursor-pointer text-base list-none py-1 opacity-70 duration-300 ease-out hover:translate-x-0 hover:opacity-100 ">
-                    <a href={item.link}>
+                    <a title={item.title} href={item.link}>
                       {/* <span className="absolute top-0 left-0 h-full w-0  transition-all duration-150 ease-in-out group-hover:w-full group-hover:bg-[#f1eded45]"></span> */}
                       <span className="flex items-start">
                         <img

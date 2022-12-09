@@ -15,7 +15,7 @@ const About = ({ k }: any) => {
           loop
           playsInline
           crossOrigin="anonymous"
-          className="absolute h-full w-full transform scale-[320%] lg:scale-100 left-[70%] -top-[20%] lg:left-0 lg:top-0 lg:object-cover will-change-transform"
+          className="absolute h-full w-full transform scale-[250%] lg:scale-100 left-[55%] -top-[20%] lg:left-0 lg:top-0 lg:object-cover will-change-transform"
         >
           <source src="/videos/landing_about.mp4" typeof="video/mp4" />
           Your browser does not support the video tag.

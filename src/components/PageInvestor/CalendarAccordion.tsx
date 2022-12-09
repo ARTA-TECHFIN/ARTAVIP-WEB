@@ -90,7 +90,7 @@ const CalendarAccordion = ({ index, year, events, openYear, setOpenYear }: props
                     {event.title}
                   </span>
                   {
-                    event.postPageUrl && <IconArrowRightCircle className="ml-auto hidden flex-[0_0_32px] sm:block" />
+                    (event.postPageUrl || event.url) && <IconArrowRightCircle className="ml-auto hidden flex-[0_0_32px] sm:block" />
                   }
                 </a>
               </li>

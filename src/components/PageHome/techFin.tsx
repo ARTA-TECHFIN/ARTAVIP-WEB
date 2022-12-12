@@ -5,7 +5,7 @@ import cn from 'classnames'
 import { ButtonAnimated } from '../ButtonAnimated'
 import { links } from 'src/domains/links'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay } from "swiper"
+import { Autoplay } from 'swiper'
 import 'swiper/css'
 import { useTranslation } from 'next-i18next'
 
@@ -19,7 +19,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
   const sec1MaskCircleRef = useRef(null)
   const sec1VideoRed = useRef(null)
   const [selectedBusiness, setSelectedBusiness] = useState(0)
-  const [currentSection, setCurrentSection] = useState<"10" | "15">("10")
+  const [currentSection, setCurrentSection] = useState<'10' | '15'>('10')
   const [touchStart, setTouchStart] = useState(0)
 
   const [lastFireTime, setLastFireTime] = useState<number>(Date.now())
@@ -51,12 +51,12 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
     {
       title: t('page_title.global_markets'),
       description: k.our_business_product_description_4,
-      link: links.businessesSecuritiesBrokerage
+      link: links.businessesSecuritiesBrokerage,
     },
     {
-      title: t('page_title.artazine'),
+      title: t('page_title.esg_advisory'),
       description: k.our_business_product_description_5,
-      link: links.businessesWeb3
+      link: links.businessEsg,
     },
   ]
 
@@ -73,7 +73,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
     }
   }
 
-  const wheel = (event: any) => {    
+  const wheel = (event: any) => {
     throttle(() => {
       if (event.nativeEvent.wheelDelta > 0) {
         // Up
@@ -129,7 +129,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
 
   const fromSec0ToSec1 = () => {
     const isMobile = windowWidth < 768
-    setCurrentSection("10")
+    setCurrentSection('10')
 
     gsap.to(circleRef.current, {
       duration: 1.4,
@@ -174,7 +174,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
   }
 
   const fromSec1ToSec1_5 = () => {
-    setCurrentSection("15")
+    setCurrentSection('15')
     const isMobile = windowWidth < 768
     gsap.to(circleRef.current, {
       duration: 0.9,
@@ -216,7 +216,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
   }
 
   const fromSec1_5ToSec2 = () => {
-    setCurrentSection("15")
+    setCurrentSection('15')
     gsap.to(businessRef.current, {
       delay: 0,
       zIndex: 3,
@@ -250,7 +250,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentSectionId])
 
-  const handleTouchStart = (event:any) => {
+  const handleTouchStart = (event: any) => {
     setTouchStart(event.touches[0].clientY)
   }
 
@@ -281,7 +281,12 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
   }
 
   return (
-    <div className="h-app-height lg:h-screen w-[100vw] overflow-hidden" onWheel={(event) => wheel(event)} onTouchStart={(event) => handleTouchStart(event)} onTouchEnd={(event) => handleTouchEnd(event)}>
+    <div
+      className="h-app-height w-[100vw] overflow-hidden lg:h-screen"
+      onWheel={(event) => wheel(event)}
+      onTouchStart={(event) => handleTouchStart(event)}
+      onTouchEnd={(event) => handleTouchEnd(event)}
+    >
       <div className="video-container absolute top-0 left-0 h-full w-full">
         <video
           ref={sec1VideoRed}
@@ -335,20 +340,19 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
           <div
             id="sec1ContentRef"
             ref={sec1ContentRef}
-            className={cn("flex h-full w-full flex-col justify-center gap-[6px] px-[6em] opacity-0 lg:items-end lg:px-0 lg:text-right", currentSection == "15" && "!opacity-0")}
+            className={cn(
+              'flex h-full w-full flex-col justify-center gap-[6px] px-[6em] opacity-0 lg:items-end lg:px-0 lg:text-right',
+              currentSection == '15' && '!opacity-0'
+            )}
           >
             <h1 className="font-Verah text-[6em] tracking-[0.06em] text-white will-change-transform sm:text-[5em] lg:text-[3.4em]">
-              {t("about_us.what_is_techfin")}
+              {t('about_us.what_is_techfin')}
             </h1>
-            <p className="mb-[0.6em] max-w-[30em] text-left font-Neue text-[3em] text-white will-change-transform sm:text-[1.8em] lg:text-right sm:text-[2.4em] lg:text-[1em]">
+            <p className="mb-[0.6em] max-w-[30em] text-left font-Neue text-[3em] text-white will-change-transform sm:text-[1.8em] sm:text-[2.4em] lg:text-right lg:text-[1em]">
               {k.what_is_techfin_description}
             </p>
-            <ButtonAnimated
-              as="a"
-              href="/about-us#tech-fin"
-              className="text-white"
-            >
-              {t("home.explore_more")}
+            <ButtonAnimated as="a" href="/about-us#tech-fin" className="text-white">
+              {t('home.explore_more')}
             </ButtonAnimated>
           </div>
           <div
@@ -359,7 +363,10 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
         </div>
         <div
           ref={businessRef}
-          className={cn("absolute top-[22em] left-[3.8em] pr-4 w-[95vw] sm:top-[18em] z-2 transform text-white opacity-0 transition duration-1000 md:top-[12em] lg:left-[6em] lg:left-[4em] lg:bottom-auto lg:top-[19.5em] lg:top-1/2 lg:-translate-y-1/2", currentSection == "10" && "!opacity-0")}
+          className={cn(
+            'absolute top-[22em] left-[3.8em] z-2 w-[95vw] transform pr-4 text-white opacity-0 transition duration-1000 sm:top-[18em] md:top-[12em] lg:left-[6em] lg:left-[4em] lg:bottom-auto lg:top-[19.5em] lg:top-1/2 lg:-translate-y-1/2',
+            currentSection == '10' && '!opacity-0'
+          )}
         >
           <h1 className="font-verah mt-0 text-left text-[6em] tracking-[0.06em] sm:text-[5em] lg:text-[3.4em]">
             {t('page_title.our_businesses')}
@@ -367,7 +374,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
           <p className="max-w-[30em] text-left font-Neue text-[3em] sm:text-[1.8em] md:text-[1.8em] lg:text-[1em]">
             {k.our_business_description}
           </p>
-          <div className="w-[65vw] mx-auto sm:w-[50vw] md:w-full lg:max-w-[85vw] lg:mx-0">
+          <div className="mx-auto w-[65vw] sm:w-[50vw] md:w-full lg:mx-0 lg:max-w-[85vw]">
             <Swiper
               loop={false}
               slidesPerView={1}
@@ -380,7 +387,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
               breakpoints={{
                 768: {
                   slidesPerView: 3,
-                  autoplay: false
+                  autoplay: false,
                 },
                 1024: {
                   loop: false,
@@ -401,7 +408,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
                     business={business}
                     selectedBusiness={selectedBusiness}
                     setSelectedBusiness={setSelectedBusiness}
-                    label={t("home.learn_more")}
+                    label={t('home.learn_more')}
                   />
                 </SwiperSlide>
               ))}
@@ -433,18 +440,14 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
 
       <div
         className={cn(
-          `absolute bottom-0 left-1/2 flex w-[120%] translate-y-full -translate-x-1/2 transform flex-col  md:items-center  justify-center transition-all duration-300`,
+          `absolute bottom-0 left-1/2 flex w-[120%] translate-y-full -translate-x-1/2 transform flex-col  justify-center  transition-all duration-300 md:items-center`,
           index === selectedBusiness ? 'lg:opacity-100' : 'lg:opacity-0'
         )}
       >
         <p className="mt-[1em] hidden w-full text-center font-Neue text-[3em] text-white lg:block lg:text-[0.8em]">
           {business.description}
         </p>
-        <ButtonAnimated
-          as="a"
-          href={business.link}
-          className="mt-4 border-white text-white "
-        >
+        <ButtonAnimated as="a" href={business.link} className="mt-4 border-white text-white ">
           {label}
         </ButtonAnimated>
       </div>

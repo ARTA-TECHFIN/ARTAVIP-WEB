@@ -11,8 +11,8 @@ import { links } from 'src/domains/links'
 import { ButtonAnimated } from '../ButtonAnimated'
 import cn from 'classnames'
 import { useTranslation } from 'next-i18next'
-import { useRouter } from "next/router"
-import hoverMenuJson from "apidata/hover-menu.json"
+import { useRouter } from 'next/router'
+import hoverMenuJson from 'apidata/hover-menu.json'
 
 type menuItemT = {
   title: string
@@ -41,11 +41,11 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
   const { locale } = router
 
   const [headerData, setHeaderData] = useState({
-    about_us: "",
-    investor_relation: "",
-    join_us: "",
-    media_centre: "",
-    our_business: ""
+    about_us: '',
+    investor_relation: '',
+    join_us: '',
+    media_centre: '',
+    our_business: '',
   })
 
   const textColorClass = textColor === 'white' ? 'text-arta-snow-100' : 'text-arta-russet-100'
@@ -56,13 +56,13 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
   const [showMenu, setShowMenu] = useState(false)
   const [navbarBg, setNavbarBg] = useState(false)
   const [activeMobileNavItem, setActiveMobileNavItem] = useState(-1)
-  const [scrollDir, setScrollDir] = useState("scrolling down");
+  const [scrollDir, setScrollDir] = useState('scrolling down')
 
   const pageInfoList: pageInfoItemT[] = [
     {
       pageName: t('page_title.about_us'),
       title: t('page_title.about_us'),
-      paragraph: headerData["about_us"],
+      paragraph: headerData['about_us'],
       buttonText: t('page_title.about_us'),
       href: links.about,
       pages: [
@@ -75,7 +75,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
     {
       pageName: t('page_title.our_businesses'),
       title: t('page_title.our_businesses'),
-      paragraph: headerData["our_business"],
+      paragraph: headerData['our_business'],
       buttonText: '',
       href: '',
       pages: [
@@ -83,26 +83,32 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
         { title: t('page_title.investment_banking'), link: links.businessesInvestmentBanking },
         { title: t('page_title.insurance_brokerage'), link: links.businessesInsuranceBrokerage },
         { title: t('page_title.global_markets'), link: links.businessesSecuritiesBrokerage },
-        { title: t('page_title.artazine'), link: links.businessesWeb3 },
+        { title: t('page_title.esg_advisory'), link: links.businessEsg },
       ],
     },
     {
       pageName: t('page_title.investor_relations'),
       title: t('page_title.investor_relations'),
-      paragraph: headerData["investor_relation"],
+      paragraph: headerData['investor_relation'],
       buttonText: t('page_title.investor_relations'),
       href: links.investor,
       pages: [
-        { title: t("investor_relations.announcements_notices"), link: `${links.investor}#content` },
-        { title: t("investor_relations.corporate_information"), link: `${links.investorCorporateInformation}#content` },
-        { title: t("investor_relations.financial_calendar"), link: `${links.investorFinCalendar}#content` },
-        { title: t("investor_relations.esg"), link: `${links.investorEsg}#content` },
+        { title: t('investor_relations.announcements_notices'), link: `${links.investor}#content` },
+        {
+          title: t('investor_relations.corporate_information'),
+          link: `${links.investorCorporateInformation}#content`,
+        },
+        {
+          title: t('investor_relations.financial_calendar'),
+          link: `${links.investorFinCalendar}#content`,
+        },
+        { title: t('investor_relations.esg'), link: `${links.investorEsg}#content` },
       ],
     },
     {
       pageName: t('page_title.media_centre'),
       title: t('page_title.media_centre'),
-      paragraph: headerData["media_centre"],
+      paragraph: headerData['media_centre'],
       buttonText: t('page_title.media_centre'),
       href: links.media,
       pages: [
@@ -113,7 +119,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
     {
       pageName: t('page_title.join_us'),
       title: t('page_title.join_us'),
-      paragraph: headerData["join_us"],
+      paragraph: headerData['join_us'],
       buttonText: t('page_title.join_us'),
       href: links.joinUs,
       pages: [
@@ -144,30 +150,30 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
   const selectedTab = activeTabIndex === DEFAULT_TAB_INDEX ? null : pageInfoList[activeTabIndex]
 
   useEffect(() => {
-    const threshold = 0;
-    let lastScrollY = window.pageYOffset;
-    let ticking = false;
+    const threshold = 0
+    let lastScrollY = window.pageYOffset
+    let ticking = false
 
     const updateScrollDir = () => {
-      const scrollY = window.pageYOffset;
+      const scrollY = window.pageYOffset
 
       if (Math.abs(scrollY - lastScrollY) < threshold) {
-        ticking = false;
-        return;
+        ticking = false
+        return
       }
-      setScrollDir(scrollY > lastScrollY ? "scrolling down" : "scrolling up");
-      lastScrollY = scrollY > 0 ? scrollY : 0;
-      ticking = false;
-    };
+      setScrollDir(scrollY > lastScrollY ? 'scrolling down' : 'scrolling up')
+      lastScrollY = scrollY > 0 ? scrollY : 0
+      ticking = false
+    }
 
     const changeBackground = () => {
       // home page no bg is needed. It is working on home page because scrolling is not in home page, its window.scrollY is always 0
       // 66 is just a number that feels good, better than 0
       if (window) setNavbarBg(window?.scrollY >= 66 || false)
-  
+
       if (!ticking) {
-        window.requestAnimationFrame(updateScrollDir);
-        ticking = true;
+        window.requestAnimationFrame(updateScrollDir)
+        ticking = true
       }
     }
 
@@ -179,32 +185,38 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
   }, [scrollDir])
 
   useEffect(() => {
-    const g = (pageData: any, keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
+    const g = (pageData: any, keyWithoutLang: string) =>
+      `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
     const fetchData = async () => {
       const useLocalCms = process.env.NEXT_PUBLIC_USE_LOCAL_CMS_DATA === 'true'
       const result = useLocalCms ? hoverMenuJson : await fetchCmsData()
 
       if (result.data?.attributes) {
         setHeaderData({
-          about_us: g(result, "about_us"),
-          investor_relation: g(result, "investor_relation"),
-          join_us: g(result, "join_us"),
-          media_centre: g(result, "media_centre"),
-          our_business: g(result, "our_business")
+          about_us: g(result, 'about_us'),
+          investor_relation: g(result, 'investor_relation'),
+          join_us: g(result, 'join_us'),
+          media_centre: g(result, 'media_centre'),
+          our_business: g(result, 'our_business'),
         })
       }
-    };
+    }
 
-    fetchData();
+    fetchData()
   }, [])
 
   return (
-    <div className={cn("fixed z-50 w-full transition-all top-0 opacity-100 duration-500", scrollDir=='scrolling down' && 'opacity-0 -top-32')}>
+    <div
+      className={cn(
+        'fixed top-0 z-50 w-full opacity-100 transition-all duration-500',
+        scrollDir == 'scrolling down' && '-top-32 opacity-0'
+      )}
+    >
       <div onMouseLeave={() => setActiveTabIndex(DEFAULT_TAB_INDEX)}>
         <header
           className={cn(
-            'w-full px-[4em] pt-[6em] transition duration-300 lg:pt-[2.6em] lg:pb-[2em] xl:mx-auto mt-0',
-            navbarBg && 'lg:bg-white lg:bg-opacity-75',
+            'mt-0 w-full px-[4em] pt-[6em] transition duration-300 lg:pt-[2.6em] lg:pb-[2em] xl:mx-auto',
+            navbarBg && 'lg:bg-white lg:bg-opacity-75'
           )}
         >
           <div className="flex w-full justify-between lg:space-x-6">
@@ -266,7 +278,7 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
               ></span>
             </div>
             <div className="z-[1] text-right">
-              <Link title={"Arta TechFin"} href="/">
+              <Link title={'Arta TechFin'} href="/">
                 <div className="relative h-[32px] w-[78.67px] cursor-pointer opacity-100 transition hover:opacity-100 md:h-auto md:w-auto">
                   <ArtaLogo className={`${textColorClass} h-full w-full md:h-auto md:w-auto`} />
                 </div>

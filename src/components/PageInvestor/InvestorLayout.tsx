@@ -34,31 +34,43 @@ type propsT = {
 
 const InvestorLayout: FC<propsT> = ({ seo = {}, k, cms, simpleHeader = false, tabType, hideTab = false, children }) => {
   const { t } = useTranslation('common')
-  const {locale} = useRouter()
+  const { locale } = useRouter()
   const tabInfoMap = {
-    [TABS.announcement]: { title: t("investor_relations.announcements_notices"), link: links.investor, value: "announcement" },
-    [TABS.corporate_information]: { title: t("investor_relations.corporate_information"), link: links.investorCorporateInformation, value: "corporate_information" },
-    [TABS.financial_calendar]: { title: t("investor_relations.financial_calendar"), link: links.investorFinCalendar, value: "financial_calendar" },
-    [TABS.esg]: { title: t("investor_relations.esg"), link: links.investorEsg, value: "esg" },
+    [TABS.announcement]: {
+      title: t('investor_relations.announcements_notices'),
+      link: links.investor,
+      value: 'announcement',
+    },
+    [TABS.corporate_information]: {
+      title: t('investor_relations.corporate_information'),
+      link: links.investorCorporateInformation,
+      value: 'corporate_information',
+    },
+    [TABS.financial_calendar]: {
+      title: t('investor_relations.financial_calendar'),
+      link: links.investorFinCalendar,
+      value: 'financial_calendar',
+    },
+    [TABS.esg]: { title: t('investor_relations.esg'), link: links.investorEsg, value: 'esg' },
   }
   const tabList = Object.values(tabInfoMap)
 
   useEffect(() => {
-    if ( tabType === "esg" && document.getElementById("tab")) {
+    if (tabType === 'esg' && document.getElementById('tab')) {
       // @ts-ignore
-      document.getElementById("tab").scrollLeft = document.getElementById("tab")?.scrollWidth
+      document.getElementById('tab').scrollLeft = document.getElementById('tab')?.scrollWidth
     }
 
-    if (tabType === "financial_calendar" && document.getElementById("tab")) {
+    if (tabType === 'financial_calendar' && document.getElementById('tab')) {
       // @ts-ignore
-      document.getElementById("tab").scrollLeft = document.getElementById("tab")?.scrollWidth - 100
+      document.getElementById('tab').scrollLeft = document.getElementById('tab')?.scrollWidth - 100
     }
 
-    if (tabType === "corporate_information" && document.getElementById("tab")) {
+    if (tabType === 'corporate_information' && document.getElementById('tab')) {
       // @ts-ignore
-      document.getElementById("tab").scrollLeft = 100
+      document.getElementById('tab').scrollLeft = 100
     }
-  }, []);
+  }, [])
 
   return (
     <>
@@ -68,6 +80,7 @@ const InvestorLayout: FC<propsT> = ({ seo = {}, k, cms, simpleHeader = false, ta
         keywords={seo.keywords || ''}
       />
       <Header textColor="brown" />
+      {console.log(seo)}
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
           title={seo.title.replace(" | Arta TechFin", "")}
@@ -79,22 +92,24 @@ const InvestorLayout: FC<propsT> = ({ seo = {}, k, cms, simpleHeader = false, ta
         />
         <div className="bg-arta-eggshell-100 pt-0 pb-6 md:pt-16 md:pb-[206px]" id="content">
           <div className="arta-container mx-auto">
-            {
-              !hideTab && (
-                <div id="tab" className="arta-hide-scrollbar -mx-6 overflow-scroll md:mx-0">
-                  <TabBar
-                    className={`${locale=='en'? 'min-w-[750px] lg:min-w-[650px]' : 'min-w-[550px] lg:min-w-[500px]'} pl-6`}
-                    tabs={tabList.map((t) => {
-                      return {label: t.title, value: t.value}
-                    })}
-                    selectedTab={tabType}
-                    setSelectedTab={(_, index) =>
-                      Router.push(tabList[index].link, undefined, { scroll: false })
-                    }
-                  />
-                </div>
-              )
-            }
+            {!hideTab && (
+              <div id="tab" className="arta-hide-scrollbar -mx-6 overflow-scroll md:mx-0">
+                <TabBar
+                  className={`${
+                    locale == 'en'
+                      ? 'min-w-[750px] lg:min-w-[650px]'
+                      : 'min-w-[550px] lg:min-w-[500px]'
+                  } pl-6`}
+                  tabs={tabList.map((t) => {
+                    return { label: t.title, value: t.value }
+                  })}
+                  selectedTab={tabType}
+                  setSelectedTab={(_, index) =>
+                    Router.push(tabList[index].link, undefined, { scroll: false })
+                  }
+                />
+              </div>
+            )}
             {children}
           </div>
         </div>

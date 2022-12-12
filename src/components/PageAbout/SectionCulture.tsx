@@ -29,7 +29,7 @@ export const SectionCulture = (props: { k: PageAboutCmsT }) => {
         <div className="mb-12 flex flex-col justify-center">
           <FadeUp>
             <>
-              <h2 className={`${textClass.h2_style2} mb-2`}>{t("about_us.culture_values")}</h2>
+              <h2 className={`${textClass.h2_style2} mb-2`}>{t('about_us.culture_values')}</h2>
               <p className={textClass.body_regular}>{k.culture.subtitle1}</p>
             </>
           </FadeUp>
@@ -47,7 +47,7 @@ export const SectionCulture = (props: { k: PageAboutCmsT }) => {
                       'flex items-start gap-3 overflow-hidden opacity-70 duration-300 ease-out group-hover/list:translate-x-0 group-hover/list:opacity-100' +
                       (isSelected ? ' translate-x-0 opacity-100' : ' -translate-x-7')
                     }
-                    onClick={() => setSelectedIndex(index)}
+                    onMouseEnter={() => selectedIndex != index && setSelectedIndex(index)}
                   >
                     <IconListItemArrow className="h-4 w-4 pt-[10px]" fill="#593725" />
                     <span className={textClass.title}>{value.title}</span>

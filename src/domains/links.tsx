@@ -9,7 +9,8 @@ export const links = {
   businessesInvestmentBanking: '/businesses/investment-banking',
   businessesInsuranceBrokerage: '/businesses/insurance-brokerage',
   businessesSecuritiesBrokerage: '/businesses/securities-brokerage',
-  businessesWeb3: '/businesses/artazine-web3-media',
+  // businessesWeb3: '/businesses/artazine-web3-media',
+  businessEsg: '/businesses/esg-advisory',
   investor: '/investor-relations',
   investorCirculars: '/investor-relations/circulars',
   investorListingDocuments: '/investor-relations/listing-documents',
@@ -30,5 +31,5 @@ export const links = {
   jobOpening: '/job-opening',
   contact: '/contact',
   disclaimer: '/disclaimer',
-  privacy_policy: '/privacy-policy'
+  privacy_policy: '/privacy-policy',
 }

@@ -17,6 +17,7 @@ phases:
         USE_LOCAL_CMS_DATA="$USE_LOCAL_CMS_DATA"
         CMS_API_ENDPOINT="$CMS_API_ENDPOINT"
         ENQUIRY_RECIPIENT_EMAIL="$ENQUIRY_RECIPIENT_EMAIL"
+        SITE_URL="$SITE_URL"
         EOT
       - yarn
   build:

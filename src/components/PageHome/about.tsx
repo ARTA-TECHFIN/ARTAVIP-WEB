@@ -27,7 +27,7 @@ const About = ({ k }: any) => {
           <h1 className="lg:text-right font-Verah text-[6em] tracking-[0.06em] text-white will-change-transform sm:text-[5em] lg:text-[3.4em]">
             {t("home.about_arta")}
           </h1>
-          <p className="mb-[1.5em] max-w-[30em] font-Neue text-[3.6em] text-white sm:text-[1.8em] lg:text-[1em]">
+          <p className="mb-[1.5em] max-w-[30em] font-Neue text-[3em] text-white sm:text-[1.8em] lg:text-[1em]">
             {k.about_us_description}
           </p>
 

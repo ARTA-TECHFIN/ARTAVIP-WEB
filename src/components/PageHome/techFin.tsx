@@ -340,7 +340,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
             <h1 className="font-Verah text-[6em] tracking-[0.06em] text-white will-change-transform sm:text-[5em] lg:text-[3.4em]">
               {t("about_us.what_is_techfin")}
             </h1>
-            <p className="mb-[0.6em] max-w-[30em] text-left font-Neue text-[3.6em] text-white will-change-transform sm:text-[1.8em] lg:text-right sm:text-[2.4em] lg:text-[1em]">
+            <p className="mb-[0.6em] max-w-[30em] text-left font-Neue text-[3em] text-white will-change-transform sm:text-[1.8em] lg:text-right sm:text-[2.4em] lg:text-[1em]">
               {k.what_is_techfin_description}
             </p>
             <ButtonAnimated
@@ -359,12 +359,12 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
         </div>
         <div
           ref={businessRef}
-          className={cn("absolute top-[24em] left-[3.8em] pr-4 w-[95vw] sm:top-[18em] z-2 transform text-white opacity-0 transition duration-1000 md:top-[12em] lg:left-[6em] lg:left-[4em] lg:bottom-auto lg:top-[19.5em] lg:top-1/2 lg:-translate-y-1/2", currentSection == "10" && "!opacity-0")}
+          className={cn("absolute top-[22em] left-[3.8em] pr-4 w-[95vw] sm:top-[18em] z-2 transform text-white opacity-0 transition duration-1000 md:top-[12em] lg:left-[6em] lg:left-[4em] lg:bottom-auto lg:top-[19.5em] lg:top-1/2 lg:-translate-y-1/2", currentSection == "10" && "!opacity-0")}
         >
           <h1 className="font-verah mt-0 text-left text-[6em] tracking-[0.06em] sm:text-[5em] lg:text-[3.4em]">
             {t('page_title.our_businesses')}
           </h1>
-          <p className="max-w-[30em] text-left font-Neue text-[3.6em] sm:text-[1.8em] md:text-[1.8em] lg:text-[1em]">
+          <p className="max-w-[30em] text-left font-Neue text-[3em] sm:text-[1.8em] md:text-[1.8em] lg:text-[1em]">
             {k.our_business_description}
           </p>
           <div className="w-[65vw] mx-auto sm:w-[50vw] md:w-full lg:max-w-[85vw] lg:mx-0">

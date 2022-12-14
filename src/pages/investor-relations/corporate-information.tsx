@@ -41,7 +41,7 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
     ci_share_register_transfer_office: g('ci_share_register_transfer_office'),
     ci_executive_directors: g('ci_executive_directors'),
     ci_non_executive_directors: g('ci_non_executive_directors'),
-    esg_governance_2: g('esg_governance_2')
+    esg_governance_2: g('esg_governance_2'),
   }
 }
 
@@ -64,15 +64,7 @@ const InvestorPage = (props: { k: any }) => {
   const { t } = useTranslation()
 
   return (
-    <InvestorLayout
-      k={props.k}
-      tabType={TABS.corporate_information}
-      seo={{
-        title: `${t("investor_relations.corporate_information")} | Arta TechFin`,
-        description: t("page_description.investor_relations"),
-        keywords: t("page_keywords.investor_relations")
-      }}
-    >
+    <InvestorLayout k={props.k} tabType={TABS.corporate_information}>
       <PageCorporateInformation k={props.k} />
     </InvestorLayout>
   )

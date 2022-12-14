@@ -259,6 +259,7 @@
 }
 
 .blog-content img {
+  @apply w-full md:w-4/5 lg:w-3/5;
   margin: 0 auto;
 }
 

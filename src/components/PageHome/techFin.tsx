@@ -58,6 +58,11 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
       description: k.our_business_product_description_5,
       link: links.businessEsg,
     },
+    {
+      title: t('page_title.artazine'),
+      description: k.our_business_product_description_6,
+      link: links.businessesWeb3,
+    },
   ]
 
   let throttleDelay = 2000

@@ -9,7 +9,7 @@ export const links = {
   businessesInvestmentBanking: '/businesses/investment-banking',
   businessesInsuranceBrokerage: '/businesses/insurance-brokerage',
   businessesSecuritiesBrokerage: '/businesses/securities-brokerage',
-  // businessesWeb3: '/businesses/artazine-web3-media',
+  businessesWeb3: '/businesses/artazine-web3-media',
   businessEsg: '/businesses/esg-advisory',
   investor: '/investor-relations',
   investorCirculars: '/investor-relations/circulars',

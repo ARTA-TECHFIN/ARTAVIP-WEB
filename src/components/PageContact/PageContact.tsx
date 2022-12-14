@@ -18,7 +18,7 @@ const PageContactPage: FC<{ k: any; locale: string }> = ({ k, locale }) => {
       <Seo
         title={`${t('page_title.contact_us')} | Arta TechFin`}
         description={t('page_description.contact_us')}
-        keywords={t('page_description.keywords')}
+        keywords={t('page_keywords.contact_us')}
         ga="Contact Us"
       />
       <Header textColor="brown" />

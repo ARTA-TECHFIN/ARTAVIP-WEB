@@ -13,9 +13,9 @@ const PageEsgAdvisory: FC<{ k: any; locale: string }> = ({ k, locale }) => {
   return (
     <>
       <Seo
-        title={t('page_title.artazine')}
-        description={t('page_description.artazine')}
-        keywords={t('page_keywords.artazine')}
+        title={t('page_title.esg_advisory')}
+        description={t('page_description.esg_advisory')}
+        keywords={t('page_keywords.esg_advisory')}
         ga="OB - ESG Advisory"
       />
       <Header textColor="brown" />

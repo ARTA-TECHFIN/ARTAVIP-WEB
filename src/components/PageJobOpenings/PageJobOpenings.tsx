@@ -18,6 +18,9 @@ const PageJobOpenings = ({ k }: { k: jobDetailsT }) => {
   return (
     <>
       <Seo
+        title={k.job_title}
+        description={t('page_description.join_us')}
+        keywords={t('page_keywords.join_us')}
         gaType="others"
         gaObj={{
           event_name: 'Job_Openings_Content',

@@ -10,6 +10,14 @@ import { links } from 'src/domains/links'
 import { useTranslation } from 'next-i18next'
 import { textClass } from 'src/components/Text'
 
+<<<<<<< HEAD
+=======
+interface responseT {
+  year: number
+  results: any
+}
+
+>>>>>>> e98b8b4... [feat] update ga
 const QUERY_RESULT_ANNOUNCEMENT = 'QUERY_RESULT_ANNOUNCEMENT'
 // TODO: Assume only get four years of data
 const useGetData = (locale: string) => {
@@ -17,21 +25,19 @@ const useGetData = (locale: string) => {
   return useQuery([QUERY_RESULT_ANNOUNCEMENT], async () => {
     const result = await getAdvancedReportList({ lang, reportType: 'results' })
     let yearList: string[] = []
-    let response = {} as DataT
+    let response: responseT[] = []
     if (result && result.status == 200 && result.message == 'Success') {
       result.data.results.map((item) => {
-        if (yearList.indexOf(item.year) != -1 && parseInt(item.year) >= 2018)
+        if (yearList.indexOf(item.year) == -1 && parseInt(item.year) >= 2018)
           yearList.push(item.year)
       })
       yearList.map((year) => {
-        response.data.push({
-          year: year,
-          results: result.data.results.map((item) => {
-            return item.year == year
-          }),
+        response.push({
+          year: parseInt(year),
+          results: result.data.results.filter((item) => item.year == year),
         })
       })
-      return response.data
+      return response
     }
   })
 }

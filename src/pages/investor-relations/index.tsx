@@ -43,7 +43,15 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 const InvestorPage = (props: { k: any }) => {
   const { t } = useTranslation()
   return (
-    <InvestorLayout k={props.k} tabType={TABS.announcement}>
+    <InvestorLayout
+      k={props.k}
+      tabType={TABS.announcement}
+      seo={{
+        title: `${t('page_title.investor_relations')} | Arta TechFin`,
+        description: t('page_description.investor_relations'),
+        keywords: t('page_keywords.investor_relations'),
+      }}
+    >
       <PageInvestorRelations />
     </InvestorLayout>
   )

@@ -78,8 +78,18 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 }
 
 const FinCalendarPage = (props: { k: any; fc: any }) => {
+  const { t } = useTranslation()
   return (
-    <InvestorLayout k={props.k} tabType={TABS.financial_calendar} gaLog={true}>
+    <InvestorLayout
+      k={props.k}
+      tabType={TABS.financial_calendar}
+      gaLog={true}
+      seo={{
+        title: `${t('investor_relations.financial_calendar')} | Arta TechFin`,
+        description: t('page_description.investor_relations'),
+        keywords: t('page_keywords.investor_relations'),
+      }}
+    >
       <PageFinancialCalendar fc={props.fc} />
     </InvestorLayout>
   )

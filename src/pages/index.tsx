@@ -61,6 +61,7 @@ const Home: NextPage = ({ k }: any) => {
       <Seo
         title={`${t('page_title.home')} | Arta TechFin`}
         description={t('page_description.home')}
+        keywords={t('page_keywords.home')}
         ga="Homepage"
       />
       <Header fontSize={'1em'} />

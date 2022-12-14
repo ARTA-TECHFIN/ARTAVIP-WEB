@@ -23,6 +23,7 @@ const TABS = {
 type tabsT = keyof typeof TABS
 
 type propsT = {
+  seo: any
   k: any
   cms?: reportCmsT
   tabType: tabsT
@@ -33,6 +34,7 @@ type propsT = {
 }
 
 const InvestorLayout: FC<propsT> = ({
+  seo,
   k,
   cms,
   simpleHeader = false,
@@ -43,11 +45,6 @@ const InvestorLayout: FC<propsT> = ({
 }) => {
   const { t } = useTranslation('common')
   const { locale } = useRouter()
-  const seo = {
-    title: t('page_title.investor_relations'),
-    description: t('page_description.investor_relations'),
-    keywords: t('page_keywords.investor_relations'),
-  }
   const tabInfoMap = {
     [TABS.announcement]: {
       title: t('investor_relations.announcements_notices'),

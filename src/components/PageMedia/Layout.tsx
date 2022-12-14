@@ -32,7 +32,6 @@ const Layout = (props: {
 }) => {
   const { t } = useTranslation('common')
   const { seo, cms, children, gaLog, gaObj, gaType } = props
-  console.log(gaType)
   const tabInfoMap = {
     [TABS.Blog]: {
       title: t('page_title.arta_blog'),

@@ -64,7 +64,16 @@ const InvestorPage = (props: { k: any }) => {
   const { t } = useTranslation()
 
   return (
-    <InvestorLayout k={props.k} tabType={TABS.corporate_information} gaLog={true}>
+    <InvestorLayout
+      k={props.k}
+      tabType={TABS.corporate_information}
+      gaLog={true}
+      seo={{
+        title: t('investor_relations.corporate_information'),
+        description: t('page_description.investor_relations'),
+        keywords: t('page_keywords.investor_relations'),
+      }}
+    >
       <PageCorporateInformation k={props.k} />
     </InvestorLayout>
   )

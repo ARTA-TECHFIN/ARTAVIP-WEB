@@ -23,28 +23,24 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
           image: '/images/bg-static.jpg',
           mobileImage: '/images/bg-static.jpg',
         },
-        content: cms.data.attributes[`content_${locale}`]
+        content: cms.data.attributes[`content_${locale}`],
       },
       ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }
 }
 
-const PrivacyPolicy = (props: {
-  cms: any
-}) => {
+const PrivacyPolicy = (props: { cms: any }) => {
   const { cms } = props
   const { t } = useTranslation('common')
 
   return (
     <StaticLayout
       cms={cms}
-      seo={
-        {
-          title: `${t('page_title.privacy_policy')} | Arta TechFin`,
-          description: t("page_description.privacy_policy")
-        }
-      }
+      seo={{
+        title: `${t('page_title.privacy_policy')} | Arta TechFin`,
+        description: t('page_description.privacy_policy'),
+      }}
     >
       <div className="arta-container mx-auto mt-8">
         <div className="mt-4 bg-white p-6 shadow-blogPost md:p-12">

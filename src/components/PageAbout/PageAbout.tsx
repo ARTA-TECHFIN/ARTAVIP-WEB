@@ -26,10 +26,13 @@ const PageAbout: FC<{ k: PageAboutCmsT }> = ({ k }) => {
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
-          title={t('page_title.about_us')}
-          description={k.heroBanner.description}
+          label={t('about_us.vision_mission')}
+          title={k.mission.subtitle1}
+          title2={k.mission.subtitle2}
           image={k.heroBanner.image}
           mobileImage={k.heroBanner.mobileImage}
+          description="null"
+          fullWidth={true}
         />
         <SectionMission k={k} />
         <SectionCulture k={k} />

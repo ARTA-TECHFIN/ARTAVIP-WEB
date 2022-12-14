@@ -41,13 +41,21 @@ const PressPost = (props: {
   const { t } = useTranslation('common')
 
   return (
-    <MediaLayout cms={cms} seo={
-      {
+    <MediaLayout
+      cms={cms}
+      seo={{
         title: `${post.title} | Arta TechFin`,
-        description: t("page_description.press_release"),
-        keywords: t("page_keywords.press_release")
-      }
-    }>
+        description: t('page_description.press_release'),
+        keywords: t('page_keywords.press_release'),
+      }}
+      gaType="others"
+      gaObj={{
+        event_name: 'Press_Release_Content',
+        content: {
+          Content: getSlug(post.title_en),
+        },
+      }}
+    >
       <div className="arta-container mx-auto mt-8">
         <Link
           className={`flex cursor-pointer items-center underline ${textClass.body_regular_verah}`}
@@ -62,18 +70,16 @@ const PressPost = (props: {
           <div className={`blog-content mt-6 ${textClass.body_regular_verah} text-black`}>
             {parse(post.text)}
           </div>
-          {
-            post.pdf.data && (
-              <ButtonAnimated
-                as="a"
-                external={true}
-                href={post.pdf.data.attributes.url}
-                className="border-arta-sand-100 text-arta-sand-100"
-              >
-                {t("media.download_pdf")}
-              </ButtonAnimated>
-            )
-          }
+          {post.pdf.data && (
+            <ButtonAnimated
+              as="a"
+              external={true}
+              href={post.pdf.data.attributes.url}
+              className="border-arta-sand-100 text-arta-sand-100"
+            >
+              {t('media.download_pdf')}
+            </ButtonAnimated>
+          )}
         </div>
       </div>
     </MediaLayout>

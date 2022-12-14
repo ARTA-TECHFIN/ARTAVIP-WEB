@@ -26,21 +26,21 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
   const g = (keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
 
   return {
-    what_is_techfin_description: g("what_is_techfin_description"),
-    our_business_description: g("our_business_description"),
-    our_business_product_description_1: g("our_business_product_description_1"),
-    our_business_product_description_2: g("our_business_product_description_2"),
-    our_business_product_description_3: g("our_business_product_description_3"),
-    our_business_product_description_4: g("our_business_product_description_4"),
-    our_business_product_description_5: g("our_business_product_description_5"),
-    about_us_description: g("about_us_description")
+    what_is_techfin_description: g('what_is_techfin_description'),
+    our_business_description: g('our_business_description'),
+    our_business_product_description_1: g('our_business_product_description_1'),
+    our_business_product_description_2: g('our_business_product_description_2'),
+    our_business_product_description_3: g('our_business_product_description_3'),
+    our_business_product_description_4: g('our_business_product_description_4'),
+    our_business_product_description_5: g('our_business_product_description_5'),
+    about_us_description: g('about_us_description'),
   }
 }
 
-const Home: NextPage = ({k}: any) => {
+const Home: NextPage = ({ k }: any) => {
   const { t } = useTranslation('common')
   const [showWechatPopup, setShowWechatPopup] = useState(false)
-  const [qrCode, setQrCode] = useState("")
+  const [qrCode, setQrCode] = useState('')
 
   const togglePopup = () => {
     setShowWechatPopup(false)
@@ -61,14 +61,13 @@ const Home: NextPage = ({k}: any) => {
       <Seo
         title={`${t('page_title.home')} | Arta TechFin`}
         description={t('page_description.home')}
+        ga="Homepage"
       />
       <Header fontSize={'1em'} />
       <main>
         <Slides k={k} setShowWechatPopup={setShowWechatPopup} />
       </main>
-      {
-        showWechatPopup && <WechatPopup togglePopup={togglePopup} qrCode={qrCode} />
-      }
+      {showWechatPopup && <WechatPopup togglePopup={togglePopup} qrCode={qrCode} />}
     </>
   )
 }

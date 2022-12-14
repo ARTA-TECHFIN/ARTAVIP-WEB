@@ -21,24 +21,27 @@ const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
   const { cms } = props
   const { t } = useTranslation()
   return (
-    <MediaLayout cms={cms} tabType={MediaTABS.Blog} seo={
-      {
-        title: `${t("page_title.arta_blog")} | Arta TechFin`,
-        description: t("page_description.arta_blog"),
-        keywords: t("page_keywords.arta_blog"),
-      }
-    }>
+    <MediaLayout
+      cms={cms}
+      tabType={MediaTABS.Blog}
+      seo={{
+        title: `${t('page_title.arta_blog')} | Arta TechFin`,
+        description: t('page_description.arta_blog'),
+        keywords: t('page_keywords.arta_blog'),
+      }}
+      gaLog="IR - Announcements & Reports"
+    >
       <div className="arta-container mx-auto">
         <div className="grid grid-cols-12 gap-4 md:gap-8">
-          {cms.blogPosts.map((post:any, index: number) => (
+          {cms.blogPosts.map((post: any, index: number) => (
             <Link
               key={index}
               className="col-span-full h-full md:col-span-6 lg:col-span-4"
               href={`/media-centre/blog-post/${getSlug(post.title)}`}
             >
-              <div className="w-full h-full cursor-pointer bg-white transition-shadow hover:shadow-postCard">
-                <div className="relative w-full aspect-video">
-                  <img src={post.image} alt="" className="w-full object-cover absolute h-full" />
+              <div className="h-full w-full cursor-pointer bg-white transition-shadow hover:shadow-postCard">
+                <div className="relative aspect-video w-full">
+                  <img src={post.image} alt="" className="absolute h-full w-full object-cover" />
                 </div>
                 <div className="px-6 pt-4 pb-6 md:pt-6 md:pb-12">
                   <span className="text-xs">{dateFormat(new Date(post.date))}</span>

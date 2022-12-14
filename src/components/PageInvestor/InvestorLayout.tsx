@@ -28,6 +28,7 @@ type propsT = {
   tabType: tabsT
   hideTab?: boolean
   simpleHeader?: boolean
+  gaLog?: boolean
   children: React.ReactNode
 }
 
@@ -38,6 +39,7 @@ const InvestorLayout: FC<propsT> = ({
   tabType,
   hideTab = false,
   children,
+  gaLog = false,
 }) => {
   const { t } = useTranslation('common')
   const { locale } = useRouter()
@@ -89,6 +91,19 @@ const InvestorLayout: FC<propsT> = ({
         title={seo.title || ''}
         description={seo.description || ''}
         keywords={seo.keywords || ''}
+        ga={
+          gaLog
+            ? tabType == TABS.announcement
+              ? 'IR - Announcements & Reports'
+              : tabType == TABS.corporate_information
+              ? 'IR - Corporate Information'
+              : tabType == TABS.financial_calendar
+              ? 'IR - Financial Calendar'
+              : tabType == TABS.esg
+              ? 'IR - ESG'
+              : ''
+            : ''
+        }
       />
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">

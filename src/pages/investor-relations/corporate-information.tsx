@@ -64,7 +64,7 @@ const InvestorPage = (props: { k: any }) => {
   const { t } = useTranslation()
 
   return (
-    <InvestorLayout k={props.k} tabType={TABS.corporate_information}>
+    <InvestorLayout k={props.k} tabType={TABS.corporate_information} gaLog={true}>
       <PageCorporateInformation k={props.k} />
     </InvestorLayout>
   )

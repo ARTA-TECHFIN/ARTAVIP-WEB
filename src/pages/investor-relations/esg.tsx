@@ -30,18 +30,9 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
   }
 }
 
-const InvestorPage = (props: { k:any, locale: string }) => {
-  const { t } = useTranslation()
+const InvestorPage = (props: { k: any; locale: string }) => {
   return (
-    <InvestorLayout
-      k={props.k}
-      tabType={TABS.esg}
-      seo={{
-        title: `${t("investor_relations.esg")} | Arta TechFin`,
-        description: t("page_description.investor_relations"),
-        keywords: t("page_keywords.investor_relations")
-      }}
-    >
+    <InvestorLayout k={props.k} tabType={TABS.esg} gaLog={true}>
       <PageEsg k={props.k} locale={props.locale} />
     </InvestorLayout>
   )

@@ -16,13 +16,34 @@ const TABS = {
 
 type tabsT = keyof typeof TABS
 
-const Layout = (props: { seo: any; cms: any; children: React.ReactNode; tabType?: tabsT }) => {
+const Layout = (props: {
+  seo: any
+  cms: any
+  children: React.ReactNode
+  tabType?: tabsT
+  gaLog?: any
+  gaObj?: {
+    event_name: string
+    content: {
+      Content: string
+    }
+  }
+  gaType?: string
+}) => {
   const { t } = useTranslation('common')
-  const { seo, cms, children } = props
-
+  const { seo, cms, children, gaLog, gaObj, gaType } = props
+  console.log(gaType)
   const tabInfoMap = {
-    [TABS.Blog]: { title: t('page_title.arta_blog'), link: links.mediaBlog, value: t('page_title.arta_blog') },
-    [TABS.Press_Releases]: { title: t('page_title.press_release'), link: links.mediaPress, value: t('page_title.press_release') },
+    [TABS.Blog]: {
+      title: t('page_title.arta_blog'),
+      link: links.mediaBlog,
+      value: t('page_title.arta_blog'),
+    },
+    [TABS.Press_Releases]: {
+      title: t('page_title.press_release'),
+      link: links.mediaPress,
+      value: t('page_title.press_release'),
+    },
   }
   const tabList = Object.values(tabInfoMap)
   const tabInfo = tabInfoMap[props.tabType || 'Blog']
@@ -33,6 +54,9 @@ const Layout = (props: { seo: any; cms: any; children: React.ReactNode; tabType?
         title={seo.title}
         description={seo.description}
         keywords={seo.keywords}
+        ga={gaLog ? gaLog : ''}
+        gaObj={gaObj}
+        gaType={gaType}
       />
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-eggshell-100 pb-28 text-arta-sand-100 md:pb-[150px]">
@@ -44,13 +68,13 @@ const Layout = (props: { seo: any; cms: any; children: React.ReactNode; tabType?
         />
         {props.tabType && (
           <div className="arta-container mx-auto" id="list">
-            <div className="arta-hide-scrollbar -mx-6 overflow-auto py-10 lg:py-16 md:mx-0 ">
+            <div className="arta-hide-scrollbar -mx-6 overflow-auto py-10 md:mx-0 lg:py-16 ">
               <TabBar
                 className="justify-center"
                 tabs={tabList.map((t) => {
                   return {
                     label: t.title,
-                    value: t.value
+                    value: t.value,
                   }
                 })}
                 selectedTab={tabInfo.title}

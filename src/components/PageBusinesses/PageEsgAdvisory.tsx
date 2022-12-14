@@ -16,6 +16,7 @@ const PageEsgAdvisory: FC<{ k: any; locale: string }> = ({ k, locale }) => {
         title={t('page_title.artazine')}
         description={t('page_description.artazine')}
         keywords={t('page_keywords.artazine')}
+        ga="OB - ESG Advisory"
       />
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">

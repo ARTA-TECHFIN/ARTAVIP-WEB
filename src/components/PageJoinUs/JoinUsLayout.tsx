@@ -27,11 +27,12 @@ const JoinUsLayout: FC<propsT> = ({ k, jobs }) => {
         title={`${t('page_title.join_us')} | Arta TechFin`}
         description={t('page_description.join_us')}
         keywords={t('page_keywords.join_us')}
+        ga="Join Us"
       />
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
-          title={t("page_title.join_us")}
+          title={t('page_title.join_us')}
           description={k.heroBanner.description}
           image={k.heroBanner.image}
           mobileImage={k.heroBanner.mobileImage}

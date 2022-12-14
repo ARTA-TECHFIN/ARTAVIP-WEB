@@ -17,7 +17,15 @@ const PageJobOpenings = ({ k }: { k: jobDetailsT }) => {
 
   return (
     <>
-      <Seo />
+      <Seo
+        gaType="others"
+        gaObj={{
+          event_name: 'Job_Openings_Content',
+          content: {
+            Content: k.job_title,
+          },
+        }}
+      />
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <SectionBanner />

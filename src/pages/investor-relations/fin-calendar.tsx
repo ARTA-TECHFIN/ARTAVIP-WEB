@@ -14,7 +14,9 @@ const fetchCmsData = async () => {
 }
 
 const fetchFcData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/investor-relations-financial-calendars`)
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/investor-relations-financial-calendars`
+  )
   const data = await res.json()
   return data
 }
@@ -35,14 +37,13 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
 const fcData = (fcData: any, locale: string | undefined = 'en') => {
   const getKey = (keyWithoutLang: string) => `${`${keyWithoutLang}_${locale}`}`
 
-
   return fcData
     .sort((a: any, b: any) => a.attributes.date.localeCompare(b.attributes.date))
     .map(({ attributes: press }: any) => ({
       year: +press.date.split('-')[0],
       post: {
         date: press.date,
-        title: press[getKey('title')]
+        title: press[getKey('title')],
       },
     }))
     .reduce((acc: any, curr: any) => {
@@ -54,9 +55,9 @@ const fcData = (fcData: any, locale: string | undefined = 'en') => {
       }
       return acc
     }, []) as {
-      year: number
-      posts: { date: string; title: string; }[]
-    }[]
+    year: number
+    posts: { date: string; title: string }[]
+  }[]
 }
 
 // Add get report here if seo is needed
@@ -76,18 +77,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 }
 
-const FinCalendarPage = (props: { k: any, fc: any }) => {
-  const { t } = useTranslation()
+const FinCalendarPage = (props: { k: any; fc: any }) => {
   return (
-    <InvestorLayout
-      k={props.k}
-      tabType={TABS.financial_calendar}
-      seo={{
-        title: `${t("investor_relations.financial_calendar")} | Arta TechFin`,
-        description: t("page_description.investor_relations"),
-        keywords: t("page_keywords.investor_relations")
-      }}
-    >
+    <InvestorLayout k={props.k} tabType={TABS.financial_calendar} gaLog={true}>
       <PageFinancialCalendar fc={props.fc} />
     </InvestorLayout>
   )

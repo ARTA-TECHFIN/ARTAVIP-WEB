@@ -4,8 +4,21 @@ type propsT = {
   title?: string
   description?: string
   keywords?: string
+  gaType?: string
+  gaObj?: {
+    content: object
+    event_name: string
+  }
+  ga?: string
 }
-const Seo = ({ title = 'ARTA WEB', description = 'Arta', keywords = '' }: propsT) => {
+const Seo = ({
+  title = 'ARTA WEB',
+  description = 'Arta',
+  keywords = '',
+  ga = '',
+  gaObj = { event_name: '', content: {} },
+  gaType = '',
+}: propsT) => {
   return (
     <Head>
       <title>{title}</title>
@@ -15,64 +28,89 @@ const Seo = ({ title = 'ARTA WEB', description = 'Arta', keywords = '' }: propsT
       <meta name="og:description" content={description} />
       <link rel="icon" href="/favicon.ico" />
       <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify({
-            "@context":"https://schema.org",
-            "@graph":[
-               {
-                  "@type":"Organization",
-                  "@id":"artatechfin.com",
-                  "name":"Arta TechFin",
-                  "url":"artatechfin.com/",
-                  "sameAs":[
-                     "https://www.facebook.com/ARTAtechfin",
-                     "https://www.linkedin.com/company/arta-techfin-corporation-limited",
-                     "https://twitter.com/ARTATechFin",
-                  ],
-                  "legalName":"ARTA TechFin Corporation Limited",
-                  "contactPoint":{
-                     "@type":"ContactPoint",
-                     "telephone":"+852 3513 8279",
-                     "contactType":"Customer service",
-                     "availableLanguage":[
-                        "English",
-                        "Chinese"
-                     ]
-                  }
-               },
-               {
-                  "@type":"WebSite",
-                  "@id":"artatechfin.com",
-                  "url":"artatechfin.com",
-                  "name":"Arta TechFin",
-                  "description":"Arta TechFin",
-                  "publisher":{
-                     "@id":"https://artatechfin.com/#organization"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'Organization',
+                '@id': 'artatechfin.com',
+                'name': 'Arta TechFin',
+                'url': 'artatechfin.com/',
+                'sameAs': [
+                  'https://www.facebook.com/ARTAtechfin',
+                  'https://www.linkedin.com/company/arta-techfin-corporation-limited',
+                  'https://twitter.com/ARTATechFin',
+                ],
+                'legalName': 'ARTA TechFin Corporation Limited',
+                'contactPoint': {
+                  '@type': 'ContactPoint',
+                  'telephone': '+852 3513 8279',
+                  'contactType': 'Customer service',
+                  'availableLanguage': ['English', 'Chinese'],
+                },
+              },
+              {
+                '@type': 'WebSite',
+                '@id': 'artatechfin.com',
+                'url': 'artatechfin.com',
+                'name': 'Arta TechFin',
+                'description': 'Arta TechFin',
+                'publisher': {
+                  '@id': 'https://artatechfin.com/#organization',
+                },
+                'inLanguage': 'en',
+              },
+              {
+                '@type': 'WebPage',
+                '@id': 'artatechfin.com/#webpage',
+                'url': 'artatechfin.com/',
+                'name': 'Arta TechFin',
+                'isPartOf': {
+                  '@id': 'artatechfin.com/#website',
+                },
+                'description':
+                  'ARTA TechFin (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology.',
+                'inLanguage': 'en',
+                'potentialAction': [
+                  {
+                    '@type': 'ReadAction',
+                    'target': ['artatechfin.com/'],
                   },
-                  "inLanguage":"en"
-               },
-               {
-                  "@type":"WebPage",
-                  "@id":"artatechfin.com/#webpage",
-                  "url":"artatechfin.com/",
-                  "name":"Arta TechFin",
-                  "isPartOf":{
-                     "@id":"artatechfin.com/#website"
-                  },
-                  "description":"ARTA TechFin (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology.",
-                  "inLanguage":"en",
-                  "potentialAction":[
-                     {
-                        "@type":"ReadAction",
-                        "target":[
-                           "artatechfin.com/"
-                        ]
-                     }
-                  ]
-                }]
-              })
-            }}
-        />
+                ],
+              },
+            ],
+          }),
+        }}
+      />
+      <script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html:
+            `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){
+              dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+              page_path: window.location.pathname,
+            }); ` +
+            (gaType == 'others'
+              ? `gtag('event', '${gaObj.event_name}', 
+              ${JSON.stringify(gaObj.content)}
+            )`
+              : ga != ''
+              ? `gtag('event', 'Screen_View', {
+                Screen: '${ga}',
+              })`
+              : ''),
+        }}
+      />
     </Head>
   )
 }

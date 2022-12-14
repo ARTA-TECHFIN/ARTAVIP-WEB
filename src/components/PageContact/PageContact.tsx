@@ -8,9 +8,9 @@ import { HeroBanner } from '../HeroBanner'
 import Enquiry from './Enquiry'
 import { EnquiryForm } from './EnquiryForm'
 
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next'
 
-const PageContactPage: FC<{ k: any, locale: string }> = ({ k, locale }) => {
+const PageContactPage: FC<{ k: any; locale: string }> = ({ k, locale }) => {
   const { t } = useTranslation('common')
 
   return (
@@ -19,6 +19,7 @@ const PageContactPage: FC<{ k: any, locale: string }> = ({ k, locale }) => {
         title={`${t('page_title.contact_us')} | Arta TechFin`}
         description={t('page_description.contact_us')}
         keywords={t('page_description.keywords')}
+        ga="Contact Us"
       />
       <Header textColor="brown" />
       <main className="flex flex-col text-arta-sand-100">

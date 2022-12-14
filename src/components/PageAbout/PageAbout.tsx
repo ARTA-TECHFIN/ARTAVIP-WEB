@@ -21,6 +21,7 @@ const PageAbout: FC<{ k: PageAboutCmsT }> = ({ k }) => {
         title={`${t('page_title.about_us')} | Arta TechFin`}
         description={t('page_description.about_us')}
         keywords={t('page_keywords.about_us')}
+        ga="About Us"
       />
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">

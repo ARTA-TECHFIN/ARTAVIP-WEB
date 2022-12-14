@@ -20,8 +20,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
   const { cms } = props
-  const [openYear, setOpenYear] = useState(cms.pressPosts && cms.pressPosts.sort((a:any, b:any) => b.year - a.year)[0].year || 2022)
-  const {t} = useTranslation()
+  const [openYear, setOpenYear] = useState(
+    (cms.pressPosts && cms.pressPosts.sort((a: any, b: any) => b.year - a.year)[0].year) || 2022
+  )
+  const { t } = useTranslation()
   const setOpenYearFunc = (year: number) => {
     if (year == openYear) {
       setOpenYear(0)
@@ -30,28 +32,33 @@ const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
     }
   }
   return (
-    <MediaLayout cms={cms} tabType={MediaTABS.Press_Releases} seo={
-      {
-        title: `${t("page_title.press_release")} | Arta TechFin`,
-        description: t("page_description.press_release"),
-        keywords: t("page_keywords.press_release"),
-      }
-    }>
+    <MediaLayout
+      cms={cms}
+      tabType={MediaTABS.Press_Releases}
+      seo={{
+        title: `${t('page_title.press_release')} | Arta TechFin`,
+        description: t('page_description.press_release'),
+        keywords: t('page_keywords.press_release'),
+      }}
+      gaLog="Media Centre - Press Release"
+    >
       <div className="arta-container mx-auto">
-        {cms.pressPosts.sort((a:any, b:any) => b.year - a.year).map((yearly:any, index:any) => (
-          <CalendarAccordion
-            index={index}
-            key={yearly.year}
-            year={yearly.year}
-            events={yearly.posts.map((r: any) => ({
-              date: new Date(r.date),
-              title: r.title,
-              postPageUrl: `${links.mediaPressPost}/${getSlug(r.title_en)}`,
-            }))}
-            openYear={openYear}
-            setOpenYear={setOpenYearFunc}
-          />
-        ))}
+        {cms.pressPosts
+          .sort((a: any, b: any) => b.year - a.year)
+          .map((yearly: any, index: any) => (
+            <CalendarAccordion
+              index={index}
+              key={yearly.year}
+              year={yearly.year}
+              events={yearly.posts.map((r: any) => ({
+                date: new Date(r.date),
+                title: r.title,
+                postPageUrl: `${links.mediaPressPost}/${getSlug(r.title_en)}`,
+              }))}
+              openYear={openYear}
+              setOpenYear={setOpenYearFunc}
+            />
+          ))}
       </div>
     </MediaLayout>
   )

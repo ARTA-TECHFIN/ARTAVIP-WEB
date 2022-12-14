@@ -15,7 +15,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   const cms = await getMediaCms({ lang: locale })
   const pid = context.params?.pid
-
   return {
     props: {
       cms,
@@ -30,13 +29,21 @@ const Post = (props: { cms: getMediaCmsT; blog: getMediaCmsT['blogPosts'][number
   const { t } = useTranslation('common')
 
   return (
-    <MediaLayout cms={cms} seo={
-      {
+    <MediaLayout
+      cms={cms}
+      seo={{
         title: `${blog.title} | Arta TechFin`,
-        description: t("page_description.arta_blog"),
-        keywords: t("page_keywords.arta_blog")
-      }
-    }>
+        description: t('page_description.arta_blog'),
+        keywords: t('page_keywords.arta_blog'),
+      }}
+      gaType="others"
+      gaObj={{
+        event_name: 'Arta_Blog_Content',
+        content: {
+          Content: getSlug(blog.title),
+        },
+      }}
+    >
       <div className="arta-container mx-auto mt-8">
         <Link
           className={`flex cursor-pointer items-center underline ${textClass.body_regular_verah}`}

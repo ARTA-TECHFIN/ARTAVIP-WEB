@@ -61,7 +61,7 @@ const CalendarAccordion = ({ index, year, events, openYear, setOpenYear }: props
       </div>
       <div ref={listWrapper} className="h-0 overflow-hidden">
         <ul ref={list} className="px-6 pb-6 lg:px-8 lg:pb-8">
-          {events.map((event, index) => {
+          {events.sort((a: any, b: any) => b.date - a.date).map((event, index) => {
             return (
               <li
                 className="arta-eventItem cursor-pointer border-b	border-solid border-arta-sand-200 py-6"

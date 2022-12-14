@@ -85,7 +85,7 @@ const FinCalendarPage = (props: { k: any; fc: any }) => {
       tabType={TABS.financial_calendar}
       gaLog={true}
       seo={{
-        title: `${t('investor_relations.financial_calendar')} | Arta TechFin`,
+        title: `${t('page_title.investor_relations')} | Arta TechFin`,
         description: t('page_description.investor_relations'),
         keywords: t('page_keywords.investor_relations'),
       }}

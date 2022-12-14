@@ -69,7 +69,7 @@ const InvestorPage = (props: { k: any }) => {
       tabType={TABS.corporate_information}
       gaLog={true}
       seo={{
-        title: `${t('investor_relations.corporate_information')} | Arta TechFin`,
+        title: `${t('page_title.investor_relations')} | Arta TechFin`,
         description: t('page_description.investor_relations'),
         keywords: t('page_keywords.investor_relations'),
       }}

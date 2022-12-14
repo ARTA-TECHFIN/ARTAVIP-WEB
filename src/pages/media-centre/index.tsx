@@ -33,7 +33,7 @@ const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
     >
       <div className="arta-container mx-auto">
         <div className="grid grid-cols-12 gap-4 md:gap-8">
-          {cms.blogPosts.map((post: any, index: number) => (
+          {cms.blogPosts.sort((a: any, b: any) => b.date - a.date).map((post: any, index: number) => (
             <Link
               key={index}
               className="col-span-full h-full md:col-span-6 lg:col-span-4"

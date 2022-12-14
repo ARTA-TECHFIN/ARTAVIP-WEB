@@ -16,6 +16,7 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
   const g = (keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
 
   return {
+    job_id: pageData.data.id,
     job_title: g('job_title'),
     work_location: g('work_location'),
     department: g('department'),

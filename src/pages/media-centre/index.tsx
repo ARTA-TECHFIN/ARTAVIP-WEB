@@ -29,7 +29,7 @@ const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
         description: t('page_description.arta_blog'),
         keywords: t('page_keywords.arta_blog'),
       }}
-      gaLog="IR - Announcements & Reports"
+      gaLog="Media Centre - Arta Blog"
     >
       <div className="arta-container mx-auto">
         <div className="grid grid-cols-12 gap-4 md:gap-8">

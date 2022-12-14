@@ -75,13 +75,13 @@ export const SectionLeadership = (props: { k: PageAboutCmsT }) => {
           )}
           <button
             ref={prevRef}
-            className="swiper-button absolute left-1/2 bottom-[-90px] translate-x-[-350%] lg:left-[-56px] lg:top-[37.5%] lg:bottom-[unset] lg:translate-y-[-50%] lg:translate-x-0"
+            className={`slider-length-${k.leadership.leaderList.length} swiper-button absolute left-1/2 bottom-[-90px] translate-x-[-350%] lg:left-[-56px] lg:top-[37.5%] lg:bottom-[unset] lg:translate-y-[-50%] lg:translate-x-0`}
           >
             <IconArrowLeft className="fill-current" />
           </button>
           <button
             ref={nextRef}
-            className="swiper-button absolute left-1/2 bottom-[-90px] translate-x-[250%] lg:right-[-56px] lg:top-[37.5%] lg:bottom-[unset] lg:left-[unset] lg:translate-y-[-50%] lg:translate-x-0"
+            className={`slider-length-${k.leadership.leaderList.length} swiper-button absolute left-1/2 bottom-[-90px] translate-x-[250%] lg:right-[-56px] lg:top-[37.5%] lg:bottom-[unset] lg:left-[unset] lg:translate-y-[-50%] lg:translate-x-0`}
           >
             <IconArrowRight className="fill-current" />
           </button>

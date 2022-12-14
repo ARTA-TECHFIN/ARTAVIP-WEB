@@ -83,24 +83,25 @@ const cms = {
   },
 }
 
-const PageSecurities: FC<{ k: any, locale: string }> = ({ k, locale }) => {
+const PageSecurities: FC<{ k: any; locale: string }> = ({ k, locale }) => {
   const { t } = useTranslation('common')
 
   return (
     <>
       <Seo
-        title={`${t("page_title.global_markets")} | Arta TechFin`}
-        description={t("page_description.global_markets")}
-        keywords={t("page_keywords.global_markets")}
+        title={`${t('page_title.global_markets')} | Arta TechFin`}
+        description={t('page_description.global_markets')}
+        keywords={t('page_keywords.global_markets')}
+        ga="OB - Securities Brokerage"
       />
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
-          title={t("page_title.global_markets")}
+          title={t('page_title.global_markets')}
           description={k.heroBanner.description}
           image={k.heroBanner.image}
           mobileImage={k.heroBanner.mobileImage}
-          label={t("page_title.our_businesses")}
+          label={t('page_title.our_businesses')}
         />
 
         <BusinessPageModules locale={locale} components={k.components} />

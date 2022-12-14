@@ -25,7 +25,7 @@ const PageJobOpenings = ({ k }: { k: jobDetailsT }) => {
         gaObj={{
           event_name: 'Job_Openings_Content',
           content: {
-            Content: k.job_title,
+            Content: k.job_id,
           },
         }}
       />

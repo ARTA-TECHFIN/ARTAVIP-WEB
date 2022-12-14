@@ -96,7 +96,7 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
     <section
       ref={sec1Container}
       id="break-barriers"
-      className="relative tigger-01 relative z-3 flex h-app-height lg:h-screen w-screen flex-col overflow-hidden bg-[#351e0e] will-change-transform"
+      className="tigger-01 relative relative z-3 flex h-app-height w-screen flex-col overflow-hidden bg-[#351e0e] will-change-transform lg:h-screen"
       onMouseMove={(ev) => section1HandleMouseMove(ev)}
     >
       <video
@@ -107,20 +107,20 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
         playsInline
         preload="true"
         crossOrigin="anonymous"
-        className="absolute bottom-[15%] left-[-50%] transform scale-[2.5] sm:scale-[1.5] md:left-[-25%] lg:scale-100 lg:left-0 sm:bottom-0 md:h-full md:w-full md:object-cover md:relative will-change-transform"
+        className="absolute bottom-[15%] left-[-50%] scale-[2.5] transform will-change-transform sm:bottom-0 sm:scale-[1.5] md:relative md:left-[-25%] md:h-full md:w-full md:object-cover lg:left-0 lg:scale-100"
       >
         <source src="/videos/landing_top.mp4" typeof="video/mp4" />
         Your browser does not support the video tag.
       </video>
       {/* top-[20%] left-0   sm:top-[40%] lg:left-[10%] xl:left-[20%] xl:mx-auto */}
-      <div className="aboluste h-[50vh] w-full top-0 left-0 home-background-gradient z-1 lg:hidden" />
+      <div className="aboluste home-background-gradient top-0 left-0 z-1 h-[50vh] w-full lg:hidden" />
       <div className="z-1">
-        <div className="animatedSpotLight1 mix-blend-lighten w-[100vw] h-[100vw] absolute blur-[35px]" />
-        <div className="animatedSpotLight2 mix-blend-lighten w-[100vw] h-[100vw] absolute blur-[35px]" />
+        <div className="animatedSpotLight1 absolute h-[100vw] w-[100vw] mix-blend-lighten blur-[35px]" />
+        <div className="animatedSpotLight2 absolute h-[100vw] w-[100vw] mix-blend-lighten blur-[35px]" />
       </div>
-      <div className=" movable-elements-wrapper flex max-w-main-contain items-start justify-center z-1 px-6 xl:mx-auto">
-        <div className="absolute bottom-[85em] sm:bottom-[45em] left-[0] md:bottom-[7em] md:bottom-[6em] md:left-[5em]">
-          { locale === "en" && (
+      <div className=" movable-elements-wrapper z-1 flex max-w-main-contain items-start justify-center px-6 xl:mx-auto">
+        <div className="absolute bottom-[85em] left-[0] sm:bottom-[45em] md:bottom-[7em] md:bottom-[6em] md:left-[5em]">
+          {locale === 'en' && (
             <h1
               id="animation"
               ref={sec1TtlRef}
@@ -135,11 +135,11 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
               </span>
             </h1>
           )}
-          { locale === "tc" && (
+          {locale === 'tc' && (
             <h1
               id="animation"
               ref={sec1TtlRef}
-              className="movable z-[200] text-left font-Noto text-[10em] leading-[1.4em] text-white will-change-transform md:text-[3em] md:mb-10"
+              className="movable z-[200] text-left font-Noto text-[10em] leading-[1.4em] text-white will-change-transform md:mb-10 md:text-[3em]"
             >
               打破壁壘
               <span className="flex space-x-2">
@@ -148,11 +148,11 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
               </span>
             </h1>
           )}
-          { locale === "sc" && (
+          {locale === 'sc' && (
             <h1
               id="animation"
               ref={sec1TtlRef}
-              className="movable z-[200] text-left font-Noto text-[10em] leading-[1.4em] text-white will-change-transform md:text-[3em] md:mb-10"
+              className="movable z-[200] text-left font-Noto text-[10em] leading-[1.4em] text-white will-change-transform md:mb-10 md:text-[3em]"
             >
               打破壁垒
               <span className="flex space-x-2">

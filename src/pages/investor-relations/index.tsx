@@ -51,6 +51,7 @@ const InvestorPage = (props: { k: any }) => {
         description: t('page_description.investor_relations'),
         keywords: t('page_keywords.investor_relations'),
       }}
+      gaLog={true}
     >
       <PageInvestorRelations />
     </InvestorLayout>

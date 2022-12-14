@@ -2,6 +2,7 @@ import { langT } from './i18n'
 
 const host = process.env.NEXT_PUBLIC_HOSTING_PATH
 const reportEndpoint = `${host}/api/report-list`
+const advancedReportEndpoint = `${host}/api/advanced-report-list`
 
 const fileType = {
   ANN: 'Announcement',
@@ -47,11 +48,37 @@ interface apiResponseT<listItemT extends unknown> {
   }
 }
 
+export interface advancedReportItemT {
+  year: string // "2022",
+  doc_date: string // "2022-07-15",
+  filetype: fileTypeT
+  // filetype2: string
+  headline: string // "Annual Report 2021\/2022",
+  url: string // "https:\/\/doc.irasia.com\/listco\/hk\/artatechfin\/annual\/2022\/ar2022.pdf",
+}
+
+interface apiResponse2T<listItemT extends unknown> {
+  status: number
+  message: string
+  data: {
+    lang: string
+    company: string
+    max_year: number
+    min_year: number
+    results: listItemT[]
+  }
+}
+
 export interface reportRequestT {
   lang: langT
   page: number
   year?: number | null
   reportType: 'r' | 'acl' | 'b03' | 't26' | 't11t13' | 'c' | 'l'
+}
+
+export interface advancedReportRequestT {
+  lang: langT
+  reportType: 'reports' | 'results'
 }
 
 export const getReportList = async ({ lang, page, year, reportType }: reportRequestT) => {
@@ -63,6 +90,16 @@ export const getReportList = async ({ lang, page, year, reportType }: reportRequ
   if (result.status !== 200) throw new Error(result.message)
 
   return result as apiResponseT<reportItemT>
+}
+
+export const getAdvancedReportList = async ({ lang, reportType }: advancedReportRequestT) => {
+  const endpoint = advancedReportEndpoint + `?lang=${lang}&reportType=${reportType}`
+  const res = await fetch(endpoint)
+
+  const result = await res.json()
+  if (result.status !== 200) throw new Error(result.message)
+
+  return result as apiResponse2T<advancedReportItemT>
 }
 
 // TODO: generate this from cms

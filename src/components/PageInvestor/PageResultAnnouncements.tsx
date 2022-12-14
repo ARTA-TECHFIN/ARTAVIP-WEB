@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { useQuery } from '@tanstack/react-query'
-import { getReportList } from 'src/domains/investor'
+import { getAdvancedReportList } from 'src/domains/investor'
 import { ErrorMessage } from '../ErrorMessage'
 import { Loader } from '../Loader'
 import { ReportSection } from './ReportSection'
@@ -10,14 +10,11 @@ import { links } from 'src/domains/links'
 import { useTranslation } from 'next-i18next'
 import { textClass } from 'src/components/Text'
 
-<<<<<<< HEAD
-=======
 interface responseT {
   year: number
   results: any
 }
 
->>>>>>> e98b8b4... [feat] update ga
 const QUERY_RESULT_ANNOUNCEMENT = 'QUERY_RESULT_ANNOUNCEMENT'
 // TODO: Assume only get four years of data
 const useGetData = (locale: string) => {

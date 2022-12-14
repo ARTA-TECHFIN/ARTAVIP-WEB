@@ -135,7 +135,10 @@
   @apply font-Verah text-[1rem] leading-[1.5rem] tracking-wide;
   margin-top: 12px;
 }
-
+.module-text-col-list ul{
+  list-style: disc;
+  padding-left: 1.25rem;
+}
 .module-etg-text-section p,
 .module-text-col-list p,
 .blog-content p {
@@ -291,6 +294,14 @@
 input[type="checkbox"] {
   accent-color: #593725;  
 }  
+.arta-leadership-slide .slider-length-1{
+  display: none;
+}
+@media (max-width: 575px) {
+  .arta-leadership-slide .slider-length-2{
+    display: none;
+  }
+}
 .group-hover-bg-arta-sand-100:before{
   content: "";
   position: absolute;

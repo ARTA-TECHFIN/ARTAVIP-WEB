@@ -26,7 +26,8 @@ const Seo = ({
       <meta name="keywords" content={keywords} />
       <meta name="og:title" content={title} />
       <meta name="og:description" content={description} />
-      <link rel="icon" href="/favicon.ico" />
+      <meta name="og:image" content={`${process.env.SITE_URL}/images/artatechfin.png`} />
+      <link rel="icon" href="/favicon.png" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

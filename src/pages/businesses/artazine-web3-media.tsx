@@ -20,7 +20,7 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
       mobileImage: '/images/asset-management/mobile-banner.png',
       label: 'Our Businesses',
     },
-    components: pageData.data?.attributes?.components || []
+    components: pageData.data?.attributes?.components || [],
   }
 }
 

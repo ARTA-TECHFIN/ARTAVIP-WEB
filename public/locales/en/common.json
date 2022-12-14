@@ -16,7 +16,8 @@
     "global_markets": "Global Markets",
     "artazine": "Artazine Web3 Media",
     "esg_advisory": "ESG Advisory",
-    "arta_blog": "Media Centre",
+    "media_center": "Media Centre",
+    "arta_blog": "Arta Blog",
     "press_release": "Press Release"
   },
   "page_description": {
@@ -33,7 +34,7 @@
     "insurance_brokerage": "Our Insurance Brokerage division offers all types of life and general insurance products, tailor-made insurance services and risk solutions.",
     "global_markets": "Our Global Markets division provides clients with an all-in-one platform and a new experience in finance. ",
     "artazine": "Artazine delivers the latest news, analysis and interviews on art, culture, crypto, NFT, Metaverse, and gaming trends and happenings.",
-    "arta_blog": "Media Centre - ARTA TechFin (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology.",
+    "media_center": "Media Centre - ARTA TechFin (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology.",
     "press_release": "Press Release - ARTA TechFin (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology.",
     "esg_advisory": "Artazine delivers the latest news, analysis and interviews on art, culture, crypto, NFT, Metaverse, and gaming trends and happenings. "
   },
@@ -51,7 +52,7 @@
     "insurance_brokerage": "enterprise risk management, insurtech, wealthtech, wealth management, risk solutions, employee benefit, MPF, business insurance plan, virtual asset insurance, crime, d&o, directors & officers, PI, cold storage, hot storage",
     "global_markets": "hedge fund, family office, HNWI, insitutional investor, margin financing, multi-asset, digital asset, virtual asset, delta one, structured product, capital introduction",
     "artazine": "NFT investment, non fungible tokens, NFT marketplace, NFT art, opensea, NFT price, NFT drop, top NFT projects, crypto wallet, gas fee, play to earn game, crypto market, crypto mining, crypto trading, crypto research, mateverse news, metaverse crypto, metaverse nft, metaverse land, metaverse gaming, gamefi crypto, gamefi projects, gamefi tokenomics, web 3 metaverse, web 3.0 examples, web 3 launch date, blockchain, crypto market cap, what is nft, token, defi crypto, Ethereum, bitcoin, Solana, metamask",
-    "arta_blog": "fintech, techfin, blockchain, digital asset, virtual asset, Adrian Cheng, web3, tokenization, security token, STO, custodian, NFT, asset management, investment banking, global market, insurance, trading, prime services, prime brokerage, wallet",
+    "media_center": "fintech, techfin, blockchain, digital asset, virtual asset, Adrian Cheng, web3, tokenization, security token, STO, custodian, NFT, asset management, investment banking, global market, insurance, trading, prime services, prime brokerage, wallet",
     "press_release": "fintech, techfin, blockchain, digital asset, virtual asset, Adrian Cheng, web3, tokenization, security token, STO, custodian, NFT, asset management, investment banking, global market, insurance, trading, prime services, prime brokerage, wallet",
     "esg_advisory": "NFT investment, non fungible tokens, NFT marketplace, NFT art, opensea, NFT price, NFT drop, top NFT projects, crypto wallet, gas fee, play to earn game, crypto market, crypto mining, crypto trading, crypto research, mateverse news, metaverse crypto, metaverse nft, metaverse land, metaverse gaming, gamefi crypto, gamefi projects, gamefi tokenomics, web 3 metaverse, web 3.0 examples, web 3 launch date, blockchain, crypto market cap, what is nft, token, defi crypto, Ethereum, bitcoin, Solana, metamask"
   },

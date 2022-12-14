@@ -39,7 +39,7 @@ const InvestorPage = (props: { k: any; locale: string }) => {
       tabType={TABS.esg}
       gaLog={true}
       seo={{
-        title: t('investor_relations.esg'),
+        title: `${t('investor_relations.esg')} | Arta TechFin`,
         description: t('page_description.investor_relations'),
         keywords: t('page_keywords.investor_relations'),
       }}

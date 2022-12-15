@@ -397,14 +397,14 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
                 1024: {
                   loop: false,
                   centeredSlides: false,
-                  slidesPerView: 5,
+                  slidesPerView: 6,
                 },
               }}
               className="!overflow-visible"
             >
               {businesses.map((business: any, i: number) => (
                 <SwiperSlide
-                  className="flex min-h-[13em] min-w-[13em] flex-col justify-center text-center"
+                  className="flex min-h-[12em] min-w-[12em] flex-col justify-center text-center"
                   key={`option-${i}`}
                 >
                   <BusinessCircle

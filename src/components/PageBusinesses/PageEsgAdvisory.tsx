@@ -13,7 +13,7 @@ const PageEsgAdvisory: FC<{ k: any; locale: string }> = ({ k, locale }) => {
   return (
     <>
       <Seo
-        title={t('page_title.esg_advisory')}
+        title={`${t('page_title.esg_advisory')} | Arta TechFin`}
         description={t('page_description.esg_advisory')}
         keywords={t('page_keywords.esg_advisory')}
         ga="OB - ESG Advisory"
@@ -21,7 +21,7 @@ const PageEsgAdvisory: FC<{ k: any; locale: string }> = ({ k, locale }) => {
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
-          title={t('page_title.artazine')}
+          title={t('page_title.esg_advisory')}
           description={k.heroBanner.description}
           image={k.heroBanner.image}
           mobileImage={k.heroBanner.mobileImage}

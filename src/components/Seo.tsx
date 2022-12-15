@@ -26,7 +26,10 @@ const Seo = ({
       <meta name="keywords" content={keywords} />
       <meta name="og:title" content={title} />
       <meta name="og:description" content={description} />
-      <meta name="og:image" content={`${process.env.SITE_URL}/images/artatechfin.png`} />
+      <meta
+        name="og:image"
+        content={`${process.env.NEXT_PUBLIC_SITE_URL}/images/artatechfin.png`}
+      />
       <link rel="icon" href="/favicon.png" />
       <script
         type="application/ld+json"

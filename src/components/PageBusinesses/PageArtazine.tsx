@@ -18,18 +18,11 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
         keywords={t('page_keywords.artazine')}
         ga="OB - ARTAZINE"
       />
-      <Header textColor="brown" />
-      <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
-        <HeroBanner
-          title={t('page_title.artazine')}
-          description={k.heroBanner.description}
-          image={k.heroBanner.image}
-          mobileImage={k.heroBanner.mobileImage}
-          label={t('page_title.our_businesses')}
-        />
-        <BusinessPageModules locale={locale} components={k.components} />
+      <Header textColor="black" />
+      <main className="flex flex-col bg-arta-bright-gray text-arta-black">
+        <div className="mt-[32px] pt-[6em] md:mt-[48px] lg:pt-[4.6em]"></div>
       </main>
-      <Footer textColor="brown" />
+      <Footer textColor="black" />
     </>
   )
 }

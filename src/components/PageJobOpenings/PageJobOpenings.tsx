@@ -29,7 +29,7 @@ const PageJobOpenings = ({ k }: { k: jobDetailsT }) => {
           },
         }}
       />
-      <Header textColor="brown" />
+      <Header textColor="white" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <SectionBanner />
         <div className="bg-arta-eggshell-100 pt-12 pb-[150px]">

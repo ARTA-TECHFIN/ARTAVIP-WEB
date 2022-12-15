@@ -22,7 +22,7 @@ const PageAbout: FC<{ k: PageAboutCmsT }> = ({ k }) => {
         keywords={t('page_keywords.about_us')}
         ga="About Us"
       />
-      <Header textColor="brown" />
+      <Header textColor="white" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <SectionFullMission
           label={t('about_us.vision_mission')}

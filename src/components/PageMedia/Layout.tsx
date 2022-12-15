@@ -57,7 +57,7 @@ const Layout = (props: {
         gaObj={gaObj}
         gaType={gaType}
       />
-      <Header textColor="brown" />
+      <Header textColor="white" />
       <main className="flex flex-col bg-arta-eggshell-100 pb-28 text-arta-sand-100 md:pb-[150px]">
         <HeroBanner
           title={t('page_title.media_centre')}

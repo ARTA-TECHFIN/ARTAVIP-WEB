@@ -21,7 +21,7 @@ const PageContactPage: FC<{ k: any; locale: string }> = ({ k, locale }) => {
         keywords={t('page_keywords.contact_us')}
         ga="Contact Us"
       />
-      <Header textColor="brown" />
+      <Header textColor="white" />
       <main className="flex flex-col text-arta-sand-100">
         <HeroBanner
           title={t('page_title.contact_us')}

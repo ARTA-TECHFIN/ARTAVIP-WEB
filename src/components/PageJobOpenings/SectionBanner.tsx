@@ -8,7 +8,7 @@ const SectionBanner = () => {
     <div className="group/bg relative overflow-hidden">
       <div className="easeInOutSine absolute h-full w-full overflow-hidden duration-300">
         <Image
-          src="/images/asset-management/bg-introduction.png"
+          src="/images/asset-management/top-bg-introduction.png"
           alt=""
           fill
           className="object-cover"

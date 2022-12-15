@@ -15,7 +15,10 @@ const fetchCmsData = async () => {
   return data
 }
 
-const Footer: FC<{ textColor?: 'white' | 'brown', setShowWechatPopup?: (f: boolean) => void }> = (props) => {
+const Footer: FC<{
+  textColor?: 'white' | 'brown' | 'black'
+  setShowWechatPopup?: (f: boolean) => void
+}> = (props) => {
   const { t } = useTranslation('common')
   const { textColor = 'white', setShowWechatPopup } = props
   const router = useRouter()
@@ -27,9 +30,21 @@ const Footer: FC<{ textColor?: 'white' | 'brown', setShowWechatPopup?: (f: boole
   const textClass =
     textColor === 'white'
       ? 'text-arta-eggshell-100 decoration-arta-snow-100'
+      : textColor === 'black'
+      ? 'text-arta-black decoration-arta-black'
       : 'text-arta-sand-100 decoration-arta-sand-100'
-  const bgClass = textColor === 'white' ? 'bg-arta-bistre-100' : 'bg-arta-eggshell-100'
-  const borderClass = textColor === 'white' ? 'border-[#878095]' : 'border-arta-sand-100/50'
+  const bgClass =
+    textColor === 'white'
+      ? 'bg-arta-bistre-100'
+      : textColor === 'black'
+      ? 'bg-white'
+      : 'bg-arta-eggshell-100'
+  const borderClass =
+    textColor === 'white'
+      ? 'border-[#878095]'
+      : textColor === 'black'
+      ? 'border-[#AAAAAA]'
+      : 'border-arta-sand-100/50'
 
   useEffect(() => {
     const fetchData = async () => {
@@ -74,7 +89,7 @@ const Footer: FC<{ textColor?: 'white' | 'brown', setShowWechatPopup?: (f: boole
                   </h6>
                   <ul className="list-none font-Neue text-[12px] leading-[20px]">
                     <li>
-                      <a title={"Phone number"} href={`tel: ${footerData.footer_tel}`}>
+                      <a title={'Phone number'} href={`tel: ${footerData.footer_tel}`}>
                         <span>
                           {t('footer.tel')}{' '}
                           <span className="cursor-pointer hover:underline">
@@ -85,7 +100,7 @@ const Footer: FC<{ textColor?: 'white' | 'brown', setShowWechatPopup?: (f: boole
                     </li>
 
                     <li>
-                      <a title={"Fax"} href="fax:+852 2507 2009">
+                      <a title={'Fax'} href="fax:+852 2507 2009">
                         <span>
                           {t('footer.fax')}{' '}
                           <span className="cursor-pointer hover:underline">
@@ -95,7 +110,7 @@ const Footer: FC<{ textColor?: 'white' | 'brown', setShowWechatPopup?: (f: boole
                       </a>
                     </li>
                     <li>
-                      <a title={"Email Arta"} href={`mailto:${footerData.footer_email}`}>
+                      <a title={'Email Arta'} href={`mailto:${footerData.footer_email}`}>
                         <span>
                           {t('footer.email')}{' '}
                           <span className="cursor-pointer hover:underline">
@@ -114,10 +129,13 @@ const Footer: FC<{ textColor?: 'white' | 'brown', setShowWechatPopup?: (f: boole
                         <Component className="h-6 w-6 pr-1 last:pr-0" />
                       </a>
                     ))}
-                    <div className="cursor-pointer" onClick={() => {
-                      setOpenWeChatPopup(true)
-                      if (setShowWechatPopup) setShowWechatPopup(true)
-                    }}>
+                    <div
+                      className="cursor-pointer"
+                      onClick={() => {
+                        setOpenWeChatPopup(true)
+                        if (setShowWechatPopup) setShowWechatPopup(true)
+                      }}
+                    >
                       <IconWeChat className="h-6 w-6 pr-1 last:pr-0" />
                     </div>
                   </div>
@@ -132,11 +150,19 @@ const Footer: FC<{ textColor?: 'white' | 'brown', setShowWechatPopup?: (f: boole
             <Hr borderColorClass={borderClass} />
             <div className="flex  flex-col items-start justify-start space-y-5 font-Neue lg:flex-row lg:items-center lg:justify-between">
               <div className="flex items-center justify-around space-x-3 text-[12px] leading-[20px] sm:space-x-6">
-                <Link title={t('page_title.disclaimer')} href={links.disclaimer} className="cursor-pointer hover:underline">
+                <Link
+                  title={t('page_title.disclaimer')}
+                  href={links.disclaimer}
+                  className="cursor-pointer hover:underline"
+                >
                   {t('page_title.disclaimer')}
                 </Link>
                 <p>|</p>
-                <Link title={t('page_title.privacy_policy')} href={links.privacy_policy} className="cursor-pointer hover:underline">
+                <Link
+                  title={t('page_title.privacy_policy')}
+                  href={links.privacy_policy}
+                  className="cursor-pointer hover:underline"
+                >
                   {t('page_title.privacy_policy')}
                 </Link>
                 <p>|</p>
@@ -149,7 +175,12 @@ const Footer: FC<{ textColor?: 'white' | 'brown', setShowWechatPopup?: (f: boole
           </div>
         </div>
       </footer>
-      {openWeChatPopup && <WechatPopup togglePopup={setOpenWeChatPopup} qrCode={footerData.social_media_link_wechat.data.attributes.url} />}
+      {openWeChatPopup && (
+        <WechatPopup
+          togglePopup={setOpenWeChatPopup}
+          qrCode={footerData.social_media_link_wechat.data.attributes.url}
+        />
+      )}
     </>
   )
 }

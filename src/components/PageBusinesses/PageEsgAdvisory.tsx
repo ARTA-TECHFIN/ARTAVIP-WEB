@@ -18,7 +18,7 @@ const PageEsgAdvisory: FC<{ k: any; locale: string }> = ({ k, locale }) => {
         keywords={t('page_keywords.esg_advisory')}
         ga="OB - ESG Advisory"
       />
-      <Header textColor="brown" />
+      <Header textColor="white" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
           title={t('page_title.esg_advisory')}

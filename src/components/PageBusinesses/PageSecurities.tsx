@@ -94,7 +94,7 @@ const PageSecurities: FC<{ k: any; locale: string }> = ({ k, locale }) => {
         keywords={t('page_keywords.global_markets')}
         ga="OB - Securities Brokerage"
       />
-      <Header textColor="brown" />
+      <Header textColor="white" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
           title={t('page_title.global_markets')}

@@ -10,7 +10,7 @@ const Disclaimer = () => {
       title: 'Error 404',
       description: '',
       image: '/images/bg-static.jpg',
-      mobileImage: '/images/bg-static.jpg',
+      mobileImage: '/images/mobile-bg-static.jpg',
     },
   }
   return (

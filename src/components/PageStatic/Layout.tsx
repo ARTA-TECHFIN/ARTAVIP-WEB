@@ -33,7 +33,7 @@ const Layout = (props: {
         </div>
       )}
 
-      {!hideMenu && <Header textColor="brown" />}
+      {!hideMenu && <Header textColor="white" />}
       <main className="flex flex-col bg-arta-eggshell-100 pb-12 text-arta-sand-100 md:pb-[150px]">
         <div className="relative z-2 h-[50vh] w-full overflow-hidden md:aspect-video md:h-[50vh]">
           <div ref={bannerImage} className="absolute h-[50vh] w-full overflow-hidden">

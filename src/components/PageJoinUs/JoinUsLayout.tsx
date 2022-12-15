@@ -29,7 +29,7 @@ const JoinUsLayout: FC<propsT> = ({ k, jobs }) => {
         keywords={t('page_keywords.join_us')}
         ga="Join Us"
       />
-      <Header textColor="brown" />
+      <Header textColor="white" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
           title={t('page_title.join_us')}

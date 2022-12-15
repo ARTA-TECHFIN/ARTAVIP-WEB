@@ -35,18 +35,17 @@ const useEnquiryForm = (t: any) => {
     resolver: (data) => {
       const errors: Partial<Record<keyof FormValues, { message: string }>> = {}
 
-      if (!data.name) errors.name = { message: t("warning.required") }
-      if (!data.email) errors.email = { message: t("warning.required") }
+      if (!data.name) errors.name = { message: t('warning.required') }
+      if (!data.email) errors.email = { message: t('warning.required') }
       else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(data.email))
-        errors.email = { message: t("warning.invalid_format") }
-      if (!data.message) errors.message = { message: t("warning.required") }
-      else if (data.message.length > 500)
-        errors.message = { message: t("warning.word_count_500") }
+        errors.email = { message: t('warning.invalid_format') }
+      if (!data.message) errors.message = { message: t('warning.required') }
+      else if (data.message.length > 500) errors.message = { message: t('warning.word_count_500') }
 
       if (data.topic === TOPIC_TYPES.media) {
-        if (!data.company) errors.company = { message: t("warning.required") }
-        if (!data.jobTitle) errors.jobTitle = { message: t("warning.required") }
-        if (!data.phone) errors.phone = { message: t("warning.required") }
+        if (!data.company) errors.company = { message: t('warning.required') }
+        if (!data.jobTitle) errors.jobTitle = { message: t('warning.required') }
+        if (!data.phone) errors.phone = { message: t('warning.required') }
       }
 
       return { values: data, errors }
@@ -111,7 +110,7 @@ const EnquiryForm = () => {
     <div className="group/bg relative overflow-hidden py-12 md:py-[150px]">
       <div className="easeInOutSine absolute inset-0 h-full w-full scale-105 overflow-hidden duration-300 group-hover/bg:scale-100">
         <Image
-          src="/images/asset-management/bg-introduction.png"
+          src="/images/asset-management/top-bg-introduction.png"
           alt=""
           fill
           className="object-cover"
@@ -179,9 +178,12 @@ const EnquiryForm = () => {
                       className="w-full border-arta-sand-100 text-arta-sand-100 md:w-[120px]"
                     >
                       {r.question_submit}
-                      {
-                        submitStatus.isLoading && <img className="absolute right-2 top-[7px] w-6 h-6" src="/images/loading.svg" />
-                      }
+                      {submitStatus.isLoading && (
+                        <img
+                          className="absolute right-2 top-[7px] h-6 w-6"
+                          src="/images/loading.svg"
+                        />
+                      )}
                     </ButtonAnimated>
                   </div>
                 </>

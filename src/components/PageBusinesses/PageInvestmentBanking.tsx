@@ -18,7 +18,7 @@ const PageInvestmentBanking: FC<{ k: any; locale: string }> = ({ k, locale }) =>
         keywords={t('page_keywords.investment_banking')}
         ga="OB - Investment Banking"
       />
-      <Header textColor="brown" />
+      <Header textColor="white" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
           title={t('page_title.investment_banking')}

@@ -36,6 +36,8 @@ module.exports = {
         'arta-bistre-100': '#402414',
         'arta-indigo-100': '#878095',
         'arta-page-background': '#D1C2AC',
+        'arta-black': '#0A0A0A',
+        'arta-bright-gray': '#EEEEED',
       },
       backgroundColor: ['active'],
       backgroundImage: (theme) => ({

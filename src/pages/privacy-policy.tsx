@@ -21,7 +21,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
           title: 'Privacy Policy',
           description: '',
           image: '/images/bg-static.jpg',
-          mobileImage: '/images/bg-static.jpg',
+          mobileImage: '/images/mobile-bg-static.jpg',
         },
         content: cms.data.attributes[`content_${locale}`],
       },

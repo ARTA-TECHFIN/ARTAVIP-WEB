@@ -34,9 +34,10 @@ const fetchCmsData = async () => {
   return data
 }
 
-const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (props) => {
-  const { fontSize = '16px' } = props
-  const textColor = 'white'
+const Header: React.FC<{ textColor?: 'white' | 'black' | 'brown'; fontSize?: string }> = (
+  props
+) => {
+  const { textColor = 'white', fontSize = '16px' } = props
   const { t } = useTranslation('common')
   const router = useRouter()
   const { locale } = router
@@ -49,9 +50,24 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
     our_business: '',
   })
 
-  const textColorClass = textColor === 'white' ? 'text-arta-snow-100' : 'text-arta-russet-100'
-  const bgColorClass = textColor === 'white' ? 'bg-arta-russet-100/90' : 'bg-arta-snow-100/95'
-  const borderColorClass = textColor === 'white' ? 'border-arta-snow-100' : 'border-arta-russet-100'
+  const textColorClass =
+    textColor == 'black'
+      ? 'text-arta-black'
+      : textColor === 'white'
+      ? 'text-arta-snow-100'
+      : 'text-arta-russet-100'
+  const bgColorClass =
+    textColor == 'black'
+      ? 'bg-arta-bright-gray'
+      : textColor === 'white'
+      ? 'bg-arta-russet-100/90'
+      : 'bg-arta-snow-100/95'
+  const borderColorClass =
+    textColor == 'black'
+      ? 'border-arta-black'
+      : textColor === 'white'
+      ? 'border-arta-snow-100'
+      : 'border-arta-russet-100'
 
   // For mobile navbar
   const [showMenu, setShowMenu] = useState(false)
@@ -263,19 +279,31 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
               <span
                 className={cn(
                   'h-[2px] w-full',
-                  textColor == 'white' ? 'bg-[#F4F1E1]' : 'bg-[#593725]'
+                  textColor == 'white'
+                    ? 'bg-[#F4F1E1]'
+                    : textColor == 'black'
+                    ? 'bg-arta-black'
+                    : 'bg-[#593725]'
                 )}
               ></span>
               <span
                 className={cn(
                   'h-[2px] w-full',
-                  textColor == 'white' ? 'bg-[#F4F1E1]' : 'bg-[#593725]'
+                  textColor == 'white'
+                    ? 'bg-[#F4F1E1]'
+                    : textColor == 'black'
+                    ? 'bg-arta-black'
+                    : 'bg-[#593725]'
                 )}
               ></span>
               <span
                 className={cn(
                   'h-[2px] w-full',
-                  textColor == 'white' ? 'bg-[#F4F1E1]' : 'bg-[#593725]'
+                  textColor == 'white'
+                    ? 'bg-[#F4F1E1]'
+                    : textColor == 'black'
+                    ? 'bg-arta-black'
+                    : 'bg-[#593725]'
                 )}
               ></span>
             </div>
@@ -321,7 +349,13 @@ const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (
                       >
                         <Link className="flex items-start pl-5" href={item.link}>
                           <IconListItemArrow
-                            fill={textColor === 'white' ? '#F4F1E1' : '#2E1605'}
+                            fill={
+                              textColor === 'white'
+                                ? '#F4F1E1'
+                                : textColor === 'black'
+                                ? '#000000'
+                                : '#2E1605'
+                            }
                             className=" ease mr-2 mt-1 hidden h-4 w-4 -translate-x-full duration-300 group-hover:block group-hover:translate-x-0"
                           />
                           <span>{item.title}</span>

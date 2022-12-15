@@ -102,7 +102,7 @@ const InvestorLayout: FC<propsT> = ({
             : ''
         }
       />
-      <Header textColor="brown" />
+      <Header textColor="white" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
           title={seo.title.replace(' | Arta TechFin', '')}

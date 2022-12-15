@@ -18,7 +18,7 @@ const PageAssetManagementPage: FC<{ k: any; locale: string }> = ({ k, locale }) 
         keywords={t('page_keywords.asset_management')}
         ga="OB - Asset Management"
       />
-      <Header textColor="brown" />
+      <Header textColor="white" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
           title={t('page_title.asset_management')}

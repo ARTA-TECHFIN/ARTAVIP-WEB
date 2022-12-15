@@ -18,7 +18,7 @@ const PageInsuranceBrokerage: FC<{ k: any; locale: string }> = ({ k, locale }) =
         keywords={t('page_keywords.our_businesses')}
         ga="OB - Insurance Brokerage"
       />
-      <Header textColor="brown" />
+      <Header textColor="white" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
           title={t('page_title.insurance_brokerage')}

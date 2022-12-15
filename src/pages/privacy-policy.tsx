@@ -41,6 +41,7 @@ const PrivacyPolicy = (props: { cms: any }) => {
         title: `${t('page_title.privacy_policy')} | Arta TechFin`,
         description: t('page_description.privacy_policy'),
       }}
+      title={t('page_title.privacy_policy')}
     >
       <div className="arta-container mx-auto mt-8">
         <div className="mt-4 bg-white p-6 shadow-blogPost md:p-12">

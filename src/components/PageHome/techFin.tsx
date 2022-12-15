@@ -56,12 +56,12 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
     {
       title: t('page_title.esg_advisory'),
       description: k.our_business_product_description_5,
-      link: links.businessEsg,
+      link: links.businessesEsg,
     },
     {
       title: t('page_title.artazine'),
       description: k.our_business_product_description_6,
-      link: links.businessesWeb3,
+      link: links.businessesArtazine,
     },
   ]
 

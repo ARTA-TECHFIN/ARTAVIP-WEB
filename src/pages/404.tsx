@@ -11,21 +11,27 @@ const Disclaimer = () => {
       description: '',
       image: '/images/bg-static.jpg',
       mobileImage: '/images/bg-static.jpg',
-    }
+    },
   }
   return (
-    <StaticLayout cms={cms} hideFooter={true} hideMenu={true} seo={{title: "Something Went Wrong", description: "", keywords: ""}}>
+    <StaticLayout
+      cms={cms}
+      hideFooter={true}
+      hideMenu={true}
+      seo={{ title: 'Something Went Wrong', description: '', keywords: '' }}
+      title={'Something Went Wrong'}
+    >
       <div className="arta-container mx-auto mt-8 min-h-[40vh]">
         <div className="mt-4 bg-white p-6 shadow-blogPost md:p-12">
           <div className={`blog-content mt-6 ${textClass.body_regular_verah} text-black`}>
-            <p className={textClass.body_regular}>We couldn’t find the page you’re looking for.<br />Visit the Homepage or Contact us.</p>
+            <p className={textClass.body_regular}>
+              We couldn’t find the page you’re looking for.
+              <br />
+              Visit the Homepage or Contact us.
+            </p>
 
-            <ButtonAnimated
-              as="a"
-              href="/"
-              className="border-arta-sand-100 text-arta-sand-100"
-            >
-              {"Back to Homepage"}
+            <ButtonAnimated as="a" href="/" className="border-arta-sand-100 text-arta-sand-100">
+              {'Back to Homepage'}
             </ButtonAnimated>
           </div>
         </div>

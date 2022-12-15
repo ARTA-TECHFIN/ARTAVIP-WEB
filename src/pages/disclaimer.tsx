@@ -21,7 +21,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
           title: 'Disclaimer',
           description: '',
           image: '/images/bg-static.jpg',
-          mobileImage: '/images/bg-static.jpg',
+          mobileImage: '/images/mobile-bg-static.jpg',
         },
         content: cms.data.attributes[`content_${locale}`],
       },
@@ -41,6 +41,7 @@ const Disclaimer = (props: { cms: any }) => {
         title: `${t('page_title.disclaimer')} | Arta TechFin`,
         description: t('page_description.disclaimer'),
       }}
+      title={t('page_title.disclaimer')}
     >
       <div className="arta-container mx-auto mt-8">
         <div className="mt-4 bg-white p-6 shadow-blogPost md:p-12">

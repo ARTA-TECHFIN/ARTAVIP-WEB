@@ -7,7 +7,7 @@ import { HeroBanner } from '../HeroBanner'
 import BusinessPageModules from '../BusinessPageModules'
 import { useTranslation } from 'next-i18next'
 
-const PageWeb3Media: FC<{ k: any; locale: string }> = ({ k, locale }) => {
+const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
   const { t } = useTranslation('common')
 
   return (
@@ -34,4 +34,4 @@ const PageWeb3Media: FC<{ k: any; locale: string }> = ({ k, locale }) => {
   )
 }
 
-export default PageWeb3Media
+export default PageArtazine

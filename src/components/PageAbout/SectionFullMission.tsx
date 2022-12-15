@@ -67,10 +67,10 @@ const SectionFullMission = ({
         />
         <Image
           priority
-          src={simpleHeader ? '/images/bg-static.jpg' : mobileImage}
+          src={simpleHeader ? '/images/mobile-bg-static.jpg' : mobileImage}
           alt={title}
           fill
-          className="object-cover md:hidden"
+          className={`object-cover md:hidden ${simpleHeader && 'object-top'}`}
         />
       </div>
       <div

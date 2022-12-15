@@ -14,9 +14,9 @@ const SectionBanner = () => {
           className="object-cover"
         />
       </div>
-      <div className="arta-container mx-auto h-[480px] py-12 relative z-1 flex flex-col justify-end">
-            <p className={textClass.body_regular_verah}>{t("page_title.join_us")}</p>
-            <h1 className={`${textClass.h1_style2} mt-1`}>{t("join_us.job_openings")}</h1>
+      <div className="arta-container banner-text-shadow relative z-1 mx-auto flex h-[480px] flex-col justify-end py-12 text-white">
+        <p className={textClass.body_regular_verah}>{t('page_title.join_us')}</p>
+        <h1 className={`${textClass.h1_style2} mt-1`}>{t('join_us.job_openings')}</h1>
       </div>
     </div>
   )

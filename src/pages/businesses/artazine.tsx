@@ -1,6 +1,6 @@
 import type { GetServerSideProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import PageWeb3Media from 'src/components/PageBusinesses/PageWeb3Media'
+import PageArtazine from 'src/components/PageBusinesses/PageArtazine'
 import ourBusinessWeb3MediaJson from 'apidata/our-business-web3-media.json'
 
 const fetchCmsData = async () => {
@@ -41,4 +41,4 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 }
 
-export default PageWeb3Media
+export default PageArtazine

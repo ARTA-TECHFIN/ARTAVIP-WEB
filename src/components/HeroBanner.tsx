@@ -69,7 +69,7 @@ const HeroBanner = ({
         />
         <Image
           priority
-          src={simpleHeader ? '/images/bg-static.jpg' : mobileImage}
+          src={simpleHeader ? '/images/mobile-bg-static.jpg' : mobileImage}
           alt={title}
           fill
           className="object-cover md:hidden"

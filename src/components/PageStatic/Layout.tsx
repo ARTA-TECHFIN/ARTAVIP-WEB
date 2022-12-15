@@ -10,11 +10,12 @@ import Link from 'next/link'
 const Layout = (props: {
   seo: any
   cms: any
+  title: any
   children: React.ReactNode
   hideMenu?: boolean
   hideFooter?: boolean
 }) => {
-  const { seo, cms, children, hideFooter = false, hideMenu = false } = props
+  const { seo, cms, title, children, hideFooter = false, hideMenu = false } = props
   const bannerImage = useRef(null)
 
   return (
@@ -48,14 +49,14 @@ const Layout = (props: {
               src={cms.heroBanner.mobileImage}
               alt=""
               fill
-              className="object-cover md:hidden"
+              className="object-cover object-top md:hidden"
             />
           </div>
           {/* <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white" /> */}
           <div className="absolute inset-0 bottom-8 flex flex-col items-center justify-end">
-            <div className="arta-container text-white">
+            <div className="arta-container banner-text-shadow text-white">
               <div className="w-full">
-                <h1 className={`mt-1 ${textClass.h1_style2}`}>{seo.title}</h1>
+                <h1 className={`mt-1 ${textClass.h1_style2}`}>{title}</h1>
               </div>
             </div>
           </div>

@@ -24,21 +24,8 @@ export const SectionMission = (props: { k: PageAboutCmsT }) => {
 
   return (
     <div className="group/bg relative overflow-hidden" id="mission">
-      <div className="easeInOutSine fixed top-0 left-0 h-full w-full overflow-hidden duration-300">
-        <Image src={mission_bg} alt="" fill className="object-cover" />
-      </div>
-      <div className="arta-container relative mx-auto flex flex-col items-center justify-center py-16 md:py-36">
-        <h2 className={`${textClass.title_style2} mb-4 text-center text-arta-eggshell-100`}>
-          {t("about_us.vision_mission")}
-        </h2>
-        <span className={`${textClass.h2_style2} text-arta-snow-100 md:-translate-x-24`}>
-          {k.mission.subtitle1}
-        </span>
-        <span className={`${textClass.h2_style2} mb-12 text-arta-snow-100 md:translate-x-24`}>
-          {k.mission.subtitle2}
-        </span>
-
-        <div className="relative transition hover:brightness-90">
+      <div className="arta-container relative mx-auto flex items-center justify-center px-0 pt-6 md:py-16 md:px-[1.5rem] lg:px-[6rem]">
+        <div className="relative w-full transition hover:brightness-90">
           <video
             controls
             data-keepplaying
@@ -46,7 +33,7 @@ export const SectionMission = (props: { k: PageAboutCmsT }) => {
             ref={videoRef}
             preload="true"
             crossOrigin="anonymous"
-            className="w-full max-w-[800px] cursor-pointer transition will-change-transform"
+            className="w-full cursor-pointer transition will-change-transform"
             onClick={() => toggleVideo()}
           >
             <source src="/videos/1017-arta-video-brand-r12_comp.mp4" typeof="video/mp4" />
@@ -54,9 +41,7 @@ export const SectionMission = (props: { k: PageAboutCmsT }) => {
           </video>
 
           {isPlaying && (
-            <div
-              className="absolute pointer-events-none top-1/2 left-1/2 flex h-[55px] w-[55px] -translate-x-1/2 -translate-y-1/2 transform cursor-pointer flex-col justify-center rounded-full bg-arta-sand-100 text-center hover:shadow-lg"
-            >
+            <div className="pointer-events-none absolute top-1/2 left-1/2 flex h-[55px] w-[55px] -translate-x-1/2 -translate-y-1/2 transform cursor-pointer flex-col justify-center rounded-full bg-arta-sand-100 text-center hover:shadow-lg">
               <svg
                 className="ml-5"
                 width="22"

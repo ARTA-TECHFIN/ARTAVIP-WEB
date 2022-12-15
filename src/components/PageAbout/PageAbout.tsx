@@ -4,12 +4,11 @@ import Header from 'src/components/Header/Header'
 import Footer from 'src/components/Footer'
 import { Seo } from 'src/components/Seo'
 
-import { SectionMission } from './SectionMission'
+import { SectionFullMission } from './SectionFullMission'
 import { SectionCulture } from './SectionCulture'
 import { SectionLeadership } from './SectionLeadership'
 import { SectionTechFin } from './SectionTechFin'
 import { SectionTechFinVsFinTech } from './SectionTechFinVsFinTech'
-import { HeroBanner } from '../HeroBanner'
 import { PageAboutCmsT } from 'src/pages/about-us'
 import { useTranslation } from 'next-i18next'
 
@@ -25,7 +24,7 @@ const PageAbout: FC<{ k: PageAboutCmsT }> = ({ k }) => {
       />
       <Header textColor="brown" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
-        <HeroBanner
+        <SectionFullMission
           label={t('about_us.vision_mission')}
           title={k.mission.subtitle1}
           title2={k.mission.subtitle2}
@@ -33,8 +32,9 @@ const PageAbout: FC<{ k: PageAboutCmsT }> = ({ k }) => {
           mobileImage={k.heroBanner.mobileImage}
           description="null"
           fullWidth={true}
+          k={k}
         />
-        <SectionMission k={k} />
+
         <SectionCulture k={k} />
         <SectionLeadership k={k} />
         <SectionTechFin k={k} />

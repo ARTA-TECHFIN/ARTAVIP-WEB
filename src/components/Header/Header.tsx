@@ -221,7 +221,7 @@ const Header: React.FC<{ textColor?: 'white' | 'black' | 'brown'; fontSize?: str
     }
 
     fetchData()
-  }, [])
+  }, [locale])
 
   return (
     <div

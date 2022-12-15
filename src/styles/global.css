@@ -343,3 +343,6 @@ input[type="checkbox"] {
 .arta-leadership-slide .swiper-button-disabled{
   color: #DED7D3;
 }
+.banner-text-shadow{
+  text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.36);
+}

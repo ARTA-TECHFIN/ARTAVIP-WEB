@@ -82,7 +82,7 @@ const HeroBanner = ({
           simpleHeader ? 'lg:bottom-16' : 'lg:justify-center'
         )}
       >
-        <div className="arta-container">
+        <div className="arta-container banner-text-shadow text-white">
           <FadeUp>
             <div className={cn(simpleHeader || fullWidth ? '' : 'md:w-1/2')}>
               <p className={textClass.title_style2}>{label}</p>

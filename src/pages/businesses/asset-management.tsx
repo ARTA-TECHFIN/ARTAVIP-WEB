@@ -4,7 +4,9 @@ import PageAssetManagementPage from 'src/components/PageBusinesses/PageAssetMana
 import ourBusinessAssetManagementJson from 'apidata/our-business-asset-management.json'
 
 const fetchCmsData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/our-business-asset-management`)
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/our-business-asset-management`
+  )
   const data = await res.json()
   return data
 }
@@ -19,7 +21,7 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
       mobileImage: '/images/our-businesses/mobile-banner.jpg',
       label: 'Our Businesses',
     },
-    components: pageData.data?.attributes?.components || []
+    components: pageData.data?.attributes?.components || [],
   }
 }
 

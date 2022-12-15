@@ -16,11 +16,9 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
 
   return {
     heroBanner: {
-      title: 'Web3 Media',
       description: g('description') !== null ? g('description') : '',
-      image: '/images/asset-management/banner.png',
-      mobileImage: '/images/asset-management/mobile-banner.png',
-      label: 'Our Businesses',
+      image: '/images/our-businesses/banner.jpg',
+      mobileImage: '/images/our-businesses/mobile-banner.jpg',
     },
     components: pageData.data?.attributes?.components || [],
   }

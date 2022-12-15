@@ -35,7 +35,8 @@ const fetchCmsData = async () => {
 }
 
 const Header: React.FC<{ textColor?: 'white' | 'brown'; fontSize?: string }> = (props) => {
-  const { textColor = 'white', fontSize = '16px' } = props
+  const { fontSize = '16px' } = props
+  const textColor = 'white'
   const { t } = useTranslation('common')
   const router = useRouter()
   const { locale } = router

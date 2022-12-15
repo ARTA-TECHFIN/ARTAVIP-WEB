@@ -4,7 +4,9 @@ import PageInsuranceBrokeragePage from 'src/components/PageBusinesses/PageInsura
 import ourBusinessInsuranceBrokerageJson from 'apidata/our-business-insurance-brokerage.json'
 
 const fetchCmsData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/our-business-insurance-brokerage`)
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/our-business-insurance-brokerage`
+  )
   const data = await res.json()
   return data
 }
@@ -18,7 +20,7 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
       image: '/images/our-businesses/banner.jpg',
       mobileImage: '/images/our-businesses/mobile-banner.jpg',
     },
-    components: pageData.data?.attributes?.components || []
+    components: pageData.data?.attributes?.components || [],
   }
 }
 

@@ -146,7 +146,9 @@
 }
 
 .module-text-col-list p,
-.blog-content p {
+.module-text-col-list li,
+.blog-content p,
+.blog-content li {
   @apply text-[1rem] mb-6;
 }
 .module-text-col-list h1,

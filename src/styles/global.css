@@ -229,7 +229,7 @@
 }
 
 .our-eco .swiper-slide {
-  padding-top: 20px;
+  @apply pt-[20px] md:pt-[30px] lg:pt-[40px];
 }
 
 .ss-container {
@@ -242,8 +242,7 @@
 }
 
 .swiper-slide-active .ss-container {
-  @apply bg-arta-eggshell-100 text-arta-sand-100;
-  transform: scale(1.1);
+  @apply bg-arta-eggshell-100 text-arta-sand-100 transform scale-[1.05] md:scale-[1.2];
 }
 
 .swiper-slide-active .ss-circle {

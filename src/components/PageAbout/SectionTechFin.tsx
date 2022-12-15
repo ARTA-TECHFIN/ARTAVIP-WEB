@@ -62,7 +62,7 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
             </>
           </FadeUp>
         </div>
-        <div className="our-eco relative pb-28 w-full arta-container overflow-hidden px-12">
+        <div className="our-eco relative pb-28 w-full arta-container overflow-hidden px-16 sm:px-8 lg:px-4">
           {showComponent && (
             <Swiper
               modules={[Navigation]}
@@ -72,7 +72,7 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
               }}
               loop={true}
               centeredSlides={true}
-              spaceBetween={40}
+              spaceBetween={0}
               slidesPerView={1}
               breakpoints={{
                 767: {
@@ -91,12 +91,12 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
                     <div
                       key={index}
                       className={
-                        'ss-container w-3/5 md:w-4/5 mx-auto lg:w-full flex aspect-square flex-col items-center justify-center rounded-full transition-all duration-300'
+                        'ss-container w-[90%] max-w-[380px] sm:w-4/5 mx-auto lg:w-4/5 flex aspect-square flex-col items-center justify-center rounded-full transition-all duration-300'
                       }
                     >
                       <div
                         className={
-                          'ss-circle relative mb-4 h-16 w-16 transition'
+                          'ss-circle relative mb-4 h-12 w-12 md:h-16 md:w-16 transition'
                         }
                       >
                         {(index === 0) && <IconTechnologyInternetCompanies className="h-full w-full object-cover" />}
@@ -108,7 +108,7 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
                         {(index === 6) && <FinTechCompaniesIcon className="h-full w-full object-cover" />}
                         {(index === 7) && <FinancialInvestmentPlatformIcon className="h-full w-full object-cover" />}
                       </div>
-                      <span className={`${textClass.body_regular} max-w-[70%] text-center`}>
+                      <span className={`${textClass.small_text} max-w-[70%] text-center`}>
                         {item.title}
                       </span>
                     </div>
@@ -121,13 +121,13 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
             ref={prevRef}
             className="absolute bottom-8 left-1/2 translate-x-[-350%]"
           >
-            <IconArrowLeft fill="#593725" />
+            <IconArrowLeft fill="#593725" className="fill-current" />
           </button>
           <button
             ref={nextRef}
             className="absolute bottom-8 left-1/2 translate-x-[250%]"
           >
-            <IconArrowRight fill="#593725" />
+            <IconArrowRight fill="#593725" className="fill-current" />
           </button>
         </div>
       </div>

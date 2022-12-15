@@ -26,7 +26,7 @@ const massageData = (pageData: any, leadershipData: any, locale: string | undefi
     heroBanner: {
       description: g('about_us_description') !== null ? g('about_us_description') : '',
       image: '/images/about/banner.jpg',
-      mobileImage: '/images/about/mobile-banner.png',
+      mobileImage: '/images/about/mobile-banner.jpg',
     },
     mission: {
       subtitle1: g('vision_mission_line_1'),

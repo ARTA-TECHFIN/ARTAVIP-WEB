@@ -245,8 +245,10 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
 
     if (currentSectionId === 0) {
       fromSec1ToSec0()
+      setLastFireTime(Date.now())
     } else if (currentSectionId === 1) {
       fromSec0ToSec1()
+      setLastFireTime(Date.now())
     } else if (currentSectionId === 1.5) {
       fromSec1ToSec1_5()
     } else if (currentSectionId === 2) {

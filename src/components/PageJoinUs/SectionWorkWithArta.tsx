@@ -8,7 +8,7 @@ export const SectionWorkWithArta = ({ k }: any) => {
     <div className="group/bg relative overflow-hidden" id="work-with-arta">
       <div className="easeInOutSine absolute h-full w-full scale-150 overflow-hidden duration-300 group-hover/bg:scale-100">
         <Image
-          src="/images/asset-management/top-bg-introduction.png"
+          src="/images/asset-management/bg-introduction.png"
           alt=""
           fill
           className="object-cover"

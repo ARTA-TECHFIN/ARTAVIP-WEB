@@ -22,7 +22,7 @@ module.exports = {
       fontFamily: {
         Verah: ['"Vera Humana 95"', ...defaultTheme.fontFamily.sans],
         Neue: ['Helvetica Neue', ...defaultTheme.fontFamily.sans],
-        Noto: ["Noto Serif TC", "Times", "Times New Roman", "serif"]
+        Noto: ["Noto Serif TC", "Times", "Times New Roman", "serif"],
       },
       colors: {
         'arta-secondary': '#AB8250',

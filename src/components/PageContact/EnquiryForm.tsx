@@ -110,7 +110,7 @@ const EnquiryForm = () => {
     <div className="group/bg relative overflow-hidden py-12 md:py-[150px]">
       <div className="easeInOutSine absolute inset-0 h-full w-full scale-105 overflow-hidden duration-300 group-hover/bg:scale-100">
         <Image
-          src="/images/asset-management/top-bg-introduction.png"
+          src="/images/asset-management/bg-introduction.png"
           alt=""
           fill
           className="object-cover"

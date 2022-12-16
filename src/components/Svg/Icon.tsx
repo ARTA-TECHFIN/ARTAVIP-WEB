@@ -1888,6 +1888,42 @@ const ReportIcon = (props: propsT) => {
   )
 }
 
+const CustomArrowRight = (props: propsT) => {
+  return (
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`${props.className}`}
+    >
+      <path
+        d="M27.9991 16.5968C27.925 16.6478 27.854 16.7033 27.7867 16.7629C25.7296 18.801 23.6741 20.8406 21.6201 22.8818C21.5612 22.948 21.5068 23.018 21.4571 23.0913L20.366 22.0104L25.1061 17.3109H4V15.8085H25.0661L20.335 11.1202C20.7217 10.7365 21.069 10.3921 21.4655 10C21.51 10.0776 21.5618 10.1509 21.6201 10.2189C23.6744 12.2604 25.7302 14.3 27.7876 16.3377C27.855 16.3972 27.9259 16.4525 28 16.5034L27.9991 16.5968Z"
+        className="fill-arta-black"
+      />
+    </svg>
+  )
+}
+
+const CustomArrowLeft = (props: propsT) => {
+  return (
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`${props.className}`}
+    >
+      <path
+        d="M4.00094 16.5968C4.07505 16.6478 4.14597 16.7033 4.21332 16.7629C6.27041 18.801 8.32593 20.8406 10.3799 22.8818C10.4388 22.948 10.4932 23.018 10.5429 23.0913L11.634 22.0104L6.89393 17.3109H28V15.8085H6.93387L11.665 11.1202C11.2783 10.7365 10.931 10.3921 10.5345 10C10.49 10.0776 10.4382 10.1509 10.3799 10.2189C8.32562 12.2604 6.26978 14.3 4.21238 16.3377C4.14503 16.3972 4.0741 16.4525 4 16.5034L4.00094 16.5968Z"
+        className="fill-arta-black"
+      />
+    </svg>
+  )
+}
+
 export {
   IconListItemArrow,
   IconArrowLeft,
@@ -1927,4 +1963,6 @@ export {
   FinancialInvestmentPlatformIcon,
   AnnouncementIcon,
   ReportIcon,
+  CustomArrowLeft,
+  CustomArrowRight,
 }

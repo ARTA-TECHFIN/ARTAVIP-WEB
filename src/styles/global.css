@@ -371,3 +371,39 @@ input[type="checkbox"] {
 #home-our-business .swiper-slide-active .cta-btn {
   display: block !important;
 }
+/* artazine page */
+.arta-app-page{
+  font-family: "Untitled Sans";
+}
+.app-download-bg {
+  background: url(/images/our-businesses/artazine/download.png) no-repeat;
+  background-size: contain;
+}
+.app-download-slide {
+  background: url(/images/our-businesses/artazine/home.png) no-repeat;
+  background-size: 100%;
+}
+.app-download-slide2 {
+  background: url(/images/our-businesses/artazine/nft.png) no-repeat;
+  background-size: 100%;
+}
+.app-download-slide3 {
+  background: url(/images/our-businesses/artazine/features.png) no-repeat;
+  background-size: 100%;
+}
+.app-download-slide4 {
+  background: url(/images/our-businesses/artazine/statistics.png) no-repeat;
+  background-size: 100%;
+}
+.mode-default-btn {
+  white-space: nowrap;
+  transition: 0.2s;
+}
+.mode-default-btn:hover {
+  @apply bg-arta-black;
+  @apply text-white;
+}
+.arta-app-page .swiper-button-disabled {
+  opacity: .3;
+  cursor: default;
+}

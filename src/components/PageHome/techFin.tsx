@@ -245,8 +245,10 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
 
     if (currentSectionId === 0) {
       fromSec1ToSec0()
+      setLastFireTime(Date.now())
     } else if (currentSectionId === 1) {
       fromSec0ToSec1()
+      setLastFireTime(Date.now())
     } else if (currentSectionId === 1.5) {
       fromSec1ToSec1_5()
     } else if (currentSectionId === 2) {
@@ -367,19 +369,20 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
           />
         </div>
         <div
+          id="home-our-business"
           ref={businessRef}
           className={cn(
-            'absolute top-[22em] left-[3.8em] z-2 w-[95vw] transform pr-4 text-white opacity-0 transition duration-1000 sm:top-[18em] md:top-[12em] lg:left-[6em] lg:left-[4em] lg:bottom-auto lg:top-[19.5em] lg:top-1/2 lg:-translate-y-1/2',
+            'absolute bottom-[22em] md:bottom-[20em] lg:bottom-[25vh] left-[3.8em] z-2 w-[95vw] transform pr-4 text-white opacity-0 transition duration-1000 lg:left-[6em] lg:left-[4em]',
             currentSection == '10' && '!opacity-0'
           )}
         >
           <h1 className="font-verah mt-0 text-left text-[6em] tracking-[0.06em] sm:text-[5em] lg:text-[3.4em]">
             {t('page_title.our_businesses')}
           </h1>
-          <p className="max-w-[30em] text-left font-Neue text-[3em] sm:text-[1.8em] md:text-[1.8em] lg:text-[1em]">
+          <p className="hidden md:block max-w-[30em] text-left font-Neue text-[3em] sm:text-[1.8em] md:text-[1.8em] lg:text-[1em]">
             {k.our_business_description}
           </p>
-          <div className="mx-auto w-[65vw] sm:w-[50vw] md:w-full lg:mx-0 lg:max-w-[85vw]">
+          <div className="mx-auto w-[75vw] sm:w-[50vw] md:w-full lg:mx-0 lg:max-w-[82vw]">
             <Swiper
               loop={false}
               slidesPerView={1}
@@ -435,9 +438,9 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
     >
       <div
         className={cn(
-          index === selectedBusiness && 'innerShadow !opacity-100 lg:h-[11em] lg:w-[11em]',
-          index !== selectedBusiness && 'lg:h-[10em] lg:w-[10em]',
-          `innerShadowMobile mx-auto flex h-[12em] w-[12em] items-center justify-center self-center rounded-full border border-white text-[3em] opacity-70 transition-all will-change-transform sm:text-[2.2em] md:text-[1.8em] lg:text-[0.95em]`
+          index === selectedBusiness && 'innerShadow !opacity-100 lg:h-[12em] lg:w-[12em]',
+          index !== selectedBusiness && 'lg:h-[10.8em] lg:w-[10.8em]',
+          `innerShadowMobile mx-auto flex h-[17.5em] w-[17.5em] md:h-[12.5em] md:w-[12.5em] items-center justify-center self-center rounded-full border border-white text-[3em] opacity-70 transition-all will-change-transform sm:text-[2.2em] md:text-[1.8em] lg:text-[0.95em]`
         )}
       >
         <a href={business.link}>{business.title}</a>
@@ -452,7 +455,7 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
         <p className="mt-[1em] hidden w-full text-center font-Neue text-[3em] text-white lg:block lg:text-[0.8em]">
           {business.description}
         </p>
-        <ButtonAnimated as="a" href={business.link} className="mt-4 border-white text-white ">
+        <ButtonAnimated as="a" href={business.link} className="cta-btn hidden md:block mt-4 border-white text-white ">
           {label}
         </ButtonAnimated>
       </div>

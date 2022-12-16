@@ -221,7 +221,7 @@ const Header: React.FC<{ textColor?: 'white' | 'black' | 'brown'; fontSize?: str
     }
 
     fetchData()
-  }, [])
+  }, [locale])
 
   return (
     <div
@@ -384,7 +384,7 @@ const Header: React.FC<{ textColor?: 'white' | 'black' | 'brown'; fontSize?: str
               <div className="absolute top-0 left-0 z-[801] flex min-h-[100vh] w-full flex-col bg-arta-russet-100 px-[4em] pt-[6em] lg:pt-[2.8em] ">
                 <div className="flex items-start justify-between">
                   <div
-                    className="h-6 w-6 cursor-pointer text-arta-eggshell-100"
+                    className="h-8 w-8 pr-2 pb-2 cursor-pointer text-arta-eggshell-100"
                     onClick={() => {
                       setShowMenu(!showMenu)
                     }}
@@ -393,13 +393,13 @@ const Header: React.FC<{ textColor?: 'white' | 'black' | 'brown'; fontSize?: str
                   </div>
                   <div className="relative h-[32px] w-[78.67px] cursor-pointer opacity-100 transition hover:opacity-100 md:h-auto md:w-auto">
                     <Link title="Arta TechFin" href="/">
-                      <img src="/images/Group.png" alt="Arta TechFin" className="object-contain" />
+                      <img src="/images/arta-logo.svg" alt="Arta TechFin" className="object-contain" />
                     </Link>
                   </div>
                 </div>
                 <div className="mt-8 text-white ">
                   <div className="flex flex-col items-start justify-start">
-                    <div className="flex flex-col space-y-8">
+                    <div className="flex flex-col space-y-8 w-full">
                       {pageInfoList.map((item, index) => (
                         <div key={index}>
                           <MobileNavbar

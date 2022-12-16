@@ -58,7 +58,7 @@ const MobileNavbar: FC<propsT> = ({ item, index, expand, setActiveMobileNavItem 
               expand && 'scale-y-100 transform opacity-100 transition delay-100'
             } mt-5 flex transform flex-col items-start justify-start `}
           >
-            <p className="mt-5 max-w-[500px] text-sm">{item.paragraph}</p>
+            <p className="hidden lg:block mt-5 max-w-[500px] text-sm">{item.paragraph}</p>
             {
               item.buttonText && (
                 <ButtonAnimated
@@ -73,7 +73,7 @@ const MobileNavbar: FC<propsT> = ({ item, index, expand, setActiveMobileNavItem 
             }
             
 
-            <div className="flex flex-col justify-center space-y-1 pl-5 mt-6">
+            <div className="flex flex-col justify-center space-y-1 pl-6 mt-3">
               {item.pages.map((item, index) => (
                 <div className="group" key={index}>
                   <li className=" relative -translate-x-6 cursor-pointer text-base list-none py-1 opacity-70 duration-300 ease-out hover:translate-x-0 hover:opacity-100 ">
@@ -92,7 +92,7 @@ const MobileNavbar: FC<propsT> = ({ item, index, expand, setActiveMobileNavItem 
                 </div>
               ))}
             </div>
-            <hr className="mt-4 h-[2px] w-full bg-[#E5C183]"></hr>
+            <hr className="mt-4 h-[2px] w-full bg-[#E5C183] border-0"></hr>
           </div>
         )}
       </div>

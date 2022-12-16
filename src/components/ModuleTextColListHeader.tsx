@@ -60,11 +60,11 @@ const ModuleTextColListHeader = ({ header, headerPosition }: propsT) => {
         headerPosition == 'right' &&  ' justify-end text-right'
       )}
     >
-      <h2 className={`relative z-10 ${textClass.h2_style2} pb-4 lg:pb-0`}>{header}</h2>
+      <h2 className={cn(`relative z-10 ${textClass.h2_style2} pb-4 lg:pb-0 transform`, headerPosition == 'right' ?  ' translate-x-[10px] lg:translate-x-[40px]' : ' translate-x-[-10px] lg:translate-x-[-40px]')}>{header}</h2>
       <div
         className={cn(
           'text-col-circle absolute z-0 will-change-transform',
-          headerPosition == 'left' ? '-left-[220px]' : '-right-[220px]'
+          headerPosition == 'left' ? '-left-[240px]' : '-right-[240px]'
         )}
         ref={circle}
       >

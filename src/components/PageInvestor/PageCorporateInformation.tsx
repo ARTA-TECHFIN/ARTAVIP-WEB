@@ -51,7 +51,7 @@ const PageCorporateInformation: FC<{ k: any }> = ({ k }) => {
               basicInformation.map((j, i) => {
                 return (
                   <div className="col-span-full sm:col-span-6" key={i}>
-                    <div className="text-base text-black">
+                    <div className="text-base text-arta-sand-100">
                       <div className={`font-bold font-Neue`}>{j.label}</div>
                       <div className="whitespace-pre font-Neue">{j.isLink? <a className="underline" href={j.value} target="_blank" rel="noreferrer">{j.value}</a> : parse(j.value)}</div>
                     </div>
@@ -67,7 +67,7 @@ const PageCorporateInformation: FC<{ k: any }> = ({ k }) => {
               boardOfDirectors.map((j, i) => {
                 return (
                   <div className="col-span-full sm:col-span-6" key={i}>
-                    <div className="text-base text-black">
+                    <div className="text-base text-arta-sand-100">
                       <div className={`font-bold font-Neue`}>{j.label}</div>
                       <div className="whitespace-pre font-Neue">{parse(j.value)}</div>
                     </div>
@@ -83,7 +83,7 @@ const PageCorporateInformation: FC<{ k: any }> = ({ k }) => {
               financeAndAdmin.map((j, i) => {
                 return (
                   <div className="col-span-full sm:col-span-6" key={i}>
-                    <div className="text-base text-black">
+                    <div className="text-base text-arta-sand-100">
                       <div className={`font-bold font-Neue`}>{j.label}</div>
                       <div className="whitespace-pre font-Neue">{parse(j.value)}</div>
                     </div>
@@ -99,7 +99,7 @@ const PageCorporateInformation: FC<{ k: any }> = ({ k }) => {
               legalCounsels.map((j, i) => {
                 return (
                   <div className="col-span-full sm:col-span-6" key={i}>
-                    <div className="text-base text-black">
+                    <div className="text-base text-arta-sand-100">
                       <div className={`font-bold font-Neue`}>{j.label}</div>
                       <div className="whitespace-pre font-Neue">{parse(j.value)}</div>
                     </div>
@@ -115,7 +115,7 @@ const PageCorporateInformation: FC<{ k: any }> = ({ k }) => {
               shareInformation.map((j, i) => {
                 return (
                   <div className="col-span-full sm:col-span-6" key={i}>
-                    <div className="text-base text-black">
+                    <div className="text-base text-arta-sand-100">
                       <div className={`font-bold font-Neue`}>{j.label}</div>
                       <div className="whitespace-pre font-Neue">{j.isDate? dateFormat(new Date(j.value)) :parse(j.value)}</div>
                     </div>

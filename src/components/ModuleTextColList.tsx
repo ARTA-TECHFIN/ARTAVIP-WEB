@@ -34,7 +34,7 @@ const ModuleTextColList = ({ header, title, list, content, headerPosition }: pro
       <div
         className={cn(
           `relative flex items-center md:col-span-4 col-span-full`,
-          headerPosition == 'left' ? 'order-0 lg:pr-10' : 'lg:pl-10 md:order-1 md:justify-end'
+          headerPosition == 'left' ? 'order-0 md:pr-10' : 'md:pl-10 md:order-1 md:justify-end'
         )}
       >
         <ModuleTextColListHeader header={header} headerPosition={headerPosition} />

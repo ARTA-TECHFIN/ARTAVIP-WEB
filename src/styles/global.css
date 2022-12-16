@@ -42,11 +42,13 @@
   }
   .innerShadow {
     box-shadow: inset 0 0 14px 6px #8b653c;
+    background: rgba(198,147,84,0.2);
   }
 
   @media (max-width: 1024px) {
     .innerShadowMobile {
-      box-shadow: inset 0px 4px 30px #C69354;;
+      box-shadow: inset 0px 4px 30px #C69354;
+      background: rgba(198,147,84,0.2);
     }
   }
 
@@ -146,7 +148,9 @@
 }
 
 .module-text-col-list p,
-.blog-content p {
+.module-text-col-list li,
+.blog-content p,
+.blog-content li {
   @apply text-[1rem] mb-6;
 }
 .module-text-col-list h1,
@@ -229,7 +233,7 @@
 }
 
 .our-eco .swiper-slide {
-  padding-top: 20px;
+  @apply pt-[20px] md:pt-[30px] lg:pt-[40px];
 }
 
 .ss-container {
@@ -242,8 +246,7 @@
 }
 
 .swiper-slide-active .ss-container {
-  @apply bg-arta-eggshell-100 text-arta-sand-100;
-  transform: scale(1.1);
+  @apply bg-arta-eggshell-100 text-arta-sand-100 transform scale-[1.05] md:scale-[1.2];
 }
 
 .swiper-slide-active .ss-circle {
@@ -363,4 +366,8 @@ input[type="checkbox"] {
 }
 .banner-text-shadow{
   text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.36);
+}
+
+#home-our-business .swiper-slide-active .cta-btn {
+  display: block !important;
 }

@@ -234,7 +234,10 @@ const Header: React.FC<{ textColor?: 'white' | 'black' | 'brown'; fontSize?: str
         <header
           className={cn(
             'mt-0 w-full px-[4em] pt-[6em] transition duration-300 lg:pt-[2.6em] lg:pb-[2em] xl:mx-auto',
-            navbarBg && 'lg:bg-white lg:bg-opacity-75'
+            navbarBg &&
+              (textColor === 'black'
+                ? 'lg:bg-white'
+                : 'lg:bg-arta-dark-brown' + ' lg:bg-opacity-70')
           )}
         >
           <div className="flex w-full justify-between lg:space-x-6">

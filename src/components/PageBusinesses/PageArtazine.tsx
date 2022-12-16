@@ -121,7 +121,7 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
                       <div className="h2-text border-b-[1px] border-arta-black pb-[8px] md:pb-[20px]">
                         01
                       </div>
-                      <p className="body-regular-text pt-[20px]">
+                      <p className="body-regular-text pt-[20px] font-Neue">
                         {t('intro_box_1_desc', { ns: 'download' })}
                       </p>
                     </div>
@@ -129,7 +129,7 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
                       <div className="h2-text border-b-[1px] border-arta-black pb-[8px] md:pb-[20px]">
                         02
                       </div>
-                      <p className="body-regular-text pt-[20px]">
+                      <p className="body-regular-text pt-[20px] font-Neue">
                         {t('intro_box_2_desc', { ns: 'download' })}
                       </p>
                     </div>
@@ -137,7 +137,7 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
                       <div className="h2-text border-b-[1px] border-arta-black pb-[8px] md:pb-[20px]">
                         03
                       </div>
-                      <p className="body-regular-text pt-[20px]">
+                      <p className="body-regular-text pt-[20px] font-Neue">
                         {t('intro_box_3_desc', { ns: 'download' })}
                       </p>
                     </div>
@@ -145,7 +145,7 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
                       <div className="h2-text border-b-[1px] border-arta-black pb-[8px] md:pb-[20px]">
                         04
                       </div>
-                      <p className="body-regular-text pt-[20px]">
+                      <p className="body-regular-text pt-[20px] font-Neue">
                         {t('intro_box_4_desc', { ns: 'download' })}
                       </p>
                     </div>
@@ -153,7 +153,7 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
                       <div className="h2-text border-b-[1px] border-arta-black pb-[8px] md:pb-[20px]">
                         05
                       </div>
-                      <p className="body-regular-text pt-[20px]">
+                      <p className="body-regular-text pt-[20px] font-Neue">
                         {t('intro_box_5_desc', { ns: 'download' })}
                       </p>
                     </div>
@@ -161,7 +161,7 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
                       <div className="h2-text border-b-[1px] border-arta-black pb-[8px] md:pb-[20px]">
                         06
                       </div>
-                      <p className="body-regular-text pt-[20px]">
+                      <p className="body-regular-text pt-[20px] font-Neue">
                         {t('intro_box_6_desc', { ns: 'download' })}
                       </p>
                     </div>

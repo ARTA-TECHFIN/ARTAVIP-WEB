@@ -38,6 +38,7 @@ module.exports = {
         'arta-page-background': '#D1C2AC',
         'arta-black': '#0A0A0A',
         'arta-bright-gray': '#EEEEED',
+        'arta-dark-brown' : '#44220F'
       },
       backgroundColor: ['active'],
       backgroundImage: (theme) => ({

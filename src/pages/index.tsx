@@ -24,7 +24,6 @@ const fetchFooterData = async () => {
 
 const massageData = (pageData: any, locale: string | undefined = 'en') => {
   const g = (keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
-
   return {
     what_is_techfin_description: g('what_is_techfin_description'),
     our_business_description: g('our_business_description'),
@@ -33,6 +32,7 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
     our_business_product_description_3: g('our_business_product_description_3'),
     our_business_product_description_4: g('our_business_product_description_4'),
     our_business_product_description_5: g('our_business_product_description_5'),
+    our_business_product_description_6: g('our_business_product_description_6'),
     about_us_description: g('about_us_description'),
   }
 }

@@ -107,19 +107,20 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
         playsInline
         preload="true"
         crossOrigin="anonymous"
-        className="absolute bottom-[15%] left-[-50%] scale-[2.5] transform will-change-transform sm:bottom-0 sm:scale-[1.5] md:relative md:left-[-25%] md:h-full md:w-full md:object-cover lg:left-0 lg:scale-100"
+        // className="absolute bottom-[15%] left-[-50%] scale-[2.5] transform will-change-transform sm:bottom-0 sm:scale-[1.5] md:relative md:left-[-25%] md:h-full md:w-full md:object-cover lg:left-0 lg:scale-100"
+        className=" relative h-full w-full transform object-cover will-change-transform"
       >
         <source src="/videos/landing_top_latest.mp4" typeof="video/mp4" />
         Your browser does not support the video tag.
       </video>
       {/* top-[20%] left-0   sm:top-[40%] lg:left-[10%] xl:left-[20%] xl:mx-auto */}
-      <div className="aboluste home-background-gradient top-0 left-0 z-1 h-[50vh] w-full lg:hidden" />
+      {/* <div className="absolute home-background-gradient top-0 left-0 z-1 h-[50vh] w-full lg:hidden" /> */}
       <div className="z-1">
         <div className="animatedSpotLight1 absolute h-[100vw] w-[100vw] mix-blend-lighten blur-[35px]" />
         <div className="animatedSpotLight2 absolute h-[100vw] w-[100vw] mix-blend-lighten blur-[35px]" />
       </div>
       <div className=" movable-elements-wrapper z-1 flex max-w-main-contain items-start justify-center px-6 xl:mx-auto">
-        <div className="absolute bottom-[85em] left-[0] sm:bottom-[45em] md:bottom-[7em] md:bottom-[6em] md:left-[5em]">
+        <div className="absolute bottom-[6em] left-[0em] md:left-[5em]">
           {locale === 'en' && (
             <h1
               id="animation"

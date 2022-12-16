@@ -11,7 +11,13 @@ const SectionBanner = () => {
           src="/images/asset-management/top-bg-introduction.png"
           alt=""
           fill
-          className="object-cover"
+          className="hidden object-cover md:block"
+        />
+        <Image
+          src="/images/asset-management/mobile-top-bg-introduction.jpg"
+          alt=""
+          fill
+          className="object-cover md:hidden"
         />
       </div>
       <div className="arta-container banner-text-shadow relative z-1 mx-auto flex h-[480px] flex-col justify-end py-12 text-white">

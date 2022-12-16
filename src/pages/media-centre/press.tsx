@@ -31,7 +31,6 @@ const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
       setOpenYear(year)
     }
   }
-  console.log(cms.pressPosts)
   return (
     <MediaLayout
       cms={cms}

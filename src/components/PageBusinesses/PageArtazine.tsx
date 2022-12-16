@@ -33,23 +33,22 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
                   <h2 className="small-text mt-3 mb-10 md:mt-[8px] md:mb-[32px]">
                     {t('desc', { ns: 'download' })}
                   </h2>
-                  <div className="mb-5 flex md:mb-[12px]">
+                  <div className="mb-6 flex md:mb-9">
                     <a
                       href="https://apps.apple.com/us/app/artazine/id1633054118"
                       target="_blank"
-                      className="lm:mb-0 mb-3"
                       rel="noreferrer"
                     >
                       <img
                         src={`/images/our-businesses/artazine/app_d.png`}
                         width="150"
                         height="44"
-                        className="lm:hidden mr-4"
+                        className="mr-4 hidden md:block"
                       />
                       <img
                         src={`/images/our-businesses/artazine/app_m.png`}
                         width="118"
-                        className="lm:block mr-2 hidden"
+                        className="mr-2 md:hidden"
                       />
                     </a>
                     <a
@@ -61,12 +60,12 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
                         src={`/images/our-businesses/artazine/google_d.png`}
                         width="150"
                         height="44"
-                        className="lm:hidden"
+                        className="hidden md:block"
                       />
                       <img
                         src={`/images/our-businesses/artazine/google_m.png`}
                         width="118"
-                        className="lm:block hidden"
+                        className="md:hidden"
                       />
                     </a>
                   </div>

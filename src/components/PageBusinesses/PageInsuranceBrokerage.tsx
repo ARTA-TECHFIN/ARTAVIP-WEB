@@ -13,9 +13,9 @@ const PageInsuranceBrokerage: FC<{ k: any; locale: string }> = ({ k, locale }) =
   return (
     <>
       <Seo
-        title={`${t('page_title.our_businesses')} | Arta TechFin`}
-        description={t('page_description.our_businesses')}
-        keywords={t('page_keywords.our_businesses')}
+        title={`${t('page_title.insurance_brokerage')} | Arta TechFin`}
+        description={t('page_description.insurance_brokerage')}
+        keywords={t('page_keywords.insurance_brokerage')}
         ga="OB - Insurance Brokerage"
       />
       <Header textColor="white" />

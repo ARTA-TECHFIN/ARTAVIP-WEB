@@ -40,6 +40,7 @@ const Disclaimer = (props: { cms: any }) => {
       seo={{
         title: `${t('page_title.disclaimer')} | Arta TechFin`,
         description: t('page_description.disclaimer'),
+        keyword: t('page_description.disclaimer'),
       }}
       title={t('page_title.disclaimer')}
     >

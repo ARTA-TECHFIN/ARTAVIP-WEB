@@ -40,7 +40,7 @@ const Post = (props: { cms: getMediaCmsT; blog: getMediaCmsT['blogPosts'][number
       gaObj={{
         event_name: 'Arta_Blog_Content',
         content: {
-          Content: getSlug(blog.title),
+          Content: getSlug(blog.slug),
         },
       }}
     >

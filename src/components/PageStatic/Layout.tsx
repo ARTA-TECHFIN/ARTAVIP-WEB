@@ -20,7 +20,7 @@ const Layout = (props: {
 
   return (
     <>
-      <Seo title={seo.title} description={seo.description} />
+      <Seo title={seo.title} description={seo.description} keywords={seo.keywords} />
       {hideMenu && (
         <div className="arta-container absolute z-[20] text-right">
           <Link href="/">

@@ -18,7 +18,7 @@ const PageJobOpenings = ({ k }: { k: jobDetailsT }) => {
   return (
     <>
       <Seo
-        title={k.job_title}
+        title={`${k.job_title} | ARTA TechFin`}
         description={t('page_description.join_us')}
         keywords={t('page_keywords.join_us')}
         gaType="others"

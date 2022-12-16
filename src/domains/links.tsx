@@ -8,7 +8,7 @@ export const links = {
   businessesAssetManagement: '/businesses/asset-management',
   businessesInvestmentBanking: '/businesses/investment-banking',
   businessesInsuranceBrokerage: '/businesses/insurance-brokerage',
-  businessesSecuritiesBrokerage: '/businesses/securities-brokerage',
+  businessesSecuritiesBrokerage: '/businesses/global-markets',
   businessesEsg: '/businesses/esg-advisory',
   businessesArtazine: '/businesses/artazine',
   investor: '/investor-relations',

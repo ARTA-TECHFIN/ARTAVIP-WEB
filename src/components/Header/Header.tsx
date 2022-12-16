@@ -58,7 +58,7 @@ const Header: React.FC<{ textColor?: 'white' | 'black' | 'brown'; fontSize?: str
       : 'text-arta-russet-100'
   const bgColorClass =
     textColor == 'black'
-      ? 'bg-arta-bright-gray'
+      ? 'bg-white'
       : textColor === 'white'
       ? 'bg-arta-russet-100/90'
       : 'bg-arta-snow-100/95'
@@ -259,13 +259,23 @@ const Header: React.FC<{ textColor?: 'white' | 'black' | 'brown'; fontSize?: str
                         <span
                           style={{ fontSize: `${fontSize}` }}
                           className={
-                            `z-[3] leading-[24px] decoration-arta-sunray-100 underline-offset-[20px] transition group-hover:underline` +
+                            `z-[3] leading-[24px] ${
+                              textColor === 'black'
+                                ? 'decoration-arta-black'
+                                : 'decoration-arta-sunray-100'
+                            } underline-offset-[20px] transition group-hover:underline` +
                             (selected ? ' underline' : '')
                           }
                         >
                           {page.pageName}
                         </span>
-                        <ChevronIcon className="z-[3] ml-1 h-4 w-4 transition group-hover:text-arta-sunray-100" />
+                        <ChevronIcon
+                          className={`z-[3] ml-1 h-4 w-4 transition ${
+                            textColor === 'black'
+                              ? 'group-hover:text-arta-black'
+                              : 'group-hover:text-arta-sunray-100'
+                          }`}
+                        />
                       </>
                     )}
                   </div>

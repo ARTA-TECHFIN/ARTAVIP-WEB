@@ -315,6 +315,18 @@ input[type="checkbox"] {
   z-index: -2; 
   @apply bg-arta-sand-100;
 }
+.group-hover-bg-arta-black:before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  border-radius: 10rem;
+  transition: all 0.3s;
+  z-index: -2; 
+  @apply bg-arta-black;
+}
 .group-hover-bg-arta-p4-eggshell:before{
   content: "";
   position: absolute;
@@ -327,7 +339,9 @@ input[type="checkbox"] {
   transition: all 0.3s;
   z-index: -2; 
 }
-.group-hover-bg-arta-sand-100:hover:before,.group-hover-bg-arta-p4-eggshell:hover:before{
+.group-hover-bg-arta-black:hover:before,
+.group-hover-bg-arta-sand-100:hover:before,
+.group-hover-bg-arta-p4-eggshell:hover:before{
   width: 100%;
 }
 .group-hover-bg-arta-sand-100:hover{
@@ -335,6 +349,10 @@ input[type="checkbox"] {
 }
 .group-hover-bg-arta-p4-eggshell:hover{
   @apply text-arta-sand-100;
+  border-color: rgba(349,247,239, 0.5);
+}
+.group-hover-bg-arta-black:hover{
+  @apply text-white;
   border-color: rgba(349,247,239, 0.5);
 }
 .arta-leadership-slide .swiper-button{

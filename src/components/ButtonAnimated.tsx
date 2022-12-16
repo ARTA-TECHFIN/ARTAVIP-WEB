@@ -37,6 +37,8 @@ const ButtonAnimated = (props: propsT) => {
         'disabled:cursor-not-allowed disabled:opacity-50',
         className?.indexOf('border-arta-sand-100') != -1
           ? 'group-hover-bg-arta-sand-100'
+          : className?.indexOf('border-arta-black') != -1
+          ? 'group-hover-bg-arta-black'
           : 'group-hover-bg-arta-p4-eggshell',
         borderWidth === 1 ? 'border' : 'border-2',
         className

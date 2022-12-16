@@ -337,7 +337,7 @@ input[type="checkbox"] {
   left: 0;
   width: 0%;
   height: 100%;
-  background: rgba(349,247,239, 0.5);
+  background: #A89689;
   border-radius: 10rem;
   transition: all 0.3s;
   z-index: -2; 
@@ -352,11 +352,11 @@ input[type="checkbox"] {
 }
 .group-hover-bg-arta-p4-eggshell:hover{
   @apply text-arta-sand-100;
-  border-color: rgba(349,247,239, 0.5);
+  border-color: #A89689;
 }
 .group-hover-bg-arta-black:hover{
   @apply text-white;
-  border-color: rgba(349,247,239, 0.5);
+  @apply border-arta-black
 }
 .arta-leadership-slide .swiper-button{
   color: #593725;

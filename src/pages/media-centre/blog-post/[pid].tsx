@@ -18,7 +18,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: {
       cms,
-      blog: cms.blogPosts.find((blog) => getSlug(blog.title) === pid),
+      blog: cms.blogPosts.find((blog) => blog.slug === pid),
       ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }

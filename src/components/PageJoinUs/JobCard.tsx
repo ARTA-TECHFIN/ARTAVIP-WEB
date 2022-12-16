@@ -2,10 +2,10 @@ import { textClass } from 'src/components/Text'
 import { Pin, IconArrowRight } from 'src/components/Svg/Icon'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
-import { useRouter } from 'next/router' 
+import { useRouter } from 'next/router'
 
 type propsT = {
-  id: number
+  id: string
   title: string
   subTitle: string
   seniority: string
@@ -13,15 +13,15 @@ type propsT = {
 }
 
 const seniorityMap: any = {
-  "Junior_en": "Junior Level",
-  "Junior_tc": "初級",
-  "Junior_sc": "初级",
-  "Middle_en": "Middle Level",
-  "Middle_tc": "中級",
-  "Middle_sc": "中级",
-  "Senior_en": "Senior Level",
-  "Senior_tc": "高級",
-  "Senior_sc": "高级"
+  Junior_en: 'Junior Level',
+  Junior_tc: '初級',
+  Junior_sc: '初级',
+  Middle_en: 'Middle Level',
+  Middle_tc: '中級',
+  Middle_sc: '中级',
+  Senior_en: 'Senior Level',
+  Senior_tc: '高級',
+  Senior_sc: '高级',
 }
 
 const JobCard = ({ id, title, subTitle, seniority, location }: propsT) => {
@@ -42,7 +42,9 @@ const JobCard = ({ id, title, subTitle, seniority, location }: propsT) => {
           <div className="mt-8">
             <h3 className={`${textClass.h6}`}>{title}</h3>
             <h4 className={textClass.body_regular_verah}>{subTitle}</h4>
-            <p className={textClass.caption}>{t("join_us.seniority")}: {g(seniority)}</p>
+            <p className={textClass.caption}>
+              {t('join_us.seniority')}: {g(seniority)}
+            </p>
           </div>
         </div>
       </div>

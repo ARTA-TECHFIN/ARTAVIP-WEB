@@ -55,8 +55,9 @@ const massageData = (
       image: blog.thumbnail.data?.attributes.url, //'/images/media-centre/blog-posts/1.png',
       date: blog.date, // 'OCT 21 2022',
       title: blog[getKey('title')],
+      slug: blog.slug,
       text: blog[getKey('content')],
-    })) as { image: string; date: string; title: string; text: string }[],
+    })) as { image: string; date: string; title: string; slug: string; text: string }[],
 
     pressPosts: pressData.data
       .sort((a: any, b: any) => a.attributes.date.localeCompare(b.attributes.date))
@@ -64,10 +65,11 @@ const massageData = (
         year: +press.date.split('-')[0],
         post: {
           date: press.date,
+          slug: press.slug,
           title: press[getKey('title')],
           title_en: press.title_en,
           text: press[getKey('content')],
-          pdf: press[getKey('pdf')] ?? {}
+          pdf: press[getKey('pdf')] ?? {},
         },
       }))
       .reduce((acc: any, curr: any) => {
@@ -80,7 +82,14 @@ const massageData = (
         return acc
       }, []) as {
       year: number
-      posts: { date: string; title: string; title_en: string; text: string, pdf: any }[]
+      posts: {
+        date: string
+        title: string
+        slug: string
+        title_en: string
+        text: string
+        pdf: any
+      }[]
     }[],
   }
 }

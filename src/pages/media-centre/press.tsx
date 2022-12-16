@@ -31,6 +31,7 @@ const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
       setOpenYear(year)
     }
   }
+  console.log(cms.pressPosts)
   return (
     <MediaLayout
       cms={cms}
@@ -53,7 +54,7 @@ const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
               events={yearly.posts.map((r: any) => ({
                 date: new Date(r.date),
                 title: r.title,
-                postPageUrl: `${links.mediaPressPost}/${getSlug(r.title_en)}`,
+                postPageUrl: `${links.mediaPressPost}/${r.slug}`,
               }))}
               openYear={openYear}
               setOpenYear={setOpenYearFunc}

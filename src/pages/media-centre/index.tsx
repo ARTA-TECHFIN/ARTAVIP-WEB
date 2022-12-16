@@ -33,23 +33,25 @@ const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
     >
       <div className="arta-container mx-auto">
         <div className="grid grid-cols-12 gap-4 md:gap-8">
-          {cms.blogPosts.sort((a: any, b: any) => (new Date(b.date).valueOf() - new Date(a.date).valueOf()) ).map((post: any, index: number) => (
-            <Link
-              key={index}
-              className="col-span-full h-full md:col-span-6 lg:col-span-4"
-              href={`/media-centre/blog-post/${getSlug(post.title)}`}
-            >
-              <div className="h-full w-full cursor-pointer bg-white transition-shadow hover:shadow-postCard">
-                <div className="relative aspect-video w-full">
-                  <img src={post.image} alt="" className="absolute h-full w-full object-cover" />
+          {cms.blogPosts
+            .sort((a: any, b: any) => new Date(b.date).valueOf() - new Date(a.date).valueOf())
+            .map((post: any, index: number) => (
+              <Link
+                key={index}
+                className="col-span-full h-full md:col-span-6 lg:col-span-4"
+                href={`/media-centre/blog-post/${post.slug}`}
+              >
+                <div className="h-full w-full cursor-pointer bg-white transition-shadow hover:shadow-postCard">
+                  <div className="relative aspect-video w-full">
+                    <img src={post.image} alt="" className="absolute h-full w-full object-cover" />
+                  </div>
+                  <div className="px-6 pt-4 pb-6 md:pt-6 md:pb-12">
+                    <span className="text-xs">{dateFormat(new Date(post.date))}</span>
+                    <h5 className="mt-1 text-xl">{post.title}</h5>
+                  </div>
                 </div>
-                <div className="px-6 pt-4 pb-6 md:pt-6 md:pb-12">
-                  <span className="text-xs">{dateFormat(new Date(post.date))}</span>
-                  <h5 className="mt-1 text-xl">{post.title}</h5>
-                </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
         </div>
       </div>
     </MediaLayout>

@@ -18,7 +18,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, params })
 
   let post: any = null
   cms.pressPosts.some((pressByYear) => {
-    const r = pressByYear.posts.find((post) => getSlug(post.title_en) === slug)
+    const r = pressByYear.posts.find((post) => post.slug === slug)
     if (r) post = r
 
     return r
@@ -52,7 +52,7 @@ const PressPost = (props: {
       gaObj={{
         event_name: 'Press_Release_Content',
         content: {
-          Content: getSlug(post.title_en),
+          Content: post.slug,
         },
       }}
     >

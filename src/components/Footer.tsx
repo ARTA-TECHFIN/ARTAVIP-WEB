@@ -125,18 +125,18 @@ const Footer: FC<{
                   <h6 className=" text-[16px] leading-[24px]">{t('footer.social_media')} </h6>
                   <div className="flex space-x-2">
                     {k.socialMediaList.map(({ href, Component }, i: number) => (
-                      <a href={href} key={i} target="_blank" rel="noreferrer">
-                        <Component className="h-6 w-6 pr-1 last:pr-0" />
+                      <a className="text-[#878095] hover:text-arta-sand-100" href={href} key={i} target="_blank" rel="noreferrer">
+                        <Component className="h-6 w-6 pr-1 last:pr-0" fill="currentColor" />
                       </a>
                     ))}
                     <div
-                      className="cursor-pointer"
+                      className="cursor-pointer text-[#878095] hover:text-arta-sand-100"
                       onClick={() => {
                         setOpenWeChatPopup(true)
                         if (setShowWechatPopup) setShowWechatPopup(true)
                       }}
                     >
-                      <IconWeChat className="h-6 w-6 pr-1 last:pr-0" />
+                      <IconWeChat className="h-6 w-6 pr-1 last:pr-0" fill="currentColor" />
                     </div>
                   </div>
                 </div>

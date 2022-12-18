@@ -28,7 +28,7 @@ const MobileNavbar: FC<propsT> = ({ item, index, expand, setActiveMobileNavItem 
           <li
             className=" group flex cursor-pointer text-base leading-[24px] "
             onClick={() => {
-              setActiveMobileNavItem(index)
+              setActiveMobileNavItem(expand? -1: index)
             }}
           >
             {

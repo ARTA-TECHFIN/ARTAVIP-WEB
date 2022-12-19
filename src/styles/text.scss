@@ -35,6 +35,15 @@
       line-height: 32px;
     }
   }
+  .h2-bold-text {
+    font-size: 36px;
+    line-height: 45px;
+    font-weight: 500;
+    @media only screen and (max-width: 767px) {
+      font-size: 26px;
+      line-height: 32px;
+    }
+  }
   .h3-regular-text {
     font-size: 36px;
     line-height: 45px;

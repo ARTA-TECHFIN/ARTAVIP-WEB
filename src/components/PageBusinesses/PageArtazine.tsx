@@ -41,13 +41,13 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
                     >
                       <img
                         src={`/images/our-businesses/artazine/app_d.png`}
-                        width="150"
-                        height="44"
+                        width="215"
+                        height="62"
                         className="mr-4 hidden md:block"
                       />
                       <img
                         src={`/images/our-businesses/artazine/app_m.png`}
-                        width="118"
+                        width="114"
                         className="mr-2 md:hidden"
                       />
                     </a>
@@ -58,13 +58,13 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
                     >
                       <img
                         src={`/images/our-businesses/artazine/google_d.png`}
-                        width="150"
-                        height="44"
+                        width="215"
+                        height="62"
                         className="hidden md:block"
                       />
                       <img
                         src={`/images/our-businesses/artazine/google_m.png`}
-                        width="118"
+                        width="114"
                         className="md:hidden"
                       />
                     </a>
@@ -96,9 +96,7 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
                         <div className="h1-style2-text ">
                           {t('intro_title_1', { ns: 'download' })}
                         </div>
-                        <p className="body-regular-text">
-                          {t('intro_title_1_label', { ns: 'download' })}
-                        </p>
+                        <p className="small-text">{t('intro_title_1_label', { ns: 'download' })}</p>
                       </div>
                       <div className="mb-[32px] flex grow items-center">
                         <div className="mr-4 h-[2px] w-full grow bg-arta-black md:mr-7 md:h-[1px]"></div>
@@ -106,7 +104,7 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
                           <div className="h1-style2-text">
                             {t('intro_title_2', { ns: 'download' })}
                           </div>
-                          <p className="body-regular-text">
+                          <p className="small-text">
                             {t('intro_title_2_label', { ns: 'download' })}
                           </p>
                         </div>
@@ -118,7 +116,7 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
                 <div className="pt-[40px] md:pt-[80px]">
                   <div className="grid-cols-12 gap-x-[20px] md:grid">
                     <div className="col-span-4 pb-[60px]">
-                      <div className="h2-text border-b-[1px] border-arta-black pb-[8px] md:pb-[20px]">
+                      <div className="h2-bold-text border-b-[1px] border-arta-black pb-[8px] md:pb-[20px]">
                         01
                       </div>
                       <p className="body-regular-text pt-[20px] font-Neue">
@@ -126,7 +124,7 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
                       </p>
                     </div>
                     <div className="col-span-4 pb-[60px]">
-                      <div className="h2-text border-b-[1px] border-arta-black pb-[8px] md:pb-[20px]">
+                      <div className="h2-bold-text border-b-[1px] border-arta-black pb-[8px] md:pb-[20px]">
                         02
                       </div>
                       <p className="body-regular-text pt-[20px] font-Neue">
@@ -134,7 +132,7 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
                       </p>
                     </div>
                     <div className="col-span-4 pb-[60px]">
-                      <div className="h2-text border-b-[1px] border-arta-black pb-[8px] md:pb-[20px]">
+                      <div className="h2-bold-text border-b-[1px] border-arta-black pb-[8px] md:pb-[20px]">
                         03
                       </div>
                       <p className="body-regular-text pt-[20px] font-Neue">
@@ -142,7 +140,7 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
                       </p>
                     </div>
                     <div className="col-span-4 pb-[60px]">
-                      <div className="h2-text border-b-[1px] border-arta-black pb-[8px] md:pb-[20px]">
+                      <div className="h2-bold-text border-b-[1px] border-arta-black pb-[8px] md:pb-[20px]">
                         04
                       </div>
                       <p className="body-regular-text pt-[20px] font-Neue">
@@ -150,7 +148,7 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
                       </p>
                     </div>
                     <div className="col-span-4 pb-[60px]">
-                      <div className="h2-text border-b-[1px] border-arta-black pb-[8px] md:pb-[20px]">
+                      <div className="h2-bold-text border-b-[1px] border-arta-black pb-[8px] md:pb-[20px]">
                         05
                       </div>
                       <p className="body-regular-text pt-[20px] font-Neue">
@@ -158,7 +156,7 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
                       </p>
                     </div>
                     <div className="col-span-4 pb-[60px]">
-                      <div className="h2-text border-b-[1px] border-arta-black pb-[8px] md:pb-[20px]">
+                      <div className="h2-bold-text border-b-[1px] border-arta-black pb-[8px] md:pb-[20px]">
                         06
                       </div>
                       <p className="body-regular-text pt-[20px] font-Neue">
@@ -200,7 +198,7 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
                       <div className="h1-style2-text md:mt-10">
                         {t('slide_1_title', { ns: 'download' })}
                       </div>
-                      <div className="body-regular-text mt-1">
+                      <div className="caption-medium-text mt-1">
                         {t('slide_1_desc', { ns: 'download' })}
                       </div>
                     </div>
@@ -216,7 +214,7 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
                       <div className="h1-style2-text md:mt-10">
                         {t('slide_2_title', { ns: 'download' })}
                       </div>
-                      <div className="body-regular-text mt-1">
+                      <div className="caption-medium-text mt-1">
                         {t('slide_2_desc', { ns: 'download' })}
                       </div>
                     </div>
@@ -232,7 +230,7 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
                       <div className="h1-style2-text md:mt-10">
                         {t('slide_3_title', { ns: 'download' })}
                       </div>
-                      <div className="body-regular-text mt-1">
+                      <div className="caption-medium-text mt-1">
                         {t('slide_3_desc', { ns: 'download' })}
                       </div>
                     </div>
@@ -248,7 +246,7 @@ const PageArtazine: FC<{ k: any; locale: string }> = ({ k, locale }) => {
                       <div className="h1-style2-text md:mt-10">
                         {t('slide_4_title', { ns: 'download' })}
                       </div>
-                      <div className="body-regular-text mt-1">
+                      <div className="caption-medium-text mt-1">
                         {t('slide_4_desc', { ns: 'download' })}
                       </div>
                     </div>

@@ -68,6 +68,7 @@ const Header: React.FC<{ textColor?: 'white' | 'black' | 'brown'; fontSize?: str
       : textColor === 'white'
       ? 'border-arta-snow-100'
       : 'border-arta-russet-100'
+  const mobileMenuBg = textColor == 'black' ? 'bg-white' : 'bg-arta-russet-100'
 
   // For mobile navbar
   const [showMenu, setShowMenu] = useState(false)
@@ -233,12 +234,12 @@ const Header: React.FC<{ textColor?: 'white' | 'black' | 'brown'; fontSize?: str
       <div onMouseLeave={() => setActiveTabIndex(DEFAULT_TAB_INDEX)}>
         <header
           className={cn(
-            'mt-0 w-full px-[4em] pt-[6em] transition duration-300 lg:pt-[2.6em] lg:pb-[2em] xl:mx-auto',
+            'mt-0 w-full px-[4em] py-[3em] transition duration-300 lg:pt-[2.6em] lg:pb-[2em] xl:mx-auto',
             navbarBg &&
-              (textColor === 'black' ? 'bg-white' : 'bg-arta-dark-brown' + ' bg-opacity-70')
+              (textColor === 'black' ? 'bg-white' : 'bg-arta-dark-brown') + ' bg-opacity-70'
           )}
         >
-          <div className="flex w-full justify-between lg:space-x-6">
+          <div className="flex w-full items-center justify-between lg:space-x-6">
             <div className="hidden items-center justify-center space-x-8 lg:flex">
               {pageInfoList.map((page, index) => {
                 const selected = index === activeTabIndex
@@ -382,10 +383,14 @@ const Header: React.FC<{ textColor?: 'white' | 'black' | 'brown'; fontSize?: str
 
           <div>
             {showMenu && (
-              <div className="absolute top-0 left-0 z-[801] flex min-h-[100vh] w-full flex-col bg-arta-russet-100 px-[4em] pt-[6em] lg:pt-[2.8em] ">
+              <div
+                className={`absolute top-0 left-0 z-[801] flex min-h-[100vh] w-full flex-col ${mobileMenuBg} px-[4em] pt-[6em] lg:pt-[2.8em]`}
+              >
                 <div className="flex items-start justify-between">
                   <div
-                    className="h-8 w-8 cursor-pointer pr-2 pb-2 text-arta-eggshell-100"
+                    className={`h-8 w-8 cursor-pointer pr-2 pb-2 ${
+                      textColor == 'black' ? 'text-arta-black' : 'text-arta-eggshell-100'
+                    }`}
                     onClick={() => {
                       setShowMenu(!showMenu)
                     }}
@@ -395,14 +400,16 @@ const Header: React.FC<{ textColor?: 'white' | 'black' | 'brown'; fontSize?: str
                   <div className="relative h-[32px] w-[78.67px] cursor-pointer opacity-100 transition hover:opacity-100 md:h-auto md:w-auto">
                     <Link title="Arta TechFin" href="/">
                       <img
-                        src="/images/arta-logo.svg"
+                        src={`/images/${
+                          textColor == 'black' ? 'arta-logo_black' : 'arta-logo'
+                        }.svg`}
                         alt="Arta TechFin"
                         className="object-contain"
                       />
                     </Link>
                   </div>
                 </div>
-                <div className="mt-8 text-white ">
+                <div className={`mt-8 ${textColorClass} `}>
                   <div className="flex flex-col items-start justify-start">
                     <div className="flex w-full flex-col space-y-8">
                       {pageInfoList.map((item, index) => (
@@ -412,6 +419,7 @@ const Header: React.FC<{ textColor?: 'white' | 'black' | 'brown'; fontSize?: str
                             expand={activeMobileNavItem === index}
                             index={index}
                             setActiveMobileNavItem={setActiveMobileNavItem}
+                            textColor={textColor}
                           />
                         </div>
                       ))}

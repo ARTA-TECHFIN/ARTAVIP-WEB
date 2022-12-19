@@ -19,12 +19,6 @@ type propsT = {
   k: any
 }
 
-// TODO: add animation
-// TODO: use object image, not use it as background
-// TODO: bgColor
-// TODO: add label
-// TODO: responsive
-
 gsap.registerPlugin(ScrollTrigger)
 
 const SectionFullMission = ({
@@ -89,7 +83,7 @@ const SectionFullMission = ({
             <FadeUp>
               <div className={cn(simpleHeader || fullWidth ? '' : 'md:w-1/2')}>
                 <p className={textClass.title_style2}>{label}</p>
-                <h1 className={`mt-1 ${textClass.h1_style2}`}>
+                <h1 className={`mt-4 font-Verah lg:text-[4.25rem] text-[1.7rem]  leading-[2.25rem]  lg:leading-[5rem] tracking-wide`}>
                   {title}{' '}
                   {title2 ? (
                     <>

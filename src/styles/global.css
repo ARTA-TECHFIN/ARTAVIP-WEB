@@ -407,3 +407,6 @@ input[type="checkbox"] {
   opacity: .3;
   cursor: default;
 }
+.fp-is-overflow:not(.fp-completely) video{
+  opacity: 0;
+}

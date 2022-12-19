@@ -45,11 +45,11 @@ const SectionJobView = ({ k }: { k: jobDetailsT }) => {
               </div>
             </div>
           </div>
-          <div className="job-description border-b-2 px-8 py-8">
+          <div className={`${textClass.body_regular} job-description border-b-2 px-8 py-8`}>
             {parse(k.job_description)}
-            <p className="text-arta-secondary">{parse(t('join_us.apply_statement'))}</p>
+            <p className={`text-arta-secondary`}>{parse(t('join_us.apply_statement'))}</p>
           </div>
-          <div className="p-12">
+          <div className="p-8 lg:p-12">
             <div className="max-w-[756px]">
               <ApplyForm job={k} setShowSuccess={setShowSuccess} />
             </div>

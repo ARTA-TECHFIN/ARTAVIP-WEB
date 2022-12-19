@@ -86,10 +86,18 @@ const ApplyForm = (props: { job: jobDetailsT; setShowSuccess: (isSuccess: boolea
   const onFileChange = async (files: File[]) => {
     if (files.length > 0) {
       const file = files[0]
+
       if (!file.type.includes('pdf') && !file.type.includes('word')) {
         console.error('cvUpload', 'Please upload a PDF or Word document')
         return
       }
+
+      if (file.size > 5 * 102400) {
+        console.error('cvUpload', 'Please upload a PDF or Word document')
+        return
+      }
+
+      console.log(file)
 
       const base64 = await toBase64(file)
 
@@ -184,6 +192,9 @@ const ApplyForm = (props: { job: jobDetailsT; setShowSuccess: (isSuccess: boolea
               </button>
             )}
           </DragDropArea>
+          <div className="col-span-full -mt-8">
+            <p className={`${textClass.caption} text-red-400 text-center my-4`}>{t('warning.file_size_5mb')}</p>
+          </div>
           
           <div className="col-span-full">
             <InputField

@@ -11,6 +11,7 @@ import { jobDetailsT } from 'src/pages/job/[id]'
 import { DragDropArea, openFilePicker, toBase64 } from '../DragDropArea'
 import { ErrorMessage } from '../ErrorMessage'
 import parse from 'html-react-parser'
+import { useState } from 'react'
 
 type formValuesT = {
   jobTitle: string
@@ -47,10 +48,9 @@ const useApplyForm = (t: any) => {
       if (!data.expectedSalary) errors.expectedSalary = { message: t('warning.required') }
       else if (!/^\d+$/.test(data.expectedSalary))
         errors.expectedSalary = { message: t('warning.invalid_format') }
-      if (!data.cvUpload) errors.cvUpload = { message: 'Please upload your CV' }
+      if (!data.cvUpload) errors.cvUpload = { message: t('warning.required') }
 
-      if (!data.briefIntroduction) errors.briefIntroduction = { message: t('warning.required') }
-      else if (data.briefIntroduction.length > 500)
+      if (data.briefIntroduction.length > 500)
         errors.briefIntroduction = { message: t('warning.word_count_500') }
 
       if (!data.acceptedTerms) errors.acceptedTerms = { message: t('warning.required') }
@@ -77,6 +77,7 @@ const useApplyForm = (t: any) => {
 const ApplyForm = (props: { job: jobDetailsT; setShowSuccess: (isSuccess: boolean) => void }) => {
   const { job, setShowSuccess } = props
   const { t } = useTranslation('common')
+  const [fileSizeError, setFileSizeError] = useState("")
 
   const { onSubmit, submitStatus, errors, register, watch, setValue, trigger } = useApplyForm(t)
 
@@ -85,6 +86,7 @@ const ApplyForm = (props: { job: jobDetailsT; setShowSuccess: (isSuccess: boolea
   const cvUploadName = watch('cvUploadName')
   const onFileChange = async (files: File[]) => {
     if (files.length > 0) {
+      setFileSizeError("")
       const file = files[0]
 
       if (!file.type.includes('pdf') && !file.type.includes('word')) {
@@ -93,11 +95,9 @@ const ApplyForm = (props: { job: jobDetailsT; setShowSuccess: (isSuccess: boolea
       }
 
       if (file.size > 5 * 102400) {
-        console.error('cvUpload', 'Please upload a PDF or Word document')
+        setFileSizeError(t('warning.file_size_5mb'))
         return
       }
-
-      console.log(file)
 
       const base64 = await toBase64(file)
 
@@ -149,7 +149,7 @@ const ApplyForm = (props: { job: jobDetailsT; setShowSuccess: (isSuccess: boolea
             </InputField>
           </div>
           <div className="col-span-1">
-            <InputField label={`${t('join_us.linkedin')}*`} error={errors.linkedin?.message}>
+            <InputField label={`${t('join_us.linkedin')}`} error={errors.linkedin?.message}>
               <InputText {...register('linkedin')} />
             </InputField>
           </div>
@@ -192,13 +192,17 @@ const ApplyForm = (props: { job: jobDetailsT; setShowSuccess: (isSuccess: boolea
               </button>
             )}
           </DragDropArea>
-          <div className="col-span-full -mt-8">
-            <p className={`${textClass.caption} text-red-400 text-center my-4`}>{t('warning.file_size_5mb')}</p>
-          </div>
+          {
+            fileSizeError && (
+              <div className="col-span-full -mt-8">
+                <p className={`${textClass.caption} text-red-400 my-4`}>{fileSizeError}</p>
+              </div>
+            )
+          }
           
           <div className="col-span-full">
             <InputField
-              label={`${t('join_us.brief_introduction')}*`}
+              label={`${t('join_us.brief_introduction')}`}
               error={errors.briefIntroduction?.message}
             >
               <InputTextArea {...register('briefIntroduction')} />

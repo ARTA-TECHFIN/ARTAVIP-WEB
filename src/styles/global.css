@@ -410,3 +410,8 @@ input[type="checkbox"] {
 /* .fp-is-overflow:not(.active) #break-barriers video{
   opacity: 0;
 } */
+
+.whitespace-breakspace {
+  white-space: pre;
+  white-space: break-spaces;
+}

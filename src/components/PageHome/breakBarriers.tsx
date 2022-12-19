@@ -107,6 +107,7 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
         playsInline
         preload="true"
         crossOrigin="anonymous"
+        id="break-barriers-video"
         // className="absolute bottom-[15%] left-[-50%] scale-[2.5] transform will-change-transform sm:bottom-0 sm:scale-[1.5] md:relative md:left-[-25%] md:h-full md:w-full md:object-cover lg:left-0 lg:scale-100"
         className=" relative h-full w-full transform object-cover will-change-transform"
       >

@@ -407,6 +407,6 @@ input[type="checkbox"] {
   opacity: .3;
   cursor: default;
 }
-.fp-is-overflow:not(.active) #break-barriers video{
+/* .fp-is-overflow:not(.active) #break-barriers video{
   opacity: 0;
-}
+} */

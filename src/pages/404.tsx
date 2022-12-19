@@ -27,7 +27,7 @@ const Disclaimer = () => {
             <p className={textClass.body_regular}>
               We couldn’t find the page you’re looking for.
               <br />
-              Visit the Homepage or Contact us.
+              Please visit the Homepage or Contact us.
             </p>
 
             <ButtonAnimated as="a" href="/" className="border-arta-sand-100 text-arta-sand-100">

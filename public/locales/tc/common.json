@@ -2,7 +2,7 @@
   "site_title": "Arta TechFin",
   "page_title": {
     "home": "主頁",
-    "about_us": "關於我們",
+    "about_us": "關於裕承科金",
     "our_businesses": "公司業務",
     "investor_relations": "投資者關係",
     "media_centre": "媒體中心",
@@ -112,7 +112,7 @@
     "thanks": "感謝您對裕承科金的關注！",
     "thanks_message": "我們已收到您的申請。我們的人力資本管理團隊將會仔細查看您的信息。如果我們在四個星期內未聯絡您，則默認此次申請未能成功。<br />如欲了解更多資訊，請訪問我們的LinkedIn主頁：<a target='_blank' href='https://www.linkedin.com/company/arta-techfin-corporation-limited'>https://www.linkedin.com/company/arta-techfin-corporation-limited</a>。",
     "seniority": "經驗要求",
-    "accept_privacy_policy": "我同意按照<a href='/tc/privacy-policy' target='_blank' class='underline'>私隱政策</a>處理我的個人信息"
+    "accept_privacy_policy": "本人確認已經閱讀、理解、同意私隱政策聲明，亦同意本人提供的個人信息可由裕承科金用於企業招聘。"
   },
   "investor_relations": {
     "announcements_notices": "公示及報告",
@@ -198,8 +198,8 @@
   "warning": {
     "required": "必填字段",
     "invalid_format": "無效格式",
-    "required_pdf": "必需 PDF/DOC 文件",
-    "file_size_5mb": "最大文件大小 5MB",
-    "word_count_500": "不能超過 500 個字符"
+    "required_pdf": "必須是PDF/DOC文件",
+    "file_size_5mb": "文件大小不能超過5MB",
+    "word_count_500": "不能超過500個字符"
   }
 }

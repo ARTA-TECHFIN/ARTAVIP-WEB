@@ -387,11 +387,6 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
               loop={false}
               slidesPerView={1}
               spaceBetween={0}
-              autoplay={{
-                delay: 3500,
-                disableOnInteraction: true,
-              }}
-              modules={[Autoplay]}
               breakpoints={{
                 768: {
                   slidesPerView: 3,

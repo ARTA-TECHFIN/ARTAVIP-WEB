@@ -8,6 +8,7 @@ import contactJson from 'apidata/contact.json'
 import { WechatPopup } from './WechatPopup'
 import { links } from 'src/domains/links'
 import Link from 'next/link'
+import cn from 'classnames'
 
 const fetchCmsData = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/contact-us`)
@@ -125,12 +126,21 @@ const Footer: FC<{
                   <h6 className=" text-[16px] leading-[24px]">{t('footer.social_media')} </h6>
                   <div className="flex space-x-2">
                     {k.socialMediaList.map(({ href, Component }, i: number) => (
-                      <a className="text-[#878095] hover:text-arta-sand-100" href={href} key={i} target="_blank" rel="noreferrer">
+                      <a className={cn(
+                        textColor == 'white' && `text-[#878095] hover:text-white`,
+                        textColor == 'black' && `text-[#aaa9ab] hover:text-black`,
+                        textColor == "brown" && `text-[#878095] hover:text-arta-sand-100`
+                      )} href={href} key={i} target="_blank" rel="noreferrer">
                         <Component className="h-6 w-6 pr-1 last:pr-0" fill="currentColor" />
                       </a>
                     ))}
                     <div
-                      className="cursor-pointer text-[#878095] hover:text-arta-sand-100"
+                      className={cn(
+                        `cursor-pointer`,
+                        textColor == 'white' && `text-[#878095] hover:text-white`,
+                        textColor == 'black' && `text-[#aaa9ab] hover:text-black`,
+                        textColor == "brown" && `text-[#878095] hover:text-arta-sand-100`
+                      )}
                       onClick={() => {
                         setOpenWeChatPopup(true)
                         if (setShowWechatPopup) setShowWechatPopup(true)

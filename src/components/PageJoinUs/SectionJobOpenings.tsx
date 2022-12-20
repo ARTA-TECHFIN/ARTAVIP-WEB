@@ -31,8 +31,7 @@ const SectionJobOpenings: FC<propsT> = ({ k, jobs }) => {
 
     if (selectedTab === 'backOffice') {
       return (
-        job.attributes.category === 'Middle Office' ||
-        job.attributes.category === 'Back Office' ||
+        job.attributes.category === 'Middle and Back Office' ||
         job.attributes.category === 'All'
       )
     }

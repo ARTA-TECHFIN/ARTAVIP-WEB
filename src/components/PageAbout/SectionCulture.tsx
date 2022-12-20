@@ -8,10 +8,13 @@ import { gsap } from 'gsap'
 import { FadeUp } from 'src/components/FadeUp'
 import { PageAboutCmsT } from 'src/pages/about-us'
 import { useTranslation } from 'next-i18next'
+import { useRouter } from 'next/router'
+import cn from 'classnames'
 
 export const SectionCulture = (props: { k: PageAboutCmsT }) => {
   const { k } = props
   const { t } = useTranslation('common')
+  const {locale} = useRouter()
 
   const [selectedIndex, _setSelectedIndex] = useState(0)
   const setSelectedIndex = (index: number) => {
@@ -37,14 +40,14 @@ export const SectionCulture = (props: { k: PageAboutCmsT }) => {
         <div className="md:pl-8">
           <h3 className={textClass.h3_style2}>{k.culture.sectionTitle}</h3>
           <Hr />
-          <ul>
+          <ul className={cn(locale!=='en' && 'min-h-[360px] lg:min-h-[340px]')}>
             {k.culture.valueList.map((value, index) => {
               const isSelected = index === selectedIndex
               return (
                 <li key={index} className="group/list mb-8 flex flex-col overflow-hidden">
                   <button
                     className={
-                      'flex items-start gap-3 overflow-hidden opacity-70 duration-300 ease-out group-hover/list:translate-x-0 group-hover/list:opacity-100' +
+                      'flex items-start gap-3 overflow-hidden opacity-70 duration-200 ease-out group-hover/list:translate-x-0 group-hover/list:opacity-100' +
                       (isSelected ? ' translate-x-0 opacity-100' : ' -translate-x-7')
                     }
                     onMouseEnter={() => selectedIndex != index && setSelectedIndex(index)}

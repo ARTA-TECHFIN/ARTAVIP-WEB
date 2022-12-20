@@ -53,7 +53,7 @@ const massageData = (pageData: any, leadershipData: any, locale: string | undefi
       section2Body: g('techfin_content_2'),
     },
     ecosystem: {
-      subtitle: `Supported by ARTA TechFin’s major shareholder, we work closely with our affiliates within the ecosystem, which comprises our clients, shareholders, business partners and investee companies, to build an inter-connected network that creates value for all.`,
+      subtitle: g('our_ecosystem_description'),
       itemList: [
         { title: g('our_ecosystem_1'), Component: eco_icon1 },
         { title: g('our_ecosystem_2'), Component: eco_icon1 },

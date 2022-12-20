@@ -45,7 +45,7 @@ const SectionJobOpenings: FC<propsT> = ({ k, jobs }) => {
   })
   .filter((job: any) => {
     if (job.attributes.showing_end_date) {
-      return new Date(job.attributes.showing_start_date).getTime() - new Date().getTime() > 0
+      return new Date(job.attributes.showing_end_date).getTime() - new Date().getTime() > 0
     } else {
       return job
     }

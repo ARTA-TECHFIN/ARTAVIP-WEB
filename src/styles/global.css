@@ -140,6 +140,7 @@
 .module-text-col-list ul{
   list-style: disc;
   padding-left: 1.25rem;
+  margin-top: 16px;
 }
 .module-etg-text-section p,
 .module-text-col-list p,
@@ -151,7 +152,7 @@
 .module-text-col-list li,
 .blog-content p,
 .blog-content li {
-  @apply text-[1rem] mb-6;
+  @apply text-[1rem] mb-3;
 }
 .module-text-col-list h1,
 .module-text-col-list h2,

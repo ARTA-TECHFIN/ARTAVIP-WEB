@@ -61,14 +61,14 @@ const HeroBanner = ({
     >
       <div ref={bannerImage} className="absolute h-full w-full overflow-hidden">
         <Image
-          priority
+          priority={true}
           src={simpleHeader ? '/images/investor-relations/top-inner-banner.jpg' : image}
           alt={title}
           fill
           className="hidden object-cover md:block"
         />
         <Image
-          priority
+          priority={true}
           src={
             simpleHeader ? '/images/investor-relations/mobile-top-inner-banner.jpg' : mobileImage
           }

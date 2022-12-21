@@ -38,14 +38,14 @@ const Layout = (props: {
         <div className="relative z-2 h-[50vh] w-full overflow-hidden md:aspect-video md:h-[50vh]">
           <div ref={bannerImage} className="absolute h-[50vh] w-full overflow-hidden">
             <Image
-              priority
+              priority={true}
               src={cms.heroBanner.image}
               alt=""
               fill
               className="hidden object-cover md:block"
             />
             <Image
-              priority
+              priority={true}
               src={cms.heroBanner.mobileImage}
               alt=""
               fill

@@ -34,10 +34,12 @@ const fetchCmsData = async () => {
   return data
 }
 
-const Header: React.FC<{ textColor?: 'white' | 'black' | 'brown'; fontSize?: string }> = (
-  props
-) => {
-  const { textColor = 'white', fontSize = '16px' } = props
+const Header: React.FC<{
+  textColor?: 'white' | 'black' | 'brown'
+  fontSize?: string
+  src?: string
+}> = (props) => {
+  const { textColor = 'white', fontSize = '16px', src = 'default' } = props
   const { t } = useTranslation('common')
   const router = useRouter()
   const { locale } = router
@@ -330,7 +332,9 @@ const Header: React.FC<{ textColor?: 'white' | 'black' | 'brown'; fontSize?: str
 
           <div
             className={
-              `absolute top-0 left-0 min-h-[100px] w-full ${bgColorClass} py-12 px-[4em] pt-[calc(2.6em+72px)] ${textColorClass} transition-all duration-300 ease-in-out xl:mx-auto` +
+              `absolute top-0 left-0 min-h-[100px] w-full ${bgColorClass} py-12 px-[4em] ${
+                src == 'homepage' ? 'pt-[calc(2.6em+88px)]' : 'pt-[calc(2.6em+72px)]'
+              } ${textColorClass} transition-all duration-300 ease-in-out xl:mx-auto` +
               (selectedTab ? ' translate-y-0' : ' pointer-events-none -translate-y-full')
             }
           >
@@ -357,7 +361,9 @@ const Header: React.FC<{ textColor?: 'white' | 'black' | 'brown'; fontSize?: str
                       <li
                         key={index}
                         style={{ fontSize: `${fontSize}` }}
-                        className={`group relative -translate-x-4 cursor-pointer list-none py-1 px-2 leading-[24px] opacity-70 duration-300 ease-out hover:translate-x-0 hover:opacity-100`}
+                        className={`group relative -translate-x-4 cursor-pointer list-none py-1 px-2 ${
+                          src == 'homepage' ? 'leading-[' + fontSize + ']' : 'leading-[24px]'
+                        } opacity-70 duration-300 ease-out hover:translate-x-0 hover:opacity-100`}
                       >
                         <Link className="flex items-start pl-5" href={item.link}>
                           <IconListItemArrow

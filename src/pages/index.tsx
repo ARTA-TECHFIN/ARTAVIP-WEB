@@ -64,7 +64,7 @@ const Home: NextPage = ({ k }: any) => {
         keywords={t('page_keywords.home')}
         ga="Homepage"
       />
-      <Header fontSize={'1em'} />
+      <Header fontSize={'1em'} src="homepage" />
       <main>
         <Slides k={k} setShowWechatPopup={setShowWechatPopup} />
       </main>

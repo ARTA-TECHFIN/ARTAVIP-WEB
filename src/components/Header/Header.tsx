@@ -330,7 +330,7 @@ const Header: React.FC<{ textColor?: 'white' | 'black' | 'brown'; fontSize?: str
 
           <div
             className={
-              `absolute top-0 left-0 min-h-[100px] w-full ${bgColorClass} py-12 px-[4em] pt-[130px] ${textColorClass} transition-all duration-300 ease-in-out xl:mx-auto` +
+              `absolute top-0 left-0 min-h-[100px] w-full ${bgColorClass} py-12 px-[4em] pt-[calc(2.6em+72px)] ${textColorClass} transition-all duration-300 ease-in-out xl:mx-auto` +
               (selectedTab ? ' translate-y-0' : ' pointer-events-none -translate-y-full')
             }
           >

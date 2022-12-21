@@ -63,14 +63,14 @@ const HeroBanner = ({
         <img
           src={simpleHeader ? '/images/investor-relations/top-inner-banner.jpg' : image}
           alt={title}
-          className="hidden object-cover md:block"
+          className="hidden h-full w-full object-cover md:block"
         />
         <img
           src={
             simpleHeader ? '/images/investor-relations/mobile-top-inner-banner.jpg' : mobileImage
           }
           alt={title}
-          className="object-cover md:hidden"
+          className="h-full w-full object-cover md:hidden"
         />
       </div>
       {/* <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white" /> */}

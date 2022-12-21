@@ -37,11 +37,15 @@ const Layout = (props: {
       <main className="flex flex-col bg-arta-eggshell-100 pb-12 text-arta-sand-100 md:pb-[150px]">
         <div className="relative z-2 h-[50vh] w-full overflow-hidden md:aspect-video md:h-[50vh]">
           <div ref={bannerImage} className="absolute h-[50vh] w-full overflow-hidden">
-            <img src={cms.heroBanner.image} alt="" className="hidden object-cover md:block" />
+            <img
+              src={cms.heroBanner.image}
+              alt=""
+              className="hidden h-full w-full object-cover md:block"
+            />
             <img
               src={cms.heroBanner.mobileImage}
               alt=""
-              className="object-cover object-top md:hidden"
+              className="h-full w-full object-cover object-top md:hidden"
             />
           </div>
           {/* <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white" /> */}

@@ -52,19 +52,15 @@ const SectionFullMission = ({
   return (
     <div className="relative">
       <div ref={bannerImage} className="absolute h-full w-full overflow-hidden">
-        <Image
-          priority
+        <img
           src={simpleHeader ? '/images/bg-static.jpg' : image}
           alt={title}
-          fill
-          className="hidden object-cover md:block"
+          className="hidden h-full w-full object-cover md:block"
         />
-        <Image
-          priority
+        <img
           src={simpleHeader ? '/images/mobile-bg-static.jpg' : mobileImage}
           alt={title}
-          fill
-          className={`object-cover md:hidden ${simpleHeader && 'object-top'}`}
+          className={`h-full w-full object-cover md:hidden ${simpleHeader && 'object-top'}`}
         />
       </div>
       <div
@@ -83,7 +79,9 @@ const SectionFullMission = ({
             <FadeUp>
               <div className={cn(simpleHeader || fullWidth ? '' : 'md:w-1/2')}>
                 <p className={textClass.title_style2}>{label}</p>
-                <h1 className={`mt-4 font-Verah lg:text-[4.25rem] text-[1.7rem]  leading-[2.25rem]  lg:leading-[5rem] tracking-wide`}>
+                <h1
+                  className={`mt-4 font-Verah text-[1.7rem] leading-[2.25rem]  tracking-wide  lg:text-[4.25rem] lg:leading-[5rem]`}
+                >
                   {title}{' '}
                   {title2 ? (
                     <>

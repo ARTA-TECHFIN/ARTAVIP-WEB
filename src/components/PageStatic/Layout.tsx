@@ -37,18 +37,10 @@ const Layout = (props: {
       <main className="flex flex-col bg-arta-eggshell-100 pb-12 text-arta-sand-100 md:pb-[150px]">
         <div className="relative z-2 h-[50vh] w-full overflow-hidden md:aspect-video md:h-[50vh]">
           <div ref={bannerImage} className="absolute h-[50vh] w-full overflow-hidden">
-            <Image
-              priority={true}
-              src={cms.heroBanner.image}
-              alt=""
-              fill
-              className="hidden object-cover md:block"
-            />
-            <Image
-              priority={true}
+            <img src={cms.heroBanner.image} alt="" className="hidden object-cover md:block" />
+            <img
               src={cms.heroBanner.mobileImage}
               alt=""
-              fill
               className="object-cover object-top md:hidden"
             />
           </div>

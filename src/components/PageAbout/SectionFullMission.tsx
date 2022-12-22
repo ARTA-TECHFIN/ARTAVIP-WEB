@@ -66,7 +66,7 @@ const SectionFullMission = ({
       <div
         className={cn(
           'relative z-2 w-full overflow-hidden md:aspect-video',
-          simpleHeader ? 'h-[60vh]' : 'h-screen md:h-auto'
+          simpleHeader ? 'h-[60vh]' : 'h-app-height md:h-auto'
         )}
       >
         <div

@@ -40,7 +40,7 @@ export const SectionMission = (props: { k: PageAboutCmsT }) => {
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
           >
-            <source src="/videos/1017-arta-video-brand-r12_comp.mp4" typeof="video/mp4" />
+            <source src="/videos/1017-arta-video-brand-r12_comp.mp4#t=0.001" typeof="video/mp4" />
             Your browser does not support the video tag.
           </video>
 

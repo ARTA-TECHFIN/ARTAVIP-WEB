@@ -216,7 +216,7 @@ const ApplyForm = (props: { job: jobDetailsT; setShowSuccess: (isSuccess: boolea
 
           <div className="col-span-full">
             <InputField label="" error={errors.acceptedTerms?.message}>
-              <label className="flex gap-4">
+              <label className="flex gap-5 items-center">
                 <input type="checkbox" {...register('acceptedTerms')} />
                 <p className={`${textClass.body_regular} select-none`}>
                   {parse(t("join_us.accept_privacy_policy"))}

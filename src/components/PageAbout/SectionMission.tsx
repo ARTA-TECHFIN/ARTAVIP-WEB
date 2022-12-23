@@ -13,12 +13,15 @@ export const SectionMission = (props: { k: PageAboutCmsT }) => {
   const { t } = useTranslation('common')
 
   const toggleVideo = () => {
+    console.log(isPlaying)
     if (videoRef.current && !isPlaying) {
       videoRef.current.play()
-      setIsPlaying(true)
+      setIsPlaying(!videoRef.current.paused)
+      console.log(!videoRef.current.paused)
     } else {
       videoRef.current.pause()
-      setIsPlaying(false)
+      setIsPlaying(!videoRef.current.paused)
+      console.log(!videoRef.current.paused)
     }
   }
 
@@ -34,13 +37,14 @@ export const SectionMission = (props: { k: PageAboutCmsT }) => {
             preload="true"
             crossOrigin="anonymous"
             className="w-full cursor-pointer transition will-change-transform"
-            onClick={() => toggleVideo()}
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
           >
-            <source src="/videos/1017-arta-video-brand-r12_comp.mp4" typeof="video/mp4" />
+            <source src="/videos/1017-arta-video-brand-r12_comp.mp4#t=0.001" typeof="video/mp4" />
             Your browser does not support the video tag.
           </video>
 
-          {isPlaying && (
+          {!isPlaying && (
             <div className="pointer-events-none absolute top-1/2 left-1/2 flex h-[55px] w-[55px] -translate-x-1/2 -translate-y-1/2 transform cursor-pointer flex-col justify-center rounded-full bg-arta-sand-100 text-center hover:shadow-lg">
               <svg
                 className="ml-5"

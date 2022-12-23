@@ -3,6 +3,7 @@ import React, { FC, useState } from 'react'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'
 import { ButtonAnimated } from '../ButtonAnimated'
 import { links } from 'src/domains/links'
+import { useRouter } from 'next/router'
 
 interface propsT {
   item: {
@@ -19,9 +20,11 @@ interface propsT {
   expand: boolean
   setActiveMobileNavItem: any
   textColor: string
+  setShowMenu: any
 }
 
-const MobileNavbar: FC<propsT> = ({ item, index, expand, setActiveMobileNavItem, textColor }) => {
+const MobileNavbar: FC<propsT> = ({ item, index, expand, setActiveMobileNavItem, textColor, setShowMenu }) => {
+  const router = useRouter()
   return (
     <div>
       <div>
@@ -97,7 +100,11 @@ const MobileNavbar: FC<propsT> = ({ item, index, expand, setActiveMobileNavItem,
               {item.pages.map((item, index) => (
                 <div className="group" key={index}>
                   <li className=" relative -translate-x-6 cursor-pointer list-none py-1 text-base opacity-70 duration-300 ease-out hover:translate-x-0 hover:opacity-100 ">
-                    <a title={item.title} href={item.link}>
+                    <a title={item.title} href={item.link} onClick={() => {
+                      if(item.link.includes(router.pathname)) {
+                        setShowMenu(false)
+                      }
+                    }}>
                       {/* <span className="absolute top-0 left-0 h-full w-0  transition-all duration-150 ease-in-out group-hover:w-full group-hover:bg-[#f1eded45]"></span> */}
                       <span className="flex items-start">
                         <img

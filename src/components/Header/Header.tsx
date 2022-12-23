@@ -426,6 +426,7 @@ const Header: React.FC<{
                             index={index}
                             setActiveMobileNavItem={setActiveMobileNavItem}
                             textColor={textColor}
+                            setShowMenu={setShowMenu}
                           />
                         </div>
                       ))}

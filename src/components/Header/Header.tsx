@@ -103,7 +103,7 @@ const Header: React.FC<{
         { title: t('page_title.investment_banking'), link: links.businessesInvestmentBanking },
         { title: t('page_title.insurance_brokerage'), link: links.businessesInsuranceBrokerage },
         { title: t('page_title.global_markets'), link: links.businessesSecuritiesBrokerage },
-        { title: t('page_title.esg_advisory'), link: links.businessesEsg },
+        // { title: t('page_title.esg_advisory'), link: links.businessesEsg },
         { title: t('page_title.artazine'), link: links.businessesArtazine },
       ],
     },

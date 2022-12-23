@@ -53,11 +53,11 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
       description: k.our_business_product_description_4,
       link: links.businessesSecuritiesBrokerage,
     },
-    {
-      title: t('page_title.esg_advisory'),
-      description: k.our_business_product_description_5,
-      link: links.businessesEsg,
-    },
+    // {
+    //   title: t('page_title.esg_advisory'),
+    //   description: k.our_business_product_description_5,
+    //   link: links.businessesEsg,
+    // },
     {
       title: t('page_title.artazine'),
       description: k.our_business_product_description_6,
@@ -372,14 +372,14 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
           id="home-our-business"
           ref={businessRef}
           className={cn(
-            'absolute bottom-[22em] md:bottom-[20em] lg:bottom-[25vh] left-[3.8em] z-2 w-[95vw] transform pr-4 text-white opacity-0 transition duration-1000 lg:left-[6em] lg:left-[4em]',
+            'absolute bottom-[22em] left-[3.8em] z-2 w-[95vw] transform pr-4 text-white opacity-0 transition duration-1000 md:bottom-[20em] lg:bottom-[25vh] lg:left-[6em] lg:left-[4em]',
             currentSection == '10' && '!opacity-0'
           )}
         >
           <h1 className="font-verah mt-0 text-left text-[6em] tracking-[0.06em] sm:text-[5em] lg:text-[3.4em]">
             {t('page_title.our_businesses')}
           </h1>
-          <p className="hidden md:block max-w-[30em] text-left font-Neue text-[3em] sm:text-[1.8em] md:text-[1.8em] lg:text-[1em]">
+          <p className="hidden max-w-[30em] text-left font-Neue text-[3em] sm:text-[1.8em] md:block md:text-[1.8em] lg:text-[1em]">
             {k.our_business_description}
           </p>
           <div className="mx-auto w-[75vw] sm:w-[50vw] md:w-full lg:mx-0 lg:max-w-[82vw]">
@@ -434,7 +434,7 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
         className={cn(
           index === selectedBusiness && 'innerShadow !opacity-100 lg:h-[12em] lg:w-[12em]',
           index !== selectedBusiness && 'lg:h-[10.8em] lg:w-[10.8em]',
-          `innerShadowMobile mx-auto flex h-[17.5em] w-[17.5em] md:h-[12.5em] md:w-[12.5em] items-center justify-center self-center rounded-full border border-white text-[3em] opacity-70 transition-all will-change-transform sm:text-[2.2em] md:text-[1.8em] lg:text-[0.95em]`
+          `innerShadowMobile mx-auto flex h-[17.5em] w-[17.5em] items-center justify-center self-center rounded-full border border-white text-[3em] opacity-70 transition-all will-change-transform sm:text-[2.2em] md:h-[12.5em] md:w-[12.5em] md:text-[1.8em] lg:text-[0.95em]`
         )}
       >
         <a href={business.link}>{business.title}</a>
@@ -449,7 +449,11 @@ const BusinessCircle = ({ index, business, selectedBusiness, setSelectedBusiness
         <p className="mt-[1em] hidden w-full text-center font-Neue text-[3em] text-white lg:block lg:text-[0.8em]">
           {business.description}
         </p>
-        <ButtonAnimated as="a" href={business.link} className="cta-btn hidden md:block mt-4 border-white text-white ">
+        <ButtonAnimated
+          as="a"
+          href={business.link}
+          className="cta-btn mt-4 hidden border-white text-white md:block "
+        >
           {label}
         </ButtonAnimated>
       </div>

@@ -35,7 +35,7 @@ export const SectionLeadership = (props: { k: PageAboutCmsT }) => {
       </div>
       <div className="arta-container relative mx-auto pt-16 pb-[126px] md:py-36 md:pb-[158px]">
         <h2 className={`${textClass.h2_style2} mb-4`}>{t('about_us.leadership')}</h2>
-        <div className="arta-leadership-slide relative">
+        <div className="arta-leadership-slide relative min-h-[140vw] sm:min-h-[auto]">
           {showComponent && (
             <Swiper
               loop={false}

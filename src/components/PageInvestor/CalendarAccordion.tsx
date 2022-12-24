@@ -27,22 +27,28 @@ const CalendarAccordion = ({ index, year, events, openYear, setOpenYear }: props
   const togglerIcon = useRef(null)
   const listWrapper = useRef(null)
   const list = useRef<HTMLUListElement>(null)
+  const [isFirstVisit, setIsFirstVisit] = useState(true)
 
   useEffect(() => {
     if (year === openYear) {
       gsap.to(togglerIcon.current, { rotate: -180, duration: 0.7 })
       gsap.to(listWrapper.current, { height: list.current?.clientHeight, duration: 0.7 })
   
-      setTimeout(() => {
-        if (year !== 0) {
-          const scrollDiv = (document.getElementById(`year-${openYear}`)?.offsetTop || 0) - 170;
-          window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
-        }
-      }, 800)
+      if (!isFirstVisit) {
+        setTimeout(() => {
+          if (year !== 0) {
+            const scrollDiv = (document.getElementById(`year-${openYear}`)?.offsetTop || 0) - 170;
+            window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+          }
+        }, 800)
+      } else {
+        setIsFirstVisit(false)
+      }
     } else {
       gsap.to(togglerIcon.current, { rotate: 0, duration: 0.7 })
       gsap.to(listWrapper.current, { height: 0, duration: 0.7 })
     }
+
   }, [openYear])
 
   if (events.length === 0) return <></>

@@ -321,9 +321,9 @@ const Header: React.FC<{
                 )}
               ></span>
             </div>
-            <div className="z-[1] text-right">
+            <div className="z-[1] text-right pr-[2px]">
               <Link title={'Arta TechFin'} href="/">
-                <div className="relative h-[32px] w-[79px] cursor-pointer opacity-100 transition hover:opacity-100 md:h-auto md:w-auto">
+                <div className="relative h-[32px] w-[81px] cursor-pointer opacity-100 transition hover:opacity-100 md:h-auto md:w-auto">
                   <ArtaLogo className={`${textColorClass} h-full w-full md:h-auto md:w-auto`} />
                 </div>
               </Link>
@@ -403,7 +403,7 @@ const Header: React.FC<{
                   >
                     <XIcon className="h-6 w-6" />
                   </div>
-                  <div className="relative h-[32px] w-[79px] cursor-pointer opacity-100 transition hover:opacity-100 md:h-auto md:w-auto">
+                  <div className="relative h-[32px] w-[81px] cursor-pointer opacity-100 transition hover:opacity-100 md:h-auto md:w-auto">
                     <Link title="Arta TechFin" href="/">
                       <img
                         src={`/images/${

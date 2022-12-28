@@ -17,12 +17,6 @@ type propsT = {
   fullWidth?: boolean
 }
 
-// TODO: add animation
-// TODO: use object image, not use it as background
-// TODO: bgColor
-// TODO: add label
-// TODO: responsive
-
 gsap.registerPlugin(ScrollTrigger)
 
 const HeroBanner = ({
@@ -56,7 +50,7 @@ const HeroBanner = ({
     <div
       className={cn(
         'relative z-2 w-full overflow-hidden md:aspect-video',
-        simpleHeader ? 'h-[60vh]' : 'h-screen md:h-auto'
+        simpleHeader ? 'h-[60vh]' : 'h-app-height md:h-auto'
       )}
     >
       <div ref={bannerImage} className="absolute h-full w-full overflow-hidden">

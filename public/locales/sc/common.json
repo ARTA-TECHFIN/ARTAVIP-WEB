@@ -112,7 +112,7 @@
     "thanks": "感谢您对裕承科金的关注！",
     "thanks_message": "我们已收到您的申请。我们的人力资本管理团队将会仔细查看您的信息。如果我们在四个星期内未联络您，则默认此次申请未能成功。<br />如欲了解更多资讯，请访问我们的领英主页：<a target='_blank' href='https://www.linkedin.com/company/arta-techfin-corporation-limited'>https://www.linkedin.com/company/arta-techfin-corporation-limited</a>。",
     "seniority": "经验要求",
-    "accept_privacy_policy": "本人确认已经阅读、理解、同意隐私政策声明，并同意本人提供的个人信息可由裕承科金用于企业招聘。"
+    "accept_privacy_policy": "本人确认已经阅读、理解、同意<a target='_blank' class='underline' href='/sc/privacy-policy'>隐私政策声明</a>，并同意本人提供的个人信息可由裕承科金用于企业招聘。"
   },
   "investor_relations": {
     "announcements_notices": "公示及报告",

@@ -38,7 +38,6 @@ export const Slides = ({ k, setShowWechatPopup }: any) => {
   }
 
   useEffect(() => {
-    console.log("useEffect")
     setFirstLoad(false)
   }, [])
 
@@ -55,9 +54,8 @@ export const Slides = ({ k, setShowWechatPopup }: any) => {
       render={({ state, fullpageApi }) => {
         fullpageApi?.setAllowScrolling(!disableScroll)
         if (firstLoad) {
-          console.log("is first load")
-        } else {
-          console.log("not first load")
+          console.log("Welcome to Arta")
+          fullpageApi?.silentMoveTo(0)
         }
 
         return (

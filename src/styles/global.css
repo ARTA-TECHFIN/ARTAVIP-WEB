@@ -420,3 +420,11 @@ input[type="checkbox"] {
 input[type=checkbox] {
   @apply transform scale-[1.4] w-[24px] lg:scale-[1];
 }
+header{
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) -87.84%, rgba(208, 200, 192, 0) 100%);
+}
+@media (max-width: 1024px) {
+  header{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) -59.37%, rgba(222, 215, 211, 0) 100%);
+  }
+}

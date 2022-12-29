@@ -91,26 +91,30 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
                     <div
                       key={index}
                       className={
-                        'ss-container w-[90%] max-w-[380px] sm:w-4/5 mx-auto lg:w-4/5 flex aspect-square flex-col items-center justify-center rounded-full transition-all duration-300'
+                        'ss-container w-[90%] max-w-[380px] sm:w-4/5 mx-auto lg:w-4/5 rounded-full transition-all duration-300'
                       }
                     >
-                      <div
-                        className={
-                          'ss-circle relative mb-4 h-12 w-12 md:h-16 md:w-16 transition'
-                        }
-                      >
-                        {(index === 0) && <IconTechnologyInternetCompanies className="h-full w-full object-cover" />}
-                        {(index === 1) && <IconOrganizationsLedByArta className="h-full w-full object-cover" />}
-                        {(index === 2) && <IconBanksBasedInHK className="h-full w-full object-cover" />}
-                        {(index === 3) && <HKTycoons className="h-full w-full object-cover" />}
-                        {(index === 4) && <EducationProfessionalIcon className="h-full w-full object-cover" />}
-                        {(index === 5) && <RegionalBanksIcon className="h-full w-full object-cover" />}
-                        {(index === 6) && <FinTechCompaniesIcon className="h-full w-full object-cover" />}
-                        {(index === 7) && <FinancialInvestmentPlatformIcon className="h-full w-full object-cover" />}
+                      <div className="h-0 pb-[100%]">
+                        <div className="absolute w-full h-full flex flex-col items-center justify-center">
+                          <div
+                            className={
+                              'ss-circle relative mb-4 h-12 w-12 md:h-16 md:w-16 transition'
+                            }
+                          >
+                            {(index === 0) && <IconTechnologyInternetCompanies className="h-full w-full object-cover" />}
+                            {(index === 1) && <IconOrganizationsLedByArta className="h-full w-full object-cover" />}
+                            {(index === 2) && <IconBanksBasedInHK className="h-full w-full object-cover" />}
+                            {(index === 3) && <HKTycoons className="h-full w-full object-cover" />}
+                            {(index === 4) && <EducationProfessionalIcon className="h-full w-full object-cover" />}
+                            {(index === 5) && <RegionalBanksIcon className="h-full w-full object-cover" />}
+                            {(index === 6) && <FinTechCompaniesIcon className="h-full w-full object-cover" />}
+                            {(index === 7) && <FinancialInvestmentPlatformIcon className="h-full w-full object-cover" />}
+                          </div>
+                          <span className={`${textClass.small_text} max-w-[70%] text-center`}>
+                            {item.title}
+                          </span>
+                        </div>
                       </div>
-                      <span className={`${textClass.small_text} max-w-[70%] text-center`}>
-                        {item.title}
-                      </span>
                     </div>
                   </SwiperSlide>
                 )

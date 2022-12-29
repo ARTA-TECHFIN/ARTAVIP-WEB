@@ -60,7 +60,7 @@ export const SectionLeadership = (props: { k: PageAboutCmsT }) => {
             >
               {k.leadership.leaderList.map((leader: any, index: number) => (
                 <SwiperSlide key={index} className="flex flex-col">
-                  <div className="relative mb-4 aspect-[3/4] h-auto w-full overflow-hidden">
+                  <div className="relative mb-4 h-0 pb-[133%] w-full overflow-hidden">
                     <img
                       src={leader.attributes.profile_image.data.attributes.url}
                       alt=""

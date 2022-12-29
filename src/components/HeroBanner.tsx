@@ -49,8 +49,8 @@ const HeroBanner = ({
   return (
     <div
       className={cn(
-        'relative z-2 w-full overflow-hidden md:aspect-video',
-        simpleHeader ? 'h-[60vh]' : 'h-app-height md:h-auto'
+        'relative z-2 w-full overflow-hidden',
+        simpleHeader ? 'h-[60vh]' : 'h-app-height md:h-[0] md:pb-[56.25%]'
       )}
     >
       <div ref={bannerImage} className="absolute h-full w-full overflow-hidden">

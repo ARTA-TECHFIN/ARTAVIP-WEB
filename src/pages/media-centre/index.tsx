@@ -42,7 +42,7 @@ const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
                 href={`/media-centre/blog-post/${post.slug}`}
               >
                 <div className="h-full w-full cursor-pointer bg-white transition-shadow hover:shadow-postCard">
-                  <div className="relative aspect-video w-full">
+                  <div className="relative h-[0] pb-[56.25%] w-full">
                     <img src={post.image} alt="" className="absolute h-full w-full object-cover" />
                   </div>
                   <div className="px-6 pt-4 pb-6 md:pt-6 md:pb-12">

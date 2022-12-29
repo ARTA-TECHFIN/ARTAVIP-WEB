@@ -6,6 +6,7 @@ import TechFin from './techFin'
 import Footer from 'src/components/Footer'
 
 export const Slides = ({ k, setShowWechatPopup }: any) => {
+  const [firstLoad, setFirstLoad] = useState(true)
   const [disableScroll, setDisableScroll] = useState(false)
   const [currentSectionId, setCurrentSectionId] = useState<number>(0)
 
@@ -38,6 +39,7 @@ export const Slides = ({ k, setShowWechatPopup }: any) => {
 
   useEffect(() => {
     console.log("useEffect")
+    setFirstLoad(false)
   }, [])
 
   return (
@@ -52,6 +54,11 @@ export const Slides = ({ k, setShowWechatPopup }: any) => {
       sectionsColor={['#543317', '#000000', '#653711']}
       render={({ state, fullpageApi }) => {
         fullpageApi?.setAllowScrolling(!disableScroll)
+        if (firstLoad) {
+          console.log("is first load")
+        } else {
+          console.log("not first load")
+        }
 
         return (
           <>

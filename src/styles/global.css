@@ -148,6 +148,18 @@
   @apply mt-3;
 }
 
+.blog-content h2 {
+  @apply font-Verah lg:text-[4.25rem] text-[3rem]  leading-[3.75rem]  lg:leading-[5rem] tracking-wide;
+}
+
+.blog-content h3 {
+  @apply font-Verah text-[2.25rem] lg:text-[3rem] lg:leading-[3.75rem] leading-[3rem] tracking-wide;
+}
+
+.blog-content h4 {
+  @apply font-Verah md:text-[2.25rem] text-[2rem] md:leading-[2.875rem] leading-[2.5rem];
+}
+
 .module-text-col-list p,
 .module-text-col-list li,
 .blog-content p,

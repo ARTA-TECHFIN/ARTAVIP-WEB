@@ -55,7 +55,7 @@ export const Slides = ({ k, setShowWechatPopup }: any) => {
         fullpageApi?.setAllowScrolling(!disableScroll)
         if (firstLoad) {
           console.log("Welcome to Arta")
-          fullpageApi?.silentMoveTo(0)
+          fullpageApi?.silentMoveTo(1)
         }
 
         return (

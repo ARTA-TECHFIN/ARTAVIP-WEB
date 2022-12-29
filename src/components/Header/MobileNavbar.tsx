@@ -100,7 +100,7 @@ const MobileNavbar: FC<propsT> = ({ item, index, expand, setActiveMobileNavItem,
               {item.pages.map((item, index) => (
                 <div className="group" key={index}>
                   <li className=" relative -translate-x-6 cursor-pointer list-none py-1 text-base opacity-70 duration-300 ease-out hover:translate-x-0 hover:opacity-100 ">
-                    <a title={item.title} href={item.link} onClick={() => {
+                    <Link title={item.title} href={item.link} onClick={() => {
                       if(item.link.includes(router.pathname)) {
                         setShowMenu(false)
                       }
@@ -116,7 +116,7 @@ const MobileNavbar: FC<propsT> = ({ item, index, expand, setActiveMobileNavItem,
                         />
                         <span>{item.title}</span>
                       </span>
-                    </a>
+                    </Link>
                   </li>
                 </div>
               ))}

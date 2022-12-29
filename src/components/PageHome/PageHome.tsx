@@ -36,6 +36,10 @@ export const Slides = ({ k, setShowWechatPopup }: any) => {
       }
   }
 
+  useEffect(() => {
+    console.log("useEffect")
+  }, [])
+
   return (
     <ReactFullpage
       //fullpage options

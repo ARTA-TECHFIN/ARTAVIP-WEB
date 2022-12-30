@@ -60,7 +60,7 @@ const Enquiry = ({ k }: any) => {
             className="text-col-circle absolute -left-[250px] z-0 will-change-transform"
             ref={circle}
           >
-            <Circle className="hidden md:block md:scale-[0.70] lg:scale-75 xl:scale-100" />
+            <Circle className="hidden md:block mx-auto w-full" />
           </div>
         </div>
         <div className="col-span-full mt-6 md:col-span-8 md:mt-0">

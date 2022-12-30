@@ -47,13 +47,13 @@ export const SectionCulture = (props: { k: PageAboutCmsT }) => {
                 <li key={index} className="group/list mb-8 flex flex-col overflow-hidden">
                   <button
                     className={
-                      'flex items-start gap-3 overflow-hidden opacity-70 duration-200 ease-out group-hover/list:translate-x-0 group-hover/list:opacity-100' +
+                      'flex items-start overflow-hidden opacity-70 duration-200 ease-out group-hover/list:translate-x-0 group-hover/list:opacity-100' +
                       (isSelected ? ' translate-x-0 opacity-100' : ' -translate-x-7')
                     }
                     onMouseEnter={() => selectedIndex != index && setSelectedIndex(index)}
                   >
                     <IconListItemArrow className="h-4 w-4 pt-[10px]" fill="#593725" />
-                    <span className={textClass.title}>{value.title}</span>
+                    <span className={`${textClass.title} ml-3`}>{value.title}</span>
                   </button>
                   <span
                     className={

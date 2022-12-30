@@ -99,6 +99,9 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
       className="tigger-01 relative relative z-3 flex h-app-height w-screen flex-col overflow-hidden bg-[#351e0e] will-change-transform lg:h-screen"
       onMouseMove={(ev) => section1HandleMouseMove(ev)}
     >
+      <div className="absolute w-full h-full object-cover">
+        <img className="w-full h-full object-cover" src="/images/home-sec1-bg.jpg" />
+      </div>
       <video
         data-keepplaying
         ref={sec1VideoRef}
@@ -116,10 +119,10 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
       </video>
       {/* top-[20%] left-0   sm:top-[40%] lg:left-[10%] xl:left-[20%] xl:mx-auto */}
       {/* <div className="absolute home-background-gradient top-0 left-0 z-1 h-[50vh] w-full lg:hidden" /> */}
-      <div className="z-1">
+      {/* <div className="z-1">
         <div className="animatedSpotLight1 absolute h-[100vw] w-[100vw] mix-blend-lighten blur-[35px]" />
         <div className="animatedSpotLight2 absolute h-[100vw] w-[100vw] mix-blend-lighten blur-[35px]" />
-      </div>
+      </div> */}
       <div className=" movable-elements-wrapper z-1 flex max-w-main-contain items-start justify-center px-6 xl:mx-auto">
         <div className="absolute bottom-[6em] left-[0em] md:left-[5em]">
           {locale === 'en' && (

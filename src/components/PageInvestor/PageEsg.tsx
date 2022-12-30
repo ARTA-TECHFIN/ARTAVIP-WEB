@@ -122,7 +122,7 @@ const PageEsg: FC<{ k: any, locale: string }> = ({ k, locale }) => {
 
           <div className="arta-gradient-border relative mb-12 overflow-hidden font-Verah text-[1rem] leading-[1.5rem] tracking-wide">
             <div className="arta-gradient-border-inner"></div>
-            <div className="relative z-20 flex flex-col lg:flex-row bg-arta-eggshell-100 md:py-12 py-10 md:px-[60px] pl-16 pr-12">
+            <div className="etg-outline relative z-20 flex flex-col lg:flex-row bg-arta-eggshell-100 md:py-12 py-10 md:px-[60px] pl-16 pr-12">
               <div className="relative mb-6 pb-6 flex-1 lg:mb-0 border-b border-arta-secondary lg:border-none">
                 <div className="lg:arta-gradient-line-left absolute right-0 h-full"></div>
                 <div className="md:pr-6 pr-2">

@@ -32,17 +32,17 @@ const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
       gaLog="Media Centre - Arta Blog"
     >
       <div className="arta-container mx-auto">
-        <div className="grid grid-cols-12 gap-4 md:gap-8">
+        <div className="grid grid-cols-12">
           {cms.blogPosts
             .sort((a: any, b: any) => new Date(b.date).valueOf() - new Date(a.date).valueOf())
             .map((post: any, index: number) => (
               <Link
                 key={index}
-                className="col-span-full h-full md:col-span-6 lg:col-span-4"
+                className="col-span-full md:col-span-6 lg:col-span-4 m-2 md:m-4"
                 href={`/media-centre/blog-post/${post.slug}`}
               >
                 <div className="h-full w-full cursor-pointer bg-white transition-shadow hover:shadow-postCard">
-                  <div className="relative h-[0] pb-[56.25%] w-full">
+                  <div className="relative h-[0] pb-[56.25%] w-full overflow-hidden">
                     <img src={post.image} alt="" className="absolute h-full w-full object-cover" />
                   </div>
                   <div className="px-6 pt-4 pb-6 md:pt-6 md:pb-12">

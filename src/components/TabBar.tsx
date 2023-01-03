@@ -14,7 +14,7 @@ const TabBar = (props: propsT) => {
   const ulRef = useRef(null)
 
   return (
-    <ul ref={ulRef} className={`flex md:justify-center justify-start mt-4 lg:mt-0 pl-6 lg:gap-16 gap-8 border-solid border-b border-arta-sand-200 text-arta-sand-200 ${className}`}>
+    <ul ref={ulRef} className={`flex md:justify-center justify-start mt-4 lg:mt-0 pl-6 border-solid border-b border-arta-sand-200 text-arta-sand-200 ${className}`}>
       {tabs.map((tab, index) => {
         const isSelected = tab.value === selectedTab
         return (
@@ -22,7 +22,7 @@ const TabBar = (props: propsT) => {
             key={index}
             onClick={() => setSelectedTab(tab.value, index)}
           >
-            <button className={cn('pb-2 transition-all md:text-xl text-lg whitespace-pre', isSelected && 'text-arta-sand-100  border-solid border-b-2 border-arta-sand-100')}>{tab.label}</button>
+            <button className={cn('pb-2 transition-all md:text-xl text-lg whitespace-pre mr-8 lg:mr-16', isSelected && 'text-arta-sand-100  border-solid border-b-2 border-arta-sand-100')}>{tab.label}</button>
           </li>
         )
       })}

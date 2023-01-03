@@ -94,7 +94,7 @@ const ApplyForm = (props: { job: jobDetailsT; setShowSuccess: (isSuccess: boolea
         return
       }
 
-      if (file.size > 5 * 102400) {
+      if (file.size > 5 * 1024000) {
         setFileSizeError(t('warning.file_size_5mb'))
         return
       }

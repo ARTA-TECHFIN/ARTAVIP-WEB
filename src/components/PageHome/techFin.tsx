@@ -39,17 +39,17 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
       link: links.businessesAssetManagement,
     },
     {
-      title: t('page_title.investment_banking'),
+      title: t('page_title.corporate_finance'),
       description: k.our_business_product_description_2,
       link: links.businessesInvestmentBanking,
     },
     {
-      title: t('page_title.insurance_brokerage'),
+      title: t('page_title.brokerage'),
       description: k.our_business_product_description_3,
       link: links.businessesInsuranceBrokerage,
     },
     {
-      title: t('page_title.global_markets'),
+      title: t('page_title.global_Markets_innotech'),
       description: k.our_business_product_description_4,
       link: links.businessesSecuritiesBrokerage,
     },
@@ -59,7 +59,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
     //   link: links.businessesEsg,
     // },
     {
-      title: t('page_title.artazine'),
+      title: t('page_title.wealth_management'),
       description: k.our_business_product_description_6,
       link: links.businessesArtazine,
     },

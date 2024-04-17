@@ -10,7 +10,7 @@ export const links = {
   businessesInsuranceBrokerage: '/businesses/insurance-brokerage',
   businessesSecuritiesBrokerage: '/businesses/global-markets',
   businessesEsg: '/businesses/esg-advisory',
-  businessesArtazine: '/businesses/artazine',
+  businessesArtazine: '/businesses/wealth_management',
   investor: '/investor-relations',
   investorCirculars: '/investor-relations/circulars',
   investorListingDocuments: '/investor-relations/listing-documents',

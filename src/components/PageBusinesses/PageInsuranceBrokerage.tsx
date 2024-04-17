@@ -13,15 +13,15 @@ const PageInsuranceBrokerage: FC<{ k: any; locale: string }> = ({ k, locale }) =
   return (
     <>
       <Seo
-        title={`${t('page_title.insurance_brokerage')} | Arta TechFin`}
-        description={t('page_description.insurance_brokerage')}
-        keywords={t('page_keywords.insurance_brokerage')}
-        ga="OB - Insurance Brokerage"
+        title={`${t('page_title.brokerage')} | Arta TechFin`}
+        description={t('page_description.brokerage')}
+        keywords={t('page_keywords.brokerage')}
+        ga="OB - Brokerage"
       />
       <Header textColor="white" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
-          title={t('page_title.insurance_brokerage')}
+          title={t('page_title.brokerage')}
           description={k.heroBanner.description}
           image={k.heroBanner.image}
           mobileImage={k.heroBanner.mobileImage}

@@ -89,15 +89,15 @@ const PageSecurities: FC<{ k: any; locale: string }> = ({ k, locale }) => {
   return (
     <>
       <Seo
-        title={`${t('page_title.global_markets')} | Arta TechFin`}
-        description={t('page_description.global_markets')}
-        keywords={t('page_keywords.global_markets')}
+        title={`${t('page_title.global_Markets_innotech')} | Arta TechFin`}
+        description={t('page_description.global_Markets_innotech')}
+        keywords={t('page_keywords.global_Markets_innotech')}
         ga="OB - Securities Brokerage"
       />
       <Header textColor="white" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
-          title={t('page_title.global_markets')}
+          title={t('page_title.global_Markets_innotech')}
           description={k.heroBanner.description}
           image={k.heroBanner.image}
           mobileImage={k.heroBanner.mobileImage}

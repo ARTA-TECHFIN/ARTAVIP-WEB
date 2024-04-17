@@ -13,15 +13,15 @@ const PageInvestmentBanking: FC<{ k: any; locale: string }> = ({ k, locale }) =>
   return (
     <>
       <Seo
-        title={`${t('page_title.investment_banking')} | Arta TechFin`}
-        description={t('page_description.investment_banking')}
-        keywords={t('page_keywords.investment_banking')}
+        title={`${t('page_title.corporate_finance')} | Arta TechFin`}
+        description={t('page_description.corporate_finance')}
+        keywords={t('page_keywords.corporate_finance')}
         ga="OB - Investment Banking"
       />
       <Header textColor="white" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <HeroBanner
-          title={t('page_title.investment_banking')}
+          title={t('page_title.corporate_finance')}
           description={k.heroBanner.description}
           image={k.heroBanner.image}
           mobileImage={k.heroBanner.mobileImage}

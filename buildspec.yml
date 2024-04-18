@@ -6,8 +6,7 @@ phases:
       nodejs: 16
   pre_build:
     commands:
-     - npm install
-    commands:
+      - npm install
       - |
         cat <<EOT >> "./.env"
         REPORT_ADVANCED_API_ENDPOINT="$REPORT_ADVANCED_API_ENDPOINT"

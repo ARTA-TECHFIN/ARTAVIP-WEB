@@ -42,7 +42,7 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
         <Image src={tech_fin_bg} alt="" fill className="object-cover" />
       </div>
 
-      <ModuleTextColList
+      {/* <ModuleTextColList
         header={t("about_us.what_is_techfin")}
         headerPosition="left"
         title={k.techFin.subtitle}
@@ -50,7 +50,7 @@ export const SectionTechFin = (props: { k: PageAboutCmsT }) => {
           { title: k.techFin.section1Title, body: k.techFin.section1Body },
           { title: k.techFin.section2Title, body: k.techFin.section2Body },
         ]}
-      />
+      /> */}
 
       {/* SectionEcosystem */}
       <div className="relative flex flex-col items-center pb-12 md:pb-28">

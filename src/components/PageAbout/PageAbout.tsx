@@ -38,7 +38,6 @@ const PageAbout: FC<{ k: PageAboutCmsT }> = ({ k }) => {
         <SectionCulture k={k} />
         <SectionLeadership k={k} />
         <SectionTechFin k={k} />
-        <SectionTechFinVsFinTech k={k} />
       </main>
       <Footer textColor="brown" />
     </>

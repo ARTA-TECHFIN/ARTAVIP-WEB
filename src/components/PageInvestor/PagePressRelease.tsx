@@ -33,7 +33,7 @@ const PagePressRelease: FC<{ k: any, locale: string }> = ({ k, locale }) => {
   return (
     <>
 
-      <Header textColor="white" />
+      {/* <Header textColor="white" /> */}
       <main className="flex flex-col bg-arta-eggshell-100 pb-28 text-arta-sand-100 md:pb-[150px]">
       
       <div className="arta-container mx-auto">

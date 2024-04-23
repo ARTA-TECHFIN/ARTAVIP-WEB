@@ -59,7 +59,7 @@ const PressPost = (props: {
       <div className="arta-container mx-auto mt-8">
         <Link
           className={`flex cursor-pointer items-center underline ${textClass.body_regular_verah}`}
-          href={links.mediaPress}
+          href={links.investPress}
         >
           <IconArrowLeft fill="#593725" className="mr-2 h-4" />
           {t('media.back_press')}

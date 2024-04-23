@@ -20,6 +20,7 @@ export const links = {
   investorAnnouncementsNotices: '/investor-relations/announcements-notices',
   investorFinCalendar: '/investor-relations/fin-calendar',
   investorEsg: '/investor-relations/esg',
+  investPress: '/investor-relations/press',
   media: '/media-centre',
   mediaBlog: '/media-centre',
   mediaPress: '/media-centre/press',

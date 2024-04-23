@@ -6,6 +6,7 @@ import mediaCentrePressReleasesJson from 'apidata/media-centre-press-releases.js
 
 // TODO: generate this from cms
 export type getMediaCmsT = Awaited<ReturnType<typeof getMediaCms>>
+export type getMediaCmsT2 = Awaited<ReturnType<typeof getMediaCms2>>
 
 export const getSlug = (title: string) => {
   return title
@@ -94,6 +95,51 @@ const massageData = (
   }
 }
 
+
+
+const massageData2 = (
+  pressData: any,
+  locale: string | undefined = 'en'
+) => {
+  const getKey = (keyWithoutLang: string) => `${`${keyWithoutLang}_${locale}`}`
+
+  return {
+
+    pressPosts: pressData.data
+      .sort((a: any, b: any) => a.attributes.date.localeCompare(b.attributes.date))
+      .map(({ attributes: press }: any) => ({
+        year: +press.date.split('-')[0],
+        post: {
+          date: press.date,
+          slug: press.slug,
+          title: press[getKey('title')],
+          title_en: press.title_en,
+          text: press[getKey('content')],
+          pdf: press[getKey('pdf')] ?? {},
+        },
+      }))
+      .reduce((acc: any, curr: any) => {
+        const last = acc[acc.length - 1]
+        if (last && last.year === curr.year) {
+          last.posts.push(curr.post)
+        } else {
+          acc.push({ year: curr.year, posts: [curr.post] })
+        }
+        return acc
+      }, []) as {
+      year: number
+      posts: {
+        date: string
+        title: string
+        slug: string
+        title_en: string
+        text: string
+        pdf: any
+      }[]
+    }[],
+  }
+}
+
 export const getMediaCms = async ({ lang }: { lang: string | undefined }) => {
   const useLocalCms = process.env.USE_LOCAL_CMS_DATA === 'true'
   const pageData = useLocalCms ? mediaCentreJson : await fetchCmsData()
@@ -101,4 +147,11 @@ export const getMediaCms = async ({ lang }: { lang: string | undefined }) => {
   const pressData = useLocalCms ? mediaCentrePressReleasesJson : await fetchPressData()
 
   return massageData(pageData, blogsData, pressData, lang)
+}
+
+export const getMediaCms2 = async ({ lang }: { lang: string | undefined }) => {
+  const useLocalCms = process.env.USE_LOCAL_CMS_DATA === 'true'
+  const pressData = useLocalCms ? mediaCentrePressReleasesJson : await fetchPressData()
+
+  return massageData2(pressData, lang)
 }

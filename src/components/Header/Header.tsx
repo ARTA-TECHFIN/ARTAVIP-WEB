@@ -115,6 +115,7 @@ const Header: React.FC<{
       href: links.investor,
       pages: [
         { title: t('investor_relations.announcements_notices'), link: `${links.investor}#content` },
+        { title: t('page_title.press_release'), link: `${links.investPress}#list` },
         {
           title: t('investor_relations.corporate_information'),
           link: `${links.investorCorporateInformation}#content`,
@@ -126,17 +127,17 @@ const Header: React.FC<{
         { title: t('investor_relations.esg'), link: `${links.investorEsg}#content` },
       ],
     },
-    {
-      pageName: t('page_title.media_centre'),
-      title: t('page_title.media_centre'),
-      paragraph: headerData['media_centre'],
-      buttonText: t('page_title.media_centre'),
-      href: links.media,
-      pages: [
-        { title: t('page_title.arta_blog'), link: `${links.media}#list` },
-        { title: t('page_title.press_release'), link: `${links.mediaPress}#list` },
-      ],
-    },
+    // {
+    //   pageName: t('page_title.media_centre'),
+    //   title: t('page_title.media_centre'),
+    //   paragraph: headerData['media_centre'],
+    //   buttonText: t('page_title.media_centre'),
+    //   href: links.media,
+    //   pages: [
+    //     { title: t('page_title.arta_blog'), link: `${links.media}#list` },
+    //     { title: t('page_title.press_release'), link: `${links.mediaPress}#list` },
+    //   ],
+    // },
     {
       pageName: t('page_title.join_us'),
       title: t('page_title.join_us'),

@@ -15,6 +15,7 @@ import { useRouter } from 'next/router'
 
 const TABS = {
   announcement: 'announcement',
+  press_releases: 'press_releases',
   corporate_information: 'corporate_information',
   financial_calendar: 'financial_calendar',
   esg: 'esg',
@@ -51,6 +52,11 @@ const InvestorLayout: FC<propsT> = ({
       link: links.investor,
       value: 'announcement',
     },
+    [TABS.press_releases]: {
+      title: t('page_title.press_release'),
+      link: links.investPress,
+      value: 'press_releases',
+    },
     [TABS.corporate_information]: {
       title: t('investor_relations.corporate_information'),
       link: links.investorCorporateInformation,
@@ -76,6 +82,11 @@ const InvestorLayout: FC<propsT> = ({
       document.getElementById('tab').scrollLeft = document.getElementById('tab')?.scrollWidth - 100
     }
 
+    if (tabType === 'press_releases' && document.getElementById('tab')) {
+      // @ts-ignore
+      document.getElementById('tab').scrollLeft = document.getElementById('tab')?.scrollWidth - 100
+    }
+
     if (tabType === 'corporate_information' && document.getElementById('tab')) {
       // @ts-ignore
       document.getElementById('tab').scrollLeft = 100
@@ -94,6 +105,8 @@ const InvestorLayout: FC<propsT> = ({
               ? 'IR - Announcements & Reports'
               : tabType == TABS.corporate_information
               ? 'IR - Corporate Information'
+              : tabType == TABS.press_releases
+              ? 'IR - Press Releases'
               : tabType == TABS.financial_calendar
               ? 'IR - Financial Calendar'
               : tabType == TABS.esg

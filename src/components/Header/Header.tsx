@@ -115,7 +115,7 @@ const Header: React.FC<{
       href: links.investor,
       pages: [
         { title: t('investor_relations.announcements_notices'), link: `${links.investor}#content` },
-        { title: t('page_title.press_release'), link: `${links.investPress}#list` },
+        { title: t('page_title.press_release'), link: `${links.investPress}#content` },
         {
           title: t('investor_relations.corporate_information'),
           link: `${links.investorCorporateInformation}#content`,

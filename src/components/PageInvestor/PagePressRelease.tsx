@@ -12,12 +12,6 @@ import Router from 'next/router'
 
 import { useTranslation } from 'next-i18next'
 
-const TABS = {
-  Press_Releases: 'Press_Releases',
-} as const
-
-type tabsT = keyof typeof TABS
-
 const PagePressRelease: FC<{ k: any, locale: string }> = ({ k, locale }) => {
   const [openYear, setOpenYear] = useState(
     (k.pressPosts && k.pressPosts.sort((a: any, b: any) => b.year - a.year)[0].year) || 2023
@@ -33,9 +27,7 @@ const PagePressRelease: FC<{ k: any, locale: string }> = ({ k, locale }) => {
   return (
     <>
 
-      {/* <Header textColor="white" /> */}
       <main className="flex flex-col bg-arta-eggshell-100 pb-28 text-arta-sand-100 md:pb-[150px]">
-      
       <div className="arta-container mx-auto">
         {k.sort((a: any, b: any) => b.year - a.year)
           .map((yearly: any, index: any) => (

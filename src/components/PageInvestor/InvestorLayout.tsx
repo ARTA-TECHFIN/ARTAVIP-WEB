@@ -84,7 +84,7 @@ const InvestorLayout: FC<propsT> = ({
 
     if (tabType === 'press_releases' && document.getElementById('tab')) {
       // @ts-ignore
-      document.getElementById('tab').scrollLeft = document.getElementById('tab')?.scrollWidth - 100
+      document.getElementById('tab').scrollLeft = document.getElementById('tab')?.scrollWidth
     }
 
     if (tabType === 'corporate_information' && document.getElementById('tab')) {

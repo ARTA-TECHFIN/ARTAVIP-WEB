@@ -34,7 +34,6 @@ const massageData = (pageData: any,pressData: any,  locale: string | undefined =
 
   return {
     heroBanner: {
-      title: 'Investor Relation',
       description: g('description') !== null ? g('description') : '',
       image: '/images/investor-relations/top-banner.jpg',
       mobileImage: '/images/investor-relations/mobile-top-banner.jpg',
@@ -110,9 +109,9 @@ const PressRelease = (props: { k: any; locale: string }) => {
       tabType={TABS.press_releases}
       gaLog={true}
       seo={{
-        title: `${t('page_title.press_release')} | Arta TechFin`,
-        description: t('page_description.press_release'),
-        keywords: t('page_keywords.press_release'),
+        title: `${t('page_title.investor_relations')} | Arta TechFin`,
+        description: t('page_description.investor_relations'),
+        keywords: t('page_keywords.investor_relations'),
       }}
     >
       <PagePressRelease k={props.k.pressPosts} locale={props.locale}/>

@@ -61,7 +61,8 @@ const Layout = (props: {
       <main className="flex flex-col bg-arta-eggshell-100 pb-28 text-arta-sand-100 md:pb-[150px]">
         <HeroBanner
           title={t('page_title.investor_relations')}
-          description={t('page_title.press_release')}
+          title2={t('page_title.press_release')}
+          description=''
           image={cms.heroBanner.image}
           mobileImage={cms.heroBanner.mobileImage}
         />

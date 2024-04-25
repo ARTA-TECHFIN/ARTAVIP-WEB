@@ -44,9 +44,9 @@ const PressPost = (props: {
     <MediaLayout
       cms={cms}
       seo={{
-        title: `${t('investor_relations.announments_noties')} | Arta TechFin`,
-        description: t('page_description.investor_relations'),
-        keywords: t('page_keywords.investor_relations'),
+        title: `${post.title} | Arta TechFin`,
+        description: t('page_description.press_release'),
+        keywords: t('page_keywords.press_release'),
       }}
       gaType="others"
       gaObj={{

@@ -25,8 +25,8 @@ const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
       cms={cms}
       tabType={MediaTABS.Blog}
       seo={{
-        title: `${t('page_title.media_center')} | Arta TechFin`,
-        description: t('page_description.media_center'),
+        title: `${t('page_title.investor_relations')} | Arta TechFin`,
+        description: t('page_title.press_release'),
         keywords: t('page_keywords.media_center'),
       }}
       gaLog="Media Centre - Arta Blog"

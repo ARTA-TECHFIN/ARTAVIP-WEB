@@ -14,7 +14,7 @@ import { useTranslation } from 'next-i18next'
 
 const PagePressRelease: FC<{ k: any, locale: string }> = ({ k, locale }) => {
   const [openYear, setOpenYear] = useState(
-    (k.pressPosts && k.pressPosts.sort((a: any, b: any) => b.year - a.year)[0].year) || 2023
+    (k.pressPosts && k.pressPosts.sort((a: any, b: any) => b.year - a.year)[0].year) || 2024
   )
 
   const setOpenYearFunc = (year: number) => {

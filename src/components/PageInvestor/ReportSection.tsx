@@ -1,4 +1,4 @@
-import { reportItemT } from 'src/domains/investor'
+import { reportItemT2 } from 'src/domains/investor'
 import { ReportCard } from './ReportCard'
 import { textClass } from 'src/components/Text'
 import { report } from 'process'
@@ -7,7 +7,7 @@ import { Console } from 'console'
 type propsT = {
   year: number
   lang: any
-  reports: reportItemT[]
+  reports: reportItemT2[]
 }
 const ReportSection = (props: propsT) => {
   return (

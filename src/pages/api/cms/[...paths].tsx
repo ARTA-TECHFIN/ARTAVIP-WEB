@@ -10,6 +10,10 @@ export default async function handler(
   myHeaders.append("Content-Type", "application/json");
 
   const { paths, ...query } = req.query;
+  let queryStr;
+  if(req.url && req.url.indexOf("?") != -1) { 
+    queryStr = req.url.split("?")[1];
+  }
   if (!paths || !(paths instanceof Array))
     return res.status(400).json({ message: "Invalid path" });
 
@@ -18,9 +22,15 @@ export default async function handler(
     headers: myHeaders,
   };
 
-  let url = `${process.env.CMS_API_ENDPOINT}/` + paths.join("/");
+  let url ;
+  if(queryStr){
+    url= `${process.env.CMS_API_ENDPOINT}/` + paths.join("/") +"?"+ queryStr;
+  }else{
+    url=  `${process.env.CMS_API_ENDPOINT}/` + paths.join("/");
+  }
 
   try {
+    console.log(url)
     const response = await fetch(url, requestOptions);
     const result = await response.json();
     return res.status(200).json(result);

@@ -12,6 +12,17 @@ import { useTranslation } from 'next-i18next'
 import { textClass } from 'src/components/Text'
 
 const QUERY_CIRCULARS = 'QUERY_CIRCULARS'
+interface responseT {
+  year: number
+  results: any
+  lang: any
+}
+
+const getCirculars= async() => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/circulars?populate=*`)
+  const data = await res.json()
+  return data
+}
 
 // TODO: Assume only get four years of data
 const useGetData = (locale: string) => {
@@ -20,14 +31,25 @@ const useGetData = (locale: string) => {
   const yearList = [year, year - 1, year - 2, year - 3, year - 4]
 
   return useQuery([QUERY_CIRCULARS, lang, year], async () => {
-    const res = await Promise.all(
-      yearList.map((year) => getReportList({ lang, page: 1, reportType: 'c', year }))
-    )
+    const result = await getCirculars();
 
-    return res.map((r, i) => ({
-      year: year - i,
-      results: r.data.results,
-    }))
+    let yearList: string[] = []
+    let response: responseT[] = []
+    if (result) {
+      result.data.map((item: any) => {
+        if (yearList.indexOf(item.attributes.year) == -1 && parseInt(item.attributes.year) >= 2018)
+          yearList.push(item.attributes.year);
+      })
+
+      yearList.map((year) => {
+        response.push({
+          year: parseInt(year),
+          results: result.data.filter((item: any) => item.attributes.year == year),
+          lang : locale
+        })
+      })
+      return response
+    }
   })
 }
 
@@ -36,7 +58,7 @@ const PageCirculars: NextPage = () => {
   const { locale } = router
   const { status, data, error } = useGetData(locale || "en")
   const { t } = useTranslation('common')
-  const [openYear, setOpenYear] = useState(data && data[0].year || 2022)
+  const [openYear, setOpenYear] = useState(data && data[0].year || 2024)
 
   if (status === 'loading') return <Loader />
   if (status === 'error') return <ErrorMessage error={error} />
@@ -64,10 +86,10 @@ const PageCirculars: NextPage = () => {
           index={index}
           key={yearly.year}
           year={yearly.year}
-          events={yearly.results.map((r) => ({
-            date: new Date(r.doc_date),
-            title: r.headline,
-            url: r.url,
+          events={yearly.results.map((r: any) => ({
+            date: new Date(r.attributes.doc_date),
+            title: locale === 'en'? r.attributes.headline_en : locale === 'tc'? r.attributes.headline_tc:r.attributes.headline_sc,
+            url: locale === 'en'? r.attributes.pdf_en.data.attributes.url : locale === 'tc'? r.attributes.pdf_tc.data.attributes.url :r.attributes.pdf_sc.data.attributes.url ,
           }))}
           openYear={openYear}
           setOpenYear={setOpenYearFunc}

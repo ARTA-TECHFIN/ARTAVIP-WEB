@@ -13,6 +13,13 @@ import { textClass } from 'src/components/Text'
 interface responseT {
   year: number
   results: any
+  lang: any
+}
+
+const getResultsAnnouncements= async() => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/result-announcementss`)
+  const data = await res.json()
+  return data
 }
 
 const QUERY_RESULT_ANNOUNCEMENT = 'QUERY_RESULT_ANNOUNCEMENT'
@@ -20,18 +27,20 @@ const QUERY_RESULT_ANNOUNCEMENT = 'QUERY_RESULT_ANNOUNCEMENT'
 const useGetData = (locale: string) => {
   const lang = locale === 'en' ? 'en' : locale === 'tc' ? 'tc' : 'sc'
   return useQuery([QUERY_RESULT_ANNOUNCEMENT], async () => {
-    const result = await getAdvancedReportList({ lang, reportType: 'results' })
+    const result = await getResultsAnnouncements()
     let yearList: string[] = []
     let response: responseT[] = []
-    if (result && result.status == 200 && result.message == 'Success') {
-      result.data.results.map((item) => {
-        if (yearList.indexOf(item.year) == -1 && parseInt(item.year) >= 2018)
-          yearList.push(item.year)
+    if (result) {
+      result.data.map((item: any) => {
+        if (yearList.indexOf(item.attributes.year) == -1 && parseInt(item.attributes.year) >= 2018)
+          yearList.push(item.attributes.year);
       })
+
       yearList.map((year) => {
         response.push({
           year: parseInt(year),
-          results: result.data.results.filter((item) => item.year == year),
+          results: result.data.filter((item: any) => item.attributes.year == year),
+          lang : locale
         })
       })
       return response
@@ -68,8 +77,8 @@ const PageResultAnnouncements: NextPage = () => {
           <span className="underline">{t('investor_relations.back')}</span>
         </p>
       </Link>
-      {data?.map((yearly) => (
-        <ReportSection key={yearly.year} year={yearly.year} reports={yearly.results} />
+      {data?.map((yearly: any) => (
+        <ReportSection key={yearly.year} year={yearly.year} reports={yearly.results} lang={locale}/>
       ))}
     </div>
   )

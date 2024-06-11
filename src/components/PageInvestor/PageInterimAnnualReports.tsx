@@ -20,24 +20,31 @@ type DataT = {
   data: responseT[]
 }
 
-const QUERY_INTERIM_ANNUAL_REPORTS = 'QUERY_INTERIM_ANNUAL_REPORTS'
+const getInterimAnnualReports= async() => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/interim-annual-reports`)
+  const data = await res.json()
+  return data
+}
+
+
+const QUERY_financial_reports = 'QUERY_financial_reports'
 // TODO: Assume only get four years of data
 const useGetData = (locale: string) => {
   const lang = locale === 'en' ? 'en' : locale === 'tc' ? 'tc' : 'sc'
 
-  return useQuery([QUERY_INTERIM_ANNUAL_REPORTS], async () => {
-    const result = await getAdvancedReportList({ lang, reportType: 'reports' })
+  return useQuery([QUERY_financial_reports], async () => {
+    const result = await getInterimAnnualReports()
     let yearList: string[] = []
     let response: responseT[] = []
-    if (result && result.status == 200 && result.message == 'Success') {
-      result.data.results.map((item) => {
-        if (yearList.indexOf(item.year) == -1 && parseInt(item.year) >= 2018)
-          yearList.push(item.year)
+    if (result) {
+      result.data.map((item: any) => {
+        if (yearList.indexOf(item.attributes.year) == -1 && parseInt(item.attributes.year) >= 2018)
+          yearList.push(item.attributes.year)
       })
       yearList.map((year) => {
         response.push({
           year: parseInt(year),
-          results: result.data.results.filter((item) => item.year == year),
+          results: result.data.filter((item: any) => item.attributes.year == year),
         })
       })
       return response
@@ -75,7 +82,7 @@ const PageResultAnnouncements: NextPage = () => {
         </p>
       </Link>
       {data?.map((yearly) => (
-        <ReportSection key={yearly.year} year={yearly.year} reports={yearly.results} />
+        <ReportSection key={yearly.year} year={yearly.year} reports={yearly.results} lang={locale} />
       ))}
     </div>
   )

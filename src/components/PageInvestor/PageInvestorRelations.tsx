@@ -13,15 +13,15 @@ const PageInvestorRelations: NextPage = () => {
     <div className="pt-4 md:pt-16">
       <div className="mb-12 grid sm:grid-cols-12 col-span-full  gap-x-8">
         <ul className="col-span-full col-span-full grid grid-cols-12 sm:mt-0 mt-4">
-          <li className="md:col-span-6 col-span-12 m-2 sm:m-4">
+          {/* <li className="md:col-span-6 col-span-12 m-2 sm:m-4">
             <Link href={links.investorResultAnnouncements}>
               <ReportCard title={t("investor_relations.results_announcements")} Icon={AnnouncementIcon} />
             </Link>
-          </li>
+          </li> */}
 
           <li className="md:col-span-6 col-span-12 m-2 sm:m-4">
             <Link href={links.investorInterimAnnualReports}>
-              <ReportCard title={t("investor_relations.interim_annual_reports")} Icon={AnnouncementIcon} />
+              <ReportCard title={t("investor_relations.financial_reports")} Icon={AnnouncementIcon} />
             </Link>
           </li>
 
@@ -31,7 +31,7 @@ const PageInvestorRelations: NextPage = () => {
             </Link>
           </li>
 
-          <li className="md:col-span-6 col-span-12 m-2 sm:m-4">
+          {/* <li className="md:col-span-6 col-span-12 m-2 sm:m-4">
             <Link href={links.investorCirculars}>
               <ReportCard title={t("investor_relations.circulars")} Icon={ReportIcon} />
             </Link>
@@ -40,8 +40,8 @@ const PageInvestorRelations: NextPage = () => {
           <li className="md:col-span-6 col-span-12 m-2 sm:m-4">
             <Link href={links.investorListingDocuments}>
               <ReportCard title={t("investor_relations.listing_documents")} Icon={ReportIcon} />
-            </Link>
-          </li>
+            </Link> 
+          </li>*/}
         </ul>
       </div>
     </div>

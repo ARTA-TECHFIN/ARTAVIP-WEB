@@ -84,7 +84,7 @@ const PageAnnouncement: NextPage = () => {
       </Link>
       {data?.map((yearly, index) => (
         <CalendarAccordion
-          // index={index}
+          index={index}
           key={yearly.year}
           year={yearly.year}
           events={yearly.results.map((r: any) => ({

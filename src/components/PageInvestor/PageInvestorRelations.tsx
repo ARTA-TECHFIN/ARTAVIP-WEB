@@ -31,13 +31,13 @@ const PageInvestorRelations: NextPage = () => {
             </Link>
           </li>
 
-          {/* <li className="md:col-span-6 col-span-12 m-2 sm:m-4">
-            <Link href={links.investorCirculars}>
-              <ReportCard title={t("investor_relations.circulars")} Icon={ReportIcon} />
+           <li className="md:col-span-6 col-span-12 m-2 sm:m-4">
+            <Link href={links.investorNewArrangementContent}>
+              <ReportCard title={t("investor_relations.new_arrangement_content")} Icon={ReportIcon} />
             </Link>
           </li>
 
-          <li className="md:col-span-6 col-span-12 m-2 sm:m-4">
+          {/*<li className="md:col-span-6 col-span-12 m-2 sm:m-4">
             <Link href={links.investorListingDocuments}>
               <ReportCard title={t("investor_relations.listing_documents")} Icon={ReportIcon} />
             </Link> 

@@ -30,7 +30,6 @@ export default async function handler(
   }
 
   try {
-    console.log(url)
     const response = await fetch(url, requestOptions);
     const result = await response.json();
     return res.status(200).json(result);

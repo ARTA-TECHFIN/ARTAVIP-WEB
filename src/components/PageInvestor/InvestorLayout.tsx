@@ -52,21 +52,22 @@ const InvestorLayout: FC<propsT> = ({
       link: links.investor,
       value: 'announcement',
     },
-    [TABS.press_releases]: {
-      title: t('page_title.press_release'),
-      link: links.investPress,
-      value: 'press_releases',
-    },
+    // 2024-07-15 temporarily hidden
+    // [TABS.press_releases]: {
+    //   title: t('page_title.press_release'),
+    //   link: links.investPress,
+    //   value: 'press_releases',
+    // },
     [TABS.corporate_information]: {
       title: t('investor_relations.corporate_information'),
       link: links.investorCorporateInformation,
       value: 'corporate_information',
     },
-    [TABS.financial_calendar]: {
-      title: t('investor_relations.financial_calendar'),
-      link: links.investorFinCalendar,
-      value: 'financial_calendar',
-    },
+    // [TABS.financial_calendar]: {
+    //   title: t('investor_relations.financial_calendar'),
+    //   link: links.investorFinCalendar,
+    //   value: 'financial_calendar',
+    // },
     [TABS.esg]: { title: t('investor_relations.esg'), link: links.investorEsg, value: 'esg' },
   }
   const tabList = Object.values(tabInfoMap)

@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require('tailwindcss/defaultTheme')
 
-const mainWidth = '1440px'
+const mainWidth = '1640px'
 
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],

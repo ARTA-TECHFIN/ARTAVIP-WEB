@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ReactFullpage from '@fullpage/react-fullpage'
-import About from './about'
-import { BreakBarriers } from './breakBarriers'
-import TechFin from './techFin'
 import Footer from 'src/components/Footer'
+import { HomePageSlogan } from './HomePageSlogan'
 
 export const Slides = ({ k, setShowWechatPopup }: any) => {
   const [firstLoad, setFirstLoad] = useState(true)
@@ -61,26 +59,20 @@ export const Slides = ({ k, setShowWechatPopup }: any) => {
           <>
             <ReactFullpage.Wrapper>
               <section className="section fixing section home relative box-border flex h-full w-full items-center justify-center text-center">
-                <BreakBarriers currentSectionId={currentSectionId} />
-              </section>
-              <section className="section section double relative box-border flex h-full w-full items-center justify-center will-change-transform">
-                <TechFin
-                  k={k}
-                  currentSectionId={currentSectionId}
-                  setCurrentSectionById={setCurrentSectionById}
-                  setTriggerSection={async (id: number) => {
-                    setDisableScroll(false)
-                    fullpageApi.setAllowScrolling(true)
-                    if (id == 0) fullpageApi.moveSectionUp()
-                    if (id == 3) fullpageApi.moveSectionDown()
-                  }}
+                <HomePageSlogan currentSectionId={currentSectionId} 
+                setCurrentSectionById={setCurrentSectionById}
+                
+                setTriggerSection={async (id: number) => {
+                  setDisableScroll(false)
+                  fullpageApi.setAllowScrolling(true)
+                  if (id == 0) fullpageApi.moveSectionUp()
+                  if (id == 1) fullpageApi.moveSectionDown()
+                }}
                 />
               </section>
-              <section className="section section double relative box-border flex h-full w-full items-center justify-center text-center">
-                <About k={k} />
-              </section>
+
               <div className="section fp-auto-height" id="section3">
-                <Footer setShowWechatPopup={setShowWechatPopup} />
+                <Footer setShowWechatPopup={setShowWechatPopup}/>
               </div>
             </ReactFullpage.Wrapper>
           </>

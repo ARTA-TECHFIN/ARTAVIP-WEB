@@ -1,7 +1,7 @@
 {
-  "name": "corp_site",
+  "name": "gm_corp_site",
   "script": "yarn start",
   "env": {
-    "PORT": "1337"
+    "PORT": "1339"
   }
 }

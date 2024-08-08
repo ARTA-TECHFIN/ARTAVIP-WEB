@@ -1,12 +1,14 @@
 import { GetServerSideProps } from 'next'
-import { StaticLayout } from 'src/components/PageStatic/Layout'
-import { textClass } from 'src/components/Text'
-import parse from 'html-react-parser'
+import Header from 'src/components/Header/Header'
+import Footer from 'src/components/Footer'
+import { useRouter } from 'next/router'
+import { ButtonAnimated } from 'src/components/ButtonAnimated'
+import { Seo } from 'src/components/Seo'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 
 const fetchCmsData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/disclaimer`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/disclaimer`)
   const data = await res.json()
   return data
 }
@@ -16,42 +18,33 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 
   return {
     props: {
-      cms: {
-        heroBanner: {
-          title: 'Disclaimer',
-          description: '',
-          image: '/images/bg-static.jpg',
-          mobileImage: '/images/mobile-bg-static.jpg',
-        },
-        content: cms.data.attributes[`content_${locale}`],
-      },
+      cms: cms.data,
       ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }
 }
 
 const Disclaimer = (props: { cms: any }) => {
-  const { cms } = props
   const { t } = useTranslation('common')
+  const router = useRouter()
+  const { locale } = router
+  const g = (pageData: any, keyWithoutLang: string) =>`${pageData.attributes[`${keyWithoutLang}_${locale}`]}`
 
   return (
-    <StaticLayout
-      cms={cms}
-      seo={{
-        title: `${t('page_title.disclaimer')} | Arta TechFin`,
-        description: t('page_description.disclaimer'),
-        keywords: t('page_keywords.disclaimer'),
-      }}
-      title={t('page_title.disclaimer')}
-    >
-      <div className="arta-container mx-auto mt-8">
-        <div className="mt-4 bg-white p-6 shadow-blogPost md:p-12">
-          <div className={`blog-content mt-6 ${textClass.body_regular_verah} text-black`}>
-            {parse(cms.content)}
-          </div>
-        </div>
-      </div>
-    </StaticLayout>
+    <>
+      <Seo
+        title={`${t('page_title.disclaimer')} | Arta TechFin`}
+        description={t('page_description.disclaimer')}
+        keywords={t('page_keywords.disclaimer')}
+        ga="Disclaimer"
+      />
+      <Header textColor="brown" />
+      <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[152px]" />
+      <div style={{backgroundColor:'white',padding:'3%'}} dangerouslySetInnerHTML={{ __html: g(props.cms, 'statement') }}></div>
+      
+      <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[50px]" />
+      <Footer textColor="white" />
+    </>
   )
 }
 

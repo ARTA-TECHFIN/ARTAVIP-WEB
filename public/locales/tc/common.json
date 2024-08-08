@@ -2,11 +2,17 @@
   "site_title": "Arta TechFin",
   "page_title": {
     "home": "主頁",
-    "about_us": "關於裕承科金",
-    "our_businesses": "公司業務",
+    "about_us": "關於裕承環球",
+    "products": "產品",
+    "securities": "證券",
+    "futures": "期貨",
+    "customer_service": "客戶服務",
+    "products_info": "產品資料",
+    "details": "詳情",
+    "website_trade": "網上交易",
     "investor_relations": "投資者關係",
     "media_centre": "媒體中心",
-    "join_us": "加入我們",
+    "join_us": "加入裕承環球",
     "contact_us": "聯絡我們",
     "disclaimer": "使用條款",
     "privacy_policy": "私隱政策聲明",
@@ -18,6 +24,25 @@
     "esg_advisory": "ESG顧問",
     "arta_blog": "公司網誌",
     "press_release": "新聞稿"
+  },
+  "product_info": {
+    "priority":"裕承環球優勢",
+    "button":"產品資料",
+    "download":"下載"
+},
+  "contact_info": {
+    "name": "名稱(需要填寫)",
+    "maill_address": "電子郵件(需要填寫)",
+    "topic": "標題(需要填寫)",
+    "message": "訊息(需要填寫)",  
+    "office_address":"香港鲗魚湧英皇道728號 K11 ATELIER King's Road 9樓1-2室",
+    "office_name":"裕承科金有限公司",
+    "fax":"(852) 2815-6728",
+    "mail":"cs@artatechfin.com",
+    "hotline":"(香港) (852) 3513-8000|(國內) 4001-200-279",
+    "hotline_text":"服務熱線",
+    "email_text":"電郵",
+    "fax_text":"傳真"
   },
   "page_description": {
     "home": "裕承科金有限公司（0279.HK）成立於2021年10月，是一家總部設於香港的綜合金融服務機構，致力於增強科技在金融領域的應用。",
@@ -64,7 +89,7 @@
     "fax": "傳真",
     "email": "電郵",
     "tagline": "打破壁壘，成就輝煌",
-    "copyright": "© 裕承科金有限公司。版權所有。"
+    "copyright": "如翻印或分發本網頁上之資料均會被禁止。版權 © 2021裕承環球市場有限公司。保留所有權利。"
   },
   "home": {
     "explore_more": "探索更多",
@@ -72,13 +97,56 @@
     "show_more": "探索更多",
     "about_arta": "關於裕承科金"
   },
+  "products_info": {
+    "hk_marginable_stock": "股票借貸比率",
+    "sse_marginable_stock": "上海A股借貸比率",
+    "szse_marginable_stock": "深圳A股借貸比率",
+    "futures-account": "即日期貨戶口",
+    "stock_open": "股票1開10",
+    "futures_open": "期貨1開2/3/4",
+    "loan_ratio_ps": "*裕承環球有權修改以上股票按掲成數而毋須作出事先通知",
+    "stock": "股票產品",
+    "futures": "期貨產品",
+    "black": "暗盤交易操作指引",
+    "contract": "香港期貨 / 期權合約細則",
+    "global_contract": "環球期貨品種合約細則",
+    "futures_expiration": "環球期貨到期日一覽",
+    "hk_trade_tips": "香港股票交易須知",
+    "us_trade_tips": "美國股票交易須知",
+    "global_trade_tips": "其他環球股票交易須知",
+    "ss_trade_tips": "滬深股票交易須知"
+  },
+  "customer_service": {
+    "back": "返回上一頁",
+    "new_stock_info": "新股資訊",
+    "service_charges": "服務收費",
+    "important_notice": "重要通告",
+    "fund_withdrawals_and_deposits": "資金提存",
+    "bank_detail": "資金提存 - 銀行資料",
+    "fps": "资金提存 - 轉數快",
+    "deposit_channels": "存款途徑",
+    "bank_1": "銀行轉賬",
+    "bank_2": "銀行資料",
+    "bank_3": "轉數快",
+    "button": "詳情",
+    "notice_method": "提存款通知方法",
+    "notice_1": "電郵",
+    "notice_2": "電話",
+    "loan_ratio": "借貸比率",
+    "form_download": "表格下載",
+    "terms_of_service": "服務條款",
+    "qa_open_account": "關於開戶",
+    "qa_security_account": "賬戶安全",
+    "qa_crs": "FATCA / CRS",
+    "qa_trade_operation": "交易操作",
+    "qa_in_out": "交收問題",
+    "qa_credit": "資金相關",
+    "qa": "常見問題"
+  },
   "about_us": {
-    "vision_mission": "願景及使命",
-    "culture_values": "文化價值觀",
-    "leadership": "管理團隊",
-    "what_is_techfin": "您全面的財務管家",
-    "our_ecosystem": "商業生態系統",
-    "techfin_vs_fintech": "科技金融 VS 金融科技"
+    "about_us_profile": "公司簡介",
+    "business_overview": "業務概覽",
+    "contact_us": "聯絡我們"
   },
   "join_us": {
     "work_with_arta": "在這裡工作",

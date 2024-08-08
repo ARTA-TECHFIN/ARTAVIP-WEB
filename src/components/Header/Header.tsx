@@ -13,6 +13,7 @@ import cn from 'classnames'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
 import hoverMenuJson from 'apidata/hover-menu.json'
+import PageTopBar from '../PageTopBar'
 
 type menuItemT = {
   title: string
@@ -29,7 +30,7 @@ type pageInfoItemT = {
 }
 
 const fetchCmsData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/hover-menu-description`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/hover-menu-description`)
   const data = await res.json()
   return data
 }
@@ -45,11 +46,12 @@ const Header: React.FC<{
   const { locale } = router
 
   const [headerData, setHeaderData] = useState({
+    home: '',
     about_us: '',
-    investor_relation: '',
-    join_us: '',
-    media_centre: '',
-    our_business: '',
+    product: '',
+    customer_service: '',
+    products_info: '',
+    contact_us: '',
   })
 
   const textColorClass =
@@ -80,84 +82,76 @@ const Header: React.FC<{
 
   const pageInfoList: pageInfoItemT[] = [
     {
+      pageName: t('page_title.home'),
+      title: '',
+      paragraph: headerData['home'],
+      buttonText: t('page_title.home'),
+      href: links.aboutUsProfile,
+      pages: [
+        { title: t('page_title.home'), link: links.home },
+      ],
+    },
+    {
       pageName: t('page_title.about_us'),
-      title: t('page_title.about_us'),
+      title: '',
       paragraph: headerData['about_us'],
       buttonText: t('page_title.about_us'),
-      href: links.about,
+      href: links.aboutUsProfile,
       pages: [
-        { title: t('about_us.vision_mission'), link: links.aboutVision },
-        { title: t('about_us.culture_values'), link: links.aboutCulture },
-        { title: t('about_us.leadership'), link: links.aboutLeadership },
-        { title: t('about_us.what_is_techfin'), link: links.aboutTechFin },
+        { title: t('about_us.about_us_profile'), link: links.aboutUsProfile },
+        { title: t('about_us.business_overview'), link: links.bussinessOverview },
+        { title: t('about_us.contact_us'), link: links.contact },
       ],
     },
     {
-      pageName: t('page_title.our_businesses'),
-      title: t('page_title.our_businesses'),
-      paragraph: headerData['our_business'],
-      buttonText: '',
-      href: '',
+      pageName: t('page_title.products'),
+      title: '',
+      paragraph: headerData['product'],
+      buttonText: t('page_title.products'),
+      href: links.home,
       pages: [
-        { title: t('page_title.asset_management'), link: links.businessesAssetManagement },
-        { title: t('page_title.wealth_management'), link: links.businessesArtazine },
-        { title: t('page_title.corporate_finance'), link: links.businessesInvestmentBanking },
-        { title: t('page_title.global_Markets_innotech'), link: links.businessesSecuritiesBrokerage },
-        { title: t('page_title.brokerage'), link: links.businessesInsuranceBrokerage },
-        // { title: t('page_title.esg_advisory'), link: links.businessesEsg },
+        { title: t('page_title.securities'), link: links.productsSecurities },
+        { title: t('page_title.futures'), link: links.productsFutures },
       ],
     },
     {
-      pageName: t('page_title.investor_relations'),
-      title: t('page_title.investor_relations'),
-      paragraph: headerData['investor_relation'],
-      buttonText: t('page_title.investor_relations'),
-      href: links.investor,
+      pageName: t('page_title.customer_service'),
+      title: '',
+      paragraph: headerData['customer_service'],
+      buttonText:  t('page_title.customer_service'),
+      href: links.servicesCharges,
       pages: [
-        { title: t('investor_relations.announcements_notices'), link: `${links.investor}#content` },
-        { title: t('page_title.press_release'), link: `${links.investPress}#content` },
-        {
-          title: t('investor_relations.corporate_information'),
-          link: `${links.investorCorporateInformation}#content`,
-        },
-        {
-          title: t('investor_relations.financial_calendar'),
-          link: `${links.investorFinCalendar}#content`,
-        },
-        { title: t('investor_relations.esg'), link: `${links.investorEsg}#content` },
-      ],
-    },
-    // {
-    //   pageName: t('page_title.media_centre'),
-    //   title: t('page_title.media_centre'),
-    //   paragraph: headerData['media_centre'],
-    //   buttonText: t('page_title.media_centre'),
-    //   href: links.media,
-    //   pages: [
-    //     { title: t('page_title.arta_blog'), link: `${links.media}#list` },
-    //     { title: t('page_title.press_release'), link: `${links.mediaPress}#list` },
-    //   ],
-    // },
-    {
-      pageName: t('page_title.join_us'),
-      title: t('page_title.join_us'),
-      paragraph: headerData['join_us'],
-      buttonText: t('page_title.join_us'),
-      href: links.joinUs,
-      pages: [
-        { title: t('join_us.work_with_arta'), link: `${links.joinUs}#work-with-arta` },
-        { title: t('join_us.our_values'), link: `${links.joinUs}#our-value` },
-        { title: t('join_us.arta_cares'), link: `${links.joinUs}#arta-care` },
-        { title: t('join_us.job_openings'), link: `${links.joinUs}#job-opening` },
+        { title: t('customer_service.service_charges'), link: `${links.servicesCharges}` },
+        { title: t('customer_service.important_notice'), link: `${links.importantNotice}` },
+        { title: t('customer_service.fund_withdrawals_and_deposits'),link: `${links.fundDeposites}` },
+        { title: t('customer_service.loan_ratio'),link: `${links.loanRatio}`},
+        { title: t('customer_service.form_download'), link: `${links.formDownload}` },
+        { title: t('customer_service.new_stock_info'), link: `${links.newStockInfo}` },
+        { title: t('customer_service.qa'), link: `${links.qa}` },
       ],
     },
     {
-      pageName: t('page_title.contact_us'),
-      title: t('page_title.contact_us'),
-      paragraph: ``,
-      buttonText: '',
-      href: links.contact,
-      pages: [],
+      pageName: t('page_title.products_info'),
+      title: '',
+      paragraph: headerData['products_info'],
+      buttonText:  t('page_title.products_info'),
+      href: links.tradeTips,
+      pages: [
+        { title: t('products_info.hk_trade_tips'), link: `${links.hkTradeTips}` },
+        { title: t('products_info.us_trade_tips'), link: `${links.usTradeTips}` },
+        { title: t('products_info.global_trade_tips'), link: `${links.globalTradeTips}` },
+        { title: t('products_info.ss_trade_tips'), link: `${links.ssTradeTips}` },
+      ],
+    },
+    {
+      pageName: t('page_title.website_trade'),
+      title: '',
+      paragraph: '',
+      buttonText:  t('page_title.website_trade'),
+      href: 'https://www.clientam.com/sso/Login?partnerID=ArtaOne',
+      pages: [
+        { title: t('page_title.website_trade'), link: 'https://www.clientam.com/sso/Login?partnerID=ArtaOne' }
+      ],
     },
   ]
 
@@ -215,11 +209,12 @@ const Header: React.FC<{
 
       if (result.data?.attributes) {
         setHeaderData({
+          home: g(result, 'home'),
           about_us: g(result, 'about_us'),
-          investor_relation: g(result, 'investor_relation'),
-          join_us: g(result, 'join_us'),
-          media_centre: g(result, 'media_centre'),
-          our_business: g(result, 'our_business'),
+          contact_us: g(result, 'our_business'),
+          product: g(result, 'product'),
+          customer_service: g(result, 'customer_service'),
+          products_info: g(result, 'products_info'),
         })
       }
     }
@@ -228,12 +223,15 @@ const Header: React.FC<{
   }, [locale])
 
   return (
+    
     <div
       className={cn(
         'fixed top-0 z-50 w-full opacity-100 transition-all duration-500',
         scrollDir == 'scrolling down' && '-top-32 opacity-0'
       )}
+      style={{backgroundColor:'white'}}
     >
+      <PageTopBar textColor="black" />
       <div onMouseLeave={() => setActiveTabIndex(DEFAULT_TAB_INDEX)}>
         <header
           className={cn(
@@ -243,6 +241,13 @@ const Header: React.FC<{
           )}
         >
           <div className="flex w-full items-center justify-between lg:space-x-6">
+            <div className="z-[1] text-right pr-[2px]">
+              <Link title={'Arta TechFin'} href="/">
+                <div className="relative h-[32px] w-[81px] cursor-pointer opacity-100 transition hover:opacity-100 md:h-auto md:w-auto">
+                  <ArtaLogo className={`${textColorClass} h-full w-full md:h-auto md:w-150px`} />
+                </div>
+              </Link>
+            </div>
             <div className="hidden items-center justify-center space-x-8 lg:flex">
               {pageInfoList.map((page, index) => {
                 const selected = index === activeTabIndex
@@ -322,13 +327,7 @@ const Header: React.FC<{
                 )}
               ></span>
             </div>
-            <div className="z-[1] text-right pr-[2px]">
-              <Link title={'Arta TechFin'} href="/">
-                <div className="relative h-[32px] w-[81px] cursor-pointer opacity-100 transition hover:opacity-100 md:h-auto md:w-auto">
-                  <ArtaLogo className={`${textColorClass} h-full w-full md:h-auto md:w-auto`} />
-                </div>
-              </Link>
-            </div>
+
           </div>
 
           <div
@@ -392,6 +391,7 @@ const Header: React.FC<{
             {showMenu && (
               <div
                 className={`absolute top-0 left-0 z-[801] flex min-h-[100vh] w-full flex-col ${mobileMenuBg} px-[4em] pt-[6em] lg:pt-[2.8em]`}
+                style={{backgroundColor:'white'}}
               >
                 <div className="flex items-start justify-between">
                   <div
@@ -407,9 +407,7 @@ const Header: React.FC<{
                   <div className="relative h-[32px] w-[81px] cursor-pointer opacity-100 transition hover:opacity-100 md:h-auto md:w-auto">
                     <Link title="Arta TechFin" href="/">
                       <img
-                        src={`/images/${
-                          textColor == 'black' ? 'arta-logo_black' : 'arta-logo'
-                        }.svg`}
+                        src={`/images/arta-logo_black.svg`}
                         alt="Arta TechFin"
                         className="object-contain"
                       />
@@ -439,6 +437,7 @@ const Header: React.FC<{
           </div>
         </header>
       </div>
+      
     </div>
   )
 }

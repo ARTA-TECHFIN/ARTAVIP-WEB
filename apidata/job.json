@@ -2,9 +2,12 @@
   "data":{
      "id":1,
      "attributes":{
-        "job_title_en":"Assistant Client Relations Manager",
-        "job_title_tc":"Assistant Client Relations Manager",
-        "job_title_sc":"Assistant Client Relations Manager",
+        "job_title_en":"Hong Kong Stock Trading Hours",
+        "job_title_tc":"港股交易時間",
+        "job_title_sc":"港股交易时间",
+        "job_title_en":"Hong Kong Stock Trading Hours",
+        "job_title_tc":"港股交易時間",
+        "job_title_sc":"港股交易时间",
         "category":"Front Office",
         "seniority":"Middle",
         "work_location_en":"Wan Chai",

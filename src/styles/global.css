@@ -51,6 +51,15 @@
       background: rgba(198,147,84,0.2);
     }
   }
+  .headerTop{
+    height: 100px;
+    background-color: black;
+  }
+
+  .headerTop_img {
+    height: auto;
+    width: auto;
+  }
 
   .easeInOutSine {
     transition: all 0.6s cubic-bezier(0.37, 0, 0.63, 1);
@@ -267,11 +276,11 @@
 }
 
 .home-background-gradient {
-  background: linear-gradient(0deg, rgba(14,28,45,0) 0%, rgba(53,30,14,1) 49%);
+  background: linear-gradient(0deg, rgba(14,28,45,0) 0%, rgb(66, 66, 66) 49%);
 }
 
 .about-background-gradient {
-  background: linear-gradient(180deg, rgba(14,28,45,0) 0%, rgba(60,37,22,1) 49%);
+  background: linear-gradient(180deg, rgba(14,28,45,0) 0%, rgb(66, 66, 66) 49%);
 }
 
 .blog-content img {
@@ -315,9 +324,7 @@ input[type="checkbox"] {
   display: none;
 }
 @media (max-width: 575px) {
-  .arta-leadership-slide .slider-length-2{
-    display: none;
-  }
+
 }
 .group-hover-bg-arta-sand-100:before{
   content: "";
@@ -372,7 +379,7 @@ input[type="checkbox"] {
   @apply border-arta-black
 }
 .arta-leadership-slide .swiper-button{
-  color: #593725;
+  color: rgb(66, 66, 66)
 }
 .arta-leadership-slide .swiper-button-disabled{
   color: #DED7D3;
@@ -444,3 +451,732 @@ header{
 .etg-outline {
   outline: 2px solid rgba(154, 137, 123, 0.6);
 }
+
+.left-div{
+  float: left;
+  width: 100px;
+  height: 50px;
+  margin-top: 0px;
+  }
+
+  .center-div{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 50px;
+    margin-top: 100px;
+    }
+    .right-div{
+      float: right;
+      width: 100px;
+      height: 50px;
+      margin-top: 0px;
+  }
+
+  .arta-gm-footer{
+    background-color: rgb(66, 66, 66)
+  }
+
+  .about-us-profile-backgroumd{
+    background:url(/images/about/211025_image_aboutus_contactus_banner.png) no-repeat;
+    /* background-size: 300px; */
+    width: 100%;
+    height: 100%;
+
+  }
+  #container{
+    background:url(/images/about/211025_image_aboutus_contactus_banner.png) no-repeat;
+    background-size: cover;
+    padding: 35px;
+    font-size: 60px;
+    font-weight: 300;
+    letter-spacing: normal;
+    text-align-last: left;
+    color: white;
+}
+#container .imgbox{
+    height: 216px;
+    width: 10px;
+}
+#container img {
+    position: absolute;/*设为绝对定位*/
+    opacity: 0.7;/*设置透明度*/
+}
+#container lable {
+    width: inherit;
+    text-align: right;
+    font-size: 20px;
+    color: white;
+    position: absolute;/*设为绝对定位*/
+}
+
+.arta-about-box1 {
+  background-color: #FFFFFF;
+  float: left;
+  width: 50%;
+  padding: 45px 5% 5%;
+  padding: 50px;
+  height: auto;
+  
+}
+.arta-about-box {
+  background-color: rgb(20, 41, 77);
+  float: right;
+  width: 50%;
+  padding: 30px 5% 5%;
+  opacity: 1;
+  transform: translate(0px,0px);
+  height: auto;
+}
+
+.arta-about-box h3{
+  border-top-width: 30px;
+  border-top-color: rgb(20, 41, 77);
+  color: white;
+  font-size: 27px;
+}
+.arta-about-box p{
+  color: white;
+  font-size: 22.5px;
+  
+}
+.arta-about-box1-font{
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  color: hsl(0, 0%, 54%);
+  margin-block-start: 1em;
+  display: block;
+  margin-block-end: 1em;
+  margin: 0 0 0.2em;
+}
+
+.arta-about-clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.arta-about-box-content-list{
+  display: table-cell; vertical-align: middle;
+}
+.join_us_backgroud{
+  padding: 2% 15% 2% 15%; 
+  background-color: hsl(0, 0%, 94%);
+}
+.join_us_backgroud-1{
+  margin-left: 1%;
+  border-left-color: hsl(0, 0%, 94%);
+  margin-top: 10px;
+  margin: 0px auto;padding: 0px;
+  height: auto;
+  font-size: 35px;
+}
+.join_us_sub_box{
+  background-color: rgb(136,136,136);
+  height: auto;
+}
+.join_us_sub_title-1{
+  margin-left: 1%;
+  border-top-color:  rgb(136,136,136);;
+  border-top-width: 10px;
+  height: 50px;
+  font-size: 22.5px;
+  color: rgb(255,255,255);
+}
+.join_us_sub_des-1{
+  background-color:  rgb(255,255,255);
+  border-left-color: rgb(255,255,255);
+  border-left-width: 30px;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  color: rgb(0,0,0);
+  margin-block-start: 1em;
+  display: block;
+  margin-block-end: 1em;
+  margin: 0 0 0.2em;
+}
+.contact-box-1 {
+  background-color: #FFFFFF;
+  float: left;
+  width: 50%;
+  padding: 45px 5% 5%;
+  padding: 50px;
+  height: 950px;
+}
+
+.contact-box-1-input{
+  border: rgb(51, 51, 51);
+  box-sizing: content-box;
+  width:90%;
+  height: 50px;
+  display: inline-block;
+  border-style: solid;
+  border-left-width: 0.7px;
+  border-right-width: 0.7px;
+  border-top-width: 0.7px;
+  border-bottom-width: 0.7px;
+  border-bottom-style: solid;
+}
+.contact-box-1-max2{
+  border: rgb(51, 51, 51);
+  box-sizing: content-box;
+  width:90%;
+  height: 250px;
+  display: inline-block;
+  border-style: solid;
+  border-left-width: 0.7px;
+  border-right-width: 0.7px;
+  border-top-width: 0.7px;
+  border-bottom-width: 0.7px;
+  border-bottom-style: solid;
+}
+.contact-box {
+  background-color:#FFFFFF;
+  float: right;
+  width: 50%;
+  padding: 30px 5% 5%;
+  opacity: 1;
+  transform: translate(0px,0px);
+  height: 950px;
+}
+.contact-box-button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #8b653c;
+}
+
+#business-overview-bd{
+  background:url(/images/about/map4.jpg) no-repeat;
+  background-size: cover;
+  height: 750px;
+  padding: 35px;
+  letter-spacing: normal;
+  color: white;
+}
+
+.business-overview-1{
+  padding-top: 50px;
+  margin: 0px;
+  text-align: center;
+  font-size: 60px;
+  background: none;
+}
+.business-overview-1-font{
+  text-align: center;
+}
+
+.business-overview-clearfix::before {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.business-overview-box {
+  /* border-width: 100px; */
+  height: 200px;
+  background: none;
+  text-align: center;
+  float: left;
+  width: 33.33%;
+  padding: 50px;
+  padding-bottom: 50px;
+}
+.business-overview-box-font {
+  font-size: 1rem;
+  font-style: normal;
+  color: white;
+}
+
+#container_futures{
+  background:url(/images/products/211025_image_product_futures_banner-1.png) no-repeat;
+  background-size: 100% 100%;
+  height: auto;
+  padding: 100px;
+  letter-spacing: normal;
+  color: rgb(150, 150, 150);
+  font-size: 25px;
+}
+
+#futures_text_1{
+  background:url(/images/products/211025_image_product_futures_bg_02.png) no-repeat;
+  background-size: 100% 100%;
+  height: auto;
+  padding: 100px;
+  letter-spacing: normal;
+  color: rgb(150, 150, 150);
+  font-size: 25px;
+}
+
+#services-charges-bd{
+  background:url(/images/customers-services/211025_image_service_fee_banner.png) no-repeat;
+  background-size: 100% 100%;
+  height: auto;
+  padding: 100px;
+  letter-spacing: normal;
+  color:white;
+  font-size: 60px;
+}
+#services-charges-list{
+  background-color: white;
+  height: auto;
+  padding-left: 100px;
+  padding-top: 30px;
+  padding-right: 10%;
+  letter-spacing: normal;
+  color:black;
+  font-size: 35px;
+}
+.fur-button{
+  margin: 0 auto;
+  border:2px solid black;
+}
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.fur-wrap{
+  display: flex;
+  align-items: center;
+}
+.fur-wrap-text{
+  flex-wrap: wrap;
+  align-content: center;
+}
+.fur-wrap img{
+  width: 100px;
+  height: auto;
+  vertical-align: middle;
+}
+
+#futures_adv_1{
+  background:url(/images/products/211025_image_product_futures_bg_03.png) no-repeat;
+  background-size: 100% 100%;
+  height: auto;
+  padding: 100px;
+  letter-spacing: normal;
+  color: rgb(150, 150, 150);
+  align-items: center;
+  font-size: 25px;
+}
+
+#contact-bd{
+  background:url(/images/contact-us/211025_image_aboutus_companyinfo_banner.png) no-repeat;
+  background-size: cover;
+  height: 200px;
+  padding: 35px;
+  letter-spacing: normal;
+  color: rgb(99, 78, 37);
+}
+#securities-tm{
+  background-color: white;
+  width: 100%;
+  height: auto;
+  letter-spacing: normal;
+}
+#securities-bm1{
+  position: absolute;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  left: 12%;
+  background-color: rgb(136,136,136);
+  width: 76%;
+  height: auto;
+  letter-spacing: normal;
+  color: white;
+}
+#securities-wm{
+  position: absolute;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  left: 12%;
+  background-color: rgb(136,136,136);
+  width: 76%;
+  height: auto;
+  letter-spacing: normal;
+  color: white;
+}
+#securities-trade-box{
+  position: relative;
+  left: 10%;
+  width: 80%;
+  height: auto;
+  border: 1px solid grey;
+  box-sizing: border-box;
+  padding: 40px;
+  padding-bottom: 10px;
+}
+#securities-note-box{
+  position: relative;
+  left: 10%;
+  width: 80%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 40px;
+}
+#securities-bd{
+  background:url(/images/products/securities2.jpg) no-repeat;
+  background-size: 100% 100%;
+  height: 500px;
+  padding: 100px;
+  letter-spacing: normal;
+  color: white;
+}
+#securities-hr{
+  border: 0;
+  padding-top: 2px;
+  background: linear-gradient(to right, transparent, #d0d0d5, transparent);
+}
+
+.securities-gap-hr{
+  border: 0;
+  padding-top: 20px;
+  background: linear-gradient(to right, transparent, #d0d0d5, transparent);
+}
+.securities-clearfix::before {
+  content: "";
+  clear: both;
+  display: table;
+}
+.securities-box {
+  /* border-width: 100px; */
+  text-align: center;
+  float: left;
+  width: 33.33%;
+  padding: 50px;
+  padding-bottom: 50px;
+}
+#securities-bd-text{
+  background:url(/images/products/Untitled.png) no-repeat;
+  background-size: 100% 100%;
+  height: auto;
+  padding: 100px;
+  letter-spacing: normal;
+  color: rgb(150, 150, 150);
+  font-size: 25px;
+}
+.contact-1{
+  padding-top: 30px;
+  padding-left: 30px;
+  margin: 0px;
+  text-align:left;
+  font-size: 60px;
+  background: none;
+}
+
+.wrap{
+  width:80%;
+	margin:0 auto;
+	background:white;
+	display:flex;
+	justify-content: space-between;
+}
+#impo-notices-bd{
+  background:url(/images/customers-services/important_notices.jpg) no-repeat;
+  background-size: 100% 100%;
+  height: auto;
+  padding: 60px;
+  padding-left: 100px;
+  letter-spacing: normal;
+  color:white;
+  font-size: 60px;
+}
+#notice-bd{
+  background-color:rgb(244, 241, 225);
+  background-size: 100% 100%;
+  height: auto;
+  padding: 60px;
+  padding-left: 100px;
+  letter-spacing: normal;
+  color:white;
+  font-size: 60px;
+}
+
+#fund-deposits-bank-bd{
+  background:url(/images/customers-services/211025_image_service_deposit_insidepages_banner.png) no-repeat;
+  background-size: cover;
+  height: 200px;
+  padding: 60px;
+  letter-spacing: normal;
+  color: white;
+}
+
+#new-stock-bd{
+  background:url(/images/customers-services/211025_image_service_stock_banner.png) no-repeat;
+  background-size: cover;
+  height: 200px;
+  padding: 35px;
+  letter-spacing: normal;
+  color: white;
+}
+#fund_deposits-bd{
+  background:url(/images/customers-services/211025_image_service_deposit_banner.png) no-repeat;
+  background-size: cover;
+  height: 200px;
+  padding: 35px;
+  letter-spacing: normal;
+  color: white;
+}
+
+.fund_deposits-box1 {
+  background-color: #FFFFFF;
+  float: left;
+  width: 50%;
+  padding: 45px 5% 5%;
+  padding: 50px;
+  height: auto;
+  text-align: center;
+}
+.fund_deposits-box {
+  background-color: #FFFFFF;
+  float: right;
+  width: 50%;
+  padding: 45px 5% 5%;
+  opacity: 1;
+  transform: translate(0px,0px);
+  height: auto;
+  text-align: center;
+}
+
+.fund_deposits-container{
+  width:200px;
+  height:200px;
+  margin:50px auto;
+}
+
+.fund_deposits-text{
+  position:relative;
+}
+.fund_deposits-text-h1{
+  font-size: 15px;
+  flex-direction: row;
+  align-items: center;
+}
+.fund_deposits_textbutton{
+  font-size: 20px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.fund_deposits-item{
+  position:relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  .fund_deposits-item-h2{display: none;}
+  .fund_deposits_button_1{display: none;}
+}
+
+.fund_deposits-item-h1{
+  font-size: 20px;
+  padding-left: 30%;
+}
+.fund_deposits-item-m1{
+  font-size: 15px;
+  padding-left: 15%;
+}
+.fund_deposits-item-max1{
+  width: 100px;
+  padding-left: 15%;
+}
+.fund_deposits_button_1{
+  font-size: 20px;
+}
+.fund_deposits-item-h2{
+  font-size: 20px;
+  padding-top: 100px;
+  padding-left: 30%;
+}
+.fund_deposits-div{
+  position: absolute;
+  left:0px;
+  top:0px;
+  width:200px;
+  height:200px;
+  transform: rotateY(180deg);
+}
+.fund_deposits-container:hover .fund_deposits-item{
+  transform: rotateY(180deg);
+  .fund_deposits-item-h1{display: none;}
+  .fund_deposits-item-m1{display: none;}
+  .fund_deposits-img{display: none;}
+  .fund_deposits-item-h2{display: block;}
+  .fund_deposits_button_1{display: block;}
+}
+
+#products-info-bd{
+  background:url(/images/customers-services/654.jpg) no-repeat;
+  background-size: 100% 100%;
+  height: auto;
+  padding: 60px;
+  padding-left: 10%;
+  letter-spacing: normal;
+  color:white;
+  font-size: 60px;
+}
+.product-info-box1 {
+  background-color: #FFFFFF;
+  float: left;
+  width: 50%;
+  padding: 45px 5% 5%;
+  padding: 50px;
+  padding-left: 15%;
+  height: 300px;
+}
+.product-info-box {
+  background-color: #FFFFFF;
+  float: right;
+  width: 50%;
+  padding: 45px 5% 5%;
+  opacity: 1;
+  transform: translate(0px,0px);
+  height: 300px;
+}
+
+.info_wrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#loan-ratio-bd{
+  background:url(/images/info/211025_image_service_ratio_banner.png) no-repeat;
+  background-size: 100% 100%;
+  height: auto;
+  padding: 60px;
+  padding-left: 10%;
+  letter-spacing: normal;
+  color:white;
+  font-size: 60px;
+}
+
+#form-download-bd{
+  background:url(/images/customers-services/info.jpg) no-repeat;
+  background-size: 100% 100%;
+  background-color: white;
+  height: auto;
+  padding: 40px;
+  padding-left: 5%;
+  letter-spacing: normal;
+  color:white;
+  font-size: 60px;
+}
+#qna-bd{
+  background:url(/images/customers-services/211025_image_service_qna_banner.png) no-repeat;
+  background-size: 100% 100%;
+  background-color: white;
+  height: auto;
+  padding: 40px;
+  padding-left: 5%;
+  letter-spacing: normal;
+  color:white;
+  font-size: 60px;
+}
+
+.form-wrap{
+  width:80%;
+	background:white;
+	display:flex;
+	justify-content: space-between;
+}
+.qa-box {
+  /* border-width: 100px; */
+  height: 200px;
+  background: none;
+  float: left;
+  width: 33.33%;
+  padding: 50px;
+  padding-left: 10%;
+  padding-bottom: 50px;
+}
+.qa-open-account-left{
+  float: left;
+  width: 200px;
+  height: auto;
+  min-height: 220px;
+  background-color:  white;
+  justify-content: space-between;
+}
+.qa-open-account-right{
+  margin-left: 200px; /* 大于或等于左列的宽度 */
+  height: auto;
+  min-height: 220px;
+  background-color: white;
+  border: 1px solid grey;
+  box-sizing: border-box;
+}
+
+#account-security-bd{
+  background:url(/images/customers-services/211025_image_service_security_banner.png) no-repeat;
+  background-size: 100% 100%;
+  height: auto;
+  padding: 100px;
+  letter-spacing: normal;
+  color:white;
+  font-size: 60px;
+}
+
+.footer-box {
+  height: auto;
+  background: none;
+  text-align: center;
+  float: left;
+  width: 25%;
+  padding: 50px;
+  padding-bottom: 50px;
+}
+.statement-style{
+  margin: 0 auto;
+  background-color: white;
+  border: red;
+  padding: 1%;
+  font-size: 12px;
+  border-style: solid;
+}
+
+#homepage-bd{
+  background:url(/images/artagm_homepage_banner_02.jpg) no-repeat;
+  background-size: 100% 100%;
+  height: 800px;
+  padding: 100px;
+  padding-top: 200px;
+  letter-spacing: normal;
+  color:white;
+  font-size: 60px;
+}
+.contact-form1{
+  width: 70%;
+}
+
+.contact-form2{
+  width: 20%;
+}
+
+#contact-us-form{
+  #contact-us-form1 {
+    width: 70%;
+  }
+  @media screen and (max-width: 800px) {
+    display: none;
+    #contact-us-form1 {
+      @apply contact-form1
+    }
+    #contact-us-form2 {
+      @apply contact-form2
+    }
+  }
+}
+
+
+
+

@@ -4,7 +4,7 @@ import contactJson from 'apidata/contact.json'
 export type getFooterCmsT = any
 
 const fetchFooterData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/contact-us`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/contact-us`)
   const data = await res.json()
   return data
 }

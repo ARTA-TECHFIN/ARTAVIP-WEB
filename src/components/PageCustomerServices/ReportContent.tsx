@@ -1,5 +1,4 @@
 import { reportItemT2 } from 'src/domains/investor'
-import { ReportCard } from './ReportCard'
 import { textClass } from 'src/components/Text'
 import { report } from 'process'
 import { Console } from 'console'
@@ -23,7 +22,6 @@ const ReportContent = (props: propsT) => {
           return (
             <li key={index} className="col-span-12 md:col-span-6">
               <a title={headline} href={file} target="_blank" rel="noreferrer">
-                <ReportCard title={headline} />
               </a>
             </li>
           )

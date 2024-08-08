@@ -153,8 +153,8 @@
     "our_values": "我们的价值观",
     "arta_cares": "关怀与融合",
     "job_openings": "职位空缺",
-    "results_announcements": "业绩公布",
-    "interim_annual_reports": "中期报告及年报",
+    "results_announcements": "公示及通告",
+    "financial_reports": "财务报告",
     "announments_noties": "公示及通告",
     "circulars": "通函",
     "back": "返回职位空缺主页",
@@ -190,7 +190,7 @@
     "esg": "可持续发展",
     "environmental": "环境",
     "results_announcements": "业绩公布",
-    "interim_annual_reports": "中期报告及年报",
+    "financial_reports": "中期报告及年报",
     "announments_noties": "公示及通告",
     "circulars": "通函",
     "listing_documents": "上市文件",
@@ -207,7 +207,9 @@
     "esg_head_of_departments_content": "<ul><li>识别、评估及管理公司面临的重大营运风险</li><li>监察风险管理及内部控制系统并实施新的监控措施</li></ul>",
     "esg_unit": "业务/营运单位",
     "esg_unit_subtitle": "（营运风险及内部监控所有权）",
-    "esg_unit_content": "<ul><li>于各部门进行风险识别、评估及减缓</li><li>于业务营运和职能方面实行</li></ul>"
+    "esg_unit_content": "<ul><li>于各部门进行风险识别、评估及减缓</li><li>于业务营运和职能方面实行</li></ul>",
+    "new_arrangement_content": "发佈企业通讯之新安排"
+
   },
   "contact_us": {
     "enquiry": "查询",

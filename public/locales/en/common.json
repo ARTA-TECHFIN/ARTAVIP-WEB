@@ -156,8 +156,8 @@
     "our_values": "Our Values",
     "arta_cares": "ARTA Cares",
     "job_openings": "Job Openings",
-    "results_announcements": "Results Announcements",
-    "interim_annual_reports": "Interim & Annual Reports",
+    "results_announcements": "Announcements & Circulars",
+    "financial_reports": "Financial Reports",
     "announments_noties": "Announcements & Notices",
     "circulars": "Circulars",
     "back": "Back to Job Opening Page",
@@ -192,8 +192,8 @@
     "financial_calendar": "Financial Calendar",
     "esg": "ESG",
     "environmental": "Environmental",
-    "results_announcements": "Results Announcements",
-    "interim_annual_reports": "Interim & Annual Reports",
+    "results_announcements": "Announcements & Circulars",
+    "financial_reports": "Financial Reports",
     "announments_noties": "Announcements & Notices",
     "circulars": "Circulars",
     "listing_documents": "Listing Documents",
@@ -210,7 +210,8 @@
     "esg_head_of_departments_content": "<ul><li>Identifies, assesses and manages the significant operating risks facing the Company</li><li>Monitors the risk management and internal control systems and implements new controls</li></ul>",
     "esg_unit": "Business/Operating Units",
     "esg_unit_subtitle": "(Operation Risks & Internal Controls Ownership)",
-    "esg_unit_content": "<ul><li>Risk identification, assessment and mitigation performed across various departments</li><li>Practices across business operations and functional areas</li><li>Monitors the risk management and internal control systems and implements new controls</li></ul>"
+    "esg_unit_content": "<ul><li>Risk identification, assessment and mitigation performed across various departments</li><li>Practices across business operations and functional areas</li><li>Monitors the risk management and internal control systems and implements new controls</li></ul>",
+    "new_arrangement_content": "New Arrangement on Dissemination of Corporate Communications"
   },
   "contact_us": {
     "enquiry": "Enquiry",

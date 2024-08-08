@@ -25,8 +25,50 @@ export interface reportItemT {
   filetype: fileTypeT
   // filetype2: string
   headline: string // "Annual Report 2021\/2022",
+  headline_en: string // "Annual Report 2021\/2022",
+  headline_tc: string // "Annual Report 2021\/2022",
+  headline_sc: string // "Annual Report 2021\/2022",
   overseas_announcement: number
   url: string // "https:\/\/doc.irasia.com\/listco\/hk\/artatechfin\/annual\/2022\/ar2022.pdf",
+  file: string // "https:\/\/doc.irasia.com\/listco\/hk\/artatechfin\/annual\/2022\/ar2022.pdf",
+  file_en: string // "https:\/\/doc.irasia.com\/listco\/hk\/artatechfin\/annual\/2022\/ar2022.pdf",
+  file_tc: string // "https:\/\/doc.irasia.com\/listco\/hk\/artatechfin\/annual\/2022\/ar2022.pdf",
+  file_sc: string // "https:\/\/doc.irasia.com\/listco\/hk\/artatechfin\/annual\/2022\/ar2022.pdf",
+  file_id: number
+  cover_url: string // "https:\/\/www.irasia.com\/listco\/hk\/artatechfin\/annual\/cover2022.jpg",
+  cover_hires_url: null
+  updatetime: string // "2022-07-15 17:07:25"
+}
+
+export interface reportItemT2 {
+  attributes: {
+  doc_date: string // "2022-07-15",
+  filetype: fileTypeT
+  // filetype2: string
+  headline: string // "Annual Report 2021\/2022",
+  headline_en: string // "Annual Report 2021\/2022",
+  headline_tc: string // "Annual Report 2021\/2022",
+  headline_sc: string // "Annual Report 2021\/2022",
+  overseas_announcement: number
+  url: string // "https:\/\/doc.irasia.com\/listco\/hk\/artatechfin\/annual\/2022\/ar2022.pdf",
+  file: string // "https:\/\/doc.irasia.com\/listco\/hk\/artatechfin\/annual\/2022\/ar2022.pdf",
+  pdf_en: string // "https:\/\/doc.irasia.com\/listco\/hk\/artatechfin\/annual\/2022\/ar2022.pdf",
+  pdf_tc: string // "https:\/\/doc.irasia.com\/listco\/hk\/artatechfin\/annual\/2022\/ar2022.pdf",
+  pdf_sc: string // "https:\/\/doc.irasia.com\/listco\/hk\/artatechfin\/annual\/2022\/ar2022.pdf",
+  file_id: number
+  cover_url: string // "https:\/\/www.irasia.com\/listco\/hk\/artatechfin\/annual\/cover2022.jpg",
+  cover_hires_url: null
+  updatetime: string // "2022-07-15 17:07:25"
+  }
+}
+
+export interface reportAnnounceItemT {
+  doc_date: string // "2022-07-15",
+  filetype: fileTypeT
+  // filetype2: string
+  headline: string // "Annual Report 2021\/2022",
+  overseas_announcement: number
+  file: string // "https:\/\/doc.irasia.com\/listco\/hk\/artatechfin\/annual\/2022\/ar2022.pdf",
   file_id: number
   cover_url: string // "https:\/\/www.irasia.com\/listco\/hk\/artatechfin\/annual\/cover2022.jpg",
   cover_hires_url: null

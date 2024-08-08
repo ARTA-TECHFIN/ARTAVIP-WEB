@@ -37,6 +37,7 @@ export const links = {
   businessesArtazine: '/businesses/wealth_management',
   investor: '/investor-relations',
   investorCirculars: '/investor-relations/circulars',
+  investorNewArrangementContent: '/investor-relations/new_arrangement_content',
   investorListingDocuments: '/investor-relations/listing-documents',
   investorCorporateInformation: '/investor-relations/corporate-information',
   investorInterimAnnualReports: '/investor-relations/interim-annual-reports',

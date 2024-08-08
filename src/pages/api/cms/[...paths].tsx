@@ -8,11 +8,6 @@ export default async function handler(
 
   let myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
-   // 设置Access-Control-Allow-Credentials,跨域请求带授权
-   myHeaders.set('Access-Control-Allow-Credentials', 'true');
-   myHeaders.set('Access-Control-Allow-Origin', '*');
-   myHeaders.append('mode', 'cors');
-
 
    const { paths, ...query } = req.query;
    let queryStr;
@@ -22,14 +17,9 @@ export default async function handler(
    if (!paths || !(paths instanceof Array))
      return res.status(400).json({ message: "Invalid path" });
 
-  const requestOptions = {
+   const requestOptions = {
     method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "'GET, POST, OPTIONS",
-      "Access-Control-Allow-Headers": "DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization",
-    },
+    headers: myHeaders,
   };
 
   let url ;

@@ -52,8 +52,13 @@
     }
   }
   .headerTop{
-    height: 100px;
+    height: auto;
+    display: flex;
     background-color: black;
+    color: white;
+    align-items: center;
+	  justify-content: center;
+    flex-wrap: nowrap;
   }
 
   .headerTop_img {
@@ -96,6 +101,9 @@
 
   .arta-hide-scrollbar::-webkit-scrollbar {
     display: none;
+  }
+  .securities-grip{
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   }
 
   .arta-eventItem:first-child {
@@ -657,7 +665,6 @@ header{
 #business-overview-bd{
   background:url(/images/about/map4.jpg) no-repeat;
   background-size: cover;
-  height: 750px;
   padding: 35px;
   letter-spacing: normal;
   color: white;
@@ -703,7 +710,6 @@ header{
   padding: 100px;
   letter-spacing: normal;
   color: rgb(150, 150, 150);
-  font-size: 25px;
 }
 
 #futures_text_1{
@@ -713,7 +719,6 @@ header{
   padding: 100px;
   letter-spacing: normal;
   color: rgb(150, 150, 150);
-  font-size: 25px;
 }
 
 #services-charges-bd{
@@ -723,7 +728,6 @@ header{
   padding: 100px;
   letter-spacing: normal;
   color:white;
-  font-size: 60px;
 }
 #services-charges-list{
   background-color: white;
@@ -859,12 +863,11 @@ header{
 }
 #securities-bd-text{
   background:url(/images/products/Untitled.png) no-repeat;
+  background-size: cover;
   background-size: 100% 100%;
   height: auto;
-  padding: 100px;
   letter-spacing: normal;
   color: rgb(150, 150, 150);
-  font-size: 25px;
 }
 .contact-1{
   padding-top: 30px;
@@ -1140,7 +1143,6 @@ header{
   background-color: white;
   border: red;
   padding: 1%;
-  font-size: 12px;
   border-style: solid;
 }
 

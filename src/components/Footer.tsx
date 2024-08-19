@@ -11,7 +11,7 @@ import Link from 'next/link'
 import cn from 'classnames'
 
 const fetchCmsData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/contact-us`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/homepage-footer`)
   const data = await res.json()
   return data
 }
@@ -24,7 +24,6 @@ const Footer: FC<{
   const { textColor = 'white', setShowWechatPopup } = props
   const router = useRouter()
   const { locale } = router
-  const [openWeChatPopup, setOpenWeChatPopup] = useState(false)
 
   const [footerData, setFooterData] = useState<any>({})
 
@@ -50,7 +49,7 @@ const Footer: FC<{
   useEffect(() => {
     const fetchData = async () => {
       const useLocalCms = process.env.NEXT_PUBLIC_USE_LOCAL_CMS_DATA === 'true'
-      const result = contactJson
+      const result = await fetchCmsData()
 
       setFooterData(result.data.attributes)
     }
@@ -62,11 +61,6 @@ const Footer: FC<{
 
   const k = {
     address: `Units 1-2, Level 9, \nK11 ATELIER King’s Road, \n728 King’s Road,Quarry Bay,\nHong Kong`,
-    socialMediaList: [
-      { href: footerData.social_media_link_linkedin, Component: IconLinkedIn },
-      { href: footerData.social_media_link_twitter, Component: IconTwitter },
-      { href: footerData.social_media_link_facebook, Component: IconFacebook },
-    ],
   }
 
   return (
@@ -74,8 +68,8 @@ const Footer: FC<{
       <footer
         className={`relative z-2 h-full w-full ${bgClass} ${textClass} will-change-transform`}
       >
-        <div id="footer" style={{display:'flex'}}>
-          <div className="footer-box">
+        <div className="mt-8 grid grid-cols-4 gap-x-12 md:grid-cols-4 lg:grid-cols-4  place-items-center">
+          <div className='col-span-8 md:col-span-1 flex items-center text-center flex-col p-4'>
             <h6 className="font-Verah leading-[24px]" style={{ color: 'hsl(41, 53.8%, 77.1%)', fontSize: '22px' }}>{t('page_title.about_us')}</h6>
             <ul className="list-none font-Neue text-[12px] leading-[20px]">
               <li>
@@ -110,7 +104,7 @@ const Footer: FC<{
               </li>
             </ul>
           </div>
-          <div className="footer-box">
+          <div className='col-span-8 md:col-span-1 flex items-center text-center flex-col p-4'>
             <h6 className="font-Verah leading-[24px]" style={{ color: 'hsl(41, 53.8%, 77.1%)', fontSize: '22px' }}>{t('page_title.products')}</h6>
             <ul className="list-none font-Neue text-[12px] leading-[20px]">
               <li>
@@ -135,7 +129,7 @@ const Footer: FC<{
               </li>
             </ul>
           </div>
-          <div className="footer-box">
+          <div className='col-span-8 md:col-span-1 flex items-center text-center flex-col p-4'>
             <h6 className="font-Verah leading-[24px]" style={{ color: 'hsl(41, 53.8%, 77.1%)', fontSize: '22px' }}>{t('page_title.customer_service')}</h6>
             <ul className="list-none font-Neue text-[12px] leading-[20px]">
               <li>
@@ -211,7 +205,7 @@ const Footer: FC<{
               </li>
             </ul>
           </div>
-          <div className="footer-box">
+          <div className='col-span-8 md:col-span-1 flex items-center text-center flex-col p-4'>
             <h6 className="font-Verah leading-[24px]" style={{ color: 'hsl(41, 53.8%, 77.1%)', fontSize: '22px' }}>{t('page_title.website_trade')}</h6>
             <ul className="list-none font-Neue text-[12px] leading-[20px]">
               <li>
@@ -247,17 +241,11 @@ const Footer: FC<{
               <LanguageSwitcher />
             </div>
             <div className="text-xs leading-[20px]">
-              <p>{t('footer.copyright')}</p>
+              <p>{g('copyright')}</p>
             </div>
           </div>
         </div>
       </footer>
-      {openWeChatPopup && (
-        <WechatPopup
-          togglePopup={setOpenWeChatPopup}
-          qrCode={footerData.social_media_link_wechat.data.attributes.url}
-        />
-      )}
     </>
   )
 }

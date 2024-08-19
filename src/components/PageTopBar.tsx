@@ -2,7 +2,11 @@ import React, { FC, useEffect, useState } from 'react'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
 import contactJson from 'apidata/contact.json'
+import { Users} from "lucide";
+import { createIcons, icons } from 'lucide';
 import Image from 'next/image'
+import { PhoneForwarded } from 'lucide-react';
+import { text } from 'stream/consumers';
 
 // 拉取页面头部的配置
 const fetchTopData = async () => {
@@ -34,9 +38,8 @@ const PageTopBar: FC<{
   const g = (keyWithoutLang: string) => `${topBarData[`${keyWithoutLang}_${locale}`]}`
   return (
     <>
-        <div className="headerTop" style={{height:'30px'}} >
-        <p style={{ fontSize: '15px' , color:'white',display:'flex', alignItems:'center', justifyContent:'center'}}>
-          <Image src='/images/phone_call.svg' alt="" width ='20' height='15' />{g('description_1')} | <Image src='/images/phone_call.svg' alt="" width ='20' height='15' />{g('description_2')}</p>
+        <div className="headerTop text-sm pl-4">
+          <PhoneForwarded/>{g('description_1')} |  <PhoneForwarded />{g('description_2')}
         </div>
     </>
   )

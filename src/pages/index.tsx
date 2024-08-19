@@ -7,6 +7,7 @@ import Footer from 'src/components/Footer'
 import { useRouter } from 'next/router'
 import { ButtonAnimated } from 'src/components/ButtonAnimated'
 import { Seo } from 'src/components/Seo'
+import { textClass } from 'src/components/Text'
 
 const fetchCmsData = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/homepage`)
@@ -42,11 +43,11 @@ const Home= (props: { cms: any }) => {
       />
       <Header textColor="brown" />
       <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[220px]" />
-      <div className='statement-style' dangerouslySetInnerHTML={{ __html: g(props.cms, 'statement') }}></div>
+      <div className={`${textClass.small_text} statement-style`} dangerouslySetInnerHTML={{ __html: g(props.cms, 'statement') }}></div>
       <div id="homepage-bd">
-        <h1>{g(props.cms, 'title')}</h1>
-        <h1 style={{fontSize:'30px'}}>{g(props.cms, 'sub_title')}</h1>
-        <h1 style={{fontSize:'20px',paddingTop:'20px'}}>{g(props.cms, 'sub_title2')}</h1>
+        <h1 className={`${textClass.h3_style2}`}>{g(props.cms, 'title')}</h1>
+        <h1 className={`${textClass.h3_style2}`}>{g(props.cms, 'sub_title')}</h1>
+        <h1 className={`${textClass.h6}  p-2`}>{g(props.cms, 'sub_title2')}</h1>
         <ButtonAnimated
           as="a"
           href={`${g(props.cms, 'link')}`}

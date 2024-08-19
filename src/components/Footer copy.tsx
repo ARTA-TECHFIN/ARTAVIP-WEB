@@ -11,7 +11,7 @@ import Link from 'next/link'
 import cn from 'classnames'
 
 const fetchCmsData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/contact-us`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/homepage-footer`)
   const data = await res.json()
   return data
 }
@@ -50,7 +50,7 @@ const Footer: FC<{
   useEffect(() => {
     const fetchData = async () => {
       const useLocalCms = process.env.NEXT_PUBLIC_USE_LOCAL_CMS_DATA === 'true'
-      const result = contactJson
+      const result =await fetchCmsData()
 
       setFooterData(result.data.attributes)
     }
@@ -62,11 +62,7 @@ const Footer: FC<{
 
   const k = {
     address: `Units 1-2, Level 9, \nK11 ATELIER King’s Road, \n728 King’s Road,Quarry Bay,\nHong Kong`,
-    socialMediaList: [
-      { href: footerData.social_media_link_linkedin, Component: IconLinkedIn },
-      { href: footerData.social_media_link_twitter, Component: IconTwitter },
-      { href: footerData.social_media_link_facebook, Component: IconFacebook },
-    ],
+    footerDate:footerData,
   }
 
   return (

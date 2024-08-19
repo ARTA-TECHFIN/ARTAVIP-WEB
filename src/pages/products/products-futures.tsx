@@ -19,6 +19,11 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
     ex_des_2: g('ex_des_2'),
     ex_des_2_d: g('ex_des_2_d'),
     ex_des_3: g('ex_des_3'),
+    heroBanner: {
+      description: '',
+      image: '/images/products/211025_image_product_futures_banner-1.png',
+      mobileImage: '/images/products/211025_image_product_futures_banner-1.png',
+    },
   }
 }
 

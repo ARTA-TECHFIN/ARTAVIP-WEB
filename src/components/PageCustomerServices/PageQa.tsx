@@ -10,12 +10,14 @@ import { ButtonAnimated } from '../ButtonAnimated'
 import { links } from 'src/domains/links'
 import { link } from 'fs'
 import { json } from 'stream/consumers'
+import { HeroBanner } from '../HeroBanner'
+import { textClass } from '../Text'
 
 const PageQa: FC<{ k: PageAboutCmsT }> = ({ k }) => {
   const { t } = useTranslation('common')
   const router = useRouter()
   const { locale } = router
-  const g = (pageData: any, keyWithoutLang: string) =>`${pageData.attributes[`${keyWithoutLang}_${locale}`]}`
+  const g = (pageData: any, keyWithoutLang: string) => `${pageData.attributes[`${keyWithoutLang}_${locale}`]}`
   return (
     <>
       <Seo
@@ -25,28 +27,40 @@ const PageQa: FC<{ k: PageAboutCmsT }> = ({ k }) => {
         ga="Futures"
       />
       <Header textColor="brown" />
-      <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[152px]" />
+      {/* <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[152px]" />
       <div id="qna-bd">
             <h1 style={{ fontSize: '60px',color:"white" ,display:'flex', alignItems:'center', justifyContent:'left',fontWeight:'700px'}}>{t('customer_service.qa')}</h1>
-     </div>
-     <div className='business-overview-clearfix' >
+     </div> */}
+      <main className="flex flex-col">
+        <HeroBanner
+          title={t('customer_service.qa')}
+          description=''
+          image='/images/customers-services/211025_image_service_qna_banner.png'
+          mobileImage='/images/customers-services/211025_image_service_qna_banner.png'
+        />
+        <div className='px-8 bg-white'>
+          <div className="mt-8 grid grid-cols-3 gap-x-12 md:grid-cols-4 lg:grid-cols-3 place-items-baseline bg-white">
             {
-              k.data.map((j:any, i:any) => {
+              k.data.map((j: any, i: any) => {
                 return (
-                  
-                    <div className="qa-box"  style={{backgroundColor:'white'}} key={i}>
-                      <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
-                        <img src={j.attributes.adv_icon_url} style={{width:'40px',height:'40px'}} alt=""/>
-                        <button className='text-[25px]' style={{color:'gray',fontWeight:'700px'}} onClick={() => {
-                            router.push(`${g(j, 'link')}`)}}>{g(j, 'title')}</button>
-                      </div>
-                      <p style={{fontSize:'15px'}} dangerouslySetInnerHTML={{__html: g(j, 'description')}}></p>
+
+                  <div key={i} className='col-span-2 md:col-span-1 flex flex-col p-4'>
+                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                      <img src={j.attributes.adv_icon_url} style={{ width: '40px', height: '40px' }} alt="" />
+                      <button className={`mt-4 ${textClass.h6}`} style={{ color: 'gray', fontWeight: '700px' }} onClick={() => {
+                        router.push(`${g(j, 'link')}`)
+                      }}>{g(j, 'title')}</button>
                     </div>
+                    <p className={`${textClass.small_text}`} dangerouslySetInnerHTML={{ __html: g(j, 'description') }}></p>
+                  </div>
                 )
               })
             }
-      </div>
-      <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[90px]" />
+          </div>
+        </div>
+
+        <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[90px]" />
+      </main>
       <Footer textColor="white" />
     </>
   )

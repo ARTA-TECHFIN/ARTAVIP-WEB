@@ -8,6 +8,7 @@ import { useRouter } from 'next/router'
 import { useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
 import { CalendarAccordion } from 'src/components/PageCustomerServices/CalendarAccordion'
+import { HeroBanner } from 'src/components/HeroBanner'
 
 const fetchCmsData = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/media-centre-press-releases?populate=*`)
@@ -18,7 +19,12 @@ const fetchCmsData = async () => {
 const massageData = (pageData: any, locale: string | undefined = 'en') => {
   return {
     k: {
-      data:pageData.data,
+      data: pageData.data,
+    },
+    heroBanner: {
+      description: '',
+      image: '/images/customers-services/important_notices.jpg',
+      mobileImage: '/images/customers-services/important_notices.jpg',
     },
   }
 }
@@ -36,16 +42,21 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: {
       k: pageData.data,
+      heroBanner: {
+        description: '',
+        image: '/images/customers-services/important_notices.jpg',
+        mobileImage: '/images/customers-services/important_notices.jpg',
+      },
       ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }
 }
 const useGetData = (locale: string) => {
-  const lang = locale === 'en'? 'en': locale === 'tc'? 'tc': 'sc'
+  const lang = locale === 'en' ? 'en' : locale === 'tc' ? 'tc' : 'sc'
   const year = new Date().getFullYear()
   const yearList = [year, year - 1, year - 2]
 
-  return useQuery([],async () => {
+  return useQuery([], async () => {
     const result = await fetchCmsData();
 
     let yearList: string[] = []
@@ -60,20 +71,20 @@ const useGetData = (locale: string) => {
         response.push({
           year: parseInt(year),
           results: result.data.filter((item: any) => item.attributes.year == year),
-          lang : locale
+          lang: locale
         })
       })
       return response
     }
   })
 }
-const NoticePage = (props: { k: any }) => {
+const NoticePage = (props: { k: any,heroBanner:any }) => {
   const { t } = useTranslation('common')
   const router = useRouter()
   const { locale } = router
   const { status, data, error } = useGetData(locale || "en")
-  const g = (pageData: any, keyWithoutLang: string) =>`${pageData.attributes[`${keyWithoutLang}_${locale}`]}`
-  const u = (pageData: any, keyWithoutLang: string) =>`${pageData[`${keyWithoutLang}_${locale}`]}`
+  const g = (pageData: any, keyWithoutLang: string) => `${pageData.attributes[`${keyWithoutLang}_${locale}`]}`
+  const u = (pageData: any, keyWithoutLang: string) => `${pageData[`${keyWithoutLang}_${locale}`]}`
   const [openYear, setOpenYear] = useState(data && data[0].year || 2024)
 
   const setOpenYearFunc = (year: number) => {
@@ -85,33 +96,39 @@ const NoticePage = (props: { k: any }) => {
   }
   return (
     <>
-    <Seo
-      title={`${t('customer_service.service_charges')} | Arta TechFin`}
-      description={t('customer_service.service_charges')}
-      keywords={t('customer_service.service_charges')}
-      ga="Service Charges"
-    />
-    <Header textColor="brown" />
-    <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[152px]" />
-    <div id="impo-notices-bd">{t('customer_service.important_notice')}</div>
-    <div id="notice-bd">
-      {data?.map((yearly, index) => (
-        <CalendarAccordion
-          index={index}
-          key={yearly.year}
-          year={yearly.year}
-          events={yearly.results.map((r: any) => ({
-            date: new Date(r.attributes.date),
-            title: locale === 'en'? r.attributes.content_en : locale === 'tc'? r.attributes.content_tc:r.attributes.content_sc,
-            url: locale === 'en'? r.attributes.pdf_en.data.attributes.url: locale === 'tc'? r.attributes.pdf_tc.data.attributes.url :r.attributes.pdf_sc.data.attributes.url,
-          }))}
-          openYear={openYear}
-          setOpenYear={setOpenYearFunc}
+      <Seo
+        title={`${t('customer_service.important_notice')} | Arta TechFin`}
+        description={t('customer_service.important_notice')}
+        keywords={t('customer_service.important_notice')}
+        ga="Service Charges"
+      />
+      <Header textColor="brown" />
+      <main className="flex flex-col text-arta-sand-100">
+        <HeroBanner
+          title={t('customer_service.important_notice')}
+          description={props.heroBanner.description}
+          image={props.heroBanner.image}
+          mobileImage={props.heroBanner.mobileImage}
         />
-      ))}
-    </div>
-    <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[100px]" />
-    <Footer textColor="white" />
+        <div id="notice-bd">
+          {data?.map((yearly, index) => (
+            <CalendarAccordion
+              index={index}
+              key={yearly.year}
+              year={yearly.year}
+              events={yearly.results.map((r: any) => ({
+                date: new Date(r.attributes.date),
+                title: locale === 'en' ? r.attributes.content_en : locale === 'tc' ? r.attributes.content_tc : r.attributes.content_sc,
+                url: locale === 'en' ? r.attributes.pdf_en.data.attributes.url : locale === 'tc' ? r.attributes.pdf_tc.data.attributes.url : r.attributes.pdf_sc.data.attributes.url,
+              }))}
+              openYear={openYear}
+              setOpenYear={setOpenYearFunc}
+            />
+          ))}
+        </div>
+        <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[100px]" />
+      </main>
+      <Footer textColor="white" />
     </>
   )
 }

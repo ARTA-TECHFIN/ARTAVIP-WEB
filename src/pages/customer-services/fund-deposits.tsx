@@ -23,6 +23,11 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
     notice_ph: g('notice_ph'),
     remark_1: g('remark_1'),
     remark_2: g('remark_2'),
+    heroBanner: {
+      description: '',
+      image: '/images/customers-services/211025_image_service_deposit_banner.png',
+      mobileImage: '/images/customers-services/211025_image_service_deposit_banner.png',
+    },
   }
 }
 
@@ -33,6 +38,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: {
       k: massageData(pageData, locale),
+
       ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }

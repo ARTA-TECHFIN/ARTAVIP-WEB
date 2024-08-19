@@ -17,6 +17,11 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
     tips: g('tips'),
     form_1: pageData.data.attributes.form_1,
     form_2: pageData.data.attributes.form_2,
+    heroBanner: {
+      description: '',
+      image: '/images/customers-services/info.jpg',
+      mobileImage: '/images/customers-services/info.jpg',
+    },
   }
 }
 

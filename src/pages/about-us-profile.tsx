@@ -29,7 +29,7 @@ interface responseT {
 const massageData = (pageData: any, eventData: any,joinUsData: any, locale: string | undefined = 'en') => {
   const advantageData = joinUsData.data.attributes.our_advantage[0];
   const dutyData = joinUsData.data.attributes.duty_brief[0];
-  const timeLineData = joinUsData.data.attributes.TimeLine;
+  const timeLineData = eventData.data;
 
   const g = (keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
   const j = (keyWithoutLang: string) => `${joinUsData.data.attributes[`${keyWithoutLang}_${locale}`]}`
@@ -39,8 +39,8 @@ const massageData = (pageData: any, eventData: any,joinUsData: any, locale: stri
 
   timeLineData.map((item:any) => {
     response.push({
-      title: item[`title_${locale}`],
-      des: item[`des_${locale}`],
+      title: item.attributes[`date_${locale}`],
+      des: item.attributes[`event_${locale}`],
     })
   })
   return {

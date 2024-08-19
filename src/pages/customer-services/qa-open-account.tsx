@@ -3,7 +3,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import PageQaOpenAccount from 'src/components/PageCustomerServices/PageQaOpenAccount'
 
 const fetchData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/qa-trade-accounts?populate=*`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/qa-open-accounts?populate=*`)
   const data = await res.json()
   return data
 }

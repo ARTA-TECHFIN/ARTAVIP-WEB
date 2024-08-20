@@ -11,7 +11,7 @@ import { CalendarAccordion } from 'src/components/PageCustomerServices/CalendarA
 import { HeroBanner } from 'src/components/HeroBanner'
 
 const fetchCmsData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/media-centre-press-releases??sort=date:desc&populate=*`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/media-centre-press-releases?populate=*`)
   const data = await res.json()
   return data
 }
@@ -116,7 +116,7 @@ const NoticePage = (props: { k: any,heroBanner:any }) => {
               index={index}
               key={yearly.year}
               year={yearly.year}
-              events={yearly.results.map((r: any) => ({
+              events={yearly.results.sort((a: any, b: any) => a.attributes.date- b.attributes.date).map((r: any) => ({
                 date: new Date(r.attributes.date),
                 title: locale === 'en' ? r.attributes.content_en : locale === 'tc' ? r.attributes.content_tc : r.attributes.content_sc,
                 url: locale === 'en' ? r.attributes.pdf_en.data.attributes.url : locale === 'tc' ? r.attributes.pdf_tc.data.attributes.url : r.attributes.pdf_sc.data.attributes.url,

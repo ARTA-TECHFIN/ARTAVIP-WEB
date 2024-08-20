@@ -11,7 +11,7 @@ import { CalendarAccordion } from 'src/components/PageCustomerServices/CalendarA
 import { HeroBanner } from 'src/components/HeroBanner'
 
 const fetchCmsData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/media-centre-press-releases?populate=*`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/media-centre-press-releases??sort=date:desc&populate=*`)
   const data = await res.json()
   return data
 }

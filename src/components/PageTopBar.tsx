@@ -39,7 +39,10 @@ const PageTopBar: FC<{
   return (
     <>
         <div className="headerTop text-sm pl-4">
-          <PhoneForwarded/>{g('description_1')} |  <PhoneForwarded />{g('description_2')}
+          <div style={{flexWrap:'nowrap',display:'flex'}}><PhoneForwarded/>{g('description_1')}</div>
+          <div style={{flexWrap:'nowrap',display:'flex'}}><PhoneForwarded/>{g('description_2')}</div>
+          <div style={{flexWrap:'nowrap',display:'flex'}}><PhoneForwarded/>{g('description_3')}</div>
+          {/* <PhoneForwarded/>{g('description_1')} |<PhoneForwarded/> 123|  <PhoneForwarded />{g('description_2')} */}
         </div>
     </>
   )

@@ -23,7 +23,7 @@ const massageData = (pageData: any, usTipsData: any, locale: string | undefined 
     description: g('description'),
     priority: g('priority'),
     avg:pageData.data.attributes.adv_1,
-    link: pageData.data.attributes.link,
+    link: g('link'),
     tip:usTipsData.data.attributes,
     heroBanner: {
       description: '',

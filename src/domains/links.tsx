@@ -15,7 +15,7 @@ export const links = {
   servicesCharges:'/customer-services/services-charges',
   importantNotice:'/customer-services/important-notices',
   fundDeposites:'/customer-services/fund-deposits',
-  loanRatio:'/customer-services/loan_ratio',
+  loanRatio:'/customer-services/leaning_ratio',
   formDownload:'/customer-services/form-download',
   bankInfo:'/customer-services/bank-info',
   fps:'/customer-services/deposit-fps',

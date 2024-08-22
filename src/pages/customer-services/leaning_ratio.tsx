@@ -10,7 +10,7 @@ import { HeroBanner } from 'src/components/HeroBanner'
 import { textClass } from 'src/components/Text'
 
 const fetchCmsData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/loan_ratios?populate=*`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/leaning-ratio?populate=*`)
   const data = await res.json()
   return data
 }
@@ -55,20 +55,20 @@ const BussinessOverview = (props: { cms: any }) => {
             <div className="mt-8 grid grid-cols-3 gap-x-12 md:grid-cols-3 lg:grid-cols-3  place-items-center px-10 bg-white">
               <div className='col-span-8 md:col-span-1 flex items-center text-center flex-col p-4 w-max'>
                 <img src='/images/info/211025_image_service_ratio_icon_01.png' style={{ width: '150px', height: '150px' }} onClick={() => {
-                  router.push(`${links.szseMarginableStock}`)
+                  router.push(`${links.hkMarginableStock}`)
                 }}></img>
                 <button style={{ color: 'black', fontSize: '20px' }} onClick={() => {
                   router.push(`${links.hkMarginableStock}`)
-                }}>{t('products_info.hk_marginable_stock')}
+                }}>{g(props.cms, 'hk')}
                 </button>
               </div>
               <div className='col-span-8 md:col-span-1 flex items-center text-center flex-col p-4 w-max'>
                 <img src='/images/info/211025_image_service_ratio_icon_02.png' style={{ width: '150px', height: '150px' }} onClick={() => {
-                  router.push(`${links.szseMarginableStock}`)
+                  router.push(`${links.sseMarginableStock}`)
                 }}></img>
                 <button style={{ color: 'black', fontSize: '20px' }} onClick={() => {
                   router.push(`${links.sseMarginableStock}`)
-                }}>{t('products_info.sse_marginable_stock')}
+                }}>{g(props.cms, 'sse')}
                 </button>
               </div>
               <div className='col-span-8 md:col-span-1 flex items-center text-center flex-col p-4 w-max'>
@@ -77,13 +77,13 @@ const BussinessOverview = (props: { cms: any }) => {
                 }}></img>
                 <button style={{ color: 'black', fontSize: '20px' }} onClick={() => {
                   router.push(`${links.szseMarginableStock}`)
-                }}>{t('products_info.szse_marginable_stock')}
+                }}>{g(props.cms, 'szse')}
                 </button>
               </div>
             </div>
           </div>
         </div>
-        <div style={{ textAlign: 'right', paddingRight: '20%' }} className={`small-text bg-white`}>{t('products_info.loan_ratio_ps')}</div>
+        <div style={{ textAlign: 'right', paddingRight: '20%' }} className={`small-text bg-white`}>{g(props.cms, 'ps')}</div>
         <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[100px]" />
       </main>
       <Footer textColor="white" />

@@ -115,7 +115,7 @@ const InvestorLayout: FC<propsT> = ({
         }
       />
       <Header textColor="white" />
-      <main className="flex flex-col text-arta-sand-100">
+      <main className="flex flex-col">
         <HeroBanner
           title={seo.title.replace(' | Arta TechFin', '')}
           description=''
@@ -126,15 +126,15 @@ const InvestorLayout: FC<propsT> = ({
         />
         <div id="securities-bd-text">
           <div className="arta-container relative z-1 mx-auto py-8 md:py-[150px] md:text-center">
-            <h1 className={`${textClass.h6} py-3`}>{k.description}</h1>
+            <h1 className={`h6-text py-3`}>{k.description}</h1>
             <hr className='securities-hr'></hr>
-            <h1 style={{ fontWeight: 'bold', color: 'black' }} className={`${textClass.h6} py-3`}>{k.priority}</h1>
-            <div className="mt-8 grid grid-cols-3 gap-x-12 md:grid-cols-4 lg:grid-cols-3  place-items-center">
+            <h1 style={{ fontWeight: 'bold', color: 'black' }} className={`h6-text py-3 items-center text-center`}>{k.priority}</h1>
+            <div className="mt-8 grid grid-cols-3 gap-x-12 md:grid-cols-3 lg:grid-cols-3  place-items-center px-10">
               {
                 k.avg.map((j: any, index: number) => {
                   return (
-                    <div key={index} className='col-span-2 md:col-span-1 flex items-center text-center flex-col p-4 w-max'>
-                      <h1 className={`mt-4 ${textClass.h6}`} style={{ color: '#20365B' }}>{g(j, 'title')}</h1>
+                    <div key={index} className='col-span-8 md:col-span-1 flex items-center text-center flex-col p-4 w-max'>
+                      <h1 className={`mt-4 h6-text`} style={{ color: '#20365B' }}>{g(j, 'title')}</h1>
                       <p className={`mt-4 text-xs`}>{g(j, 'description')}</p>
                       <img src={j.adv_icon_url} />
                     </div>
@@ -142,7 +142,7 @@ const InvestorLayout: FC<propsT> = ({
                 })
               }
             </div>
-            <div className={`${textClass.h6} pt-3`} dangerouslySetInnerHTML={{ __html: k.link }}></div>
+            <div className={`h6-text pt-3`} dangerouslySetInnerHTML={{ __html: k.link }}></div>
           </div>
         </div>
         <div className="bg-arta-eggshell-100 pt-0 pb-6 md:pt-16 md:pb-[206px]" id="content">

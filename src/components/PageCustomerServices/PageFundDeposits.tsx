@@ -38,7 +38,7 @@ const PageFundDeposits: FC<{ k: PageAboutCmsT }> = ({ k }) => {
           <h1 className={`${textClass.h2_style2} text-black pl-8 py-4`} >{g(k.data, 'title_1')}</h1>
         </div>
         <div className={`bg-white`}>
-          <div className="bg-white arta-container relative z-1 mx-auto flex flex-col-reverse items-center pb-12 lg:flex-row lg:space-x-[40px] lg:py-[150px]">
+          <div className="bg-white arta-container relative z-1 mx-auto flex flex-col-reverse items-center pb-2 lg:flex-row lg:space-x-[20px] lg:py-[30px]">
             <div className="flex-1 text-center">
               <img src='/images/customers-services/211025_image_service_deposit_method_icon_02.png' style={{ display: 'block', margin: '0 auto' }}></img>
               <ButtonAnimated
@@ -62,27 +62,27 @@ const PageFundDeposits: FC<{ k: PageAboutCmsT }> = ({ k }) => {
 
 
         {/* 注意事项 */}
-        <div className={`bg-white ${textClass.small_text} pl-8 py-4`} dangerouslySetInnerHTML={{ __html: k.notice }}></div>
+        <div className={`bg-white small-text pl-8 py-4`} dangerouslySetInnerHTML={{ __html: k.notice }}></div>
         <div className={`bg-white`}>
           <h1 className={`${textClass.h2_style2} text-black pl-8 py-4`}>{g(k.data, 'title_2')}</h1>
         </div>
         <div className={`bg-white`}>
-          <div className="bg-white arta-container relative z-1 mx-auto flex flex-col-reverse items-center pb-12 lg:flex-row lg:space-x-[40px] lg:py-[150px]">
+          <div className="bg-white arta-container relative z-1 mx-auto flex flex-col-reverse items-center pb-2 lg:flex-row lg:space-x-[20px] lg:py-[30px]">
             <div className="flex-1 text-center">
               <img src='/images/customers-services/211025_image_service_deposit_icon_02.png' style={{ display: 'block', margin: '0 auto' }}></img>
-              <h1 className={`${textClass.small_text} text-black`}>{g(k.data, 'sub_msg_1')}</h1>
-              <div className={`${textClass.small_text} bg-white`} dangerouslySetInnerHTML={{ __html: k.notice_ps }}></div>
+              <h1 className={`small-text text-black`}>{g(k.data, 'sub_msg_1')}</h1>
+              <div className={`small-text bg-white`} dangerouslySetInnerHTML={{ __html: k.notice_ps }}></div>
             </div>
             <div className="mt-[25px] mb-4 flex-1 lg:mt-0 text-center">
               <img src='/images/customers-services/211025_image_service_deposit_icon_05.png' style={{ display: 'block', margin: '0 auto' }}></img>
-              <h1 className={`${textClass.small_text} text-black`}>{g(k.data, 'sub_msg_2')}</h1>
-              <div className={`${textClass.small_text} bg-white`} dangerouslySetInnerHTML={{ __html: k.notice_ph }}></div>
+              <h1 className={`small-text text-black`}>{g(k.data, 'sub_msg_2')}</h1>
+              <div className={`small-text bg-white`} dangerouslySetInnerHTML={{ __html: k.notice_ph }}></div>
             </div>
           </div>
         </div>
 
         {/* 備注 */}
-        <div className={`bg-white pl-8 py-4 ${textClass.small_text}`}>
+        <div className={`bg-white pl-8 py-4 small-text`}>
           <div dangerouslySetInnerHTML={{ __html: k.remark_1 }}></div>
           <div dangerouslySetInnerHTML={{ __html: k.remark_2 }}></div>
           <ButtonAnimated

@@ -116,7 +116,7 @@ const NoticePage = (props: { k: any,heroBanner:any }) => {
               index={index}
               key={yearly.year}
               year={yearly.year}
-              events={yearly.results.sort((a: any, b: any) => a.attributes.date- b.attributes.date).map((r: any) => ({
+              events={yearly.results.map((r: any) => ({
                 date: new Date(r.attributes.date),
                 title: locale === 'en' ? r.attributes.content_en : locale === 'tc' ? r.attributes.content_tc : r.attributes.content_sc,
                 url: locale === 'en' ? r.attributes.pdf_en.data.attributes.url : locale === 'tc' ? r.attributes.pdf_tc.data.attributes.url : r.attributes.pdf_sc.data.attributes.url,

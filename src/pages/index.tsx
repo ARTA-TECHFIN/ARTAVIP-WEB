@@ -26,12 +26,12 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   }
 }
 
-const Home= (props: { cms: any }) => {
-  
+const Home = (props: { cms: any }) => {
+
   const { t } = useTranslation('common')
   const router = useRouter()
   const { locale } = router
-  const g = (pageData: any, keyWithoutLang: string) =>`${pageData.attributes[`${keyWithoutLang}_${locale}`]}`
+  const g = (pageData: any, keyWithoutLang: string) => `${pageData.attributes[`${keyWithoutLang}_${locale}`]}`
 
   return (
     <>
@@ -43,11 +43,11 @@ const Home= (props: { cms: any }) => {
       />
       <Header textColor="brown" />
       <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[220px]" />
-      <div className={`${textClass.small_text} statement-style`} dangerouslySetInnerHTML={{ __html: g(props.cms, 'statement') }}></div>
+      <div className={`small-text statement-style`} dangerouslySetInnerHTML={{ __html: g(props.cms, 'statement') }}></div>
       <div id="homepage-bd">
-        <h1 className={`${textClass.h3_style2}`}>{g(props.cms, 'title')}</h1>
-        <h1 className={`${textClass.h3_style2}`}>{g(props.cms, 'sub_title')}</h1>
-        <h1 className={`${textClass.h6}  p-2`}>{g(props.cms, 'sub_title2')}</h1>
+        <h1 className="h3-regular-text">{g(props.cms, 'title')}</h1>
+        <h1 className="h3-regular-text">{g(props.cms, 'sub_title')}</h1>
+        <h1 className="h6-text p-2">{g(props.cms, 'sub_title2')}</h1>
         <ButtonAnimated
           as="a"
           href={`${g(props.cms, 'link')}`}

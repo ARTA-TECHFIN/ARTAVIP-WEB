@@ -59,7 +59,7 @@ const CalendarAccordion = ({ index, year, events, openYear, setOpenYear }: props
         className="flex cursor-pointer items-center justify-between p-6 lg:p-8"
         onClick={() => setOpenYear(year)}
       >
-        <span className={`${textClass.h6} text-arta-sand-100`}>{year}</span>
+        <span className={`h6-text text-arta-sand-100`}>{year}</span>
         <svg ref={togglerIcon} className="h-6 w-6" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M20 16.2632C19.7981 16.2279 19.5831 16.2102 19.3549 16.2102C19.1092 16.2102 18.8941 16.2279 18.7098 16.2632L12.0197 8.53763L5.39393 16.2632C5.26228 16.2279 5.11747 16.2102 4.95949 16.2102C4.79273 16.2102 4.13165 16.2279 4 16.2632C5.89731 14.0032 12.0197 7 12.0197 7C12.0197 7 18.1548 14.0538 20 16.2632Z" fill="#593725"/>
         </svg>
@@ -93,7 +93,7 @@ const CalendarAccordion = ({ index, year, events, openYear, setOpenYear }: props
                       {event.date.toDateString().slice(3, 7)}
                     </p>
                   </div>
-                  <span className={`${textClass.title} mr-4 font-Neue text-arta-sand-100`}>
+                  <span className={`h6-text mr-4 font-Neue text-arta-sand-100`}>
                     {event.title}
                   </span>
                   {

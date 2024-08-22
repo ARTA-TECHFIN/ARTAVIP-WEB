@@ -60,7 +60,7 @@ const PageQaTradeOperation: FC<{ k: PageAboutCmsT }> = ({ k }) => {
                 k.data.map((j: any, i: any) => {
                   return (
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }} key={i}>
-                      <button className={`${textClass.small_text} `} style={{ color: 'gray', fontWeight: '700px', border: '0.5px solid black', width: '100%', boxSizing: 'content-box', margin: '0 auto' }}
+                      <button className={`small-text `} style={{ color: 'gray', fontWeight: '700px', border: '0.5px solid black', width: '100%', boxSizing: 'content-box', margin: '0 auto' }}
                         onClick={showQaValue(g(j, 'description'))}>{g(j, 'title')}</button>
                     </div>
                   )

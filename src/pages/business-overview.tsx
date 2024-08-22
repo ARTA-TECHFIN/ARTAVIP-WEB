@@ -50,8 +50,8 @@ const BussinessOverview = (props: { cms: any }) => {
             props.cms.map((j: any, i: any) => {
               return (
                 <div className='col-span-8 md:col-span-1 flex items-center text-center flex-col p-4' key={i}>
-                  <h6 className={`${textClass.h6}`}>{g(j, 'title')}</h6>
-                  <p className={`${textClass.small_text}`}>{g(j, 'description')}</p>
+                  <h6 className={`h6-text`}>{g(j, 'title')}</h6>
+                  <p className={`small-text`}>{g(j, 'description')}</p>
                 </div>
               )
             })

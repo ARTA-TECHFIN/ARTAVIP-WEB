@@ -42,7 +42,7 @@ const PageFormDownloads: FC<{ k: PageAboutCmsT }> = ({ k }) => {
               return (
                 <div className="securities-trade-box" key={i}>
                   <div className='form-wrap'>
-                    <button style={{ fontWeight: '700px' }} className={`${textClass.small_text} text-black`} onClick={() => {
+                    <button style={{ fontWeight: '700px' }} className={`small-text text-black`} onClick={() => {
                       router.push(`${g(j, 'link')}`)
                     }}>{g(j, 'title')}</button>
                   </div>
@@ -58,7 +58,7 @@ const PageFormDownloads: FC<{ k: PageAboutCmsT }> = ({ k }) => {
               return (
                 <div className="securities-trade-box" key={i}>
                   <div className='form-wrap'>
-                    <button style={{ fontWeight: '700px' }} className={`${textClass.small_text} text-black`} onClick={() => {
+                    <button style={{ fontWeight: '700px' }} className={`small-text text-black`} onClick={() => {
                       router.push(`${g(j, 'link')}`)
                     }}>{g(j, 'title')}</button>
                   </div>
@@ -68,7 +68,7 @@ const PageFormDownloads: FC<{ k: PageAboutCmsT }> = ({ k }) => {
             })
           }
 
-          <div className={`${textClass.small_text} bg-white pt-4`}
+          <div className={`small-text bg-white pt-4`}
             dangerouslySetInnerHTML={{ __html: k.tips }}></div>
           <img style={{ width: '50px', height: '50px' }} src="/images/customers-services/Adobe_icon.png" onClick={() => {
             router.push(`https://get.adobe.com/tw/reader/`)

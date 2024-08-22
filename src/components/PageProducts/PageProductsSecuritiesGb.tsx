@@ -10,10 +10,10 @@ const PageProductsSecuritiesGb: FC<{ k: any }> = ({ k }) => {
   const g = (pageData: any, keyWithoutLang: string) => `${pageData[`${keyWithoutLang}_${locale}`]}`
 
   return (
-    <div id='securities-tm'>
+    <div id='securities-tm' className='text-arta-sand-100'>
       {/* Gb Stock */}
-      <h1 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' , paddingTop: '30px'}} className={`${textClass.h6} py-8`}>{t('products_info.global_trade_tips')}</h1>
-      <div className={`${textClass.small_text}`} style={{ paddingLeft: '10%', alignItems: 'center', justifyContent: 'center', paddingTop: '30px', backgroundColor: 'white' ,paddingRight: '10%',}}
+      <h1 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', paddingTop: '30px' }} className={`h6-text py-8`}>{t('products_info.global_trade_tips')}</h1>
+      <div className={`small-text trade-tips-form`} style={{ alignItems: 'center', justifyContent: 'center', paddingTop: '30px', backgroundColor: 'white' }}
         dangerouslySetInnerHTML={{ __html: g(k.tip, 'tips') }}></div>
       <hr className='securities-gap-hr'></hr>
     </div>

@@ -47,36 +47,24 @@ const HeroBanner = ({
   }, [])
 
   return (
-
-    //  <img src={image} alt="" className="object-cover w-full h-[60vh]" />
-    <div style={{ background: 'url(' + image + ') no-repeat', width: '100%', height: '600px', backgroundSize: 'cover' }} className='z-2'>
-      <div className={cn(
-          'absolute inset-0 mb-12 flex flex-col items-center justify-end pt-20 lg:mb-0',
-          simpleHeader ? 'lg:bottom-16' : 'lg:justify-center'
-        )}>
-           <div className="arta-container text-white">
-          <FadeUp>
-            <div className={cn(simpleHeader || fullWidth ? '' : 'md:w-1/2')}>
-              <p className={textClass.title_style2}>{label}</p>
-              <h1 className={`mt-1 ${textClass.h1_style2}`}>
-                {title}{' '}
-                {title2 ? (
-                  <>
-                    <br /> {title2}
-                  </>
-                ) : (
-                  ''
-                )}
-              </h1>
-              {description !== 'null' && !simpleHeader && (
-                <p className={`mt-4 ${textClass.body_regular_verah}`}>{description}</p>
-              )}
-            </div>
-          </FadeUp>
-        </div>
-      </div>
+    <div style={{ background: 'url(' + image + ') no-repeat', width: '100%', height: '500px', backgroundSize: 'cover' }} className='z-1'>
+      <p className={textClass.title_style2}>{label}</p>
+      <h1 className="mt-1 h1-text text-white head-title">
+        {title}{' '}
+        {title2 ? (
+          <>
+            <br /> {title2}
+          </>
+        ) : (
+          ''
+        )}
+      </h1>
+      {description !== 'null' && !simpleHeader && (
+        <p className={`mt-4 ${textClass.body_regular_verah}`}>{description}</p>
+      )}
     </div>
   )
 }
 
 export { HeroBanner }
+

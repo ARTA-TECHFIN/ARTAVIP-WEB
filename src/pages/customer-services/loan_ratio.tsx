@@ -50,44 +50,40 @@ const BussinessOverview = (props: { cms: any }) => {
           mobileImage='/images/info/211025_image_service_ratio_banner.png'
         />
 
-        <div className='grid grid-cols-10 gird-gap-x-12 bg-white ' style={{ paddingLeft: '20%', paddingRight: '20%' }}>
-          <div className='col-span-2 md:col-span-2 flex items-center text-center flex-col p-8'>
-            <img src='/images/info/211025_image_service_ratio_icon_01.png' style={{ width: '150px', height: '150px' }}></img>
-            <button style={{ color: 'black', fontSize: '20px' }} onClick={() => {
-              router.push(`${links.hkMarginableStock}`)
-            }}>{t('products_info.hk_marginable_stock')}
-            </button>
-          </div>
-          <div className='col-span-2 md:col-span-2 flex items-center text-center flex-col p-8'>
-            <img src='/images/info/211025_image_service_ratio_icon_02.png' style={{ width: '150px', height: '150px' }}></img>
-            <button style={{ color: 'black', fontSize: '20px' }} onClick={() => {
-              router.push(`${links.sseMarginableStock}`)
-            }}>{t('products_info.sse_marginable_stock')}
-            </button>
-          </div>
-          <div className='col-span-2 md:col-span-2 flex items-center text-center flex-col p-8'>
-            <img src='/images/info/211025_image_service_ratio_icon_03.png' style={{ width: '150px', height: '150px', paddingRight: '5%' }}></img>
-            <button style={{ color: 'black', fontSize: '20px' }} onClick={() => {
-              router.push(`${links.szseMarginableStock}`)
-            }}>{t('products_info.szse_marginable_stock')}
-            </button>
-          </div>
-          <div className='col-span-2 md:col-span-2 flex items-center text-center flex-col p-8'>
-            <img src='/images/info/211025_image_service_ratio_icon_05.png' style={{ width: '150px', height: '150px', paddingRight: '5%' }}></img>
-            <button style={{ color: 'black', fontSize: '20px' }} onClick={() => {
-              router.push(`${links.hkTradeTips}`)
-            }}>{t('products_info.stock_open')}
-            </button>
-          </div>
-          <div className='col-span-2 md:col-span-2 flex items-center text-center flex-col p-8'>
-            <img src='/images/info/211025_image_service_ratio_icon_06_tc.png' style={{ width: '150px', height: '150px', paddingRight: '5%' }}></img>
-            <button style={{ color: 'black', fontSize: '20px' }} onClick={() => {
-              router.push(`${links.futuresAccount}`)
-            }}>{t('products_info.futures_open')}
-            </button>
+        <div className='bg-white'>
+          <div className="arta-container relative z-1 mx-auto py-8  lg:space-x-[50px] md:py-[15px] md:text-center bg-white">
+            <div className="mt-8 grid grid-cols-3 gap-x-12 md:grid-cols-3 lg:grid-cols-3  place-items-center px-10 bg-white">
+              <div className='col-span-8 md:col-span-1 flex items-center text-center flex-col p-4 w-max'>
+                <img src='/images/info/211025_image_service_ratio_icon_01.png' style={{ width: '150px', height: '150px' }} onClick={() => {
+                  router.push(`${links.szseMarginableStock}`)
+                }}></img>
+                <button style={{ color: 'black', fontSize: '20px' }} onClick={() => {
+                  router.push(`${links.hkMarginableStock}`)
+                }}>{t('products_info.hk_marginable_stock')}
+                </button>
+              </div>
+              <div className='col-span-8 md:col-span-1 flex items-center text-center flex-col p-4 w-max'>
+                <img src='/images/info/211025_image_service_ratio_icon_02.png' style={{ width: '150px', height: '150px' }} onClick={() => {
+                  router.push(`${links.szseMarginableStock}`)
+                }}></img>
+                <button style={{ color: 'black', fontSize: '20px' }} onClick={() => {
+                  router.push(`${links.sseMarginableStock}`)
+                }}>{t('products_info.sse_marginable_stock')}
+                </button>
+              </div>
+              <div className='col-span-8 md:col-span-1 flex items-center text-center flex-col p-4 w-max'>
+                <img src='/images/info/211025_image_service_ratio_icon_03.png' style={{ width: '150px', height: '150px', paddingRight: '5%' }} onClick={() => {
+                  router.push(`${links.szseMarginableStock}`)
+                }}></img>
+                <button style={{ color: 'black', fontSize: '20px' }} onClick={() => {
+                  router.push(`${links.szseMarginableStock}`)
+                }}>{t('products_info.szse_marginable_stock')}
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-        <div style={{textAlign: 'right', paddingRight: '20%'}} className={`${textClass.small_text} bg-white`}>{t('products_info.loan_ratio_ps')}</div>
+        <div style={{ textAlign: 'right', paddingRight: '20%' }} className={`small-text bg-white`}>{t('products_info.loan_ratio_ps')}</div>
         <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[100px]" />
       </main>
       <Footer textColor="white" />

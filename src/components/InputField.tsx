@@ -13,7 +13,7 @@ const InputField = (props: propsT) => {
         'flex flex-col text-arta-sand-100' + (props.className ? ` ${props.className}` : '')
       }
     >
-      <span className={`mb-1 font-bold tracking-widest text-arta-sand-100 ${textClass.small_text}`}>
+      <span className={`mb-1 font-bold tracking-widest text-arta-sand-100 small-text`}>
         {props.label}
       </span>
       {props.children}

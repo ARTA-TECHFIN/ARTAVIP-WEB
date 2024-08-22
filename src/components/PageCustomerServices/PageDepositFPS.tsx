@@ -54,13 +54,13 @@ const PageDepositFPS: FC<{ k: PageAboutCmsT }> = ({ k }) => {
             </p>
           </Link>
           <div style={{ alignItems: 'center', justifyContent: 'center', paddingTop: '30px', backgroundColor: 'white' }} dangerouslySetInnerHTML={{ __html: g(k.data, 'fps') }}></div>
-          <h1 style={{color: 'grey' }} className={`${textClass.h6} `}>{g(k.data, 'text_1')}</h1>
+          <h1 style={{color: 'grey' }} className={`h6-text `}>{g(k.data, 'text_1')}</h1>
           {
             k.procedure.map((j: any, i: any) => {
               return (
                 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }} key={i}>
                   <img src={j.icon} style={{ height: '3%', width: '3%', paddingBottom: '10px' }}></img>
-                  <p className={`${textClass.small_text} `}>{z(j, 'title')}</p>
+                  <p className={`small-text `}>{z(j, 'title')}</p>
                 </div>
               )
             })
@@ -76,17 +76,17 @@ const PageDepositFPS: FC<{ k: PageAboutCmsT }> = ({ k }) => {
             <div className="bg-white arta-container relative z-1 mx-auto flex flex-col-reverse items-center pb-12 lg:flex-row lg:space-x-[40px] lg:py-[150px]">
               <div className="flex-1 text-center">
                 <img src='/images/customers-services/211025_image_service_deposit_icon_03.png' style={{ display: 'block', margin: '0 auto' }}></img>
-                <h1 className={`${textClass.small_text} text-black`}>{g(k.data, 'sub_msg_1')}</h1>
-                <h1 className={`${textClass.small_text} text-black`}>{g(k.data, 'sub_d_1')}</h1>
+                <h1 className={`small-text text-black`}>{g(k.data, 'sub_msg_1')}</h1>
+                <h1 className={`small-text text-black`}>{g(k.data, 'sub_d_1')}</h1>
               </div>
               <div className="mt-[25px] mb-4 flex-1 lg:mt-0 text-center">
               <img src='/images/customers-services/211025_image_service_deposit_icon_02.png' style={{ display: 'block', margin: '0 auto' }}></img>
-              <h1 className={`${textClass.small_text} text-black`}>{g(k.data, 'sub_msg_2')}</h1>
-              <h1 className={`${textClass.small_text} text-black`}>{g(k.data, 'sub_d_2')}</h1>
+              <h1 className={`small-text text-black`}>{g(k.data, 'sub_msg_2')}</h1>
+              <h1 className={`small-text text-black`}>{g(k.data, 'sub_d_2')}</h1>
               </div>
             </div>
           </div>
-          <h1 style={{color: 'grey', paddingTop: '40px' }} className={`${textClass.small_text}`} dangerouslySetInnerHTML={{ __html: g(k.data, 'note') }}></h1>
+          <h1 style={{color: 'grey', paddingTop: '40px' }} className={`small-text`} dangerouslySetInnerHTML={{ __html: g(k.data, 'note') }}></h1>
         </div >
 
         <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[90px]" />

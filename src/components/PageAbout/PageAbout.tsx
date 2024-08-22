@@ -61,8 +61,8 @@ const PageAbout: FC<{ k: PageAboutCmsT }> = ({ k }) => {
 
                 // eslint-disable-next-line react/jsx-key
                 <div key={index} style={{ paddingTop: '20px' }}>
-                  <h3 className={`${textClass.h6}`}>{p.title}</h3>
-                  <p className={`${textClass.small_text}`}>{p.des}</p>
+                  <h3 className={`h6-text`}>{p.title}</h3>
+                  <p className={`small-text`}>{p.des}</p>
                 </div>
               ))}
             </div>
@@ -80,7 +80,7 @@ const PageAbout: FC<{ k: PageAboutCmsT }> = ({ k }) => {
             </div>
             <p className='join_us_sub_des-1'>{parse(k.joinUs.dutyDes)}</p>
             {/* <h4 className='join_us_backgroud-1-h1'>{k.joinUs.advTitle}</h4> */}
-            <p className={`${textClass.small_text}`}>{parse(k.joinUs.workWithArtaDescription)}</p>
+            <p className={`small-text`}>{parse(k.joinUs.workWithArtaDescription)}</p>
 
           </div>
         </div>

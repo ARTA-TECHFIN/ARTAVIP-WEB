@@ -14,7 +14,7 @@ const WechatPopup = ({togglePopup, qrCode}: any) => {
             <line x1="17.3536" y1="0.353553" x2="0.353553" y2="17.3536" stroke="#593725"/>
           </svg>
           <Image alt="Arta WeChat QR code" src={qrCode || "/images/wechat.jpg"} width={400} height={400} />
-          <p className={`${textClass.h6} mt-4 text-center text-arta-secondary w-full absolute left-1/2 transform -translate-x-1/2`}>{t("contact_us.scan")}</p>
+          <p className={`h6-text mt-4 text-center text-arta-secondary w-full absolute left-1/2 transform -translate-x-1/2`}>{t("contact_us.scan")}</p>
         </div>
       </div>
     </div>

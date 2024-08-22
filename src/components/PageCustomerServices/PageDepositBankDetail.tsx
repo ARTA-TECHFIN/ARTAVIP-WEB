@@ -60,13 +60,13 @@ const PageDepositBankDetail: FC<{ k: PageAboutCmsT }> = ({ k }) => {
             <div className="bg-white arta-container relative z-1 mx-auto flex flex-col-reverse items-center pb-12 lg:flex-row lg:space-x-[40px] lg:py-[150px]">
               <div className="flex-1 text-center">
                 <img src='/images/customers-services/211025_image_service_deposit_icon_03.png' style={{ display: 'block', margin: '0 auto' }}></img>
-                <h1 className={`${textClass.small_text} text-black`}>{g(k.data, 'sub_msg_1')}</h1>
-                <h1 className={`${textClass.small_text} text-black`}>{g(k.data, 'sub_d_1')}</h1>
+                <h1 className={`small-text text-black`}>{g(k.data, 'sub_msg_1')}</h1>
+                <h1 className={`small-text text-black`}>{g(k.data, 'sub_d_1')}</h1>
               </div>
               <div className="mt-[25px] mb-4 flex-1 lg:mt-0 text-center">
               <img src='/images/customers-services/211025_image_service_deposit_icon_05.png' style={{ display: 'block', margin: '0 auto' }}></img>
-              <h1 className={`${textClass.small_text} text-black`}>{g(k.data, 'sub_msg_2')}</h1>
-              <h1 className={`${textClass.small_text} text-black`}>{g(k.data, 'sub_d_2')}</h1>
+              <h1 className={`small-text text-black`}>{g(k.data, 'sub_msg_2')}</h1>
+              <h1 className={`small-text text-black`}>{g(k.data, 'sub_d_2')}</h1>
               </div>
             </div>
           </div>

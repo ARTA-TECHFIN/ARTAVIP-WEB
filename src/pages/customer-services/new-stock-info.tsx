@@ -14,25 +14,8 @@ interface responseT {
   content: string
 }
 
-const fetchIpoInfoData = async () => {
-  const res = await fetch(`https://webcontent.megahubhk.com/Web/Freeman/en/IPO/IPOList`)
-  const data = await res.text()
-  let response: responseT[] = []
-  response.push({
-    content: data,
-  })
-}
-
-const fetchIpoCalendarInfoData = async () => {
-  const res = await fetch(`https://webcontent.megahubhk.com/Web/Freeman/en/IPO/IPOList`)
-  const data = await res.text()
-  return data
-}
-
-
 const massageData = (pageData: any, locale: string | undefined = 'en') => {
   const { convert } = require('html-to-text');
-  fetchIpoInfoData()
   return {
     data: pageData.data,
     sub_d_1_link:pageData.data.attributes.sub_d_1_link,

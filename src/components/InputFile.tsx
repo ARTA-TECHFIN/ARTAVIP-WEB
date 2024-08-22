@@ -16,12 +16,6 @@ const InputFile = forwardRef<HTMLInputElement, {}>((props, ref) => {
         </p>
         <p className="mt-4 text-xs">{t('join_us.upload_limitation')}</p>
       </div>
-      {/* <input
-        ref={ref}
-        type="file"
-        className={`${textClass.body_regular} absolute inset-0 opacity-0 focus:outline-none`}
-        {...props}
-      /> */}
     </div>
   )
 })

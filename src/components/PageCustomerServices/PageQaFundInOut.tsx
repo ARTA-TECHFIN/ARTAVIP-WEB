@@ -70,13 +70,13 @@ const PageQaFundInOut: FC<{ k: PageAboutCmsT }> = ({ k }) => {
             </p>
           </Link>
           <div style={{ paddingRight: '10%' }}>
-            <div style={{color: 'gray', backgroundColor: 'white' }} className={`${textClass.title}`}>{g(k.data.attributes, 'headline')}</div>
+            <div style={{color: 'gray', backgroundColor: 'white' }} className={`h6-text`}>{g(k.data.attributes, 'headline')}</div>
             <div className='qa-open-account-left'>
               {
                 k.data.attributes.info.map((j: any, i: any) => {
                   return (
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }} key={i}>
-                      <button className={`${textClass.small_text} `} style={{ color: 'gray', fontWeight: '700px', border: '0.5px solid black', width: '100%', boxSizing: 'content-box', margin: '0 auto' }}
+                      <button className={`small-text `} style={{ color: 'gray', fontWeight: '700px', border: '0.5px solid black', width: '100%', boxSizing: 'content-box', margin: '0 auto' }}
                         onClick={showQaValue(g(j, 'description'))}>{g(j, 'title')}</button>
                     </div>
                   )
@@ -87,13 +87,13 @@ const PageQaFundInOut: FC<{ k: PageAboutCmsT }> = ({ k }) => {
           </div>
 
           <div style={{ paddingRight: '10%' }}>
-            <div style={{color: 'gray', backgroundColor: 'white' }} className={`${textClass.title}`}>{g(k.data2.attributes, 'headline')}</div>
+            <div style={{color: 'gray', backgroundColor: 'white' }} className={`h6-text`}>{g(k.data2.attributes, 'headline')}</div>
             <div className='qa-open-account-left'>
               {
                 k.data2.attributes.info.map((j: any, i: any) => {
                   return (
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }} key={i}>
-                      <button className={`${textClass.small_text} `} style={{ color: 'gray', fontWeight: '700px', border: '0.5px solid black', width: '100%', boxSizing: 'content-box', margin: '0 auto' }}
+                      <button className={`small-text `} style={{ color: 'gray', fontWeight: '700px', border: '0.5px solid black', width: '100%', boxSizing: 'content-box', margin: '0 auto' }}
                         onClick={showQaValue2(g(j, 'description'))}>{g(j, 'title')}</button>
                     </div>
                   )

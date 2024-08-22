@@ -17,6 +17,7 @@ const PageProductsFutures: FC<{ k: PageAboutCmsT }> = ({ k }) => {
   const router = useRouter()
   const { locale } = router
   const g = (pageData: any, keyWithoutLang: string) => `${pageData[`${keyWithoutLang}_${locale}`]}`
+  const u = (pageData: any, keyWithoutLang: string) => `${pageData.attributes[`${keyWithoutLang}_${locale}`]}`
   return (
     <>
       <Seo
@@ -29,22 +30,22 @@ const PageProductsFutures: FC<{ k: PageAboutCmsT }> = ({ k }) => {
       <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[152px]" />
       <div id="container_futures">
         <h1 style={{fontWeight: '700px' }} className={`${textClass.h3_style2} pt-5 pb-3 text-white flex items-center justify-end`}>{k.title}</h1>
-        <h1 style={{fontWeight: '700px' }} className={`${textClass.h6} pt-2 pb-3 text-white flex items-center justify-end`}>{k.description}</h1>
+        <h1 style={{fontWeight: '700px' }} className={`h6-text pt-2 pb-3 text-white flex items-center justify-end`}>{k.description}</h1>
       </div>
 
       <div id="futures_text_1">
-        <h1 style={{alignItems: 'center', justifyContent: 'left', fontWeight: '700px' }} className={`${textClass.h6} py-2 flex`}>{k.ex_des_1}</h1>
+        <h1 style={{alignItems: 'center', justifyContent: 'left', fontWeight: '700px' }} className={`h6-text py-2 flex`}>{k.ex_des_1}</h1>
         <div className="fur-wrap">
           <img src='/images/products/icon_2.png' style={{ backgroundColor: 'none' }}></img>
           <div className="fur-wrap-text">
-            <div className={`${textClass.small_text} first`}>{k.ex_des_2}</div>
-            <div className={`${textClass.small_text} second`}>{k.ex_des_2_d}</div>
+            <div className={`small-text first`}>{k.ex_des_2}</div>
+            <div className={`small-text second`}>{k.ex_des_2_d}</div>
           </div>
         </div>
       </div>
 
       <div id="futures_adv_1">
-        <h1 style={{ alignItems: 'center', justifyContent: 'center' }}  className={`${textClass.h6}`} dangerouslySetInnerHTML={{ __html: k.ex_des_3 }}></h1>
+        <h1 style={{ alignItems: 'center', justifyContent: 'center' }}  className={`h6-text`} dangerouslySetInnerHTML={{ __html: k.ex_des_3 }}></h1>
         <div style={{ alignItems: 'center', justifyContent: 'center'}} className={` pt-2 flex`}>
           <ButtonAnimated
             as="a"
@@ -56,6 +57,11 @@ const PageProductsFutures: FC<{ k: PageAboutCmsT }> = ({ k }) => {
 
 
       </div>
+      <div style={{ backgroundColor: 'white', paddingLeft: '10%', paddingTop: '30px' }}>
+          <table style={{backgroundColor: 'white', width: '90%' }} className='small-text'
+            dangerouslySetInnerHTML={{ __html: u(k.cms, 'info') }}></table>
+          <p style={{ paddingTop: '30px' }} className='small-text' dangerouslySetInnerHTML={{ __html: u(k.cms, 'tips') }}></p>
+        </div>
       <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[90px]" />
       <Footer textColor="white" />
     </>

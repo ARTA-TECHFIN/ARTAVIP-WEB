@@ -47,11 +47,11 @@ const PageQa: FC<{ k: PageAboutCmsT }> = ({ k }) => {
                   <div key={i} className='col-span-2 md:col-span-1 flex flex-col p-4'>
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                       <img src={j.attributes.adv_icon_url} style={{ width: '40px', height: '40px' }} alt="" />
-                      <button className={`mt-4 ${textClass.h6}`} style={{ color: 'gray', fontWeight: '700px' }} onClick={() => {
+                      <button className={`mt-4 h6-text`} style={{ color: 'gray', fontWeight: '700px' }} onClick={() => {
                         router.push(`${g(j, 'link')}`)
                       }}>{g(j, 'title')}</button>
                     </div>
-                    <p className={`${textClass.small_text}`} dangerouslySetInnerHTML={{ __html: g(j, 'description') }}></p>
+                    <p className={`small-text`} dangerouslySetInnerHTML={{ __html: g(j, 'description') }}></p>
                   </div>
                 )
               })

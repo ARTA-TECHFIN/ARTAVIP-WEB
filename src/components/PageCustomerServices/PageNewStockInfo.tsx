@@ -69,7 +69,7 @@ const PageNewStockInfo: FC<{ k: PageAboutCmsT }> = ({ k }) => {
               <div className="mt-[25px] mb-4 flex-1 lg:mt-0 text-center">
                 <img src='/images/customers-services/211025_image_service_deposit_icon_05.png' style={{ display: 'block', margin: '0 auto' }}></img>
                 <h1 className={`${textClass.title_verah} text-black`}>{g(k.data, 'sub_t_2')}</h1>
-                <h1 className={`${textClass.small_text} text-black pt-2`}>{g(k.data, 'sub_d_2')}</h1>
+                <h1 className={`small-text text-black pt-2`}>{g(k.data, 'sub_d_2')}</h1>
               </div>
             </div>
           </div>

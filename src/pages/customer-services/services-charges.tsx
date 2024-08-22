@@ -48,7 +48,6 @@ const BussinessOverview = (props: { cms: any,files: any,heroBanner:any }) => {
       ga="Service Charges"
     />
     <Header textColor="brown" />
-    <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[152px]" />
     <main className="flex flex-col text-arta-sand-100">
         <HeroBanner
           title={g(props.cms, 'title')}

@@ -862,12 +862,11 @@ header{
   padding-bottom: 50px;
 }
 #securities-bd-text{
-  background:url(/images/products/Untitled.png) no-repeat;
+  background:url(/images/products/ses.png) no-repeat;
   background-size: cover;
   background-size: 100% 100%;
   height: auto;
   letter-spacing: normal;
-  color: rgb(150, 150, 150);
 }
 .contact-1{
   padding-top: 30px;

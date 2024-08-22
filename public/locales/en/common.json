@@ -101,6 +101,10 @@
     "about_arta": "About ARTA"
   },
   "products_info": {
+    "hk_market": "HK Market",
+    "us_market": "US Market",
+    "global_market": "Global Market",
+    "ss_market": "SH & SZ Stock Connect",
     "hk_marginable_stock": "HK Marginable Stock",
     "sse_marginable_stock": "SSE Marginable Stock",
     "szse_marginable_stock": "SZSE Marginable Stock",
@@ -121,7 +125,7 @@
   },
   "customer_service": {
     "back": "Back",
-    "new_stock_info": "New Stock Info",
+    "new_stock_info": "IPO Info",
     "service_charges": "Service Charges",
     "important_notice": "Important Notice",
     "fund_withdrawals_and_deposits": "Fund Deposits",
@@ -135,7 +139,7 @@
     "button": "Details",
     "notice_1": "Email",
     "notice_2": "Telephone",
-    "loan_ratio": "Loan Ratio",
+    "loan_ratio": "Lending Ratio",
     "form_download": "Form Download",
     "terms_of_service": "Terms Of Service",
     "qa_open_account": "QA Open Account",
@@ -144,7 +148,7 @@
     "qa_trade_operation": "QA Trade Operation",
     "qa_in_out": "QA IN OUT",
     "qa_credit": "QA Funding",
-    "qa": "QA"
+    "qa": "FAQs"
   },
   "about_us": {
     "about_us_profile": "Company Profile",

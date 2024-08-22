@@ -2,7 +2,7 @@
   "site_title": "Arta TechFin",
   "page_title": {
     "home": "主頁",
-    "about_us": "關於裕承環球",
+    "about_us": "關於我們",
     "products": "產品",
     "securities": "證券",
     "futures": "期貨",
@@ -98,6 +98,10 @@
     "about_arta": "關於裕承科金"
   },
   "products_info": {
+    "hk_market": "港股市場",
+    "us_market": "美股市場",
+    "global_market": "環球股票",
+    "ss_market": "滬深港通",
     "hk_marginable_stock": "股票借貸比率",
     "sse_marginable_stock": "上海A股借貸比率",
     "szse_marginable_stock": "深圳A股借貸比率",

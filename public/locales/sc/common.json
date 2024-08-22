@@ -2,7 +2,7 @@
   "site_title": "Arta TechFin",
   "page_title": {
     "home": "主页",
-    "about_us": "关于裕承环球",
+    "about_us": "关于我们",
     "products": "产品",
     "securities": "证券",
     "futures": "期货",
@@ -95,9 +95,13 @@
     "explore_more": "探索更多",
     "learn_more": "探索更多",
     "show_more": "探索更多",
-    "about_arta": "关于裕承科金"
+    "about_arta": "关于我们"
   },
   "products_info": {
+    "hk_market": "港股市场",
+    "us_market": "美股市场",
+    "global_market": "环球股票",
+    "ss_market": "沪深港通",
     "hk_marginable_stock": "股票借贷比率",
     "sse_marginable_stock": "上海A股借贷比率",
     "szse_marginable_stock": "深圳A股借贷比率",

@@ -47,34 +47,14 @@ const HeroBanner = ({
   }, [])
 
   return (
-    <div
-      className={cn(
-        'relative z-2 w-full overflow-hidden',
-        simpleHeader ? 'h-[60vh]' : 'h-app-height md:h-[0] md:pb-[56.25%]'
-      )}
-    >
-      <div ref={bannerImage} className="absolute h-full w-full overflow-hidden">
-        <img
-          src={simpleHeader ? '/images/investor-relations/top-inner-banner.jpg' : image}
-          alt={title}
-          className="hidden h-full w-full object-cover md:block"
-        />
-        <img
-          src={
-            simpleHeader ? '/images/investor-relations/mobile-top-inner-banner.jpg' : mobileImage
-          }
-          alt={title}
-          className="h-full w-full object-cover md:hidden"
-        />
-      </div>
-      {/* <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white" /> */}
-      <div
-        className={cn(
+
+    //  <img src={image} alt="" className="object-cover w-full h-[60vh]" />
+    <div style={{ background: 'url(' + image + ') no-repeat', width: '100%', height: '600px', backgroundSize: 'cover' }} className='z-2'>
+      <div className={cn(
           'absolute inset-0 mb-12 flex flex-col items-center justify-end pt-20 lg:mb-0',
           simpleHeader ? 'lg:bottom-16' : 'lg:justify-center'
-        )}
-      >
-        <div className="arta-container banner-text-shadow text-white">
+        )}>
+           <div className="arta-container text-white">
           <FadeUp>
             <div className={cn(simpleHeader || fullWidth ? '' : 'md:w-1/2')}>
               <p className={textClass.title_style2}>{label}</p>

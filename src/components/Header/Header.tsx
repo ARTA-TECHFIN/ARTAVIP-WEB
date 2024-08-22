@@ -82,16 +82,6 @@ const Header: React.FC<{
 
   const pageInfoList: pageInfoItemT[] = [
     {
-      pageName: t('page_title.home'),
-      title: '',
-      paragraph: headerData['home'],
-      buttonText: t('page_title.home'),
-      href: links.aboutUsProfile,
-      pages: [
-        { title: t('page_title.home'), link: links.home },
-      ],
-    },
-    {
       pageName: t('page_title.about_us'),
       title: '',
       paragraph: headerData['about_us'],
@@ -101,17 +91,6 @@ const Header: React.FC<{
         { title: t('about_us.about_us_profile'), link: links.aboutUsProfile },
         { title: t('about_us.business_overview'), link: links.bussinessOverview },
         { title: t('about_us.contact_us'), link: links.contact },
-      ],
-    },
-    {
-      pageName: t('page_title.products'),
-      title: '',
-      paragraph: headerData['product'],
-      buttonText: t('page_title.products'),
-      href: links.home,
-      pages: [
-        { title: t('page_title.securities'), link: links.productsSecurities },
-        { title: t('page_title.futures'), link: links.productsFutures },
       ],
     },
     {
@@ -137,10 +116,12 @@ const Header: React.FC<{
       buttonText:  t('page_title.products_info'),
       href: links.tradeTips,
       pages: [
-        { title: t('products_info.hk_trade_tips'), link: `${links.hkTradeTips}` },
-        { title: t('products_info.us_trade_tips'), link: `${links.usTradeTips}` },
-        { title: t('products_info.global_trade_tips'), link: `${links.globalTradeTips}` },
-        { title: t('products_info.ss_trade_tips'), link: `${links.ssTradeTips}` },
+        { title: t('page_title.securities'), link: links.productsSecurities },
+        { title: t('page_title.futures'), link: links.productsFutures },
+        // { title: t('products_info.hk_trade_tips'), link: `${links.hkTradeTips}` },
+        // { title: t('products_info.us_trade_tips'), link: `${links.usTradeTips}` },
+        // { title: t('products_info.global_trade_tips'), link: `${links.globalTradeTips}` },
+        // { title: t('products_info.ss_trade_tips'), link: `${links.ssTradeTips}` },
       ],
     },
     {

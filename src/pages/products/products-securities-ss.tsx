@@ -1,9 +1,8 @@
 import type { GetServerSideProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import aboutUsJson from 'apidata/about-us.json'
-import PageProductsSecurities from 'src/components/PageProducts/PageProductsSecurities'
-import tradeJson from 'apidata/trade.json'
-import { HeroBanner } from 'src/components/HeroBanner'
+import { useTranslation } from 'next-i18next'
+import InvestorLayout, { TABS } from 'src/components/PageProducts/InvestorLayout'
+import PageProductsSecuritiesSs from 'src/components/PageProducts/PageProductsSecuritiesSs'
 
 const fetchData = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/product-securities?populate=*`)
@@ -11,19 +10,13 @@ const fetchData = async () => {
   return data
 }
 
-const fetchHkData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/product-hk-market?populate=*`)
+const fetchSsCmsData = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/ss-trade-tips?populate=*`)
   const data = await res.json()
   return data
 }
 
-const fetchUsData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/product-us-market?populate=*`)
-  const data = await res.json()
-  return data
-}
-
-const massageData = (pageData: any, hkData: any, usData: any, locale: string | undefined = 'en') => {
+const massageData = (pageData: any, usTipsData: any, locale: string | undefined = 'en') => {
   const g = (keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
 
   return {
@@ -31,8 +24,7 @@ const massageData = (pageData: any, hkData: any, usData: any, locale: string | u
     priority: g('priority'),
     avg:pageData.data.attributes.adv_1,
     link: pageData.data.attributes.link,
-    hk:hkData.data.attributes,
-    us:usData.data.attributes,
+    tip:usTipsData.data.attributes,
     heroBanner: {
       description: '',
       image: '/images/products/securities2.jpg',
@@ -46,18 +38,33 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const useLocalCms = process.env.USE_LOCAL_CMS_DATA === 'true'
 
   const pageData = await fetchData()
-  const hkData = await fetchHkData()
-  const usData = await fetchUsData()
-  const trade=tradeJson.data.attributes
+  const ssTipsData = await fetchSsCmsData()
 
   return {
     props: {
-      k: massageData(pageData,hkData,usData, locale),
-      u: trade,
+      k: massageData(pageData,ssTipsData, locale),
       ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }
 }
 
-export default PageProductsSecurities
-export type PageAboutCmsT = ReturnType<typeof massageData>
+const SecuritiesPage = (props: { k: any }) => {
+  const { t } = useTranslation()
+
+  return (
+    <InvestorLayout
+      k={props.k}
+      tabType={TABS.ss_stock}
+      gaLog={true}
+      seo={{
+        title: `${t('page_title.securities')} | Arta TechFin`,
+        description: '',
+        keywords: t('page_title.securities'),
+      }}
+    >
+      <PageProductsSecuritiesSs k={props.k} />
+    </InvestorLayout>
+  )
+}
+
+export default SecuritiesPage

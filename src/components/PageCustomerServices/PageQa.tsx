@@ -44,7 +44,7 @@ const PageQa: FC<{ k: PageAboutCmsT }> = ({ k }) => {
               k.data.map((j: any, i: any) => {
                 return (
 
-                  <div key={i} className='col-span-2 md:col-span-1 flex flex-col p-4'>
+                  <div key={i} className='col-span-2 md:col-span-1 flex flex-col p-4 qa-min-box'>
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                       <img src={j.attributes.adv_icon_url} style={{ width: '40px', height: '40px' }} alt="" />
                       <button className={`mt-4 h6-text`} style={{ color: 'gray', fontWeight: '700px' }} onClick={() => {
@@ -59,7 +59,7 @@ const PageQa: FC<{ k: PageAboutCmsT }> = ({ k }) => {
           </div>
         </div>
 
-        <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[90px]" />
+        <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full white-pic" />
       </main>
       <Footer textColor="white" />
     </>

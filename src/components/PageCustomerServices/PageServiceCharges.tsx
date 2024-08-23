@@ -50,7 +50,7 @@ const PageServiceCharges: FC<{ k: PageAboutCmsT }> = ({ k }) => {
             }
         
     </div>
-        <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[100px]" />
+        <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full white-pic" />
       </main>
       <Footer textColor="white" />
     </>

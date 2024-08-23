@@ -74,7 +74,7 @@ const PageFormDownloads: FC<{ k: PageAboutCmsT }> = ({ k }) => {
             router.push(`https://get.adobe.com/tw/reader/`)
           }} />
         </div>
-        <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[90px]" />
+        <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full white-pic" />
       </main>
       <Footer textColor="white" />
     </>

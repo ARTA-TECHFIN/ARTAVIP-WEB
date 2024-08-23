@@ -13,7 +13,7 @@ const PageProductsSecuritiesUs: FC<{ k: any }> = ({ k }) => {
     <div id='securities-tm' className='text-arta-sand-100'>
       {/* US Stock */}
       <h1 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }} className={`h6-text py-5`}>{g(k.us, 'us_trade')}</h1>
-      <h1 style={{ display: 'flex', alignItems: 'center', justifyContent: 'left', backgroundColor: 'grey', width: '80%', position: "relative", left: '10%' }} className={`h6-text h-10`}>{g(k.us, 'us_eastern_trade')}</h1>
+      <h1 style={{ display: 'flex', alignItems: 'center', justifyContent: 'left', backgroundColor: 'grey', position: "relative"}} className={`h6-text h-10 securities-trade-top-box`}>{g(k.us, 'us_eastern_trade')}</h1>
       <div id="securities-trade-box">
         <hr className='securities-hr'></hr>
         <div className='wrap'>
@@ -21,8 +21,8 @@ const PageProductsSecuritiesUs: FC<{ k: any }> = ({ k }) => {
           <div className={`right small-text`}>{g(k.us, 'us_eastern_trade_tm')}</div>
         </div>
       </div>
-      <div style={{ paddingTop: '10px' }}></div>
-      <h1 style={{ display: 'flex', alignItems: 'center', justifyContent: 'left', backgroundColor: 'grey', width: '80%', position: "relative", left: '10%' }} className={`h6-text h-10`}>{g(k.us, 'us_trade_hk')}</h1>
+      <div style={{ paddingTop: '10px', backgroundColor: 'white' }}></div>
+      <h1 style={{ display: 'flex', alignItems: 'center', justifyContent: 'left', backgroundColor: 'grey', position: "relative" }} className={`h6-text h-10 securities-trade-top-box`}>>{g(k.us, 'us_trade_hk')}</h1>
       <div id="securities-trade-box">
         <hr className='securities-hr'></hr>
         <div className='wrap'>
@@ -35,12 +35,13 @@ const PageProductsSecuritiesUs: FC<{ k: any }> = ({ k }) => {
           <div className={`right small-text`}>{g(k.us, 'us_trade_winter_tm')}</div>
         </div>
       </div>
-      <div style={{ paddingTop: '50px' }}>
-        <h1 style={{ width: '80%', position: "relative", left: '10%', paddingBottom: '50px' }} className={`small-text h-10`} dangerouslySetInnerHTML={{ __html: g(k.us, 'us_trade_remark') }}></h1>
+      <div style={{ paddingTop: '30px' , backgroundColor: 'white'}}>
+        <h1 style={{position: "relative", paddingBottom: '50px' }} className={`small-text h-10 securities-trade-top-box`} dangerouslySetInnerHTML={{ __html: g(k.us, 'us_trade_remark') }}></h1>
       </div>
-
-      <h1 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', paddingTop: '50px' }} className={`h6-text py-8`}>{t('products_info.us_trade_tips')}</h1>
-      <div className={`small-text trade-tips-form`} style={{alignItems: 'center', justifyContent: 'center', paddingTop: '50px', backgroundColor: 'white'}}
+      <div style={{ paddingTop: '30px', backgroundColor: 'white' }}>
+      <h1 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold'}} className={`h6-text py-8`}>{t('products_info.us_trade_tips')}</h1>
+      </div>
+      <div className={`small-text trade-tips-form`} style={{alignItems: 'center', justifyContent: 'left', paddingTop: '30px', backgroundColor: 'white'}}
         dangerouslySetInnerHTML={{ __html: g(k.tip, 'tips') }}></div>
       <hr className='securities-gap-hr'></hr>
     </div>

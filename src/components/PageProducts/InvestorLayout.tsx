@@ -133,7 +133,7 @@ const InvestorLayout: FC<propsT> = ({
               {
                 k.avg.map((j: any, index: number) => {
                   return (
-                    <div key={index} className='col-span-8 md:col-span-1 flex items-center text-center flex-col p-4 w-max'>
+                    <div key={index} className='col-span-4 md:col-span-1 flex items-center text-center flex-col p-4 w-max'>
                       <h1 className={`mt-4 h6-text`} style={{ color: '#20365B' }}>{g(j, 'title')}</h1>
                       <p className={`mt-4 text-xs`}>{g(j, 'description')}</p>
                       <img src={j.adv_icon_url} />

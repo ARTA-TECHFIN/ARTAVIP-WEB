@@ -106,7 +106,7 @@ const InfoTips = (props: { cms: any}) => {
            </div>
         </div>
       </div>
-    <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[100px]" />
+    <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full white-pic" />
     <Footer textColor="white" />
     </>
   )

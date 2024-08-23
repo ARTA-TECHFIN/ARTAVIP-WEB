@@ -48,7 +48,7 @@ const PageNewArrangementContent: NextPage = () => {
   return (
     <div className="pt-16">
       <Link href={links.investor}>
-        <p className={`${textClass.body_regular} mb-12 flex gap-4`}>
+        <p className={`body-regular-text mb-12 flex gap-4`}>
           <svg
             className="mt-[6px]"
             width="8"

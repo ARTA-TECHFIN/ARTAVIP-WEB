@@ -62,7 +62,7 @@ const PageProductsFutures: FC<{ k: PageAboutCmsT }> = ({ k }) => {
             dangerouslySetInnerHTML={{ __html: u(k.cms, 'info') }}></table>
           <p style={{ paddingTop: '30px' }} className='small-text' dangerouslySetInnerHTML={{ __html: u(k.cms, 'tips') }}></p>
         </div>
-      <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[90px]" />
+      <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full white-pic" />
       <Footer textColor="white" />
     </>
   )

@@ -54,7 +54,7 @@ const GlobalStockTips = (props: { cms: any, heroBanner: any }) => {
         />
         <div style={{ paddingLeft: '5%', paddingRight: '5%', fontSize: '15px', alignItems: 'center', justifyContent: 'center', paddingTop: '30px', backgroundColor: 'white' }}
           dangerouslySetInnerHTML={{ __html: g(props.cms, 'tips') }}></div>
-        <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[100px]" />
+        <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full white-pic" />
       </main>
       <Footer textColor="white" />
     </>

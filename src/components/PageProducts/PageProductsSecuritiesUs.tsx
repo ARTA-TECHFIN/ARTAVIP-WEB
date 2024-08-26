@@ -22,7 +22,7 @@ const PageProductsSecuritiesUs: FC<{ k: any }> = ({ k }) => {
         </div>
       </div>
       <div style={{ paddingTop: '10px', backgroundColor: 'white' }}></div>
-      <h1 style={{ display: 'flex', alignItems: 'center', justifyContent: 'left', backgroundColor: 'grey', position: "relative" }} className={`h6-text h-10 securities-trade-top-box`}>>{g(k.us, 'us_trade_hk')}</h1>
+      <h1 style={{ display: 'flex', alignItems: 'center', justifyContent: 'left', backgroundColor: 'grey', position: "relative" }} className={`h6-text h-10 securities-trade-top-box`}>{g(k.us, 'us_trade_hk')}</h1>
       <div id="securities-trade-box">
         <hr className='securities-hr'></hr>
         <div className='wrap'>

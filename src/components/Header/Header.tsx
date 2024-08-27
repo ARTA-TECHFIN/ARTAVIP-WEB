@@ -101,12 +101,10 @@ const Header: React.FC<{
       href: links.servicesCharges,
       pages: [
         { title: t('customer_service.service_charges'), link: `${links.servicesCharges}` },
-        { title: t('customer_service.important_notice'), link: `${links.importantNotice}` },
         { title: t('customer_service.fund_withdrawals_and_deposits'),link: `${links.fundDeposites}` },
-        { title: t('customer_service.loan_ratio'),link: `${links.loanRatio}`},
         { title: t('customer_service.form_download'), link: `${links.formDownload}` },
-        { title: t('customer_service.new_stock_info'), link: `${links.newStockInfo}` },
         { title: t('customer_service.qa'), link: `${links.qa}` },
+        { title: t('customer_service.important_notice'), link: `${links.importantNotice}` },
       ],
     },
     {
@@ -117,6 +115,8 @@ const Header: React.FC<{
       href: links.tradeTips,
       pages: [
         { title: t('page_title.securities'), link: links.productsSecurities },
+        { title: t('customer_service.loan_ratio'),link: `${links.loanRatio}`},
+        { title: t('customer_service.new_stock_info'), link: `${links.newStockInfo}` },
         { title: t('page_title.futures'), link: links.productsFutures },
         // { title: t('products_info.hk_trade_tips'), link: `${links.hkTradeTips}` },
         // { title: t('products_info.us_trade_tips'), link: `${links.usTradeTips}` },

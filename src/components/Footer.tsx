@@ -119,16 +119,7 @@ const Footer: FC<{
                 </a>
               </li>
 
-              <li>
-                <a title={t('customer_service.important_notice')} href={links.importantNotice}>
-                  <span>
-                    {t('customer_service.important_notice')}{' '}
-                    <span className="cursor-pointer hover:underline">
-                      {footerData.important_notice}
-                    </span>
-                  </span>
-                </a>
-              </li>
+
               <li>
                 <a title={t('customer_service.fund_withdrawals_and_deposits')} href={links.fundDeposites}>
                   <span>
@@ -139,16 +130,7 @@ const Footer: FC<{
                   </span>
                 </a>
               </li>
-              <li>
-                <a title={t('customer_service.loan_ratio')} href={links.loanRatio}>
-                  <span>
-                    {t('customer_service.loan_ratio')}{' '}
-                    <span className="cursor-pointer hover:underline">
-                      {footerData.loan_ratio}
-                    </span>
-                  </span>
-                </a>
-              </li>
+
               <li>
                 <a title={t('customer_service.form_download')} href={links.formDownload}>
                   <span>
@@ -159,22 +141,23 @@ const Footer: FC<{
                   </span>
                 </a>
               </li>
-              <li>
-                <a title={t('customer_service.new_stock_info')} href="fax:+852 2507 2009">
-                  <span>
-                    {t('customer_service.new_stock_info')}{' '}
-                    <span className="cursor-pointer hover:underline">
-                      {footerData.new_stock_info}
-                    </span>
-                  </span>
-                </a>
-              </li>
+
               <li>
                 <a title={t('customer_service.qa')} href={links.qa}>
                   <span>
                     {t('customer_service.qa')}{' '}
                     <span className="cursor-pointer hover:underline">
                       {footerData.qa}
+                    </span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a title={t('customer_service.important_notice')} href={links.importantNotice}>
+                  <span>
+                    {t('customer_service.important_notice')}{' '}
+                    <span className="cursor-pointer hover:underline">
+                      {footerData.important_notice}
                     </span>
                   </span>
                 </a>
@@ -190,6 +173,26 @@ const Footer: FC<{
                     {t('page_title.securities')}{' '}
                     <span className="cursor-pointer hover:underline">
                       {footerData.securities}
+                    </span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a title={t('customer_service.loan_ratio')} href={links.loanRatio}>
+                  <span>
+                    {t('customer_service.loan_ratio')}{' '}
+                    <span className="cursor-pointer hover:underline">
+                      {footerData.loan_ratio}
+                    </span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a title={t('customer_service.new_stock_info')} href="fax:+852 2507 2009">
+                  <span>
+                    {t('customer_service.new_stock_info')}{' '}
+                    <span className="cursor-pointer hover:underline">
+                      {footerData.new_stock_info}
                     </span>
                   </span>
                 </a>

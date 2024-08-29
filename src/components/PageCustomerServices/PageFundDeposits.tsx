@@ -28,7 +28,7 @@ const PageFundDeposits: FC<{ k: PageAboutCmsT }> = ({ k }) => {
       <Header textColor="brown" />
       <main className="flex flex-col text-arta-sand-100">
         <HeroBanner
-          title={t('customer_service.bank_detail')}
+          title={k.title}
           description={k.heroBanner.description}
           image={k.heroBanner.image}
           mobileImage={k.heroBanner.mobileImage}

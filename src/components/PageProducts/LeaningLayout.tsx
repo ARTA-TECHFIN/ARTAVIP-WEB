@@ -16,9 +16,8 @@ import { textClass } from '../Text'
 
 const TABS = {
   hk_stock: 'hk_stock',
-  us_stock: 'us_stock',
-  global_stock: 'global_stock',
-  ss_stock: 'ss_stock',
+  sse_stock: 'sse_stock',
+  szse_stock: 'szse_stock',
 } as const
 
 type tabsT = keyof typeof TABS
@@ -35,7 +34,7 @@ type propsT = {
   children: React.ReactNode
 }
 
-const InvestorLayout: FC<propsT> = ({
+const LeaningLayout: FC<propsT> = ({
   seo,
   k,
   h,
@@ -51,23 +50,18 @@ const InvestorLayout: FC<propsT> = ({
   const tabInfoMap = {
     [TABS.hk_stock]: {
       title: h.hk,
-      link: links.productsSecurities,
+      link: links.leaningHk,
       value: 'hk_stock',
     },
-    [TABS.us_stock]: {
-      title: h.us,
-      link: links.productsSecuritiesUs,
-      value: 'us_stock',
+    [TABS.sse_stock]: {
+      title: h.sse,
+      link: links.leaningSse,
+      value: 'sse_stock',
     },
-    [TABS.ss_stock]: {
-      title: h.ss,
-      link: links.productsSecuritiesSs,
-      value: 'ss_stock',
-    },
-    [TABS.global_stock]: {
-      title: h.gb,
-      link: links.productsSecuritiesGlobal,
-      value: 'global_stock',
+    [TABS.szse_stock]: {
+      title: h.szse,
+      link: links.leaningSzse,
+      value: 'szse_stock',
     },
   }
   const tabList = Object.values(tabInfoMap)
@@ -78,20 +72,16 @@ const InvestorLayout: FC<propsT> = ({
       document.getElementById('tab').scrollLeft = document.getElementById('tab')?.scrollWidth
     }
 
-    if (tabType === 'us_stock' && document.getElementById('tab')) {
+    if (tabType === 'sse_stock' && document.getElementById('tab')) {
       // @ts-ignore
       document.getElementById('tab').scrollLeft = document.getElementById('tab')?.scrollWidth - 100
     }
 
-    if (tabType === 'global_stock' && document.getElementById('tab')) {
+    if (tabType === 'szse_stock' && document.getElementById('tab')) {
       // @ts-ignore
       document.getElementById('tab').scrollLeft = document.getElementById('tab')?.scrollWidth
     }
 
-    if (tabType === 'ss_stock' && document.getElementById('tab')) {
-      // @ts-ignore
-      document.getElementById('tab').scrollLeft = 100
-    }
   }, [])
 
   const g = (pageData: any, keyWithoutLang: string) => `${pageData[`${keyWithoutLang}_${locale}`]}`
@@ -106,12 +96,10 @@ const InvestorLayout: FC<propsT> = ({
           gaLog
             ? tabType == TABS.hk_stock
               ? 'HK Stock'
-              : tabType == TABS.us_stock
-                ? 'US Stock'
-                : tabType == TABS.global_stock
-                  ? 'Global Stock'
-                  : tabType == TABS.ss_stock
-                    ? 'SZSS Stock'
+              : tabType == TABS.sse_stock
+                ? 'SSE Stock'
+                : tabType == TABS.szse_stock
+                  ? 'SZSE Stock'
                     : ''
             : ''
         }
@@ -126,27 +114,6 @@ const InvestorLayout: FC<propsT> = ({
           label={simpleHeader ? t('page_title.securities') : ''}
           simpleHeader={simpleHeader}
         />
-        <div id="securities-bd-text">
-          <div className="arta-container relative z-1 mx-auto py-8 md:py-[150px] md:text-center">
-            <h1 className={`h6-text py-3`}>{k.description}</h1>
-            <hr className='securities-hr'></hr>
-            <h1 style={{ fontWeight: 'bold', color: 'black' }} className={`h6-text py-3 items-center text-center`}>{k.priority}</h1>
-            <div className="mt-8 grid grid-cols-3 gap-x-12 md:grid-cols-3 lg:grid-cols-3  place-items-center px-10">
-              {
-                k.avg.map((j: any, index: number) => {
-                  return (
-                    <div key={index} className='col-span-4 md:col-span-1 flex items-center text-center flex-col p-4 w-max'>
-                      <h1 className={`mt-4 h6-text`} style={{ color: '#20365B' }}>{g(j, 'title')}</h1>
-                      <p className={`mt-4 text-xs`}>{g(j, 'description')}</p>
-                      <img src={j.adv_icon_url} />
-                    </div>
-                  )
-                })
-              }
-            </div>
-            <div className={`h6-text pt-3`} dangerouslySetInnerHTML={{ __html: k.link }}></div>
-          </div>
-        </div>
         <div className="bg-arta-eggshell-100 pt-0 pb-6 md:pt-16 md:pb-[206px]" id="content">
           <div className="arta-container mx-auto">
             {!hideTab && (
@@ -176,4 +143,4 @@ const InvestorLayout: FC<propsT> = ({
 }
 
 export { TABS }
-export default InvestorLayout
+export default LeaningLayout

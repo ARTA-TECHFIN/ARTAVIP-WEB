@@ -18,15 +18,15 @@ const PageAbout: FC<{ k: PageAboutCmsT }> = ({ k }) => {
   return (
     <>
       <Seo
-        title={`${t('page_title.about_us')} | Arta TechFin`}
-        description={t('page_description.about_us')}
-        keywords={t('page_keywords.about_us')}
+        title={`${k.heroBanner.title} | Arta TechFin`}
+        description={k.heroBanner.title}
+        keywords={k.heroBanner.title}
         ga="About Us"
       />
       <Header textColor="brown" />
       <main className="flex flex-col">
         <HeroBanner
-          title={t('page_title.about_us')}
+          title={k.heroBanner.title}
           description=''
           image='/images/about/211025_image_aboutus_contactus_banner.png'
           mobileImage='/images/about/211025_image_aboutus_contactus_banner.png'
@@ -53,7 +53,7 @@ const PageAbout: FC<{ k: PageAboutCmsT }> = ({ k }) => {
           </div>
           <div className='join_us_backgroud-1'>
             {/* <p>{t('page_title.join_us')}</p> */}
-            <h1 className='join_us_backgroud-1-h1'>{t('page_title.join_us')}</h1>
+            <h1 className='join_us_backgroud-1-h1'>{k.heroBanner.title}</h1>
             <p className='arta-about-box1-font'>{k.joinUs.description}</p>
             <div className='join_us_sub_box'>
               <h1 className='join_us_sub_title-1'>{parse(k.joinUs.advTitle)}</h1>

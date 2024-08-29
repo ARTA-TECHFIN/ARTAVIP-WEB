@@ -178,7 +178,7 @@ const Footer: FC<{
                 </a>
               </li>
               <li>
-                <a title={t('customer_service.loan_ratio')} href={links.loanRatio}>
+                <a title={t('customer_service.loan_ratio')} href={links.leaningHk}>
                   <span>
                     {t('customer_service.loan_ratio')}{' '}
                     <span className="cursor-pointer hover:underline">

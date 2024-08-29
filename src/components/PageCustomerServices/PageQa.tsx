@@ -13,7 +13,7 @@ import { json } from 'stream/consumers'
 import { HeroBanner } from '../HeroBanner'
 import { textClass } from '../Text'
 
-const PageQa: FC<{ k: PageAboutCmsT }> = ({ k }) => {
+const PageQa: FC<{ k: PageAboutCmsT }> = ({ k}) => {
   const { t } = useTranslation('common')
   const router = useRouter()
   const { locale } = router
@@ -21,19 +21,15 @@ const PageQa: FC<{ k: PageAboutCmsT }> = ({ k }) => {
   return (
     <>
       <Seo
-        title={`${t('customer_service.qa')} | Arta TechFin`}
-        description={t('customer_service.qa')}
-        keywords={t('customer_service.qa')}
+        title={`${k.title} | Arta TechFin`}
+        description={k.title}
+        keywords={k.title}
         ga="Futures"
       />
       <Header textColor="brown" />
-      {/* <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[152px]" />
-      <div id="qna-bd">
-            <h1 style={{ fontSize: '60px',color:"white" ,display:'flex', alignItems:'center', justifyContent:'left',fontWeight:'700px'}}>{t('customer_service.qa')}</h1>
-     </div> */}
       <main className="flex flex-col">
         <HeroBanner
-          title={t('customer_service.qa')}
+          title={k.title}
           description=''
           image='/images/customers-services/211025_image_service_qna_banner.png'
           mobileImage='/images/customers-services/211025_image_service_qna_banner.png'

@@ -29,7 +29,6 @@ const showCalendarValue = () => () => {
 }
 
 const PageNewStockInfo: FC<{ k: PageAboutCmsT }> = ({ k }) => {
-  const { t } = useTranslation('common')
   const router = useRouter()
   const { locale } = router
   const g = (pageData: any, keyWithoutLang: string) => `${pageData.attributes[`${keyWithoutLang}_${locale}`]}`
@@ -37,15 +36,15 @@ const PageNewStockInfo: FC<{ k: PageAboutCmsT }> = ({ k }) => {
   return (
     <>
       <Seo
-        title={`${t('customer_service.new_stock_info')} | Arta TechFin`}
-        description={t('customer_service.new_stock_info')}
-        keywords={t('customer_service.new_stock_info')}
+        title={k.title}
+        description={k.title}
+        keywords={k.title}
         ga="Futures"
       />
       <Header textColor="brown" />
       <main className="flex flex-col text-arta-sand-100">
         <HeroBanner
-          title={t('customer_service.new_stock_info')}
+          title={k.title}
           description=''
           image='/images/customers-services/211025_image_service_stock_banner.png'
           mobileImage='/images/customers-services/211025_image_service_stock_banner.png'

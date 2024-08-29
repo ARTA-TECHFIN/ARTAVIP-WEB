@@ -19,15 +19,15 @@ const PageServiceCharges: FC<{ k: PageAboutCmsT }> = ({ k }) => {
   return (
     <>
       <Seo
-        title={`${t('customer_service.service_charges')} | Arta TechFin`}
-        description={t('customer_service.service_charges')}
-        keywords={t('customer_service.service_charges')}
+        title={`${k.title} | Arta TechFin`}
+        description={k.title}
+        keywords={k.title}
         ga="Service Charges"
       />
       <Header textColor="brown" />
       <main className="flex flex-col">
         <HeroBanner
-          title={`${t('customer_service.service_charges')} | Arta TechFin`}
+          title={k.title}
           description=''
           image='/images/customers-services/211025_image_service_fee_banner.png'
           mobileImage='/images/customers-services/211025_image_service_fee_banner.png'

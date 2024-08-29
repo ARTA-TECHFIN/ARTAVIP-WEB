@@ -9,14 +9,22 @@ const fetchFuturesData = async () => {
   return data
 }
 
-const massageData = (pageData: any, locale: string | undefined = 'en') => {
+const fetchTitle = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/page-title?populate=*`)
+  const data = await res.json()
+  return data
+}
+
+const massageData = (pageData: any, titleData: any, locale: string | undefined = 'en') => {
   const g = (keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
+  const t = (keyWithoutLang: string) => `${titleData.data.attributes.customerService[`${keyWithoutLang}_${locale}`]}`
   return {
     title_1: g('title_1'),
     title_2: g('title_2'),
     tips: g('tips'),
     form_1: pageData.data.attributes.form_1,
     form_2: pageData.data.attributes.form_2,
+    title: t('form_download'),
     heroBanner: {
       description: '',
       image: '/images/customers-services/info.jpg',
@@ -28,10 +36,10 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { locale } = context
   const pageData = await fetchFuturesData()
-
+  const titleData = await fetchTitle()
   return {
     props: {
-      k: massageData(pageData, locale),
+      k: massageData(pageData, titleData, locale),
       ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }

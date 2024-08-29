@@ -16,6 +16,11 @@ const fetchSsCmsData = async () => {
   return data
 }
 
+const fetchTitle = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/page-title?populate=*`)
+  const data = await res.json()
+  return data
+}
 const massageData = (pageData: any, usTipsData: any, locale: string | undefined = 'en') => {
   const g = (keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
 
@@ -39,30 +44,40 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   const pageData = await fetchData()
   const ssTipsData = await fetchSsCmsData()
+  const titleData = await fetchTitle()
 
+  const t = (keyWithoutLang: string) => `${titleData.data.attributes.productTitle[`${keyWithoutLang}_${locale}`]}`
   return {
     props: {
       k: massageData(pageData,ssTipsData, locale),
+      h: {
+        title: t('securities'),
+        tip: t('ss_trade_tips'),
+        hk: t('securities_hk'),
+        us: t('securities_us'),
+        ss: t('securities_ss'),
+        gb: t('securities_gb'),
+      },
       ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }
 }
 
-const SecuritiesPage = (props: { k: any }) => {
-  const { t } = useTranslation()
+const SecuritiesPage = (props: { k: any ,h: any }) => {
 
   return (
     <InvestorLayout
       k={props.k}
+      h={props.h}
       tabType={TABS.ss_stock}
       gaLog={true}
       seo={{
-        title: `${t('page_title.securities')} | Arta TechFin`,
+        title: props.h.title,
         description: '',
-        keywords: t('page_title.securities'),
+        keywords: '',
       }}
     >
-      <PageProductsSecuritiesSs k={props.k} />
+      <PageProductsSecuritiesSs k={props.k} tip={props.h.tip} />
     </InvestorLayout>
   )
 }

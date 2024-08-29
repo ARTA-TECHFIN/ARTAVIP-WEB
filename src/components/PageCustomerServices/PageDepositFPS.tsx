@@ -29,7 +29,7 @@ const PageDepositFPS: FC<{ k: PageAboutCmsT }> = ({ k }) => {
       <Header textColor="white" />
       <main className="flex flex-col">
         <HeroBanner
-          title={t('customer_service.fps')}
+          title={k.title}
           description=''
           image='/images/customers-services/211025_image_service_deposit_insidepages_banner.png'
           mobileImage='/images/customers-services/211025_image_service_deposit_insidepages_banner.png'

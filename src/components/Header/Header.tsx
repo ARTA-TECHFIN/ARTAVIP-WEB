@@ -115,7 +115,7 @@ const Header: React.FC<{
       href: links.tradeTips,
       pages: [
         { title: t('page_title.securities'), link: links.productsSecurities },
-        { title: t('customer_service.loan_ratio'),link: `${links.loanRatio}`},
+        { title: t('customer_service.loan_ratio'),link: `${links.leaningHk}`},
         { title: t('customer_service.new_stock_info'), link: `${links.newStockInfo}` },
         { title: t('page_title.futures'), link: links.productsFutures },
         // { title: t('products_info.hk_trade_tips'), link: `${links.hkTradeTips}` },

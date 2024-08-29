@@ -3,6 +3,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import PageAbout from 'src/components/PageAbout/PageAbout'
 import aboutUsJson from 'apidata/about-us.json'
 import leadershipJson from 'apidata/about-us-leaderships.json'
+import { title } from 'process'
 
 const fetchCmsData = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/about-us-profile?populate=*`)
@@ -21,16 +22,24 @@ const fetchEventData = async () => {
   const data = await res.json()
   return data
 }
+
+const fetchTitle = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/page-title?populate=*`)
+  const data = await res.json()
+  return data
+}
+
 interface responseT {
   title: any
   des: any
 }
 
-const massageData = (pageData: any, eventData: any,joinUsData: any, locale: string | undefined = 'en') => {
+const massageData = (pageData: any, eventData: any,joinUsData: any,titleData: any, locale: string | undefined = 'en') => {
   const advantageData = joinUsData.data.attributes.our_advantage[0];
   const dutyData = joinUsData.data.attributes.duty_brief[0];
   const timeLineData = eventData.data;
 
+  const t = (keyWithoutLang: string) => `${titleData.data.attributes.aboutUs[`${keyWithoutLang}_${locale}`]}`
   const g = (keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
   const j = (keyWithoutLang: string) => `${joinUsData.data.attributes[`${keyWithoutLang}_${locale}`]}`
   const s = (keyWithoutLang: string) => `${advantageData[`${keyWithoutLang}_${locale}`]}`
@@ -47,7 +56,8 @@ const massageData = (pageData: any, eventData: any,joinUsData: any, locale: stri
     heroBanner: {
       description: g('description') !== null ? g('description') : '',
       image: '/images/about/211025_image_aboutus_contactus_banner.png',
-      mobileImage: '/images/about/211025_image_aboutus_contactus_banner.png',    
+      mobileImage: '/images/about/211025_image_aboutus_contactus_banner.png', 
+      title: t('company_profile'),
     },
     joinUs: {
       description: j('description') !== null ? j('description') : '',
@@ -71,12 +81,13 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const useLocalCms = process.env.USE_LOCAL_CMS_DATA === 'true'
 
   const pageData = useLocalCms ? aboutUsJson : await fetchCmsData()
-  const eventData = useLocalCms ? leadershipJson : await fetchEventData()
-  const joinUsData = useLocalCms ? leadershipJson : await fetchJoinUsData()
+  const eventData = await fetchEventData()
+  const joinUsData = await fetchJoinUsData()
+  const titleData = await fetchTitle()
 
   return {
     props: {
-      k: massageData(pageData, eventData,joinUsData, locale),
+      k: massageData(pageData, eventData,joinUsData,titleData, locale),
       ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }

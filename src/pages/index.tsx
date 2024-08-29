@@ -36,7 +36,7 @@ const Home = (props: { cms: any }) => {
   return (
     <>
       <Seo
-        title={`${t('page_title.home')} | Arta TechFin`}
+        title={`${t('page_title.home')} | Arta GM`}
         description={t('page_description.home')}
         keywords={t('page_keywords.home')}
         ga="Homepage"

@@ -29,16 +29,16 @@ const PageQaOpenAccount: FC<{ k: PageAboutCmsT }> = ({ k }) => {
   return (
     <>
       <Seo
-        title={`${t('customer_service.qa_open_account')} | Arta TechFin`}
-        description={t('customer_service.qa_open_account')}
-        keywords={t('customer_service.qa_open_account')}
+        title={`${k.title} | Arta TechFin`}
+        description={k.title}
+        keywords={k.title}
         ga="QA Open Accounts"
       />
       <Header textColor="brown" />
 
       <main className="flex flex-col">
         <HeroBanner
-          title={t('customer_service.qa_open_account')}
+          title={k.title}
           description=''
           image='/images/customers-services/211025_image_service_fee_banner.png'
           mobileImage='/images/customers-services/211025_image_service_fee_banner.png'

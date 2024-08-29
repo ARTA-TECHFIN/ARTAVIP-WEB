@@ -35,7 +35,7 @@ const PageDepositBankDetail: FC<{ k: PageAboutCmsT }> = ({ k }) => {
       <Header textColor="brown" />
       <main className="flex flex-col">
         <HeroBanner
-          title={t('customer_service.bank_detail')}
+          title={k.title}
           description=''
           image='/images/customers-services/211025_image_service_deposit_insidepages_banner.png'
           mobileImage='/images/customers-services/211025_image_service_deposit_insidepages_banner.png'

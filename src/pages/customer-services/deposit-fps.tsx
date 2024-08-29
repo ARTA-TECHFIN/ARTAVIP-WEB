@@ -8,9 +8,17 @@ const fetchData = async () => {
   return data
 }
 
-const massageData = (pageData: any, locale: string | undefined = 'en') => {
+const fetchTitle = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/page-title?populate=*`)
+  const data = await res.json()
+  return data
+}
+
+const massageData = (pageData: any,title: any, locale: string | undefined = 'en') => {
+  const t = (keyWithoutLang: string) => `${title.data.attributes.customerService[`${keyWithoutLang}_${locale}`]}`
   return {
     data: pageData.data,
+    title: t('fund_fps'),
     procedure: pageData.data.attributes.procedure,
   }
 }
@@ -18,10 +26,10 @@ const massageData = (pageData: any, locale: string | undefined = 'en') => {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { locale } = context
   const pageData = await fetchData()
-
+  const titleData = await fetchTitle()
   return {
     props: {
-      k: massageData(pageData, locale),
+      k: massageData(pageData,titleData, locale),
       ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }

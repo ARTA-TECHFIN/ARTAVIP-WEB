@@ -16,7 +16,14 @@ const fetchCmsData = async () => {
   return data
 }
 
+const fetchTitle = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/page-title?populate=*`)
+  const data = await res.json()
+  return data
+}
+
 const massageData = (pageData: any, locale: string | undefined = 'en') => {
+  
   return {
     k: {
       data: pageData.data,
@@ -36,13 +43,14 @@ interface responseT {
 // Add get report here if seo is needed
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { locale } = context
-  const useLocalCms = process.env.USE_LOCAL_CMS_DATA === 'true'
   const pageData = await fetchCmsData()
-
+  const titleData = await fetchTitle()
+  const t = (keyWithoutLang: string) => `${titleData.data.attributes.customerService[`${keyWithoutLang}_${locale}`]}`
   return {
     props: {
       k: pageData.data,
       heroBanner: {
+        title: t('important_notice'),
         description: '',
         image: '/images/customers-services/important_notices.jpg',
         mobileImage: '/images/customers-services/important_notices.jpg',
@@ -97,15 +105,15 @@ const NoticePage = (props: { k: any,heroBanner:any }) => {
   return (
     <>
       <Seo
-        title={`${t('customer_service.important_notice')} | Arta TechFin`}
-        description={t('customer_service.important_notice')}
-        keywords={t('customer_service.important_notice')}
+        title={`${props.heroBanner.title} | Arta TechFin`}
+        description={props.heroBanner.title}
+        keywords={props.heroBanner.title}
         ga="Service Charges"
       />
       <Header textColor="brown" />
       <main className="flex flex-col text-arta-sand-100">
         <HeroBanner
-          title={t('customer_service.important_notice')}
+          title={props.heroBanner.title}
           description={props.heroBanner.description}
           image={props.heroBanner.image}
           mobileImage={props.heroBanner.mobileImage}

@@ -43,9 +43,9 @@ const PageQaFundInOut: FC<{ k: PageAboutCmsT }> = ({ k }) => {
   return (
     <>
       <Seo
-        title={`${t('customer_service.qa_credit')} | Arta TechFin`}
-        description={t('customer_service.qa_credit')}
-        keywords={t('customer_service.qa_credit')}
+        title={`${k.title} | Arta TechFin`}
+        description={k.title}
+        keywords={k.title}
         ga="QA Open Accounts"
       />
       <Header textColor="brown" />
@@ -55,7 +55,7 @@ const PageQaFundInOut: FC<{ k: PageAboutCmsT }> = ({ k }) => {
       </div> */}
       <main className="flex flex-col">
         <HeroBanner
-          title={t('customer_service.qa_credit')}
+          title={k.title}
           description=''
           image='/images/customers-services/211025_image_service_security_banner.png'
           mobileImage='/images/customers-services/211025_image_service_security_banner.png'

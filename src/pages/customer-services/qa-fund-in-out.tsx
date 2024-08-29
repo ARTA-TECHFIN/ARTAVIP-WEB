@@ -17,7 +17,8 @@ const fetchTitle = async () => {
 const massageData = (pageData: any, titleData: any, locale: string | undefined = 'en') => {
   const t = (keyWithoutLang: string) => `${titleData.data.attributes.faqs[`${keyWithoutLang}_${locale}`]}`
   return {
-    data: pageData.data,
+    data: pageData.data[0],
+    data2: pageData.data[1],
     title:t('faqs_credit')
   }
 }

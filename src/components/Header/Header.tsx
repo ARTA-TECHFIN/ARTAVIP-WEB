@@ -81,59 +81,6 @@ const Header: React.FC<{
   const [scrollDir, setScrollDir] = useState('scrolling down')
 
   const pageInfoList: pageInfoItemT[] = [
-    {
-      pageName: t('page_title.about_us'),
-      title: '',
-      paragraph: headerData['about_us'],
-      buttonText: t('page_title.about_us'),
-      href: links.aboutUsProfile,
-      pages: [
-        { title: t('about_us.about_us_profile'), link: links.aboutUsProfile },
-        { title: t('about_us.business_overview'), link: links.bussinessOverview },
-        { title: t('about_us.contact_us'), link: links.contact },
-      ],
-    },
-    {
-      pageName: t('page_title.customer_service'),
-      title: '',
-      paragraph: headerData['customer_service'],
-      buttonText:  t('page_title.customer_service'),
-      href: links.servicesCharges,
-      pages: [
-        { title: t('customer_service.service_charges'), link: `${links.servicesCharges}` },
-        { title: t('customer_service.fund_withdrawals_and_deposits'),link: `${links.fundDeposites}` },
-        { title: t('customer_service.form_download'), link: `${links.formDownload}` },
-        { title: t('customer_service.qa'), link: `${links.qa}` },
-        { title: t('customer_service.important_notice'), link: `${links.importantNotice}` },
-      ],
-    },
-    {
-      pageName: t('page_title.products_info'),
-      title: '',
-      paragraph: headerData['products_info'],
-      buttonText:  t('page_title.products_info'),
-      href: links.tradeTips,
-      pages: [
-        { title: t('page_title.securities'), link: links.productsSecurities },
-        { title: t('customer_service.loan_ratio'),link: `${links.leaningHk}`},
-        { title: t('customer_service.new_stock_info'), link: `${links.newStockInfo}` },
-        { title: t('page_title.futures'), link: links.productsFutures },
-        // { title: t('products_info.hk_trade_tips'), link: `${links.hkTradeTips}` },
-        // { title: t('products_info.us_trade_tips'), link: `${links.usTradeTips}` },
-        // { title: t('products_info.global_trade_tips'), link: `${links.globalTradeTips}` },
-        // { title: t('products_info.ss_trade_tips'), link: `${links.ssTradeTips}` },
-      ],
-    },
-    {
-      pageName: t('page_title.website_trade'),
-      title: '',
-      paragraph: '',
-      buttonText:  t('page_title.website_trade'),
-      href: 'https://www.clientam.com/sso/Login?partnerID=ArtaOne',
-      pages: [
-        { title: t('page_title.website_trade'), link: 'https://www.clientam.com/sso/Login?partnerID=ArtaOne' }
-      ],
-    },
   ]
 
   const DEFAULT_TAB_INDEX = -1
@@ -212,7 +159,6 @@ const Header: React.FC<{
       )}
       style={{backgroundColor:'white'}}
     >
-      <PageTopBar textColor="black" />
       <div onMouseLeave={() => setActiveTabIndex(DEFAULT_TAB_INDEX)}>
         <header
           className={cn(
@@ -230,48 +176,6 @@ const Header: React.FC<{
               </Link>
             </div>
             <div className="hidden items-center justify-center space-x-8 lg:flex">
-              {pageInfoList.map((page, index) => {
-                const selected = index === activeTabIndex
-                const ChevronIcon = selected ? ChevronUpIcon : ChevronDownIcon
-                return (
-                  <div
-                    key={index}
-                    className={`group z-[4] flex cursor-pointer items-center justify-center opacity-70 transition hover:opacity-100 ${textColorClass}`}
-                    onMouseEnter={() => (page.pages.length > 0 ? setActiveTabIndex(index) : null)}
-                  >
-                    {page.pages.length === 0 && (
-                      <Link title={page.title} className="flex items-start" href={page.href}>
-                        <span style={{ fontSize: `${fontSize}` }}>{page.title}</span>
-                      </Link>
-                    )}
-
-                    {page.pages.length > 0 && (
-                      <>
-                        <span
-                          style={{ fontSize: `${fontSize}` }}
-                          className={
-                            `z-[3] leading-[24px] ${
-                              textColor === 'black'
-                                ? 'decoration-arta-black'
-                                : 'decoration-arta-sunray-100'
-                            } underline-offset-[20px] transition group-hover:underline` +
-                            (selected ? ' underline' : '')
-                          }
-                        >
-                          {page.pageName}
-                        </span>
-                        <ChevronIcon
-                          className={`z-[3] ml-1 h-4 w-4 transition ${
-                            textColor === 'black'
-                              ? 'group-hover:text-arta-black'
-                              : 'group-hover:text-arta-sunray-100'
-                          }`}
-                        />
-                      </>
-                    )}
-                  </div>
-                )
-              })}
             </div>
             <div
               className="flex h-[22px] w-[26px] cursor-pointer flex-col justify-between lg:hidden"

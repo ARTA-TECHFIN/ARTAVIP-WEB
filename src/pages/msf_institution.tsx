@@ -8,7 +8,7 @@ import { ButtonAnimated } from 'src/components/ButtonAnimated'
 import { Seo } from 'src/components/Seo'
 import { textClass } from 'src/components/Text'
 import HomeLayout, { TABS } from 'src/components/PageHome/HomeLayout'
-import MSFPersonalFile from 'src/components/PageHome/MSFPersonalFile'
+import MSFInstitutionFile from 'src/components/PageHome/MSFInstitutionFile'
 
 const Home = (props: { cms: any }) => {
 
@@ -16,10 +16,10 @@ const Home = (props: { cms: any }) => {
 
   return (
     <HomeLayout
-      tabType={TABS.person}
+      tabType={TABS.institution}
       gaLog={true}
     >
-      <MSFPersonalFile/>
+      <MSFInstitutionFile/>
     </HomeLayout>
   )
 }

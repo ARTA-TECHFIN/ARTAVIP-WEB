@@ -8,18 +8,17 @@ import { ButtonAnimated } from 'src/components/ButtonAnimated'
 import { Seo } from 'src/components/Seo'
 import { textClass } from 'src/components/Text'
 import HomeLayout, { TABS } from 'src/components/PageHome/HomeLayout'
-import MSFPersonalFile from 'src/components/PageHome/MSFPersonalFile'
+import MSFCompanyFile from 'src/components/PageHome/MSFCompanyFile'
 
 const Home = (props: { cms: any }) => {
 
   const { t } = useTranslation('common')
-
   return (
     <HomeLayout
-      tabType={TABS.person}
+      tabType={TABS.company}
       gaLog={true}
     >
-      <MSFPersonalFile/>
+      <MSFCompanyFile/>
     </HomeLayout>
   )
 }

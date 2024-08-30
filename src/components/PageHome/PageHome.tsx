@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import ReactFullpage from '@fullpage/react-fullpage'
-import Footer from 'src/components/Footer'
 import { HomePageSlogan } from './HomePageSlogan'
 
 export const Slides = ({ k, setShowWechatPopup }: any) => {
@@ -72,7 +71,6 @@ export const Slides = ({ k, setShowWechatPopup }: any) => {
               </section>
 
               <div className="section fp-auto-height" id="section3">
-                <Footer setShowWechatPopup={setShowWechatPopup}/>
               </div>
             </ReactFullpage.Wrapper>
           </>

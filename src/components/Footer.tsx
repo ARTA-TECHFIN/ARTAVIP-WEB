@@ -68,7 +68,7 @@ const Footer: FC<{
       <footer
         className={`relative z-2 h-full w-full ${bgClass} ${textClass} will-change-transform`}
       >
-        <div className="mt-8 grid grid-cols-4 gap-x-12 md:grid-cols-4 lg:grid-cols-4  place-items-center px-10">
+        <div className="mt-8 grid grid-cols-4 gap-x-12 lg:grid-cols-4 justify-items-center place-items-start px-10">
           <div className='col-span-8 md:col-span-1 flex items-center text-center flex-col p-4'>
             <h6 className="font-Verah leading-[24px]" style={{ color: 'hsl(41, 53.8%, 77.1%)', fontSize: '22px' }}>{t('page_title.about_us')}</h6>
             <ul className="list-none font-Neue text-[12px] leading-[20px]">

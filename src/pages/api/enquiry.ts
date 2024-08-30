@@ -5,20 +5,19 @@ import nodemailer from 'nodemailer'
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_GM_HOST,
-  port: 25,
+  host: 'smtp-mail.outlook.com',
+  port: 587,
   secure: false,
   logger: true,
   auth: {
-    user: process.env.EMAIL_GM_USER,
-    pass: process.env.EMAIL_GM_PASS,
+    user: 'inquiry@artatechfin.com',
+    pass: 'Art@279279',
   },
 })
 
 // recipient address must be verified with Amazon SES if sandbox mode is enabled.
-const EMAIL_SENDER = process.env.EMAIL_GM_USER
-const EMAIL_GM_RECIPIENT =process.env.EMAIL_GM_RECIPIENT
-
+const EMAIL_SENDER = 'inquiry@artatechfin.com'
+const EMAIL_GM_RECIPIENT ='cs@artatechfin.com'
 
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -51,7 +50,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const message = {
       from: EMAIL_SENDER,
       to: EMAIL_GM_RECIPIENT,
-      subject: `[artagm.com] ${reqMessage.topic} -  ${reqMessage.name}`,
+      subject: `Inquiry from [artagm.com] -  ${reqMessage.name}`,
       text: toPlainText(html),
       html,
     }

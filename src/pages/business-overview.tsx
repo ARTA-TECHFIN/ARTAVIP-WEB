@@ -55,7 +55,7 @@ const BussinessOverview = (props: { cms: any, title: any }) => {
         <div className='x-container max width business-overview-1'>
           <h1 className='business-overview-1-font'>{props.title}</h1>
         </div>
-        <div className="mt-8 grid grid-cols-3 gap-x-12 md:grid-cols-4 lg:grid-cols-3  place-items-center">
+        <div className="mt-8 grid grid-cols-3 gap-x-12 md:grid-cols-4 lg:grid-cols-3 justify-items-center place-items-start">
           {
             props.cms.map((j: any, i: any) => {
               return (

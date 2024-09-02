@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react'
 // import Image from 'next/image'
 // import { useRouter } from 'next/router'
 import { ChevronDownIcon, ChevronUpIcon, XIcon } from '@heroicons/react/outline'
-import MobileNavbar from './MobileNavbar'
 import { gsap } from 'gsap'
 import { IconListItemArrow } from '../Svg/Icon'
 import ArtaLogo from 'src/components/Svg/arta-logo'
@@ -13,7 +12,6 @@ import cn from 'classnames'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
 import hoverMenuJson from 'apidata/hover-menu.json'
-import PageTopBar from '../PageTopBar'
 
 type menuItemT = {
   title: string
@@ -302,18 +300,6 @@ const Header: React.FC<{
                 <div className={`mt-8 ${textColorClass} `}>
                   <div className="flex flex-col items-start justify-start">
                     <div className="flex w-full flex-col space-y-8">
-                      {pageInfoList.map((item, index) => (
-                        <div key={index}>
-                          <MobileNavbar
-                            item={item}
-                            expand={activeMobileNavItem === index}
-                            index={index}
-                            setActiveMobileNavItem={setActiveMobileNavItem}
-                            textColor={textColor}
-                            setShowMenu={setShowMenu}
-                          />
-                        </div>
-                      ))}
                     </div>
                   </div>
                 </div>

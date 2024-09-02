@@ -29,16 +29,9 @@ const MSFInstitutionFile: FC<{}> = ({ }) => {
       <div className='h4-light-text pt-4'>
         {homeData.institution_11}
         <div className='small-text p-2'>
-          <li>{homeData.institution_12}</li>
-          <li><button onClick={() => {
-            router.push(`${homeData.institution_link_3}`)
-          }}>{homeData.institution_13}</button></li>
           <li><button onClick={() => {
             router.push(`${homeData.institution_link_2}`)
-          }}>{homeData.institution_14}</button></li>
-          <li><button onClick={() => {
-            router.push(`${homeData.institution_link_4}`)
-          }}>{homeData.institution_15}</button></li>
+          }}>{homeData.institution_12}</button></li>
           <li>{homeData.institution_16}</li>
         </div>
       </div>
@@ -46,6 +39,13 @@ const MSFInstitutionFile: FC<{}> = ({ }) => {
       <div className='h4-light-text pt-4 pb-4'>
         {homeData.institution_17}
         <div className='small-text p-2'>
+        <li><button onClick={() => {
+            router.push(`${homeData.institution_link_3}`)
+          }}>{homeData.institution_13}</button></li>
+          <li><button onClick={() => {
+            router.push(`${homeData.institution_link_4}`)
+          }}>{homeData.institution_14}</button></li>
+          <li>{homeData.institution_15}</li>
           <li>
             <button onClick={() => {
               router.push(`${homeData.institution_link_1}`)

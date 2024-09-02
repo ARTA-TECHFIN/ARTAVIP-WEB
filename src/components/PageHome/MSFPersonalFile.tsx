@@ -24,12 +24,6 @@ const MSFPersonalFile: FC<{}> = ({ }) => {
         {homeData.person_5}
         <div className='small-text p-2'>
           <li><button onClick={() => {
-            router.push(`${homeData.person_link_2}`)
-          }}>{homeData.person_6}</button></li>
-          <li><button onClick={() => {
-            router.push(`${homeData.person_link_3}`)
-          }}>{homeData.person_7}</button></li>
-          <li><button onClick={() => {
             router.push(`${homeData.person_link_4}`)
           }}>{homeData.person_8}</button></li>
         </div>
@@ -38,19 +32,27 @@ const MSFPersonalFile: FC<{}> = ({ }) => {
       <div className='h4-light-text pt-4 pb-4'>
         {homeData.person_9}
         <div className='small-text p-2'>
-          <li>
-            <button onClick={() => {
+        `<li><button onClick={() => {
+            router.push(`${homeData.person_link_6}`)
+          }}>{homeData.person_12}</button></li>
+          <li><button onClick={() => {
+            router.push(`${homeData.person_link_2}`)
+          }}>{homeData.person_6}</button></li>
+          <li><button onClick={() => {
+            router.push(`${homeData.person_link_3}`)
+          }}>{homeData.person_7}</button></li>
+          <li><button onClick={() => {
               router.push(`${homeData.person_link_1}`)
             }}>{homeData.person_10}</button>
           </li>
         </div>
         <hr className='securities-hr'></hr>
         <ButtonAnimated
-                as="a"
-                href={`${homeData.person_link_5}`}
-                className="mt-4 border-arta-sand-100 text-arta-sand-100 small-text">
-                {homeData.person_11}
-              </ButtonAnimated>
+          as="a"
+          href={`${homeData.person_link_5}`}
+          className="mt-4 border-arta-sand-100 text-arta-sand-100 small-text">
+          {homeData.person_11}
+        </ButtonAnimated>
       </div>
     </div>
   )

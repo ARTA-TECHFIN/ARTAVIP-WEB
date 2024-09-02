@@ -11,7 +11,7 @@ const MSFPersonalFile: FC<{}> = ({ }) => {
 
   return (
     <div id='securities-tm' className='text-arta-sand-100 person_lf'>
-      <div className='h3-text pt-8'>
+      <div className='h4-light-text pt-8'>
         {homeData.person_1}
         <div className='small-text p-2'>
           <li>{homeData.person_2}</li>
@@ -20,7 +20,7 @@ const MSFPersonalFile: FC<{}> = ({ }) => {
         </div>
       </div>
       <hr className='securities-hr'></hr>
-      <div className='h3-text pt-4'>
+      <div className='h4-light-text pt-4'>
         {homeData.person_5}
         <div className='small-text p-2'>
           <li><button onClick={() => {
@@ -35,7 +35,7 @@ const MSFPersonalFile: FC<{}> = ({ }) => {
         </div>
       </div>
       <hr className='securities-hr'></hr>
-      <div className='h3-text pt-4 pb-4'>
+      <div className='h4-light-text pt-4 pb-4'>
         {homeData.person_9}
         <div className='small-text p-2'>
           <li>

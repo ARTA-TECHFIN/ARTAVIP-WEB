@@ -11,7 +11,7 @@ const MSFInstitutionFile: FC<{}> = ({ }) => {
 
   return (
     <div id='securities-tm' className='text-arta-sand-100 person_lf'>
-      <div className='h3-text pt-8'>
+      <div className='h4-light-text pt-8'>
         {homeData.institution_1}
         <div className='small-text p-2'>
           <li>{homeData.institution_2}</li>
@@ -26,7 +26,7 @@ const MSFInstitutionFile: FC<{}> = ({ }) => {
         </div>
       </div>
       <hr className='securities-hr'></hr>
-      <div className='h3-text pt-4'>
+      <div className='h4-light-text pt-4'>
         {homeData.institution_11}
         <div className='small-text p-2'>
           <li>{homeData.institution_12}</li>
@@ -43,7 +43,7 @@ const MSFInstitutionFile: FC<{}> = ({ }) => {
         </div>
       </div>
       <hr className='securities-hr'></hr>
-      <div className='h3-text pt-4 pb-4'>
+      <div className='h4-light-text pt-4 pb-4'>
         {homeData.institution_17}
         <div className='small-text p-2'>
           <li>

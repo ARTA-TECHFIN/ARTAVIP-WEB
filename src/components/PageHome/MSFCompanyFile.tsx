@@ -11,7 +11,7 @@ const MSFCompanyFile: FC<{}> = ({ }) => {
 
   return (
     <div id='securities-tm' className='text-arta-sand-100 person_lf'>
-      <div className='h3-text pt-8'>
+      <div className='h4-light-text pt-8'>
         {homeData.company_1}
         <div className='small-text p-2'>
           <li>{homeData.company_2}</li>
@@ -34,7 +34,7 @@ const MSFCompanyFile: FC<{}> = ({ }) => {
         </div>
       </div>
       <hr className='securities-hr'></hr>
-      <div className='h3-text pt-4'>
+      <div className='h4-light-text pt-4'>
         {homeData.company_18}
         <div className='small-text p-2'>
           <li><button onClick={() => {
@@ -52,7 +52,7 @@ const MSFCompanyFile: FC<{}> = ({ }) => {
         </div>
       </div>
       <hr className='securities-hr'></hr>
-      <div className='h3-text pt-4 pb-4'>
+      <div className='h4-light-text pt-4 pb-4'>
         {homeData.company_23}
         <div className='small-text p-2'>
           <li>

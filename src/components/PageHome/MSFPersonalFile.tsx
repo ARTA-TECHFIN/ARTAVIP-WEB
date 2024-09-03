@@ -29,7 +29,7 @@ const MSFPersonalFile: FC<{}> = ({ }) => {
         </div>
       </div>
       <hr className='securities-hr'></hr>
-      <div className='h4-light-text pt-4 pb-4'>
+      <div className='h4-light-text pt-4'>
         {homeData.person_9}
         <div className='small-text p-2'>
         `<li><button onClick={() => {

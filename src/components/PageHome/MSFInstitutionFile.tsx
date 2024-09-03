@@ -36,7 +36,7 @@ const MSFInstitutionFile: FC<{}> = ({ }) => {
         </div>
       </div>
       <hr className='securities-hr'></hr>
-      <div className='h4-light-text pt-4 pb-4'>
+      <div className='h4-light-text pt-4'>
         {homeData.institution_17}
         <div className='small-text p-2'>
         <li><button onClick={() => {

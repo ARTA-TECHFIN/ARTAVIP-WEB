@@ -32,7 +32,7 @@ const MSFPersonalFile: FC<{}> = ({ }) => {
       <div className='h4-light-text pt-4'>
         {homeData.person_9}
         <div className='small-text p-2'>
-        `<li><button onClick={() => {
+          <li><button onClick={() => {
             router.push(`${homeData.person_link_6}`)
           }}>{homeData.person_12}</button></li>
           <li><button onClick={() => {

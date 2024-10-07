@@ -27,12 +27,6 @@ type pageInfoItemT = {
   pages: menuItemT[]
 }
 
-const fetchCmsData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_GM_HOSTING_PATH}/api/cms/hover-menu-description`)
-  const data = await res.json()
-  return data
-}
-
 const Header: React.FC<{
   textColor?: 'white' | 'black' | 'brown'
   fontSize?: string
@@ -131,7 +125,7 @@ const Header: React.FC<{
       `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
     const fetchData = async () => {
       const useLocalCms = process.env.NEXT_PUBLIC_USE_LOCAL_CMS_DATA === 'true'
-      const result = useLocalCms ? hoverMenuJson : await fetchCmsData()
+      const result = hoverMenuJson
 
       if (result.data?.attributes) {
         setHeaderData({

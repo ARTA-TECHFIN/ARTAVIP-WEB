@@ -95,7 +95,7 @@ const HomeLayout: FC<propsT> = ({
               <div className='small-text pt-4 text-arta-sand-100'>
                 <li><button onClick={() => {router.push(`${homeData.t4_link}`)}}>{homeData.t4}</button></li>
               </div>
-              <div className='small-text py-4 text-arta-sand-100'>{homeData.t3}</div>
+              <div className='text-arta-sand-100 pt-2 top-text'>{homeData.t3}</div>
             {!hideTab && (
               <div id="tab" className="arta-hide-scrollbar -mx-6 overflow-scroll md:mx-0">
                 <TabBar

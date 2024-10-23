@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 import Header from 'src/components/Header/Header'
 import { Seo } from 'src/components/Seo'
 import { HeroBanner } from '../HeroBanner'
-
 import { reportCmsT } from 'src/domains/investor'
 import { FC } from 'react'
 import { TabBar } from '../TabBar'
@@ -55,7 +54,7 @@ const HomeLayout: FC<propsT> = ({
     },
   }
   const tabList = Object.values(tabInfoMap)
-
+  const router = useRouter()
   useEffect(() => {
     if (tabType === 'person' && document.getElementById('tab')) {
       // @ts-ignore
@@ -90,7 +89,12 @@ const HomeLayout: FC<propsT> = ({
         <div className="bg-arta-eggshell-100 pt-0 pb-6 md:pt-16 md:pb-[306px] " id="content">
           <div className="arta-container mx-auto homes">
               <div className='text-arta-sand-100 pt-2 top-text'>{homeData.t0}</div>
-              <div className='small-text pt-4 text-arta-sand-100'>{homeData.t1}</div>
+              <div className='small-text pt-4 text-arta-sand-100'>
+                <li><button onClick={() => {router.push(`${homeData.t1}`)}}>{homeData.t1_link}</button></li>
+              </div>
+              <div className='small-text pt-4 text-arta-sand-100'>
+                <li><button onClick={() => {router.push(`${homeData.t4}`)}}>{homeData.t4_link}</button></li>
+              </div>
               <div className='small-text py-4 text-arta-sand-100'>{homeData.t3}</div>
             {!hideTab && (
               <div id="tab" className="arta-hide-scrollbar -mx-6 overflow-scroll md:mx-0">

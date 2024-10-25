@@ -37,7 +37,10 @@ const MSFPersonalFile: FC<{}> = ({ }) => {
           }}>{homeData.person_13}</button></li>
           <li><button onClick={() => {
             router.push(`${homeData.person_link_2}`)
-          }}>{homeData.person_6}</button></li>
+          }}>{homeData.person_6}</button>
+          <button onClick={() => {
+            router.push(`${homeData.person_link_2_1}`)
+          }}>{homeData.person_6_1}</button></li>
           {/* <li><button onClick={() => {
             router.push(`${homeData.person_link_3}`)
           }}>{homeData.person_7}</button></li>

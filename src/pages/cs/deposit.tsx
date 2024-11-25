@@ -224,7 +224,7 @@ const Withdrwal = (props: { cms: any, fax: any, mail: any, title: any }) => {
           {
             fileSizeError && (
               <div className="col-span-full -mt-8">
-                <p className={`${textClass.caption} text-red-400 my-4`}>{fileSizeError}</p>
+                <p className={`text-red-400 my-4`}>{fileSizeError}</p>
               </div>
             )
           }

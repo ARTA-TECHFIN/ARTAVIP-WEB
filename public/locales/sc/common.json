@@ -1,6 +1,9 @@
 {
   "site_title": "Arta TechFin",
   "page_title": {
-    "home": "主页"
+    "homepage": "主页",
+    "customer_service": "客户服务",
+    "deposit": "入金",
+    "withdrwal": "出金"
   }
 }

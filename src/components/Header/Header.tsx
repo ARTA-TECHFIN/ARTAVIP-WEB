@@ -12,6 +12,8 @@ import cn from 'classnames'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
 import hoverMenuJson from 'apidata/hover-menu.json'
+import headerJson from 'apidata/header.json'
+import MobileNavbar from 'src/components/Header/MobileNavbar'
 
 type menuItemT = {
   title: string
@@ -36,6 +38,7 @@ const Header: React.FC<{
   const { t } = useTranslation('common')
   const router = useRouter()
   const { locale } = router
+  const g = (pageData: any, keyWithoutLang: string) =>`${pageData[`${keyWithoutLang}_${locale}`]}`
 
   const [headerData, setHeaderData] = useState({
     home: '',
@@ -73,6 +76,27 @@ const Header: React.FC<{
   const [scrollDir, setScrollDir] = useState('scrolling down')
 
   const pageInfoList: pageInfoItemT[] = [
+    {
+      pageName: g(headerJson,'homepage'),
+      title: '',
+      paragraph: '',
+      buttonText:g(headerJson,'homepage'),
+      href: links.home,
+      pages: [
+        { title: g(headerJson,'homepage'), link: links.home },
+      ],
+    },
+    {
+      pageName: g(headerJson,'customer_service'),
+      title: '',
+      paragraph: '',
+      buttonText:  g(headerJson,'customer_service'),
+      href: '',
+      pages: [
+        { title: g(headerJson,'deposit'), link: `${links.deposit}` },
+        { title: g(headerJson,'withdrwal'),link: `${links.withdrwal}` },
+      ],
+    }
   ]
 
   const DEFAULT_TAB_INDEX = -1
@@ -84,6 +108,7 @@ const Header: React.FC<{
     gsap.fromTo('#fadeIn', { opacity: 0 }, { opacity: 1, duration: 0.6, delay: 0.3 })
   }
   const selectedTab = activeTabIndex === DEFAULT_TAB_INDEX ? null : pageInfoList[activeTabIndex]
+  
 
   useEffect(() => {
     const threshold = 0
@@ -123,7 +148,7 @@ const Header: React.FC<{
   useEffect(() => {
     const g = (pageData: any, keyWithoutLang: string) =>
       `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
-    const fetchData = async () => {
+      const fetchData = async () => {
       const useLocalCms = process.env.NEXT_PUBLIC_USE_LOCAL_CMS_DATA === 'true'
       const result = hoverMenuJson
 
@@ -168,6 +193,48 @@ const Header: React.FC<{
               </Link>
             </div>
             <div className="hidden items-center justify-center space-x-8 lg:flex">
+              {pageInfoList.map((page, index) => {
+                const selected = index === activeTabIndex
+                const ChevronIcon = selected ? ChevronUpIcon : ChevronDownIcon
+                return (
+                  <div
+                    key={index}
+                    className={`group z-[4] flex cursor-pointer items-center justify-center opacity-70 transition hover:opacity-100 ${textColorClass}`}
+                    onMouseEnter={() => (page.pages.length > 0 ? setActiveTabIndex(index) : null)}
+                  >
+                    {page.pages.length === 0 && (
+                      <Link title={page.title} className="flex items-start" href={page.href}>
+                        <span style={{ fontSize: `${fontSize}` }}>{page.title}</span>
+                      </Link>
+                    )}
+
+                    {page.pages.length > 0 && (
+                      <>
+                        <span
+                          style={{ fontSize: `${fontSize}` }}
+                          className={
+                            `z-[3] leading-[24px] ${
+                              textColor === 'black'
+                                ? 'decoration-arta-black'
+                                : 'decoration-arta-sunray-100'
+                            } underline-offset-[20px] transition group-hover:underline` +
+                            (selected ? ' underline' : '')
+                          }
+                        >
+                          {page.pageName}
+                        </span>
+                        <ChevronIcon
+                          className={`z-[3] ml-1 h-4 w-4 transition ${
+                            textColor === 'black'
+                              ? 'group-hover:text-arta-black'
+                              : 'group-hover:text-arta-sunray-100'
+                          }`}
+                        />
+                      </>
+                    )}
+                  </div>
+                )
+              })}
             </div>
             <div
               className="flex h-[22px] w-[26px] cursor-pointer flex-col justify-between lg:hidden"
@@ -294,6 +361,18 @@ const Header: React.FC<{
                 <div className={`mt-8 ${textColorClass} `}>
                   <div className="flex flex-col items-start justify-start">
                     <div className="flex w-full flex-col space-y-8">
+                      {pageInfoList.map((item, index) => (
+                        <div key={index}>
+                          <MobileNavbar
+                            item={item}
+                            expand={activeMobileNavItem === index}
+                            index={index}
+                            setActiveMobileNavItem={setActiveMobileNavItem}
+                            textColor={textColor}
+                            setShowMenu={setShowMenu}
+                          />
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>

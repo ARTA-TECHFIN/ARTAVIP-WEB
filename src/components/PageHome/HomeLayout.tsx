@@ -11,6 +11,7 @@ import Router from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
 import homepageJson from 'apidata/homepage.json'
+import Footer from 'src/components/Footer'
 
 const TABS = {
   person: 'person',
@@ -117,6 +118,7 @@ const HomeLayout: FC<propsT> = ({
           </div>
         </div>
       </main>
+      <Footer textColor="white" />
     </>
   )
 }

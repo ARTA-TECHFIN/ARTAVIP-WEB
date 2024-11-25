@@ -735,8 +735,7 @@ header {
 .contact-box-1-input {
   border: rgb(51, 51, 51);
   box-sizing: content-box;
-  width: 90%;
-  height: 50px;
+  width: full;
   display: inline-block;
   border-style: solid;
   border-left-width: 0.7px;
@@ -751,6 +750,13 @@ header {
 
   @media only screen and (max-width: 767px) {
     padding-left: 2%;
+  }
+}
+
+.wide-customer{
+  width: 66.666667%;
+  @media only screen and (max-width: 767px) {
+    width: 91.666667%;
   }
 }
 

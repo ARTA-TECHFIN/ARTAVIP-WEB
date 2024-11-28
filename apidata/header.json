@@ -73,5 +73,14 @@
    "bank_info_4_tc": "賬戶名稱：Arta Asset Management Limited",
    "withdrawal_remark_en": "Note: Please check your email to confirm the withdrawal request. After verification by the finance department, the withdrawal amount will be transferred to the designated bank account registered when the account was opened. If you need to make changes, please email cs.am@artaam.com and provide bank proof.",
    "withdrawal_remark_sc": "备注: 请留意邮箱以确认出金申请，经财务核实后，出金金额将转入您开户时登记的预设银行帐户。如需更改，请发电邮至 cs.am@artaam.com 并提供银行帐户证明.",
-   "withdrawal_remark_tc": "備注: 請留意郵箱以確認出金申請，經財務核實後，出金金額將轉入您開戶時登記的預設銀行帳戶。如需更改，請發電郵至 cs.am@artaam.com 並提供銀行帳戶證明."
+   "withdrawal_remark_tc": "備注: 請留意郵箱以確認出金申請，經財務核實後，出金金額將轉入您開戶時登記的預設銀行帳戶。如需更改，請發電郵至 cs.am@artaam.com 並提供銀行帳戶證明.",
+   "hkd_en": "HKD",
+   "hkd_sc": "HKD",
+   "hkd_tc": "HKD",
+   "cny_en": "CNY",
+   "cny_sc": "CNY",
+   "cny_tc": "CNY",
+   "usd_en": "USD",
+   "usd_sc": "USD",
+   "usd_tc": "USD"
  }

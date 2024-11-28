@@ -139,6 +139,16 @@ const Withdrwal = (props: { cms: any, fax: any, mail: any, title: any }) => {
     success_title: g(headerJson,'success_title'),
     success_message: g(headerJson,'success_message'),
   }
+  const TOPIC_TYPES = {
+    HKD: 'HKD',
+    CNY: 'CNY',
+    USD: 'USD',
+  }
+  const topicOptions = [
+    { value: TOPIC_TYPES.HKD, label: g(headerJson,'hkd') },
+    { value: TOPIC_TYPES.CNY, label: g(headerJson,'cny') },
+    { value: TOPIC_TYPES.USD, label: g(headerJson,'usd') },
+  ]
 
   return (
     <>
@@ -179,8 +189,11 @@ const Withdrwal = (props: { cms: any, fax: any, mail: any, title: any }) => {
                   <InputField label={r.phone} error={errors.phone?.message} className="col-span-1">
                     <InputText {...register('phone')} />
                   </InputField>
-                  <InputField label={r.currency} error={errors.currency?.message} className="col-span-1">
+                  {/* <InputField label={r.currency} error={errors.currency?.message} className="col-span-1">
                     <InputText {...register('currency')} />
+                  </InputField> */}
+                  <InputField label={r.currency} error={errors.currency?.message} className="col-span-1">
+                    <InputDropdown options={topicOptions} {...register('currency')} />
                   </InputField>
                   <InputField label={r.amount} error={errors.amount?.message} className="col-span-1">
                     <InputText {...register('amount')} />

@@ -79,7 +79,7 @@ const HomeLayout: FC<propsT> = ({
   return (
     <>
       <Seo
-        title={`Home | Arta TechFin`}
+        title={`Home | Arta AM`}
         description=''
         keywords=''
         ga="Homepage"

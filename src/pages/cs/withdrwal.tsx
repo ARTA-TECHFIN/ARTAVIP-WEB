@@ -110,7 +110,7 @@ const Withdrwal = (props: { cms: any, fax: any, mail: any, title: any }) => {
   return (
     <>
       <Seo
-        title={`Arta TechFin`}
+        title={`Arta AM`}
         description=''
         keywords=''
         ga=""

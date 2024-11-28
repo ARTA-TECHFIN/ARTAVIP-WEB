@@ -152,7 +152,7 @@ export const getReportCms = async ({ lang }: { lang: langT }) => {
   return {
     heroBanner: {
       title: 'Investor Relation',
-      description: `Established in October 2021, ARTA TechFin Corporation Limited (“ARTA TechFin”) (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology (“Technology in Finance” or “TechFin”).`,
+      description: `Established in October 2021, Arta AM Corporation Limited (“Arta AM”) (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology (“Technology in Finance” or “TechFin”).`,
       image: '/images/investor-relations/top-banner.jpg',
       mobileImage: '/images/investor-relations/mobile-top-banner.png',
       label: '',

@@ -40,14 +40,14 @@ const Seo = ({
               {
                 '@type': 'Organization',
                 '@id': 'artatechfin.com',
-                'name': 'Arta TechFin',
+                'name': 'Arta AM',
                 'url': 'artatechfin.com/',
                 'sameAs': [
                   'https://www.facebook.com/ARTAtechfin',
                   'https://www.linkedin.com/company/arta-techfin-corporation-limited',
                   'https://twitter.com/ARTATechFin',
                 ],
-                'legalName': 'ARTA TechFin Corporation Limited',
+                'legalName': 'Arta AM Corporation Limited',
                 'contactPoint': {
                   '@type': 'ContactPoint',
                   'telephone': '+852 3513 8279',
@@ -59,8 +59,8 @@ const Seo = ({
                 '@type': 'WebSite',
                 '@id': 'artatechfin.com',
                 'url': 'artatechfin.com',
-                'name': 'Arta TechFin',
-                'description': 'Arta TechFin',
+                'name': 'Arta AM',
+                'description': 'Arta AM',
                 'publisher': {
                   '@id': 'https://artatechfin.com/#organization',
                 },
@@ -70,12 +70,12 @@ const Seo = ({
                 '@type': 'WebPage',
                 '@id': 'artatechfin.com/#webpage',
                 'url': 'artatechfin.com/',
-                'name': 'Arta TechFin',
+                'name': 'Arta AM',
                 'isPartOf': {
                   '@id': 'artatechfin.com/#website',
                 },
                 'description':
-                  'ARTA TechFin (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology.',
+                  'Arta AM (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology.',
                 'inLanguage': 'en',
                 'potentialAction': [
                   {

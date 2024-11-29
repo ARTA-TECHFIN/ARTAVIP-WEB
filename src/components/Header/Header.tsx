@@ -13,6 +13,7 @@ import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
 import hoverMenuJson from 'apidata/hover-menu.json'
 import headerJson from 'apidata/header.json'
+import fundJson from 'apidata/fund.json'
 import MobileNavbar from 'src/components/Header/MobileNavbar'
 
 type menuItemT = {
@@ -93,6 +94,7 @@ const Header: React.FC<{
       buttonText:  g(headerJson,'customer_service'),
       href: '',
       pages: [
+        { title: g(fundJson,'account'),link: `${links.openAccount}` },
         { title: g(headerJson,'deposit'), link: `${links.deposit}` },
         { title: g(headerJson,'withdrwal'),link: `${links.withdrwal}` },
       ],

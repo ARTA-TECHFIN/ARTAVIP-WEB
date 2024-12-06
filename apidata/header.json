@@ -82,5 +82,8 @@
    "cny_tc": "CNY",
    "usd_en": "USD",
    "usd_sc": "USD",
-   "usd_tc": "USD"
+   "usd_tc": "USD",
+   "pr_account_en": "Online account opening (individual only)",
+   "pr_account_sc": "线上开户（只限个人户）",
+   "pr_account__tc": "USD"
  }

@@ -5,7 +5,7 @@ import { Seo } from 'src/components/Seo'
 import { HeroBanner } from '../HeroBanner'
 import { reportCmsT } from 'src/domains/investor'
 import { FC } from 'react'
-import { TabBar } from '../TabBar'
+import {TabBar2} from 'src/components/TabBar2'
 import { links } from 'src/domains/links'
 import Router from 'next/router'
 import { useTranslation } from 'next-i18next'
@@ -14,14 +14,18 @@ import homepageJson from 'apidata/homepage.json'
 import Footer from 'src/components/Footer'
 
 const TABS = {
-  person: 'person',
-  company: 'company',
-  institution: 'institution',
+  aspiring: 'aspiring',
+  riverchain: 'riverchain',
+  advisor: 'advisor',
+  aaml: 'aaml',
 } as const
+
+
 
 type tabsT = keyof typeof TABS
 
 type propsT = {
+  data: any
   tabType: tabsT
   hideTab?: boolean
   simpleHeader?: boolean
@@ -29,45 +33,70 @@ type propsT = {
   children: React.ReactNode
 }
 
-const HomeLayout: FC<propsT> = ({
+const Onboarding: FC<propsT> = ({
   tabType,
+  data,
   hideTab = false,
   children,
   gaLog = false,
 }) => {
   const homeData = homepageJson
+  
   const { locale } = useRouter()
+  const router = useRouter()
+  const z = (pageData: any, keyWithoutLang: string) => `${pageData[`${keyWithoutLang}_${locale}`]}`
+
   const tabInfoMap = {
-    [TABS.person]: {
-      title: homeData.person,
-      link: links.home,
-      value: 'person',
+    [TABS.aspiring]: {
+      title: data.title.sub_title_1,
+      link: data.title.link_1,
+      value: 'aspiring',
+      show: data.title.show_1,
+      sub:data.title.aspiring,
     },
-    [TABS.company]: {
-      title: homeData.company,
-      link: links.company,
-      value: 'company',
+    [TABS.riverchain]: {
+      title: data.title.sub_title_2,
+      link: data.title.link_2,
+      value: 'riverchain',
+      show: data.title.show_2,
+      sub:data.title.riverchain,
     },
-    [TABS.institution]: {
-      title: homeData.institution,
-      link: links.institution,
-      value: 'institution',
+    [TABS.advisor]: {
+      title: data.title.sub_title_3,
+      link: data.title.link_3,
+      value: 'advisor',
+      show: data.title.show_3,
+      sub:data.title.advisor,
+    },
+    [TABS.aaml]: {
+      title: data.title.sub_title_4,
+      link: data.title.link_4,
+      value: 'aaml',
+      show: data.title.show_4,
+      sub:data.title.aaml,
     },
   }
   const tabList = Object.values(tabInfoMap)
-  const router = useRouter()
+
+  console.log("tabList:"+ JSON.stringify(tabList))
+ 
   useEffect(() => {
-    if (tabType === 'person' && document.getElementById('tab')) {
+    if (tabType === 'aspiring' && document.getElementById('tab')) {
       // @ts-ignore
       document.getElementById('tab').scrollLeft = document.getElementById('tab')?.scrollWidth
     }
 
-    if (tabType === 'company' && document.getElementById('tab')) {
+    if (tabType === 'riverchain' && document.getElementById('tab')) {
       // @ts-ignore
       document.getElementById('tab').scrollLeft = document.getElementById('tab')?.scrollWidth - 100
     }
 
-    if (tabType === 'institution' && document.getElementById('tab')) {
+    if (tabType === 'advisor' && document.getElementById('tab')) {
+      // @ts-ignore
+      document.getElementById('tab').scrollLeft = document.getElementById('tab')?.scrollWidth
+    }
+    
+    if (tabType === 'aaml' && document.getElementById('tab')) {
       // @ts-ignore
       document.getElementById('tab').scrollLeft = document.getElementById('tab')?.scrollWidth
     }
@@ -87,24 +116,18 @@ const HomeLayout: FC<propsT> = ({
       <Header textColor="brown" />
       <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[220px]" />
       <main className="flex flex-col">
-        <div className="bg-arta-eggshell-100 pt-0 pb-6 md:pt-16 md:pb-[200px] " id="content">
-          <div className="arta-container mx-auto homes">
-              {/* <div className='text-arta-sand-100 pt-2 top-text'>{homeData.t0}</div>
-              <div className='small-text pt-4 text-arta-sand-100'>
-                <li><button onClick={() => {router.push(`${homeData.t5_link}`)}}>{homeData.t5}</button></li>
-                <li><button onClick={() => {router.push(`${homeData.t1_link}`)}}>{homeData.t1}</button></li>
-                <li><button onClick={() => {router.push(`${homeData.t4_link}`)}}>{homeData.t4}</button></li>
-              </div> */}
-              <div className='text-arta-sand-100 pt-2 top-text'>{homeData.t3}</div>
+        <div className="bg-arta-eggshell-100 pt-0 pb-6 md:pt-16 md:pb-[106px] " id="content">
+          <div className="arta-container mx-auto homes_fund">
+              <div className='text-arta-sand-100 pt-2 top-text'>{data.title.header}</div>
             {!hideTab && (
               <div id="tab" className="arta-hide-scrollbar -mx-6 overflow-scroll md:mx-0">
-                <TabBar
+                <TabBar2
                   className={`${locale == 'en'
                     ? 'min-w-[750px] lg:min-w-[650px]'
                     : 'min-w-[550px] lg:min-w-[500px]'
                     } pl-6`}
                   tabs={tabList.map((t) => {
-                    return { label: t.title, value: t.value }
+                    return { label: t.title, value: t.value,show: t.show,sub: t.sub }
                   })}
                   selectedTab={tabType}
                   setSelectedTab={(_, index) =>
@@ -114,7 +137,7 @@ const HomeLayout: FC<propsT> = ({
               </div>
             )}
             {children}
-            <div className='small-text pt-4 text-arta-sand-100'>{homeData.b0}</div>
+            <div className='small-text pt-4 text-arta-sand-100'>{data.title.remark}</div>
           </div>
         </div>
       </main>
@@ -124,4 +147,4 @@ const HomeLayout: FC<propsT> = ({
 }
 
 export { TABS }
-export default HomeLayout
+export default Onboarding

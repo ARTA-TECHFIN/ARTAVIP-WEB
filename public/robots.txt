@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://artagm.com
+Host: https://artaam.com
 
 # Sitemaps
-Sitemap: https://artagm.com/sitemap.xml
+Sitemap: https://artaam.com/sitemap.xml

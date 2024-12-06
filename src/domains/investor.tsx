@@ -1,6 +1,6 @@
 import { langT } from './i18n'
 
-const host = process.env.NEXT_PUBLIC_GM_HOSTING_PATH
+const host = process.env.NEXT_PUBLIC_AM_HOSTING_PATH
 const reportEndpoint = `${host}/api/report-list`
 const advancedReportEndpoint = `${host}/api/advanced-report-list`
 

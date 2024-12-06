@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /srv/www/gm_corp_site/code_deploy
+    destination: /srv/www/am_corp_site/code_deploy
 hooks:
   ApplicationStop:
     - location: scripts/stop.sh

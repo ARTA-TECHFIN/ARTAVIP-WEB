@@ -8,7 +8,7 @@ import { ButtonAnimated } from 'src/components/ButtonAnimated'
 import { Seo } from 'src/components/Seo'
 import { textClass } from 'src/components/Text'
 import HomeLayout, { TABS } from 'src/components/PageHome/HomeLayout'
-import MSFPersonalFile from 'src/components/PageHome/MSFPersonalFile'
+import IndividualFile from 'src/components/PageHome/IndividualFile'
 
 const Home = (props: { cms: any }) => {
 

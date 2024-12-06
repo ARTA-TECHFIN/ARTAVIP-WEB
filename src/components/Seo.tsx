@@ -28,7 +28,7 @@ const Seo = ({
       <meta name="og:description" content={description} />
       <meta
         name="og:image"
-        content={`${process.env.NEXT_PUBLIC_GM_SITE_URL}/images/artatechfin.png`}
+        content={`${process.env.NEXT_PUBLIC_AM_SITE_URL}/images/artatechfin.png`}
       />
       <link rel="icon" href="/arta_favicon_gm_new.jpg" />
       <script

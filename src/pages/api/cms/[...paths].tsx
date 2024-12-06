@@ -33,9 +33,11 @@ export default async function handler(
 
   let url;
   if (queryStr) {
-    url = `${process.env.GM_CMS_API_ENDPOINT}/` + paths.join("/") + "?" + queryStr;
+    // url = `${process.env.AM_CMS_API_ENDPOINT}/` + paths.join("/") + "?" + queryStr;
+    url = `http://127.0.0.1:1342/api/` + paths.join("/") + "?" + queryStr;
   } else {
-    url = `${process.env.GM_CMS_API_ENDPOINT}/` + paths.join("/");
+    // url = `${process.env.AM_CMS_API_ENDPOINT}/` + paths.join("/");
+    url = `http://127.0.0.1:1342/api/` + paths.join("/");
   }
 
   try {

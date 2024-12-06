@@ -2,6 +2,6 @@
   "name": "aaml_corp_site",
   "script": "yarn start",
   "env": {
-    "PORT": "1341"
+    "PORT": "3000"
   }
 }

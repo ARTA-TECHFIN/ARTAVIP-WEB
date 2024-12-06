@@ -28,7 +28,7 @@ const Footer: FC<{
         : 'text-arta-sand-100 decoration-arta-sand-100'
   const bgClass =
     textColor === 'white'
-      ? 'arta-gm-footer{'
+      ? 'arta-am-footer{'
       : textColor === 'black'
         ? 'bg-white'
         : 'bg-arta-eggshell-100'

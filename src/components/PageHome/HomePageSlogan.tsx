@@ -105,7 +105,7 @@ export const HomePageSlogan = ({ k, currentSectionId, setCurrentSectionById, set
       onMouseMove={(ev) => section1HandleMouseMove(ev)}
     >
       <div className="absolute w-full h-full object-cover">
-        <img className="w-full w-full object-cover" src="/images/artagm_homepage_banner_02.jpg" />
+        <img className="w-full w-full object-cover" src="/images/artaam_homepage_banner_02.jpg" />
       </div>
       <div className=" movable-elements-wrapper z-1 flex max-w-main-contain items-start justify-center px-6 xl:mx-auto">
         <div className="absolute bottom-[6em] left-[0em] md:left-[5em]">

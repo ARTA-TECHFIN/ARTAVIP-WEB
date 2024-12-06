@@ -1,9 +1,9 @@
 {
-  "name": "artagm-web",
+  "name": "artaam-web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "set PORT=1341 && next dev",
+    "dev": "set PORT=3000 && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -39,6 +39,7 @@
     "swiper": "^8.4.4"
   },
   "devDependencies": {
+    "@types/jquery": "^3.5.32",
     "@types/node": "18.7.23",
     "@types/nodemailer": "^6.4.6",
     "@types/react": "18.0.21",

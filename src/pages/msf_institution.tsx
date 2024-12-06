@@ -8,9 +8,28 @@ import { ButtonAnimated } from 'src/components/ButtonAnimated'
 import { Seo } from 'src/components/Seo'
 import { textClass } from 'src/components/Text'
 import HomeLayout, { TABS } from 'src/components/PageHome/HomeLayout'
-import MSFInstitutionFile from 'src/components/PageHome/MSFInstitutionFile'
+import LicensedFile from 'src/components/PageHome/LicensedFile'
 
-const Home = (props: { cms: any }) => {
+
+// 获取开个人户基本数据
+const fetchIndividualData = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/onboarding-licensed-pi?populate=*`)
+  const data = await res.json()
+  return data
+}
+
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { locale } = context
+  const individualData = await fetchIndividualData()
+  return {
+    props: {
+      s: individualData,
+      ...(await serverSideTranslations(locale || 'en', ['common'])),
+    },
+  }
+}
+const Home = (props: { s: any }) => {
 
   const { t } = useTranslation('common')
 
@@ -19,7 +38,10 @@ const Home = (props: { cms: any }) => {
       tabType={TABS.institution}
       gaLog={true}
     >
-      <MSFInstitutionFile/>
+    <LicensedFile
+      data={props.s}
+    >
+    </LicensedFile>
     </HomeLayout>
   )
 }

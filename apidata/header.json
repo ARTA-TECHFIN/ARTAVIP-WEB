@@ -82,5 +82,8 @@
    "cny_tc": "CNY",
    "usd_en": "USD",
    "usd_sc": "USD",
-   "usd_tc": "USD"
+   "usd_tc": "USD",
+   "fund_en": "Fund Product Deck",
+   "fund_sc": "境外产品概览",
+   "fund_tc": "境外產品概覽"
  }

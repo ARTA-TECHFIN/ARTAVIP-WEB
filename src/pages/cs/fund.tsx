@@ -16,7 +16,7 @@ import headerJson from 'apidata/header.json'
 import Fund, { TABS } from 'src/components/PageHome/Fund'
 import IndividualFile from 'src/components/PageHome/IndividualFile'
 import AspiringFund from 'src/components/PageHome/Fund/AspiringFund'
-const massageData = (pageData: any,productData: any, locale: string | undefined = 'en') => {
+const massageData = (pageData: any, locale: string | undefined = 'en') => {
   const g = (keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
 
   return {
@@ -25,52 +25,29 @@ const massageData = (pageData: any,productData: any, locale: string | undefined 
       sub_title_1: g('sub_f_1'),
       show_1: true,
       link_1: pageData.data.attributes.sub_f_1_link,
-      aspiring: productData.aspiring,
       sub_title_2: g('sub_f_2'),
       show_2: false,
       link_2: pageData.data.attributes.sub_f_2_link,
-      riverchain:productData.riverchain,
       sub_title_3: g('sub_f_3'),
       show_3: false,
       link_3: pageData.data.attributes.sub_f_3_link,
-      advisor:productData.advisor,
       sub_title_4: g('sub_f_4'),
       show_4: false,
       link_4: pageData.data.attributes.sub_f_4_link,
-      aaml:productData.aaml,
     },
   }
-}
-
-const massageData2 = (pageData: any, locale: string | undefined = 'en') => {
-
-  const maps: any[]= []
-  pageData.aspiring.map((t:any) => {
-     maps.push({'key':'aspiring',t})
-  })
-  pageData.riverchain.map((t:any) => {
-    maps.push({'key':'riverchain',t})
-  })
-  pageData.advisor.map((t:any) => {
-   maps.push({'key':'advisor',t})
-  })
-  pageData.aaml.map((t:any) => {
-    maps.push({'key':'aaml',t})
-  })
-
-  console.log("maps:"+JSON.stringify(maps))
-  return maps
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { locale } = context
   const pageData = await fetchHeader()
-  const productData = await fetchProduct()
   const product1Data = await fetchProduct1()
+  const fetchLabel = await fetchLabel2()
   return {
     props: {
-      s:  massageData(pageData,productData.data.attributes, locale),
+      s:  massageData(pageData, locale),
       v:  product1Data,
+      k:  fetchLabel,
       ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
   }
@@ -82,16 +59,16 @@ const fetchHeader = async () => {
   return data
 }
 
-// 获取基金公司产品基本数据
-const fetchProduct = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/fund-product?populate=*`)
+// 获取第一个基金的基础数据
+const fetchProduct1 = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/fund-aspiring?populate=*`)
   const data = await res.json()
   return data
 }
 
-// 获取第一个基金的基础数据
-const fetchProduct1 = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/fund-aspiring?populate=*`)
+// 获取基金Label数据
+const fetchLabel2 = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/fund-detail-label?populate=*`)
   const data = await res.json()
   return data
 }
@@ -104,7 +81,7 @@ const Home = (props: {k: any ,s: any ,v: any }) => {
       gaLog={true}
       data={props.s}
     >
-    <AspiringFund data={props.v}
+    <AspiringFund data={props.v} label={props.k}
     >
     </AspiringFund>
     </Fund>

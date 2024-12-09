@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { links } from 'src/domains/links'
 import Link from 'next/link'
 import { ReportCard } from 'src/components/PageHome/Fund/ReportCard'
+import FundDetail from './FundDetail'
 
 
 type propsT = {
@@ -24,14 +25,14 @@ const showFund = (index: any) => () => {
   })
 }
 
-const AspiringFund: FC<propsT> = ({
+const AAMLFund: FC<propsT> = ({
   data,
   label,
 }) => {
   const router = useRouter()
   const { locale } = router
   const g = (data:any,keyWithoutLang: string) => `${data[`${keyWithoutLang}_${locale}`]}`
-  const d= data.data.attributes.fund_aspiring
+  const d= data.data.attributes.fund_aaml
   const l= label.data.attributes
 
   return (
@@ -48,7 +49,7 @@ const AspiringFund: FC<propsT> = ({
         </li>
           )
         })}
-       </ul>
+        </ul>
       </div>
       {d.map((tab:any, index:any) => {
         return (
@@ -132,4 +133,4 @@ const AspiringFund: FC<propsT> = ({
   )
 }
 
-export default AspiringFund
+export default AAMLFund

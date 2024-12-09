@@ -1,6 +1,7 @@
 import type { GetServerSideProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Fund, { TABS } from 'src/components/PageHome/Fund'
+import ArkFund from 'src/components/PageHome/Fund/ArkFund'
 import RiverChain from 'src/components/PageHome/Fund/Riverchain'
 const massageData = (pageData: any, locale: string | undefined = 'en') => {
   const g = (keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
@@ -44,7 +45,6 @@ const fetchHeader = async () => {
   const data = await res.json()
   return data
 }
-
 // 获取基金Label数据
 const fetchLabel2 = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/fund-detail-label?populate=*`)
@@ -52,10 +52,9 @@ const fetchLabel2 = async () => {
   return data
 }
 
-
-// 获取第二个基金的基础数据
+// 获取第三个基金的基础数据
 const fetchProduct1 = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/fund-riverchain?populate=*`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/fund-ark?populate=*`)
   const data = await res.json()
   return data
 }
@@ -64,13 +63,13 @@ const Home = (props: {k: any ,s: any ,v: any }) => {
 
   return (
     <Fund
-      tabType={TABS.riverchain}
+      tabType={TABS.advisor}
       gaLog={true}
       data={props.s}
     >
-    <RiverChain data={props.v} label={props.k}
+    <ArkFund data={props.v} label={props.k}
     >
-    </RiverChain>
+    </ArkFund>
     </Fund>
   )
 }

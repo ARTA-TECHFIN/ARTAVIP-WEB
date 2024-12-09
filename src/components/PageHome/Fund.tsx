@@ -51,35 +51,25 @@ const Onboarding: FC<propsT> = ({
       title: data.title.sub_title_1,
       link: data.title.link_1,
       value: 'aspiring',
-      show: data.title.show_1,
-      sub:data.title.aspiring,
     },
     [TABS.riverchain]: {
       title: data.title.sub_title_2,
       link: data.title.link_2,
       value: 'riverchain',
-      show: data.title.show_2,
-      sub:data.title.riverchain,
     },
     [TABS.advisor]: {
       title: data.title.sub_title_3,
       link: data.title.link_3,
       value: 'advisor',
-      show: data.title.show_3,
-      sub:data.title.advisor,
     },
     [TABS.aaml]: {
       title: data.title.sub_title_4,
       link: data.title.link_4,
       value: 'aaml',
-      show: data.title.show_4,
-      sub:data.title.aaml,
     },
   }
   const tabList = Object.values(tabInfoMap)
 
-  console.log("tabList:"+ JSON.stringify(tabList))
- 
   useEffect(() => {
     if (tabType === 'aspiring' && document.getElementById('tab')) {
       // @ts-ignore
@@ -127,7 +117,7 @@ const Onboarding: FC<propsT> = ({
                     : 'min-w-[550px] lg:min-w-[500px]'
                     } pl-6`}
                   tabs={tabList.map((t) => {
-                    return { label: t.title, value: t.value,show: t.show,sub: t.sub }
+                    return { label: t.title, value: t.value}
                   })}
                   selectedTab={tabType}
                   setSelectedTab={(_, index) =>

@@ -1,7 +1,7 @@
 import type { GetServerSideProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Fund, { TABS } from 'src/components/PageHome/Fund'
-import RiverChain from 'src/components/PageHome/Fund/Riverchain'
+import AAMLFund from 'src/components/PageHome/Fund/AAMLFund'
 const massageData = (pageData: any, locale: string | undefined = 'en') => {
   const g = (keyWithoutLang: string) => `${pageData.data.attributes[`${keyWithoutLang}_${locale}`]}`
 
@@ -52,10 +52,9 @@ const fetchLabel2 = async () => {
   return data
 }
 
-
-// 获取第二个基金的基础数据
+// 获取第四个基金的基础数据
 const fetchProduct1 = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/fund-riverchain?populate=*`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/fund-aaml?populate=*`)
   const data = await res.json()
   return data
 }
@@ -64,13 +63,13 @@ const Home = (props: {k: any ,s: any ,v: any }) => {
 
   return (
     <Fund
-      tabType={TABS.riverchain}
+      tabType={TABS.aaml}
       gaLog={true}
       data={props.s}
     >
-    <RiverChain data={props.v} label={props.k}
+    <AAMLFund data={props.v} label={props.k}
     >
-    </RiverChain>
+    </AAMLFund>
     </Fund>
   )
 }

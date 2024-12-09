@@ -9,8 +9,6 @@ type propsT = {
   data: any,
   label: any
 }
-
-// eslint-disable-next-line react/display-name
 const showFund = (index: any) => () => {
   var input= document.getElementsByClassName("fund_box")
   Array.from(input).forEach((res:any)=>{
@@ -24,14 +22,14 @@ const showFund = (index: any) => () => {
   })
 }
 
-const AspiringFund: FC<propsT> = ({
+const RiverChain: FC<propsT> = ({
   data,
   label,
 }) => {
   const router = useRouter()
   const { locale } = router
   const g = (data:any,keyWithoutLang: string) => `${data[`${keyWithoutLang}_${locale}`]}`
-  const d= data.data.attributes.fund_aspiring
+  const d= data.data.attributes.fund_riverchain
   const l= label.data.attributes
 
   return (
@@ -42,13 +40,13 @@ const AspiringFund: FC<propsT> = ({
         return (
           // eslint-disable-next-line react/jsx-key
           <li className="md:col-span-6 col-span-12 m-2 sm:m-4">
-          <Link href='' onClick={showFund(tab.detail_slug)}>
+           <Link href='' onClick={showFund(tab.detail_slug)}>
             <ReportCard title={g(tab,'name')} Icon={''} />
           </Link>
         </li>
           )
         })}
-       </ul>
+        </ul>
       </div>
       {d.map((tab:any, index:any) => {
         return (
@@ -132,4 +130,4 @@ const AspiringFund: FC<propsT> = ({
   )
 }
 
-export default AspiringFund
+export default RiverChain

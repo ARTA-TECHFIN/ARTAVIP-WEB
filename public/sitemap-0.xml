@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<<<<<<< HEAD
 <url><loc>https://artaam.com</loc><lastmod>2024-12-03T06:18:12.148Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://artaam.com/Multi-Strat-Fund</loc><lastmod>2024-12-03T06:18:12.148Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://artaam.com/cs/company</loc><lastmod>2024-12-03T06:18:12.148Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
@@ -12,4 +13,15 @@
 <url><loc>https://artaam.com/menu-test</loc><lastmod>2024-12-03T06:18:12.149Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://artaam.com/msf_company</loc><lastmod>2024-12-03T06:18:12.149Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://artaam.com/msf_institution</loc><lastmod>2024-12-03T06:18:12.149Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+=======
+<url><loc>https://artagm.com</loc><lastmod>2024-12-06T10:14:01.651Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://artagm.com/Multi-Strat-Fund</loc><lastmod>2024-12-06T10:14:01.651Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://artagm.com/cs/account-opening</loc><lastmod>2024-12-06T10:14:01.651Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://artagm.com/cs/deposit</loc><lastmod>2024-12-06T10:14:01.651Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://artagm.com/cs/withdrwal</loc><lastmod>2024-12-06T10:14:01.651Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://artagm.com/funds/arta-multi-strategy</loc><lastmod>2024-12-06T10:14:01.651Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://artagm.com/menu-test</loc><lastmod>2024-12-06T10:14:01.651Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://artagm.com/msf_company</loc><lastmod>2024-12-06T10:14:01.651Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://artagm.com/msf_institution</loc><lastmod>2024-12-06T10:14:01.651Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+>>>>>>> master
 </urlset>

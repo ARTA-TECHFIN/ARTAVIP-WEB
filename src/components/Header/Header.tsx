@@ -94,7 +94,8 @@ const Header: React.FC<{
       buttonText:  g(headerJson,'customer_service'),
       href: '',
       pages: [
-        { title: g(fundJson,'account'),link: `${links.openAccount}` },
+        // { title: g(fundJson,'account'),link: `${links.openAccount}` },
+        { title: g(headerJson,'pr_account'), link: 'https://sit-hjzt.zunaer.com/open-account' },
         { title: g(headerJson,'deposit'), link: `${links.deposit}` },
         { title: g(headerJson,'withdrwal'),link: `${links.withdrwal}` },
         { title: g(headerJson,'fund'),link: `${links.fund}` },

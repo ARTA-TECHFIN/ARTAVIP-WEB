@@ -85,5 +85,8 @@
    "usd_tc": "USD",
    "fund_en": "Fund Product Deck",
    "fund_sc": "境外产品概览",
-   "fund_tc": "境外產品概覽"
+   "fund_tc": "境外產品概覽",
+   "pr_account_en": "Online account opening (individual only)",
+   "pr_account_sc": "线上开户（只限个人户）",
+   "pr_account__tc": "線上開戶（只限個人戶）"
  }

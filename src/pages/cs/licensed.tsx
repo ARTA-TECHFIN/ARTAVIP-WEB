@@ -12,14 +12,14 @@ import LicensedFile from 'src/components/PageHome/LicensedFile'
 
 // 获取开户基本数据
 const fetchHeader = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/onboarding`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_AM_HOSTING_PATH}/api/cms/onboarding`)
   const data = await res.json()
   return data
 }
 
 // 获取开持牌金融基本数据
 const fetchLicensedData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/onboarding-licensed-fi?populate=*`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_AM_HOSTING_PATH}/api/cms/onboarding-licensed-fi?populate=*`)
   const data = await res.json()
   return data
 }

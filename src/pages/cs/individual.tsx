@@ -12,14 +12,14 @@ import IndividualFile from 'src/components/PageHome/IndividualFile'
 
 // 获取开户基本数据
 const fetchHeader = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/onboarding`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_AM_HOSTING_PATH}/api/cms/onboarding`)
   const data = await res.json()
   return data
 }
 
 // 获取开个人户基本数据
 const fetchIndividualData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_HOSTING_PATH}/api/cms/onboarding-individual-pi?populate=*`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_AM_HOSTING_PATH}/api/cms/onboarding-individual-pi?populate=*`)
   const data = await res.json()
   return data
 }

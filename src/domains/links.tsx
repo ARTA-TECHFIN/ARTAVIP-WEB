@@ -9,7 +9,11 @@ export const links = {
   company: '/corporate_home',
   company2: '/cs/corporate',
   contact: '/contact',
-  fund: '/cs/fund',
+  fund: '/fund/aaml',
+  ark: '/fund/ark',
+  aaml: '/fund/aaml',
+  riverchain: '/fund/riverchain',
+  aspiring: '/product/fund',
   institution: '/msf_institution',
   institution2: '/cs/licensed',
   

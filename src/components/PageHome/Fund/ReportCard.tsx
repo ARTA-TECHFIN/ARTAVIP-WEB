@@ -7,7 +7,8 @@ type propsT = {
 }
 const ReportCard = (props: propsT) => {
   return (
-    <div className="relative flex items-center justify-between bg-white py-8 px-8 transition shadow-lg hover:brightness-[98%]">
+    // <div className="relative flex items-center justify-between bg-white py-8 px-8 transition shadow-lg hover:brightness-[98%] box">
+    <div className="relative flex items-center justify-between py-4 px-4 transition shadow-lg hover:brightness-[98%]">
       <div className="absolute top-0 bottom-0 left-0 w-2 bg-reportCard-gradient"></div>
       <div className="flex">
         {props.Icon && <props.Icon className="self-center" />}

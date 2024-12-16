@@ -47,26 +47,27 @@ const Onboarding: FC<propsT> = ({
   const z = (pageData: any, keyWithoutLang: string) => `${pageData[`${keyWithoutLang}_${locale}`]}`
 
   const tabInfoMap = {
-    [TABS.aspiring]: {
-      title: data.title.sub_title_1,
-      link: data.title.link_1,
-      value: 'aspiring',
+    [TABS.aaml]: {
+      title: data.title.sub_title_4,
+      link: data.title.link_4,
+      value: 'aaml',
     },
     [TABS.riverchain]: {
       title: data.title.sub_title_2,
       link: data.title.link_2,
       value: 'riverchain',
     },
+    [TABS.aspiring]: {
+      title: data.title.sub_title_1,
+      link: data.title.link_1,
+      value: 'aspiring',
+    },
     [TABS.advisor]: {
       title: data.title.sub_title_3,
       link: data.title.link_3,
       value: 'advisor',
     },
-    [TABS.aaml]: {
-      title: data.title.sub_title_4,
-      link: data.title.link_4,
-      value: 'aaml',
-    },
+
   }
   const tabList = Object.values(tabInfoMap)
 

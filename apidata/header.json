@@ -83,10 +83,16 @@
    "usd_en": "USD",
    "usd_sc": "USD",
    "usd_tc": "USD",
-   "fund_en": "Fund Product Deck",
-   "fund_sc": "境外产品概览",
-   "fund_tc": "境外產品概覽",
+   "fund_en": "Fund",
+   "fund_sc": "基金",
+   "fund_tc": "基金",
    "pr_account_en": "Online account opening (individual only)",
    "pr_account_sc": "线上开户（只限个人户）",
-   "pr_account__tc": "線上開戶（只限個人戶）"
+   "pr_account_tc": "線上開戶（只限個人戶）",
+   "pr_en": "Product",
+   "pr_sc": "产品",
+   "pr_tc": "產品",
+   "return_en": "Return",
+   "return_sc": "返回",
+   "return_tc": "返回"
  }

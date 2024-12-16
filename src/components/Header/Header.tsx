@@ -88,17 +88,27 @@ const Header: React.FC<{
       ],
     },
     {
+      pageName: g(headerJson,'pr'),
+      title: '',
+      paragraph: '',
+      buttonText:g(headerJson,'pr'),
+      href: links.home,
+      pages: [
+        { title: g(headerJson,'fund'),link: `${links.aaml}` },
+      ],
+    },
+    {
       pageName: g(headerJson,'customer_service'),
       title: '',
       paragraph: '',
       buttonText:  g(headerJson,'customer_service'),
       href: '',
       pages: [
-        // { title: g(fundJson,'account'),link: `${links.openAccount}` },
         { title: g(headerJson,'pr_account'), link: 'https://sit-hjzt.zunaer.com/open-account' },
+        { title: g(fundJson,'account'),link: `${links.openAccount}` },
         { title: g(headerJson,'deposit'), link: `${links.deposit}` },
         { title: g(headerJson,'withdrwal'),link: `${links.withdrwal}` },
-        { title: g(headerJson,'fund'),link: `${links.fund}` },
+        
       ],
     }
   ]

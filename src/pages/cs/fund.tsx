@@ -81,9 +81,7 @@ const Home = (props: {k: any ,s: any ,v: any }) => {
       gaLog={true}
       data={props.s}
     >
-    <AspiringFund data={props.v} label={props.k}
-    >
-    </AspiringFund>
+    <AspiringFund data={props.v} label={props.k} />
     </Fund>
   )
 }

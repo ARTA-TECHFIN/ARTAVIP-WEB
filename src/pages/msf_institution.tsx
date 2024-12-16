@@ -39,9 +39,7 @@ const Home = (props: { s: any }) => {
       gaLog={true}
     >
     <LicensedFile
-      data={props.s}
-    >
-    </LicensedFile>
+      data={props.s} />
     </HomeLayout>
   )
 }

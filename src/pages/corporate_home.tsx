@@ -49,17 +49,15 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 }
 
-const Home = (props: {k: any ,s: any }) => {
+const Home = (props: {s: any }) => {
 
   return (
     <HomeLayout
     tabType={TABS.company}
     gaLog={true}
     >
-    <CorporateFile
-      data={props.s}
-    >
-    </CorporateFile>
+    
+    <CorporateFile data={props.s} />
     </HomeLayout>
   )
 }

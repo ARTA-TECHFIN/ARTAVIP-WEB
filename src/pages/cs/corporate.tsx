@@ -64,8 +64,7 @@ const Home = (props: {k: any ,s: any }) => {
     >
     <CorporateFile
       data={props.s}
-    >
-    </CorporateFile>
+    />
     </Onboarding>
   )
 }

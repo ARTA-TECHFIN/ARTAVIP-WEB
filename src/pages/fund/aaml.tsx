@@ -67,9 +67,7 @@ const Home = (props: {k: any ,s: any ,v: any }) => {
       gaLog={true}
       data={props.s}
     >
-    <AAMLFund data={props.v} label={props.k}
-    >
-    </AAMLFund>
+    <AAMLFund data={props.v} label={props.k} />
     </Fund>
   )
 }

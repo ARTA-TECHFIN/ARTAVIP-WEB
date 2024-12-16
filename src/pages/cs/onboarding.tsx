@@ -62,9 +62,7 @@ const Home = (props: { k: any ,s: any}) => {
       data={props.k}
     >
     <IndividualFile
-      data={props.s}
-    >
-    </IndividualFile>
+      data={props.s} />
     </Onboarding>
   )
 }

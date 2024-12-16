@@ -24,7 +24,6 @@ type tabsT = keyof typeof TABS
 type propsT = {
   tabType: tabsT
   hideTab?: boolean
-  simpleHeader?: boolean
   gaLog?: boolean
   children: React.ReactNode
 }

@@ -61,9 +61,8 @@ const Home = (props: { k: any ,s: any}) => {
       data={props.k}
     >
     <LicensedFile
-      data={props.s}
-    >
-    </LicensedFile>
+      data={props.s} />
+    
     </Onboarding>
   )
 }

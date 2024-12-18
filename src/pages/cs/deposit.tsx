@@ -95,13 +95,13 @@ const Withdrwal = (props: { cms: any, fax: any, mail: any, title: any }) => {
       setFileSizeError("")
       const file = files[0]
 
-      if (!file.type.includes('pdf') &&!file.type.includes('jpg') &&!file.type.includes('jpeg') &&!file.type.includes('png') && !file.type.includes('word')) {
+      if (!file.type.includes('pdf') && !file.type.includes('jpg') &&!file.type.includes('jpeg') &&!file.type.includes('png') && !file.type.includes('word')) {
         console.error('depositUpload', 'Please upload a PDF or Word document')
         return
       }
 
       if (file.size > 5 * 1024000) {
-        setFileSizeError(t('warning.file_size_5mb'))
+        setFileSizeError('warning.file size over 5mb')
         return
       }
 

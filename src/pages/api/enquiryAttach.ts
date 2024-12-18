@@ -48,6 +48,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const message = {
           from: EMAIL_SENDER,
           to: EMAIL_GM_RECIPIENT,
+          cc: reqMessage.reqMessage.mail_address,
           subject: `Deposit request from - ${reqMessage.name}- （${reqMessage.account_number}）`,
           text: toPlainText(html),
           html,

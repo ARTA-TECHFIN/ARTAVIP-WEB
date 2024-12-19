@@ -193,7 +193,6 @@ const Onboarding: FC<propsT> = ({
                 <div className="col-span-1"></div>
                 <div className="col-span-1">
                   <ButtonAnimated
-                    extraProps={{ type: 'submit' }}
                     href={links.home}
                     className="w-full border-arta-sand-100 text-arta-sand-100 md:w-[120px]"
                   >

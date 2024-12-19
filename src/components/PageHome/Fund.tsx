@@ -59,9 +59,13 @@ const useEnquiryForm = (t: any, g: any) => {
       }
       if (data.password == 'Art@Fund5') {
         var overlay = document.getElementById("need_password");
-        overlay.style.display = "none";
+        if(overlay != null){
+          overlay.style.display = "none";
+        }
         var fundList = document.getElementById("fund_list");
-        fundList.style.display = "block";
+        if(fundList != null){
+          fundList.style.display = "block";
+        }
       }
       return { values: data, errors }
     },
@@ -142,10 +146,13 @@ const Onboarding: FC<propsT> = ({
     }
 
     var overlay = document.getElementById("need_password");
-    overlay.style.display = "block";
+    if(overlay != null){
+      overlay.style.display = "block";
+    }
     var fundList = document.getElementById("fund_list");
-    fundList.style.display = "none";
-
+    if(fundList != null){
+      fundList.style.display = "none";
+    }
   }, [])
 
   const { t } = useTranslation('common')

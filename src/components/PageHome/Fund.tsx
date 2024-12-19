@@ -52,7 +52,6 @@ const useEnquiryForm = (t: any, g: any) => {
     resolver: (data) => {
       const errors: Partial<Record<keyof FormValues, { message: string }>> = {}
 
-
       if (!data.password) errors.password = { message: t('warning.required') }
       if (data.password != 'Art@Fund5') errors.password = {
         message: 'Wrong.password '
@@ -191,14 +190,15 @@ const Onboarding: FC<propsT> = ({
                   </ButtonAnimated>
                 </div>
                 <div className="col-span-1"></div>
-                <div className="col-span-1">
+                {/* <div className="col-span-1">
                   <ButtonAnimated
+                    extraProps={{ type: 'cancel' }}
                     href={links.home}
                     className="w-full border-arta-sand-100 text-arta-sand-100 md:w-[120px]"
                   >
                     {g(headerJson,'return')}
                   </ButtonAnimated>
-                </div>
+                </div> */}
               </fieldset>
             </form>
           </div>

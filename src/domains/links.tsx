@@ -16,5 +16,7 @@ export const links = {
   aspiring: '/product/fund',
   institution: '/msf_institution',
   institution2: '/cs/licensed',
+  disclaimer: '/disclaimer',
+  privacy_policy: '/privacy-policy',
   
 }

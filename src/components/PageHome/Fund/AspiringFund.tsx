@@ -46,6 +46,14 @@ const refreshFunc = () => () => {
     res.style.display = "none";
   })
 }
+function jsonToMap(jsonString: any) {
+  var jsonObject = JSON.parse(JSON.stringify(jsonString));
+  const jsonMap = new Map();
+  for (const key in jsonObject) {
+    jsonMap.set(key, jsonObject[key]);
+  }
+  return jsonMap;
+}
 
 const AspiringFund: FC<propsT> = ({
   data,
@@ -54,6 +62,7 @@ const AspiringFund: FC<propsT> = ({
   const router = useRouter()
   const { locale } = router
   const g = (data:any,keyWithoutLang: string) => `${data[`${keyWithoutLang}_${locale}`]}`
+  const k = (keyWithoutLang: string) => `${keyWithoutLang}_${locale}`
   const d= data.data.attributes.fund_aspiring
   const l= label.data.attributes
 
@@ -74,87 +83,142 @@ const AspiringFund: FC<propsT> = ({
         </ul>
       </div>
       {d.map((tab:any, index:any) => {
+        const map = jsonToMap(tab.related_docs).get(k('file'));
         return (
           // eslint-disable-next-line react/jsx-key
           <div className="fund_box mb-12 grid sm:grid-cols-12 col-span-full  gap-x-8" style={index <1 ? {display:'block'}:{display:'none'}} id={tab.detail_slug}>
-          <div className="col-span-full lg:col-span-8 lg:col-start-3">
-            {/* <Link
-              className={`flex cursor-pointer items-center underline ${textClass.body_regular_verah}`}
-              onClick= {refreshFunc()}
-              href=''
-            >
-              <IconArrowLeft fill="#593725" className="mr-2 h-4" />
-              {g(headerJson,'return')}
-            </Link> */}
-            <h4 className={`mt-8 text-arta-sand-100 h4-text`}>{g(l,'title')}</h4>
-            <div className="mt-4 mb-8 grid grid-cols-12 gap-y-5 border-b border-black pb-10 sm:gap-y-8">
-            <div className="col-span-full sm:col-span-3" >
-            <div className="text-base text-arta-sand-100">
-             <div className={`font-bold font-Neue`}>{g(l,'name')}</div>
-             <div className="whitespace-breakspace font-Neue">{g(tab,'name')}</div>
-            </div>
-            </div>
-            <div className="col-span-full sm:col-span-6" >
-            <div className="text-base text-arta-sand-100">
-             <div className={`font-bold font-Neue`}>{g(l,'highlight')}</div>
-             <div className="whitespace-breakspace font-Neue">{g(tab,'product_highlight')}</div>
-            </div>
-            </div>
-            <div className="col-span-full sm:col-span-3" >
-            <div className="text-base text-arta-sand-100">
-             <div className={`font-bold font-Neue`}>{g(l,'launch_date')}</div>
-             <div className="whitespace-breakspace font-Neue">{g(tab,'launch_date')}</div>
-            </div>
-            </div>
-            <div className="col-span-full sm:col-span-3" >
-            <div className="text-base text-arta-sand-100">
-             <div className={`font-bold font-Neue`}>{g(l,'valuation')}</div>
-             <div className="whitespace-breakspace font-Neue">{g(tab,'valuation')}</div>
-            </div>
-            </div>
-            <div className="col-span-full sm:col-span-6" >
-            <div className="text-base text-arta-sand-100">
-             <div className={`font-bold font-Neue`}>{g(l,'lock_up')}</div>
-             <div className="whitespace-breakspace font-Neue">{g(tab,'lock_up')}</div>
-            </div>
-            </div>
-            <div className="col-span-full sm:col-span-3" >
-            <div className="text-base text-arta-sand-100">
-             <div className={`font-bold font-Neue`}>{g(l,'target_yield')}</div>
-             <div className="whitespace-breakspace font-Neue">{g(tab,'target_yield')}</div>
-            </div>
-            </div>
-            <div className="col-span-full sm:col-span-3" >
-            <div className="text-base text-arta-sand-100">
-             <div className={`font-bold font-Neue`}>{g(l,'minimum_subscription')}</div>
-             <div className="whitespace-breakspace font-Neue">{g(tab,'minimum_subscription')}</div>
-            </div>
-            </div>
-            <div className="col-span-full sm:col-span-6" >
-            <div className="text-base text-arta-sand-100">
-             <div className={`font-bold font-Neue`}>{g(l,'subscription_fee')}</div>
-             <div className="whitespace-breakspace font-Neue"dangerouslySetInnerHTML={{__html: g(tab,'subscription_fee')}}></div>
-            </div>
-            </div>
-            <div className="col-span-full sm:col-span-3" >
-            <div className="text-base text-arta-sand-100">
-             <div className={`font-bold font-Neue`}>{g(l,'management_fee')}</div>
-             <div className="whitespace-breakspace font-Neue">{g(tab,'management_fee')}</div>
-            </div>
-            </div>
-            <div className="col-span-full sm:col-span-3" >
-            <div className="text-base text-arta-sand-100">
-             <div className={`font-bold font-Neue`}>{g(l,'performance_fee')}</div>
-             <div className="whitespace-breakspace font-Neue" dangerouslySetInnerHTML={{__html: g(tab,'performance_fee')}}></div>
-            </div>
-            </div>
-            <div className="col-span-full sm:col-span-6" >
-            <div className="text-base text-arta-sand-100">
-             <div className={`font-bold font-Neue`}>{g(l,'leveraged')}</div>
-             <div className="whitespace-breakspace font-Neue">{g(tab,'leveraged')}</div>
-            </div>
-            </div>
-            </div>
+            <div className="col-span-full lg:col-span-8 lg:col-start-3">
+              <h4 className={`mt-8 text-arta-sand-100 text-base`}>{g(l, 'title')}</h4>
+              <div className="mt-4 mb-8 grid grid-cols-9 gap-y-5 border-b border-black pb-10 sm:gap-y-8">
+                <div className="col-span-full sm:col-span-2" >
+                  <div className="text-base text-arta-sand-100">
+                    <div className={`font-bold font-Neue`}>{g(l, 'name')}</div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-6" >
+                  <div className="text-base text-arta-sand-100">
+                    <div className="whitespace-breakspace font-Neue">{g(tab, 'type')}</div>
+                    <div className="whitespace-breakspace font-Neue">{g(tab, 'name')}</div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-2" >
+                  <div className="text-base text-arta-sand-100">
+                    <div className={`font-bold font-Neue`}>{g(l, 'highlight')}</div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-6" >
+                  <div className="text-base text-arta-sand-100">
+                    <div className="whitespace-breakspace font-Neue">{g(tab, 'product_highlight')}</div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-2" >
+                  <div className="text-base text-arta-sand-100">
+                    <div className={`font-bold font-Neue`}>{g(l, 'launch_date')}</div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-6" >
+                  <div className="text-base text-arta-sand-100">
+                    <div className="whitespace-breakspace font-Neue">{g(tab, 'launch_date')}</div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-2" >
+                  <div className="text-base text-arta-sand-100">
+                    <div className={`font-bold font-Neue`}>{g(l, 'valuation')}</div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-6" >
+                  <div className="text-base text-arta-sand-100">
+                    <div className="whitespace-breakspace font-Neue">{g(tab, 'valuation')}</div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-2" >
+                  <div className="text-base text-arta-sand-100">
+                    <div className={`font-bold font-Neue`}>{g(l, 'lock_up')}</div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-6" >
+                  <div className="text-base text-arta-sand-100">
+                    <div className="whitespace-breakspace font-Neue">{g(tab, 'lock_up')}</div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-2" >
+                  <div className="text-base text-arta-sand-100">
+                    <div className={`font-bold font-Neue`}>{g(l, 'target_yield')}</div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-6" >
+                  <div className="text-base text-arta-sand-100">
+                    <div className="whitespace-breakspace font-Neue">{g(tab, 'target_yield')}</div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-2" >
+                  <div className="text-base text-arta-sand-100">
+                    <div className={`font-bold font-Neue`}>{g(l, 'minimum_subscription')}</div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-6" >
+                  <div className="text-base text-arta-sand-100">
+                    <div className="whitespace-breakspace font-Neue">{g(tab, 'minimum_subscription')}</div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-2" >
+                  <div className="text-base text-arta-sand-100">
+                    <div className={`font-bold font-Neue`}>{g(l, 'subscription_fee')}</div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-6" >
+                  <div className="text-base text-arta-sand-100">
+                  <div className="whitespace-breakspace font-Neue" dangerouslySetInnerHTML={{ __html: g(tab, 'subscription_fee') }}></div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-2" >
+                  <div className="text-base text-arta-sand-100">
+                    <div className={`font-bold font-Neue`}>{g(l, 'management_fee')}</div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-6" >
+                  <div className="text-base text-arta-sand-100">
+                    <div className="whitespace-breakspace font-Neue">{g(tab, 'management_fee')}</div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-2" >
+                  <div className="text-base text-arta-sand-100">
+                    <div className={`font-bold font-Neue`}>{g(l, 'performance_fee')}</div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-6" >
+                  <div className="text-base text-arta-sand-100">
+                  <div className="whitespace-breakspace font-Neue" dangerouslySetInnerHTML={{ __html: g(tab, 'performance_fee') }}></div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-2" >
+                  <div className="text-base text-arta-sand-100">
+                    <div className={`font-bold font-Neue`}>{g(l, 'leveraged')}</div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-6" >
+                  <div className="text-base text-arta-sand-100">
+                    <div className="whitespace-breakspace font-Neue">{g(tab, 'leveraged')}</div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-2" >
+                  <div className="text-base text-arta-sand-100">
+                    <div className={`font-bold font-Neue`}>{g(l, 'related_docs')}</div>
+                  </div>
+                </div>
+                <div className="col-span-full sm:col-span-6" >
+                  <div className="text-base text-arta-sand-100 whitespace-breakspace font-Neue">
+                      {map?.map((j: any, i: any) => {
+                        return (
+                          // eslint-disable-next-line react/jsx-key
+                          <li><button onClick={() => {
+                            router.push(`${j.link}`)
+                          }}>{j.name}</button></li>
+                        )
+                      })}
+                  </div>
+                </div>
+              </div>
             </div>
          </div>
           )

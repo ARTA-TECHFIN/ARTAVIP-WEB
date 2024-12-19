@@ -7,7 +7,13 @@ import { useRouter } from 'next/router'
 import { links } from 'src/domains/links'
 import Link from 'next/link'
 import cn from 'classnames'
+import headerJson from 'apidata/header.json'
 
+const fetchCmsData = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_AM_HOSTING_PATH}/api/cms/home-footer?populate=*`)
+  const data = await res.json()
+  return data
+}
 
 const Footer: FC<{
   textColor?: 'white' | 'brown' | 'black'
@@ -41,17 +47,15 @@ const Footer: FC<{
 
   useEffect(() => {
     const fetchData = async () => {
-
+      const result = await fetchCmsData()
+      setFooterData(result.data.attributes)
     }
 
     fetchData()
   }, [])
 
   const g = (keyWithoutLang: string) => `${footerData[`${keyWithoutLang}_${locale}`]}`
-
-  const k = {
-    address: `Units 1-2, Level 9, \nK11 ATELIER King’s Road, \n728 King’s Road,Quarry Bay,\nHong Kong`,
-  }
+  const z = (pageData: any, keyWithoutLang: string) =>`${pageData[`${keyWithoutLang}_${locale}`]}`
 
   return (
     <>
@@ -61,14 +65,31 @@ const Footer: FC<{
         <div className="mt-8 grid grid-cols-4 gap-x-12 lg:grid-cols-4 justify-items-center place-items-start px-10">
         </div>
         <div style={{ paddingLeft: '10%', paddingRight: '10%' }}>
+          <Hr borderColorClass={borderClass} />
           <div className="flex  flex-col items-start justify-start space-y-5 font-Neue lg:flex-row lg:items-center lg:justify-between">
             <div className="flex items-center justify-around space-x-3 text-[12px] leading-[20px] sm:space-x-6">
+              <Link
+                title={z(headerJson,'disclaimer')}
+                href={links.disclaimer}
+                className="cursor-pointer hover:underline"
+              >
+                {z(headerJson,'disclaimer')}
+              </Link>
+              <p>|</p>
+              <Link
+                title={z(headerJson,'privacy_policy')}
+                href={links.privacy_policy}
+                className="cursor-pointer hover:underline"
+              >
+                {z(headerJson,'privacy_policy')}
+              </Link>
+              <p>|</p>
               <LanguageSwitcher />
             </div>
-
+            <div className="text-xs leading-[20px]">
+              <p>{g('copyright')}</p>
+            </div>
           </div>
-          <Hr borderColorClass={borderClass} />
-
         </div>
       </footer>
     </>

@@ -33,11 +33,11 @@ export default async function handler(
 
   let url;
   if (queryStr) {
-    // url = `${process.env.AM_CMS_API_ENDPOINT}/` + paths.join("/") + "?" + queryStr;
-    url = `http://127.0.0.1:1344/api/` + paths.join("/") + "?" + queryStr;
+    url = `${process.env.AM_CMS_API_ENDPOINT}/` + paths.join("/") + "?" + queryStr;
+    // url = `http://127.0.0.1:1344/api/` + paths.join("/") + "?" + queryStr;
   } else {
-    // url = `${process.env.AM_CMS_API_ENDPOINT}/` + paths.join("/");
-    url = `http://127.0.0.1:1344/api/` + paths.join("/");
+    url = `${process.env.AM_CMS_API_ENDPOINT}/` + paths.join("/");
+    // url = `http://127.0.0.1:1344/api/` + paths.join("/");
   }
   try {
     const response = await fetch(url, requestOptions);

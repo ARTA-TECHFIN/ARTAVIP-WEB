@@ -45,6 +45,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         <p>Phone: ${sensitize(reqMessage.phone)}</p>
        <p>Withdrawal Amount:  ${sensitize(reqMessage.currency)} ${sensitize(reqMessage.amount)}</p>`
 
+    if(!reqMessage.mail_address){
+      console.log('mail_address is empty: ')
+      throw new Error('Network response was not ok')
+    }   
+
     const message = {
       from: EMAIL_SENDER,
       to: EMAIL_GM_RECIPIENT,

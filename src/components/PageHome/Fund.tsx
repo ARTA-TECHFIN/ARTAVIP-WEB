@@ -72,8 +72,6 @@ const useEnquiryForm = (t: any, g: any) => {
 
   const submitStatus = useMutation({
     mutationFn: async (data: any) => {
-      const response = await fetch('/api/enquiry', { method: 'POST', body: JSON.stringify(data) })
-      if (!response.ok) throw new Error('Network response was not ok')
     },
   })
   const onSubmit = handleSubmit((data) => submitStatus.mutate(data))

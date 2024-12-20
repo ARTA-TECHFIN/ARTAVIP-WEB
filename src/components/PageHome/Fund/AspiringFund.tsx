@@ -15,34 +15,34 @@ type propsT = {
 
 // eslint-disable-next-line react/display-name
 const showFund = (index: any) => () => {
-  var funds= document.getElementsByClassName("fund_product")
-  Array.from(funds).forEach((res:any)=>{
-    if(res.id == index){
+  var funds = document.getElementsByClassName("fund_product")
+  Array.from(funds).forEach((res: any) => {
+    if (res.id == index) {
       res.style.backgroundColor = "white";
-    }else{
+    } else {
       res.style.backgroundColor = "silver";
     }
   })
 
-  var input= document.getElementsByClassName("fund_box")
-  Array.from(input).forEach((res:any)=>{
+  var input = document.getElementsByClassName("fund_box")
+  Array.from(input).forEach((res: any) => {
     res.style.display = "block";
 
-    if(res.id == index){
+    if (res.id == index) {
       res.style.display = "block";
-    }else{
+    } else {
       res.style.display = "none";
     }
   })
 }
 
 const refreshFunc = () => () => {
-  var funds= document.getElementsByClassName("fund_product")
-  Array.from(funds).forEach((res:any)=>{
+  var funds = document.getElementsByClassName("fund_product")
+  Array.from(funds).forEach((res: any) => {
     res.style.display = "block";
   })
-  var input= document.getElementsByClassName("fund_box")
-  Array.from(input).forEach((res:any)=>{
+  var input = document.getElementsByClassName("fund_box")
+  Array.from(input).forEach((res: any) => {
     res.style.display = "none";
   })
 }
@@ -61,35 +61,35 @@ const AspiringFund: FC<propsT> = ({
 }) => {
   const router = useRouter()
   const { locale } = router
-  const g = (data:any,keyWithoutLang: string) => `${data[`${keyWithoutLang}_${locale}`]}`
+  const g = (data: any, keyWithoutLang: string) => `${data[`${keyWithoutLang}_${locale}`]}`
   const k = (keyWithoutLang: string) => `${keyWithoutLang}_${locale}`
-  const d= data.data.attributes.fund_aspiring
-  const l= label.data.attributes
+  const d = data.data.attributes.fund_aspiring
+  const l = label.data.attributes
 
   return (
     <div className="pt-4 md:pt-16">
       <div className="mb-12 grid sm:grid-cols-12 col-span-full  gap-x-8">
         <ul className="col-span-full col-span-full grid grid-cols-12 sm:mt-0 mt-4">
-        {d.map((tab:any, index:any) => {
-        return (
-          // eslint-disable-next-line react/jsx-key
-          <li className={`md:col-span-4 col-span-12 m-2 sm:m-4 fund_product`} style={index <1 ? {backgroundColor:'white'}:{backgroundColor:'silver'}} id={tab.detail_slug}>
-           <Link href='' onClick={showFund(tab.detail_slug)}>
-            <ReportCard title={g(tab,'name')} Icon={''} />
-          </Link>
-        </li>
-          )
-        })}
+          {d.map((tab: any, index: any) => {
+            return (
+              // eslint-disable-next-line react/jsx-key
+              <li className={`md:col-span-4 col-span-12 m-2 sm:m-4 fund_product`} style={index < 1 ? { backgroundColor: 'white' } : { backgroundColor: 'silver' }} id={tab.detail_slug}>
+                <Link href='' onClick={showFund(tab.detail_slug)}>
+                  <ReportCard title={g(tab, 'name')} Icon={''} />
+                </Link>
+              </li>
+            )
+          })}
         </ul>
       </div>
-      {d.map((tab:any, index:any) => {
+      {d.map((tab: any, index: any) => {
         const map = jsonToMap(tab.related_docs).get(k('file'));
         return (
           // eslint-disable-next-line react/jsx-key
-          <div className="fund_box mb-12 grid sm:grid-cols-12 col-span-full  gap-x-8" style={index <1 ? {display:'block'}:{display:'none'}} id={tab.detail_slug}>
+          <div className="fund_box mb-12 grid sm:grid-cols-12 col-span-full  gap-x-8" style={index < 1 ? { display: 'block' } : { display: 'none' }} id={tab.detail_slug}>
             <div className="col-span-full lg:col-span-8 lg:col-start-3">
-              <h4 className={`mt-8 text-arta-sand-100 text-base`}>{g(l, 'title')}</h4>
-              <div className="mt-4 mb-8 grid grid-cols-9 gap-y-5 border-b border-black pb-10 sm:gap-y-8">
+              <h4 className={`mt-8 text-arta-sand-100 text-base font-bold font-Neue`}>{g(tab, 'name')}</h4>
+              <div className="mt-4 mb-8 grid grid-cols-9 gap-y-5 border-b border-black pb-5 sm:gap-y-4">
                 <div className="col-span-full sm:col-span-2" >
                   <div className="text-base text-arta-sand-100">
                     <div className={`font-bold font-Neue`}>{g(l, 'name')}</div>
@@ -98,7 +98,7 @@ const AspiringFund: FC<propsT> = ({
                 <div className="col-span-full sm:col-span-6" >
                   <div className="text-base text-arta-sand-100">
                     <div className="whitespace-breakspace font-Neue">{g(tab, 'type')}</div>
-                    <div className="whitespace-breakspace font-Neue">{g(tab, 'name')}</div>
+                    {/* <div className="whitespace-breakspace font-Neue">{g(tab, 'name')}</div> */}
                   </div>
                 </div>
                 <div className="col-span-full sm:col-span-2" >
@@ -168,7 +168,7 @@ const AspiringFund: FC<propsT> = ({
                 </div>
                 <div className="col-span-full sm:col-span-6" >
                   <div className="text-base text-arta-sand-100">
-                  <div className="whitespace-breakspace font-Neue" dangerouslySetInnerHTML={{ __html: g(tab, 'subscription_fee') }}></div>
+                    <div className="whitespace-breakspace font-Neue" dangerouslySetInnerHTML={{ __html: g(tab, 'subscription_fee') }}></div>
                   </div>
                 </div>
                 <div className="col-span-full sm:col-span-2" >
@@ -188,7 +188,7 @@ const AspiringFund: FC<propsT> = ({
                 </div>
                 <div className="col-span-full sm:col-span-6" >
                   <div className="text-base text-arta-sand-100">
-                  <div className="whitespace-breakspace font-Neue" dangerouslySetInnerHTML={{ __html: g(tab, 'performance_fee') }}></div>
+                    <div className="whitespace-breakspace font-Neue" dangerouslySetInnerHTML={{ __html: g(tab, 'performance_fee') }}></div>
                   </div>
                 </div>
                 <div className="col-span-full sm:col-span-2" >
@@ -208,21 +208,21 @@ const AspiringFund: FC<propsT> = ({
                 </div>
                 <div className="col-span-full sm:col-span-6" >
                   <div className="text-base text-arta-sand-100 whitespace-breakspace font-Neue">
-                      {map?.map((j: any, i: any) => {
-                        return (
-                          // eslint-disable-next-line react/jsx-key
-                          <li><button onClick={() => {
-                            router.push(`${j.link}`)
-                          }}>{j.name}</button></li>
-                        )
-                      })}
+                    {map?.map((j: any, i: any) => {
+                      return (
+                        // eslint-disable-next-line react/jsx-key
+                        <li><button onClick={() => {
+                          router.push(`${j.link}`)
+                        }}>{j.name}</button></li>
+                      )
+                    })}
                   </div>
                 </div>
               </div>
             </div>
-         </div>
-          )
-        })}
+          </div>
+        )
+      })}
     </div>
   )
 }

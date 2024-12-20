@@ -90,8 +90,8 @@ const AAMLFund: FC<propsT> = ({
           // eslint-disable-next-line react/jsx-key
           <div className="fund_box mb-12 grid sm:grid-cols-12 col-span-full  gap-x-8" style={index < 1 ? { display: 'block' } : { display: 'none' }} id={tab.detail_slug}>
             <div className="col-span-full lg:col-span-8 lg:col-start-3">
-              <h4 className={`mt-8 text-arta-sand-100 text-base`}>{g(l, 'title')}</h4>
-              <div className="mt-4 mb-8 grid grid-cols-9 gap-y-5 border-b border-black pb-10 sm:gap-y-8">
+              <h4 className={`mt-8 text-arta-sand-100 text-base font-bold font-Neue`}>{g(tab, 'name')}</h4>
+              <div className="mt-4 mb-8 grid grid-cols-9 gap-y-5 border-b border-black pb-5 sm:gap-y-4">
                 <div className="col-span-full sm:col-span-2" >
                   <div className="text-base text-arta-sand-100">
                     <div className={`font-bold font-Neue`}>{g(l, 'name')}</div>
@@ -100,7 +100,7 @@ const AAMLFund: FC<propsT> = ({
                 <div className="col-span-full sm:col-span-6" >
                   <div className="text-base text-arta-sand-100">
                     <div className="whitespace-breakspace font-Neue">{g(tab, 'type')}</div>
-                    <div className="whitespace-breakspace font-Neue">{g(tab, 'name')}</div>
+                    {/* <div className="whitespace-breakspace font-Neue">{g(tab, 'name')}</div> */}
                   </div>
                 </div>
                 <div className="col-span-full sm:col-span-2" >
@@ -210,14 +210,14 @@ const AAMLFund: FC<propsT> = ({
                 </div>
                 <div className="col-span-full sm:col-span-6" >
                   <div className="text-base text-arta-sand-100 whitespace-breakspace font-Neue">
-                      {map?.map((j: any, i: any) => {
-                        return (
-                          // eslint-disable-next-line react/jsx-key
-                          <li><button onClick={() => {
-                            router.push(`${j.link}`)
-                          }}>{j.name}</button></li>
-                        )
-                      })}
+                    {map?.map((j: any, i: any) => {
+                      return (
+                        // eslint-disable-next-line react/jsx-key
+                        <li><button onClick={() => {
+                          router.push(`${j.link}`)
+                        }}>{j.name}</button></li>
+                      )
+                    })}
                   </div>
                 </div>
               </div>

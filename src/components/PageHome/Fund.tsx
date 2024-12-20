@@ -172,14 +172,14 @@ const Onboarding: FC<propsT> = ({
               <fieldset
                 disabled={submitStatus.isLoading}
                 className={
-                  'flex w-full max-w-[500px] flex-col gap-10 bg-arta-snow-100 p-6 shadow-2xl transition-all ease-in-out md:grid md:grid-cols-4 '
+                  'flex w-full max-w-[500px] flex-col gap-10 bg-arta-snow-100 p-6 shadow-2xl transition-all ease-in-out md:grid md:grid-cols-7'
                 }
               >
-                <InputField label={g(headerJson,'fund_pw_label')} error={errors.password?.message} className="col-span-4">
+                <InputField label={g(headerJson,'fund_pw_label')} error={errors.password?.message} className="col-span-7">
                   <InputText {...register('password')} />
                 </InputField>
 
-                <div className="col-span-1">
+                <div className="col-span-2">
                   <ButtonAnimated
                     extraProps={{ type: 'submit' }}
                     className="w-full border-arta-sand-100 text-arta-sand-100 md:w-[120px]"

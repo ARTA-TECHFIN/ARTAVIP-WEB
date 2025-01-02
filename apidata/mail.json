@@ -1,0 +1,23 @@
+{
+  "withdral_h0_en": "Withdrawal request from ",
+  "withdral_h0_tc": "出金申請",
+  "withdral_h0_sc": "出金申请",
+  "withdral_h1_en": "Dear ",
+  "withdral_h1_tc": "尊敬的客戶,",
+  "withdral_h1_sc": "尊敬的客户,",
+  "withdral_h2_en": "We have received your withdrawal request and will process it within 24 hours. Please find the details below: ",
+  "withdral_h2_tc": "我司已收到閣下的出金需求，並會在24小時內進行處理。詳細資料如下：",
+  "withdral_h2_sc": "我司已收到阁下的出金需求，并会在24小时内进行处理。详细资料如下：",
+  "withdral_h3_en": "If this request was not made by you, please reply to this email as soon as possible for clarification.",
+  "withdral_h3_tc": "如非閣下本人所操作，請盡快回復郵件以作澄清。",
+  "withdral_h3_sc": "如非阁下本人所操作，请尽快回复邮件以作澄清。",
+  "withdral_h4_en": "Best regards,",
+  "withdral_h4_tc": "感謝您的配合。",
+  "withdral_h4_sc": "感谢您的配合。",
+  "withdral_h5_en": "Customer Services",
+  "withdral_h5_tc": "此致，",
+  "withdral_h5_sc": "此致，",
+  "withdral_h6_en": "Arta Asset Management Limited",
+  "withdral_h6_tc": "裕承資產管理有限公司",
+  "withdral_h6_sc": "裕承资产管理有限公司"
+}

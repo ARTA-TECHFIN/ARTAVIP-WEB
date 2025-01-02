@@ -22,9 +22,10 @@ interface FormValues {
   phone: string
   currency: string
   amount: string
+  locale: string
 }
 
-const useEnquiryForm = (t: any,g: any) => {
+const useEnquiryForm = (t: any,g: any,locale:any) => {
   const {
     handleSubmit,
     formState: { errors },
@@ -34,6 +35,7 @@ const useEnquiryForm = (t: any,g: any) => {
       data.topic = g(headerJson,'withdrawal_title')
       const errors: Partial<Record<keyof FormValues, { message: string }>> = {}
 
+      data.locale=locale
       if (!data.name) errors.name = { message: t('warning.required') }
       if (!data.account_number) errors.account_number = { message: t('warning.required') }
       if (!data.phone) errors.phone = { message: t('warning.required') }
@@ -42,7 +44,6 @@ const useEnquiryForm = (t: any,g: any) => {
       if (!data.mail_address) errors.mail_address = { message: t('warning.required') }
       else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(data.mail_address))
         errors.mail_address = { message: t('warning.invalid_format') }
-
       return { values: data, errors }
     },
   })
@@ -77,8 +78,11 @@ const Withdrwal = (props: { cms: any, fax: any, mail: any, title: any }) => {
   const { t } = useTranslation('common')
   const router = useRouter()
   const { locale } = router
+  const lan= {locale}
+
+  console.log("sdsfss:"+locale)
   const g = (pageData: any, keyWithoutLang: string) =>`${pageData[`${keyWithoutLang}_${locale}`]}`
-  const { register, errors, watch, onSubmit, submitStatus } = useEnquiryForm(t,g)
+  const { register, errors, watch, onSubmit, submitStatus } = useEnquiryForm(t,g,locale)
 
   const r = {
     title: g(headerJson,'withdrawal_title'),

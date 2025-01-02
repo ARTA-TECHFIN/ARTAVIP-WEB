@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-
+import { useRouter } from 'next/router'
 import nodemailer from 'nodemailer'
-
+import  mailJson from 'apidata/mail.json'
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 const transporter = nodemailer.createTransport({
@@ -25,6 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const reqMessage = JSON.parse(req.body)
 
+    const g = (pageData: any, locale: any, keyWithoutLang: string) =>`${pageData[`${keyWithoutLang}_${locale}`]}`
     // enquiryType: falsy/enquiry or job-apply
 
     const sensitize = (str: string | undefined) => str?.replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -39,11 +40,49 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     delete bodyObj.acceptedTerms
     delete bodyObj.enquiryType
+    let html=''
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    console.log("now:"+reqMessage.locale)
+    if(reqMessage.locale ==="en"){
+      html = `
+      <p>${g(mailJson,reqMessage.locale,'withdral_h1')} ${sensitize(reqMessage.name)},</p>
+      <p>${g(mailJson,reqMessage.locale,'withdral_h2')}</p>
+      <p>Full Name: ${sensitize(reqMessage.name)}（${sensitize(reqMessage.account_number)}）</p>
+      ${sensitize(reqMessage.mail_address) ? `<p>Email: ${sensitize(reqMessage.mail_address)}</p>` : ''}
+       <p>Phone: ${sensitize(reqMessage.phone)}</p>
+      <p>Withdrawal Amount:  ${sensitize(reqMessage.currency)} ${sensitize(reqMessage.amount)}</p>
+      <p>${g(mailJson,reqMessage.locale,'withdral_h3')}</p>
+      <p>${g(mailJson,reqMessage.locale,'withdral_h4')}</p>
+      <p>${g(mailJson,reqMessage.locale,'withdral_h5')}</p>
+      <p>${g(mailJson,reqMessage.locale,'withdral_h6')}</p>
+      `
+    }
+    if(reqMessage.locale ==="sc"){
+      html = `<p>${g(mailJson,reqMessage.locale,'withdral_h1')}</p>
+      <p>${g(mailJson,reqMessage.locale,'withdral_h2')}</p>
+      <p>姓名: ${sensitize(reqMessage.name)}（${sensitize(reqMessage.account_number)}）</p>
+      ${sensitize(reqMessage.mail_address) ? `<p>邮箱: ${sensitize(reqMessage.mail_address)}</p>` : ''}
+       <p>电话: ${sensitize(reqMessage.phone)}</p>
+      <p>转出金额:  ${sensitize(reqMessage.currency)} ${sensitize(reqMessage.amount)}</p>
+      <p>${g(mailJson,reqMessage.locale,'withdral_h3')}</p>
+      <p>${g(mailJson,reqMessage.locale,'withdral_h4')}</p>
+      <p>${g(mailJson,reqMessage.locale,'withdral_h5')}</p>
+      <p>${g(mailJson,reqMessage.locale,'withdral_h6')}</p>`
+    }
+    if(reqMessage.locale ==="tc"){
+      html = `<p>${g(mailJson,reqMessage.locale,'withdral_h1')}</p>
+      <p>${g(mailJson,reqMessage.locale,'withdral_h2')}</p>
+      <p>姓名: ${sensitize(reqMessage.name)}（${sensitize(reqMessage.account_number)}）</p>
+      ${sensitize(reqMessage.mail_address) ? `<p>郵箱: ${sensitize(reqMessage.mail_address)}</p>` : ''}
+       <p>電話: ${sensitize(reqMessage.phone)}</p>
+      <p>轉出金額:  ${sensitize(reqMessage.currency)} ${sensitize(reqMessage.amount)}</p>
+      <p>${g(mailJson,reqMessage.locale,'withdral_h3')}</p>
+      <p>${g(mailJson,reqMessage.locale,'withdral_h4')}</p>
+      <p>${g(mailJson,reqMessage.locale,'withdral_h5')}</p>
+      <p>${g(mailJson,reqMessage.locale,'withdral_h6')}</p>`
+    }
 
-    const html = `<p>Full Name: ${sensitize(reqMessage.name)}（${sensitize(reqMessage.account_number)}）</p>
-       ${sensitize(reqMessage.mail_address) ? `<p>Email: ${sensitize(reqMessage.mail_address)}</p>` : ''}
-        <p>Phone: ${sensitize(reqMessage.phone)}</p>
-       <p>Withdrawal Amount:  ${sensitize(reqMessage.currency)} ${sensitize(reqMessage.amount)}</p>`
+    
 
     if(!reqMessage.mail_address){
       console.log('mail_address is empty: ')
@@ -52,13 +91,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const message = {
       from: EMAIL_SENDER,
-      to: EMAIL_GM_RECIPIENT,
-      cc: reqMessage.mail_address,
-      subject: `Withdrawal request from - ${reqMessage.name}- （${reqMessage.account_number}）`,
+      to: reqMessage.mail_address,
+      cc: EMAIL_GM_RECIPIENT,
+      subject: `${g(mailJson,reqMessage.locale,'withdral_h0')} - ${reqMessage.name}- （${reqMessage.account_number}）`,
       text: toPlainText(html),
       html,
     }
-    console.log('Sending email: ', message)
+    // console.log('Sending email: ', message)
     await transporter.sendMail(message)
 
 

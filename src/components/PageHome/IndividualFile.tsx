@@ -24,7 +24,7 @@ const IndividualFile: FC<propsT> = ({
       <div className='h4-light-text pt-8'>
         {g('title_1')}
         <div className='small-text p-2'>
-        <ul className='list-outside'>        {file.map((j: any, i: any) => {
+       {file.map((j: any, i: any) => {
           var link= z(j,'link')
           if(link == '' || link == 'null'){
             return (
@@ -34,20 +34,20 @@ const IndividualFile: FC<propsT> = ({
           }else{
             return (
               // eslint-disable-next-line react/jsx-key
-              <li className='whitespace-normal'><button onClick={() => {
+              <div className='flex'>
+                <li className='whitespace-nowrap'></li><button onClick={() => {
                 router.push(`${z(j,'link')}`)
-              }}>{z(j,'file_name')}</button></li>
+              }}>{z(j,'file_name')}</button></div>
           )
           }
          })}
-         </ul>
+
         </div>
       </div>
       <hr className='securities-hr'></hr>
       <div className='h4-light-text pt-4'>
         {g('title_2')}
         <div className='small-text p-2'>
-        <ul className='list-outside'>
         {file2.map((j: any, i: any) => {
           var link= z(j,'link')
           if(link == '' || link == 'null'){
@@ -58,9 +58,10 @@ const IndividualFile: FC<propsT> = ({
           }else{
             return (
               // eslint-disable-next-line react/jsx-key
-              <li className='whitespace-normal'><button onClick={() => {
+              <div className='flex'>
+                <li className='whitespace-nowrap'></li><button onClick={() => {
                 router.push(`${z(j,'link')}`)
-              }}>{z(j,'file_name')}</button></li>
+              }}>{z(j,'file_name')}</button></div>
           )
           }
          })}
@@ -69,7 +70,6 @@ const IndividualFile: FC<propsT> = ({
               }}>{g('file2_name')}</button><button onClick={() => {
                 router.push(`${g('file2_link_2')}`)
               }}>{g('file2_name_2')}</button></li>
-        </ul>
         </div>
         <hr className='securities-hr'></hr>
         <ButtonAnimated

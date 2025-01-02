@@ -25,6 +25,7 @@ const LicensedFile: FC<propsT> = ({
       <div className='h4-light-text pt-8'>
         {g('title_1')}
         <div className='small-text p-2'>
+        <ul className='list-outside'>
         {file.map((j: any, i: any) => {
           var link= z(j,'link')
           if(link == '' || link == 'null'){
@@ -41,12 +42,14 @@ const LicensedFile: FC<propsT> = ({
           )
           }
          })}
+         </ul>
         </div>
       </div>
       <hr className='securities-hr'></hr>
       <div className='h4-light-text pt-4'>
         {g('title_2')}
         <div className='small-text p-2'>
+        <ul className='list-outside'>
         {file2.map((j: any, i: any) => {
           var link= z(j,'link')
           if(link == '' || link == 'null'){
@@ -63,12 +66,14 @@ const LicensedFile: FC<propsT> = ({
           )
           }
          })}
+         </ul>
         </div>
       </div>
       <hr className='securities-hr'></hr>
       <div className='h4-light-text pt-4'>
         {g('title_3')}
         <div className='small-text p-2'>
+        <ul className='list-outside'>
         {file3.map((j: any, i: any) => {
           var link= z(j,'link')
           if(link == '' || link == 'null'){
@@ -85,6 +90,7 @@ const LicensedFile: FC<propsT> = ({
           )
           }
          })}
+         </ul>
         </div>
         <hr className='securities-hr'></hr>
         <ButtonAnimated

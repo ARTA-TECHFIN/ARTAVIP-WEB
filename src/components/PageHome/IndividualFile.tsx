@@ -24,7 +24,7 @@ const IndividualFile: FC<propsT> = ({
       <div className='h4-light-text pt-8'>
         {g('title_1')}
         <div className='small-text p-2'>
-        {file.map((j: any, i: any) => {
+        <ul className='list-outside'>        {file.map((j: any, i: any) => {
           var link= z(j,'link')
           if(link == '' || link == 'null'){
             return (
@@ -40,12 +40,14 @@ const IndividualFile: FC<propsT> = ({
           )
           }
          })}
+         </ul>
         </div>
       </div>
       <hr className='securities-hr'></hr>
       <div className='h4-light-text pt-4'>
         {g('title_2')}
         <div className='small-text p-2'>
+        <ul className='list-outside'>
         {file2.map((j: any, i: any) => {
           var link= z(j,'link')
           if(link == '' || link == 'null'){
@@ -67,6 +69,7 @@ const IndividualFile: FC<propsT> = ({
               }}>{g('file2_name')}</button><button onClick={() => {
                 router.push(`${g('file2_link_2')}`)
               }}>{g('file2_name_2')}</button></li>
+        </ul>
         </div>
         <hr className='securities-hr'></hr>
         <ButtonAnimated

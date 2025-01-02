@@ -26,12 +26,20 @@ const LicensedFile: FC<propsT> = ({
         {g('title_1')}
         <div className='small-text p-2'>
         {file.map((j: any, i: any) => {
-          return (
-            // eslint-disable-next-line react/jsx-key
-            <li><button onClick={() => {
-              router.push(`${z(j,'link')}`)
-            }}>{z(j,'file_name')}</button></li>
-        )
+          var link= z(j,'link')
+          if(link == '' || link == 'null'){
+            return (
+              // eslint-disable-next-line react/jsx-key
+              <li className='whitespace-normal'>{z(j,'file_name')}</li>
+          )
+          }else{
+            return (
+              // eslint-disable-next-line react/jsx-key
+              <li className='whitespace-normal'><button onClick={() => {
+                router.push(`${z(j,'link')}`)
+              }}>{z(j,'file_name')}</button></li>
+          )
+          }
          })}
         </div>
       </div>
@@ -40,12 +48,20 @@ const LicensedFile: FC<propsT> = ({
         {g('title_2')}
         <div className='small-text p-2'>
         {file2.map((j: any, i: any) => {
-          return (
-            // eslint-disable-next-line react/jsx-key
-            <li><button onClick={() => {
-              router.push(`${z(j,'link')}`)
-            }}>{z(j,'file_name')}</button></li>
-        )
+          var link= z(j,'link')
+          if(link == '' || link == 'null'){
+            return (
+              // eslint-disable-next-line react/jsx-key
+              <li className='whitespace-normal'>{z(j,'file_name')}</li>
+          )
+          }else{
+            return (
+              // eslint-disable-next-line react/jsx-key
+              <li className='whitespace-normal'><button onClick={() => {
+                router.push(`${z(j,'link')}`)
+              }}>{z(j,'file_name')}</button></li>
+          )
+          }
          })}
         </div>
       </div>
@@ -54,12 +70,20 @@ const LicensedFile: FC<propsT> = ({
         {g('title_3')}
         <div className='small-text p-2'>
         {file3.map((j: any, i: any) => {
-          return (
-            // eslint-disable-next-line react/jsx-key
-            <li><button onClick={() => {
-              router.push(`${z(j,'link')}`)
-            }}>{z(j,'file_name')}</button></li>
-        )
+          var link= z(j,'link')
+          if(link == '' || link == 'null'){
+            return (
+              // eslint-disable-next-line react/jsx-key
+              <li className='whitespace-normal'>{z(j,'file_name')}</li>
+          )
+          }else{
+            return (
+              // eslint-disable-next-line react/jsx-key
+              <li className='whitespace-normal'><button onClick={() => {
+                router.push(`${z(j,'link')}`)
+              }}>{z(j,'file_name')}</button></li>
+          )
+          }
          })}
         </div>
         <hr className='securities-hr'></hr>

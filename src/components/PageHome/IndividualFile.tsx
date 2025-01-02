@@ -25,12 +25,20 @@ const IndividualFile: FC<propsT> = ({
         {g('title_1')}
         <div className='small-text p-2'>
         {file.map((j: any, i: any) => {
-          return (
-            // eslint-disable-next-line react/jsx-key
-            <li><button onClick={() => {
-              router.push(`${z(j,'link')}`)
-            }}>{z(j,'file_name')}</button></li>
-        )
+          var link= z(j,'link')
+          if(link == '' || link == 'null'){
+            return (
+              // eslint-disable-next-line react/jsx-key
+              <li className='whitespace-normal'>{z(j,'file_name')}</li>
+          )
+          }else{
+            return (
+              // eslint-disable-next-line react/jsx-key
+              <li className='whitespace-normal'><button onClick={() => {
+                router.push(`${z(j,'link')}`)
+              }}>{z(j,'file_name')}</button></li>
+          )
+          }
          })}
         </div>
       </div>
@@ -39,13 +47,26 @@ const IndividualFile: FC<propsT> = ({
         {g('title_2')}
         <div className='small-text p-2'>
         {file2.map((j: any, i: any) => {
-          return (
-            // eslint-disable-next-line react/jsx-key
-            <li><button onClick={() => {
-              router.push(`${z(j,'link')}`)
-            }}>{z(j,'file_name')}</button></li>
-        )
+          var link= z(j,'link')
+          if(link == '' || link == 'null'){
+            return (
+              // eslint-disable-next-line react/jsx-key
+              <li className='whitespace-normal'>{z(j,'file_name')}</li>
+          )
+          }else{
+            return (
+              // eslint-disable-next-line react/jsx-key
+              <li className='whitespace-normal'><button onClick={() => {
+                router.push(`${z(j,'link')}`)
+              }}>{z(j,'file_name')}</button></li>
+          )
+          }
          })}
+         <li className='whitespace-normal'><button onClick={() => {
+                router.push(`${g('file2_link')}`)
+              }}>{g('file2_name')}</button><button onClick={() => {
+                router.push(`${g('file2_link_2')}`)
+              }}>{g('file2_name_2')}</button></li>
         </div>
         <hr className='securities-hr'></hr>
         <ButtonAnimated

@@ -30,7 +30,9 @@ const LicensedFile: FC<propsT> = ({
           if(link == '' || link == 'null'){
             return (
               // eslint-disable-next-line react/jsx-key
-              <li className='whitespace-normal'>{z(j,'file_name')}</li>
+              <div className='flex'>
+              <li className='whitespace-normal'></li>{z(j,'file_name')}
+              </div>
           )
           }else{
             return (
@@ -53,7 +55,9 @@ const LicensedFile: FC<propsT> = ({
           if(link == '' || link == 'null'){
             return (
               // eslint-disable-next-line react/jsx-key
-              <li className='whitespace-normal'>{z(j,'file_name')}</li>
+              <div className='flex'>
+              <li className='whitespace-normal'></li>{z(j,'file_name')}
+              </div>
           )
           }else{
             return (
@@ -76,7 +80,9 @@ const LicensedFile: FC<propsT> = ({
           if(link == '' || link == 'null'){
             return (
               // eslint-disable-next-line react/jsx-key
-              <li className='whitespace-normal'>{z(j,'file_name')}</li>
+              <div className='flex'>
+              <li className='whitespace-normal'></li>{z(j,'file_name')}
+              </div>
           )
           }else{
             return (

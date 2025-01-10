@@ -35,7 +35,7 @@ const IndividualFile: FC<propsT> = ({
             return (
               // eslint-disable-next-line react/jsx-key
               <div className='flex'>
-                <li className='whitespace-nowrap'></li><button onClick={() => {
+                <li className='whitespace-nowrap'></li><button className='text-left'  onClick={() => {
                 router.push(`${z(j,'link')}`)
               }}>{z(j,'file_name')}</button></div>
           )
@@ -59,15 +59,15 @@ const IndividualFile: FC<propsT> = ({
             return (
               // eslint-disable-next-line react/jsx-key
               <div className='flex'>
-                <li className='whitespace-nowrap'></li><button onClick={() => {
+                <li className='whitespace-nowrap'></li><button className='text-left'  onClick={() => {
                 router.push(`${z(j,'link')}`)
               }}>{z(j,'file_name')}</button></div>
           )
           }
          })}
-         <li className='whitespace-normal'><button onClick={() => {
+         <li className='whitespace-normal'><button className='text-left' onClick={() => {
                 router.push(`${g('file2_link')}`)
-              }}>{g('file2_name')}</button><button onClick={() => {
+              }}>{g('file2_name')}</button><button className='text-left' onClick={() => {
                 router.push(`${g('file2_link_2')}`)
               }}>{g('file2_name_2')}</button></li>
         </div>

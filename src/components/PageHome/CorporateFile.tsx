@@ -33,7 +33,7 @@ const CorporateFile: FC<propsT> = ({
             return (
               // eslint-disable-next-line react/jsx-key
               <div className='flex'>
-                <li className='whitespace-nowrap'></li><button onClick={() => {
+                <li className='whitespace-nowrap'></li><button className='text-left' onClick={() => {
                 router.push(`${z(j,'link')}`)
               }}>{z(j,'file_name')}</button></div>
           )

@@ -15,8 +15,8 @@ const IndividualFile: FC<propsT> = ({
   const router = useRouter()
   const { locale } = router
   const g = (keyWithoutLang: string) => `${data.data.attributes[`${keyWithoutLang}_${locale}`]}`
-  const file= data.data.attributes.file_pi
-  const file2= data.data.attributes.file_pi2
+  const file = data.data.attributes.file_pi
+  const file2 = data.data.attributes.file_pi2
   const z = (pageData: any, keyWithoutLang: string) => `${pageData[`${keyWithoutLang}_${locale}`]}`
 
   return (
@@ -24,25 +24,25 @@ const IndividualFile: FC<propsT> = ({
       <div className='h4-light-text pt-8'>
         {g('title_1')}
         <div className='small-text p-2'>
-       {file.map((j: any, i: any) => {
-          var link= z(j,'link')
-          if(link == '' || link == 'null'){
-            return (
-              // eslint-disable-next-line react/jsx-key
-              <div className='flex'>
-                <li className='whitespace-normal'></li>{z(j,'file_name')}
-              </div>
-          )
-          }else{
-            return (
-              // eslint-disable-next-line react/jsx-key
-              <div className='flex'>
-                <li className='whitespace-nowrap'></li><button className='text-left'  onClick={() => {
-                router.push(`${z(j,'link')}`)
-              }}>{z(j,'file_name')}</button></div>
-          )
-          }
-         })}
+          {file.map((j: any, i: any) => {
+            var link = z(j, 'link')
+            if (link == '' || link == 'null') {
+              return (
+                // eslint-disable-next-line react/jsx-key
+                <div className='flex'>
+                  <li className='whitespace-normal'></li>{z(j, 'file_name')}
+                </div>
+              )
+            } else {
+              return (
+                // eslint-disable-next-line react/jsx-key
+                <div className='flex'>
+                  <li className='whitespace-nowrap'></li><button className='text-left' onClick={() => {
+                    router.push(`${z(j, 'link')}`)
+                  }}>{z(j, 'file_name')}</button></div>
+              )
+            }
+          })}
 
         </div>
       </div>
@@ -50,30 +50,35 @@ const IndividualFile: FC<propsT> = ({
       <div className='h4-light-text pt-4'>
         {g('title_2')}
         <div className='small-text p-2'>
-        {file2.map((j: any, i: any) => {
-          var link= z(j,'link')
-          if(link == '' || link == 'null'){
-            return (
-              // eslint-disable-next-line react/jsx-key
-              <div className='flex'>
-              <li className='whitespace-normal'></li>{z(j,'file_name')}
-              </div>
-          )
-          }else{
-            return (
-              // eslint-disable-next-line react/jsx-key
-              <div className='flex'>
-                <li className='whitespace-nowrap'></li><button className='text-left'  onClick={() => {
-                router.push(`${z(j,'link')}`)
-              }}>{z(j,'file_name')}</button></div>
-          )
-          }
-         })}
-         <li className='whitespace-normal'><button className='text-left' onClick={() => {
-                router.push(`${g('file2_link')}`)
-              }}>{g('file2_name')}</button><button className='text-left' onClick={() => {
-                router.push(`${g('file2_link_2')}`)
-              }}>{g('file2_name_2')}</button></li>
+          {file2.map((j: any, i: any) => {
+            var link = z(j, 'link')
+            if (link == '' || link == 'null') {
+              return (
+                // eslint-disable-next-line react/jsx-key
+                <div className='flex'>
+                  <li className='whitespace-normal'></li>{z(j, 'file_name')}
+                </div>
+              )
+            } else {
+              return (
+                // eslint-disable-next-line react/jsx-key
+                <div className='flex'>
+                  <li className='whitespace-nowrap'></li><button className='text-left' onClick={() => {
+                    router.push(`${z(j, 'link')}`)
+                  }}>{z(j, 'file_name')}</button></div>
+              )
+            }
+          })}
+          <li className='whitespace-normal'><button className='text-left' onClick={() => {
+            router.push(`${g('file3_link')}`)
+          }}>{g('file3_name')}</button><button className='text-left' onClick={() => {
+            router.push(`${g('file3_link_3')}`)
+          }}>{g('file3_name_3')}</button></li>
+          <li className='whitespace-normal'><button className='text-left' onClick={() => {
+            router.push(`${g('file2_link')}`)
+          }}>{g('file2_name')}</button><button className='text-left' onClick={() => {
+            router.push(`${g('file2_link_2')}`)
+          }}>{g('file2_name_2')}</button></li>
         </div>
         <hr className='securities-hr'></hr>
         <ButtonAnimated

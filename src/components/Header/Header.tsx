@@ -84,7 +84,7 @@ const Header: React.FC<{
       buttonText:g(headerJson,'homepage'),
       href: links.home,
       pages: [
-        { title: g(headerJson,'homepage'), link: links.home },
+        { title: g(headerJson,'about_us'), link: links.about_us },
       ],
     },
     {

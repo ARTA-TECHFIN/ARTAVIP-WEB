@@ -96,6 +96,15 @@
     }
   }
 
+  .about-us-bd {
+    padding-left: 10%;
+    padding-right: 10%;
+
+    @media only screen and (max-width: 767px) {
+      padding-left: 3%;
+      padding-right: 3%;
+    }
+  }
   .trade-tips-form {
     padding-left: 10%;
     padding-right: 10%;

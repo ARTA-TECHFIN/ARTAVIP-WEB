@@ -18,5 +18,6 @@ export const links = {
   institution2: '/cs/licensed',
   disclaimer: '/disclaimer',
   privacy_policy: '/privacy-policy',
+  about_us: '/about_us',
   
 }

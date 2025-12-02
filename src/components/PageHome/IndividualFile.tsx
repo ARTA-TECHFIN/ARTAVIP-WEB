@@ -15,15 +15,22 @@ const IndividualFile: FC<propsT> = ({
   const router = useRouter()
   const { locale } = router
   const g = (keyWithoutLang: string) => `${data.data.attributes[`${keyWithoutLang}_${locale}`]}`
-  const file = data.data.attributes.file_pi
-  const file2 = data.data.attributes.file_pi2
-  const z = (pageData: any, keyWithoutLang: string) => `${pageData[`${keyWithoutLang}_${locale}`]}`
+  // const file = data.data.attributes.file_pi
+  // const file2 = data.data.attributes.file_pi2
+  // const z = (pageData: any, keyWithoutLang: string) => `${pageData[`${keyWithoutLang}_${locale}`]}`
 
   return (
-    <div id='securities-tm' className='text-arta-sand-100 person_lf'>
-      <div className='h4-light-text pt-8'>
-        {g('title_1')}
-        <div className='small-text p-2'>
+    <div id='securities-tm' className='text-arta-sand-100 person_lf mt-2'>
+      <div className='pt-8'>
+        <p className='h4-light-text'>{g('title_1')}</p>
+        <p className='small-text pt-4 text-arta-sand-100'>{g('text_1')}</p>
+       <ButtonAnimated
+              as="a"
+              href={`${g('button_1_link')}`}
+              className="mt-4 border-arta-sand-100 text-arta-sand-100 small-text">
+              {g('button_1_text')}
+        </ButtonAnimated>
+        {/* <div className='small-text p-2'>
           {file.map((j: any, i: any) => {
             var link = z(j, 'link')
             if (link == '' || link == 'null') {
@@ -44,12 +51,19 @@ const IndividualFile: FC<propsT> = ({
             }
           })}
 
-        </div>
+        </div> */}
       </div>
-      <hr className='securities-hr'></hr>
-      <div className='h4-light-text pt-4'>
-        {g('title_2')}
-        <div className='small-text p-2'>
+      {/* <hr className='securities-hr'></hr> */}
+      <div className='pt-4'>
+       <p className='h4-light-text'>{g('title_2')}</p>
+       <p className='small-text pt-4 text-arta-sand-100'>{g('text_2')}</p>
+       <ButtonAnimated
+              as="a"
+              href={`${g('button_2_link')}`}
+              className="mt-4 border-arta-sand-100 text-arta-sand-100 small-text">
+              {g('button_2_text')}
+        </ButtonAnimated>
+        {/* <div className='small-text p-2'>
           {file2.map((j: any, i: any) => {
             var link = z(j, 'link')
             if (link == '' || link == 'null') {
@@ -79,14 +93,15 @@ const IndividualFile: FC<propsT> = ({
           }}>{g('file2_name')}</button><button className='text-left' onClick={() => {
             router.push(`${g('file2_link_2')}`)
           }}>{g('file2_name_2')}</button></li>
-        </div>
+        </div> */}
+        <div className='pt-4'></div>
         <hr className='securities-hr'></hr>
-        <ButtonAnimated
+        {/* <ButtonAnimated
           as="a"
           href={`${g('button_link')}`}
           className="mt-4 border-arta-sand-100 text-arta-sand-100 small-text">
           {g('button')}
-        </ButtonAnimated>
+        </ButtonAnimated> */}
       </div>
     </div>
   )

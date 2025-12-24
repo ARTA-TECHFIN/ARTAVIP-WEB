@@ -108,7 +108,7 @@ const Header: React.FC<{
         { title: g(fundJson,'account'),link: `${links.openAccount}` },
         { title: g(headerJson,'deposit'), link: `${links.deposit}` },
         { title: g(headerJson,'withdrwal'),link: `${links.withdrwal}` },
-        
+        { title: g(headerJson,'services_charges'),link: g(headerJson,'services_charges_link') },
       ],
     }
   ]

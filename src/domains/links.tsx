@@ -2,7 +2,7 @@
 export const links = {
   home: '/',
   deposit: '/cs/deposit',
-  withdrwal: '/cs/withdrwal',
+  withdrwal: '/cs/withdrawal',
   openAccount: '/cs/onboarding',
   person: '/Multi-Strat-Fund',
   person2: '/cs/onboarding',

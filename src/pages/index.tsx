@@ -11,7 +11,7 @@ import { useRouter } from 'next/router'
 
 // 获取首页基本数据
 const fetchHomeData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_AM_HOSTING_PATH}/api/cms/home?populate=*`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_ARTAVIP_HOSTING_PATH}/api/cms/home?populate=*`)
   const data = await res.json()
   return data
 }
@@ -53,7 +53,7 @@ const Home = (props: { s: any }) => {
   return (
     <>
       <Seo
-        title={`Home | Arta AM`}
+        title={`Home | Arta VIP`}
         description=''
         keywords=''
         ga="Homepage"
@@ -65,18 +65,18 @@ const Home = (props: { s: any }) => {
           className="tigger-01 relative relative z-3 flex h-app-height w-screen flex-col overflow-hidden bg-[#351e0e] will-change-transform lg:h-screen"
         >
           <div className="absolute w-full h-full object-cover">
-            <img className="w-full h-full object-cover" src="/images/K11_ARTUS_exterior_facade.jpg" />
+            <img className="w-full h-full object-cover" src="/images/homepage.jpeg" />
           </div>
           <div className=" movable-elements-wrapper z-1 flex max-w-main-contain items-start justify-center px-6 xl:mx-auto">
             <div className="absolute bottom-[10em] left-[0em] md:left-[5em]">
               <h1
                 id="animation"
-                className="movable z-[200] text-left font-Verah text-[10em] leading-[1.02em] text-arta-sunray-100 will-change-transform sm:text-[7em] md:text-[3em]"
+                className="movable z-[200] text-left font-Verah text-[10em] leading-[1.02em] text-[#FFFFFF] will-change-transform sm:text-[7em] md:text-[3em]"
               >
                 {props.s.title.header}
                 <br />
                 <span className="flex space-x-2">
-                  <span className="pr-3 text-[30px] sm:text-[0.6em]">{props.s.title.sub_title_1}</span>
+                  <span className="pr-3 text-[20px] sm:text-[0.4em] w-full sm:w-[60%] block leading-[1.6] mb-0">{props.s.title.sub_title_1}</span>
                 </span>
               </h1>
             </div>

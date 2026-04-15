@@ -17,7 +17,7 @@ import headerJson from 'apidata/header.json'
 interface FormValues {
   topic: string
   name: string
-  account_number: string
+  contract_no: string
   mail_address: string
   phone: string
   currency: string
@@ -37,7 +37,7 @@ const useEnquiryForm = (t: any,g: any,locale:any) => {
 
       data.locale=locale
       if (!data.name) errors.name = { message: t('warning.required') }
-      if (!data.account_number) errors.account_number = { message: t('warning.required') }
+      if (!data.contract_no) errors.contract_no = { message: t('warning.required') }
       if (!data.phone) errors.phone = { message: t('warning.required') }
       if (!data.amount) errors.amount = { message: t('warning.required') }
       if (!data.currency) errors.currency = { message: t('warning.required') }
@@ -87,7 +87,7 @@ const Withdrwal = (props: { cms: any, fax: any, mail: any, title: any }) => {
   const r = {
     title: g(headerJson,'withdrawal_title'),
     name: g(headerJson,'contact_full_name'),
-    account_number: g(headerJson,'account_number'),
+    contract_no: g(headerJson,'contract_no'),
     mail_address: g(headerJson,'email'),
     phone: g(headerJson,'phone'),
     currency: g(headerJson,'withdrawal_currency'),
@@ -114,14 +114,14 @@ const Withdrwal = (props: { cms: any, fax: any, mail: any, title: any }) => {
   return (
     <>
       <Seo
-        title={`Arta AM`}
+        title={`Home | Arta VIP`}
         description=''
         keywords=''
         ga=""
       />
       <Header textColor="brown" />
       <img src='/images/about/white-2024-06-14-62049.png' alt="" className="object-cover w-full h-[152px]" />
-      <div className='bg-white p-4'>
+      <div className='bg-white p-6'>
         <div className="flex flex-col items-center justify-center">
           <div className='col-span-4 md:col-span-1 flex flex-col p-4 contact-form-fix wide-customer'>
             <h1 className='h2-text mt-2 font-bold tracking-widest text-arta-sand-100'>{g(headerJson,'withdrawal_title')}</h1>
@@ -141,8 +141,8 @@ const Withdrwal = (props: { cms: any, fax: any, mail: any, title: any }) => {
                   <InputField label={r.name} error={errors.name?.message} className="col-span-1">
                     <InputText {...register('name')} />
                   </InputField>
-                  <InputField label={r.account_number} error={errors.account_number?.message} className="col-span-1">
-                    <InputText {...register('account_number')} />
+                  <InputField label={r.contract_no} error={errors.contract_no?.message} className="col-span-1">
+                    <InputText {...register('contract_no')} />
                   </InputField>
                   <InputField label={r.mail_address} error={errors.mail_address?.message} className="col-span-1">
                     <InputText {...register('mail_address')} />

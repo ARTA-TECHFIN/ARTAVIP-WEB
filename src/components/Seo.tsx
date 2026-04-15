@@ -28,9 +28,9 @@ const Seo = ({
       <meta name="og:description" content={description} />
       <meta
         name="og:image"
-        content={`${process.env.NEXT_PUBLIC_AM_SITE_URL}/arta_favicon_gm.jpg`}
+        content={`${process.env.NEXT_PUBLIC_AM_SITE_URL}/logo-removebg-preview.png`}
       />
-      <link rel="icon" href="/arta_favicon_gm.jpg" />
+      <link rel="icon" href="/logo-removebg-preview.png" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -40,14 +40,14 @@ const Seo = ({
               {
                 '@type': 'Organization',
                 '@id': 'artatechfin.com',
-                'name': 'Arta AM',
+                'name': 'Home | Arta VIP',
                 'url': 'artatechfin.com/',
                 'sameAs': [
                   'https://www.facebook.com/ARTAtechfin',
                   'https://www.linkedin.com/company/arta-techfin-corporation-limited',
                   'https://twitter.com/ARTATechFin',
                 ],
-                'legalName': 'Arta AM Corporation Limited',
+                'legalName': 'Arta Capital Company Limited',
                 'contactPoint': {
                   '@type': 'ContactPoint',
                   'telephone': '+852 3513 8279',
@@ -59,8 +59,8 @@ const Seo = ({
                 '@type': 'WebSite',
                 '@id': 'artatechfin.com',
                 'url': 'artatechfin.com',
-                'name': 'Arta AM',
-                'description': 'Arta AM',
+                'name': 'Home | Arta VIP',
+                'description': 'Home | Arta VIP',
                 'publisher': {
                   '@id': 'https://artatechfin.com/#organization',
                 },
@@ -70,12 +70,12 @@ const Seo = ({
                 '@type': 'WebPage',
                 '@id': 'artatechfin.com/#webpage',
                 'url': 'artatechfin.com/',
-                'name': 'Arta AM',
+                'name': 'Home | Arta VIP',
                 'isPartOf': {
                   '@id': 'artatechfin.com/#website',
                 },
                 'description':
-                  'Arta AM (0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology.',
+                  'Arta(0279.HK) is a Hong Kong-based financial services institution that aspires to enhance applications in finance through the use of technology.',
                 'inLanguage': 'en',
                 'potentialAction': [
                   {

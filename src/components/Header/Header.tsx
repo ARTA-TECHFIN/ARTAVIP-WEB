@@ -84,19 +84,19 @@ const Header: React.FC<{
       buttonText:g(headerJson,'homepage'),
       href: links.home,
       pages: [
-        { title: g(headerJson,'about_us'), link: links.about_us },
+        { title: g(headerJson,'about_us'), link: links.home },
       ],
     },
-    {
-      pageName: g(headerJson,'pr'),
-      title: '',
-      paragraph: '',
-      buttonText:g(headerJson,'pr'),
-      href: links.home,
-      pages: [
-        { title: g(headerJson,'fund'),link: `${links.aaml}` },
-      ],
-    },
+    // {
+    //   pageName: g(headerJson,'pr'),
+    //   title: '',
+    //   paragraph: '',
+    //   buttonText:g(headerJson,'pr'),
+    //   href: links.home,
+    //   pages: [
+    //     { title: g(headerJson,'fund'),link: `${links.aaml}` },
+    //   ],
+    // },
     {
       pageName: g(headerJson,'customer_service'),
       title: '',
@@ -105,10 +105,11 @@ const Header: React.FC<{
       href: '',
       pages: [
         // { title: g(headerJson,'pr_account'), link: 'https://sit-hjzt.zunaer.com/open-account' },
-        { title: g(fundJson,'account'),link: `${links.openAccount}` },
+        // { title: g(fundJson,'account'),link: `${links.openAccount}` },
         { title: g(headerJson,'deposit'), link: `${links.deposit}` },
         { title: g(headerJson,'withdrwal'),link: `${links.withdrwal}` },
-        { title: g(headerJson,'services_charges'),link: g(headerJson,'services_charges_link') },
+        { title: g(headerJson,'agreements'),link: g(headerJson,'agreements_link') },
+        // { title: g(headerJson,'account_amendemt'),link: g(headerJson,'account_amendemt_link') },
       ],
     }
   ]
@@ -200,7 +201,7 @@ const Header: React.FC<{
         >
           <div className="flex w-full items-center justify-between lg:space-x-6">
             <div className="z-[1] text-right pr-[2px]">
-              <Link title={'Arta AM'} href="/">
+              <Link title={'Arta VIP'} href="/">
                 <div className="relative h-[32px] w-[81px] cursor-pointer opacity-100 transition hover:opacity-100 md:h-auto md:w-auto">
                   <ArtaLogo className={`${textColorClass} h-full w-full md:h-auto md:w-150px`} />
                 </div>
@@ -363,10 +364,10 @@ const Header: React.FC<{
                     <XIcon className="h-6 w-6" />
                   </div>
                   <div className="relative h-[32px] w-[81px] cursor-pointer opacity-100 transition hover:opacity-100 md:h-auto md:w-auto">
-                    <Link title="Arta AM" href="/">
+                    <Link title="Home | Arta VIP" href="/">
                       <img
                         src={`/images/arta-logo_black.svg`}
-                        alt="Arta AM"
+                        alt="Home | Arta VIP"
                         className="object-contain"
                       />
                     </Link>

@@ -158,7 +158,7 @@ const Onboarding: FC<propsT> = ({
   return (
     <>
       <Seo
-        title={`Home | Arta AM`}
+        title={`Home | Arta VIP`}
         description=''
         keywords=''
         ga="Homepage"

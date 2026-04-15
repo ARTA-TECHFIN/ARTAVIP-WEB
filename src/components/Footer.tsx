@@ -10,7 +10,7 @@ import cn from 'classnames'
 import headerJson from 'apidata/header.json'
 
 const fetchCmsData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_AM_HOSTING_PATH}/api/cms/home-footer?populate=*`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_ARTAVIP_HOSTING_PATH}/api/cms/home-footer?populate=*`)
   const data = await res.json()
   return data
 }

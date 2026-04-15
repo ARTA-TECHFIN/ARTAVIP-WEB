@@ -40,7 +40,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         delete bodyObj.acceptedTerms
         delete bodyObj.enquiryType
 
-           const html = `<p>Full Name: ${sensitize(reqMessage.name)}（${sensitize(reqMessage.account_number)}）</p>
+           const html = `<p>Full Name: ${sensitize(reqMessage.name)}（${sensitize(reqMessage.contract_no)}）</p>
         ${sensitize(reqMessage.mail_address) ? `<p>Email: ${sensitize(reqMessage.mail_address)}</p>` : ''}
          <p>Phone: ${sensitize(reqMessage.phone)}</p>
         <p>Deposit Amount:  ${sensitize(reqMessage.currency)} ${sensitize(reqMessage.amount)}</p>`
@@ -49,7 +49,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           from: EMAIL_SENDER,
           to: EMAIL_GM_RECIPIENT,
           cc: reqMessage.mail_address,
-          subject: `Deposit request from - ${reqMessage.name}- （${reqMessage.account_number}）`,
+          subject: `Deposit request from - ${reqMessage.name}- （${reqMessage.contract_no}）`,
           text: toPlainText(html),
           html,
           attachments: [

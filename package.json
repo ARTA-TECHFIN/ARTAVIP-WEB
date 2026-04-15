@@ -1,9 +1,9 @@
 {
-  "name": "artaam-web",
+  "name": "artavip-web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "set PORT=1341 && next dev",
+    "dev": "set PORT=1346 && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

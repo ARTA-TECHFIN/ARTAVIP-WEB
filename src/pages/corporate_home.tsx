@@ -7,14 +7,14 @@ import HomeLayout, { TABS } from 'src/components/PageHome/HomeLayout'
 
 // 获取开户基本数据
 const fetchHeader = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_AM_HOSTING_PATH}/api/cms/onboarding`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_ARTAVIP_HOSTING_PATH}/api/cms/onboarding`)
   const data = await res.json()
   return data
 }
 
 // 获取公司专业户基本数据
 const fetchCorporateData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_AM_HOSTING_PATH}/api/cms/onboarding-corporate-pi?populate=*`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_ARTAVIP_HOSTING_PATH}/api/cms/onboarding-corporate-pi?populate=*`)
   const data = await res.json()
   return data
 }

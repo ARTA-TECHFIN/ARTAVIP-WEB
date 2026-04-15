@@ -13,7 +13,7 @@ import LicensedFile from 'src/components/PageHome/LicensedFile'
 
 // 获取开个人户基本数据
 const fetchIndividualData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_AM_HOSTING_PATH}/api/cms/onboarding-licensed-pi?populate=*`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_ARTAVIP_HOSTING_PATH}/api/cms/onboarding-licensed-pi?populate=*`)
   const data = await res.json()
   return data
 }

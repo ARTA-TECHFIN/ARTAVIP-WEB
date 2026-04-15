@@ -8,7 +8,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 
 const fetchCmsData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_AM_HOSTING_PATH}/api/cms/home-about-us?populate=*`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_ARTAVIP_HOSTING_PATH}/api/cms/home-about-us?populate=*`)
   const data = await res.json()
   return data
 }
@@ -33,7 +33,7 @@ const Disclaimer = (props: { cms: any }) => {
   return (
     <>
       <Seo
-        title={`Home | Arta AM`}
+        title={`Home | Arta VIP`}
         description=''
         keywords=''
         ga="Disclaimer"

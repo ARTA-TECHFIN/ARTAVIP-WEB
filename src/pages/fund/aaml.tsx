@@ -40,21 +40,21 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 }
 // 获取基金基本数据
 const fetchHeader = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_AM_HOSTING_PATH}/api/cms/fund?populate=*`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_ARTAVIP_HOSTING_PATH}/api/cms/fund?populate=*`)
   const data = await res.json()
   return data
 }
 
 // 获取基金Label数据
 const fetchLabel2 = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_AM_HOSTING_PATH}/api/cms/fund-detail-label?populate=*`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_ARTAVIP_HOSTING_PATH}/api/cms/fund-detail-label?populate=*`)
   const data = await res.json()
   return data
 }
 
 // 获取第四个基金的基础数据
 const fetchProduct1 = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_AM_HOSTING_PATH}/api/cms/fund-aaml?populate=*`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_ARTAVIP_HOSTING_PATH}/api/cms/fund-aaml?populate=*`)
   const data = await res.json()
   return data
 }
